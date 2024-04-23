@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Visualizing Output from OpenEars TTS &#8211; Politepix</title>
+		<atom:link href="/forums/topic/visualizing-output-from-openears-tts/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/visualizing-output-from-openears-tts/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:59:51 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/visualizing-output-from-openears-tts/#post-1017457</guid>
+					<title><![CDATA[Visualizing Output from OpenEars TTS]]></title>
+					<link>/forums/topic/visualizing-output-from-openears-tts/#post-1017457</link>
+					<pubDate>Mon, 10 Jun 2013 08:48:24 +0000</pubDate>
+					<dc:creator>frogstomper</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m using Version 1.2.5 for TTS and I&#8217;d like to be able to visualize audio output as the speech is emitted.</p>
+<p>Pretty sure this isn&#8217;t an OpenEars-specific question, but Google hasn&#8217;t been kind to me in my quest for a way to monitor output real-time. Any leads would be greatly appreciated.</p>
+<p>Thanks in advance!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/visualizing-output-from-openears-tts/#post-1017458</guid>
+					<title><![CDATA[Reply To: Visualizing Output from OpenEars TTS]]></title>
+					<link>/forums/topic/visualizing-output-from-openears-tts/#post-1017458</link>
+					<pubDate>Mon, 10 Jun 2013 09:17:12 +0000</pubDate>
+					<dc:creator>frogstomper</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Answering my own question &#8211; found the spot in the sample app for checking fliteOutputLevel on a separate thread. That&#8217;ll do it. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/visualizing-output-from-openears-tts/#post-1017459</guid>
+					<title><![CDATA[Reply To: Visualizing Output from OpenEars TTS]]></title>
+					<link>/forums/topic/visualizing-output-from-openears-tts/#post-1017459</link>
+					<pubDate>Mon, 10 Jun 2013 10:07:10 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Ah, my favorite kind of support question :) .  Glad you found it, let me know if you have other questions.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

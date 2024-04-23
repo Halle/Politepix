@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Need clarification on reducing binary size. &#8211; Politepix</title>
+		<atom:link href="/forums/topic/need-clarification-on-reducing-binary-size/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/need-clarification-on-reducing-binary-size/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:38:07 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/need-clarification-on-reducing-binary-size/#post-13137</guid>
+					<title><![CDATA[Need clarification on reducing binary size.]]></title>
+					<link>/forums/topic/need-clarification-on-reducing-binary-size/#post-13137</link>
+					<pubDate>Thu, 22 Nov 2012 05:04:21 +0000</pubDate>
+					<dc:creator>MB</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>1.) Is &#8220;Deployment PostProcessing&#8221; same as Deployment -&gt; Copy Phase Strip in Xcode 4.5.1?</p>
+<p>2.) If we are using just flite, it is safe to delete both hub4wsj_sc_8k and cmu07a.dic? I have verified this but I want to make sure that it is indeed the case?</p>
+<p>Thanks,</p>
+<p>&#8211;MB.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/need-clarification-on-reducing-binary-size/#post-13236</guid>
+					<title><![CDATA[Reply To: Need clarification on reducing binary size.]]></title>
+					<link>/forums/topic/need-clarification-on-reducing-binary-size/#post-13236</link>
+					<pubDate>Thu, 22 Nov 2012 09:53:31 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>1) I believe it should still be called Deployment Postprocessing. I would search for that phrase in the search field.</p>
+<p>2) Correct, that is what it says in the FAQ as well.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/need-clarification-on-reducing-binary-size/#post-13473</guid>
+					<title><![CDATA[Reply To: Need clarification on reducing binary size.]]></title>
+					<link>/forums/topic/need-clarification-on-reducing-binary-size/#post-13473</link>
+					<pubDate>Sun, 25 Nov 2012 10:09:43 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Now that I&#8217;ve had time to double-check, confirming the fact that the &#8220;Deployment Postprocessing&#8221; build setting hasn&#8217;t had a change of name in recent versions of Xcode.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

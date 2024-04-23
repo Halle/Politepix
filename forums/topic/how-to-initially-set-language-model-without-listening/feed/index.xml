@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>How to Initially set language model without listening? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/how-to-initially-set-language-model-without-listening/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/how-to-initially-set-language-model-without-listening/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:43:29 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/how-to-initially-set-language-model-without-listening/#post-1019016</guid>
+					<title><![CDATA[How to Initially set language model without listening?]]></title>
+					<link>/forums/topic/how-to-initially-set-language-model-without-listening/#post-1019016</link>
+					<pubDate>Tue, 26 Nov 2013 21:48:42 +0000</pubDate>
+					<dc:creator>Lann</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I have a place where I initially set the language model, and one where I change it.</p>
+<p>When I initially set it I use: startListeningWithLanguageModelAtPath<br />
+When I change it later, I use: changeLanguageModelToFile</p>
+<p>My problem is that I need to be able to do this not yet start recognizing voice until I later resume or call some  other function which starts the recognition.</p>
+<p>Is there some way to do this? My problem is that those calls above take several seconds to run and I&#8217;m trying to set them up in advance and then enable them instantly when needed.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-to-initially-set-language-model-without-listening/#post-1019018</guid>
+					<title><![CDATA[Reply To: How to Initially set language model without listening?]]></title>
+					<link>/forums/topic/how-to-initially-set-language-model-without-listening/#post-1019018</link>
+					<pubDate>Tue, 26 Nov 2013 22:01:04 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Lann,</p>
+<p>Switching language models shouldn&#8217;t take a notable amount of time under normal circumstances. Are you sure it isn&#8217;t some other part of the logical flow that is using the time?</p>
+<p>For instance, the initial startup call takes time because of starting the audio driver and calibrating. But the part where the language model is loaded isn&#8217;t a significant part of its duration, so setting it in advance of starting wouldn&#8217;t make a UX difference. </p>
+<p>If loading/switching the models is really taking a lot of time, maybe there is an unusual issue of some kind. What in the logging is leading to that impression?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-to-initially-set-language-model-without-listening/#post-1019019</guid>
+					<title><![CDATA[Reply To: How to Initially set language model without listening?]]></title>
+					<link>/forums/topic/how-to-initially-set-language-model-without-listening/#post-1019019</link>
+					<pubDate>Tue, 26 Nov 2013 23:16:01 +0000</pubDate>
+					<dc:creator>Lann</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>My logs show that it takes 4 seconds to execute the following statement on an iPhone 4S:</p>
+<p>[self.pocket_sphinx_controller startListeningWithLanguageModelAtPath:self.path_to_dynamic_language_model dictionaryAtPath:self.path_to_dynamic_grammar acousticModelAtPath:[AcousticModel pathToModel:@&#8221;AcousticModelEnglish&#8221;] languageModelIsJSGF:NO];</p>
+<p>Here is how the language model was earlier initialized (if this is relevant):</p>
+<p>NSError *error = [self.language_model_generator generateRejectingLanguageModelFromArray:languageArray<br />
+			 withFilesNamed:@&#8221;dynamic&#8221;<br />
+			 withOptionalExclusions:nil<br />
+			 usingVowelsOnly:FALSE<br />
+			 withWeight:nil<br />
+			 forAcousticModelAtPath:[AcousticModel pathToModel:@&#8221;AcousticModelEnglish&#8221;]];</p>
+<p>		[self.language_model_generator deliverRejectedSpeechInHypotheses:TRUE];</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-to-initially-set-language-model-without-listening/#post-1019023</guid>
+					<title><![CDATA[Reply To: How to Initially set language model without listening?]]></title>
+					<link>/forums/topic/how-to-initially-set-language-model-without-listening/#post-1019023</link>
+					<pubDate>Wed, 27 Nov 2013 05:25:57 +0000</pubDate>
+					<dc:creator>Lann</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Oh, maybe the issue is that I&#8217;m using startListeningWithLanguageModelAtPath every time I change the language model. Shouldn&#8217;t I be using changeLanguageModelToFile on successive calls?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-to-initially-set-language-model-without-listening/#post-1019025</guid>
+					<title><![CDATA[Reply To: How to Initially set language model without listening?]]></title>
+					<link>/forums/topic/how-to-initially-set-language-model-without-listening/#post-1019025</link>
+					<pubDate>Wed, 27 Nov 2013 07:25:04 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That&#8217;s correct. startListeningWithLanguageModelAtPath only needs to be done once in a listening session because it starts the recognition engine and audio driver and calibrates the speech/silence levels to the room. Once it has started, you use changeLanguageModelToFile to change models within the same session and it should be more or less instant.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

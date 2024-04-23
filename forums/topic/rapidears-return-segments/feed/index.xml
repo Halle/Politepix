@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>RapidEars Return Segments &#8211; Politepix</title>
+		<atom:link href="/forums/topic/rapidears-return-segments/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/rapidears-return-segments/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:50:53 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/rapidears-return-segments/#post-1021753</guid>
+					<title><![CDATA[RapidEars Return Segments]]></title>
+					<link>/forums/topic/rapidears-return-segments/#post-1021753</link>
+					<pubDate>Tue, 24 Jun 2014 11:58:14 +0000</pubDate>
+					<dc:creator>Matt</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I cannot get RapidEars to return segments, or segment times. It seems that all four of the appropriate delegate methods in OpenEarsEventsObserver+RapidEars.h cause the app to crash. Tested this in the stock sample app with RapidEars added.</p>
+<p>I have [self.pocketsphinxController setReturnSegments:YES]; and implemented rapidEarsDidDetectLiveSpeechAsWordArray:andScoreArray:</p>
+<p>Without the method implementation, the app doesn&#8217;t crash, but obviously I cannot get the results. Anything I am doing wrong?</p>
+<p>Here is the relevant output for the case mentioned above:</p>
+<p>2014-06-24 07:54:50.804 OpenEarsSampleApp[22683:4607] Speech detected&#8230;<br />
+INFO: file_omitted(0): arc_buffer_producer_start_utt<br />
+time delta 1403610890.807214 start 0000000<br />
+INFO: file_omitted(0): arc_buffer_consumer_start_utt<br />
+time delta 1403610890.808295 start 0000000<br />
+2014-06-24 07:54:50.806 OpenEarsSampleApp[22683:60b] Pocketsphinx has detected speech.<br />
+2014-06-24 07:54:50.810 OpenEarsSampleApp[22683:60b] rapidEarsDidDetectBeginningOfSpeech<br />
+time delta 1403610890.815831 partial result fwdtree<br />
+partial: &lt;s&gt;:(0000000)<br />
+time delta 1403610890.826939 partial result fwdtree<br />
+partial: &lt;s&gt;:++UH++:(0000000)<br />
+time delta 1403610891.198907 partial result fwdtree<br />
+partial: &lt;s&gt;:LEFT:2014-06-24 07:54:51.199 OpenEarsSampleApp[22683:60b] -[__NSCFString getBytes:length:]: unrecognized selector sent to instance 0x9ba270<br />
+2014-06-24 07:54:51.201 OpenEarsSampleApp[22683:60b] *** Terminating app due to uncaught exception &#8216;NSInvalidArgumentException&#8217;, reason: &#8216;-[__NSCFString getBytes:length:]: unrecognized selector sent to instance 0x9ba270&#8217;<br />
+*** First throw call stack:<br />
+(0x2d5f8f03 0x37d89ce7 0x2d5fc837 0x2d5fb12f 0x2d54a0d8 0x40657 0x40bed 0x2dfe1c23 0x2d5c3fe7 0x2d5c34af 0x2d5c1c9f 0x2d52c7a9 0x2d52c58b 0x324896d3 0x2fe8b891 0xb789 0xb6d8)<br />
+libc++abi.dylib: terminating with uncaught exception of type NSException<br />
+(lldb) bt<br />
+* thread #1: tid = 0x435643, 0x3833e1f0 libsystem_kernel.dylib`__pthread_kill + 8, queue = &#8216;com.apple.main-thread&#8217;, stop reason = signal SIGABRT<br />
+    frame #0: 0x3833e1f0 libsystem_kernel.dylib`__pthread_kill + 8<br />
+    frame #1: 0x383a67b6 libsystem_pthread.dylib`pthread_kill + 58<br />
+    frame #2: 0x382eeff8 libsystem_c.dylib`abort + 76<br />
+    frame #3: 0x3773d98e libc++abi.dylib`abort_message + 74<br />
+    frame #4: 0x377566e6 libc++abi.dylib`default_terminate_handler() + 254<br />
+    frame #5: 0x37d89f7c libobjc.A.dylib`_objc_terminate() + 192<br />
+    frame #6: 0x377541b2 libc++abi.dylib`std::__terminate(void (*)()) + 78<br />
+    frame #7: 0x37753d16 libc++abi.dylib`__cxa_rethrow + 102<br />
+    frame #8: 0x37d89e2e libobjc.A.dylib`objc_exception_rethrow + 42<br />
+    frame #9: 0x2d52c81e CoreFoundation`CFRunLoopRunSpecific + 642<br />
+    frame #10: 0x2d52c58a CoreFoundation`CFRunLoopRunInMode + 106<br />
+    frame #11: 0x324896d2 GraphicsServices`GSEventRunModal + 138<br />
+    frame #12: 0x2fe8b890 UIKit`UIApplicationMain + 1136<br />
+  * frame #13: 0x0000b788 OpenEarsSampleApp`main(argc=1, argv=0x00728ce4) + 172 at main.m:16<br />
+(lldb) </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-return-segments/#post-1021764</guid>
+					<title><![CDATA[Reply To: RapidEars Return Segments]]></title>
+					<link>/forums/topic/rapidears-return-segments/#post-1021764</link>
+					<pubDate>Wed, 25 Jun 2014 10:56:46 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, this appears to be fixed in the upcoming next version of RapidEars, thank you for the report.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Change vocabulary array on the fly? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/change-vocabulary-array-on-the-fly/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/change-vocabulary-array-on-the-fly/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:00:47 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/change-vocabulary-array-on-the-fly/#post-1019412</guid>
+					<title><![CDATA[Change vocabulary array on the fly?]]></title>
+					<link>/forums/topic/change-vocabulary-array-on-the-fly/#post-1019412</link>
+					<pubDate>Mon, 13 Jan 2014 17:49:59 +0000</pubDate>
+					<dc:creator>davestrand</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I would like to change the recognized vocabulary (Model, Array) real-time based on dictionaries in the plist.  I have gotten it so that it loads a few words from the appropriate dictionary at startup, as well as some others I have manually entered into the array, but I am not sure how to RE-load the recognized vocabulary once the app is running.   I have created a function, and logged it to be sure that my new variables are there…  I pasted what I believe to be the appropriate setup code inside a special reLoadLanguageBasedOnNewVariables function, including the startup array of words, however it doesn’t actually RE-load the understood dictionary when i call upon that function. I’m probably missing something, as I’m new to objective c.  My design is based off of a heavily modified version of the “Change Model” style example…  which might be part of my problem.  If you could help that would be great.  I have gone through the tutorial, but must be missing something.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/change-vocabulary-array-on-the-fly/#post-1019414</guid>
+					<title><![CDATA[Reply To: Change vocabulary array on the fly?]]></title>
+					<link>/forums/topic/change-vocabulary-array-on-the-fly/#post-1019414</link>
+					<pubDate>Mon, 13 Jan 2014 17:55:25 +0000</pubDate>
+					<dc:creator>davestrand</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Here&#8217;s the function to attempt to reload based on plist data..</p>
+<pre><code>
+- (void) reLoadLanguageBasedOnNewVariables {
+    
+    LanguageModelGenerator *languageModelGenerator = [[LanguageModelGenerator alloc] init];
+ 
+    
+    NSArray *languageArray = [[NSArray alloc] initWithArray:[NSArray arrayWithObjects: // All capital letters.
+                                                             
+                                                             
+                                                        
+                                                             @&quot;YES&quot;,
+                                                             @&quot;NO&quot;,
+                                                             @&quot;MAYBE&quot;,
+                                                       
+                                                             @&quot;DIAPER&quot;,
+                                                             
+                                                             
+                                                            
+                                                             @&quot;%@&quot;,[NSString stringWithFormat:@&quot;%@&quot;, [playerIsNowAt valueForKey:@&quot;ObjectsInLocation&quot;]],
+                                                             
+                                                             nil]];
+    
+    NSLog(@&quot;Checking the objects in the room are correct %@&quot;, [playerIsNowAt valueForKey:@&quot;ObjectsInLocation&quot;]);//Yep, it&#039;s loading the new objects
+    
+     NSString *name = @&quot;VoiceGameModelFiles&quot;;
+     NSError *err = [languageModelGenerator generateLanguageModelFromArray:languageArray withFilesNamed:name forAcousticModelAtPath:[AcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;]]; // Change &quot;AcousticModelEnglish&quot; to &quot;AcousticModelSpanish&quot; to create a Spanish language model instead of an English one.
+
+    
+	NSDictionary *dynamicLanguageGenerationResultsDictionary = nil;
+     
+	if([err code] != noErr) {
+		NSLog(@&quot;Dynamic language generator reported error %@&quot;, [err description]);
+	
+    } else {
+	
+        dynamicLanguageGenerationResultsDictionary = [err userInfo];
+		
+        NSString *lmPath = [dynamicLanguageGenerationResultsDictionary objectForKey:@&quot;LMPath&quot;];
+	NSString *dictionaryPath = [dynamicLanguageGenerationResultsDictionary objectForKey:@&quot;DictionaryPath&quot;];
+		
+        self.pathToDynamicallyGeneratedGrammar = lmPath; // We&#039;ll set our new .languagemodel file to be the one to get switched to when the words &quot;CHANGE MODEL&quot; are recognized.
+		self.pathToDynamicallyGeneratedDictionary = dictionaryPath; // We&#039;ll set our new dictionary to be the one to get switched to when the words &quot;CHANGE MODEL&quot; are recognized.
+        
+    }
+    
+}</code></pre>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/change-vocabulary-array-on-the-fly/#post-1019415</guid>
+					<title><![CDATA[Reply To: Change vocabulary array on the fly?]]></title>
+					<link>/forums/topic/change-vocabulary-array-on-the-fly/#post-1019415</link>
+					<pubDate>Mon, 13 Jan 2014 17:55:41 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>A current limitation is that language models need to have unique names. Does it work better if you use a different name every time?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/change-vocabulary-array-on-the-fly/#post-1019417</guid>
+					<title><![CDATA[Reply To: Change vocabulary array on the fly?]]></title>
+					<link>/forums/topic/change-vocabulary-array-on-the-fly/#post-1019417</link>
+					<pubDate>Mon, 13 Jan 2014 17:56:53 +0000</pubDate>
+					<dc:creator>davestrand</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hm. I&#8217;ll give that a shot and see what happens, thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/change-vocabulary-array-on-the-fly/#post-1019418</guid>
+					<title><![CDATA[Reply To: Change vocabulary array on the fly?]]></title>
+					<link>/forums/topic/change-vocabulary-array-on-the-fly/#post-1019418</link>
+					<pubDate>Mon, 13 Jan 2014 18:12:46 +0000</pubDate>
+					<dc:creator>davestrand</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hm..  I am not noticing any difference if I change the name..  Are you referring to the LanguageModelGenerator *languageModelGenerator and the NSArray *languageArray names?  I tried changing those as well as many of the other *names, and the NSString *name = @&#8221;VoiceGameModelFiles1  &lt;&#8211; &#8220;; Figured they might at least work once, if the name needs to rotate.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/change-vocabulary-array-on-the-fly/#post-1019419</guid>
+					<title><![CDATA[Reply To: Change vocabulary array on the fly?]]></title>
+					<link>/forums/topic/change-vocabulary-array-on-the-fly/#post-1019419</link>
+					<pubDate>Mon, 13 Jan 2014 18:20:11 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The requested name under withFilesNamed: when they are being regenerated.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/change-vocabulary-array-on-the-fly/#post-1019420</guid>
+					<title><![CDATA[Reply To: Change vocabulary array on the fly?]]></title>
+					<link>/forums/topic/change-vocabulary-array-on-the-fly/#post-1019420</link>
+					<pubDate>Mon, 13 Jan 2014 18:26:56 +0000</pubDate>
+					<dc:creator>davestrand</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry to keep posting..  it looks like my tests might have been inconclusive.  Looks like I call the function once when the app starts, so the filename wasn&#8217;t a new one.  I&#8217;m not entirely sure how to rotate and then call upon a filename..  Trying to learn up on that now.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/change-vocabulary-array-on-the-fly/#post-1019421</guid>
+					<title><![CDATA[Reply To: Change vocabulary array on the fly?]]></title>
+					<link>/forums/topic/change-vocabulary-array-on-the-fly/#post-1019421</link>
+					<pubDate>Mon, 13 Jan 2014 18:33:51 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, no worries &#8212; let me know if you get it working or if you have a follow-up question.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/change-vocabulary-array-on-the-fly/#post-1019422</guid>
+					<title><![CDATA[Reply To: Change vocabulary array on the fly?]]></title>
+					<link>/forums/topic/change-vocabulary-array-on-the-fly/#post-1019422</link>
+					<pubDate>Mon, 13 Jan 2014 20:14:45 +0000</pubDate>
+					<dc:creator>davestrand</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>So, I did get a random name generating..  I was able to confirm it&#8217;s functionality because I located the Cache folder and saw the three files being created&#8230;  When I opened the .dic file I saw the appropriate Words. I think I&#8217;m still missing a piece of code that loads this new dictionary into use and turns it on.  I posted my code in the thread above.  Do you see anything terribly wrong or missing?  Something special must happen at the viewDidLoad, because it starts up ok, but then never changes.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/change-vocabulary-array-on-the-fly/#post-1019423</guid>
+					<title><![CDATA[Reply To: Change vocabulary array on the fly?]]></title>
+					<link>/forums/topic/change-vocabulary-array-on-the-fly/#post-1019423</link>
+					<pubDate>Mon, 13 Jan 2014 20:26:51 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I only see the code for generating the models above, but not starting with the language model or changing it in an already-started listening session. Do you want to show me that code which uses startListeningWithLanguageModelAtPath: etc and changeLanguageModelToFile: ?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

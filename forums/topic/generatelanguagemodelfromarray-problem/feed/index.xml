@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] generateLanguageModelFromArray problem &#8211; Politepix</title>
+		<atom:link href="/forums/topic/generatelanguagemodelfromarray-problem/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/generatelanguagemodelfromarray-problem/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:08:02 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/generatelanguagemodelfromarray-problem/#post-1024200</guid>
+					<title><![CDATA[[Resolved] generateLanguageModelFromArray problem]]></title>
+					<link>/forums/topic/generatelanguagemodelfromarray-problem/#post-1024200</link>
+					<pubDate>Tue, 13 Jan 2015 12:25:25 +0000</pubDate>
+					<dc:creator>maxgarmar</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>Here I am again. I hope this will be shorter. ;-)<br />
+At runtime I am generating a model language the first time with this line, </p>
+<pre><code>err = [lmGenerator generateLanguageModelFromArray:words withFilesNamed:name forAcousticModelAtPath:[OEAcousticModel pathToModel:voiceLanguage]];
+</code></pre>
+<p>Fine, everything works correctly. Then for needs, I have to generate again because I have new data for the dictionary. So I call:</p>
+<pre><code>BOOL delSuccess=false;
+        delSuccess=[manager removeItemAtPath:self.pathToFirstDynamicallyGeneratedDictionary error:&amp;err2];
+        delSuccess=[manager removeItemAtPath:self.pathToFirstDynamicallyGeneratedLanguageModel error:&amp;err2];
+        
+        NSString *name = @&quot;NameIWantForMyLanguageModelFiles&quot;;
+        NSError *err;
+        
+       
+            err = [lmGenerator generateLanguageModelFromArray:words withFilesNamed:name forAcousticModelAtPath:[OEAcousticModel pathToModel:voiceLanguage]];
+</code></pre>
+<p>and then: </p>
+<pre><code>if([err code] == noErr) {
+            
+            self.pathToFirstDynamicallyGeneratedLanguageModel = [lmGenerator pathToSuccessfullyGeneratedLanguageModelWithRequestedName:@&quot;NameIWantForMyLanguageModelFiles&quot;];
+            self.pathToFirstDynamicallyGeneratedDictionary =  [lmGenerator pathToSuccessfullyGeneratedDictionaryWithRequestedName:@&quot;NameIWantForMyLanguageModelFiles&quot;];
+            
+            
+        } else {
+            NSLog(@&quot;Error: %@&quot;,[err localizedDescription]);
+        }
+                
+        [self.pocketsphinxController changeLanguageModelToFile:self.pathToFirstDynamicallyGeneratedLanguageModel withDictionary:self.pathToFirstDynamicallyGeneratedDictionary];
+</code></pre>
+<p>To have a new recognition model at runtime with new words. </p>
+<p>The question is that this code is running fine for AcousticModelSpanish but with I am using AcousticModelEnglish, then I am getting an exception (BAD_ACCESS) in this line:</p>
+<p><code>err = [lmGenerator generateLanguageModelFromArray:words withFilesNamed:name forAcousticModelAtPath:[OEAcousticModel pathToModel:voiceLanguage]];</code></p>
+<p>Why is working fine in one language only???</p>
+<p>Thanks</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/generatelanguagemodelfromarray-problem/#post-1024201</guid>
+					<title><![CDATA[Reply To: [Resolved] generateLanguageModelFromArray problem]]></title>
+					<link>/forums/topic/generatelanguagemodelfromarray-problem/#post-1024201</link>
+					<pubDate>Tue, 13 Jan 2015 12:31:45 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>Can you turn on all the logging (OpenEarsLogging and verbosePocketsphinx) and show it? It will say what the error is and we can either troubleshoot from that or it will suggest if there is a bug. Make sure that verbosePocketsphinx = TRUE is declared before you start listening.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/generatelanguagemodelfromarray-problem/#post-1024202</guid>
+					<title><![CDATA[Reply To: [Resolved] generateLanguageModelFromArray problem]]></title>
+					<link>/forums/topic/generatelanguagemodelfromarray-problem/#post-1024202</link>
+					<pubDate>Tue, 13 Jan 2015 12:34:28 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>No, sorry, your error is happening before you start listening. OK, here are the troubleshooting steps. First of all, turn on OpenEarsLogging and verboseLanguageModelGenerator. Second, at the crash, while you still see the blue llbd prompt at the bottom of the console, type in the letters &#8220;bt&#8221; and it will show you a backtrace of what the method chain that crashed was, and show it here along with the logging.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/generatelanguagemodelfromarray-problem/#post-1024203</guid>
+					<title><![CDATA[Reply To: [Resolved] generateLanguageModelFromArray problem]]></title>
+					<link>/forums/topic/generatelanguagemodelfromarray-problem/#post-1024203</link>
+					<pubDate>Tue, 13 Jan 2015 12:56:18 +0000</pubDate>
+					<dc:creator>maxgarmar</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Here it goes,<br />
+[749:161996] Starting dynamic language model generation<br />
+## Vocab generated by v2 of the CMU-Cambridge Statistcal<br />
+## Language Modeling toolkit.<br />
+##<br />
+## Includes 21 words ##<br />
+wfreq2vocab : Done.<br />
+text2idngram<br />
+Vocab                  : /var/mobile/Containers/Data/Application/461A3153-5928-4041-832A-D3F5AD119C33/Library/Caches/NameIWantForMyLanguageModelFiles.vocab<br />
+Output idngram         : /var/mobile/Containers/Data/Application/461A3153-5928-4041-832A-D3F5AD119C33/Library/Caches/NameIWantForMyLanguageModelFiles.idngram<br />
+N-gram buffer size     : 10<br />
+Hash table size        : 5000<br />
+Temp directory         : /var/mobile/Containers/Data/Application/461A3153-5928-4041-832A-D3F5AD119C33/Library/Caches/cmuclmtk-Uoiyta<br />
+Max open files         : 20<br />
+FOF size               : 10<br />
+n                      : 3<br />
+Initialising hash table&#8230;<br />
+Reading vocabulary&#8230;<br />
+Allocating memory for the n-gram buffer&#8230;<br />
+Reading text into the n-gram buffer&#8230;<br />
+20,000 n-grams processed for each &#8220;.&#8221;, 1,000,000 for each line.</p>
+<p>Sorting n-grams&#8230;<br />
+Writing sorted n-grams to temporary file /var/mobile/Containers/Data/Application/461A3153-5928-4041-832A-D3F5AD119C33/Library/Caches/cmuclmtk-Uoiyta/1<br />
+Merging 1 temporary files&#8230;</p>
+<p>2-grams occurring:	N times		&gt; N times	Sug. -spec_num value<br />
+      0						     35		     45<br />
+      1				     31		      4		     14<br />
+      2				      3		      1		     11<br />
+      3				      0		      1		     11<br />
+      4				      0		      1		     11<br />
+      5				      0		      1		     11<br />
+      6				      0		      1		     11<br />
+      7				      0		      1		     11<br />
+      8				      0		      1		     11<br />
+      9				      0		      1		     11<br />
+     10				      0		      1		     11</p>
+<p>3-grams occurring:	N times		&gt; N times	Sug. -spec_num value<br />
+      0						     50		     60<br />
+      1				     48		      2		     12<br />
+      2				      2		      0		     10<br />
+      3				      0		      0		     10<br />
+      4				      0		      0		     10<br />
+      5				      0		      0		     10<br />
+      6				      0		      0		     10<br />
+      7				      0		      0		     10<br />
+      8				      0		      0		     10<br />
+      9				      0		      0		     10<br />
+     10				      0		      0		     10<br />
+text2idngram : Done.</p>
+<p>read_wlist_into_siht: a list of 21 words was read from &#8220;/var/mobile/Containers/Data/Application/461A3153-5928-4041-832A-D3F5AD119C33/Library/Caches/NameIWantForMyLanguageModelFiles.vocab&#8221;.<br />
+read_wlist_into_array: a list of 21 words was read from &#8220;/var/mobile/Containers/Data/Application/461A3153-5928-4041-832A-D3F5AD119C33/Library/Caches/NameIWantForMyLanguageModelFiles.vocab&#8221;.<br />
+Unigram was renormalized to absorb a mass of 0.463415<br />
+prob[UNK] = 1e-99<br />
+ARPA-style 3-gram will be written to /var/mobile/Containers/Data/Application/461A3153-5928-4041-832A-D3F5AD119C33/Library/Caches/NameIWantForMyLanguageModelFiles.arpa<br />
+idngram2lm : Done.<br />
+INFO: cmd_ln.c(702): Parsing command line:<br />
+sphinx_lm_convert \<br />
+	-i /var/mobile/Containers/Data/Application/461A3153-5928-4041-832A-D3F5AD119C33/Library/Caches/NameIWantForMyLanguageModelFiles.arpa \<br />
+	-o /var/mobile/Containers/Data/Application/461A3153-5928-4041-832A-D3F5AD119C33/Library/Caches/NameIWantForMyLanguageModelFiles.DMP \<br />
+	-debug 10 </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]	[VALUE]<br />
+-case<br />
+-debug			10<br />
+-help		no	no<br />
+-i			/var/mobile/Containers/Data/Application/461A3153-5928-4041-832A-D3F5AD119C33/Library/Caches/NameIWantForMyLanguageModelFiles.arpa<br />
+-ienc<br />
+-ifmt<br />
+-logbase	1.0001	1.000100e+00<br />
+-mmap		no	no<br />
+-o			/var/mobile/Containers/Data/Application/461A3153-5928-4041-832A-D3F5AD119C33/Library/Caches/NameIWantForMyLanguageModelFiles.DMP<br />
+-oenc		utf8	utf8<br />
+-ofmt			</p>
+<p>INFO: ngram_model_arpa.c(504): ngrams 1=21, 2=34, 3=21<br />
+INFO: ngram_model_arpa.c(137): Reading unigrams<br />
+INFO: ngram_model_arpa.c(543):       21 = #unigrams created<br />
+INFO: ngram_model_arpa.c(197): Reading bigrams<br />
+INFO: ngram_model_arpa.c(561):       34 = #bigrams created<br />
+INFO: ngram_model_arpa.c(562):        6 = #prob2 entries<br />
+INFO: ngram_model_arpa.c(570):        3 = #bo_wt2 entries<br />
+INFO: ngram_model_arpa.c(294): Reading trigrams<br />
+INFO: ngram_model_arpa.c(583):       21 = #trigrams created<br />
+INFO: ngram_model_arpa.c(584):        4 = #prob3 entries<br />
+INFO: ngram_model_dmp.c(518): Building DMP model&#8230;<br />
+INFO: ngram_model_dmp.c(548):       21 = #unigrams created<br />
+INFO: ngram_model_dmp.c(649):       34 = #bigrams created<br />
+INFO: ngram_model_dmp.c(650):        6 = #prob2 entries<br />
+INFO: ngram_model_dmp.c(657):        3 = #bo_wt2 entries<br />
+INFO: ngram_model_dmp.c(661):       21 = #trigrams created<br />
+INFO: ngram_model_dmp.c(662):        4 = #prob3 entries<br />
+2015-01-13 13:52:16.863[749:161996] Done creating language model with CMUCLMTK in 0.106283 seconds.<br />
+2015-01-13 13:52:16.928[749:161996] The word CALAMARES was not found in the dictionary /private/var/mobile/Containers/Bundle/Application/057D1FCC-0E5A-42AE-B064-B8524A54A8A2//AcousticModelEnglish.bundle/LanguageModelGeneratorLookupList.text/LanguageModelGeneratorLookupList.text.<br />
+2015-01-13 13:52:16.928[749:161996] Now using the fallback method to look up the word CALAMARES<br />
+2015-01-13 13:52:16.928[749:161996] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the English phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase. This can also happen if you submit words with punctuation attached – consider removing punctuation from language models or grammars you create before submitting them.<br />
+2015-01-13 13:52:16.928[749:161996] Using convertGraphemes for the word or phrase CALAMARES which doesn&#8217;t appear in the dictionary<br />
+(lldb) bt<br />
+* thread #1: tid = 0x278cc, 0x000000010019e000`feat_copy_into + 24, queue = &#8216;com.apple.main-thread&#8217;, stop reason = EXC_BAD_ACCESS (code=1, address=0x0)<br />
+    frame #0: 0x000000010019e000`feat_copy_into + 24<br />
+    frame #1: 0x00000001001abeb8`utt_init + 32<br />
+    frame #2: 0x000000010019a59c`flite_synth_text + 52<br />
+    frame #3: 0x000000010019a3bc  `___lldb_unnamed_function417$$ + 128<br />
+    frame #4: 0x00000001001af090  `___lldb_unnamed_function551$$  + 1384<br />
+    frame #5: 0x00000001001b1100  `___lldb_unnamed_function564$$  + 468<br />
+    frame #6: 0x00000001001b098c  `___lldb_unnamed_function559$$  + 560<br />
+  * frame #7: 0x000000010011b194  `-[MRSCViewController openEarsRefreshProduct](self=0x000000015551cee0, _cmd=0x000000010042265a) + 1648 at MRSCViewController.m:1969<br />
+    frame #8: 0x0000000100119ec4  `-[MRSCViewController refreshTableNotif:](self=0x000000015551cee0, _cmd=0x0000000100421e98, notification=0x0000000170056aa0) + 4616 at MRSCViewController.m:1850<br />
+    frame #9: 0x0000000182f801e0 CoreFoundation`__CFNOTIFICATIONCENTER_IS_CALLING_OUT_TO_AN_OBSERVER__ + 20<br />
+    frame #10: 0x0000000182ebf370 CoreFoundation`_CFXNotificationPost + 2060<br />
+    frame #11: 0x0000000183dbacc0 Foundation`-[NSNotificationCenter postNotificationName:object:userInfo:] + 72<br />
+    frame #12: 0x0000000100123f98  `-[MRSCAppDelegate storeDidChange:](self=0x0000000170056bc0, _cmd=0x0000000100422d55, notification=0x0000000174245850) + 2000 at MRSCAppDelegate.m:265<br />
+    frame #13: 0x0000000182f801e0 CoreFoundation`__CFNOTIFICATIONCENTER_IS_CALLING_OUT_TO_AN_OBSERVER__ + 20<br />
+    frame #14: 0x0000000182ebf370 CoreFoundation`_CFXNotificationPost + 2060<br />
+    frame #15: 0x0000000183dbacc0 Foundation`-[NSNotificationCenter postNotificationName:object:userInfo:] + 72<br />
+    frame #16: 0x0000000183f7a148 Foundation`-[NSUbiquitousKeyValueStore _postDidChangeNotificationExternalChanges:sourceChangeCount:] + 396<br />
+    frame #17: 0x0000000183f7a538 Foundation`__53-[NSUbiquitousKeyValueStore _syncConcurrentlyForced:]_block_invoke_2 + 256<br />
+    frame #18: 0x0000000100518e30 libdispatch.dylib`_dispatch_call_block_and_release + 24<br />
+    frame #19: 0x0000000100518df0 libdispatch.dylib`_dispatch_client_callout + 16<br />
+    frame #20: 0x000000010051d75c libdispatch.dylib`_dispatch_main_queue_callback_4CF + 1056<br />
+    frame #21: 0x0000000182f916a0 CoreFoundation`__CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 12<br />
+    frame #22: 0x0000000182f8f748 CoreFoundation`__CFRunLoopRun + 1492<br />
+    frame #23: 0x0000000182ebd1f4 CoreFoundation`CFRunLoopRunSpecific + 396<br />
+    frame #24: 0x000000018c00f5a4 GraphicsServices`GSEventRunModal + 168<br />
+    frame #25: 0x00000001877ee784 UIKit`UIApplicationMain + 1488<br />
+    frame #26: 0x00000001001229e0  `main(argc=1, argv=0x000000016fd13a70) + 116 at main.m:16<br />
+    frame #27: 0x000000019404aa08 libdyld.dylib`start + 4<br />
+&lt;strong&gt; [749:161996] Starting dynamic language model generation<br />
+## Vocab generated by v2 of the CMU-Cambridge Statistcal<br />
+## Language Modeling toolkit.<br />
+##<br />
+## Includes 21 words ##<br />
+wfreq2vocab : Done.<br />
+text2idngram<br />
+Vocab                  : /var/mobile/Containers/Data/Application/461A3153-5928-4041-832A-D3F5AD119C33/Library/Caches/NameIWantForMyLanguageModelFiles.vocab<br />
+Output idngram         : /var/mobile/Containers/Data/Application/461A3153-5928-4041-832A-D3F5AD119C33/Library/Caches/NameIWantForMyLanguageModelFiles.idngram<br />
+N-gram buffer size     : 10<br />
+Hash table size        : 5000<br />
+Temp directory         : /var/mobile/Containers/Data/Application/461A3153-5928-4041-832A-D3F5AD119C33/Library/Caches/cmuclmtk-Uoiyta<br />
+Max open files         : 20<br />
+FOF size               : 10<br />
+n                      : 3<br />
+Initialising hash table&#8230;<br />
+Reading vocabulary&#8230;<br />
+Allocating memory for the n-gram buffer&#8230;<br />
+Reading text into the n-gram buffer&#8230;<br />
+20,000 n-grams processed for each &#8220;.&#8221;, 1,000,000 for each line.</p>
+<p>Sorting n-grams&#8230;<br />
+Writing sorted n-grams to temporary file /var/mobile/Containers/Data/Application/461A3153-5928-4041-832A-D3F5AD119C33/Library/Caches/cmuclmtk-Uoiyta/1<br />
+Merging 1 temporary files&#8230;</p>
+<p>2-grams occurring:	N times		&gt; N times	Sug. -spec_num value<br />
+      0						     35		     45<br />
+      1				     31		      4		     14<br />
+      2				      3		      1		     11<br />
+      3				      0		      1		     11<br />
+      4				      0		      1		     11<br />
+      5				      0		      1		     11<br />
+      6				      0		      1		     11<br />
+      7				      0		      1		     11<br />
+      8				      0		      1		     11<br />
+      9				      0		      1		     11<br />
+     10				      0		      1		     11</p>
+<p>3-grams occurring:	N times		&gt; N times	Sug. -spec_num value<br />
+      0						     50		     60<br />
+      1				     48		      2		     12<br />
+      2				      2		      0		     10<br />
+      3				      0		      0		     10<br />
+      4				      0		      0		     10<br />
+      5				      0		      0		     10<br />
+      6				      0		      0		     10<br />
+      7				      0		      0		     10<br />
+      8				      0		      0		     10<br />
+      9				      0		      0		     10<br />
+     10				      0		      0		     10<br />
+text2idngram : Done.</p>
+<p>read_wlist_into_siht: a list of 21 words was read from &#8220;/var/mobile/Containers/Data/Application/461A3153-5928-4041-832A-D3F5AD119C33/Library/Caches/NameIWantForMyLanguageModelFiles.vocab&#8221;.<br />
+read_wlist_into_array: a list of 21 words was read from &#8220;/var/mobile/Containers/Data/Application/461A3153-5928-4041-832A-D3F5AD119C33/Library/Caches/NameIWantForMyLanguageModelFiles.vocab&#8221;.<br />
+Unigram was renormalized to absorb a mass of 0.463415<br />
+prob[UNK] = 1e-99<br />
+ARPA-style 3-gram will be written to /var/mobile/Containers/Data/Application/461A3153-5928-4041-832A-D3F5AD119C33/Library/Caches/NameIWantForMyLanguageModelFiles.arpa<br />
+idngram2lm : Done.<br />
+INFO: cmd_ln.c(702): Parsing command line:<br />
+sphinx_lm_convert \<br />
+	-i /var/mobile/Containers/Data/Application/461A3153-5928-4041-832A-D3F5AD119C33/Library/Caches/NameIWantForMyLanguageModelFiles.arpa \<br />
+	-o /var/mobile/Containers/Data/Application/461A3153-5928-4041-832A-D3F5AD119C33/Library/Caches/NameIWantForMyLanguageModelFiles.DMP \<br />
+	-debug 10 </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]	[VALUE]<br />
+-case<br />
+-debug			10<br />
+-help		no	no<br />
+-i			/var/mobile/Containers/Data/Application/461A3153-5928-4041-832A-D3F5AD119C33/Library/Caches/NameIWantForMyLanguageModelFiles.arpa<br />
+-ienc<br />
+-ifmt<br />
+-logbase	1.0001	1.000100e+00<br />
+-mmap		no	no<br />
+-o			/var/mobile/Containers/Data/Application/461A3153-5928-4041-832A-D3F5AD119C33/Library/Caches/NameIWantForMyLanguageModelFiles.DMP<br />
+-oenc		utf8	utf8<br />
+-ofmt			</p>
+<p>INFO: ngram_model_arpa.c(504): ngrams 1=21, 2=34, 3=21<br />
+INFO: ngram_model_arpa.c(137): Reading unigrams<br />
+INFO: ngram_model_arpa.c(543):       21 = #unigrams created<br />
+INFO: ngram_model_arpa.c(197): Reading bigrams<br />
+INFO: ngram_model_arpa.c(561):       34 = #bigrams created<br />
+INFO: ngram_model_arpa.c(562):        6 = #prob2 entries<br />
+INFO: ngram_model_arpa.c(570):        3 = #bo_wt2 entries<br />
+INFO: ngram_model_arpa.c(294): Reading trigrams<br />
+INFO: ngram_model_arpa.c(583):       21 = #trigrams created<br />
+INFO: ngram_model_arpa.c(584):        4 = #prob3 entries<br />
+INFO: ngram_model_dmp.c(518): Building DMP model&#8230;<br />
+INFO: ngram_model_dmp.c(548):       21 = #unigrams created<br />
+INFO: ngram_model_dmp.c(649):       34 = #bigrams created<br />
+INFO: ngram_model_dmp.c(650):        6 = #prob2 entries<br />
+INFO: ngram_model_dmp.c(657):        3 = #bo_wt2 entries<br />
+INFO: ngram_model_dmp.c(661):       21 = #trigrams created<br />
+INFO: ngram_model_dmp.c(662):        4 = #prob3 entries<br />
+2015-01-13 13:52:16.863  [749:161996] Done creating language model with CMUCLMTK in 0.106283 seconds.<br />
+2015-01-13 13:52:16.928  [749:161996] The word CALAMARES was not found in the dictionary /private/var/mobile/Containers/Bundle/Application/057D1FCC-0E5A-42AE-B064-B8524A54A8A2/ /AcousticModelEnglish.bundle/LanguageModelGeneratorLookupList.text/LanguageModelGeneratorLookupList.text.<br />
+2015-01-13 13:52:16.928  [749:161996] Now using the fallback method to look up the word CALAMARES<br />
+2015-01-13 13:52:16.928  [749:161996] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the English phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase. This can also happen if you submit words with punctuation attached – consider removing punctuation from language models or grammars you create before submitting them.<br />
+2015-01-13 13:52:16.928  [749:161996] Using convertGraphemes for the word or phrase CALAMARES which doesn&#8217;t appear in the dictionary<br />
+(lldb) bt<br />
+* thread #1: tid = 0x278cc, 0x000000010019e000  `feat_copy_into + 24, queue = &#8216;com.apple.main-thread&#8217;, stop reason = EXC_BAD_ACCESS (code=1, address=0x0)<br />
+    frame #0: 0x000000010019e000  `feat_copy_into + 24<br />
+    frame #1: 0x00000001001abeb8  `utt_init + 32<br />
+    frame #2: 0x000000010019a59c  `flite_synth_text + 52<br />
+    frame #3: 0x000000010019a3bc  `___lldb_unnamed_function417$$  + 128<br />
+    frame #4: 0x00000001001af090  `___lldb_unnamed_function551$$  + 1384<br />
+    frame #5: 0x00000001001b1100  `___lldb_unnamed_function564$$  + 468<br />
+    frame #6: 0x00000001001b098c  `___lldb_unnamed_function559$$  + 560<br />
+  * frame #7: 0x000000010011b194  `-[MRSCViewController openEarsRefreshProduct](self=0x000000015551cee0, _cmd=0x000000010042265a) + 1648 at MRSCViewController.m:1969<br />
+    frame #8: 0x0000000100119ec4  `-[MRSCViewController refreshTableNotif:](self=0x000000015551cee0, _cmd=0x0000000100421e98, notification=0x0000000170056aa0) + 4616 at MRSCViewController.m:1850<br />
+    frame #9: 0x0000000182f801e0 CoreFoundation`__CFNOTIFICATIONCENTER_IS_CALLING_OUT_TO_AN_OBSERVER__ + 20<br />
+    frame #10: 0x0000000182ebf370 CoreFoundation`_CFXNotificationPost + 2060<br />
+    frame #11: 0x0000000183dbacc0 Foundation`-[NSNotificationCenter postNotificationName:object:userInfo:] + 72<br />
+    frame #12: 0x0000000100123f98  `-[MRSCAppDelegate storeDidChange:](self=0x0000000170056bc0, _cmd=0x0000000100422d55, notification=0x0000000174245850) + 2000 at MRSCAppDelegate.m:265<br />
+    frame #13: 0x0000000182f801e0 CoreFoundation`__CFNOTIFICATIONCENTER_IS_CALLING_OUT_TO_AN_OBSERVER__ + 20<br />
+    frame #14: 0x0000000182ebf370 CoreFoundation`_CFXNotificationPost + 2060<br />
+    frame #15: 0x0000000183dbacc0 Foundation`-[NSNotificationCenter postNotificationName:object:userInfo:] + 72<br />
+    frame #16: 0x0000000183f7a148 Foundation`-[NSUbiquitousKeyValueStore _postDidChangeNotificationExternalChanges:sourceChangeCount:] + 396<br />
+    frame #17: 0x0000000183f7a538 Foundation`__53-[NSUbiquitousKeyValueStore _syncConcurrentlyForced:]_block_invoke_2 + 256<br />
+    frame #18: 0x0000000100518e30 libdispatch.dylib`_dispatch_call_block_and_release + 24<br />
+    frame #19: 0x0000000100518df0 libdispatch.dylib`_dispatch_client_callout + 16<br />
+    frame #20: 0x000000010051d75c libdispatch.dylib`_dispatch_main_queue_callback_4CF + 1056<br />
+    frame #21: 0x0000000182f916a0 CoreFoundation`__CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 12<br />
+    frame #22: 0x0000000182f8f748 CoreFoundation`__CFRunLoopRun + 1492<br />
+    frame #23: 0x0000000182ebd1f4 CoreFoundation`CFRunLoopRunSpecific + 396<br />
+    frame #24: 0x000000018c00f5a4 GraphicsServices`GSEventRunModal + 168<br />
+    frame #25: 0x00000001877ee784 UIKit`UIApplicationMain + 1488<br />
+    frame #26: 0x00000001001229e0  `main(argc=1, argv=0x000000016fd13a70) + 116 at main.m:16<br />
+    frame #27: 0x000000019404aa08 libdyld.dylib`start + 4</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/generatelanguagemodelfromarray-problem/#post-1024205</guid>
+					<title><![CDATA[Reply To: [Resolved] generateLanguageModelFromArray problem]]></title>
+					<link>/forums/topic/generatelanguagemodelfromarray-problem/#post-1024205</link>
+					<pubDate>Tue, 13 Jan 2015 13:11:14 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, that&#8217;s a new one for me. It is the fallback language generator for English which is crashing (for English, the fallback generator actually uses Flite so that is something going wrong with an instance of OEFliteController). I think that this isn&#8217;t a fundamental issue with generating a fallback pronunciation for CALAMARES since CALAMARES can be generated and recognized without any issue using the sample app. Questions:</p>
+<p>1. Does it happen if you generate CALAMARES in the first model and don&#8217;t generate a second model?<br />
+2. Does it happen if you use different naming for the second model rather than removing the first model files?<br />
+3. Does it happen if you make OELanguageModelGenerator a property of your view controller and alloc/init it in viewDidLoad (or similar) rather than using it as a method variable?<br />
+4. #3 is about whether ARC is maybe releasing OEFliteController before it&#8217;s finished – is there anything else about the context you can see which might cause this? So far I&#8217;ve never seen that happen, but it would be a bug if it were happening.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/generatelanguagemodelfromarray-problem/#post-1024206</guid>
+					<title><![CDATA[Reply To: [Resolved] generateLanguageModelFromArray problem]]></title>
+					<link>/forums/topic/generatelanguagemodelfromarray-problem/#post-1024206</link>
+					<pubDate>Tue, 13 Jan 2015 13:29:26 +0000</pubDate>
+					<dc:creator>maxgarmar</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ok answering&#8230;</p>
+<p>1. I can&#8217;t test it because I need the whole words again, does not make sense generate a second model without a word, even more, any time I run the app the word with the problem is changing, I meant, is not always CALAMARES, it is a random word every time.<br />
+2. No, if I use a different name it is running without exception. But this is crazy generating new names anytime.<br />
+3. I tried making it a property of my ViewController and setting it just in viewDidLoad but does not help/solve.<br />
+4. I don&#8217;t see anything strange causing this. In addition as I told you with Spanish language it does not happen, and I did this before with 1.x version and it was running well in English.</p>
+<p>Thanks</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/generatelanguagemodelfromarray-problem/#post-1024208</guid>
+					<title><![CDATA[Reply To: [Resolved] generateLanguageModelFromArray problem]]></title>
+					<link>/forums/topic/generatelanguagemodelfromarray-problem/#post-1024208</link>
+					<pubDate>Tue, 13 Jan 2015 13:52:33 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You do have to generate new names – the name is used by pocketsphinx in order to make the switch and it can&#8217;t be the same as the previously-used name. I would expect this to silently cause issues with your Spanish model but just not cause a crash. I would expect it to work fine if you just use two different names but let me know if that isn&#8217;t the case.</p>
+<p>Can you clarify this:</p>
+<blockquote><p>1. I can’t test it because I need the whole words again, does not make sense generate a second model without a word, even more, any time I run the app the word with the problem is changing, I meant, is not always CALAMARES, it is a random word every time.</p></blockquote>
+<p>I was asking you to tell me if it happens when you generate one model with the crashing word in it but not two models – there shouldn&#8217;t be any problem testing this, although it is already clear from your follow-up information about different words causing the crash that the word is definitely not at issue.</p>
+<blockquote><p>
+4. I don’t see anything strange causing this. In addition as I told you with Spanish language it does not happen, and I did this before with 1.x version and it was running well in English.
+</p></blockquote>
+<p>I had many reports of issues switching between identically-named models in English in 1.x.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/generatelanguagemodelfromarray-problem/#post-1024209</guid>
+					<title><![CDATA[Reply To: [Resolved] generateLanguageModelFromArray problem]]></title>
+					<link>/forums/topic/generatelanguagemodelfromarray-problem/#post-1024209</link>
+					<pubDate>Tue, 13 Jan 2015 14:03:10 +0000</pubDate>
+					<dc:creator>maxgarmar</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>But the problem is that are not just two models. I am recreating the model anytime I add a new word from user input or is coming from iCloud. The models are increasing from user inputs in the application. They are not fixed or so.<br />
+So in that case I would need a new name for every word the user is adding.<br />
+That&#8217;s what I meant when I said &#8220;crazy&#8221;.</p>
+<p>Could you guide me to make a workaround or something ?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/generatelanguagemodelfromarray-problem/#post-1024210</guid>
+					<title><![CDATA[Reply To: [Resolved] generateLanguageModelFromArray problem]]></title>
+					<link>/forums/topic/generatelanguagemodelfromarray-problem/#post-1024210</link>
+					<pubDate>Tue, 13 Jan 2015 14:06:46 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, &#8220;crazy&#8221; is maybe not the most informative word to use as a qualitative description :) . Can you replicate it with the sample app? I&#8217;ll happily take a look at a minimal replication case and get back to you with either a workaround or maybe an improvement.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/generatelanguagemodelfromarray-problem/#post-1024211</guid>
+					<title><![CDATA[Reply To: [Resolved] generateLanguageModelFromArray problem]]></title>
+					<link>/forums/topic/generatelanguagemodelfromarray-problem/#post-1024211</link>
+					<pubDate>Tue, 13 Jan 2015 15:27:12 +0000</pubDate>
+					<dc:creator>maxgarmar</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ok, sorry for that senseless word, I wanted to say that is crazy to create a new language model with a different name for every word the user introduce in the app. Anyway I don&#8217;t know how I did the test before but I did not do it correctly because you are right with:</p>
+<blockquote><p>3. Does it happen if you make OELanguageModelGenerator a property of your view controller and alloc/init it in viewDidLoad (or similar) rather than using it as a method variable?</p></blockquote>
+<p>If the OELanguageModelGenerator is created just one in viewDidLoad and not allocated again, it is not failing.</p>
+<p>Many thanks again, Halle. I hope I don&#8217;t have to disturb you anymore</p>
+<p>You can close this thread also</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

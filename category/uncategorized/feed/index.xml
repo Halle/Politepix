@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>Uncategorized &#8211; Politepix</title>
+	<atom:link href="/category/uncategorized/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>iOS Frameworks for speech recognition, text to speech and more</description>
+	<lastBuildDate>Tue, 01 Nov 2016 11:43:12 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.5.2</generator>
+<site xmlns="com-wordpress:feed-additions:1">206848719</site>	<item>
+		<title>Swift 3 support is now complete!</title>
+		<link>/2016/10/22/swift-3-support-is-now-complete/</link>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Sat, 22 Oct 2016 14:51:35 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">/?p=1031154</guid>
+
+					<description><![CDATA[Just one last quick note that Swift 3 support for OpenEars and all of its plugins is complete: you can now use a Swift 3 sample app found in the main distribution, or use custom Swift 3 tutorials for OpenEars or any of its plugins, and as of today, the downloadable and online documentation for [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Just one last quick note that Swift 3 support for OpenEars and all of its plugins is complete: you can now use a Swift 3 sample app found in the <a href="/openears">main distribution</a>, or use <a href="/openearsswift-tutorial/">custom Swift 3 tutorials</a> for OpenEars or any of its plugins, and as of today, the downloadable and online documentation for OpenEars and all plugins also has the Swift 3 versions of all function calls included, so when you navigate to the Documentation folder in your OpenEars distribution or plugin and double-click the webloc file there, the fresh docs will be downloaded for you, or you can read them on the pages on this site. </p>
+<p>Some of the extended usage examples in the documentation files are in Objective-C due to my having some lingering questions about how to handle the doubled-up example code visually, so please visit the <a href="https://politepix.com/openearsswift-tutorial/">tutorial tool</a> in order to receive the same information in Swift 3 only. Please feel free to seek Swift 3 support for OpenEars in the <a href="/forums">forums</a>, and I look forward to seeing what is made in Swift!</p>
+<p>Thanks for your patience,</p>
+<p>Halle</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">1031154</post-id>	</item>
+		<item>
+		<title>Swift 3 support part 2: tutorials!</title>
+		<link>/2016/10/21/swift-3-support-part-2-tutorials/</link>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Fri, 21 Oct 2016 16:10:34 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">/?p=1031120</guid>
+
+					<description><![CDATA[Greetings, This is just a quick second update that the second part of Swift 3 support is complete: the OpenEars distribution now has a complete Swift 3 version of the sample app for you to work with and it has a complete Swift 3 custom tutorial tool. You can download the sample app at /openears [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Greetings,</p>
+<p>This is just a quick second update that the second part of Swift 3 support is complete: the OpenEars distribution now has a complete Swift 3 version of the sample app for you to work with <em>and</em> it has a complete Swift 3 custom tutorial tool. You can download the sample app at <a href="/openears">/openears</a> and the Swift 3 sample app is found in the folder titled OpenEarsSampleAppSwift at the top level of the distribution, and you can use the custom tutorial tool at <a href="https://politepix.com/openearsswift-tutorial/">https://politepix.com/openearsswift-tutorial/</a>. Over the next month, Swift 3 support part 3 (full Swift 3 examples in the documentation) of the full Swift 3 support process will roll out, at which point Swift 3 will have support parity with Objective-C. Thanks for your patience, bring any questions over to the forums, and have fun!</p>
+<p>-Halle</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">1031120</post-id>	</item>
+		<item>
+		<title>Swift 3 support part 1: sample app</title>
+		<link>/2016/10/20/swift-3-support-part-1-sample-app/</link>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Thu, 20 Oct 2016 15:46:29 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">/?p=1031109</guid>
+
+					<description><![CDATA[Greetings, This is just a quick update that the first part of Swift 3 support is complete: the OpenEars distribution now has a complete Swift 3 version of the sample app for you to work with. You can download it at /openears and the Swift 3 sample app is found in the folder titled OpenEarsSampleAppSwift [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Greetings,</p>
+<p>This is just a quick update that the first part of Swift 3 support is complete: the OpenEars distribution now has a complete Swift 3 version of the sample app for you to work with. You can download it at <a href="/openears">/openears</a> and the Swift 3 sample app is found in the folder titled OpenEarsSampleAppSwift at the top level of the distribution. Over the next month, Swift 3 support part 2 (full Swift 3 examples in the documentation) and Swift 3 support part 3 (full Swift 3 examples in the tutorial tool) of the full Swift 3 support process will be rolling out, at which point Swift 3 will have support parity with Objective-C. Thanks for your patience, bring any questions over to the <a href="/forums">forums</a>, and have fun!</p>
+<p>-Halle</p>
+<p>Update 10/21/16: the tutorials are out now too, <a href="/2016/10/21/swift-3-support-part-2-tutorials/">read more</a> or go directly to the <a href="/openearsswift-tutorial/">Swift 3 custom tutorial tool</a>.</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">1031109</post-id>	</item>
+		<item>
+		<title>OpenEars and Swift</title>
+		<link>/2016/05/21/openears-and-swift/</link>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Sat, 21 May 2016 13:44:19 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">/?p=1030366</guid>
+
+					<description><![CDATA[UPDATE: Swift 3 support is now available. Hello again! I wanted to share some information about OpenEars Platform Swift support. I like Swift, and OpenEars works well with Swift (there are self-supported discussions in the OpenEars forums on how to use OpenEars with Swift and I&#8217;ve heard of no issues related to the framework – [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p><em>UPDATE: Swift 3 support is <a href="/2016/10/22/swift-3-support-is-now-complete/">now available</a>.</em></p>
+<p>Hello again! I wanted to share some information about OpenEars Platform Swift support. I like Swift, and OpenEars works well with Swift (there are self-supported discussions in the OpenEars forums on how to use OpenEars with Swift and I&#8217;ve heard of no issues related to the framework – search for the keyword &#8216;Swift&#8217; in the forums in order to read how to get started with your Swift 2.x projects), but as some OpenEars-using developers have noticed, I&#8217;ve been conservative about jumping in and dedicating the same support/documentation/packaging resources that I currently make available for Objective-C to Swift while its IDE stability and syntax was in flux and its tooling and debug capabilities were still emerging.</p>
+<p>This has only been for practical reasons – support is very important to me, and time for everything related to support is in limited supply, so I wanted to make sure that supporting Swift simultaneously with Objective-C wouldn&#8217;t overextend support resources in a way that might reduce support quality across the board. This was particularly important because the already-shipped or nearly-shipping Objective-C apps which have tended to represent the majority of projects were consequently the support cases where the most was at stake for the most developers. </p>
+<p>Due to the exhilarating community participation since the open-sourcing of Swift and the great communication out of the Swift team, I&#8217;m confident that supporting Swift in the future isn&#8217;t going to be a risk for giving good support to Objective-C projects, so I&#8217;m happy to announce that OpenEars and its plugins will receive official Swift support from Politepix for Swift 3 at the time of its release, including docs, tutorial, sample app, Swift-ready packaging, and forum support. As always, I hope this will help you make even more delightful speech-enabled apps!</p>
+<p>-Halle</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">1030366</post-id>	</item>
+		<item>
+		<title>OpenEars 2.0 and version 2.0 of all plugins out now!</title>
+		<link>/2014/12/05/openears-2-0-and-version-2-0-of-all-plugins-out-now/</link>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Fri, 05 Dec 2014 18:20:36 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">/?p=1023193</guid>
+
+					<description><![CDATA[Today I am very pleased to be able to announce the shipping of OpenEars 2.0, and the entire OpenEars plugin platform 2.0. If you are a licensed user, this is a free upgrade for you. Links and the upgrade guide can be found at the bottom of this post if you want to jump down [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Today I am very pleased to be able to announce the shipping of OpenEars 2.0, and the entire OpenEars plugin platform 2.0. If you are a licensed user, this is a free upgrade for you. Links and the upgrade guide can be found at the bottom of this post if you want to jump down and get started.</p>
+<p>This year, the <a href="https://cmusphinx.sourceforge.net/">CMU Sphinx project</a> did a major revision of their Sphinxbase and Pocketsphinx projects in order to add noise robustness and change their voice activity detection algorithm, among many other cool new features. This was brilliant news, and the work on those features has been deeply impressive to see ship. Many OpenEars-using developers wanted those new noise/VAD features ASAP, and with good reason.</p>
+<p>It had an interesting effect on OpenEars&#8217; own development. The very first problem I solved when originally designing this framework was making the calibration and voice activity detection system work with Cocoa Touch audio, which wasn&#8217;t an altogether simple thing on the more resource-constrained devices and with the somewhat sparsely-documented state of the low-latency audio APIs for iOS development at that time. More so since the fundamental design of iOS audio was quite different from Linux audio that those CMU libraries were largely used with and developed with. The other capabilities of OpenEars came after these design decisions based on the original calibration and voice activity detection, so most code related to audio or engine usage was designed with deference to those features.</p>
+<p>When I sat down this summer to update OpenEars to use the new voice activity detection and noise robustness code, I saw that it was different structurally and didn&#8217;t mesh with any of those early decisions anymore, or the ripple-effect decisions that followed them, and that there were two ways I could look at the implications of that: either a) an obligation to add a lot of new scaffolding to attempt to force a similar result from a different design, or b) an opportunity to revisit my original decisions in light of four more years of programming experience.</p>
+<p>No difficult choice there – this is our craft, and I&#8217;m not interested in adding any more detritus to our collective workspace.</p>
+<p>So, the first thing this update adds is functional improvements across the board: it adds noise robustness, better voice activity detection, higher accuracy due to moving to 16k acoustic models with no loss in performance due to greater optimization, and there is now no calibration time needed at all (really, calibration is gone and recognition just starts immediately – this is a fantastic new capability from CMU). The new VAD required a complete rewrite for RapidEars as well, so I applied the same process to RapidEars, which is now more accurate but uses far less CPU under heavy usage, while benefiting from a simplified API. As far as I have been able to verify, there have also been improvements in speech recognition coexistence with video objects, but that is a work in progress and I&#8217;ll be interested in hearing your real-world results with video plus speech recognition.</p>
+<p>The second benefit of being able to revisit the library design decisions has been in code quality:</p>
+<p>• OpenEars code is now using only the most-modern-possible Cocoa Touch APIs and the most-modern-possible Objective-C for the iOS versions it supports.<br />
+• OpenEars now has 6947 lines of code versus the previous 10917, which is 63% of the previous amount of code despite having multiple new features.<br />
+• The majority of code was removed from the areas most likely to be implicated in an issue, with the predictable improvement to the debugging process.<br />
+• The OpenEars classes now produce no general or static analysis warnings, and have no warning suppression (the dependencies, quite unavoidably and normally for a codebase representing multiple decades of development, raise 32-bit implicit conversion warnings and coding-style static analysis warnings, so 32-bit implicit conversion warnings are turned off in build settings after verifying that the OpenEars classes do not raise them, and there are three dependency source files which have the -w flag – if you notice any other warning suppression in OpenEars, let me know since it&#8217;s an oversight).<br />
+• Consequently, OpenEars is now able to ship with the &#8220;Treat warnings as errors&#8221; build setting selected.<br />
+• OpenEars is now ARC rather than manually memory-managed to allow the best possible optimization in LLVM<br />
+• OpenEars continues to support 3 current operating systems (iOS 6.1 through 8.x) so it continues to support more than 98% of installs.<br />
+• OpenEars now ships with several of my asynchronous XCTests which you can also use as examples for creating your own asynchronous XCTests for speech recognition (my actual XCTest testbed is a lot larger but it depends on some audio files and code I don&#8217;t have permission to ship, as well as the plugin tests). There are also some fuzzing tests using my cross-thread fuzzing tool <a href="https://github.com/Halle/HWHorrorShow">HWHorrorShow</a> if you&#8217;re into that sort of thing.<br />
+• OpenEars now follows platform guidelines and uses a class prefix (OE) since there were already occasional conflicts coming up with class names such as AudioSessionManager as the framework was more widely-adopted (and it&#8217;s just good citizenship). This mean you need to do some renaming when integrating 2.0, but I figured that a major version release was the only time it was going to be acceptable to address, so I bit the bullet and did it with this release. To reduce the pain from the class naming changes I have made a <a href="/upgradeguide">step-by-step upgrade guide</a> which also covers some API changes in 2.0.</p>
+<p>As you can see, this is a big update – it affects a lot of visible things and invisible things and that means some issues are guaranteed, so please upgrade using the <a href="/upgradeguide">upgrade guide</a> or do a new install from the updated <a href="/openears/tutorial">tutorial tool</a> and let me know in the <a href="/forums">forums</a> about any problems, questions, or upgrade/installation troubles so I can help you.</p>
+<p>Download links:</p>
+<p><a href="/openears">OpenEars 2.0</a><br />
+<a href="/neatspeech">NeatSpeech 2.0</a><br />
+<a href="/rapidears">RapidEars 2.0</a><br />
+<a href="/rejecto">Rejecto 2.0</a><br />
+<a href="/ruleorama">RuleORama 2.0</a><br />
+<a href="/savethatwave">SaveThatWave 2.0</a></p>
+<p>Please <a href="/upgradeguide">read</a> the <a href="/upgradeguide">upgrade guide</a> covering naming changes and API changes (you can&#8217;t upgrade without it).</p>
+<p>Thank you for choosing OpenEars, apologies in advance for any bumps getting into the new version, and I hope that the results of all the work that has gone into this huge update will delight you and the users of your apps.</p>
+<p>All the best,</p>
+<p>Halle</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">1023193</post-id>	</item>
+		<item>
+		<title>OpenEars in Space!</title>
+		<link>/2014/07/07/openears-in-space/</link>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Mon, 07 Jul 2014 14:12:45 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">/?p=1021869</guid>
+
+					<description><![CDATA[When I was but a wee geeklet, my hands-down favorite museum was the Boston Museum of Science, Where It&#8217;s Fun to Find Out.1 Although &#8220;Delightful&#8221; may not be the most common response to &#8220;Early-80s Boston&#8221; on a word association test2, the Museum of Science was a garden of both earthly and unearthly delights. There was [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p><span style="text-transform:uppercase; font-size:110%;">When I was but</span> a wee geeklet, my hands-down favorite museum was the <a href="https://www.youtube.com/watch?v=VA3ndE42iJA">Boston Museum of Science, Where It&#8217;s Fun to Find Out</a>.<sup style="font-size:110%;"><a href="#footnote1">1</a></sup> Although &#8220;Delightful&#8221; may not be the most common response to &#8220;Early-80s Boston&#8221; on a word association test<sup style="font-size:110%;"><a href="#footnote2">2</a></sup>, the Museum of Science was a garden of both earthly and unearthly delights. There was a multistory Tyrannosaurus Rex which would freak you out properly every time<sup style="font-size:110%;"><a href="#footnote3">3</a></sup>, there was the world&#8217;s largest Van de Graaff generator which allowed you to touch actual lightning and live to brag about it, and there was The Only Exhibit That Mattered: the Space Capsule. The Space Capsule was a life-size replica of an Apollo capsule that you could climb into, hear broadcasts from the missions, and operate to the full extent of your imagination and the imagination of whichever random little kid had inevitably gotten in there with you. I loved the space capsule so much, and I naturally wanted to go to space, because it was space!</p>
+<p>Still: I was quite compact, and even I noticed that the clearance inside the capsule was a little tight. Perhaps too tight? As exciting as it was to get into the capsule, it was always a relief to climb back out again into the big, airy museum room after the mission was completed. It was a good exhibit; without laying it on too thick, it managed to communicate that space travel was heroic not only because it was an adventure, but also because it was a sacrifice. And like nearly all children who played astronaut, I grew up into an earthbound adult without noticing it, other than in the rare moments that something illuminated that stored-away dream.</p>
+<p>I mention this just to explain why I was particularly excited when I originally saw a <a href="https://github.com/nasa/NTL-ISS-Food-Intake-Tracker">repository</a> under <a href="https://github.com/nasa">NASA&#8217;s GitHub account</a> using OpenEars. I got some time to catch up with <a href="https://twitter.com/RSIAL">Rashid Sial</a> of TopCoder, and he filled me in on the details. </p>
+<p><a href="https://www.nasa.gov/coeci/ntl/">The NASA Tournament Lab</a> <a href="https://github.com/nasa/NTL-ISS-Food-Intake-Tracker">International Space Station Food Intake Tracker</a> project was originally a 2013 contest conducted by the NASA Tournament Lab, under contract with Harvard University and built by the TopCoder community, to develop an iPad app that the astronauts and cosmonauts on the International Space Station could use to track their food intake, with OpenEars including the <a href="https://cmusphinx.sourceforge.net/">CMU Sphinx project</a> offered as one handsfree interface option for participating developers. From the repository README.md: </p>
+<p>&#8220;Astronauts, Cosmonauts, and Space Cadets (okay, we made the last one up), all face huge technical challenges, are performing scientific experiments on a daily basis, and are working hard to stay fit. One of the key aspects of this is working to understand how microgravity affects their bodies, and how to best keep them healthy. And as part of both space medicine and science, we need to understand what they’ve eaten, and how much they’ve eaten.&#8221;</p>
+<p>The amazing news: Rashid told me that now that the contest is over, the app is actually going to ship. To the International Space Station. </p>
+<p><img decoding="async" src="https://i0.wp.com/www.politepix.com/wp-content/uploads/schaal.gif?ssl=1" data-recalc-dims="1"></p>
+<p>Tentatively scheduled for 2015, the International Space Station Food Intake Tracker from NASA Tournament Lab is another great app made with OpenEars and I&#8217;m, ahem, <strong>over the moon</strong> to have been able to contribute. Thank you Rashid and the NASA Tournament Lab for letting me know about this awesome project!</p>
+<p>-Halle</p>
+<p><a id="footnote1"><sup style="font-size:110%;">1</sup></a>This 1970s-vintage ad is such an interesting example of the fallacy that progress moves in a straight line. Check out how un-self-conscious it is about the assertive little girl with a pack of questions and her no-prob-we&#8217;ll-go-learn-some-science-together dad.</p>
+<p><a id="footnote2"><sup style="font-size:110%;">2</sup></a>Unless you were a sports fan!</p>
+<p><a id="footnote3"><sup style="font-size:110%;">3</sup></a>If you were lucky enough to be little while we still were laboring under the misapprehension that T. Rex stood upright, that is. They&#8217;ve now fixed the posture of the T. Rex in the museum so it is scientifically accurate, but it now fits entirely in a single story so I&#8217;m afraid the thrill factor is significantly reduced.</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">1021869</post-id>	</item>
+		<item>
+		<title>OpenEars 1.7: introducing dynamic grammar generation</title>
+		<link>/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/</link>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Thu, 10 Apr 2014 15:29:25 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">/?p=1020781</guid>
+
+					<description><![CDATA[Last September I was at iOSDevUK, which is a lovely iOS developer conference on the Welsh coast at the University of Aberystwyth, and a friend asked me what the next feature for OpenEars would be after Spanish support. I said that before I added anything else, I needed to get rid of technical debt and [&#8230;]]]></description>
+										<content:encoded><![CDATA[<div class="woo-sc-box  normal   ">UPDATE: The CMU Sphinx project of Carnegie Mellon University&#8217;s Speech department seems to <a href="https://cmusphinx.sourceforge.net/2014/05/openears-introduces-easy-grammars-for-pocketsphinx/">like the new grammar format!</a> Thanks!</div>
+<p>Last September I was at <a href="https://www.iosdevuk.com/">iOSDevUK</a>, which is a lovely iOS developer conference on the Welsh coast at the University of Aberystwyth, and a friend asked me what the next feature for OpenEars would be after Spanish support. </p>
+<p>I said that before I added anything else, I needed to get rid of technical debt and fix all the known bugs in OpenEars and the plugins, and unbeknownst to me there was also a 64-bit architecture change looming on the horizon. So, in reality it ended up being &#8220;get everything 64-bit functional, pay off some technical debt, fix all the known bugs, then fix the bugs I introduced while fixing the bugs.&#8221; That last one was OpenEars 1.66 that came out last week.</p>
+<p>There was another answer I wanted to give because there&#8217;s been something nagging at me for about the last year, but it was very clear that after all of the new technology additions in 2012 and 2013 to Politepix&#8217;s line it was time to do some maintenance and make sure things would be sustainable.</p>
+<p>But something really <b>was</b> nagging at me. </p>
+<p>Since February 2013 I&#8217;ve been extremely lucky to get to give some talks at industry conferences about speech recognition and speech synthesis as a human interface for mobile apps. </p>
+<p>In my talk I always mention that for an app with a small vocabulary, one element of good interface design is deciding whether you want to use a probability-based language model such as an ARPA model, or a rules-based grammar such as a JSGF grammar, because choosing the right one for your use case has a large potential for improving user experience. This is a reasonable enough observation because Pocketsphinx supports the JSGF format so OpenEars does as well. </p>
+<p>However, I always felt a bit shabby pointing this out and then leaving developers to write their own JSGF, which is a relatively complex and unpretty format – with imposing documentation – when you write it by hand, and which also has a few minor differences between the complete format definition and the implementation in OpenEars that can lead to difficult troubleshooting, while ARPA probability model generation in OpenEars is as easy as putting NSStrings in an NSArray.</p>
+<p>So, since last September, a little bit here and a little bit there in between the important bugfix and architecture releases, I&#8217;ve been working on that thing that was nagging at me: dynamic generation of JSGF grammars using clear, human-friendly language and NSObjects. Today I am very happy to announce the first version of this feature in <a href="/openears">OpenEars 1.7</a>.</p>
+<p>You&#8217;ll find a new method in LanguageModelGenerator which is a counterpart to this ARPA-generation method:</p>
+<pre>
+- (NSError *) generateLanguageModelFromArray:(NSArray *)languageModelArray withFilesNamed:(NSString *)fileName forAcousticModelAtPath:(NSString *)acousticModelPath;
+</pre >
+
+and the new method is called:
+
+<pre>
+- (NSError *) generateGrammarFromDictionary:(NSDictionary *)grammarDictionary withFilesNamed:(NSString *)fileName forAcousticModelAtPath:(NSString *)acousticModelPath;
+</pre>
+<p>As you can see, instead of taking an NSArray it takes an NSDictionary. The NSDictionary you submit to the argument generateGrammarFromDictionary: is a key-value pair consisting of an NSArray of words stored in NSStrings indicating the vocabulary to be listened for, and an NSString key which is one of the following human-language constants defined in GrammarDefinitions.h, indicating the rule for the vocabulary in the NSArray:</p>
+<pre>
+ThisWillBeSaidOnce
+ThisCanBeSaidOnce
+ThisWillBeSaidWithOptionalRepetitions
+ThisCanBeSaidWithOptionalRepetitions
+OneOfTheseWillBeSaidOnce
+OneOfTheseCanBeSaidOnce
+OneOfTheseWillBeSaidWithOptionalRepetitions
+OneOfTheseCanBeSaidWithOptionalRepetitions
+</pre>
+<p>Breaking them down one at a time for their specific meaning in defining a rule:</p>
+<pre>
+ThisWillBeSaidOnce <span style="color:green;">// This indicates that the word or words in the array must be said (in sequence, in the case of multiple words), one time.</span>
+ThisCanBeSaidOnce <span style="color:green;">// This indicates that the word or words in the array can be said (in sequence, in the case of multiple words), one time, but can also be omitted as a whole from the utterance.</span>
+ThisWillBeSaidWithOptionalRepetitions <span style="color:green;">// This indicates that the word or words in the array must be said (in sequence, in the case of multiple words), one time or more.</span>
+ThisCanBeSaidWithOptionalRepetitions <span style="color:green;">// This indicates that the word or words in the array can be said (in sequence, in the case of multiple words), one time or more, but can also be omitted as a whole from the utterance.</span>
+OneOfTheseWillBeSaidOnce <span style="color:green;">// This indicates that exactly one selection from the words in the array must be said one time.</span>
+OneOfTheseCanBeSaidOnce <span style="color:green;">// This indicates that exactly one selection from the words in the array can be said one time, but that all of the words can also be omitted from the utterance.</span>
+OneOfTheseWillBeSaidWithOptionalRepetitions <span style="color:green;">// This indicates that exactly one selection from the words in the array must be said, one time or more.</span>
+OneOfTheseCanBeSaidWithOptionalRepetitions <span style="color:green;">// This indicates that exactly one selection from the words in the array can be said, one time or more, but that all of the words can also be omitted from the utterance.</span>
+</pre>
+<p>Since an NSString in these NSArrays can also be a phrase, references to words above should also be understood to apply to complete phrases when they are contained in a single NSString.</p>
+<p>A key-value pair can also have NSDictionaries in the NSArray instead of NSStrings, or a mix of NSStrings and NSDictionaries, meaning that you can nest rules in other rules.</p>
+<p>Here is an example of a complete, complex ruleset which can be submitted to the generateGrammarFromDictionary: argument. It is designed to be easily readable as a collection of English sentences, however I have also followed this version with another one that has a step by step explanation of each part:</p>
+<pre>
+ @{
+     ThisWillBeSaidOnce : @[
+         @{ OneOfTheseCanBeSaidOnce : @[@"HELLO COMPUTER", @"GREETINGS ROBOT"]},
+         @{ OneOfTheseWillBeSaidOnce : @[@"DO THE FOLLOWING", @"INSTRUCTION"]},
+         @{ OneOfTheseWillBeSaidOnce : @[@"GO", @"MOVE"]},
+         @{ThisWillBeSaidWithOptionalRepetitions : @[
+             @{ OneOfTheseWillBeSaidOnce : @[@"10", @"20",@"30"]}, 
+             @{ OneOfTheseWillBeSaidOnce : @[@"LEFT", @"RIGHT", @"FORWARD"]}
+         ]},
+         @{ OneOfTheseWillBeSaidOnce : @[@"EXECUTE", @"DO IT"]},
+         @{ ThisCanBeSaidOnce : @[@"THANK YOU"]}
+     ]
+ };
+</pre>
+<p>So that&#8217;s the whole thing – that is all it takes to create a complex ruleset in OpenEars 1.7.</p>
+<p>Breaking it down step by step to explain exactly what the contents mean:</p>
+<pre>
+ @{
+     ThisWillBeSaidOnce : @[ <span style="color:green;">// This means that a valid utterance for this ruleset will obey all of the following rules in sequence in a single complete utterance:</span>
+         @{ OneOfTheseCanBeSaidOnce : @[@"HELLO COMPUTER", @"GREETINGS ROBOT"]}, <span style="color:green;">// At the beginning of the utterance there is an optional statement. The optional statement can be either "HELLO COMPUTER" or "GREETINGS ROBOT" or it can be omitted.</span>
+         @{ OneOfTheseWillBeSaidOnce : @[@"DO THE FOLLOWING", @"INSTRUCTION"]}, <span style="color:green;">// Next, an utterance will have exactly one of the following required statements: "DO THE FOLLOWING" or "INSTRUCTION".</span>
+         @{ OneOfTheseWillBeSaidOnce : @[@"GO", @"MOVE"]}, <span style="color:green;">// Next, an utterance will have exactly one of the following required statements: "GO" or "MOVE"</span>
+         @{ThisWillBeSaidWithOptionalRepetitions : @[ <span style="color:green;">// Next, an utterance will have a minimum of one statement of the following nested instructions, but can also accept multiple valid versions of the nested instructions:</span>
+             @{ OneOfTheseWillBeSaidOnce : @[@"10", @"20",@"30"]}, <span style="color:green;">// Exactly one utterance of either the number "10", "20" or "30",</span>
+             @{ OneOfTheseWillBeSaidOnce : @[@"LEFT", @"RIGHT", @"FORWARD"]} <span style="color:green;">// Followed by exactly one utterance of either the word "LEFT", "RIGHT", or "FORWARD".</span>
+         ]},
+         @{ OneOfTheseWillBeSaidOnce : @[@"EXECUTE", @"DO IT"]}, <span style="color:green;">// Next, an utterance must contain either the word "EXECUTE" or the phrase "DO IT",</span>
+         @{ ThisCanBeSaidOnce : @[@"THANK YOU"]} <span style="color:green;">and there can be an optional single statement of the phrase "THANK YOU" at the end.</span>
+     ]
+ };
+ </pre>
+<p>So as examples, here are some sentences that this ruleset will report as hypotheses from user utterances:<br />
+<code><br />
+"HELLO COMPUTER DO THE FOLLOWING GO 20 LEFT 30 RIGHT 10 FORWARD EXECUTE THANK YOU"<br />
+"GREETINGS ROBOT DO THE FOLLOWING MOVE 10 FORWARD DO IT"<br />
+"INSTRUCTION 20 LEFT 20 LEFT 20 LEFT 20 LEFT EXECUTE"<br />
+</code><br />
+But it will not report hypotheses for sentences such as the following which are not allowed by the rules:<br />
+<code><br />
+"HELLO COMPUTER HELLO COMPUTER"<br />
+"MOVE 10"<br />
+"GO RIGHT"<br />
+</code></p>
+<p>The last two arguments of the new LanguageModelGenerator method work identically to the equivalent language model method. The files created, instead of being .DMP and .dic like for an ARPA model, are .gram and .dic where the .gram is your JSGF. So now when you pass your .gram file to the Pocketsphinx method:</p>
+<pre>
+- (void) startListeningWithLanguageModelAtPath:(NSString *)languageModelPath dictionaryAtPath:(NSString *)dictionaryPath acousticModelAtPath:(NSString *)acousticModelPath languageModelIsJSGF:(BOOL)languageModelIsJSGF;
+</pre>
+<p>you will set the argument <code>languageModelIsJSGF:</code> to <code>TRUE</code>.</p>
+<p>The goal of creating this API was not only to make it much easier to create a grammar (or multiple grammars to switch between) before runtime, but also to make an interface powerful and simple enough that you can build new grammars dynamically at runtime based on arbitrary input.</p>
+<p>JSGF isn&#8217;t compatible with RapidEars, so I will also be releasing a new product shortly which will allow the same grammar language to be used to output RapidEars-compatible grammars as well, but this is a new type of thing altogether so it will be in testing for a while longer. The new product will also provide faster grammars for stock OpenEars since JSGF searching is a bit too resource-intensive for ideal responsiveness on 32-bit devices.</p>
+<p>I am delighted to finally release this. There&#8217;s really nothing that makes me happier as a developer than to take something a little gnarly like JSGF and find a way to make it accessible and amenable to humanistic interface designs from developers who don&#8217;t necessarily have time or interest in specializing in speech interface to the extent that it can take to get to grips with a format like JSGF, so I hope I achieved that and that we&#8217;ll see it in some of your awesome apps. </p>
+<p>It&#8217;s a 1.0 feature, so there will be some bumps and you should bring &#8217;em right to the <a href="/">forums</a> so I can take a look.</p>
+<p>Thanks and enjoy your development,</p>
+<p>Halle</p>
+<p>UPDATE: I&#8217;ve finished the new plugin for generating fast grammars which are also compatible with RapidEars – it&#8217;s called RuleORama and you can read about it <a href="/ruleorama">here</a> and learn how to implement it using the <a href="/openears/tutorial">tutorial</a>.</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">1020781</post-id>	</item>
+		<item>
+		<title>OpenEars now updated to 1.66 with a number of fixes</title>
+		<link>/2014/04/03/openears-now-updated-to-1-66-with-a-number-of-fixes/</link>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Thu, 03 Apr 2014 15:58:21 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">/?p=1020678</guid>
+
+					<description><![CDATA[I&#8217;m happy to announce the release of OpenEars 1.66 featuring a number of helpful fixes affecting both stock OpenEars and also Rejecto and NeatSpeech: • A fix to the order of the Spanish lookup dictionary that could affect accuracy • Improvements to the fixes to voice audio detection from 1.65 • A fix for an [&#8230;]]]></description>
+										<content:encoded><![CDATA[<div class="woo-sc-box  note   ">If you&#8217;re interested in this, you&#8217;ll probably be really interested in <a href="/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/">this post</a> on OpenEars 1.7&#8217;s new API for creating dynamic <strong>rules-based</strong> grammars from arbitrary input at runtime!</div>
+<p>I&#8217;m happy to announce the release of OpenEars 1.66 featuring a number of helpful fixes affecting both stock OpenEars and also Rejecto and NeatSpeech:</p>
+<p>• A fix to the order of the Spanish lookup dictionary that could affect accuracy<br />
+• Improvements to the fixes to voice audio detection from 1.65<br />
+• A fix for an issue that could cause OpenEars+Rejecto to never return hypotheses for long utterances with intermittent background noises<br />
+• A fix for incorrect suspend/resume behavior using FliteController and FliteController+NeatSpeech<br />
+• A fix for an issue when changing between JSGF files<br />
+• A bit more checking for null strings in language model corpora<br />
+• A fix of some incorrect memory management that could sometimes lead to wrong probabilities in language models (including Rejecto language models)<br />
+• Other minor memory management improvements<br />
+• Changed type of frame index to avoid overruns</p>
+<p>I hope this is helpful and of course let me know about any issues you encounter in the forums.</p>
+<p>[politepix-blog-inline-text-ad]</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">1020678</post-id>	</item>
+		<item>
+		<title>OpenEars and all plugins now updated to 1.65 with many fixes</title>
+		<link>/2014/02/05/openears-and-all-plugins-now-updated-to-1-65-with-many-fixes/</link>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Wed, 05 Feb 2014 14:12:21 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">/?p=1020048</guid>
+
+					<description><![CDATA[[politepix-blog-inline-text-ad] I&#8217;m happy to share that OpenEars, RapidEars, Rejecto, SaveThatWave and NeatSpeech have all been updated to version 1.65 with many fixes for stability during long-term listening and a couple of new features: • Fixes for 100% of known/reported issues that can cause hangs or rare crashes over long listening periods with OpenEars and RapidEars. [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>[politepix-blog-inline-text-ad]</p>
+<p>I&#8217;m happy to share that OpenEars, RapidEars, Rejecto, SaveThatWave and NeatSpeech have all been updated to version 1.65 with many fixes for stability during long-term listening and a couple of new features:</p>
+<p>• Fixes for 100% of known/reported issues that can cause hangs or rare crashes over long listening periods with OpenEars and RapidEars.<br />
+• Fixes for rare cases in which listening can lose the ability to distinguish between speech and non-speech or even hang as a result of a rapid change in background noise levels; fix affects both OpenEars and RapidEars.<br />
+• Any exceptions during the listening loop should now lead to a graceful exit from the loop without undocumented behavior.<br />
+• Addition of PocketsphinxController methods to prompt users to give mic permission before starting recognition and to check mic permission, and a &#8220;permission declined&#8221; callback in OpenEarsEventsObserver for your UI design.<br />
+• Addition of PocketsphinxController methods to check whether the listening loop has been entered and to check whether listening is currently suspended.<br />
+• Addition of a method to SaveThatWave that can save a complete WAV of a single listening session for debug and testing purposes.<br />
+• NeatSpeech and Rejecto do not have material changes but they both have some internal updates to match API changes in OpenEars, so they should also be updated.<br />
+• A fix for a FliteController setting that could sometimes affect app acceptance if the developer didn&#8217;t make use of FliteController&#8217;s noAudioSessionOverrides property. Now, regardless of whether noAudioSessionOverrides is set or not, developers should not ever encounter any issues with app acceptance (assuming the app makes some kind of textual or visual indication that it does speech recognition and uses the mic – Apple will still quite reasonably reject an app which does &#8220;stealth recognition&#8221; while giving no visual or textual indication to the user that speech is being listened to).</p>
+<p>All of the fixes improving stability and performance during listening required some major refactoring of the OpenEars and RapidEars listening loops, so although this version had an unusually long testing period before shipping for that reason, please don&#8217;t hesitate to let me know about any unexpected behavior you encounter since it can be challenging to replicate every possible way the framework is implemented in testing.</p>
+<p>If you are a licensed user, there will be licensed 1.65 versions waiting for you at the licensee site. If you noticed these updates early and downloaded OpenEars/SaveThatWave before February 5th, please download them again since they were shipped with a mistake which is fixed in the currently-downloadable version.</p>
+<p>I&#8217;m happy to have been able to spend a fair amount of time doing nothing but tightening the bolts on the framework and I hope this is reflected in your users&#8217; satisfaction with your apps. Thanks for using OpenEars!</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">1020048</post-id>	</item>
+		<item>
+		<title>OpenEars and all plugins now updated to version 1.64 with 64-bit compatibility</title>
+		<link>/2013/12/12/openears-plugins-now-updated-version-1-64-64-bit-compatibility/</link>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Thu, 12 Dec 2013 19:58:06 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">/?p=1019142</guid>
+
+					<description><![CDATA[It&#8217;s my pleasure to introduce OpenEars, RapidEars, NeatSpeech, Rejecto and SaveThatWave version 1.64. With this version, OpenEars and all of its plugins are 64-bit compatible. I would have loved to have released this sooner, but it was a big port and everything had to be released together, and a couple of the frameworks were a [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>It&#8217;s my pleasure to introduce OpenEars, RapidEars, NeatSpeech, Rejecto and SaveThatWave version 1.64. With this version, OpenEars and all of its plugins are 64-bit compatible. I would have loved to have released this sooner, but it was a big port and everything had to be released together, and a couple of the frameworks were a little&#8230;resistant to 64-bit code (I&#8217;m looking at you, NeatSpeech), so it took some time. Thanks for your patience.</p>
+<p>[politepix-blog-inline-text-ad]</p>
+<p>Release notes for 1.64:</p>
+<p>* There is now a 64-bit slice for OpenEars and all of its plugins, so you can use them in native 64-bit development.<br />
+* Since 64-bit building is only supported back to 5.1.1, that is now the minimum iOS version compatible with OpenEars, so you must stick with your current versions of OpenEars and its plugins if you need to support older OSes than 5.1.1. If you aren&#8217;t sure whether you want to stop supporting iOS 4.x, make and keep a backup of your current frameworks before experimenting since the up-to-date version is the only one which will be available on the site. It wasn&#8217;t my first choice to drop 4.x support right now, but continuing to provide it for the 1% of devices running it while providing 64-bit compatibility would have required a new build system to be created. The reality that so much 4.x era audio code is deprecated that 4.x support was going to have to be retired before iOS8 regardless means that such a new build system would have only been in use for a matter of months between being completed and becoming superfluous, and in the meantime it would have delayed the release of 64-bit OpenEars.<br />
+* On 64-bit devices, recognition will be more accurate in PocketsphinxController and with RapidEars, and NeatSpeech voices will be a bit smoother.<br />
+* Some small bugs have been fixed in PocketsphinxController and RapidEars for rare recognitions of very long phrases that could result in indefinite hanging or even crashes but will now resolve with a returned hypothesis even if the recognition is of an extremely long utterance.<br />
+* Returned scores in RapidEars have been fixed so they are now a probability again rather than a very large int.<br />
+* The timeout for all plugins has been standardized to 3 minutes since the variation in timeouts was inconvenient for developers trying out multiple plugins in a single install.<br />
+* A couple of situations in which RapidEars could exit due to very rare exceptions will now log the exceptions to stdout for your troubleshooting but should continue operating to the extent possible after the exception.<br />
+* Some stability refinements for rare issues in language model generation have been added.<br />
+* The all_load linker flag is no longer supported. The new slice requirements prevent all_load from working with OpenEars.<br />
+* You may notice that the libraries are bigger &#8212; that&#8217;s because there are more architectures included (the 64-bit slice and two forms of simulator compatibility). You only need to link as many of them as your app actually needs and the compiler will link to just the modules your app uses &#8212; the size of the library does not correlate to the size of your eventual app, so don&#8217;t worry about the library size. Your app will be bigger if you are supporting armv7, armv7s and arm64 devices because you will be linking to more slices, but even in that case it won&#8217;t be as much bigger as the frameworks are. The usual steps for slimming down an OpenEars app will help here.<br />
+* You may notice on 64-bit devices that more memory is used. This is because 64-bit architectures use more memory. That&#8217;s their shtick, basically.</p>
+<p>This is a big release, so please feel free to let me know about any issues you encounter in the forums: /forums</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">1019142</post-id>	</item>
+	</channel>
+</rss>

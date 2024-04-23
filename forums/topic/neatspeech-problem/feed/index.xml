@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>NeatSpeech Problem  &#8211; Politepix</title>
+		<atom:link href="/forums/topic/neatspeech-problem/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/neatspeech-problem/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:44:50 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/neatspeech-problem/#post-14392</guid>
+					<title><![CDATA[NeatSpeech Problem]]></title>
+					<link>/forums/topic/neatspeech-problem/#post-14392</link>
+					<pubDate>Sun, 02 Dec 2012 04:44:01 +0000</pubDate>
+					<dc:creator>francisshanahan</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;ve gotten NeatSpeech to work on a brand-new iOS project however when I try to get it working on another, more complex project I&#8217;m getting the following error when I issue the &#8220;say&#8221; call.  </p>
+<p>&#8220;HTS_Stream_load_pdf_and_tree: File for duration trees is not specified.&#8221; </p>
+<p>Without digging into the source I&#8217;m not sure what this is but it appears like it&#8217;s missing part of the VoiceModel resources. I&#8217;ve double-checked and they appear to be included and deployed just like in the project that&#8217;s working. </p>
+<p>Any tips would be much appreciated. </p>
+<p>-fs</p>
+<p>P.S. I think there&#8217;s a typo on this page: <a href="/neatspeech/">/neatspeech/</a><br />
+&#8220;Emma *emma = [[Emma alloc]initWithPitch:0.0 speed:0.0 transform:0.0];&#8221;<br />
+should be<br />
+ &#8220;emma = [[Emma alloc]initWithPitch:0.0 speed:0.0 transform:0.0];&#8221;</p>
+<p>thanks in advance,<br />
+-fs</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-problem/#post-14422</guid>
+					<title><![CDATA[Reply To: Reply To: NeatSpeech Problem]]></title>
+					<link>/forums/topic/neatspeech-problem/#post-14422</link>
+					<pubDate>Sun, 02 Dec 2012 08:27:26 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>So far, this kind of error has always been due to the wrong settings on the &#8220;Add&#8221; import dialog such as the ones referenced in this similar issue with acoustic model resources being added or not added:</p>
+<p><a href="/openears/support/#Q_My_app_crashes_when_listening_starts">/openears/support/#Q_My_app_crashes_when_listening_starts</a></p>
+<p>Basically, the voice resources were not successfully added to your more complex project in the expected location in the bundle, but they were successfully added to the brand-new project in the expected location in the bundle. In the more complex project they are probably in a subfolder inside the app bundle where NeatSpeech can&#8217;t find them because they are expected to be at root level. This difference is a result of the setting mentioned here:</p>
+<blockquote><p>
+Make absolutely sure that in the add dialog “Create groups for any added folders” is selected and NOT “Create folder references for any added folders”
+</p></blockquote>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-problem/#post-14423</guid>
+					<title><![CDATA[Reply To: NeatSpeech Problem]]></title>
+					<link>/forums/topic/neatspeech-problem/#post-14423</link>
+					<pubDate>Sun, 02 Dec 2012 16:12:45 +0000</pubDate>
+					<dc:creator>francisshanahan</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I thought it might be that. I&#8217;ve tried removing references, deleting the folder on the file system and re-adding. No luck. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-problem/#post-14424</guid>
+					<title><![CDATA[Reply To: NeatSpeech Problem]]></title>
+					<link>/forums/topic/neatspeech-problem/#post-14424</link>
+					<pubDate>Sun, 02 Dec 2012 16:20:00 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You can definitively verify whether this is the issue by selecting your app product under the Products group in the file navigator, right-clicking on it, and selecting show in finder. When you see the app product in the finder, you can right-click on it and request viewing the package contents. Once you are at the root level of the bundle (where your image files are added, etc), if the files were successfully added they will be visible in the app bundle at root level. If they aren&#8217;t in there at all, they weren&#8217;t added to the app target. If they are in there but they aren&#8217;t in the root level (they are inside of a folder that is at the root level) that means that when they are added, the add dialog box settings are incorrect.</p>
+<p>I suppose one last option is that it is possible that you are dragging the folder containing the voice data files into a group that already represents a folder within your app bundle. See if you get better results from dragging the folder in to the file navigator right into the project file icon rather than a subfolder.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-problem/#post-14425</guid>
+					<title><![CDATA[Reply To: NeatSpeech Problem]]></title>
+					<link>/forums/topic/neatspeech-problem/#post-14425</link>
+					<pubDate>Sun, 02 Dec 2012 16:48:52 +0000</pubDate>
+					<dc:creator>francisshanahan</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the reply Halle. Unfortunately none of those things apply to me. I&#8217;m doing the same thing with this project as I did with the simpler one. </p>
+<p>-fs</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-problem/#post-14426</guid>
+					<title><![CDATA[Reply To: NeatSpeech Problem]]></title>
+					<link>/forums/topic/neatspeech-problem/#post-14426</link>
+					<pubDate>Sun, 02 Dec 2012 16:54:01 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>What do you see when you look at the inside of your app bundle?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-problem/#post-14427</guid>
+					<title><![CDATA[Reply To: NeatSpeech Problem]]></title>
+					<link>/forums/topic/neatspeech-problem/#post-14427</link>
+					<pubDate>Sun, 02 Dec 2012 17:24:45 +0000</pubDate>
+					<dc:creator>francisshanahan</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The app bundle includes the Voices and VoiceData, similar to the working project.  </p>
+<p>I tried removing the Voices and I get a different error so I don&#8217;t think it&#8217;s that the voice data is not being included/deployed in the app. </p>
+<p>As an experiment, I just re-created my more complex project from scratch in a new project, new XCode window and am getting the exact same error. </p>
+<p>*stumped*</p>
+<p>-fs</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-problem/#post-14428</guid>
+					<title><![CDATA[Reply To: NeatSpeech Problem]]></title>
+					<link>/forums/topic/neatspeech-problem/#post-14428</link>
+					<pubDate>Sun, 02 Dec 2012 17:25:18 +0000</pubDate>
+					<dc:creator>francisshanahan</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I should mention the regular SLT voice works no problem in this complex project. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-problem/#post-14429</guid>
+					<title><![CDATA[Reply To: NeatSpeech Problem]]></title>
+					<link>/forums/topic/neatspeech-problem/#post-14429</link>
+					<pubDate>Sun, 02 Dec 2012 17:41:44 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, the app bundle should not have folders in it called Voices or VoiceData. If the app bundle has these folders in it, the radio button selection in the &#8220;Add&#8221; dialog box at the time of importing the voice files is definitely on the wrong setting and the app will not be able to use NeatSpeech voices &#8212; you will get the exact error that you received. </p>
+<p>The only thing you should see in the app bundle as a result of adding NeatSpeech are the loose files that can be found within the folder VoiceData (but not the folder itself) at the root level of the app bundle. The folder that says Voices has no purpose inside the app bundle since it just contains frameworks which get compiled directly into the app product binary. You should see groups called Voices and VoiceData in your project file navigator, but never in your app bundle.</p>
+<p>Just remove the added folders from your project and add them again with the correct settings in the dialog box, exactly as they are described in the tutorial. This is the important line from the tutorial:</p>
+<blockquote><p>Make sure that in Xcode&#8217;s &#8220;Add&#8221; dialog, &#8220;Create groups for any added folders&#8221; is selected. Make sure that &#8220;Create folder references for any added folders&#8221; is not selected or your app will not work.</p></blockquote>
+<p>&#8220;Create folder references&#8221; is selected in your add dialog currently &#8212; Xcode only has a single way of creating subfolders within an app bundle, and that radio button selection is it, so it&#8217;s the cause of the issue.</p>
+<p>SLT will work fine because it doesn&#8217;t rely on any data files that need to be found in the app bundle. </p>
+<p>If you want, you&#8217;re welcome to email me your project (with the classes and resources stripped out) and I can double-check what the issue is. If you want to do that, just send me a note via the contact form and I&#8217;ll send you the email address.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-problem/#post-14430</guid>
+					<title><![CDATA[Reply To: NeatSpeech Problem]]></title>
+					<link>/forums/topic/neatspeech-problem/#post-14430</link>
+					<pubDate>Sun, 02 Dec 2012 17:54:28 +0000</pubDate>
+					<dc:creator>francisshanahan</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Apologies Halle I mis-communicated. What I meant was the app bundle includes the content from VoiceData &#8211; just as you mentioned, e.g. neatspeech_uk1_dur.pdf and all other files flattened, no folder structure. The *.inf files, *.pdf files, *.win1 files and so on are all in there. </p>
+<p>-fs</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

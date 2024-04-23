@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Timing of Open Ears Word Recognition &#8211; Politepix</title>
+		<atom:link href="/forums/topic/timing-of-open-ears-word-recognition/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/timing-of-open-ears-word-recognition/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:38:04 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/timing-of-open-ears-word-recognition/#post-13546</guid>
+					<title><![CDATA[Timing of Open Ears Word Recognition]]></title>
+					<link>/forums/topic/timing-of-open-ears-word-recognition/#post-13546</link>
+					<pubDate>Mon, 26 Nov 2012 17:12:19 +0000</pubDate>
+					<dc:creator>Matt</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Everyone,</p>
+<p>Does Open Ears always start word recognition at the next pause in speech? Is there a way to change it so it doesn&#8217;t wait for a pause before beginning word recognition?</p>
+<p>Regards,</p>
+<p>Matt</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/timing-of-open-ears-word-recognition/#post-13547</guid>
+					<title><![CDATA[Reply To: Timing of Open Ears Word Recognition]]></title>
+					<link>/forums/topic/timing-of-open-ears-word-recognition/#post-13547</link>
+					<pubDate>Mon, 26 Nov 2012 17:18:41 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Matt,</p>
+<p>OpenEars uses pause-based continuous recognition, so it always has to wait for a half-second (or so) pause before it knows it can perform recognition on the entire utterance. <a href="/rapidears" rel="nofollow">RapidEars</a> is a plugin for OpenEars which can do realtime recognition in which the speech is analyzed at the same time it enters the microphone with the least latency before returning results that is allowed by the speed of the device CPU.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

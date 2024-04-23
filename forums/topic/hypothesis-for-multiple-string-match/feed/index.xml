@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>hypothesis for multiple string match &#8211; Politepix</title>
+		<atom:link href="/forums/topic/hypothesis-for-multiple-string-match/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/hypothesis-for-multiple-string-match/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:00:17 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/hypothesis-for-multiple-string-match/#post-1019788</guid>
+					<title><![CDATA[hypothesis for multiple string match]]></title>
+					<link>/forums/topic/hypothesis-for-multiple-string-match/#post-1019788</link>
+					<pubDate>Sat, 18 Jan 2014 12:27:32 +0000</pubDate>
+					<dc:creator>davestrand</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello again.  First off, I admire your work ethic Halle.  I don&#8217;t know what your hours of operation are but it would seem you never sleep.</p>
+<p>So, I&#8217;ve been working on this one problem for a couple days now and I seem to have hit a wall.  If you could point me in the right direction, or even give me a hint, I think I could make it work. It&#8217;s probably more of a stackOverflow kind of question but I thought I&#8217;d ask here in case OpenEars had some specific method for it.</p>
+<p>Using a pair of words spoken, I would like to identify keyword matches and respond accordingly.</p>
+<p>  So, for example someone says &#8220;DRINK BEER&#8221; that would be different than &#8220;SMASH BEER&#8221;. A beer happens to be available.  Let&#8217;s call the appropriate method for the keyword match.  I am utilizing a series of property list dictionaries, and attempting to use the dictionary&#8217;s key to identify the spoken word. Then taking the valueForKey to launch into a BEER function (I&#8217;m about to launch into my own BEER function).  I am not opposed to switching the dictionaries to arrays, if that would be better programatically.</p>
+<p>The problem seems to be when I try to use something like rangeOfString with hypothesis and my dictionary, it&#8217;s having issues.  I assume because of my inexperience in extracting Keys from dictionaries? Is there an easier way to ID when two specific words are uttered using the hypothesis and a plist?  AllKeys?</p>
+<p>Using something like the code below, I can get close.  It will work with two specific strings, but once I try to tie in my dictionary in different ways as a string it starts crashing on me.</p>
+<pre><code>if ([hypothesis rangeOfString:@&quot;DRINK&quot;].location == NSNotFound &amp;&amp; [hypothesis rangeOfString:@&quot;BEER&quot;].location == NSNotFound) { //if the words uttered contain drink and beer is equal to notFound.
+        
+        NSLog(@&quot;You didn&#039;t say what we thought you would..  let&#039;s stop here.&quot;); 
+        
+    } else { 
+        
+        NSLog(@&quot;Ah, you drink the beer. It is cold and refreshing.&quot;); 
+  
+    }
+</code></pre>
+<p>I also seem to be okay when using single words, using valueForKey:hypothesis, maybe something along those lines?  IDK.  Again, now that I write it out, I&#8217;m starting to realize this isn&#8217;t exactly an OpenEars question, it&#8217;s more of a plist question, so I apologize.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/hypothesis-for-multiple-string-match/#post-1019789</guid>
+					<title><![CDATA[Reply To: hypothesis for multiple string match]]></title>
+					<link>/forums/topic/hypothesis-for-multiple-string-match/#post-1019789</link>
+					<pubDate>Sat, 18 Jan 2014 15:28:08 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Dave,</p>
+<p>Thank you. Basically, I make a best-effort attempt to answer right as questions come in (if it&#8217;s feasible and wouldn&#8217;t be rude to someone I was with) so I never have a backlog, which lets me keep the support side pretty well under control. So I&#8217;d rather take :10 to answer a question in a laid-back way on a Saturday than start a Monday with a backlog that becomes its own time-management task. I usually find that if I can&#8217;t handle that approach because a lot more questions than usual are coming in, that indicates that something important is missing from the docs or tutorial.</p>
+<p>I think I can help you with your question since I do a lot of text munging and matching in OpenEars. Your approach sounds fine to me so I suspect an issue in your plist/dictionary code, can you show some?</p>
+<p>BTW, are you acquainted with the [NSString componentsSeparatedByString] method that returns an NSArray? I use it a lot to work with multiple substrings in combination with fast enumeration. rangeOfString is also fine and I frequently use it, but for what you&#8217;re doing you might like to have all the hypotheses dumped right into an ordered array for processing.</p>
+<p>Enjoy your BEER function!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/hypothesis-for-multiple-string-match/#post-1019793</guid>
+					<title><![CDATA[Reply To: hypothesis for multiple string match]]></title>
+					<link>/forums/topic/hypothesis-for-multiple-string-match/#post-1019793</link>
+					<pubDate>Sun, 19 Jan 2014 11:57:36 +0000</pubDate>
+					<dc:creator>davestrand</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks!  My code is a mess right now, I&#8217;ll put together my best effort and then post back.  I am learning about componentSeparatedByString now.  I was not familiar with that, thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/hypothesis-for-multiple-string-match/#post-1019794</guid>
+					<title><![CDATA[Reply To: hypothesis for multiple string match]]></title>
+					<link>/forums/topic/hypothesis-for-multiple-string-match/#post-1019794</link>
+					<pubDate>Mon, 20 Jan 2014 00:29:04 +0000</pubDate>
+					<dc:creator>davestrand</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Okee dokes, hello again.  My beer function helped me sleep on it, but I&#8217;m still missing something.  Here&#8217;s some of my code I&#8217;m working on.</p>
+<pre><code>  objectsInRoom = [playerIsNowAt objectForKey:@&quot;ObjectsInLocation&quot;]; //Bringing objects based on location
+
+NSLog(@&quot;Here are objects in room - %@&quot;, objectsInRoom); //logged below
+
+    //Failed experiments
+    //NSArray *objectWords = [objectsInRoom allKeys];
+    //NSString *objectString = [NSString stringWithFormat:@&quot;%@&quot;,objectWords];
+    //NSArray *spokenWords = [hypothesis componentsSeparatedByString:@&quot; &quot;];
+    //NSString *spokenString = [NSString stringWithFormat:@&quot;%@&quot;,spokenWords];
+   //if([hypothesis isEqualToString:@&quot;BEER&quot;]) { //only works if they just say BEER 
+    
+    
+    if ([hypothesis rangeOfString:@&quot;BEER&quot;].location != NSNotFound){ // ok but how do i make it search thru allkeys for my dictionary??  maybe the next room has WINE or MIMOSA.
+        
+        NSLog(@&quot;HOPE KEPT ALIVE&quot;);
+        
+    }</code></pre>
+<p>THE LOG :<br />
+Here are objects in room &#8211; {<br />
+    BEER = Beer;<br />
+    PEANUTS = Peanuts;<br />
+    READ = Menu;<br />
+}</p>
+<p>So, as you see I can seem to pull single words in using Range, but am stuck on returning a value based on the dictionary.  </p>
+<p>Other related code.. in .h<br />
+@property (copy, nonatomic) NSDictionary *objectsInRoom;</p>
+<p>in .m<br />
+@synthesize objectsInRoom; //hm, I think i&#8217;m supposed to not synthesize these days and use that underscore thingy? </p>
+<p>I&#8217;ve only been coding for a few months, so understanding is appreciated.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/hypothesis-for-multiple-string-match/#post-1019798</guid>
+					<title><![CDATA[Reply To: hypothesis for multiple string match]]></title>
+					<link>/forums/topic/hypothesis-for-multiple-string-match/#post-1019798</link>
+					<pubDate>Mon, 20 Jan 2014 08:29:22 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, this is how you can use fast enumeration (enumeration means looping through the objects in some container) to search for a match against all your keys:</p>
+<pre>
+NSArray *keyArray = [objectsInRoom allKeys];
+
+for (NSString *key in keyArray) { 
+   if([hypothesis rangeOfString:key].location != NSNotFound) {
+        NSLog(@"I found a match in the hypothesis for the key %@ so I'm doing the action for that key and breaking.", key);
+      if([key isEqualToString:@"BEER"]) {
+         NSLog(@"I found BEER");
+         [self doBeerThing];
+      } else if([key isEqualToString:@"HAMBURGER"]) {
+         NSLog(@"I found HAMBURGER");
+         [self doHamburgerThing];
+      } else {
+         NSLog(@"I don't have an action for the hypothesis that I found.");
+      }
+
+      break; // Stop enumerating once we've found something from the keys.
+   }
+// Next loop will begin if we get here and there are more keys to check
+}
+</pre>
+<p>There are a few different ways this could be organized for efficiency/clarity. For instance you could skip the first general check for any match and go directly to checking for the specific matches you have in mind, and there are a few different ways you can manage the actual &#8220;calling a method having found a specific key&#8221; part which I haven&#8217;t addressed, but this is a simple and fast approach.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/hypothesis-for-multiple-string-match/#post-1019801</guid>
+					<title><![CDATA[Reply To: hypothesis for multiple string match]]></title>
+					<link>/forums/topic/hypothesis-for-multiple-string-match/#post-1019801</link>
+					<pubDate>Mon, 20 Jan 2014 11:36:25 +0000</pubDate>
+					<dc:creator>davestrand</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sweet nectar of the Gods!  Thank you so much, that totally makes sense now. </p>
+<p>I was kind of close with a couple attempts yesterday, I forgot to BREAK out of the For loop. :)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/hypothesis-for-multiple-string-match/#post-1019804</guid>
+					<title><![CDATA[Reply To: hypothesis for multiple string match]]></title>
+					<link>/forums/topic/hypothesis-for-multiple-string-match/#post-1019804</link>
+					<pubDate>Mon, 20 Jan 2014 12:33:20 +0000</pubDate>
+					<dc:creator>davestrand</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I ultimately modified your solution to be more generic using <a href="http://stackoverflow.com/questions/992901/how-do-i-iterate-over-an-nsarray" rel="nofollow">some ideas here</a>.</p>
+<p>Thanks again, if you take tips email me a paypal address.  You helped me out a bunch with this.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/hypothesis-for-multiple-string-match/#post-1019805</guid>
+					<title><![CDATA[Reply To: hypothesis for multiple string match]]></title>
+					<link>/forums/topic/hypothesis-for-multiple-string-match/#post-1019805</link>
+					<pubDate>Mon, 20 Jan 2014 12:41:57 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Super, I think that is a very good way to learn &#8212; get some basic pointers and then start iterating it so it fits your requirements until you get a sense of familiarity with the pattern or process.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

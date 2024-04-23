@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>First long phrase missed &#8211; Politepix</title>
+		<atom:link href="/forums/topic/first-long-phrase-missed/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/first-long-phrase-missed/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:00:15 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/first-long-phrase-missed/#post-1022245</guid>
+					<title><![CDATA[First long phrase missed]]></title>
+					<link>/forums/topic/first-long-phrase-missed/#post-1022245</link>
+					<pubDate>Fri, 15 Aug 2014 14:03:03 +0000</pubDate>
+					<dc:creator>giebler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The first long phrase I say is interrupted in the middle of the phrase.</p>
+<p>I was running 1.65 and Rejecto 1.65, but even after updating to 1.71 (is there a new Rejecto?) I have the same problem.</p>
+<p>I have a phrase with 15 words and it only gets about half of that.  1.71 captures more of the phrase but still misses the last half.</p>
+<p>Once it misses one long phrase, it works fine with the same phrase after that.</p>
+<p>Even if you say short phrases first (which it works fine with), it will still miss the first long one.  After that, it works fine with long phrases.</p>
+<p>Have you seen this before?  Do I need to preallocate something or increase something so that it catches the first one?  I&#8217;m at a loss trying to find a work around for this.</p>
+<p>Thanks for your help.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/first-long-phrase-missed/#post-1022246</guid>
+					<title><![CDATA[Reply To: First long phrase missed]]></title>
+					<link>/forums/topic/first-long-phrase-missed/#post-1022246</link>
+					<pubDate>Fri, 15 Aug 2014 14:12:07 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Greetings,</p>
+<p>No, I haven&#8217;t seen it before, but I would generally advise against taking a phrase that long in a single recognition round since it creates so many opportunities for wrong recognition due to an intermittent noise or hesitation from the user that affects a syllable in the middle. There is no technical reason that the first long phrase wouldn&#8217;t have a sense of the silence/speech threshold unless there is something else in the app affecting audio, or the calibration isn&#8217;t long enough.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/first-long-phrase-missed/#post-1022247</guid>
+					<title><![CDATA[Reply To: First long phrase missed]]></title>
+					<link>/forums/topic/first-long-phrase-missed/#post-1022247</link>
+					<pubDate>Fri, 15 Aug 2014 14:20:55 +0000</pubDate>
+					<dc:creator>giebler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>It works great after the first try, and there is no pause or hesitation and no intermittent noise during the first try.  I&#8217;m working in a relatively quiet environment.  How would I do a longer calibration and how would that help?</p>
+<p>I don&#8217;t have any choice with the length of the phrase &#8211; we&#8217;re asking questions and as I said, it works fine AFTER the first attempt.</p>
+<p>Here&#8217;s a sample question:</p>
+<p>Which doctors have the highest net switching for my product over the last thirteen weeks?</p>
+<p>First try after starting the app always fails while I&#8217;m still speaking, and after that it works fine.</p>
+<p>In 1.65 it would give the following message:</p>
+<p>2014-08-14 17:07:45.144 coach[23556:a107] There is reason to suspect the VAD of being out of sync with the current background noise levels in the environment so we will recalibrate.</p>
+<p>In 1.71 it no longer gives that message and as I said, it gets more words in 1.71 but still misses the last half.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/first-long-phrase-missed/#post-1022248</guid>
+					<title><![CDATA[Reply To: First long phrase missed]]></title>
+					<link>/forums/topic/first-long-phrase-missed/#post-1022248</link>
+					<pubDate>Fri, 15 Aug 2014 14:57:54 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>It works great after the first try, and there is no pause or hesitation and no intermittent noise during the first try</p></blockquote>
+<p>Under real-world conditions it&#8217;s likely to create interaction stress for your users since they will hesitate and experience intermittent noise, among other challenges such as mic distance, accent, etc. Avoiding long queries via voice recognition is a suggestion I make when I give talks on the subject of speech UI, since it reduces user interaction stress.</p>
+<p>You can check out the calibration options in PocketsphinxController&#8217;s docs and I&#8217;d also recommend setting a longer secondsOfSilence pause time along with the longer calibration. </p>
+<p>It sounds like maybe there is something about the app setup that is leading to a poor calibration (maybe another audio object interrupting it or something weird  when the listening loop starts), so that is an area you could troubleshoot to detect why the calibration results aren&#8217;t ideal.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/first-long-phrase-missed/#post-1022252</guid>
+					<title><![CDATA[Reply To: First long phrase missed]]></title>
+					<link>/forums/topic/first-long-phrase-missed/#post-1022252</link>
+					<pubDate>Fri, 15 Aug 2014 18:46:06 +0000</pubDate>
+					<dc:creator>giebler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I tried all three calibration times and I even set the timeout to 1.6 seconds.  Here&#8217;s the results:</p>
+<p>2014-08-15 14:38:01.855 coach[24101:6923] Calibration has completed<br />
+2014-08-15 14:38:01.857 coach[24101:6923] Listening.<br />
+2014-08-15 14:38:11.276 coach[24101:6923] Speech detected&#8230;<br />
+INFO: file_omitted(0): Resized backpointer table to 10000 entries<br />
+INFO: file_omitted(0): Resized score stack to 200000 entries<br />
+2014-08-15 14:38:14.734 coach[24101:6923] Stopping audio unit.<br />
+2014-08-15 14:38:14.865 coach[24101:6923] Audio Output Unit stopped, cleaning up variable states.<br />
+2014-08-15 14:38:14.866 coach[24101:6923] Processing speech, please wait&#8230;<br />
+INFO: file_omitted(0): cmn_prior_update: from &lt; 47.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00 &gt;<br />
+INFO: file_omitted(0): cmn_prior_update: to   &lt; 58.97 -2.76 -0.05 -2.55 -2.07 -2.80 -0.86  0.27 -0.82 -0.19 -0.09  0.13 -0.02 &gt;<br />
+INFO: file_omitted(0):     8462 words recognized (24/fr)<br />
+INFO: file_omitted(0):   477916 senones evaluated (1350/fr)<br />
+INFO: file_omitted(0):   305552 channels searched (863/fr), 41300 1st, 165791 last<br />
+INFO: file_omitted(0):    23343 words for which last channels evaluated (65/fr)<br />
+INFO: file_omitted(0):    14266 candidate words for entering last phone (40/fr)<br />
+INFO: file_omitted(0): fwdtree 1.95 CPU 0.551 xRT<br />
+INFO: file_omitted(0): fwdtree 3.60 wall 1.016 xRT<br />
+INFO: file_omitted(0): Utterance vocabulary contains 145 words<br />
+INFO: file_omitted(0):     4616 words recognized (13/fr)<br />
+INFO: file_omitted(0):   337969 senones evaluated (955/fr)<br />
+INFO: file_omitted(0):   342829 channels searched (968/fr)<br />
+INFO: file_omitted(0):    22321 words searched (63/fr)<br />
+INFO: file_omitted(0):    18710 word transitions (52/fr)<br />
+INFO: file_omitted(0): fwdflat 1.27 CPU 0.358 xRT<br />
+INFO: file_omitted(0): fwdflat 1.27 wall 0.358 xRT<br />
+2014-08-15 14:38:16.145 coach[24101:6923] Pocketsphinx heard &#8220;WHICH DOCTORS HAVE A HIGHEST NET SWITCHING FOR MY PRODUCT OVER ALL&#8221; with a score of (0) and an utterance ID of 000000000.<br />
+2014-08-15 14:38:16.147 coach[24101:6923] Checking and resetting all audio session settings.<br />
+2014-08-15 14:38:16.148 coach[24101:907] _isSpeaking: 0<br />
+2014-08-15 14:38:16.149 coach[24101:6923] audioCategory is correct, we will leave it as it is.</p>
+<p>Here&#8217;s the second try in the same debug session:</p>
+<p>2014-08-15 14:38:16.270 coach[24101:6923] Listening.<br />
+2014-08-15 14:38:39.491 coach[24101:6923] Speech detected&#8230;<br />
+2014-08-15 14:38:45.964 coach[24101:6923] Stopping audio unit.<br />
+2014-08-15 14:38:46.094 coach[24101:6923] Audio Output Unit stopped, cleaning up variable states.<br />
+2014-08-15 14:38:46.096 coach[24101:6923] Processing speech, please wait&#8230;<br />
+INFO: file_omitted(0): cmn_prior_update: from &lt; 59.07 -2.73 -0.26 -2.34 -2.00 -2.78 -0.94  0.16 -0.72 -0.18  0.02  0.04 -0.03 &gt;<br />
+INFO: file_omitted(0): cmn_prior_update: to   &lt; 57.70 -2.95 -0.09 -2.21 -1.92 -2.72 -0.87  0.11 -0.72 -0.14  0.03  0.01 -0.05 &gt;<br />
+INFO: file_omitted(0):     8648 words recognized (18/fr)<br />
+INFO: file_omitted(0):   557984 senones evaluated (1136/fr)<br />
+INFO: file_omitted(0):   315338 channels searched (642/fr), 57386 1st, 147718 last<br />
+INFO: file_omitted(0):    28447 words for which last channels evaluated (57/fr)<br />
+INFO: file_omitted(0):    14112 candidate words for entering last phone (28/fr)<br />
+INFO: file_omitted(0): fwdtree 2.27 CPU 0.463 xRT<br />
+INFO: file_omitted(0): fwdtree 6.62 wall 1.348 xRT<br />
+INFO: file_omitted(0): Utterance vocabulary contains 127 words<br />
+INFO: file_omitted(0):     3739 words recognized (8/fr)<br />
+INFO: file_omitted(0):   328839 senones evaluated (670/fr)<br />
+INFO: file_omitted(0):   276068 channels searched (562/fr)<br />
+INFO: file_omitted(0):    21483 words searched (43/fr)<br />
+INFO: file_omitted(0):    18104 word transitions (36/fr)<br />
+INFO: file_omitted(0): fwdflat 1.17 CPU 0.238 xRT<br />
+INFO: file_omitted(0): fwdflat 1.17 wall 0.238 xRT<br />
+2014-08-15 14:38:47.281 coach[24101:6923] Pocketsphinx heard &#8220;WHICH DOCTORS HAVE THE HIGHEST NET SWITCHING FOR MY PRODUCT OVER THE LAST THIRTEEN WEEKS&#8221; with a score of (0) and an utterance ID of 000000001.<br />
+2014-08-15 14:38:47.282 coach[24101:6923] Checking and resetting all audio session settings.<br />
+2014-08-15 14:38:47.284 coach[24101:6923] audioCategory is correct, we will leave it as it is.</p>
+<p>Let me know if you see anything in this listing.  As you can see, it can and does recognize the entire sentence perfectly after the first attempt.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/first-long-phrase-missed/#post-1022253</guid>
+					<title><![CDATA[Reply To: First long phrase missed]]></title>
+					<link>/forums/topic/first-long-phrase-missed/#post-1022253</link>
+					<pubDate>Fri, 15 Aug 2014 18:54:52 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>It looks like there is something else going on in the app preventing the initial calibration from working correctly, such as another audio object or something obstructing the calibration in the PocketsphinxController setup. I would focus troubleshooting on other app code.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/first-long-phrase-missed/#post-1022254</guid>
+					<title><![CDATA[Reply To: First long phrase missed]]></title>
+					<link>/forums/topic/first-long-phrase-missed/#post-1022254</link>
+					<pubDate>Fri, 15 Aug 2014 18:59:13 +0000</pubDate>
+					<dc:creator>giebler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Here&#8217;s what I think is happening:  </p>
+<p>When it receives a long phrase, the average gain (AGC) is adjusting so that it starts to detect silence during the phrase.  When I set the timeout to 3.6 seconds, it gives the app enough time to finish the phrase before it times out.  </p>
+<p>From the debug log, I see that AGC is set to none with a threshold of 2.</p>
+<p>I&#8217;m using an iPad (2nd Gen) with its internal mic.</p>
+<p>Is there a way to change the averaging detection for silence so that it doesn&#8217;t change its value over 5 seconds of speech?  (Hopefully I&#8217;m saying this correctly).  Just in case, let me try another way.  The level it uses to determine silence is appearing to change over a few seconds of speech so that eventually the speech looks like silence.  I need a slower response so that speech still looks like speech after 5 seconds.</p>
+<p>Does that make any sense?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/first-long-phrase-missed/#post-1022255</guid>
+					<title><![CDATA[Reply To: First long phrase missed]]></title>
+					<link>/forums/topic/first-long-phrase-missed/#post-1022255</link>
+					<pubDate>Fri, 15 Aug 2014 19:07:38 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry, that isn&#8217;t the issue here; there is no AGC with the audio session on the device or used in the voice audio detection. This isn&#8217;t a normal result, so I would investigate other aspects of the app, specifically other audio objects and any timing issues with other operations at the time that calibration should be executing.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/first-long-phrase-missed/#post-1022257</guid>
+					<title><![CDATA[Reply To: First long phrase missed]]></title>
+					<link>/forums/topic/first-long-phrase-missed/#post-1022257</link>
+					<pubDate>Fri, 15 Aug 2014 21:34:31 +0000</pubDate>
+					<dc:creator>giebler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Well, I disabled everything except OpenEars and it still is happening.  I&#8217;m going to try it in another app to see if I can determine what is happening.  I&#8217;ll let you know what I find.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/first-long-phrase-missed/#post-1022266</guid>
+					<title><![CDATA[Reply To: First long phrase missed]]></title>
+					<link>/forums/topic/first-long-phrase-missed/#post-1022266</link>
+					<pubDate>Sat, 16 Aug 2014 18:01:25 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, the best way to troubleshoot this kind of issue is to take either the tutorial example or the sample app, and without changing anything else about it, just add your language model generation code and test against a recording of your phrase using pathToTestFile.</p>
+<p>That way, you will either get a better result, which suggests that it is something going on with the app (and then you can start adding in your related app features until you learn what causes the issue), or you will get the same result, which suggests that it is an edge case of some kind with the language model, and then you will have a test case replicating the issue that is simple enough to send me (something that only diverges from the sample app or tutorial example by a few lines of code) and I can take a look at it. </p>
+<p>If you end up with such a simple example which demonstrates that it is an edge case issue with the language model, go ahead and send the example to the email address your framework license was sent from, along with the audio file for testing and the device you&#8217;re testing on and its iOS version, and I&#8217;ll check it out.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

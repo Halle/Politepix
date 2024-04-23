@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Malloc_error when changing views in UINavigationController &#8211; Politepix</title>
+		<atom:link href="/forums/topic/malloc_error-when-changing-views-in-uinavigationcontroller/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/malloc_error-when-changing-views-in-uinavigationcontroller/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:43:47 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/malloc_error-when-changing-views-in-uinavigationcontroller/#post-1018389</guid>
+					<title><![CDATA[Malloc_error when changing views in UINavigationController]]></title>
+					<link>/forums/topic/malloc_error-when-changing-views-in-uinavigationcontroller/#post-1018389</link>
+					<pubDate>Tue, 24 Sep 2013 00:44:05 +0000</pubDate>
+					<dc:creator>tbeagley</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>After speech has been instantiated if I attempt to change view controllers the app crashes. If speech is not instantiated I am able to freely move between view controllers.</p>
+<p>Only one of the view controllers uses flite/neatspeech. I am able to start and stop speech using the code contained in the guide that came along with my order. There are no current issues if I remain in the view controller that contains the speech code.</p>
+<p>Is there something I need to do in order to deallocate or free flite/neatspeech when switching between view controllers?</p>
+<p>error is:<br />
+<code>malloc: *** error for object 0x210535c0: pointer being freed was not allocated</code></p>
+<p>This is in Xcode 5 using ARC.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/malloc_error-when-changing-views-in-uinavigationcontroller/#post-1018393</guid>
+					<title><![CDATA[Reply To: Malloc_error when changing views in UINavigationController]]></title>
+					<link>/forums/topic/malloc_error-when-changing-views-in-uinavigationcontroller/#post-1018393</link>
+					<pubDate>Tue, 24 Sep 2013 06:13:06 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>This could be a bug in 1.5, but first I wanted to ask whether you are sending a [self.fliteController stopSpeaking]; message before exiting the view controller.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/malloc_error-when-changing-views-in-uinavigationcontroller/#post-1018396</guid>
+					<title><![CDATA[Reply To: Malloc_error when changing views in UINavigationController]]></title>
+					<link>/forums/topic/malloc_error-when-changing-views-in-uinavigationcontroller/#post-1018396</link>
+					<pubDate>Tue, 24 Sep 2013 14:36:58 +0000</pubDate>
+					<dc:creator>tbeagley</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yes, every button that takes the user away from the page of spoken contents sends that message, including when the view is changed.</p>
+<p>I see that the command is obeyed (the speech stops) but as soon as the view controller unloads I get the error. Setting the break point in malloc_error_break doesn&#8217;t tell me much (I&#8217;m a bit new to Xcode and ObjC)</p>
+<p>How do you typically handle having flite/openears in a navigation project with multiple views? Would you import everything into the AppDelegate files (or some other files) and reference from there? Or should it &#8220;just work&#8221; when resources are de or reallocated from one view to another view?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/malloc_error-when-changing-views-in-uinavigationcontroller/#post-1018397</guid>
+					<title><![CDATA[Reply To: Malloc_error when changing views in UINavigationController]]></title>
+					<link>/forums/topic/malloc_error-when-changing-views-in-uinavigationcontroller/#post-1018397</link>
+					<pubDate>Tue, 24 Sep 2013 14:48:23 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>In the case of PocketsphinxController it has to be a single instantiation and is designed to be able to deliver info to any part of the app using OpenEarsEventsObserver so it should go in the root view controller and stay there IMO (very little should go in your AppDelegate).  </p>
+<p>In the case of FliteController it isn&#8217;t intended to be restricted to a single root view controller so I consider this buggy behavior. I think you can work around it for now by treating it in the same way as PocketsphinxController but I am going to look into what is going on with that tomorrow and get back to you because it ought to be able to deallocate if it is stopped properly. Can you share with me the device and OS version for testing?</p>
+<blockquote><p>Yes, every button that takes the user away from the page of spoken contents sends that message, including when the view is changed.</p></blockquote>
+<p>Can I see a snippet of the button-activated code?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/malloc_error-when-changing-views-in-uinavigationcontroller/#post-1018398</guid>
+					<title><![CDATA[Reply To: Malloc_error when changing views in UINavigationController]]></title>
+					<link>/forums/topic/malloc_error-when-changing-views-in-uinavigationcontroller/#post-1018398</link>
+					<pubDate>Tue, 24 Sep 2013 14:55:20 +0000</pubDate>
+					<dc:creator>tbeagley</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I was really hoping to push this out today. I didn&#8217;t realize you were in Germany.</p>
+<p>Here&#8217;s one of the buttons that would stop speech:</p>
+<pre><code>- (IBAction)btnBrowse:(id)sender {
+    
+    [self.fliteController stopSpeaking];
+    
+    //go back to a url where we get some data from JSON
+    NSString *website = [NSString stringWithFormat:@&quot;...some URL&quot;];
+    NSURL *url = [NSURL URLWithString:website];
+    NSURLRequest *requestURL = [NSURLRequest requestWithURL:url];
+    [webBoxPDF01 loadRequest:requestURL];
+    
+}</code></pre>
+<p>that stops the speech, but when I exit that view using the navigation controller&#8217;s back button it crashes.</p>
+<p>And I&#8217;ve even taken to adding this to my .mm file for the view that uses fliteController:</p>
+<pre><code>- (void)dealloc {
+    [self.fliteController stopSpeaking];
+}</code></pre>
+<p>The voice stops speaking, but again, the app crashes.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/malloc_error-when-changing-views-in-uinavigationcontroller/#post-1018401</guid>
+					<title><![CDATA[Reply To: Malloc_error when changing views in UINavigationController]]></title>
+					<link>/forums/topic/malloc_error-when-changing-views-in-uinavigationcontroller/#post-1018401</link>
+					<pubDate>Tue, 24 Sep 2013 15:02:11 +0000</pubDate>
+					<dc:creator>tbeagley</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Device is an iPhone 4s and OS is 6.1.3 (most of the users in my company disregard os upgrades, so I&#8217;ll need to support 6.x for a while)</p>
+<p>The issue also occurs on a 4s running iOS 7 and in the emulators running both versions.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/malloc_error-when-changing-views-in-uinavigationcontroller/#post-1018402</guid>
+					<title><![CDATA[Reply To: Malloc_error when changing views in UINavigationController]]></title>
+					<link>/forums/topic/malloc_error-when-changing-views-in-uinavigationcontroller/#post-1018402</link>
+					<pubDate>Tue, 24 Sep 2013 15:05:27 +0000</pubDate>
+					<dc:creator>tbeagley</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Not sure if it helps, but here&#8217;s the code where the speech is triggered:</p>
+<pre><code>//labels from JSON data for visual and audio
+NSString *readLabels = [NSString stringWithFormat:@&quot;%@%@%@&quot;,self.lblRead1.text,self.lblRead2.text,self.lblRead3.text];
+    
+//some lazy code based on the user&#039;s voice prefs (male or female)
+    if ([voiceIsSet isEqualToString:voiceIsEmma]) {
+        [self.fliteController sayWithNeatSpeech:readLabels withVoice:self.ealt];
+    } else {
+        [self.fliteController sayWithNeatSpeech:readLabels withVoice:self.william];
+    }</code></pre>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/malloc_error-when-changing-views-in-uinavigationcontroller/#post-1018403</guid>
+					<title><![CDATA[Reply To: Malloc_error when changing views in UINavigationController]]></title>
+					<link>/forums/topic/malloc_error-when-changing-views-in-uinavigationcontroller/#post-1018403</link>
+					<pubDate>Tue, 24 Sep 2013 15:14:07 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi tbeagley,</p>
+<p>I&#8217;m sorry for the issue. Since this is a bug it will require a plugin update to fix, so even if I were in the same timezone as you I wouldn&#8217;t be able to find the issue, fix it, test the fix and push the update quickly enough for you to publish today, but I understand that you have time pressure and that this is a blocker. It is now the top priority and I&#8217;ll have more info for you tomorrow. </p>
+<p>I expect that a workaround that will work right now would be to keep it in a root level view controller and message it from child view controllers with delegate methods or notifications to control the speech.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/malloc_error-when-changing-views-in-uinavigationcontroller/#post-1018404</guid>
+					<title><![CDATA[Reply To: Malloc_error when changing views in UINavigationController]]></title>
+					<link>/forums/topic/malloc_error-when-changing-views-in-uinavigationcontroller/#post-1018404</link>
+					<pubDate>Tue, 24 Sep 2013 15:17:09 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for following up with more code. When you get the crash, what happens if you type &#8220;bt&#8221; into the blue llvm prompt in the debug console?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/malloc_error-when-changing-views-in-uinavigationcontroller/#post-1018405</guid>
+					<title><![CDATA[Reply To: Malloc_error when changing views in UINavigationController]]></title>
+					<link>/forums/topic/malloc_error-when-changing-views-in-uinavigationcontroller/#post-1018405</link>
+					<pubDate>Tue, 24 Sep 2013 15:17:57 +0000</pubDate>
+					<dc:creator>tbeagley</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the quick replies, Halle. I appreciate the time you&#8217;ve given me.</p>
+<p>I&#8217;ll attempt the workaround for now and I look forward to your updates.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

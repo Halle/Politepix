@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+<meta charset="UTF-8">
+
+<title>OpenEars upgrade guide | Politepix</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="/wp-content/uploads/omgf/omgf-stylesheet-56/omgf-stylesheet-56.css?ver=1668781124" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" type="text/css" href="/wp-content/themes/politepix-pixelpress-child-theme/style.css" media="screen">
+
+<link rel="pingback" href="/xmlrpc.php">
+<meta name="robots" content="max-image-preview:large">
+<script>window._wca = window._wca || [];</script>
+<link rel="dns-prefetch" href="//stats.wp.com">
+<link rel="dns-prefetch" href="//i0.wp.com">
+<link rel="dns-prefetch" href="//c0.wp.com">
+<link rel="alternate" type="application/rss+xml" title="Politepix &raquo; Feed" href="http://feeds.feedburner.com/politepixblog">
+<link rel="alternate" type="application/rss+xml" title="Politepix &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Politepix &raquo; OpenEars upgrade guide Comments Feed" href="/upgradeguide/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.5.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🐦‍⬛","🐦​⬛")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<link rel="stylesheet" id="woo-layout-css" href="/wp-content/themes/pixelpress/css/layout.css?ver=6.5.2" type="text/css" media="all">
+<link rel="stylesheet" id="woocommerce-css" href="/wp-content/themes/pixelpress/css/woocommerce.css?ver=6.5.2" type="text/css" media="all">
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="https://c0.wp.com/c/6.5.2/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<style id="wp-block-library-inline-css" type="text/css">.has-text-align-justify{text-align:justify;}</style>
+<link rel="stylesheet" id="mediaelement-css" href="https://c0.wp.com/c/6.5.2/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="https://c0.wp.com/c/6.5.2/wp-includes/js/mediaelement/wp-mediaelement.min.css" type="text/css" media="all">
+<style id="jetpack-sharing-buttons-style-inline-css" type="text/css">.jetpack-sharing-buttons__services-list{display:flex;flex-direction:row;flex-wrap:wrap;gap:0;list-style-type:none;margin:5px;padding:0}.jetpack-sharing-buttons__services-list.has-small-icon-size{font-size:12px}.jetpack-sharing-buttons__services-list.has-normal-icon-size{font-size:16px}.jetpack-sharing-buttons__services-list.has-large-icon-size{font-size:24px}.jetpack-sharing-buttons__services-list.has-huge-icon-size{font-size:36px}@media print{.jetpack-sharing-buttons__services-list{display:none!important}}.editor-styles-wrapper .wp-block-jetpack-sharing-buttons{gap:0;padding-inline-start:0}ul.jetpack-sharing-buttons__services-list.has-background{padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="bbp-default-css" href="/wp-content/plugins/bbpress/templates/default/css/bbpress.min.css?ver=2.6.9" type="text/css" media="all">
+<link rel="stylesheet" id="currency_converter_styles-css" href="/wp-content/plugins/woocommerce-currency-converter-widget/assets/css/converter.css?ver=2.2.2" type="text/css" media="all">
+<style id="woocommerce-inline-inline-css" type="text/css">.woocommerce form .form-row .required { visibility: visible; }</style>
+<link rel="stylesheet" id="cmplz-general-css" href="/wp-content/plugins/complianz-gdpr/assets/css/cookieblocker.min.css?ver=1710283454" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="https://c0.wp.com/p/jetpack/13.3.1/css/jetpack.css" type="text/css" media="all">
+<link rel="stylesheet" id="prettyPhoto-css" href="/wp-content/themes/pixelpress/includes/css/prettyPhoto.css?ver=6.5.2" type="text/css" media="all">
+<script type="text/template" id="tmpl-variation-template">
+	<div class="woocommerce-variation-description">{{{ data.variation.variation_description }}}<\/div>
+	<div class="woocommerce-variation-price">{{{ data.variation.price_html }}}<\/div>
+	<div class="woocommerce-variation-availability">{{{ data.variation.availability_html }}}<\/div>
+</script>
+<script type="text/template" id="tmpl-unavailable-variation-template">
+	<p>Sorry, this product is unavailable. Please choose a different combination.<\/p>
+</script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js" id="wp-polyfill-inert-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/dist/vendor/regenerator-runtime.min.js" id="regenerator-runtime-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/dist/vendor/wp-polyfill.min.js" id="wp-polyfill-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/dist/hooks.min.js" id="wp-hooks-js"></script>
+<script data-service="jetpack-statistics" data-category="statistics" type="text/plain" data-cmplz-src="https://stats.wp.com/w.js?ver=202417" id="woo-tracks-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/jquery/jquery.min.js" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/jquery/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/underscore.min.js" id="underscore-js"></script>
+<script type="text/javascript" id="wp-util-js-extra">
+/* <![CDATA[ */
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/wp-util.min.js" id="wp-util-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/jquery-blockui/jquery.blockUI.min.js" id="jquery-blockui-js" defer data-wp-strategy="defer"></script>
+<script type="text/javascript" id="wc-add-to-cart-variation-js-extra">
+/* <![CDATA[ */
+var wc_add_to_cart_variation_params = {"wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_no_matching_variations_text":"Sorry, no products matched your selection. Please choose a different combination.","i18n_make_a_selection_text":"Please select some product options before adding this product to your cart.","i18n_unavailable_text":"Sorry, this product is unavailable. Please choose a different combination."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/frontend/add-to-cart-variation.min.js" id="wc-add-to-cart-variation-js" defer data-wp-strategy="defer"></script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/jquery-cookie/jquery.cookie.min.js" id="jquery-cookie-js" defer data-wp-strategy="defer"></script>
+<script data-service="jetpack-statistics" data-category="statistics" type="text/plain" data-cmplz-src="https://stats.wp.com/s-202417.js" id="woocommerce-analytics-js" defer data-wp-strategy="defer"></script>
+<script type="text/javascript" src="/wp-content/themes/pixelpress/includes/js/third-party.js?ver=6.5.2" id="third party-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/prettyPhoto/jquery.prettyPhoto.min.js" id="prettyPhoto-js" data-wp-strategy="defer"></script>
+<script type="text/javascript" src="/wp-content/themes/pixelpress/includes/js/general.js?ver=6.5.2" id="general-js"></script>
+<script type="text/javascript" src="/wp-content/themes/pixelpress/includes/js/uniform.js?ver=6.5.2" id="uniform-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/pages/1023202">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.5.2">
+<meta name="generator" content="WooCommerce 8.8.2">
+<link rel="canonical" href="/upgradeguide/">
+<link rel="shortlink" href="/?p=1023202">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Fupgradeguide%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Fupgradeguide%2F#038;format=xml">
+	<style>img#wpstats{display:none}</style>
+					<style>.cmplz-hidden {
+					display: none !important;
+				}</style>		<script>( function() {
+				window.onpageshow = function( event ) {
+					// Defined window.wpforms means that a form exists on a page.
+					// If so and back/forward button has been clicked,
+					// force reload a page to prevent the submit button state stuck.
+					if ( typeof window.wpforms !== 'undefined' && event.persisted ) {
+						window.location.reload();
+					}
+				};
+			}() );</script>
+		
+<!-- Theme version -->
+<meta name="generator" content="PixelPress Politepix 1.0">
+<meta name="generator" content="PixelPress 1.5.4">
+<meta name="generator" content="WooFramework 6.2.9">
+
+<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<!--  Mobile viewport scale | Disable user zooming as the layout is optimised -->
+<meta content="initial-scale=1.0; maximum-scale=1.0; user-scalable=no" name="viewport">
+		<!--[if lt IE 9]>
+			<script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+			<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	
+<!-- Google Webfonts -->
+<link href="/wp-content/uploads/omgf/omgf-stylesheet-165/omgf-stylesheet-165.css?ver=1668781124" rel="stylesheet" type="text/css">
+
+<!-- Alt Stylesheet -->
+<link href="/wp-content/themes/pixelpress/styles/default.css" rel="stylesheet" type="text/css">
+
+<!-- Custom Favicon -->
+<link rel="shortcut icon" href="/wp-content/uploads/favicon.png">
+
+<!-- Woo Shortcodes CSS -->
+<link href="/wp-content/themes/pixelpress/functions/css/shortcodes.css" rel="stylesheet" type="text/css">
+
+<!-- Custom Stylesheet -->
+<link href="/wp-content/themes/pixelpress/custom.css" rel="stylesheet" type="text/css">
+
+<!-- Custom Stylesheet In Child Theme -->
+<link href="/wp-content/themes/politepix-pixelpress-child-theme/custom.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body data-cmplz="1" class="page-template page-template-template-fullwidth page-template-template-fullwidth-php page page-id-1023202 theme-pixelpress woocommerce-no-js unknown alt-style-default has-lightbox layout-left-content">
+
+<div id="wrapper">
+
+	    
+        
+    <div id="header-wrap">
+
+		<header id="header" class="col-full">
+		
+			<div id="logo" class="fl">
+												    <a id="logo" href="/" title="iOS Frameworks for speech recognition, text to speech and more">
+				    	<img src="/wp-content/uploads/logo1.png" alt="Politepix">
+				    </a>
+			    			    
+			    <hgroup>
+			        
+					<h1 class="site-title"><a href="/">Politepix</a></h1>
+					<h2 class="site-description">iOS Frameworks for speech recognition, text to speech and more</h2>
+					<h3 class="nav-toggle"><a href="#navigation">Navigation</a></h3>
+				      	
+				</hgroup>
+			</div>
+<!-- /#logo -->		
+	        
+	        	
+	        <div id="header-right" class="fr">
+
+				<nav id="navigation" role="navigation">
+					
+					<ul id="main-nav" class="nav fl">
+<li id="menu-item-1175" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1175">
+<a href="/openears/">OpenEars</a>
+<ul class="sub-menu">
+	<li id="menu-item-11108" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11108"><a href="/openears/tutorial/">OpenEars Tutorials</a></li>
+	<li id="menu-item-1171" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1171"><a href="/openears/support/">OpenEars FAQ/Support</a></li>
+	<li id="menu-item-1189" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1189"><a href="/forums/forum/openearsforum/">OpenEars Support Forum</a></li>
+	<li id="menu-item-14947" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14947"><a href="/openearsplatform/">About the OpenEars Platform</a></li>
+</ul>
+</li>
+<li id="menu-item-11706" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-11706">
+<a href="/neatspeech">NeatSpeech</a>
+<ul class="sub-menu">
+	<li id="menu-item-11707" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11707"><a href="/forums/forum/openears-plugins/">NeatSpeech support forum</a></li>
+</ul>
+</li>
+<li id="menu-item-9871" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-9871">
+<a href="/rapidears/">RapidEars</a>
+<ul class="sub-menu">
+	<li id="menu-item-10389" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10389"><a href="/forums/forum/openears-plugins">RapidEars Support Forum</a></li>
+</ul>
+</li>
+<li id="menu-item-11030" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-11030">
+<a href="/rejecto/">Rejecto</a>
+<ul class="sub-menu">
+	<li id="menu-item-11031" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11031"><a href="/forums/forum/openears-plugins/">Rejecto Support Forum</a></li>
+</ul>
+</li>
+<li id="menu-item-13071" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13071"><a href="/savethatwave/">SaveThatWave</a></li>
+<li id="menu-item-1021000" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1021000">
+<a href="/ruleorama/">RuleORama</a>
+<ul class="sub-menu">
+	<li id="menu-item-9002" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9002"><a href="/forums/forum/openears-plugins/">RuleORama Free Support Forum</a></li>
+</ul>
+</li>
+<li id="menu-item-1178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1178"><a title="Blog" href="/blog/">Blog</a></li>
+<li id="menu-item-1015870" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1015870">
+<a href="/shop">Shop</a>
+<ul class="sub-menu">
+	<li id="menu-item-8499" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8499"><a href="/shop">View all products</a></li>
+	<li id="menu-item-8486" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8486"><a href="/cart/">Cart</a></li>
+	<li id="menu-item-8498" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8498"><a href="/order-tracking/">Track your order</a></li>
+	<li id="menu-item-8539" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8539"><a href="/termsandconditions/">AGB/Terms and Conditions</a></li>
+</ul>
+</li>
+</ul>			        
+			        			        <ul class="mini-cart">
+						<li>
+							<a href="/cart/" title="View your shopping cart" class="cart-parent">
+								<span> 
+							<span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&euro;</span>0.00</bdi></span><mark>0</mark>							</span>
+							</a>
+							<ul class="cart_list"><li class="empty">No products in the cart.</li></ul>						</li>
+					</ul>
+			      				      	
+				</nav><!-- /#navigation -->
+
+				
+<div id="header-social" class="social fr">
+				<a href="http://feeds.feedburner.com/politepixblog" class="subscribe" title="RSS"></a>
+
+				<a href="http://www.twitter.com/politepix" class="twitter" title="Follow me on Twitter"></a>
+
+		</div>
+<!-- /.social -->
+				
+
+			</div>
+<!-- /#header-right -->
+			
+					
+		</header><!-- /#header -->
+	
+	</div>
+<!-- /#header-wrap -->
+	
+	
+	     
+    <div id="content" class="page col-full">
+    
+    	    	
+		<section id="main" class="fullwidth">
+           
+                                                                     
+                <article class="post-1023202 page type-page status-publish hentry">
+					
+					<header>
+						<h1>OpenEars upgrade guide</h1>
+					</header>
+                    
+                    <section class="entry">
+	                	<h2>How to upgrade from OpenEars 2.0x to OpenEars 2.5</h2>
+<p>All that is necessary is to replace any OpenEars platform frameworks and bundles using the new 2.5 versions, including plugins and voices such as Flite or NeatSpeech voices, and then to add any new language (or alternate English version) acoustic models you want to use from the <a href="/languages">language download page</a>.</p>
+<h2>How to upgrade from OpenEars 1.x to OpenEars 2.x</h2>
+<p>There have been changes to the OpenEars API, assets, and class naming in version 2.0 in order to support its new capabilities. You can read more about how and why <a href="/2014/12/05/openears-2-0-and-version-2-0-of-all-plugins-out-now/">here</a>. Because of that, the first time you upgrade from OpenEars 1.x to 2.x, you need to undertake some additional steps:</p>
+<p><strong>Step 0</strong>: Commit your current version to your versioning system, or create a backup if you don&#8217;t use a versioning system (please start using a versioning system). That way, if things go wrong in this process, you know you have a clean version to start over with. Make a cup of tea, put on some nice music, and relax and take your time with the following process. You only have to do it once, and the more careful and deliberate you are, the less likely it is that you&#8217;ll have any problems. Remember that if you have trouble, you can get help at the <a href="/forums">forums</a>. Here we go:</p>
+<p><strong>Step 1</strong>: Remove all OpenEars 1.x frameworks and assets. OpenEars 2.0 includes new acoustic models and re-compiled voices and plugin frameworks, and 2.0 is not backwards-compatible with the old ones, so if you keep them around you will get poor results even if the app builds (which is unlikely).</p>
+<p>After making a note of where the 1.x frameworks and assets were so you can easily install the new versions without having to make changes in your app build settings, remove and delete any of the following that you have added to your project (if you want to keep a backup of your old frameworks, which isn&#8217;t a bad idea since the old versions will not remain available on the site, zip the backup so there is no risk of being confused by a build setting unexpectedly linking to an outdated framework):</p>
+<pre>
+OpenEars.framework
+Slt.framework
+AcousticModelEnglish.bundle
+AcousticModelSpanish.bundle
+RapidEars.framework or RapidEarsDemo.framework
+Rejecto.framework or RejectoDemo.framework
+RuleORama.framework or RuleORamaDemo.framework
+SaveThatWave.framework or SaveThatWaveDemo.framework
+NeatSpeech.framework or NeatSpeechDemo.framework,
+</pre>
+<p>and the following NeatSpeech voice data if you are a NeatSpeech user:</p>
+<pre>Beatrice.framework
+Daniel.framework
+Elliott.framework
+Emma.framework
+EmmaAlternate.framework
+Martina.framework
+Mateo.framework
+NeatSpeechRequired.bundle
+RequiredSpanishData.bundle
+RequiredUKEnglishData.bundle
+RequiredUSEnglishData.bundle
+Valeria.framework
+William.framework
+WilliamAlternate.framework
+</pre>
+<p>After removing any of these items in your app&#8217;s Project Navigator (leave your build settings pane alone – if all goes well we won&#8217;t ever need to make changes there), search for these elements in your file system using Spotlight and make sure they don&#8217;t turn up anywhere that they can be linked to. Confirm that your app can&#8217;t compile due to the absence of these elements. Once you are satisfied that your app cannot link to outdated assets or frameworks any more, quit Xcode and move on to step 2.</p>
+<p><strong>Step 2</strong>: Re-install the 2.x versions of the assets in the same locations as the old ones. Download the new <a href="/openears">OpenEars</a>, and you can get any licensed plugins at the licensed plugin server (2.o is a free upgrade for licensed users), and you can get the demos at the following pages:</p>
+<p><a href="/neatspeech">https://www.politepix.com/neatspeech</a><br>
+<a href="/rapidears">https://www.politepix.com/rapidears</a><br>
+<a href="/rejecto">https://www.politepix.com/rejecto</a><br>
+<a href="/ruleorama">https://www.politepix.com/ruleorama</a><br>
+<a href="/savethatwave">https://www.politepix.com/savethatwave</a></p>
+<p>If you&#8217;re  a licensed user you will see the 1.x versions of your licensed frameworks still available at the licensed download server, so make sure to only download the 2.x versions for this upgrade. Place the new frameworks and assets in the same location as the old ones were. Reopen your project and verify in Xcode that the 2.0 frameworks and assets are now seen by your project (for instance, make sure they are shown in black in the Project Navigator, not red). Don&#8217;t attempt to build yet; you will get errors. When your project doesn&#8217;t show any missing OpenEars Platform assets in the Project Navigator, move on to step 3:</p>
+<p><strong>Step 3</strong>: Update your import statements. Make the following changes to any of these #import statements which are present in your app (if you use #include instead of #import, just substitute it for &#8216;import&#8217; in the following):</p>
+<p><strong>REPLACE</strong> #import &lt;OpenEars/LanguageModelGenerator.h&gt; <strong>WITH</strong> #import &lt;OpenEars/OELanguageModelGenerator.h&gt;<br>
+<strong>REPLACE</strong> #import &lt;OpenEars/FliteController.h&gt; <strong>WITH</strong> #import &lt;OpenEars/OEFliteController.h&gt;<br>
+<strong>REPLACE</strong> #import &lt;OpenEars/PocketsphinxController.h&gt; <strong>WITH</strong> #import &lt;OpenEars/OEPocketsphinxController.h&gt;<br>
+<strong>REPLACE</strong> #import &lt;OpenEars/OpenEarsEventsObserver.h&gt; <strong>WITH</strong> #import &lt;OpenEars/OEEventsObserver.h&gt;<br>
+<strong>REPLACE</strong> #import &lt;OpenEars/OpenEarsLogging.h&gt; <strong>WITH</strong> #import &lt;OpenEars/OELogging.h&gt;<br>
+<strong>REPLACE</strong> #import &lt;OpenEars/AcousticModel.h&gt; <strong>WITH</strong> #import &lt;OpenEars/OEAcousticModel.h&gt;</p>
+<p>It is pretty unlikely that you have any direct references to #import &lt;OpenEars/FliteVoice.h&gt; in your app, but if you somehow do, please replace those imports with #import &lt;OpenEars/OEFliteVoice.h&gt; instead.</p>
+<p>If you use the NeatSpeech demo:</p>
+<p><strong>REPLACE</strong> #import &lt;NeatSpeechDemo/FliteController+NeatSpeech.h&gt; <strong>WITH</strong> #import &lt;NeatSpeechDemo/OEFliteController+NeatSpeech.h&gt;</p>
+<p>If you use licensed Neatspeech:</p>
+<p><strong>REPLACE</strong> #import &lt;NeatSpeech/FliteController+NeatSpeech.h&gt; <strong>WITH</strong> #import &lt;NeatSpeech/OEFliteController+NeatSpeech.h&gt;</p>
+<p>If you use the RapidEars demo:</p>
+<p><strong>REPLACE</strong> #import &lt;RapidEarsDemo/PocketsphinxController+RapidEars.h&gt; <strong>WITH</strong> #import &lt;RapidEarsDemo/OEPocketsphinxController+RapidEars.h&gt;<br>
+<strong>REPLACE</strong> #import &lt;RapidEarsDemo/OpenEarsEventsObserver+RapidEars.h&gt; <strong>WITH</strong> #import &lt;RapidEarsDemo/OEEventsObserver+RapidEars.h&gt;</p>
+<p>If you use licensed RapidEars:</p>
+<p><strong>REPLACE</strong> #import &lt;RapidEars/PocketsphinxController+RapidEars.h&gt; <strong>WITH</strong> #import &lt;RapidEars/OEPocketsphinxController+RapidEars.h&gt;<br>
+<strong>REPLACE</strong> #import &lt;RapidEars/OpenEarsEventsObserver+RapidEars.h&gt; <strong>WITH</strong> #import &lt;RapidEars/OEEventsObserver+RapidEars.h&gt;</p>
+<p>If you use the Rejecto demo:</p>
+<p><strong>REPLACE</strong> #import &lt;RejectoDemo/LanguageModelGenerator+Rejecto.h&gt; <strong>WITH</strong> #import &lt;RejectoDemo/OELanguageModelGenerator+Rejecto.h&gt;</p>
+<p>If you use licensed Rejecto:</p>
+<p><strong>REPLACE</strong> #import &lt;Rejecto/LanguageModelGenerator+Rejecto.h&gt; <strong>WITH</strong> #import &lt;Rejecto/OELanguageModelGenerator+Rejecto.h&gt;</p>
+<p>If you use the RuleORama demo:</p>
+<p><strong>REPLACE</strong> #import &lt;RuleORamaDemo/LanguageModelGenerator+RuleORama.h&gt; <strong>WITH</strong> #import &lt;RuleORamaDemo/OELanguageModelGenerator+RuleORama.h&gt;</p>
+<p>If you use licensed RuleORama:</p>
+<p><strong>REPLACE</strong> #import &lt;RuleORama/LanguageModelGenerator+RuleORama.h&gt; <strong>WITH</strong> #import &lt;RuleORama/OELanguageModelGenerator+RuleORama.h&gt;</p>
+<p>If you use the SaveThatWave demo:</p>
+<p><strong>REPLACE</strong> #import &lt;SaveThatWaveDemo/OpenEarsEventsObserver+SaveThatWave.h&gt; <strong>WITH</strong> #import &lt;SaveThatWaveDemo/OEEventsObserver+SaveThatWave.h&gt;</p>
+<p>If you use licensed SaveThatWave:</p>
+<p><strong>REPLACE</strong> #import &lt;SaveThatWave/OpenEarsEventsObserver+SaveThatWave.h&gt; <strong>WITH</strong> #import &lt;SaveThatWave/OEEventsObserver+SaveThatWave.h&gt;</p>
+<p>Great. You still can&#8217;t compile yet, but if these are all replaced in your app, you can move on to step 4.</p>
+<p><strong>Step 4</strong>: Update class names. As you probably guessed, since the headers now have different names, the classes with the renamed headers also have different names, so they need to be referred to correctly in your app. Before making the following changes, make absolutely sure that you do case-sensitive searching so that you only change the class names (which are declared beginning with a capital letter), not your variable names (which I hope was not declared with a capital letter!). Absolutely do not run these searches on the OpenEars source code, just your app:</p>
+<p><strong>REPLACE REFERENCES TO THE CLASS</strong> LanguageModelGenerator <strong>WITH</strong> OELanguageModelGenerator<br>
+<strong>REPLACE REFERENCES TO THE CLASS</strong> FliteController <strong>WITH</strong> OEFliteController<br>
+<strong>REPLACE REFERENCES TO THE CLASS</strong> PocketsphinxController <strong>WITH</strong> OEPocketsphinxController<br>
+<strong>REPLACE REFERENCES TO THE CLASS</strong> OpenEarsEventsObserver <strong>WITH</strong> OEEventsObserver<br>
+<strong>REPLACE REFERENCES TO THE CLASS</strong> OpenEarsEventsObserverDelegate <strong>WITH</strong> OEEventsObserverDelegate (this is usually found in your headers for view controllers using OpenEarsEventsObserver)<br>
+<strong>REPLACE REFERENCES TO THE CLASS</strong> OpenEarsLogging <strong>WITH</strong> OELogging<br>
+<strong>REPLACE REFERENCES TO THE CLASS</strong> AcousticModel <strong>WITH</strong> OEAcousticModel</p>
+<p>It is pretty unlikely that you have any direct references to FliteVoice in your app, but if you somehow do, please replace those class references with OEFliteVoice instead.</p>
+<p>Super, you are now ready to move on to the final step 5.</p>
+<p><strong>Step 5</strong>: architectural changes.</p>
+<p>Since OEPocketsphinxController is now a singleton, it is no longer necessary to use lazy instantiation to ensure that there is only one instance of it. If you had previously used the recommended lazy instantiation method, the easiest thing to do is to change all of those accessors which look like this:</p>
+<pre>
+- (PocketsphinxController *)pocketsphinxController {
+    if (pocketsphinxController == nil) {
+        pocketsphinxController = [[PocketsphinxController alloc] init];
+    }
+    return pocketsphinxController;
+}</pre>
+<p>To look like this:</p>
+<pre>
+- (OEPocketsphinxController *)pocketsphinxController {
+    if (pocketsphinxController == nil) {
+        pocketsphinxController = [OEPocketsphinxController sharedInstance];
+    }
+    return pocketsphinxController;
+}
+</pre>
+<p>But you can also just replace your calls to self.pocketsphinxController to calls to [OEPocketsphinxController sharedInstance] and get rid of the accessors altogether – that is preferable for reasons of clarity, but the approach above requires changes in the fewest places, so it&#8217;s your call.</p>
+<p>Another major architectural change is that OELanguageModelGenerator no longer returns an NSDictionary containing the paths to your language model/grammar and dictionary if it is successful. It now returns nil if there was no error, or an error if there was an error. It now has convenience methods to get the correct paths to your successfully-generated language models, grammars and dictionaries if generation does not contain an error. Therefore, instead of doing this to generate:</p>
+<pre>
+LanguageModelGenerator *languageModelGenerator = [[LanguageModelGenerator alloc] init];
+NSError *error = [languageModelGenerator generateLanguageModelFromArray:firstLanguageArray withFilesNamed:@"FirstOpenEarsDynamicLanguageModel" forAcousticModelAtPath:[AcousticModel pathToModel:@"AcousticModelEnglish"]]; // Change "AcousticModelEnglish" to "AcousticModelSpanish" in order to create a language model for Spanish recognition instead of English.
+NSDictionary *firstDynamicLanguageGenerationResultsDictionary = nil;
+
+if([error code] != noErr) {
+    NSLog(@"Dynamic language generator reported error %@", [error description]);
+} else {
+    firstDynamicLanguageGenerationResultsDictionary = [error userInfo];
+    NSString *lmFile = [firstDynamicLanguageGenerationResultsDictionary objectForKey:@"LMFile"];
+    NSString *dictionaryFile = [firstDynamicLanguageGenerationResultsDictionary objectForKey:@"DictionaryFile"];
+    NSString *lmPath = [firstDynamicLanguageGenerationResultsDictionary objectForKey:@"LMPath"];
+    NSString *dictionaryPath = [firstDynamicLanguageGenerationResultsDictionary objectForKey:@"DictionaryPath"];
+}
+</pre>
+<p>You do this instead:</p>
+<pre>
+OELanguageModelGenerator *languageModelGenerator = [[OELanguageModelGenerator alloc] init];
+NSError *error = [languageModelGenerator generateLanguageModelFromArray:firstLanguageArray withFilesNamed:@"MyModelName" forAcousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"]];
+if(error != noErr) {
+    NSLog(@"Dynamic language generator reported error %@", [error description]);
+} else {
+    NSString *dictionaryPath = [_languageModelGenerator pathToSuccessfullyGeneratedDictionaryWithRequestedName:@"MyModelName"];
+    NSString *lmPath = [_languageModelGenerator pathToSuccessfullyGeneratedLanguageModelWithRequestedName:@"MyModelName"];
+}
+</pre>
+<p>Please keep in mind that the following classes, since they are asynchronous and event-driven, have to be instantiated as properties of your class rather than as method-scope variables:</p>
+<pre>
+OEEventsObserver
+OEFliteController
+SaveThatWaveController
+</pre>
+<p>It is almost certain that you already have them as class properties of your view controller if you are using them, but now they are only being tested as properties so there is no support for using them in other scopes, and if you see unexpected behavior with these classes, check and make sure they are properties. It is no longer necessary to instantiate any of the objects using the lazy accessor method – it is fine (and preferable) to instantiate them in the usual way.</p>
+<p>OEPocketsphinxController does not use calibration anymore, so OEEventsObserver no longer uses the calibration callbacks. It has some more informative error state callbacks, so take a look at its header to get up-to-date with its changes.</p>
+<p><strong>Checking for API changes</strong></p>
+<p>The last concern regarding architecture is to take a look at the headers whose API you are using and check for API changes. The two mentioned above are the most dramatic API changes, but there are a few smaller ones which don&#8217;t affect all users, for example SaveThatWave no longer has a method called &#8220;startForRapidEars&#8221; because its method &#8220;start&#8221; now just works with RapidEars, and RapidEars no longer has methods setFasterFinals: or SetFasterPartials: or setRapidEarsAccuracy: because it has been so optimized that they are no longer needed. The former delegate methods &#8211; (void) rapidEarsDidDetectBeginningOfSpeech and &#8211; (void) rapidEarsDidDetectEndOfSpeech are now handled in OEEventsObserver&#8217;s callbacks &#8211; (void) pocketsphinxDidDetectSpeech and &#8211; (void) pocketsphinxDidDetectFinishedSpeech. The only OEEventsObserver callbacks now handled by OEEventsObserver+RapidEars are the ones which are unique to RapidEars, i.e. its hypothesis methods.</p>
+<p>OEFliteController no longer has the properties noAudioSessionOverrides, audioSessionHasBeenInstantiated, and quietFlite because they are no longer needed. </p>
+<p>Another API change is that before you start setting properties of OEPocketsphinxController for the first time, it is necessary to call its setActive method:</p>
+<pre>
+[[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil];
+</pre>
+<p>As mentioned in the previous section, there are API changes in OEEventsObserver so you will want to remove calibration callbacks and other callbacks which are not longer part of the protocol, and add the more-informative listening setup error callbacks.</p>
+<p><strong>Compiling</strong></p>
+<p>Once you have checked for API changes and verified that you are using the current API (most likely if you have made the changes mentioned above, you&#8217;re fine), you should be able to compile.</p>
+<p><strong>Noise sensitivity</strong></p>
+<p>If you are finding OEPocketsphinxController more sensitive to noise than it used to be, or alternately if you are finding that it excludes real speech as if it were noise, you can change the OEPocketsphinxController property vadThreshold. In OpenEars it defaults to 2.0 (but this default could change as I get feedback from you about the settings you&#8217;re using) and making it higher will exclude more noise (with the possibility of excluding some intended speech if it is too high), and making it lower will reduce false positive exclusion of speech (with the possibility of allowing in too much noise if it is too low). Setting it lower than 1.5, especially in combination with a shortened secondsOfSilenceToDetect, can cause lags in hypotheses being returned since it can end up trying to analyze all sound. CMU recommends setting the upper limit no higher than 3.0.</p>
+<p><strong>Building the framework yourself</strong></p>
+<p>Most developers will not need to worry about this last point, but if your requirements involve doing a new build of the framework, there is a change there – in order to make a universal binary build of the framework (i.e. one that works with both devices and simulators) it is necessary to archive the framework (which will ultimately copy a universal binary into the distribution&#8217;s Frameworks folder) rather than just building it. Just selecting build will build only for devices or only for simulators depending on which is targeted. Selecting Archive will build for all supported architectures (as of the time of writing this guide, supported architectures are armv7, arm64, i386, x86_64, with armv7s no longer supported because Apple has removed it from the standard architecture list due to the <a href="https://devforums.apple.com/message/1045709#1045709">low necessity of supporting it for compatibility and optimization</a>). Additionally, keep in mind that if you do a debug build of OpenEars.framework, performance can be slower, so make sure that you test against an archive version of the framework before raising performance issues in the forums. Again, most developers don&#8217;t need to worry about this.</p>
+<p><strong>If the sample app doesn&#8217;t work</strong></p>
+<p>In the 2.0 version of OpenEars, the sample app requires that the distribution folder have its default name of OpenEarsDistribution. If you have downloaded and unzipped multiple copies and you have folders with names such as &#8220;OpenEarsDistribution 2&#8221; the sample app will not find the framework. I&#8217;ll fix this in 2.01, but for now just run the sample app from the folder with its unaltered name if you are having this issue.</p>
+<p><strong>Getting help if it doesn&#8217;t work</strong></p>
+<p>Those are the big points. If you have any difficulties, just check in at the <a href="/forums">forums</a> and I will help you, and please be ready to copy and paste the exact errors you&#8217;ve received so I can help!</p>
+	               	</section><!-- /.entry -->
+
+					
+                </article><!-- /.post -->
+                                                    
+			  
+        
+		</section><!-- /#main -->
+		
+				
+    </div>
+<!-- /#content -->
+		
+		<footer id="footer" class="col-full">
+	
+			<div id="copyright" class="col-left">
+							<p>Politepix &copy; 2024. All Rights Reserved.</p>
+						</div>
+	
+			<div id="credit" class="col-right">
+	        <div style="text-align:right;line-height:1.3em">OpenEars® is a registered trademark of Politepix<br>AllHours® is a registered trademark of Politepix<br>The Politepix site uses cookies in order to understand how the website is used by visitors and in order to enable some required functionality. You can learn all about which cookies we use on the <a href="/about/">About</a> page, as well as everything about our privacy policy.<br>
+<a href="https://twitter.com/Politepix" rel="me">TWITTER</a> | <a href="/contact" id="impressumlink">CONTACT POLITEPIX</a><a href="/about" id="impressumlink"> | IMPRESSUM | ABOUT | LEGAL | IMPRINT</a>
+</div>			</div>
+	<a rel="me" href="https://mastodon.social/@Halle">M</a>
+		</footer><!-- /#footer  -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Consent Management powered by Complianz | GDPR/CCPA Cookie Consent https://wordpress.org/plugins/complianz-gdpr -->
+<div id="cmplz-cookiebanner-container">
+<div class="cmplz-cookiebanner cmplz-hidden banner-1 bottom-right-view-preferences optin cmplz-bottom-right cmplz-categories-type-view-preferences" aria-modal="true" data-nosnippet="true" role="dialog" aria-live="polite" aria-labelledby="cmplz-header-1-optin" aria-describedby="cmplz-message-1-optin">
+	<div class="cmplz-header">
+		<div class="cmplz-logo"></div>
+		<div class="cmplz-title" id="cmplz-header-1-optin">Manage Cookie Consent</div>
+		<div class="cmplz-close" tabindex="0" role="button" aria-label="Close dialog">
+			<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
+		</div>
+	</div>
+
+	<div class="cmplz-divider cmplz-divider-header"></div>
+	<div class="cmplz-body">
+		<div class="cmplz-message" id="cmplz-message-1-optin">To provide the best experiences, we use technologies like cookies to store and/or access device information. Consenting to these technologies will allow us to process data such as browsing behavior or unique IDs on this site. Not consenting or withdrawing consent, may adversely affect certain features and functions.</div>
+		<!-- categories start -->
+		<div class="cmplz-categories">
+			<details class="cmplz-category cmplz-functional">
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Functional</span>
+							<span class="cmplz-always-active">
+								<span class="cmplz-banner-checkbox">
+									<input type="checkbox" id="cmplz-functional-optin" data-category="cmplz_functional" class="cmplz-consent-checkbox cmplz-functional" size="40" value="1">
+									<label class="cmplz-label" for="cmplz-functional-optin" tabindex="0"><span class="screen-reader-text">Functional</span></label>
+								</span>
+								Always active							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" height="18"><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"></path></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-functional">The technical storage or access is strictly necessary for the legitimate purpose of enabling the use of a specific service explicitly requested by the subscriber or user, or for the sole purpose of carrying out the transmission of a communication over an electronic communications network.</span>
+				</div>
+			</details>
+
+			<details class="cmplz-category cmplz-preferences">
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Preferences</span>
+							<span class="cmplz-banner-checkbox">
+								<input type="checkbox" id="cmplz-preferences-optin" data-category="cmplz_preferences" class="cmplz-consent-checkbox cmplz-preferences" size="40" value="1">
+								<label class="cmplz-label" for="cmplz-preferences-optin" tabindex="0"><span class="screen-reader-text">Preferences</span></label>
+							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" height="18"><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"></path></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-preferences">The technical storage or access is necessary for the legitimate purpose of storing preferences that are not requested by the subscriber or user.</span>
+				</div>
+			</details>
+
+			<details class="cmplz-category cmplz-statistics">
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Statistics</span>
+							<span class="cmplz-banner-checkbox">
+								<input type="checkbox" id="cmplz-statistics-optin" data-category="cmplz_statistics" class="cmplz-consent-checkbox cmplz-statistics" size="40" value="1">
+								<label class="cmplz-label" for="cmplz-statistics-optin" tabindex="0"><span class="screen-reader-text">Statistics</span></label>
+							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" height="18"><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"></path></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-statistics">The technical storage or access that is used exclusively for statistical purposes.</span>
+					<span class="cmplz-description-statistics-anonymous">The technical storage or access that is used exclusively for anonymous statistical purposes. Without a subpoena, voluntary compliance on the part of your Internet Service Provider, or additional records from a third party, information stored or retrieved for this purpose alone cannot usually be used to identify you.</span>
+				</div>
+			</details>
+			<details class="cmplz-category cmplz-marketing">
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Marketing</span>
+							<span class="cmplz-banner-checkbox">
+								<input type="checkbox" id="cmplz-marketing-optin" data-category="cmplz_marketing" class="cmplz-consent-checkbox cmplz-marketing" size="40" value="1">
+								<label class="cmplz-label" for="cmplz-marketing-optin" tabindex="0"><span class="screen-reader-text">Marketing</span></label>
+							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" height="18"><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"></path></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-marketing">The technical storage or access is required to create user profiles to send advertising, or to track the user on a website or across several websites for similar marketing purposes.</span>
+				</div>
+			</details>
+		</div>
+<!-- categories end -->
+			</div>
+
+	<div class="cmplz-links cmplz-information">
+		<a class="cmplz-link cmplz-manage-options cookie-statement" href="#" data-relative_url="#cmplz-manage-consent-container">Manage options</a>
+		<a class="cmplz-link cmplz-manage-third-parties cookie-statement" href="#" data-relative_url="#cmplz-cookies-overview">Manage services</a>
+		<a class="cmplz-link cmplz-manage-vendors tcf cookie-statement" href="#" data-relative_url="#cmplz-tcf-wrapper">Manage {vendor_count} vendors</a>
+		<a class="cmplz-link cmplz-external cmplz-read-more-purposes tcf" target="_blank" rel="noopener noreferrer nofollow" href="https://cookiedatabase.org/tcf/purposes/">Read more about these purposes</a>
+			</div>
+
+	<div class="cmplz-divider cmplz-footer"></div>
+
+	<div class="cmplz-buttons">
+		<button class="cmplz-btn cmplz-accept">Accept</button>
+		<button class="cmplz-btn cmplz-deny">Deny</button>
+		<button class="cmplz-btn cmplz-view-preferences">View preferences</button>
+		<button class="cmplz-btn cmplz-save-preferences">Save preferences</button>
+		<a class="cmplz-btn cmplz-manage-options tcf cookie-statement" href="#" data-relative_url="#cmplz-manage-consent-container">View preferences</a>
+			</div>
+
+	<div class="cmplz-links cmplz-documents">
+		<a class="cmplz-link cookie-statement" href="#" data-relative_url="">{title}</a>
+		<a class="cmplz-link privacy-statement" href="#" data-relative_url="">{title}</a>
+		<a class="cmplz-link impressum" href="#" data-relative_url="">{title}</a>
+			</div>
+
+</div>
+</div>
+					<div id="cmplz-manage-consent" data-nosnippet="true">
+<button class="cmplz-btn cmplz-hidden cmplz-manage-consent manage-consent-1">Manage consent</button>
+
+</div>
+<!--[if lt IE 9]>
+<script src="https://www.politepix.com/wp-content/themes/pixelpress/includes/js/respond-IE.js"></script>
+<![endif]-->
+			<script>jQuery(document).ready(function(){
+					jQuery('.images a').attr('rel', 'prettyPhoto[product-gallery]');
+				});</script>
+			<script type="text/javascript">(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();</script>
+	<link rel="stylesheet" id="wc-blocks-style-css" href="https://c0.wp.com/p/woocommerce/8.8.2/assets/client/blocks/wc-blocks.css" type="text/css" media="all">
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/accounting/accounting.min.js" id="accounting-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/jquery/ui/core.min.js" id="jquery-ui-core-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/jquery/ui/datepicker.min.js" id="jquery-ui-datepicker-js"></script>
+<script type="text/javascript" id="jquery-ui-datepicker-js-after">
+/* <![CDATA[ */
+jQuery(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+/* ]]> */
+</script>
+<script type="text/javascript" id="woocommerce-addons-js-extra">
+/* <![CDATA[ */
+var woocommerce_addons_params = {"price_display_suffix":"","tax_enabled":"1","price_include_tax":"","display_include_tax":"","ajax_url":"\/wp-admin\/admin-ajax.php","i18n_validation_required_select":"Please choose an option.","i18n_validation_required_input":"Please enter some text in this field.","i18n_validation_required_number":"Please enter a number in this field.","i18n_validation_required_file":"Please upload a file.","i18n_validation_letters_only":"Please enter letters only.","i18n_validation_numbers_only":"Please enter numbers only.","i18n_validation_letters_and_numbers_only":"Please enter letters and numbers only.","i18n_validation_email_only":"Please enter a valid email address.","i18n_validation_min_characters":"Please enter at least %c characters.","i18n_validation_max_characters":"Please enter up to %c characters.","i18n_validation_min_number":"Please enter %c or more.","i18n_validation_max_number":"Please enter %c or less.","i18n_sub_total":"Subtotal","i18n_remaining":"<span><\/span> characters remaining","currency_format_num_decimals":"2","currency_format_symbol":"€","currency_format_decimal_sep":".","currency_format_thousand_sep":",","trim_trailing_zeros":"","is_bookings":"","trim_user_input_characters":"1000","quantity_symbol":"x ","datepicker_class":"wc_pao_datepicker","datepicker_date_format":"MM d, yy","gmt_offset":"-2","date_input_timezone_reference":"default","currency_format":"%s%v"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/wp-content/plugins/woocommerce-product-addons/assets/js/frontend/addons.min.js?ver=6.8.2" id="woocommerce-addons-js" defer data-wp-strategy="defer"></script>
+<script type="text/javascript" src="/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-image-cdn/dist/image-cdn.js?minify=false&amp;ver=132249e245926ae3e188" id="jetpack-photon-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/sourcebuster/sourcebuster.min.js" id="sourcebuster-js-js"></script>
+<script type="text/javascript" id="wc-order-attribution-js-extra">
+/* <![CDATA[ */
+var wc_order_attribution = {"params":{"lifetime":1.0e-5,"session":30,"ajaxurl":"\/wp-admin\/admin-ajax.php","prefix":"wc_order_attribution_","allowTracking":true},"fields":{"source_type":"current.typ","referrer":"current_add.rf","utm_campaign":"current.cmp","utm_source":"current.src","utm_medium":"current.mdm","utm_content":"current.cnt","utm_id":"current.id","utm_term":"current.trm","session_entry":"current_add.ep","session_start_time":"current_add.fd","session_pages":"session.pgs","session_count":"udata.vst","user_agent":"udata.uag"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/frontend/order-attribution.min.js" id="wc-order-attribution-js"></script>
+<script data-service="jetpack-statistics" data-category="statistics" type="text/plain" data-cmplz-src="https://stats.wp.com/e-202417.js" id="jetpack-stats-js" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="jetpack-stats-js-after">
+/* <![CDATA[ */
+_stq = window._stq || [];
+_stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"206848719\",\"post\":\"1023202\",\"tz\":\"2\",\"srv\":\"www.politepix.com\",\"j\":\"1:13.3.1\"}") ]);
+_stq.push([ "clickTrackerInit", "206848719", "1023202" ]);
+/* ]]> */
+</script>
+<script type="text/javascript" id="cmplz-cookiebanner-js-extra">
+/* <![CDATA[ */
+var complianz = {"prefix":"cmplz_","user_banner_id":"1","set_cookies":[],"block_ajax_content":"","banner_version":"18","version":"7.0.4","store_consent":"","do_not_track_enabled":"1","consenttype":"optin","region":"eu","geoip":"","dismiss_timeout":"","disable_cookiebanner":"","soft_cookiewall":"","dismiss_on_scroll":"","cookie_expiry":"365","url":"\/wp-json\/complianz\/v1\/","locale":"lang=en&locale=en_US","set_cookies_on_root":"","cookie_domain":"","current_policy_id":"16","cookie_path":"\/","categories":{"statistics":"statistics","marketing":"marketing"},"tcf_active":"","placeholdertext":"Click to accept {category} cookies and enable this content","css_file":"\/wp-content\/uploads\/complianz\/css\/banner-{banner_id}-{type}.css?v=18","page_links":{"eu":{"cookie-statement":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"},"privacy-statement":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"},"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"us":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"uk":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"ca":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"au":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"za":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"br":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}}},"tm_categories":"","forceEnableStats":"","preview":"","clean_cookies":"","aria_label":"Click to accept {category} cookies and enable this content"};
+/* ]]> */
+</script>
+<script defer type="text/javascript" src="/wp-content/plugins/complianz-gdpr/cookiebanner/js/complianz.min.js?ver=1710283454" id="cmplz-cookiebanner-js"></script>
+</body>
+</html>

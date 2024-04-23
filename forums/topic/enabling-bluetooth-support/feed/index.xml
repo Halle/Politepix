@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Enabling Bluetooth Support &#8211; Politepix</title>
+		<atom:link href="/forums/topic/enabling-bluetooth-support/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/enabling-bluetooth-support/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:48:19 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/enabling-bluetooth-support/#post-15157</guid>
+					<title><![CDATA[Enabling Bluetooth Support]]></title>
+					<link>/forums/topic/enabling-bluetooth-support/#post-15157</link>
+					<pubDate>Fri, 28 Dec 2012 03:56:15 +0000</pubDate>
+					<dc:creator>markNZed</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>One of the features mentioned on the homepage is:</p>
+<p>Support bluetooth audio devices (experimental)</p>
+<p>Is there any information available about how to enable this support ?</p>
+<p>Is the source code available ?</p>
+<p>Thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/enabling-bluetooth-support/#post-15158</guid>
+					<title><![CDATA[Reply To: Enabling Bluetooth Support]]></title>
+					<link>/forums/topic/enabling-bluetooth-support/#post-15158</link>
+					<pubDate>Fri, 28 Dec 2012 04:19:20 +0000</pubDate>
+					<dc:creator>markNZed</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I turned on the logging and could see that the bluetooth headset seems to be picked up automatically &#8211; very nice. Unfortunately the app is crashing.</p>
+<p>Suspicious messages in the log include:</p>
+<p>2012-12-28 17:15:16.032  Looping through ringbuffer sections and pre-allocating them.<br />
+2012-12-28 17:15:19.094  17:15:19.094  AUIOClient_StartIO failed (2003329396)<br />
+2012-12-28 17:15:19.096  Couldn&#8217;t start audio unit output: 2003329396</p>
+<p>The last messages before the crash were:<br />
+2012-12-28 17:15:21.313 Pocketsphinx is now listening.<br />
+2012-12-28 17:15:21.315 Setting up the continuous recognition loop has failed for some reason, please turn on OpenEarsLogging to learn more.</p>
+<p>Any help much appreciated. Thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/enabling-bluetooth-support/#post-15161</guid>
+					<title><![CDATA[Reply To: Enabling Bluetooth Support]]></title>
+					<link>/forums/topic/enabling-bluetooth-support/#post-15161</link>
+					<pubDate>Fri, 28 Dec 2012 06:39:03 +0000</pubDate>
+					<dc:creator>markNZed</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Tried the OpenEarsSampleApp and it works with the same bluetooth headset. So we must be doing something wrong in our app. I&#8217;ve seen a similar failure in the OpenEarsSampleApp but it is rare.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/enabling-bluetooth-support/#post-15166</guid>
+					<title><![CDATA[Reply To: Enabling Bluetooth Support]]></title>
+					<link>/forums/topic/enabling-bluetooth-support/#post-15166</link>
+					<pubDate>Fri, 28 Dec 2012 10:07:21 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Sorry you&#8217;re seeing an issue. The reason that I&#8217;ve labeled the bluetooth support experimental is that I can&#8217;t test against every device, so I do think it&#8217;s possible that it can happen that a particular device has quirks. The good news is that so far, this is actually the first time a developer has reported an issue with a particular bluetooth device in combination with the sample app since I added bluetooth support a year ago, so please treat it as a bug report and show me the full logging output from the sample app if it manifests the same issue and let me know the device, and if the opportunity to test and fix it comes up I will do so. I&#8217;d appreciate getting to see the full OpenEarsLogging output and the verbosePocketSphinx output since that will tell the whole story.</p>
+<p>It does sound like there could be a general configuration issue in your own app if it performs notable differently from the sample app &#8212; I would investigate whether your app makes changes to the audio session either by calls to AVAudioSession or lower-level audiosession calls since that is the most likely way for an app to change OpenEars&#8217; audio handling. Something else that will change the audio session is using certain media objects such as video players or some audio players. The last thing that I think might lead to issues is if you are doing anything that might override OpenEars&#8217; threading behavior.</p>
+<p>You can always access the source code and change it and recompile it for your own app &#8212; the framework source is right in the distribution in the OpenEars folder.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/enabling-bluetooth-support/#post-15168</guid>
+					<title><![CDATA[Reply To: Enabling Bluetooth Support]]></title>
+					<link>/forums/topic/enabling-bluetooth-support/#post-15168</link>
+					<pubDate>Fri, 28 Dec 2012 10:54:53 +0000</pubDate>
+					<dc:creator>markNZed</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle, thanks for your reply. I&#8217;m not good enough at coding to call myself a developer so please excuse my lack of iOS knowledge. I can get the OpenEars demo to crash if it detects the BT headset on startup. I&#8217;m using the Motorola HS850 headset (very old)</p>
+<p>In the log that follows you can see the infamous &#8220;AUIOClient_StartIO failed&#8221;</p>
+<p>2012-12-28 23:50:12.134 OpenEarsSampleApp[12658:907] Starting OpenEars logging for OpenEars version 1.2.3 on device: iPhone running iOS version: 6.000000<br />
+2012-12-28 23:50:12.140 OpenEarsSampleApp[12658:907] Normalized array contains the following entries:<br />
+(<br />
+    SUNDAY,<br />
+    MONDAY,<br />
+    TUESDAY,<br />
+    WEDNESDAY,<br />
+    THURSDAY,<br />
+    FRIDAY,<br />
+    SATURDAY,<br />
+    QUIDNUNC,<br />
+    &#8220;CHANGE MODEL&#8221;<br />
+)<br />
+2012-12-28 23:50:12.143 OpenEarsSampleApp[12658:907] Starting dynamic language model generation<br />
+2012-12-28 23:50:12.146 OpenEarsSampleApp[12658:907] Able to open /var/mobile/Applications/37466C01-3CCE-4E8E-A939-BA60EDD9C2DA/Documents/OpenEarsDynamicGrammar.corpus for reading<br />
+2012-12-28 23:50:12.148 OpenEarsSampleApp[12658:907] Able to open /var/mobile/Applications/37466C01-3CCE-4E8E-A939-BA60EDD9C2DA/Documents/OpenEarsDynamicGrammar_pipe.txt for writing<br />
+2012-12-28 23:50:12.149 OpenEarsSampleApp[12658:907] Starting text2wfreq_impl<br />
+2012-12-28 23:50:12.167 OpenEarsSampleApp[12658:907] Done with text2wfreq_impl<br />
+2012-12-28 23:50:12.169 OpenEarsSampleApp[12658:907] Able to open /var/mobile/Applications/37466C01-3CCE-4E8E-A939-BA60EDD9C2DA/Documents/OpenEarsDynamicGrammar_pipe.txt for reading.<br />
+2012-12-28 23:50:12.171 OpenEarsSampleApp[12658:907] Able to open /var/mobile/Applications/37466C01-3CCE-4E8E-A939-BA60EDD9C2DA/Documents/OpenEarsDynamicGrammar.vocab for reading.<br />
+2012-12-28 23:50:12.172 OpenEarsSampleApp[12658:907] Starting wfreq2vocab<br />
+2012-12-28 23:50:12.174 OpenEarsSampleApp[12658:907] Done with wfreq2vocab<br />
+2012-12-28 23:50:12.176 OpenEarsSampleApp[12658:907] Starting text2idngram<br />
+2012-12-28 23:50:12.196 OpenEarsSampleApp[12658:907] Done with text2idngram<br />
+2012-12-28 23:50:12.200 OpenEarsSampleApp[12658:907] Starting idngram2lm</p>
+<p>2012-12-28 23:50:12.210 OpenEarsSampleApp[12658:907] Done with idngram2lm<br />
+2012-12-28 23:50:12.211 OpenEarsSampleApp[12658:907] Starting sphinx_lm_convert<br />
+2012-12-28 23:50:12.222 OpenEarsSampleApp[12658:907] Finishing sphinx_lm_convert<br />
+2012-12-28 23:50:12.226 OpenEarsSampleApp[12658:907] Done creating language model with CMUCLMTK in 0.082105 seconds.<br />
+2012-12-28 23:50:12.361 OpenEarsSampleApp[12658:907] The word QUIDNUNC was not found in the dictionary /var/mobile/Applications/37466C01-3CCE-4E8E-A939-BA60EDD9C2DA/OpenEarsSampleApp.app/cmu07a.dic.<br />
+2012-12-28 23:50:12.362 OpenEarsSampleApp[12658:907] Now using the fallback method to look up the word QUIDNUNC<br />
+2012-12-28 23:50:12.369 OpenEarsSampleApp[12658:907] Using convertGraphemes for the word or phrase QUIDNUNC which doesn&#8217;t appear in the dictionary<br />
+2012-12-28 23:50:12.406 OpenEarsSampleApp[12658:907] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the default phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2012-12-28 23:50:12.436 OpenEarsSampleApp[12658:907] I&#8217;m done running performDictionaryLookup and it took 0.151596 seconds<br />
+2012-12-28 23:50:12.441 OpenEarsSampleApp[12658:907] I&#8217;m done running dynamic language model generation and it took 378384612.441783 seconds<br />
+2012-12-28 23:50:12.443 OpenEarsSampleApp[12658:907] Dynamic language generator completed successfully, you can find your new files OpenEarsDynamicGrammar.DMP<br />
+ and<br />
+OpenEarsDynamicGrammar.dic<br />
+ at the paths<br />
+/var/mobile/Applications/37466C01-3CCE-4E8E-A939-BA60EDD9C2DA/Documents/OpenEarsDynamicGrammar.DMP<br />
+and<br />
+/var/mobile/Applications/37466C01-3CCE-4E8E-A939-BA60EDD9C2DA/Documents/OpenEarsDynamicGrammar.dic<br />
+2012-12-28 23:50:12.444 OpenEarsSampleApp[12658:907] </p>
+<p>Welcome to the OpenEars sample project. This project understands the words:<br />
+BACKWARD,<br />
+CHANGE,<br />
+FORWARD,<br />
+GO,<br />
+LEFT,<br />
+MODEL,<br />
+RIGHT,<br />
+TURN,<br />
+and if you say &#8220;CHANGE MODEL&#8221; it will switch to its dynamically-generated model which understands the words:<br />
+CHANGE,<br />
+MODEL,<br />
+MONDAY,<br />
+TUESDAY,<br />
+WEDNESDAY,<br />
+THURSDAY,<br />
+FRIDAY,<br />
+SATURDAY,<br />
+SUNDAY,<br />
+QUIDNUNC<br />
+2012-12-28 23:50:12.447 OpenEarsSampleApp[12658:907] A sample rate was requested that isn&#8217;t one of the two supported values of 16000 or 8000 so we will use the default of 16000.<br />
+2012-12-28 23:50:12.450 OpenEarsSampleApp[12658:907] The audio session has never been initialized so we will do that now.<br />
+2012-12-28 23:50:12.452 OpenEarsSampleApp[12658:907] Checking and resetting all audio session settings.<br />
+2012-12-28 23:50:12.453 OpenEarsSampleApp[12658:907] audioCategory is incorrect, we will change it.<br />
+2012-12-28 23:50:12.455 OpenEarsSampleApp[12658:907] audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.<br />
+2012-12-28 23:50:12.456 OpenEarsSampleApp[12658:907] bluetoothInput is incorrect, we will change it.<br />
+2012-12-28 23:50:12.458 OpenEarsSampleApp[12658:907] bluetooth input is now on the correct setting of 1.<br />
+2012-12-28 23:50:12.459 OpenEarsSampleApp[12658:907] categoryDefaultToSpeaker is incorrect, we will change it.<br />
+2012-12-28 23:50:12.461 OpenEarsSampleApp[12658:907] CategoryDefaultToSpeaker is now on the correct setting of 1.<br />
+2012-12-28 23:50:12.462 OpenEarsSampleApp[12658:907] preferredBufferSize is incorrect, we will change it.<br />
+2012-12-28 23:50:12.463 OpenEarsSampleApp[12658:907] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2012-12-28 23:50:12.465 OpenEarsSampleApp[12658:907] preferredSampleRateCheck is incorrect, we will change it.<br />
+2012-12-28 23:50:12.467 OpenEarsSampleApp[12658:907] preferred hardware sample rate is now on the correct setting of 16000.000000.<br />
+2012-12-28 23:50:12.512 OpenEarsSampleApp[12658:907] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2012-12-28 23:50:12.515 OpenEarsSampleApp[12658:907] Exiting startAudioSession.<br />
+2012-12-28 23:50:12.521 OpenEarsSampleApp[12658:3c03] Recognition loop has started<br />
+INFO: cmd_ln.c(706): Parsing command line:<br />
+\<br />
+	-lm /var/mobile/Applications/37466C01-3CCE-4E8E-A939-BA60EDD9C2DA/OpenEarsSampleApp.app/OpenEars1.languagemodel \<br />
+	-dict /var/mobile/Applications/37466C01-3CCE-4E8E-A939-BA60EDD9C2DA/OpenEarsSampleApp.app/OpenEars1.dic \<br />
+	-hmm /var/mobile/Applications/37466C01-3CCE-4E8E-A939-BA60EDD9C2DA/OpenEarsSampleApp.app \<br />
+	-lw 6.500000 \<br />
+	-maxhmmpf 3000 \<br />
+	-samprate 16000 </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-alpha		0.97		9.700000e-01<br />
+-argfile<br />
+-ascale		20.0		2.000000e+01<br />
+-aw		1		1<br />
+-backtrace	no		no<br />
+-beam		1e-48		1.000000e-48<br />
+-bestpath	yes		yes<br />
+-bestpathlw	9.5		9.500000e+00<br />
+-bghist		no		no<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		8.0<br />
+-compallsen	no		no<br />
+-debug				0<br />
+-dict				/var/mobile/Applications/37466C01-3CCE-4E8E-A939-BA60EDD9C2DA/OpenEarsSampleApp.app/OpenEars1.dic<br />
+-dictcase	no		no<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-ds		1		1<br />
+-fdict<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-featparams<br />
+-fillprob	1e-8		1.000000e-08<br />
+-frate		100		100<br />
+-fsg<br />
+-fsgusealtpron	yes		yes<br />
+-fsgusefiller	yes		yes<br />
+-fwdflat	yes		yes<br />
+-fwdflatbeam	1e-64		1.000000e-64<br />
+-fwdflatefwid	4		4<br />
+-fwdflatlw	8.5		8.500000e+00<br />
+-fwdflatsfwin	25		25<br />
+-fwdflatwbeam	7e-29		7.000000e-29<br />
+-fwdtree	yes		yes<br />
+-hmm				/var/mobile/Applications/37466C01-3CCE-4E8E-A939-BA60EDD9C2DA/OpenEarsSampleApp.app<br />
+-input_endian	little		little<br />
+-jsgf<br />
+-kdmaxbbi	-1		-1<br />
+-kdmaxdepth	0		0<br />
+-kdtree<br />
+-latsize	5000		5000<br />
+-lda<br />
+-ldadim		0		0<br />
+-lextreedump	0		0<br />
+-lifter		0		0<br />
+-lm				/var/mobile/Applications/37466C01-3CCE-4E8E-A939-BA60EDD9C2DA/OpenEarsSampleApp.app/OpenEars1.languagemodel<br />
+-lmctl<br />
+-lmname		default		default<br />
+-logbase	1.0001		1.000100e+00<br />
+-logfn<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.333333e+02<br />
+-lpbeam		1e-40		1.000000e-40<br />
+-lponlybeam	7e-29		7.000000e-29<br />
+-lw		6.5		6.500000e+00<br />
+-maxhmmpf	-1		3000<br />
+-maxnewoov	20		20<br />
+-maxwpf		-1		-1<br />
+-mdef<br />
+-mean<br />
+-mfclogdir<br />
+-min_endfr	0		0<br />
+-mixw<br />
+-mixwfloor	0.0000001	1.000000e-07<br />
+-mllr<br />
+-mmap		yes		yes<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		40<br />
+-nwpen		1.0		1.000000e+00<br />
+-pbeam		1e-48		1.000000e-48<br />
+-pip		1.0		1.000000e+00<br />
+-pl_beam	1e-10		1.000000e-10<br />
+-pl_pbeam	1e-5		1.000000e-05<br />
+-pl_window	0		0<br />
+-rawlogdir<br />
+-remove_dc	no		no<br />
+-round_filters	yes		yes<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-sendump<br />
+-senlogdir<br />
+-senmgau<br />
+-silprob	0.005		5.000000e-03<br />
+-smoothspec	no		no<br />
+-svspec<br />
+-tmat<br />
+-tmatfloor	0.0001		1.000000e-04<br />
+-topn		4		4<br />
+-topn_beam	0		0<br />
+-toprule<br />
+-transform	legacy		legacy<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	6.855498e+03<br />
+-usewdphones	no		no<br />
+-uw		1.0		1.000000e+00<br />
+-var<br />
+-varfloor	0.0001		1.000000e-04<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wbeam		7e-29		7.000000e-29<br />
+-wip		0.65		6.500000e-01<br />
+-wlen		0.025625	2.562500e-02</p>
+<p>INFO: cmd_ln.c(706): Parsing command line:<br />
+\<br />
+	-nfilt 20 \<br />
+	-lowerf 1 \<br />
+	-upperf 4000 \<br />
+	-wlen 0.025 \<br />
+	-transform dct \<br />
+	-round_filters no \<br />
+	-remove_dc yes \<br />
+	-svspec 0-12/13-25/26-38 \<br />
+	-feat 1s_c_d_dd \<br />
+	-agc none \<br />
+	-cmn current \<br />
+	-cmninit 47 \<br />
+	-varnorm no </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-alpha		0.97		9.700000e-01<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		47<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-frate		100		100<br />
+-input_endian	little		little<br />
+-lda<br />
+-ldadim		0		0<br />
+-lifter		0		0<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.000000e+00<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		20<br />
+-remove_dc	no		yes<br />
+-round_filters	yes		no<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-smoothspec	no		no<br />
+-svspec				0-12/13-25/26-38<br />
+-transform	legacy		dct<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	4.000000e+03<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wlen		0.025625	2.500000e-02</p>
+<p>INFO: acmod.c(250): Parsed model-specific feature parameters from /var/mobile/Applications/37466C01-3CCE-4E8E-A939-BA60EDD9C2DA/OpenEarsSampleApp.app/feat.params<br />
+INFO: feat.c(713): Initializing feature stream to type: &#8216;1s_c_d_dd&#8217;, ceplen=13, CMN=&#8217;current&#8217;, VARNORM=&#8217;no&#8217;, AGC=&#8217;none&#8217;<br />
+INFO: cmn.c(142): mean[0]= 12.00, mean[1..12]= 0.0<br />
+INFO: acmod.c(171): Using subvector specification 0-12/13-25/26-38<br />
+INFO: mdef.c(517): Reading model definition: /var/mobile/Applications/37466C01-3CCE-4E8E-A939-BA60EDD9C2DA/OpenEarsSampleApp.app/mdef<br />
+INFO: mdef.c(528): Found byte-order mark BMDF, assuming this is a binary mdef file<br />
+INFO: bin_mdef.c(336): Reading binary model definition: /var/mobile/Applications/37466C01-3CCE-4E8E-A939-BA60EDD9C2DA/OpenEarsSampleApp.app/mdef<br />
+2012-12-28 23:50:12.549 OpenEarsSampleApp[12658:907] Pocketsphinx is starting up.<br />
+2012-12-28 23:50:12.578 OpenEarsSampleApp[12658:907] The audio session has already been initialized but we will override its properties.<br />
+2012-12-28 23:50:12.579 OpenEarsSampleApp[12658:907] Checking and resetting all audio session settings.<br />
+2012-12-28 23:50:12.583 OpenEarsSampleApp[12658:907] audioCategory is correct, we will leave it as it is.<br />
+2012-12-28 23:50:12.586 OpenEarsSampleApp[12658:907] bluetoothInput is correct, we will leave it as it is.<br />
+2012-12-28 23:50:12.588 OpenEarsSampleApp[12658:907] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2012-12-28 23:50:12.589 OpenEarsSampleApp[12658:907] preferredBufferSize is correct, we will leave it as it is.<br />
+2012-12-28 23:50:12.591 OpenEarsSampleApp[12658:907] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+INFO: bin_mdef.c(513): 50 CI-phone, 143047 CD-phone, 3 emitstate/phone, 150 CI-sen, 5150 Sen, 27135 Sen-Seq<br />
+INFO: tmat.c(205): Reading HMM transition probability matrices: /var/mobile/Applications/37466C01-3CCE-4E8E-A939-BA60EDD9C2DA/OpenEarsSampleApp.app/transition_matrices<br />
+INFO: acmod.c(125): Attempting to use SCHMM computation module<br />
+2012-12-28 23:50:12.593 OpenEarsSampleApp[12658:907] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2012-12-28 23:50:12.595 OpenEarsSampleApp[12658:907] Exiting startAudioSession.<br />
+INFO: ms_gauden.c(198): Reading mixture gaussian parameter: /var/mobile/Applications/37466C01-3CCE-4E8E-A939-BA60EDD9C2DA/OpenEarsSampleApp.app/means<br />
+INFO: ms_gauden.c(292): 1 codebook, 3 feature, size:<br />
+INFO: ms_gauden.c(294):  256&#215;13<br />
+INFO: ms_gauden.c(294):  256&#215;13<br />
+INFO: ms_gauden.c(294):  256&#215;13<br />
+INFO: ms_gauden.c(198): Reading mixture gaussian parameter: /var/mobile/Applications/37466C01-3CCE-4E8E-A939-BA60EDD9C2DA/OpenEarsSampleApp.app/variances<br />
+INFO: ms_gauden.c(292): 1 codebook, 3 feature, size:<br />
+INFO: ms_gauden.c(294):  256&#215;13<br />
+INFO: ms_gauden.c(294):  256&#215;13<br />
+INFO: ms_gauden.c(294):  256&#215;13<br />
+INFO: ms_gauden.c(354): 0 variance values floored<br />
+INFO: s2_semi_mgau.c(995): Loading senones from dump file /var/mobile/Applications/37466C01-3CCE-4E8E-A939-BA60EDD9C2DA/OpenEarsSampleApp.app/sendump<br />
+INFO: s2_semi_mgau.c(1019): BEGIN FILE FORMAT DESCRIPTION<br />
+INFO: s2_semi_mgau.c(1114): Using memory-mapped I/O for senones<br />
+INFO: s2_semi_mgau.c(1391): Maximum top-N: 4 Top-N beams: 0 0 0<br />
+INFO: dict.c(317): Allocating 4115 * 20 bytes (80 KiB) for word entries<br />
+INFO: dict.c(332): Reading main dictionary: /var/mobile/Applications/37466C01-3CCE-4E8E-A939-BA60EDD9C2DA/OpenEarsSampleApp.app/OpenEars1.dic<br />
+INFO: dict.c(211): Allocated 0 KiB for strings, 0 KiB for phones<br />
+INFO: dict.c(335): 8 words read<br />
+INFO: dict.c(341): Reading filler dictionary: /var/mobile/Applications/37466C01-3CCE-4E8E-A939-BA60EDD9C2DA/OpenEarsSampleApp.app/noisedict<br />
+INFO: dict.c(211): Allocated 0 KiB for strings, 0 KiB for phones<br />
+INFO: dict.c(344): 11 words read<br />
+INFO: dict2pid.c(400): Building PID tables for dictionary<br />
+INFO: dict2pid.c(408): Allocating 50^3 * 2 bytes (244 KiB) for word-initial triphones<br />
+INFO: dict2pid.c(135): Allocated 30200 bytes (29 KiB) for word-final triphones<br />
+INFO: dict2pid.c(199): Allocated 30200 bytes (29 KiB) for single-phone word triphones<br />
+INFO: ngram_model_arpa.c(488): ngrams 1=10, 2=16, 3=8<br />
+INFO: ngram_model_arpa.c(143): Reading unigrams<br />
+INFO: ngram_model_arpa.c(528):       10 = #unigrams created<br />
+INFO: ngram_model_arpa.c(204): Reading bigrams<br />
+INFO: ngram_model_arpa.c(547):       16 = #bigrams created<br />
+INFO: ngram_model_arpa.c(548):        3 = #prob2 entries<br />
+INFO: ngram_model_arpa.c(558):        3 = #bo_wt2 entries<br />
+INFO: ngram_model_arpa.c(302): Reading trigrams<br />
+INFO: ngram_model_arpa.c(573):        8 = #trigrams created<br />
+INFO: ngram_model_arpa.c(574):        2 = #prob3 entries<br />
+INFO: ngram_search_fwdtree.c(99): 8 unique initial diphones<br />
+INFO: ngram_search_fwdtree.c(147): 0 root, 0 non-root channels, 12 single-phone words<br />
+INFO: ngram_search_fwdtree.c(186): Creating search tree<br />
+INFO: ngram_search_fwdtree.c(191): before: 0 root, 0 non-root channels, 12 single-phone words<br />
+INFO: ngram_search_fwdtree.c(326): after: max nonroot chan increased to 145<br />
+INFO: ngram_search_fwdtree.c(338): after: 8 root, 17 non-root channels, 11 single-phone words<br />
+INFO: ngram_search_fwdflat.c(167): fwdflat: min_ef_width = 4, max_sf_win = 25<br />
+2012-12-28 23:50:12.652 OpenEarsSampleApp[12658:3c03] Starting openAudioDevice on the device.<br />
+2012-12-28 23:50:12.654 OpenEarsSampleApp[12658:3c03] Audio unit wrapper successfully created.<br />
+2012-12-28 23:50:12.658 OpenEarsSampleApp[12658:3c03] Set audio route to HeadsetBT<br />
+2012-12-28 23:50:12.660 OpenEarsSampleApp[12658:3c03] Checking and resetting all audio session settings.<br />
+2012-12-28 23:50:12.661 OpenEarsSampleApp[12658:3c03] audioCategory is correct, we will leave it as it is.<br />
+2012-12-28 23:50:12.662 OpenEarsSampleApp[12658:3c03] bluetoothInput is correct, we will leave it as it is.<br />
+2012-12-28 23:50:12.663 OpenEarsSampleApp[12658:3c03] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2012-12-28 23:50:12.665 OpenEarsSampleApp[12658:3c03] preferredBufferSize is correct, we will leave it as it is.<br />
+2012-12-28 23:50:12.666 OpenEarsSampleApp[12658:3c03] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2012-12-28 23:50:12.667 OpenEarsSampleApp[12658:3c03] Setting the variables for the device and starting it.<br />
+2012-12-28 23:50:12.668 OpenEarsSampleApp[12658:3c03] Looping through ringbuffer sections and pre-allocating them.<br />
+2012-12-28 23:50:15.733 OpenEarsSampleApp[12658:3c03] 23:50:15.733  AUIOClient_StartIO failed (2003329396)<br />
+2012-12-28 23:50:15.734 OpenEarsSampleApp[12658:3c03] Couldn&#8217;t start audio unit output: 2003329396<br />
+2012-12-28 23:50:15.736 OpenEarsSampleApp[12658:3c03] startRecording failed<br />
+2012-12-28 23:50:15.737 OpenEarsSampleApp[12658:3c03] Calibration has started<br />
+2012-12-28 23:50:15.737 OpenEarsSampleApp[12658:907] Setting up the continuous recognition loop has failed for some reason, please turn on [OpenEarsLogging startOpenEarsLogging] in OpenEarsConfig.h to learn more.<br />
+2012-12-28 23:50:15.739 OpenEarsSampleApp[12658:907] Pocketsphinx calibration has started.<br />
+2012-12-28 23:50:17.938 OpenEarsSampleApp[12658:3c03] cont_ad_calib failed<br />
+2012-12-28 23:50:17.941 OpenEarsSampleApp[12658:3c03] Calibration has completed<br />
+2012-12-28 23:50:17.941 OpenEarsSampleApp[12658:907] Setting up the continuous recognition loop has failed for some reason, please turn on [OpenEarsLogging startOpenEarsLogging] in OpenEarsConfig.h to learn more.<br />
+2012-12-28 23:50:17.944 OpenEarsSampleApp[12658:3c03] Project has these words in its dictionary:<br />
+BACKWARD<br />
+CHANGE<br />
+FORWARD<br />
+GO<br />
+LEFT<br />
+MODEL<br />
+RIGHT<br />
+TURN<br />
+2012-12-28 23:50:17.944 OpenEarsSampleApp[12658:907] Pocketsphinx calibration is complete.<br />
+2012-12-28 23:50:17.945 OpenEarsSampleApp[12658:3c03] Listening.<br />
+2012-12-28 23:50:17.946 OpenEarsSampleApp[12658:907] I&#8217;m running flite<br />
+2012-12-28 23:50:17.946 OpenEarsSampleApp[12658:3c03] cont_ad_read failed<br />
+2012-12-28 23:50:17.948 OpenEarsSampleApp[12658:907] Checking and resetting all audio session settings.<br />
+2012-12-28 23:50:17.950 OpenEarsSampleApp[12658:907] audioCategory is correct, we will leave it as it is.<br />
+2012-12-28 23:50:17.952 OpenEarsSampleApp[12658:907] bluetoothInput is correct, we will leave it as it is.<br />
+2012-12-28 23:50:17.953 OpenEarsSampleApp[12658:907] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2012-12-28 23:50:17.956 OpenEarsSampleApp[12658:907] preferredBufferSize is correct, we will leave it as it is.<br />
+2012-12-28 23:50:17.958 OpenEarsSampleApp[12658:907] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+(lldb) </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/enabling-bluetooth-support/#post-15169</guid>
+					<title><![CDATA[Reply To: Enabling Bluetooth Support]]></title>
+					<link>/forums/topic/enabling-bluetooth-support/#post-15169</link>
+					<pubDate>Fri, 28 Dec 2012 10:57:26 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Great, thank you for this info. I will see if I can get a hold of one of those devices.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/enabling-bluetooth-support/#post-15170</guid>
+					<title><![CDATA[Reply To: Enabling Bluetooth Support]]></title>
+					<link>/forums/topic/enabling-bluetooth-support/#post-15170</link>
+					<pubDate>Fri, 28 Dec 2012 11:25:05 +0000</pubDate>
+					<dc:creator>markNZed</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Halle, if you would like me to help then let me know. I can lend you the device if you like or you can add some extra verbose logging into a build. You have my email :)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/enabling-bluetooth-support/#post-15171</guid>
+					<title><![CDATA[Reply To: Enabling Bluetooth Support]]></title>
+					<link>/forums/topic/enabling-bluetooth-support/#post-15171</link>
+					<pubDate>Fri, 28 Dec 2012 11:41:59 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the offer, I&#8217;d love to borrow the device for a few days of testing but I think we might be impractically distant &#8212; I&#8217;ll get in touch though, maybe we can figure something out.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

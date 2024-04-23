@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+<meta charset="UTF-8">
+
+<title>Topic: False positives | Politepix</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="/wp-content/uploads/omgf/omgf-stylesheet-56/omgf-stylesheet-56.css?ver=1668781124" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" type="text/css" href="/wp-content/themes/politepix-pixelpress-child-theme/style.css" media="screen">
+
+<link rel="pingback" href="/xmlrpc.php">
+<meta name="robots" content="max-image-preview:large">
+<script>window._wca = window._wca || [];</script>
+<link rel="dns-prefetch" href="//stats.wp.com">
+<link rel="dns-prefetch" href="//i0.wp.com">
+<link rel="dns-prefetch" href="//c0.wp.com">
+<link rel="alternate" type="application/rss+xml" title="Politepix &raquo; Feed" href="http://feeds.feedburner.com/politepixblog">
+<link rel="alternate" type="application/rss+xml" title="Politepix &raquo; Comments Feed" href="/comments/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.5.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🐦‍⬛","🐦​⬛")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<link rel="stylesheet" id="woo-layout-css" href="/wp-content/themes/pixelpress/css/layout.css?ver=6.5.2" type="text/css" media="all">
+<link rel="stylesheet" id="woocommerce-css" href="/wp-content/themes/pixelpress/css/woocommerce.css?ver=6.5.2" type="text/css" media="all">
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="https://c0.wp.com/c/6.5.2/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<style id="wp-block-library-inline-css" type="text/css">.has-text-align-justify{text-align:justify;}</style>
+<link rel="stylesheet" id="mediaelement-css" href="https://c0.wp.com/c/6.5.2/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="https://c0.wp.com/c/6.5.2/wp-includes/js/mediaelement/wp-mediaelement.min.css" type="text/css" media="all">
+<style id="jetpack-sharing-buttons-style-inline-css" type="text/css">.jetpack-sharing-buttons__services-list{display:flex;flex-direction:row;flex-wrap:wrap;gap:0;list-style-type:none;margin:5px;padding:0}.jetpack-sharing-buttons__services-list.has-small-icon-size{font-size:12px}.jetpack-sharing-buttons__services-list.has-normal-icon-size{font-size:16px}.jetpack-sharing-buttons__services-list.has-large-icon-size{font-size:24px}.jetpack-sharing-buttons__services-list.has-huge-icon-size{font-size:36px}@media print{.jetpack-sharing-buttons__services-list{display:none!important}}.editor-styles-wrapper .wp-block-jetpack-sharing-buttons{gap:0;padding-inline-start:0}ul.jetpack-sharing-buttons__services-list.has-background{padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="bbp-default-css" href="/wp-content/plugins/bbpress/templates/default/css/bbpress.min.css?ver=2.6.9" type="text/css" media="all">
+<link rel="stylesheet" id="currency_converter_styles-css" href="/wp-content/plugins/woocommerce-currency-converter-widget/assets/css/converter.css?ver=2.2.2" type="text/css" media="all">
+<style id="woocommerce-inline-inline-css" type="text/css">.woocommerce form .form-row .required { visibility: visible; }</style>
+<link rel="stylesheet" id="cmplz-general-css" href="/wp-content/plugins/complianz-gdpr/assets/css/cookieblocker.min.css?ver=1710283454" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="https://c0.wp.com/p/jetpack/13.3.1/css/jetpack.css" type="text/css" media="all">
+<link rel="stylesheet" id="prettyPhoto-css" href="/wp-content/themes/pixelpress/includes/css/prettyPhoto.css?ver=6.5.2" type="text/css" media="all">
+<script type="text/template" id="tmpl-variation-template">
+	<div class="woocommerce-variation-description">{{{ data.variation.variation_description }}}<\/div>
+	<div class="woocommerce-variation-price">{{{ data.variation.price_html }}}<\/div>
+	<div class="woocommerce-variation-availability">{{{ data.variation.availability_html }}}<\/div>
+</script>
+<script type="text/template" id="tmpl-unavailable-variation-template">
+	<p>Sorry, this product is unavailable. Please choose a different combination.<\/p>
+</script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js" id="wp-polyfill-inert-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/dist/vendor/regenerator-runtime.min.js" id="regenerator-runtime-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/dist/vendor/wp-polyfill.min.js" id="wp-polyfill-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/dist/hooks.min.js" id="wp-hooks-js"></script>
+<script data-service="jetpack-statistics" data-category="statistics" type="text/plain" data-cmplz-src="https://stats.wp.com/w.js?ver=202417" id="woo-tracks-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/jquery/jquery.min.js" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/jquery/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/underscore.min.js" id="underscore-js"></script>
+<script type="text/javascript" id="wp-util-js-extra">
+/* <![CDATA[ */
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/wp-util.min.js" id="wp-util-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/jquery-blockui/jquery.blockUI.min.js" id="jquery-blockui-js" defer data-wp-strategy="defer"></script>
+<script type="text/javascript" id="wc-add-to-cart-variation-js-extra">
+/* <![CDATA[ */
+var wc_add_to_cart_variation_params = {"wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_no_matching_variations_text":"Sorry, no products matched your selection. Please choose a different combination.","i18n_make_a_selection_text":"Please select some product options before adding this product to your cart.","i18n_unavailable_text":"Sorry, this product is unavailable. Please choose a different combination."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/frontend/add-to-cart-variation.min.js" id="wc-add-to-cart-variation-js" defer data-wp-strategy="defer"></script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/jquery-cookie/jquery.cookie.min.js" id="jquery-cookie-js" defer data-wp-strategy="defer"></script>
+<script data-service="jetpack-statistics" data-category="statistics" type="text/plain" data-cmplz-src="https://stats.wp.com/s-202417.js" id="woocommerce-analytics-js" defer data-wp-strategy="defer"></script>
+<script type="text/javascript" src="/wp-content/themes/pixelpress/includes/js/third-party.js?ver=6.5.2" id="third party-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/prettyPhoto/jquery.prettyPhoto.min.js" id="prettyPhoto-js" data-wp-strategy="defer"></script>
+<script type="text/javascript" src="/wp-content/themes/pixelpress/includes/js/general.js?ver=6.5.2" id="general-js"></script>
+<script type="text/javascript" src="/wp-content/themes/pixelpress/includes/js/uniform.js?ver=6.5.2" id="uniform-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.5.2">
+<meta name="generator" content="WooCommerce 8.8.2">
+<link rel="canonical" href="/forums/topic/false-positives/">
+<link rel="shortlink" href="/?p=1025607">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Fforums%2Ftopic%2Ffalse-positives%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Fforums%2Ftopic%2Ffalse-positives%2F#038;format=xml">
+	<style>img#wpstats{display:none}</style>
+					<style>.cmplz-hidden {
+					display: none !important;
+				}</style>		<script>( function() {
+				window.onpageshow = function( event ) {
+					// Defined window.wpforms means that a form exists on a page.
+					// If so and back/forward button has been clicked,
+					// force reload a page to prevent the submit button state stuck.
+					if ( typeof window.wpforms !== 'undefined' && event.persisted ) {
+						window.location.reload();
+					}
+				};
+			}() );</script>
+		
+<!-- Theme version -->
+<meta name="generator" content="PixelPress Politepix 1.0">
+<meta name="generator" content="PixelPress 1.5.4">
+<meta name="generator" content="WooFramework 6.2.9">
+
+<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<!--  Mobile viewport scale | Disable user zooming as the layout is optimised -->
+<meta content="initial-scale=1.0; maximum-scale=1.0; user-scalable=no" name="viewport">
+		<!--[if lt IE 9]>
+			<script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+			<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	
+<!-- Google Webfonts -->
+<link href="/wp-content/uploads/omgf/omgf-stylesheet-165/omgf-stylesheet-165.css?ver=1668781124" rel="stylesheet" type="text/css">
+
+<!-- Alt Stylesheet -->
+<link href="/wp-content/themes/pixelpress/styles/default.css" rel="stylesheet" type="text/css">
+
+<!-- Custom Favicon -->
+<link rel="shortcut icon" href="/wp-content/uploads/favicon.png">
+
+<!-- Woo Shortcodes CSS -->
+<link href="/wp-content/themes/pixelpress/functions/css/shortcodes.css" rel="stylesheet" type="text/css">
+
+<!-- Custom Stylesheet -->
+<link href="/wp-content/themes/pixelpress/custom.css" rel="stylesheet" type="text/css">
+
+<!-- Custom Stylesheet In Child Theme -->
+<link href="/wp-content/themes/politepix-pixelpress-child-theme/custom.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body data-cmplz="1" class="topic bbpress no-js topic-template-default single single-topic postid-1025607 theme-pixelpress woocommerce-no-js unknown alt-style-default has-lightbox layout-left-content">
+
+<div id="wrapper">
+
+	    
+        
+    <div id="header-wrap">
+
+		<header id="header" class="col-full">
+		
+			<div id="logo" class="fl">
+												    <a id="logo" href="/" title="iOS Frameworks for speech recognition, text to speech and more">
+				    	<img src="/wp-content/uploads/logo1.png" alt="Politepix">
+				    </a>
+			    			    
+			    <hgroup>
+			        
+					<h1 class="site-title"><a href="/">Politepix</a></h1>
+					<h2 class="site-description">iOS Frameworks for speech recognition, text to speech and more</h2>
+					<h3 class="nav-toggle"><a href="#navigation">Navigation</a></h3>
+				      	
+				</hgroup>
+			</div>
+<!-- /#logo -->		
+	        
+	        	
+	        <div id="header-right" class="fr">
+
+				<nav id="navigation" role="navigation">
+					
+					<ul id="main-nav" class="nav fl">
+<li id="menu-item-1175" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1175">
+<a href="/openears/">OpenEars</a>
+<ul class="sub-menu">
+	<li id="menu-item-11108" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11108"><a href="/openears/tutorial/">OpenEars Tutorials</a></li>
+	<li id="menu-item-1171" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1171"><a href="/openears/support/">OpenEars FAQ/Support</a></li>
+	<li id="menu-item-1189" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1189"><a href="/forums/forum/openearsforum/">OpenEars Support Forum</a></li>
+	<li id="menu-item-14947" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14947"><a href="/openearsplatform/">About the OpenEars Platform</a></li>
+</ul>
+</li>
+<li id="menu-item-11706" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-11706">
+<a href="/neatspeech">NeatSpeech</a>
+<ul class="sub-menu">
+	<li id="menu-item-11707" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11707"><a href="/forums/forum/openears-plugins/">NeatSpeech support forum</a></li>
+</ul>
+</li>
+<li id="menu-item-9871" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-9871">
+<a href="/rapidears/">RapidEars</a>
+<ul class="sub-menu">
+	<li id="menu-item-10389" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10389"><a href="/forums/forum/openears-plugins">RapidEars Support Forum</a></li>
+</ul>
+</li>
+<li id="menu-item-11030" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-11030">
+<a href="/rejecto/">Rejecto</a>
+<ul class="sub-menu">
+	<li id="menu-item-11031" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11031"><a href="/forums/forum/openears-plugins/">Rejecto Support Forum</a></li>
+</ul>
+</li>
+<li id="menu-item-13071" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13071"><a href="/savethatwave/">SaveThatWave</a></li>
+<li id="menu-item-1021000" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1021000">
+<a href="/ruleorama/">RuleORama</a>
+<ul class="sub-menu">
+	<li id="menu-item-9002" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9002"><a href="/forums/forum/openears-plugins/">RuleORama Free Support Forum</a></li>
+</ul>
+</li>
+<li id="menu-item-1178" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-1178"><a title="Blog" href="/blog/">Blog</a></li>
+<li id="menu-item-1015870" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1015870">
+<a href="/shop">Shop</a>
+<ul class="sub-menu">
+	<li id="menu-item-8499" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8499"><a href="/shop">View all products</a></li>
+	<li id="menu-item-8486" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8486"><a href="/cart/">Cart</a></li>
+	<li id="menu-item-8498" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8498"><a href="/order-tracking/">Track your order</a></li>
+	<li id="menu-item-8539" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8539"><a href="/termsandconditions/">AGB/Terms and Conditions</a></li>
+</ul>
+</li>
+</ul>			        
+			        			        <ul class="mini-cart">
+						<li>
+							<a href="/cart/" title="View your shopping cart" class="cart-parent">
+								<span> 
+							<span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&euro;</span>0.00</bdi></span><mark>0</mark>							</span>
+							</a>
+							<ul class="cart_list"><li class="empty">No products in the cart.</li></ul>						</li>
+					</ul>
+			      				      	
+				</nav><!-- /#navigation -->
+
+				
+<div id="header-social" class="social fr">
+				<a href="http://feeds.feedburner.com/politepixblog" class="subscribe" title="RSS"></a>
+
+				<a href="http://www.twitter.com/politepix" class="twitter" title="Follow me on Twitter"></a>
+
+		</div>
+<!-- /.social -->
+				
+
+			</div>
+<!-- /#header-right -->
+			
+					
+		</header><!-- /#header -->
+	
+	</div>
+<!-- /#header-wrap -->
+	
+	
+	       
+    <div id="content" class="page col-full">
+    
+    	    	
+		<section id="main" class="col-left"> 			
+
+                                                                   
+            <article class="post-1025607 topic type-topic status-publish hentry">
+				
+				<header>
+			    	<h1>False positives</h1>
+				</header>
+				
+                <section class="entry">
+                	
+<div id="bbpress-forums" class="bbpress-wrapper">
+
+	<div class="bbp-breadcrumb"><p><a href="/" class="bbp-breadcrumb-home">Home</a> <span class="bbp-breadcrumb-sep">&rsaquo;</span> <a href="/forums/" class="bbp-breadcrumb-root">Forums</a> <span class="bbp-breadcrumb-sep">&rsaquo;</span> <a href="/forums/forum/openearsforum/" class="bbp-breadcrumb-forum">OpenEars</a> <span class="bbp-breadcrumb-sep">&rsaquo;</span> <span class="bbp-breadcrumb-current">False positives</span></p></div>
+	
+	
+	
+	
+		
+		<div class="bbp-template-notice info"><ul><li class="bbp-topic-description">This topic has 4 replies, 2 voices, and was last updated <a href="/forums/topic/false-positives/#post-1025635" title="Reply To: False positives">8 years, 11 months ago</a> by <a href="/forums/profile/rikk/" title="View rikk&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">rikk</span></a>.</li></ul></div>
+		
+		
+			
+<div class="bbp-pagination">
+	<div class="bbp-pagination-count">Viewing 5 posts - 1 through 5 (of 5 total)</div>
+	<div class="bbp-pagination-links"></div>
+</div>
+
+
+			<div class="burma">Advertisement: <a href="/rejecto">&ldquo;Rejecto is a plugin for OpenEars&#8482; and RapidEars that lets you ignore speech that isn't in your vocabulary!&rdquo;</a>
+</div>
+<p>
+</p>
+<ul id="topic-1025607-replies" class="forums bbp-replies">
+
+	<li class="bbp-header">
+		<div class="bbp-reply-author">Author</div>
+<!-- .bbp-reply-author -->
+		<div class="bbp-reply-content">Posts</div>
+<!-- .bbp-reply-content -->
+	</li>
+<!-- .bbp-header -->
+
+	<li class="bbp-body">
+
+		
+			
+				
+<div id="post-1025607" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">May 7, 2015 at 9:23 pm</span>
+
+		
+		<a href="/forums/topic/false-positives/#post-1025607" class="bbp-reply-permalink">#1025607</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1025607 -->
+
+<div class="loop-item-0 user-id-1787 bbp-parent-forum-3654 bbp-parent-topic-3654 bbp-reply-position-1 odd  post-1025607 topic type-topic status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/rikk/" title="View rikk&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">rikk</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>OE: 2.03<br>
+platform: iPhone 6+, iOS 8.3</p>
+<p>I am getting a LARGE amount of false positives when using OpenEars. I have read the doc thoroughly and believe that my implementation follows all the recommended guidelines.</p>
+<p>Here&#8217;s an example log of a 30 second session of speaking in a silent room.</p>
+<p>I spoke normally for 30 seconds (telling a story) and used the keywords frequently. However, the number of false positives was very high. e.g. I would say &#8220;walking&#8221; and OE would match with &#8220;friggin.&#8221; I would also see matches with &#8220;dog&#8221; when I was saying words that seemed completely unrelated.</p>
+<p>I am hoping that there is something in my logs below that show that I am doing something wrong.</p>
+<p>2015-05-07 12:06:20.786 Bleeper[4094:1027101] Starting OpenEars logging for OpenEars version 2.03 on 64-bit device (or build): iPhone running iOS version: 8.300000<br>
+2015-05-07 12:06:41.592 Bleeper[4094:1027101] User gave mic permission for this app.<br>
+2015-05-07 12:06:41.592 Bleeper[4094:1027101] Valid setSecondsOfSilence value of 0.300000 will be used.<br>
+2015-05-07 12:06:41.594 Bleeper[4094:1027139] Starting listening.<br>
+2015-05-07 12:06:41.594 Bleeper[4094:1027139] about to set up audio session<br>
+2015-05-07 12:06:41.832 Bleeper[4094:1027163] Audio route has changed for the following reason:<br>
+2015-05-07 12:06:42.057 Bleeper[4094:1027139] done starting audio unit<br>
+2015-05-07 12:06:42.059 Bleeper[4094:1027163] There was a category change. The new category is AVAudioSessionCategoryPlayAndRecord<br>
+INFO: cmd_ln.c(702): Parsing command line:<br>
+\<br>
+	-lm /var/mobile/Containers/Data/Application/E43F3578-9AE1-4E51-9AB4-54C10162B29B/Library/Caches/MyLanguageModelFiles.DMP \<br>
+	-vad_prespeech 10 \<br>
+	-vad_postspeech 30 \<br>
+	-vad_threshold 1.500000 \<br>
+	-remove_noise yes \<br>
+	-remove_silence yes \<br>
+	-bestpath yes \<br>
+	-lw 6.500000 \<br>
+	-dict /var/mobile/Containers/Data/Application/E43F3578-9AE1-4E51-9AB4-54C10162B29B/Library/Caches/MyLanguageModelFiles.dic \<br>
+	-hmm /private/var/mobile/Containers/Bundle/Application/24031A1C-A9F0-48DB-9716-C25F1B39189C/Bleeper.app/AcousticModelEnglish.bundle </p>
+<p>Current configuration:<br>
+[NAME]		[DEFLT]		[VALUE]<br>
+-agc		none		none<br>
+-agcthresh	2.0		2.000000e+00<br>
+-allphone<br>
+-allphone_ci	no		no<br>
+-alpha		0.97		9.700000e-01<br>
+-argfile<br>
+-ascale		20.0		2.000000e+01<br>
+-aw		1		1<br>
+-backtrace	no		no<br>
+-beam		1e-48		1.000000e-48<br>
+-bestpath	yes		yes<br>
+-bestpathlw	9.5		9.500000e+00<br>
+-bghist		no		no<br>
+-ceplen		13		13<br>
+-cmn		current		current<br>
+-cmninit	8.0		8.0<br>
+-compallsen	no		no<br>
+-debug				0<br>
+-dict				/var/mobile/Containers/Data/Application/E43F3578-9AE1-4E51-9AB4-54C10162B29B/Library/Caches/MyLanguageModelFiles.dic<br>
+-dictcase	no		no<br>
+-dither		no		no<br>
+-doublebw	no		no<br>
+-ds		1		1<br>
+-fdict<br>
+-feat		1s_c_d_dd	1s_c_d_dd<br>
+-featparams<br>
+-fillprob	1e-8		1.000000e-08<br>
+-frate		100		100<br>
+-fsg<br>
+-fsgusealtpron	yes		yes<br>
+-fsgusefiller	yes		yes<br>
+-fwdflat	yes		yes<br>
+-fwdflatbeam	1e-64		1.000000e-64<br>
+-fwdflatefwid	4		4<br>
+-fwdflatlw	8.5		8.500000e+00<br>
+-fwdflatsfwin	25		25<br>
+-fwdflatwbeam	7e-29		7.000000e-29<br>
+-fwdtree	yes		yes<br>
+-hmm				/private/var/mobile/Containers/Bundle/Application/24031A1C-A9F0-48DB-9716-C25F1B39189C/Bleeper.app/AcousticModelEnglish.bundle<br>
+-input_endian	little		little<br>
+-jsgf<br>
+-kdmaxbbi	-1		-1<br>
+-kdmaxdepth	0		0<br>
+-kdtree<br>
+-keyphrase<br>
+-kws<br>
+-kws_plp	1e-1		1.000000e-01<br>
+-kws_threshold	1		1.000000e+00<br>
+-latsize	5000		5000<br>
+-lda<br>
+-ldadim		0		0<br>
+-lextreedump	0		0<br>
+-lifter		0		0<br>
+-lm				/var/mobile/Containers/Data/Application/E43F3578-9AE1-4E51-9AB4-54C10162B29B/Library/Caches/MyLanguageModelFiles.DMP<br>
+-lmctl<br>
+-lmname<br>
+-logbase	1.0001		1.000100e+00<br>
+-logfn<br>
+-logspec	no		no<br>
+-lowerf		133.33334	1.333333e+02<br>
+-lpbeam		1e-40		1.000000e-40<br>
+-lponlybeam	7e-29		7.000000e-29<br>
+-lw		6.5		6.500000e+00<br>
+-maxhmmpf	10000		10000<br>
+-maxnewoov	20		20<br>
+-maxwpf		-1		-1<br>
+-mdef<br>
+-mean<br>
+-mfclogdir<br>
+-min_endfr	0		0<br>
+-mixw<br>
+-mixwfloor	0.0000001	1.000000e-07<br>
+-mllr<br>
+-mmap		yes		yes<br>
+-ncep		13		13<br>
+-nfft		512		512<br>
+-nfilt		40		40<br>
+-nwpen		1.0		1.000000e+00<br>
+-pbeam		1e-48		1.000000e-48<br>
+-pip		1.0		1.000000e+00<br>
+-pl_beam	1e-10		1.000000e-10<br>
+-pl_pbeam	1e-5		1.000000e-05<br>
+-pl_window	0		0<br>
+-rawlogdir<br>
+-remove_dc	no		no<br>
+-remove_noise	yes		yes<br>
+-remove_silence	yes		yes<br>
+-round_filters	yes		yes<br>
+-samprate	16000		1.600000e+04<br>
+-seed		-1		-1<br>
+-sendump<br>
+-senlogdir<br>
+-senmgau<br>
+-silprob	0.005		5.000000e-03<br>
+-smoothspec	no		no<br>
+-svspec<br>
+-tmat<br>
+-tmatfloor	0.0001		1.000000e-04<br>
+-topn		4		4<br>
+-topn_beam	0		0<br>
+-toprule<br>
+-transform	legacy		legacy<br>
+-unit_area	yes		yes<br>
+-upperf		6855.4976	6.855498e+03<br>
+-usewdphones	no		no<br>
+-uw		1.0		1.000000e+00<br>
+-vad_postspeech	50		30<br>
+-vad_prespeech	10		10<br>
+-vad_threshold	2.0		1.500000e+00<br>
+-var<br>
+-varfloor	0.0001		1.000000e-04<br>
+-varnorm	no		no<br>
+-verbose	no		no<br>
+-warp_params<br>
+-warp_type	inverse_linear	inverse_linear<br>
+-wbeam		7e-29		7.000000e-29<br>
+-wip		0.65		6.500000e-01<br>
+-wlen		0.025625	2.562500e-02</p>
+<p>2015-05-07 12:06:42.066 Bleeper[4094:1027163] This is not a case in which OpenEars notifies of a route change. At the close of this function, the new audio route is &#8212;SpeakerMicrophoneBuiltIn&#8212;. The previous route before changing to this route was &lt;AVAudioSessionRouteDescription: 0x17401c1e0,<br>
+inputs = (null);<br>
+outputs = (<br>
+    &#8220;&lt;AVAudioSessionPortDescription: 0x17401c2e0, type = Speaker; name = Speaker; UID = Speaker; selectedDataSource = (null)&gt;&#8221;<br>
+)&gt;.<br>
+INFO: cmd_ln.c(702): Parsing command line:<br>
+\<br>
+	-nfilt 25 \<br>
+	-lowerf 130 \<br>
+	-upperf 6800 \<br>
+	-feat 1s_c_d_dd \<br>
+	-svspec 0-12/13-25/26-38 \<br>
+	-agc none \<br>
+	-cmn current \<br>
+	-varnorm no \<br>
+	-transform dct \<br>
+	-lifter 22 \<br>
+	-cmninit 40 </p>
+<p>Current configuration:<br>
+[NAME]		[DEFLT]		[VALUE]<br>
+-agc		none		none<br>
+-agcthresh	2.0		2.000000e+00<br>
+-alpha		0.97		9.700000e-01<br>
+-ceplen		13		13<br>
+-cmn		current		current<br>
+-cmninit	8.0		40<br>
+-dither		no		no<br>
+-doublebw	no		no<br>
+-feat		1s_c_d_dd	1s_c_d_dd<br>
+-frate		100		100<br>
+-input_endian	little		little<br>
+-lda<br>
+-ldadim		0		0<br>
+-lifter		0		22<br>
+-logspec	no		no<br>
+-lowerf		133.33334	1.300000e+02<br>
+-ncep		13		13<br>
+-nfft		512		512<br>
+-nfilt		40		25<br>
+-remove_dc	no		no<br>
+-remove_noise	yes		yes<br>
+-remove_silence	yes		yes<br>
+-round_filters	yes		yes<br>
+-samprate	16000		1.600000e+04<br>
+-seed		-1		-1<br>
+-smoothspec	no		no<br>
+-svspec				0-12/13-25/26-38<br>
+-transform	legacy		dct<br>
+-unit_area	yes		yes<br>
+-upperf		6855.4976	6.800000e+03<br>
+-vad_postspeech	50		30<br>
+-vad_prespeech	10		10<br>
+-vad_threshold	2.0		1.500000e+00<br>
+-varnorm	no		no<br>
+-verbose	no		no<br>
+-warp_params<br>
+-warp_type	inverse_linear	inverse_linear<br>
+-wlen		0.025625	2.562500e-02</p>
+<p>INFO: acmod.c(252): Parsed model-specific feature parameters from /private/var/mobile/Containers/Bundle/Application/24031A1C-A9F0-48DB-9716-C25F1B39189C/Bleeper.app/AcousticModelEnglish.bundle/feat.params<br>
+INFO: feat.c(715): Initializing feature stream to type: &#8216;1s_c_d_dd&#8217;, ceplen=13, CMN=&#8217;current&#8217;, VARNORM=&#8217;no&#8217;, AGC=&#8217;none&#8217;<br>
+INFO: cmn.c(143): mean[0]= 12.00, mean[1..12]= 0.0<br>
+INFO: acmod.c(171): Using subvector specification 0-12/13-25/26-38<br>
+INFO: mdef.c(518): Reading model definition: /private/var/mobile/Containers/Bundle/Application/24031A1C-A9F0-48DB-9716-C25F1B39189C/Bleeper.app/AcousticModelEnglish.bundle/mdef<br>
+INFO: mdef.c(531): Found byte-order mark BMDF, assuming this is a binary mdef file<br>
+INFO: bin_mdef.c(336): Reading binary model definition: /private/var/mobile/Containers/Bundle/Application/24031A1C-A9F0-48DB-9716-C25F1B39189C/Bleeper.app/AcousticModelEnglish.bundle/mdef<br>
+INFO: bin_mdef.c(516): 46 CI-phone, 168344 CD-phone, 3 emitstate/phone, 138 CI-sen, 6138 Sen, 32881 Sen-Seq<br>
+INFO: tmat.c(206): Reading HMM transition probability matrices: /private/var/mobile/Containers/Bundle/Application/24031A1C-A9F0-48DB-9716-C25F1B39189C/Bleeper.app/AcousticModelEnglish.bundle/transition_matrices<br>
+INFO: acmod.c(124): Attempting to use SCHMM computation module<br>
+INFO: ms_gauden.c(198): Reading mixture gaussian parameter: /private/var/mobile/Containers/Bundle/Application/24031A1C-A9F0-48DB-9716-C25F1B39189C/Bleeper.app/AcousticModelEnglish.bundle/means<br>
+INFO: ms_gauden.c(292): 1 codebook, 3 feature, size:<br>
+INFO: ms_gauden.c(294):  512&#215;13<br>
+INFO: ms_gauden.c(294):  512&#215;13<br>
+INFO: ms_gauden.c(294):  512&#215;13<br>
+INFO: ms_gauden.c(198): Reading mixture gaussian parameter: /private/var/mobile/Containers/Bundle/Application/24031A1C-A9F0-48DB-9716-C25F1B39189C/Bleeper.app/AcousticModelEnglish.bundle/variances<br>
+INFO: ms_gauden.c(292): 1 codebook, 3 feature, size:<br>
+INFO: ms_gauden.c(294):  512&#215;13<br>
+INFO: ms_gauden.c(294):  512&#215;13<br>
+INFO: ms_gauden.c(294):  512&#215;13<br>
+INFO: ms_gauden.c(354): 0 variance values floored<br>
+INFO: s2_semi_mgau.c(904): Loading senones from dump file /private/var/mobile/Containers/Bundle/Application/24031A1C-A9F0-48DB-9716-C25F1B39189C/Bleeper.app/AcousticModelEnglish.bundle/sendump<br>
+INFO: s2_semi_mgau.c(928): BEGIN FILE FORMAT DESCRIPTION<br>
+INFO: s2_semi_mgau.c(991): Rows: 512, Columns: 6138<br>
+INFO: s2_semi_mgau.c(1023): Using memory-mapped I/O for senones<br>
+INFO: s2_semi_mgau.c(1294): Maximum top-N: 4 Top-N beams: 0 0 0<br>
+INFO: dict.c(320): Allocating 4109 * 32 bytes (128 KiB) for word entries<br>
+INFO: dict.c(333): Reading main dictionary: /var/mobile/Containers/Data/Application/E43F3578-9AE1-4E51-9AB4-54C10162B29B/Library/Caches/MyLanguageModelFiles.dic<br>
+INFO: dict.c(213): Allocated 0 KiB for strings, 0 KiB for phones<br>
+INFO: dict.c(336): 4 words read<br>
+INFO: dict.c(342): Reading filler dictionary: /private/var/mobile/Containers/Bundle/Application/24031A1C-A9F0-48DB-9716-C25F1B39189C/Bleeper.app/AcousticModelEnglish.bundle/noisedict<br>
+INFO: dict.c(213): Allocated 0 KiB for strings, 0 KiB for phones<br>
+INFO: dict.c(345): 9 words read<br>
+INFO: dict2pid.c(396): Building PID tables for dictionary<br>
+INFO: dict2pid.c(406): Allocating 46^3 * 2 bytes (190 KiB) for word-initial triphones<br>
+INFO: dict2pid.c(132): Allocated 51152 bytes (49 KiB) for word-final triphones<br>
+INFO: dict2pid.c(196): Allocated 51152 bytes (49 KiB) for single-phone word triphones<br>
+INFO: ngram_model_arpa.c(79): No \data\ mark in LM file<br>
+INFO: ngram_model_dmp.c(166): Will use memory-mapped I/O for LM file<br>
+INFO: ngram_model_dmp.c(220): ngrams 1=6, 2=8, 3=4<br>
+INFO: ngram_model_dmp.c(266):        6 = LM.unigrams(+trailer) read<br>
+INFO: ngram_model_dmp.c(312):        8 = LM.bigrams(+trailer) read<br>
+INFO: ngram_model_dmp.c(338):        4 = LM.trigrams read<br>
+INFO: ngram_model_dmp.c(363):        3 = LM.prob2 entries read<br>
+INFO: ngram_model_dmp.c(383):        3 = LM.bo_wt2 entries read<br>
+INFO: ngram_model_dmp.c(403):        2 = LM.prob3 entries read<br>
+INFO: ngram_model_dmp.c(431):        1 = LM.tseg_base entries read<br>
+INFO: ngram_model_dmp.c(487):        6 = ascii word strings read<br>
+INFO: ngram_search_fwdtree.c(99): 4 unique initial diphones<br>
+INFO: ngram_search_fwdtree.c(148): 0 root, 0 non-root channels, 10 single-phone words<br>
+INFO: ngram_search_fwdtree.c(186): Creating search tree<br>
+INFO: ngram_search_fwdtree.c(192): before: 0 root, 0 non-root channels, 10 single-phone words<br>
+INFO: ngram_search_fwdtree.c(326): after: max nonroot chan increased to 136<br>
+INFO: ngram_search_fwdtree.c(339): after: 4 root, 8 non-root channels, 9 single-phone words<br>
+INFO: ngram_search_fwdflat.c(157): fwdflat: min_ef_width = 4, max_sf_win = 25<br>
+2015-05-07 12:06:42.143 Bleeper[4094:1027139] Restoring SmartCMN value of 48.750977<br>
+2015-05-07 12:06:42.143 Bleeper[4094:1027139] Listening.<br>
+2015-05-07 12:06:42.144 Bleeper[4094:1027139] Project has these words or phrases in its dictionary:<br>
+BUTTER<br>
+DOG<br>
+FRIGGING<br>
+TEST<br>
+2015-05-07 12:06:42.144 Bleeper[4094:1027139] Recognition loop has started<br>
+2015-05-07 12:06:42.145 Bleeper[4094:1027101] Pocketsphinx is now listening.<br>
+2015-05-07 12:06:43.269 Bleeper[4094:1027139] Speech detected&#8230;<br>
+2015-05-07 12:06:43.270 Bleeper[4094:1027101] Pocketsphinx has detected speech.<br>
+2015-05-07 12:06:43.270 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-2788) and an utterance ID of 0.<br>
+2015-05-07 12:06:43.340 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-4092) and an utterance ID of 1.<br>
+2015-05-07 12:06:43.471 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-7383) and an utterance ID of 2.<br>
+2015-05-07 12:06:43.585 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-8868) and an utterance ID of 3.<br>
+2015-05-07 12:06:43.711 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-10311) and an utterance ID of 4.<br>
+2015-05-07 12:06:43.843 Bleeper[4094:1027140] Pocketsphinx heard &#8220;DOG&#8221; with a score of (-12693) and an utterance ID of 5.<br>
+2015-05-07 12:06:43.844 Bleeper[4094:1027101] RapidEars&gt; Received hypothesis: DOG, with a score of -12693<br>
+2015-05-07 12:06:43.966 Bleeper[4094:1027140] Pocketsphinx heard &#8220;DOG&#8221; with a score of (-13793) and an utterance ID of 6.<br>
+2015-05-07 12:06:44.092 Bleeper[4094:1027140] Pocketsphinx heard &#8220;DOG&#8221; with a score of (-15344) and an utterance ID of 7.<br>
+2015-05-07 12:06:44.224 Bleeper[4094:1027140] Pocketsphinx heard &#8220;DOG&#8221; with a score of (-17377) and an utterance ID of 8.<br>
+2015-05-07 12:06:44.347 Bleeper[4094:1027140] Pocketsphinx heard &#8220;DOG&#8221; with a score of (-18556) and an utterance ID of 9.<br>
+2015-05-07 12:06:44.485 Bleeper[4094:1027140] Pocketsphinx heard &#8220;DOG&#8221; with a score of (-21046) and an utterance ID of 10.<br>
+2015-05-07 12:06:44.606 Bleeper[4094:1027140] End of speech detected&#8230;<br>
+2015-05-07 12:06:44.607 Bleeper[4094:1027101] Pocketsphinx has detected a period of silence, concluding an utterance.<br>
+INFO: cmn_prior.c(131): cmn_prior_update: from &lt; 48.75  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00 &gt;<br>
+INFO: cmn_prior.c(149): cmn_prior_update: to   &lt; 58.42  9.93 -6.09 11.14 -7.87 10.44 -2.25 -6.34 11.80  8.77 -2.10 -7.70 -11.92 &gt;<br>
+INFO: ngram_search_fwdtree.c(1550):     1292 words recognized (8/fr)<br>
+INFO: ngram_search_fwdtree.c(1552):    14074 senones evaluated (91/fr)<br>
+INFO: ngram_search_fwdtree.c(1556):     5889 channels searched (37/fr), 604 1st, 4244 last<br>
+INFO: ngram_search_fwdtree.c(1559):     1403 words for which last channels evaluated (9/fr)<br>
+INFO: ngram_search_fwdtree.c(1561):      302 candidate words for entering last phone (1/fr)<br>
+INFO: ngram_search_fwdtree.c(1564): fwdtree 0.12 CPU 0.079 xRT<br>
+INFO: ngram_search_fwdtree.c(1567): fwdtree 2.18 wall 1.409 xRT<br>
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 4 words<br>
+INFO: ngram_search_fwdflat.c(938):        0 words recognized (0/fr)<br>
+INFO: ngram_search_fwdflat.c(940):        0 senones evaluated (0/fr)<br>
+INFO: ngram_search_fwdflat.c(942):        0 channels searched (0/fr)<br>
+INFO: ngram_search_fwdflat.c(944):        0 words searched (0/fr)<br>
+INFO: ngram_search_fwdflat.c(947):        0 word transitions (0/fr)<br>
+INFO: ngram_search_fwdflat.c(950): fwdflat 0.00 CPU 0.000 xRT<br>
+INFO: ngram_search_fwdflat.c(953): fwdflat 0.00 wall 0.000 xRT<br>
+2015-05-07 12:06:46.146 Bleeper[4094:1027139] Speech detected&#8230;<br>
+2015-05-07 12:06:46.148 Bleeper[4094:1027101] Pocketsphinx has detected speech.<br>
+2015-05-07 12:06:46.149 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-2565) and an utterance ID of 11.<br>
+2015-05-07 12:06:46.149 Bleeper[4094:1027139] Hypothesis was null so we aren&#8217;t returning it. If you want null hypotheses to also be returned, set OEPocketsphinxController&#8217;s property returnNullHypotheses to TRUE before starting OEPocketsphinxController.<br>
+2015-05-07 12:06:46.282 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-5542) and an utterance ID of 12.<br>
+2015-05-07 12:06:46.402 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-6896) and an utterance ID of 13.<br>
+2015-05-07 12:06:46.532 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-9561) and an utterance ID of 14.<br>
+2015-05-07 12:06:46.656 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-10824) and an utterance ID of 15.<br>
+2015-05-07 12:06:46.780 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-12376) and an utterance ID of 16.<br>
+2015-05-07 12:06:46.915 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-15481) and an utterance ID of 17.<br>
+2015-05-07 12:06:47.039 Bleeper[4094:1027139] Pocketsphinx heard &#8220;FRIGGING&#8221; with a score of (-15534) and an utterance ID of 18.<br>
+2015-05-07 12:06:47.040 Bleeper[4094:1027101] RapidEars&gt; Received hypothesis: FRIGGING, with a score of -15534<br>
+2015-05-07 12:06:47.164 Bleeper[4094:1027140] Pocketsphinx heard &#8220;FRIGGING&#8221; with a score of (-16711) and an utterance ID of 19.<br>
+2015-05-07 12:06:47.297 Bleeper[4094:1027140] End of speech detected&#8230;<br>
+2015-05-07 12:06:47.298 Bleeper[4094:1027101] Pocketsphinx has detected a period of silence, concluding an utterance.<br>
+INFO: cmn_prior.c(131): cmn_prior_update: from &lt; 58.42  9.93 -6.09 11.14 -7.87 10.44 -2.25 -6.34 11.80  8.77 -2.10 -7.70 -11.92 &gt;<br>
+INFO: cmn_prior.c(149): cmn_prior_update: to   &lt; 58.13  8.56 -4.71 11.30 -5.42  8.64 -1.34 -3.83  6.43  4.81  0.06 -7.11 -12.86 &gt;<br>
+INFO: ngram_search_fwdtree.c(1550):     1033 words recognized (8/fr)<br>
+INFO: ngram_search_fwdtree.c(1552):    11628 senones evaluated (87/fr)<br>
+INFO: ngram_search_fwdtree.c(1556):     4753 channels searched (35/fr), 516 1st, 3391 last<br>
+INFO: ngram_search_fwdtree.c(1559):     1187 words for which last channels evaluated (8/fr)<br>
+INFO: ngram_search_fwdtree.c(1561):      197 candidate words for entering last phone (1/fr)<br>
+INFO: ngram_search_fwdtree.c(1564): fwdtree 0.15 CPU 0.116 xRT<br>
+INFO: ngram_search_fwdtree.c(1567): fwdtree 2.69 wall 2.023 xRT<br>
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 5 words<br>
+INFO: ngram_search_fwdflat.c(938):        0 words recognized (0/fr)<br>
+INFO: ngram_search_fwdflat.c(940):        0 senones evaluated (0/fr)<br>
+INFO: ngram_search_fwdflat.c(942):        0 channels searched (0/fr)<br>
+INFO: ngram_search_fwdflat.c(944):        0 words searched (0/fr)<br>
+INFO: ngram_search_fwdflat.c(947):        0 word transitions (0/fr)<br>
+INFO: ngram_search_fwdflat.c(950): fwdflat 0.00 CPU 0.000 xRT<br>
+INFO: ngram_search_fwdflat.c(953): fwdflat 0.00 wall 0.002 xRT<br>
+2015-05-07 12:06:47.679 Bleeper[4094:1027139] Speech detected&#8230;<br>
+2015-05-07 12:06:47.679 Bleeper[4094:1027101] Pocketsphinx has detected speech.<br>
+2015-05-07 12:06:47.680 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-1112) and an utterance ID of 20.<br>
+2015-05-07 12:06:47.680 Bleeper[4094:1027139] Hypothesis was null so we aren&#8217;t returning it. If you want null hypotheses to also be returned, set OEPocketsphinxController&#8217;s property returnNullHypotheses to TRUE before starting OEPocketsphinxController.<br>
+2015-05-07 12:06:47.807 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-2026) and an utterance ID of 21.<br>
+2015-05-07 12:06:47.938 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-3977) and an utterance ID of 22.<br>
+2015-05-07 12:06:48.063 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-5472) and an utterance ID of 23.<br>
+2015-05-07 12:06:48.198 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-8705) and an utterance ID of 24.<br>
+2015-05-07 12:06:48.305 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-10058) and an utterance ID of 25.<br>
+2015-05-07 12:06:48.447 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-11381) and an utterance ID of 26.<br>
+2015-05-07 12:06:48.579 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-13981) and an utterance ID of 27.<br>
+2015-05-07 12:06:48.698 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-15322) and an utterance ID of 28.<br>
+2015-05-07 12:06:48.828 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-16864) and an utterance ID of 29.<br>
+2015-05-07 12:06:48.964 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-19602) and an utterance ID of 30.<br>
+2015-05-07 12:06:49.086 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-20776) and an utterance ID of 31.<br>
+2015-05-07 12:06:49.219 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-23445) and an utterance ID of 32.<br>
+2015-05-07 12:06:49.340 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-25067) and an utterance ID of 33.<br>
+2015-05-07 12:06:49.471 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-26348) and an utterance ID of 34.<br>
+2015-05-07 12:06:49.604 Bleeper[4094:1027139] Pocketsphinx heard &#8220;DOG&#8221; with a score of (-28737) and an utterance ID of 35.<br>
+2015-05-07 12:06:49.605 Bleeper[4094:1027101] RapidEars&gt; Received hypothesis: DOG, with a score of -28737<br>
+2015-05-07 12:06:49.727 Bleeper[4094:1027140] Pocketsphinx heard &#8220;DOG&#8221; with a score of (-29729) and an utterance ID of 36.<br>
+2015-05-07 12:06:49.855 Bleeper[4094:1027140] Pocketsphinx heard &#8220;DOG&#8221; with a score of (-30814) and an utterance ID of 37.<br>
+2015-05-07 12:06:49.979 Bleeper[4094:1027139] End of speech detected&#8230;<br>
+2015-05-07 12:06:49.980 Bleeper[4094:1027101] Pocketsphinx has detected a period of silence, concluding an utterance.<br>
+INFO: cmn_prior.c(131): cmn_prior_update: from &lt; 58.13  8.56 -4.71 11.30 -5.42  8.64 -1.34 -3.83  6.43  4.81  0.06 -7.11 -12.86 &gt;<br>
+INFO: cmn_prior.c(149): cmn_prior_update: to   &lt; 55.27 11.59 -5.69  8.59 -4.23  7.33 -0.65 -4.67  4.12  3.04  0.24 -5.16 -12.84 &gt;<br>
+INFO: ngram_search_fwdtree.c(1550):     1956 words recognized (9/fr)<br>
+INFO: ngram_search_fwdtree.c(1552):    19098 senones evaluated (85/fr)<br>
+INFO: ngram_search_fwdtree.c(1556):     7738 channels searched (34/fr), 884 1st, 5241 last<br>
+INFO: ngram_search_fwdtree.c(1559):     2034 words for which last channels evaluated (9/fr)<br>
+INFO: ngram_search_fwdtree.c(1561):      318 candidate words for entering last phone (1/fr)<br>
+INFO: ngram_search_fwdtree.c(1564): fwdtree 0.19 CPU 0.086 xRT<br>
+INFO: ngram_search_fwdtree.c(1567): fwdtree 2.68 wall 1.190 xRT<br>
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 5 words<br>
+INFO: ngram_search_fwdflat.c(938):        0 words recognized (0/fr)<br>
+INFO: ngram_search_fwdflat.c(940):        0 senones evaluated (0/fr)<br>
+INFO: ngram_search_fwdflat.c(942):        0 channels searched (0/fr)<br>
+INFO: ngram_search_fwdflat.c(944):        0 words searched (0/fr)<br>
+INFO: ngram_search_fwdflat.c(947):        0 word transitions (0/fr)<br>
+INFO: ngram_search_fwdflat.c(950): fwdflat 0.00 CPU 0.000 xRT<br>
+INFO: ngram_search_fwdflat.c(953): fwdflat 0.00 wall 0.000 xRT<br>
+2015-05-07 12:06:50.878 Bleeper[4094:1027140] Speech detected&#8230;<br>
+2015-05-07 12:06:50.880 Bleeper[4094:1027101] Pocketsphinx has detected speech.<br>
+2015-05-07 12:06:50.880 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-1474) and an utterance ID of 38.<br>
+2015-05-07 12:06:50.881 Bleeper[4094:1027140] Hypothesis was null so we aren&#8217;t returning it. If you want null hypotheses to also be returned, set OEPocketsphinxController&#8217;s property returnNullHypotheses to TRUE before starting OEPocketsphinxController.<br>
+2015-05-07 12:06:51.012 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-4569) and an utterance ID of 39.<br>
+2015-05-07 12:06:51.136 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-5755) and an utterance ID of 40.<br>
+2015-05-07 12:06:51.266 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-8608) and an utterance ID of 41.<br>
+2015-05-07 12:06:51.390 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-9678) and an utterance ID of 42.<br>
+2015-05-07 12:06:51.517 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-10864) and an utterance ID of 43.<br>
+2015-05-07 12:06:51.649 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-12808) and an utterance ID of 44.<br>
+2015-05-07 12:06:51.772 Bleeper[4094:1027139] End of speech detected&#8230;<br>
+2015-05-07 12:06:51.772 Bleeper[4094:1027101] Pocketsphinx has detected a period of silence, concluding an utterance.<br>
+INFO: cmn_prior.c(131): cmn_prior_update: from &lt; 55.27 11.59 -5.69  8.59 -4.23  7.33 -0.65 -4.67  4.12  3.04  0.24 -5.16 -12.84 &gt;<br>
+INFO: cmn_prior.c(149): cmn_prior_update: to   &lt; 55.24 11.87 -5.48  9.39 -3.23  5.91 -0.55 -4.22  4.33  3.21  0.32 -5.24 -11.89 &gt;<br>
+INFO: ngram_search_fwdtree.c(1550):      776 words recognized (8/fr)<br>
+INFO: ngram_search_fwdtree.c(1552):     8024 senones evaluated (86/fr)<br>
+INFO: ngram_search_fwdtree.c(1556):     3310 channels searched (35/fr), 356 1st, 2305 last<br>
+INFO: ngram_search_fwdtree.c(1559):      821 words for which last channels evaluated (8/fr)<br>
+INFO: ngram_search_fwdtree.c(1561):      160 candidate words for entering last phone (1/fr)<br>
+INFO: ngram_search_fwdtree.c(1564): fwdtree 0.10 CPU 0.110 xRT<br>
+INFO: ngram_search_fwdtree.c(1567): fwdtree 1.79 wall 1.925 xRT<br>
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 4 words<br>
+INFO: ngram_search_fwdflat.c(938):        0 words recognized (0/fr)<br>
+INFO: ngram_search_fwdflat.c(940):        0 senones evaluated (0/fr)<br>
+INFO: ngram_search_fwdflat.c(942):        0 channels searched (0/fr)<br>
+INFO: ngram_search_fwdflat.c(944):        0 words searched (0/fr)<br>
+INFO: ngram_search_fwdflat.c(947):        0 word transitions (0/fr)<br>
+INFO: ngram_search_fwdflat.c(950): fwdflat 0.00 CPU 0.000 xRT<br>
+INFO: ngram_search_fwdflat.c(953): fwdflat 0.00 wall 0.000 xRT<br>
+2015-05-07 12:06:52.414 Bleeper[4094:1027140] Speech detected&#8230;<br>
+2015-05-07 12:06:52.415 Bleeper[4094:1027101] Pocketsphinx has detected speech.<br>
+2015-05-07 12:06:52.416 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-2300) and an utterance ID of 45.<br>
+2015-05-07 12:06:52.543 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-3445) and an utterance ID of 46.<br>
+2015-05-07 12:06:52.675 Bleeper[4094:1027140] Pocketsphinx heard &#8220;TEST&#8221; with a score of (-6226) and an utterance ID of 47.<br>
+2015-05-07 12:06:52.676 Bleeper[4094:1027101] RapidEars&gt; Received hypothesis: TEST, with a score of -6226<br>
+2015-05-07 12:06:52.798 Bleeper[4094:1027140] Pocketsphinx heard &#8220;TEST&#8221; with a score of (-7539) and an utterance ID of 48.<br>
+2015-05-07 12:06:52.924 Bleeper[4094:1027139] Pocketsphinx heard &#8220;DOG&#8221; with a score of (-8493) and an utterance ID of 49.<br>
+2015-05-07 12:06:52.925 Bleeper[4094:1027101] RapidEars&gt; Received hypothesis: DOG, with a score of -8493<br>
+2015-05-07 12:06:53.062 Bleeper[4094:1027140] Pocketsphinx heard &#8220;DOG&#8221; with a score of (-11094) and an utterance ID of 50.<br>
+2015-05-07 12:06:53.179 Bleeper[4094:1027140] Pocketsphinx heard &#8220;DOG&#8221; with a score of (-12400) and an utterance ID of 51.<br>
+2015-05-07 12:06:53.309 Bleeper[4094:1027139] Pocketsphinx heard &#8220;DOG BUTTER&#8221; with a score of (-15490) and an utterance ID of 52.<br>
+2015-05-07 12:06:53.311 Bleeper[4094:1027101] RapidEars&gt; Received hypothesis: DOG BUTTER, with a score of -15490<br>
+2015-05-07 12:06:53.435 Bleeper[4094:1027139] Pocketsphinx heard &#8220;DOG TEST&#8221; with a score of (-15633) and an utterance ID of 53.<br>
+2015-05-07 12:06:53.436 Bleeper[4094:1027101] RapidEars&gt; Received hypothesis: DOG TEST, with a score of -15633<br>
+2015-05-07 12:06:53.567 Bleeper[4094:1027139] Pocketsphinx heard &#8220;DOG TEST&#8221; with a score of (-16990) and an utterance ID of 54.<br>
+2015-05-07 12:06:53.698 Bleeper[4094:1027140] Pocketsphinx heard &#8220;DOG TEST&#8221; with a score of (-19183) and an utterance ID of 55.<br>
+2015-05-07 12:06:53.822 Bleeper[4094:1027140] Pocketsphinx heard &#8220;DOG TEST&#8221; with a score of (-20187) and an utterance ID of 56.<br>
+2015-05-07 12:06:53.951 Bleeper[4094:1027140] End of speech detected&#8230;<br>
+2015-05-07 12:06:53.952 Bleeper[4094:1027101] Pocketsphinx has detected a period of silence, concluding an utterance.<br>
+INFO: cmn_prior.c(131): cmn_prior_update: from &lt; 55.24 11.87 -5.48  9.39 -3.23  5.91 -0.55 -4.22  4.33  3.21  0.32 -5.24 -11.89 &gt;<br>
+INFO: cmn_prior.c(149): cmn_prior_update: to   &lt; 54.83  9.32 -4.45  6.79 -5.10  5.70 -1.52 -2.46  4.09  3.77 -0.06 -4.76 -10.21 &gt;<br>
+INFO: ngram_search_fwdtree.c(1550):     1261 words recognized (8/fr)<br>
+INFO: ngram_search_fwdtree.c(1552):    16795 senones evaluated (106/fr)<br>
+INFO: ngram_search_fwdtree.c(1556):     7491 channels searched (47/fr), 616 1st, 5890 last<br>
+INFO: ngram_search_fwdtree.c(1559):     1459 words for which last channels evaluated (9/fr)<br>
+INFO: ngram_search_fwdtree.c(1561):      226 candidate words for entering last phone (1/fr)<br>
+INFO: ngram_search_fwdtree.c(1564): fwdtree 0.15 CPU 0.095 xRT<br>
+INFO: ngram_search_fwdtree.c(1567): fwdtree 2.18 wall 1.371 xRT<br>
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 5 words<br>
+INFO: ngram_search_fwdflat.c(938):        0 words recognized (0/fr)<br>
+INFO: ngram_search_fwdflat.c(940):        0 senones evaluated (0/fr)<br>
+INFO: ngram_search_fwdflat.c(942):        0 channels searched (0/fr)<br>
+INFO: ngram_search_fwdflat.c(944):        0 words searched (0/fr)<br>
+INFO: ngram_search_fwdflat.c(947):        0 word transitions (0/fr)<br>
+INFO: ngram_search_fwdflat.c(950): fwdflat 0.00 CPU 0.000 xRT<br>
+INFO: ngram_search_fwdflat.c(953): fwdflat 0.00 wall 0.000 xRT<br>
+2015-05-07 12:06:54.590 Bleeper[4094:1027140] Speech detected&#8230;<br>
+2015-05-07 12:06:54.592 Bleeper[4094:1027101] Pocketsphinx has detected speech.<br>
+2015-05-07 12:06:54.593 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-1530) and an utterance ID of 57.<br>
+2015-05-07 12:06:54.594 Bleeper[4094:1027140] Hypothesis was null so we aren&#8217;t returning it. If you want null hypotheses to also be returned, set OEPocketsphinxController&#8217;s property returnNullHypotheses to TRUE before starting OEPocketsphinxController.<br>
+INFO: cmn_prior.c(99): cmn_prior_update: from &lt; 54.83  9.32 -4.45  6.79 -5.10  5.70 -1.52 -2.46  4.09  3.77 -0.06 -4.76 -10.21 &gt;<br>
+INFO: cmn_prior.c(116): cmn_prior_update: to   &lt; 54.90  9.49 -4.40  6.73 -4.83  5.61 -1.40 -2.88  3.68  4.06  0.19 -4.75 -10.27 &gt;<br>
+2015-05-07 12:06:54.717 Bleeper[4094:1027139] Pocketsphinx heard &#8220;BUTTER&#8221; with a score of (-3712) and an utterance ID of 58.<br>
+2015-05-07 12:06:54.718 Bleeper[4094:1027101] RapidEars&gt; Received hypothesis: BUTTER, with a score of -3712<br>
+2015-05-07 12:06:54.845 Bleeper[4094:1027139] Pocketsphinx heard &#8220;BUTTER&#8221; with a score of (-5291) and an utterance ID of 59.<br>
+2015-05-07 12:06:54.978 Bleeper[4094:1027139] Pocketsphinx heard &#8220;DOG&#8221; with a score of (-7130) and an utterance ID of 60.<br>
+2015-05-07 12:06:54.979 Bleeper[4094:1027101] RapidEars&gt; Received hypothesis: DOG, with a score of -7130<br>
+2015-05-07 12:06:55.101 Bleeper[4094:1027139] Pocketsphinx heard &#8220;DOG&#8221; with a score of (-7986) and an utterance ID of 61.<br>
+2015-05-07 12:06:55.231 Bleeper[4094:1027139] Pocketsphinx heard &#8220;DOG&#8221; with a score of (-9033) and an utterance ID of 62.<br>
+2015-05-07 12:06:55.362 Bleeper[4094:1027140] Pocketsphinx heard &#8220;DOG&#8221; with a score of (-10911) and an utterance ID of 63.<br>
+2015-05-07 12:06:55.481 Bleeper[4094:1027140] End of speech detected&#8230;<br>
+INFO: cmn_prior.c(131): cmn_prior_update: from &lt; 54.90  9.49 -4.40  6.73 -4.83  5.61 -1.40 -2.88  3.68  4.06  0.19 -4.75 -10.27 &gt;<br>
+INFO: cmn_prior.c(149): cmn_prior_update: to   &lt; 53.20  9.99 -4.68  5.23 -6.21  5.16 -0.86 -1.90  2.89  3.90 -0.47 -4.11 -9.28 &gt;<br>
+INFO: ngram_search_fwdtree.c(1550):      546 words recognized (6/fr)<br>
+INFO: ngram_search_fwdtree.c(1552):     7547 senones evaluated (82/fr)<br>
+INFO: ngram_search_fwdtree.c(1556):     3088 channels searched (33/fr), 352 1st, 2290 last<br>
+INFO: ngram_search_fwdtree.c(1559):      810 words for which last channels evaluated (8/fr)<br>
+INFO: ngram_search_fwdtree.c(1561):       77 candidate words for entering last phone (0/fr)<br>
+INFO: ngram_search_fwdtree.c(1564): fwdtree 0.11 CPU 0.115 xRT<br>
+INFO: ngram_search_fwdtree.c(1567): fwdtree 1.53 wall 1.661 xRT<br>
+2015-05-07 12:06:55.482 Bleeper[4094:1027101] Pocketsphinx has detected a period of silence, concluding an utterance.<br>
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 4 words<br>
+INFO: ngram_search_fwdflat.c(938):        0 words recognized (0/fr)<br>
+INFO: ngram_search_fwdflat.c(940):        0 senones evaluated (0/fr)<br>
+INFO: ngram_search_fwdflat.c(942):        0 channels searched (0/fr)<br>
+INFO: ngram_search_fwdflat.c(944):        0 words searched (0/fr)<br>
+INFO: ngram_search_fwdflat.c(947):        0 word transitions (0/fr)<br>
+INFO: ngram_search_fwdflat.c(950): fwdflat 0.00 CPU 0.004 xRT<br>
+INFO: ngram_search_fwdflat.c(953): fwdflat 0.00 wall 0.002 xRT<br>
+2015-05-07 12:06:56.642 Bleeper[4094:1027140] Speech detected&#8230;<br>
+2015-05-07 12:06:56.643 Bleeper[4094:1027101] Pocketsphinx has detected speech.<br>
+2015-05-07 12:06:56.645 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-2426) and an utterance ID of 64.<br>
+2015-05-07 12:06:56.645 Bleeper[4094:1027140] Hypothesis was null so we aren&#8217;t returning it. If you want null hypotheses to also be returned, set OEPocketsphinxController&#8217;s property returnNullHypotheses to TRUE before starting OEPocketsphinxController.<br>
+2015-05-07 12:06:56.771 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-5514) and an utterance ID of 65.<br>
+2015-05-07 12:06:56.895 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-7054) and an utterance ID of 66.<br>
+2015-05-07 12:06:57.026 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-9722) and an utterance ID of 67.<br>
+2015-05-07 12:06:57.150 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-10935) and an utterance ID of 68.<br>
+2015-05-07 12:06:57.278 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-11949) and an utterance ID of 69.<br>
+2015-05-07 12:06:57.408 Bleeper[4094:1027139] End of speech detected&#8230;<br>
+INFO: cmn_prior.c(131): cmn_prior_update: from &lt; 53.20  9.99 -4.68  5.23 -6.21  5.16 -0.86 -1.90  2.89  3.90 -0.47 -4.11 -9.28 &gt;<br>
+INFO: cmn_prior.c(149): cmn_prior_update: to   &lt; 52.88  7.95 -3.04  6.77 -6.45  5.59 -1.08 -1.09  2.63  3.58 -0.35 -5.38 -8.88 &gt;<br>
+INFO: ngram_search_fwdtree.c(1550):      754 words recognized (8/fr)<br>
+INFO: ngram_search_fwdtree.c(1552):     8059 senones evaluated (90/fr)<br>
+INFO: ngram_search_fwdtree.c(1556):     3288 channels searched (36/fr), 344 1st, 2319 last<br>
+INFO: ngram_search_fwdtree.c(1559):      796 words for which last channels evaluated (8/fr)<br>
+INFO: ngram_search_fwdtree.c(1561):      155 candidate words for entering last phone (1/fr)<br>
+INFO: ngram_search_fwdtree.c(1564): fwdtree 0.09 CPU 0.097 xRT<br>
+2015-05-07 12:06:57.409 Bleeper[4094:1027101] Pocketsphinx has detected a period of silence, concluding an utterance.<br>
+INFO: ngram_search_fwdtree.c(1567): fwdtree 1.93 wall 2.139 xRT<br>
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 5 words<br>
+INFO: ngram_search_fwdflat.c(938):        0 words recognized (0/fr)<br>
+INFO: ngram_search_fwdflat.c(940):        0 senones evaluated (0/fr)<br>
+INFO: ngram_search_fwdflat.c(942):        0 channels searched (0/fr)<br>
+INFO: ngram_search_fwdflat.c(944):        0 words searched (0/fr)<br>
+INFO: ngram_search_fwdflat.c(947):        0 word transitions (0/fr)<br>
+INFO: ngram_search_fwdflat.c(950): fwdflat 0.00 CPU 0.001 xRT<br>
+INFO: ngram_search_fwdflat.c(953): fwdflat 0.00 wall 0.002 xRT<br>
+2015-05-07 12:06:57.791 Bleeper[4094:1027139] Speech detected&#8230;<br>
+2015-05-07 12:06:57.792 Bleeper[4094:1027101] Pocketsphinx has detected speech.<br>
+2015-05-07 12:06:57.793 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-1500) and an utterance ID of 70.<br>
+2015-05-07 12:06:57.919 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-3257) and an utterance ID of 71.<br>
+2015-05-07 12:06:58.051 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-6252) and an utterance ID of 72.<br>
+2015-05-07 12:06:58.175 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-7402) and an utterance ID of 73.<br>
+2015-05-07 12:06:58.296 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-8504) and an utterance ID of 74.<br>
+2015-05-07 12:06:58.435 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-11207) and an utterance ID of 75.<br>
+2015-05-07 12:06:58.557 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-12568) and an utterance ID of 76.<br>
+2015-05-07 12:06:58.684 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-14343) and an utterance ID of 77.<br>
+2015-05-07 12:06:58.819 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-16785) and an utterance ID of 78.<br>
+2015-05-07 12:06:58.943 Bleeper[4094:1027140] Pocketsphinx heard &#8220;FRIGGING&#8221; with a score of (-17823) and an utterance ID of 79.<br>
+2015-05-07 12:06:58.944 Bleeper[4094:1027101] RapidEars&gt; Received hypothesis: FRIGGING, with a score of -17823<br>
+2015-05-07 12:06:59.075 Bleeper[4094:1027140] Pocketsphinx heard &#8220;FRIGGING&#8221; with a score of (-20182) and an utterance ID of 80.<br>
+INFO: cmn_prior.c(99): cmn_prior_update: from &lt; 52.88  7.95 -3.04  6.77 -6.45  5.59 -1.08 -1.09  2.63  3.58 -0.35 -5.38 -8.88 &gt;<br>
+INFO: cmn_prior.c(116): cmn_prior_update: to   &lt; 51.93  7.30 -3.08  8.37 -5.81  5.12 -1.12  0.55  2.88  2.66 -0.76 -6.22 -8.67 &gt;<br>
+2015-05-07 12:06:59.199 Bleeper[4094:1027139] Pocketsphinx heard &#8220;FRIGGING&#8221; with a score of (-21259) and an utterance ID of 81.<br>
+2015-05-07 12:06:59.324 Bleeper[4094:1027139] Pocketsphinx heard &#8220;FRIGGING&#8221; with a score of (-22379) and an utterance ID of 82.<br>
+2015-05-07 12:06:59.458 Bleeper[4094:1027139] Pocketsphinx heard &#8220;FRIGGING&#8221; with a score of (-25262) and an utterance ID of 83.<br>
+2015-05-07 12:06:59.584 Bleeper[4094:1027140] Pocketsphinx heard &#8220;FRIGGING&#8221; with a score of (-27188) and an utterance ID of 84.<br>
+2015-05-07 12:06:59.716 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-29854) and an utterance ID of 85.<br>
+2015-05-07 12:06:59.717 Bleeper[4094:1027140] Hypothesis was null so we aren&#8217;t returning it. If you want null hypotheses to also be returned, set OEPocketsphinxController&#8217;s property returnNullHypotheses to TRUE before starting OEPocketsphinxController.<br>
+2015-05-07 12:06:59.839 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-31402) and an utterance ID of 86.<br>
+2015-05-07 12:06:59.967 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-32962) and an utterance ID of 87.<br>
+2015-05-07 12:07:00.099 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-35736) and an utterance ID of 88.<br>
+2015-05-07 12:07:00.220 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-37321) and an utterance ID of 89.<br>
+2015-05-07 12:07:00.347 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-38806) and an utterance ID of 90.<br>
+2015-05-07 12:07:00.483 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-41637) and an utterance ID of 91.<br>
+2015-05-07 12:07:00.608 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-43348) and an utterance ID of 92.<br>
+2015-05-07 12:07:00.740 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-45908) and an utterance ID of 93.<br>
+2015-05-07 12:07:00.863 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-47327) and an utterance ID of 94.<br>
+2015-05-07 12:07:00.990 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-48218) and an utterance ID of 95.<br>
+2015-05-07 12:07:01.122 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-50826) and an utterance ID of 96.<br>
+2015-05-07 12:07:01.248 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-52512) and an utterance ID of 97.<br>
+2015-05-07 12:07:01.377 Bleeper[4094:1027140] Pocketsphinx heard &#8220;DOG&#8221; with a score of (-53960) and an utterance ID of 98.<br>
+2015-05-07 12:07:01.378 Bleeper[4094:1027101] RapidEars&gt; Received hypothesis: DOG, with a score of -53960<br>
+2015-05-07 12:07:01.503 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-56845) and an utterance ID of 99.<br>
+2015-05-07 12:07:01.503 Bleeper[4094:1027140] Hypothesis was null so we aren&#8217;t returning it. If you want null hypotheses to also be returned, set OEPocketsphinxController&#8217;s property returnNullHypotheses to TRUE before starting OEPocketsphinxController.<br>
+2015-05-07 12:07:01.629 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-58048) and an utterance ID of 100.<br>
+2015-05-07 12:07:01.761 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-60279) and an utterance ID of 101.<br>
+2015-05-07 12:07:01.888 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-61373) and an utterance ID of 102.<br>
+2015-05-07 12:07:02.014 Bleeper[4094:1027139] End of speech detected&#8230;<br>
+INFO: cmn_prior.c(131): cmn_prior_update: from &lt; 51.93  7.30 -3.08  8.37 -5.81  5.12 -1.12  0.55  2.88  2.66 -0.76 -6.22 -8.67 &gt;<br>
+INFO: cmn_prior.c(149): cmn_prior_update: to   &lt; 51.99  6.97 -1.31  8.88 -4.30  5.81 -2.08 -0.30  1.16  3.53  0.23 -7.10 -7.31 &gt;<br>
+2015-05-07 12:07:02.015 Bleeper[4094:1027101] Pocketsphinx has detected a period of silence, concluding an utterance.<br>
+INFO: ngram_search_fwdtree.c(1550):     3809 words recognized (9/fr)<br>
+INFO: ngram_search_fwdtree.c(1552):    42920 senones evaluated (101/fr)<br>
+INFO: ngram_search_fwdtree.c(1556):    18334 channels searched (43/fr), 1688 1st, 13495 last<br>
+INFO: ngram_search_fwdtree.c(1559):     3985 words for which last channels evaluated (9/fr)<br>
+INFO: ngram_search_fwdtree.c(1561):      866 candidate words for entering last phone (2/fr)<br>
+INFO: ngram_search_fwdtree.c(1564): fwdtree 0.34 CPU 0.081 xRT<br>
+INFO: ngram_search_fwdtree.c(1567): fwdtree 4.60 wall 1.081 xRT<br>
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 6 words<br>
+INFO: ngram_search_fwdflat.c(938):        0 words recognized (0/fr)<br>
+INFO: ngram_search_fwdflat.c(940):        0 senones evaluated (0/fr)<br>
+INFO: ngram_search_fwdflat.c(942):        0 channels searched (0/fr)<br>
+INFO: ngram_search_fwdflat.c(944):        0 words searched (0/fr)<br>
+INFO: ngram_search_fwdflat.c(947):        0 word transitions (0/fr)<br>
+INFO: ngram_search_fwdflat.c(950): fwdflat 0.00 CPU 0.000 xRT<br>
+INFO: ngram_search_fwdflat.c(953): fwdflat 0.00 wall 0.000 xRT<br>
+2015-05-07 12:07:02.397 Bleeper[4094:1027139] Speech detected&#8230;<br>
+2015-05-07 12:07:02.398 Bleeper[4094:1027101] Pocketsphinx has detected speech.<br>
+2015-05-07 12:07:02.399 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-1432) and an utterance ID of 103.<br>
+INFO: cmn_prior.c(99): cmn_prior_update: from &lt; 51.99  6.97 -1.31  8.88 -4.30  5.81 -2.08 -0.30  1.16  3.53  0.23 -7.10 -7.31 &gt;<br>
+INFO: cmn_prior.c(116): cmn_prior_update: to   &lt; 51.78  6.61 -1.63  8.80 -4.34  5.92 -2.14 -0.13  1.41  3.44  0.00 -7.13 -7.17 &gt;<br>
+2015-05-07 12:07:02.528 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-3465) and an utterance ID of 104.<br>
+2015-05-07 12:07:02.653 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-4593) and an utterance ID of 105.<br>
+2015-05-07 12:07:02.791 Bleeper[4094:1027140] Pocketsphinx heard &#8220;BUTTER&#8221; with a score of (-7478) and an utterance ID of 106.<br>
+2015-05-07 12:07:02.792 Bleeper[4094:1027101] RapidEars&gt; Received hypothesis: BUTTER, with a score of -7478<br>
+2015-05-07 12:07:02.909 Bleeper[4094:1027139] Pocketsphinx heard &#8220;BUTTER&#8221; with a score of (-8084) and an utterance ID of 107.<br>
+2015-05-07 12:07:03.036 Bleeper[4094:1027139] Pocketsphinx heard &#8220;BUTTER&#8221; with a score of (-9672) and an utterance ID of 108.<br>
+2015-05-07 12:07:03.174 Bleeper[4094:1027139] Pocketsphinx heard &#8220;BUTTER&#8221; with a score of (-12854) and an utterance ID of 109.<br>
+2015-05-07 12:07:03.295 Bleeper[4094:1027140] Pocketsphinx heard &#8220;BUTTER DOG&#8221; with a score of (-13870) and an utterance ID of 110.<br>
+2015-05-07 12:07:03.296 Bleeper[4094:1027101] RapidEars&gt; Received hypothesis: BUTTER DOG, with a score of -13870<br>
+2015-05-07 12:07:03.427 Bleeper[4094:1027140] Pocketsphinx heard &#8220;BUTTER DOG&#8221; with a score of (-17170) and an utterance ID of 111.<br>
+2015-05-07 12:07:03.547 Bleeper[4094:1027140] Pocketsphinx heard &#8220;BUTTER DOG&#8221; with a score of (-18329) and an utterance ID of 112.<br>
+2015-05-07 12:07:03.680 Bleeper[4094:1027140] Pocketsphinx heard &#8220;BUTTER DOG&#8221; with a score of (-19567) and an utterance ID of 113.<br>
+2015-05-07 12:07:03.813 Bleeper[4094:1027140] Pocketsphinx heard &#8220;BUTTER DOG&#8221; with a score of (-22296) and an utterance ID of 114.<br>
+2015-05-07 12:07:03.935 Bleeper[4094:1027139] Pocketsphinx heard &#8220;BUTTER DOG&#8221; with a score of (-23426) and an utterance ID of 115.<br>
+2015-05-07 12:07:04.063 Bleeper[4094:1027139] Pocketsphinx heard &#8220;BUTTER DOG&#8221; with a score of (-25070) and an utterance ID of 116.<br>
+2015-05-07 12:07:04.195 Bleeper[4094:1027139] Pocketsphinx heard &#8220;BUTTER DOG&#8221; with a score of (-27480) and an utterance ID of 117.<br>
+2015-05-07 12:07:04.319 Bleeper[4094:1027139] Pocketsphinx heard &#8220;BUTTER DOG&#8221; with a score of (-28501) and an utterance ID of 118.<br>
+2015-05-07 12:07:04.444 Bleeper[4094:1027139] End of speech detected&#8230;<br>
+2015-05-07 12:07:04.445 Bleeper[4094:1027101] Pocketsphinx has detected a period of silence, concluding an utterance.<br>
+INFO: cmn_prior.c(131): cmn_prior_update: from &lt; 51.78  6.61 -1.63  8.80 -4.34  5.92 -2.14 -0.13  1.41  3.44  0.00 -7.13 -7.17 &gt;<br>
+INFO: cmn_prior.c(149): cmn_prior_update: to   &lt; 51.99  7.59 -3.47  9.77 -4.12  4.34 -1.52 -1.65  1.29  3.21  1.72 -6.34 -9.28 &gt;<br>
+INFO: ngram_search_fwdtree.c(1550):     1710 words recognized (8/fr)<br>
+INFO: ngram_search_fwdtree.c(1552):    20366 senones evaluated (97/fr)<br>
+INFO: ngram_search_fwdtree.c(1556):     8626 channels searched (41/fr), 814 1st, 6372 last<br>
+INFO: ngram_search_fwdtree.c(1559):     1873 words for which last channels evaluated (8/fr)<br>
+INFO: ngram_search_fwdtree.c(1561):      343 candidate words for entering last phone (1/fr)<br>
+INFO: ngram_search_fwdtree.c(1564): fwdtree 0.19 CPU 0.090 xRT<br>
+INFO: ngram_search_fwdtree.c(1567): fwdtree 2.43 wall 1.163 xRT<br>
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 5 words<br>
+INFO: ngram_search_fwdflat.c(938):        0 words recognized (0/fr)<br>
+INFO: ngram_search_fwdflat.c(940):        0 senones evaluated (0/fr)<br>
+INFO: ngram_search_fwdflat.c(942):        0 channels searched (0/fr)<br>
+INFO: ngram_search_fwdflat.c(944):        0 words searched (0/fr)<br>
+INFO: ngram_search_fwdflat.c(947):        0 word transitions (0/fr)<br>
+INFO: ngram_search_fwdflat.c(950): fwdflat 0.00 CPU 0.000 xRT<br>
+INFO: ngram_search_fwdflat.c(953): fwdflat 0.00 wall 0.000 xRT<br>
+2015-05-07 12:07:05.090 Bleeper[4094:1027139] Speech detected&#8230;<br>
+2015-05-07 12:07:05.091 Bleeper[4094:1027101] Pocketsphinx has detected speech.<br>
+2015-05-07 12:07:05.092 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-3010) and an utterance ID of 119.<br>
+2015-05-07 12:07:05.092 Bleeper[4094:1027139] Hypothesis was null so we aren&#8217;t returning it. If you want null hypotheses to also be returned, set OEPocketsphinxController&#8217;s property returnNullHypotheses to TRUE before starting OEPocketsphinxController.<br>
+2015-05-07 12:07:05.219 Bleeper[4094:1027139] Pocketsphinx heard &#8220;DOG&#8221; with a score of (-5397) and an utterance ID of 120.<br>
+2015-05-07 12:07:05.221 Bleeper[4094:1027101] RapidEars&gt; Received hypothesis: DOG, with a score of -5397<br>
+2015-05-07 12:07:05.342 Bleeper[4094:1027140] Pocketsphinx heard &#8220;DOG&#8221; with a score of (-6265) and an utterance ID of 121.<br>
+2015-05-07 12:07:05.475 Bleeper[4094:1027140] Pocketsphinx heard &#8220;DOG&#8221; with a score of (-8520) and an utterance ID of 122.<br>
+2015-05-07 12:07:05.599 Bleeper[4094:1027140] Pocketsphinx heard &#8220;DOG&#8221; with a score of (-9425) and an utterance ID of 123.<br>
+2015-05-07 12:07:05.728 Bleeper[4094:1027140] Pocketsphinx heard &#8220;DOG&#8221; with a score of (-10551) and an utterance ID of 124.<br>
+2015-05-07 12:07:05.856 Bleeper[4094:1027140] End of speech detected&#8230;<br>
+2015-05-07 12:07:05.857 Bleeper[4094:1027101] Pocketsphinx has detected a period of silence, concluding an utterance.<br>
+INFO: cmn_prior.c(131): cmn_prior_update: from &lt; 51.99  7.59 -3.47  9.77 -4.12  4.34 -1.52 -1.65  1.29  3.21  1.72 -6.34 -9.28 &gt;<br>
+INFO: cmn_prior.c(149): cmn_prior_update: to   &lt; 51.88  8.63 -3.16  8.73 -5.07  4.43 -0.63 -1.60  1.38  3.30  0.93 -5.76 -8.91 &gt;<br>
+INFO: ngram_search_fwdtree.c(1550):      572 words recognized (6/fr)<br>
+INFO: ngram_search_fwdtree.c(1552):     7360 senones evaluated (82/fr)<br>
+INFO: ngram_search_fwdtree.c(1556):     3027 channels searched (33/fr), 344 1st, 2217 last<br>
+INFO: ngram_search_fwdtree.c(1559):      799 words for which last channels evaluated (8/fr)<br>
+INFO: ngram_search_fwdtree.c(1561):      101 candidate words for entering last phone (1/fr)<br>
+INFO: ngram_search_fwdtree.c(1564): fwdtree 0.09 CPU 0.101 xRT<br>
+INFO: ngram_search_fwdtree.c(1567): fwdtree 1.41 wall 1.566 xRT<br>
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 4 words<br>
+INFO: ngram_search_fwdflat.c(938):        0 words recognized (0/fr)<br>
+INFO: ngram_search_fwdflat.c(940):        0 senones evaluated (0/fr)<br>
+INFO: ngram_search_fwdflat.c(942):        0 channels searched (0/fr)<br>
+INFO: ngram_search_fwdflat.c(944):        0 words searched (0/fr)<br>
+INFO: ngram_search_fwdflat.c(947):        0 word transitions (0/fr)<br>
+INFO: ngram_search_fwdflat.c(950): fwdflat 0.00 CPU 0.000 xRT<br>
+INFO: ngram_search_fwdflat.c(953): fwdflat 0.00 wall 0.001 xRT<br>
+INFO: cmn_prior.c(99): cmn_prior_update: from &lt; 51.88  8.63 -3.16  8.73 -5.07  4.43 -0.63 -1.60  1.38  3.30  0.93 -5.76 -8.91 &gt;<br>
+INFO: cmn_prior.c(116): cmn_prior_update: to   &lt; 51.82  8.68 -3.16  9.04 -4.91  4.49 -0.61 -1.55  1.23  3.00  0.85 -5.85 -8.98 &gt;<br>
+2015-05-07 12:07:06.245 Bleeper[4094:1027140] Speech detected&#8230;<br>
+2015-05-07 12:07:06.246 Bleeper[4094:1027101] Pocketsphinx has detected speech.<br>
+2015-05-07 12:07:06.246 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-4176) and an utterance ID of 125.<br>
+2015-05-07 12:07:06.247 Bleeper[4094:1027140] Hypothesis was null so we aren&#8217;t returning it. If you want null hypotheses to also be returned, set OEPocketsphinxController&#8217;s property returnNullHypotheses to TRUE before starting OEPocketsphinxController.<br>
+2015-05-07 12:07:06.367 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-5598) and an utterance ID of 126.<br>
+2015-05-07 12:07:06.499 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-8568) and an utterance ID of 127.<br>
+2015-05-07 12:07:06.623 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-9821) and an utterance ID of 128.<br>
+2015-05-07 12:07:06.752 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-11307) and an utterance ID of 129.<br>
+2015-05-07 12:07:06.883 Bleeper[4094:1027139] Pocketsphinx heard &#8220;BUTTER&#8221; with a score of (-14218) and an utterance ID of 130.<br>
+2015-05-07 12:07:06.884 Bleeper[4094:1027101] RapidEars&gt; Received hypothesis: BUTTER, with a score of -14218<br>
+2015-05-07 12:07:07.007 Bleeper[4094:1027139] Pocketsphinx heard &#8220;TEST&#8221; with a score of (-14230) and an utterance ID of 131.<br>
+2015-05-07 12:07:07.008 Bleeper[4094:1027101] RapidEars&gt; Received hypothesis: TEST, with a score of -14230<br>
+2015-05-07 12:07:07.134 Bleeper[4094:1027140] Pocketsphinx heard &#8220;TEST&#8221; with a score of (-15621) and an utterance ID of 132.<br>
+2015-05-07 12:07:07.267 Bleeper[4094:1027140] Pocketsphinx heard &#8220;TEST&#8221; with a score of (-18422) and an utterance ID of 133.<br>
+2015-05-07 12:07:07.390 Bleeper[4094:1027140] Pocketsphinx heard &#8220;TEST&#8221; with a score of (-19462) and an utterance ID of 134.<br>
+2015-05-07 12:07:07.516 Bleeper[4094:1027140] End of speech detected&#8230;<br>
+INFO: cmn_prior.c(131): cmn_prior_update: from &lt; 51.82  8.68 2015-05-07 12:07:07.517 Bleeper[4094:1027101] Pocketsphinx has detected a period of silence, concluding an utterance.<br>
+-3.16  9.04 -4.91  4.49 -0.61 -1.55  1.23  3.00  0.85 -5.85 -8.98 &gt;<br>
+INFO: cmn_prior.c(149): cmn_prior_update: to   &lt; 51.02  7.21 -3.14 10.98 -3.80  3.78 -0.16 -0.69  1.82  1.86  0.32 -5.68 -8.57 &gt;<br>
+INFO: ngram_search_fwdtree.c(1550):     1226 words recognized (8/fr)<br>
+INFO: ngram_search_fwdtree.c(1552):    15906 senones evaluated (108/fr)<br>
+INFO: ngram_search_fwdtree.c(1556):     7031 channels searched (47/fr), 565 1st, 5494 last<br>
+INFO: ngram_search_fwdtree.c(1559):     1383 words for which last channels evaluated (9/fr)<br>
+INFO: ngram_search_fwdtree.c(1561):      263 candidate words for entering last phone (1/fr)<br>
+INFO: ngram_search_fwdtree.c(1564): fwdtree 0.13 CPU 0.091 xRT<br>
+INFO: ngram_search_fwdtree.c(1567): fwdtree 1.66 wall 1.128 xRT<br>
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 6 words<br>
+INFO: ngram_search_fwdflat.c(938):        0 words recognized (0/fr)<br>
+INFO: ngram_search_fwdflat.c(940):        0 senones evaluated (0/fr)<br>
+INFO: ngram_search_fwdflat.c(942):        0 channels searched (0/fr)<br>
+INFO: ngram_search_fwdflat.c(944):        0 words searched (0/fr)<br>
+INFO: ngram_search_fwdflat.c(947):        0 word transitions (0/fr)<br>
+INFO: ngram_search_fwdflat.c(950): fwdflat 0.00 CPU 0.000 xRT<br>
+INFO: ngram_search_fwdflat.c(953): fwdflat 0.00 wall 0.000 xRT<br>
+2015-05-07 12:07:08.415 Bleeper[4094:1027140] Speech detected&#8230;<br>
+2015-05-07 12:07:08.416 Bleeper[4094:1027101] Pocketsphinx has detected speech.<br>
+2015-05-07 12:07:08.417 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-2989) and an utterance ID of 135.<br>
+2015-05-07 12:07:08.418 Bleeper[4094:1027140] Hypothesis was null so we aren&#8217;t returning it. If you want null hypotheses to also be returned, set OEPocketsphinxController&#8217;s property returnNullHypotheses to TRUE before starting OEPocketsphinxController.<br>
+2015-05-07 12:07:08.546 Bleeper[4094:1027139] Pocketsphinx heard &#8220;&#8221; with a score of (-5995) and an utterance ID of 136.<br>
+2015-05-07 12:07:08.670 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-7160) and an utterance ID of 137.<br>
+2015-05-07 12:07:08.797 Bleeper[4094:1027140] Pocketsphinx heard &#8220;&#8221; with a score of (-8259) and an utterance ID of 138.<br>
+2015-05-07 12:07:08.929 Bleeper[4094:1027139] Pocketsphinx heard &#8220;BUTTER&#8221; with a score of (-10276) and an utterance ID of 139.<br>
+2015-05-07 12:07:08.931 Bleeper[4094:1027101] RapidEars&gt; Received hypothesis: BUTTER, with a score of -10276<br>
+2015-05-07 12:07:09.055 Bleeper[4094:1027139] Pocketsphinx heard &#8220;BUTTER&#8221; with a score of (-11556) and an utterance ID of 140.<br>
+2015-05-07 12:07:09.186 Bleeper[4094:1027140] Pocketsphinx heard &#8220;BUTTER&#8221; with a score of (-13410) and an utterance ID of 141.<br>
+2015-05-07 12:07:09.302 Bleeper[4094:1027140] End of speech detected&#8230;<br>
+INFO: cmn_prior.c(131): cmn_prior_update: from &lt; 51.02  7.21 -3.14 10.98 -3.80  3.78 -0.16 -0.69  1.82  1.86  0.32 -5.68 -8.57 &gt;<br>
+INFO: cmn_prior.c(149): cmn_prior_update: to   &lt; 51.05  9.11 -3.91 10.08 -3.55  3.65 -0.73 -2.19  1.59  2.41  0.38 -6.05 -8.60 &gt;<br>
+2015-05-07 12:07:09.303 Bleeper[4094:1027101] Pocketsphinx has detected a period of silence, concluding an utterance.<br>
+INFO: ngram_search_fwdtree.c(1550):      852 words recognized (8/fr)<br>
+INFO: ngram_search_fwdtree.c(1552):     9772 senones evaluated (93/fr)<br>
+INFO: ngram_search_fwdtree.c(1556):     4103 channels searched (39/fr), 404 1st, 3058 last<br>
+INFO: ngram_search_fwdtree.c(1559):      949 words for which last channels evaluated (9/fr)<br>
+INFO: ngram_search_fwdtree.c(1561):      136 candidate words for entering last phone (1/fr)<br>
+INFO: ngram_search_fwdtree.c(1564): fwdtree 0.11 CPU 0.103 xRT<br>
+INFO: ngram_search_fwdtree.c(1567): fwdtree 1.78 wall 1.699 xRT<br>
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 4 words<br>
+INFO: ngram_search_fwdflat.c(938):        0 words recognized (0/fr)<br>
+INFO: ngram_search_fwdflat.c(940):        0 senones evaluated (0/fr)<br>
+INFO: ngram_search_fwdflat.c(942):        0 channels searched (0/fr)<br>
+INFO: ngram_search_fwdflat.c(944):        0 words searched (0/fr)<br>
+INFO: ngram_search_fwdflat.c(947):        0 word transitions (0/fr)<br>
+INFO: ngram_search_fwdflat.c(950): fwdflat 0.00 CPU 0.000 xRT<br>
+INFO: ngram_search_fwdflat.c(953): fwdflat 0.00 wall 0.000 xRT<br>
+2015-05-07 12:07:10.587 Bleeper[4094:1027101] Stopping listening.<br>
+2015-05-07 12:07:10.587 Bleeper[4094:1027101] Cleaning up.<br>
+2015-05-07 12:07:10.588 Bleeper[4094:1027101] Cleanup complete.<br>
+INFO: ngram_search_fwdtree.c(432): TOTAL fwdtree 1.78 CPU 0.093 xRT<br>
+INFO: ngram_search_fwdtree.c(435): TOTAL fwdtree 26.86 wall 1.405 xRT<br>
+INFO: ngram_search_fwdflat.c(176): TOTAL fwdflat 0.01 CPU 0.000 xRT<br>
+INFO: ngram_search_fwdflat.c(179): TOTAL fwdflat 0.01 wall 0.001 xRT<br>
+INFO: ngram_search.c(307): TOTAL bestpath 0.00 CPU 0.000 xRT<br>
+INFO: ngram_search.c(310): TOTAL bestpath 0.00 wall 0.000 xRT<br>
+2015-05-07 12:07:11.172 Bleeper[4094:1027101] No longer listening.<br>
+2015-05-07 12:07:11.223 Bleeper[4094:1027163] Audio route has changed for the following reason:<br>
+2015-05-07 12:07:11.227 Bleeper[4094:1027163] There was a category change. The new category is AVAudioSessionCategoryPlayAndRecord<br>
+2015-05-07 12:07:11.231 Bleeper[4094:1027163] This is not a case in which OpenEars notifies of a route change. At the close of this function, the new audio route is &#8212;Speaker&#8212;. The previous route before changing to this route was &lt;AVAudioSessionRouteDescription: 0x17000da90,<br>
+inputs = (<br>
+    &#8220;&lt;AVAudioSessionPortDescription: 0x17000d6e0, type = MicrophoneBuiltIn; name = iPhone Microphone; UID = Built-In Microphone; selectedDataSource = Bottom&gt;&#8221;<br>
+);<br>
+outputs = (<br>
+    &#8220;&lt;AVAudioSessionPortDescription: 0x17000c1c0, type = Speaker; name = Speaker; UID = Speaker; selectedDataSource = (null)&gt;&#8221;<br>
+)&gt;.<br>
+2015-05-07 12:11:32.228 Bleeper[4094:1027101] Thank you for trying Rapidears! You can complete licensing for RapidEars at <a href="/shop">https://www.politepix.com/shop</a>. Application exiting.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1025608" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">May 7, 2015 at 9:52 pm</span>
+
+		
+		<a href="/forums/topic/false-positives/#post-1025608" class="bbp-reply-permalink">#1025608</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1025608 -->
+
+<div class="loop-item-1 user-id-4 bbp-parent-forum-3654 bbp-parent-topic-1025607 bbp-reply-position-2 even  post-1025608 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>The OOV (out of vocabulary) problem is an unsolved issue in small-vocabulary speech recognition and is what Rejecto was designed to attempt to reduce. There are frequent threads discussing approaches to reducing false positives with very small vocabularies, so give the search function a look and see if it helps.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1025611" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">May 7, 2015 at 10:52 pm</span>
+
+		
+		<a href="/forums/topic/false-positives/#post-1025611" class="bbp-reply-permalink">#1025611</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1025611 -->
+
+<div class="loop-item-2 user-id-1787 bbp-parent-forum-3654 bbp-parent-topic-1025607 bbp-reply-position-3 odd topic-author  post-1025611 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/rikk/" title="View rikk&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">rikk</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Thanks Halle. I will investigate Rejecto.</p>
+<p>If you have a minute, please check the log for anything that looks odd. I believe that I am doing things correctly, but would love your validation. :-)</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1025627" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">May 8, 2015 at 9:31 pm</span>
+
+		
+		<a href="/forums/topic/false-positives/#post-1025627" class="bbp-reply-permalink">#1025627</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1025627 -->
+
+<div class="loop-item-3 user-id-4 bbp-parent-forum-3654 bbp-parent-topic-1025607 bbp-reply-position-4 even  post-1025627 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>No, I don&#8217;t think there is anything wrong with your implementation. It&#8217;s expected that if your app takes in a large amount of speech and it has a very small vocabulary which spans words of a few different syllable lengths that you will encounter the OOV problem. All of the empty hypotheses demonstrate that it is doing the right thing most of the time and then occasionally substituting a vocabulary word. I think Rejecto will improve results – keep in mind that you can increase and decrease the Rejecto weighting when you experiment.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1025635" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">May 9, 2015 at 2:54 am</span>
+
+		
+		<a href="/forums/topic/false-positives/#post-1025635" class="bbp-reply-permalink">#1025635</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1025635 -->
+
+<div class="loop-item-4 user-id-1787 bbp-parent-forum-3654 bbp-parent-topic-1025607 bbp-reply-position-5 odd topic-author  post-1025635 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/rikk/" title="View rikk&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">rikk</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Thanks Halle!</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+		
+	</li>
+<!-- .bbp-body -->
+
+	<li class="bbp-footer">
+		<div class="bbp-reply-author">Author</div>
+		<div class="bbp-reply-content">Posts</div>
+<!-- .bbp-reply-content -->
+	</li>
+<!-- .bbp-footer -->
+</ul>
+<!-- #topic-1025607-replies -->
+
+
+			
+<div class="bbp-pagination">
+	<div class="bbp-pagination-count">Viewing 5 posts - 1 through 5 (of 5 total)</div>
+	<div class="bbp-pagination-links"></div>
+</div>
+
+
+		
+		
+
+	<div id="no-reply-1025607" class="bbp-no-reply">
+		<div class="bbp-template-notice">
+			<ul>
+				<li>You must be logged in to reply to this topic.</li>
+			</ul>
+		</div>
+
+		
+			
+<form method="post" action="https://www.politepix.com/wp-login.php" class="bbp-login-form">
+	<fieldset class="bbp-form">
+		<legend>Log In</legend>
+
+		<div class="bbp-username">
+			<label for="user_login">Username: </label>
+			<input type="text" name="log" value="" size="20" maxlength="100" id="user_login" autocomplete="off">
+		</div>
+
+		<div class="bbp-password">
+			<label for="user_pass">Password: </label>
+			<input type="password" name="pwd" value="" size="20" id="user_pass" autocomplete="off">
+		</div>
+
+		<div class="bbp-remember-me">
+			<input type="checkbox" name="rememberme" value="forever" id="rememberme">
+			<label for="rememberme">Keep me signed in</label>
+		</div>
+
+		
+		<div class="bbp-submit-wrapper">
+
+			<button type="submit" name="user-submit" id="user-submit" class="button submit user-submit">Log In</button>
+
+			
+	<input type="hidden" name="user-cookie" value="1">
+
+	<input type="hidden" id="bbp_redirect_to" name="redirect_to" value="https://www.politepix.com/forums/topic/false-positives/?simply_static_page=2235"><input type="hidden" id="_wpnonce" name="_wpnonce" value="7d2a08c1e3"><input type="hidden" name="_wp_http_referer" value="/forums/topic/false-positives/?simply_static_page=2235">
+		</div>
+	</fieldset>
+</form>
+
+		
+	</div>
+
+
+
+	
+	
+
+	
+</div>
+
+					               	</section><!-- /.entry -->
+
+				                
+            </article><!-- /.post -->
+            
+              
+        
+		</section><!-- /#main -->
+		
+		
+        	
+<aside id="sidebar" class="col-right">
+
+	
+	    <div class="primary">
+		<div id="bbp_forums_widget-5" class="widget widget_display_forums">
+<h3>Forums</h3>
+		<ul class="bbp-forums-widget">
+
+			
+				<li>
+					<a class="bbp-forum-title" href="/forums/forum/openears-plugins/">
+						OpenEars plugins					</a>
+				</li>
+
+			
+				<li class="bbp-forum-widget-current-forum">
+					<a class="bbp-forum-title" href="/forums/forum/openearsforum/">
+						OpenEars					</a>
+				</li>
+
+			
+		</ul>
+
+		</div>		           
+	</div>        
+	   
+	
+	 
+	
+</aside><!-- /#sidebar -->
+
+    </div>
+<!-- /#content -->
+		
+		<footer id="footer" class="col-full">
+	
+			<div id="copyright" class="col-left">
+							<p>Politepix &copy; 2024. All Rights Reserved.</p>
+						</div>
+	
+			<div id="credit" class="col-right">
+	        <div style="text-align:right;line-height:1.3em">OpenEars® is a registered trademark of Politepix<br>AllHours® is a registered trademark of Politepix<br>The Politepix site uses cookies in order to understand how the website is used by visitors and in order to enable some required functionality. You can learn all about which cookies we use on the <a href="/about/">About</a> page, as well as everything about our privacy policy.<br>
+<a href="https://twitter.com/Politepix" rel="me">TWITTER</a> | <a href="/contact" id="impressumlink">CONTACT POLITEPIX</a><a href="/about" id="impressumlink"> | IMPRESSUM | ABOUT | LEGAL | IMPRINT</a>
+</div>			</div>
+	<a rel="me" href="https://mastodon.social/@Halle">M</a>
+		</footer><!-- /#footer  -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Consent Management powered by Complianz | GDPR/CCPA Cookie Consent https://wordpress.org/plugins/complianz-gdpr -->
+<div id="cmplz-cookiebanner-container">
+<div class="cmplz-cookiebanner cmplz-hidden banner-1 bottom-right-view-preferences optin cmplz-bottom-right cmplz-categories-type-view-preferences" aria-modal="true" data-nosnippet="true" role="dialog" aria-live="polite" aria-labelledby="cmplz-header-1-optin" aria-describedby="cmplz-message-1-optin">
+	<div class="cmplz-header">
+		<div class="cmplz-logo"></div>
+		<div class="cmplz-title" id="cmplz-header-1-optin">Manage Cookie Consent</div>
+		<div class="cmplz-close" tabindex="0" role="button" aria-label="Close dialog">
+			<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
+		</div>
+	</div>
+
+	<div class="cmplz-divider cmplz-divider-header"></div>
+	<div class="cmplz-body">
+		<div class="cmplz-message" id="cmplz-message-1-optin">To provide the best experiences, we use technologies like cookies to store and/or access device information. Consenting to these technologies will allow us to process data such as browsing behavior or unique IDs on this site. Not consenting or withdrawing consent, may adversely affect certain features and functions.</div>
+		<!-- categories start -->
+		<div class="cmplz-categories">
+			<details class="cmplz-category cmplz-functional">
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Functional</span>
+							<span class="cmplz-always-active">
+								<span class="cmplz-banner-checkbox">
+									<input type="checkbox" id="cmplz-functional-optin" data-category="cmplz_functional" class="cmplz-consent-checkbox cmplz-functional" size="40" value="1">
+									<label class="cmplz-label" for="cmplz-functional-optin" tabindex="0"><span class="screen-reader-text">Functional</span></label>
+								</span>
+								Always active							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" height="18"><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"></path></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-functional">The technical storage or access is strictly necessary for the legitimate purpose of enabling the use of a specific service explicitly requested by the subscriber or user, or for the sole purpose of carrying out the transmission of a communication over an electronic communications network.</span>
+				</div>
+			</details>
+
+			<details class="cmplz-category cmplz-preferences">
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Preferences</span>
+							<span class="cmplz-banner-checkbox">
+								<input type="checkbox" id="cmplz-preferences-optin" data-category="cmplz_preferences" class="cmplz-consent-checkbox cmplz-preferences" size="40" value="1">
+								<label class="cmplz-label" for="cmplz-preferences-optin" tabindex="0"><span class="screen-reader-text">Preferences</span></label>
+							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" height="18"><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"></path></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-preferences">The technical storage or access is necessary for the legitimate purpose of storing preferences that are not requested by the subscriber or user.</span>
+				</div>
+			</details>
+
+			<details class="cmplz-category cmplz-statistics">
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Statistics</span>
+							<span class="cmplz-banner-checkbox">
+								<input type="checkbox" id="cmplz-statistics-optin" data-category="cmplz_statistics" class="cmplz-consent-checkbox cmplz-statistics" size="40" value="1">
+								<label class="cmplz-label" for="cmplz-statistics-optin" tabindex="0"><span class="screen-reader-text">Statistics</span></label>
+							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" height="18"><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"></path></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-statistics">The technical storage or access that is used exclusively for statistical purposes.</span>
+					<span class="cmplz-description-statistics-anonymous">The technical storage or access that is used exclusively for anonymous statistical purposes. Without a subpoena, voluntary compliance on the part of your Internet Service Provider, or additional records from a third party, information stored or retrieved for this purpose alone cannot usually be used to identify you.</span>
+				</div>
+			</details>
+			<details class="cmplz-category cmplz-marketing">
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Marketing</span>
+							<span class="cmplz-banner-checkbox">
+								<input type="checkbox" id="cmplz-marketing-optin" data-category="cmplz_marketing" class="cmplz-consent-checkbox cmplz-marketing" size="40" value="1">
+								<label class="cmplz-label" for="cmplz-marketing-optin" tabindex="0"><span class="screen-reader-text">Marketing</span></label>
+							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" height="18"><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"></path></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-marketing">The technical storage or access is required to create user profiles to send advertising, or to track the user on a website or across several websites for similar marketing purposes.</span>
+				</div>
+			</details>
+		</div>
+<!-- categories end -->
+			</div>
+
+	<div class="cmplz-links cmplz-information">
+		<a class="cmplz-link cmplz-manage-options cookie-statement" href="#" data-relative_url="#cmplz-manage-consent-container">Manage options</a>
+		<a class="cmplz-link cmplz-manage-third-parties cookie-statement" href="#" data-relative_url="#cmplz-cookies-overview">Manage services</a>
+		<a class="cmplz-link cmplz-manage-vendors tcf cookie-statement" href="#" data-relative_url="#cmplz-tcf-wrapper">Manage {vendor_count} vendors</a>
+		<a class="cmplz-link cmplz-external cmplz-read-more-purposes tcf" target="_blank" rel="noopener noreferrer nofollow" href="https://cookiedatabase.org/tcf/purposes/">Read more about these purposes</a>
+			</div>
+
+	<div class="cmplz-divider cmplz-footer"></div>
+
+	<div class="cmplz-buttons">
+		<button class="cmplz-btn cmplz-accept">Accept</button>
+		<button class="cmplz-btn cmplz-deny">Deny</button>
+		<button class="cmplz-btn cmplz-view-preferences">View preferences</button>
+		<button class="cmplz-btn cmplz-save-preferences">Save preferences</button>
+		<a class="cmplz-btn cmplz-manage-options tcf cookie-statement" href="#" data-relative_url="#cmplz-manage-consent-container">View preferences</a>
+			</div>
+
+	<div class="cmplz-links cmplz-documents">
+		<a class="cmplz-link cookie-statement" href="#" data-relative_url="">{title}</a>
+		<a class="cmplz-link privacy-statement" href="#" data-relative_url="">{title}</a>
+		<a class="cmplz-link impressum" href="#" data-relative_url="">{title}</a>
+			</div>
+
+</div>
+</div>
+					<div id="cmplz-manage-consent" data-nosnippet="true">
+<button class="cmplz-btn cmplz-hidden cmplz-manage-consent manage-consent-1">Manage consent</button>
+
+</div>
+<!--[if lt IE 9]>
+<script src="https://www.politepix.com/wp-content/themes/pixelpress/includes/js/respond-IE.js"></script>
+<![endif]-->
+			<script>jQuery(document).ready(function(){
+					jQuery('.images a').attr('rel', 'prettyPhoto[product-gallery]');
+				});</script>
+			<script type="text/javascript">(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();</script>
+	<link rel="stylesheet" id="wc-blocks-style-css" href="https://c0.wp.com/p/woocommerce/8.8.2/assets/client/blocks/wc-blocks.css" type="text/css" media="all">
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/accounting/accounting.min.js" id="accounting-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/jquery/ui/core.min.js" id="jquery-ui-core-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/jquery/ui/datepicker.min.js" id="jquery-ui-datepicker-js"></script>
+<script type="text/javascript" id="jquery-ui-datepicker-js-after">
+/* <![CDATA[ */
+jQuery(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+/* ]]> */
+</script>
+<script type="text/javascript" id="woocommerce-addons-js-extra">
+/* <![CDATA[ */
+var woocommerce_addons_params = {"price_display_suffix":"","tax_enabled":"1","price_include_tax":"","display_include_tax":"","ajax_url":"\/wp-admin\/admin-ajax.php","i18n_validation_required_select":"Please choose an option.","i18n_validation_required_input":"Please enter some text in this field.","i18n_validation_required_number":"Please enter a number in this field.","i18n_validation_required_file":"Please upload a file.","i18n_validation_letters_only":"Please enter letters only.","i18n_validation_numbers_only":"Please enter numbers only.","i18n_validation_letters_and_numbers_only":"Please enter letters and numbers only.","i18n_validation_email_only":"Please enter a valid email address.","i18n_validation_min_characters":"Please enter at least %c characters.","i18n_validation_max_characters":"Please enter up to %c characters.","i18n_validation_min_number":"Please enter %c or more.","i18n_validation_max_number":"Please enter %c or less.","i18n_sub_total":"Subtotal","i18n_remaining":"<span><\/span> characters remaining","currency_format_num_decimals":"2","currency_format_symbol":"€","currency_format_decimal_sep":".","currency_format_thousand_sep":",","trim_trailing_zeros":"","is_bookings":"","trim_user_input_characters":"1000","quantity_symbol":"x ","datepicker_class":"wc_pao_datepicker","datepicker_date_format":"MM d, yy","gmt_offset":"-2","date_input_timezone_reference":"default","currency_format":"%s%v"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/wp-content/plugins/woocommerce-product-addons/assets/js/frontend/addons.min.js?ver=6.8.2" id="woocommerce-addons-js" defer data-wp-strategy="defer"></script>
+<script type="text/javascript" src="/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-image-cdn/dist/image-cdn.js?minify=false&amp;ver=132249e245926ae3e188" id="jetpack-photon-js"></script>
+<script type="text/javascript" src="/wp-content/plugins/bbpress/templates/default/js/editor.min.js?ver=2.6.9" id="bbpress-editor-js"></script>
+<script type="text/javascript" id="bbpress-engagements-js-extra">
+/* <![CDATA[ */
+var bbpEngagementJS = {"object_id":"1025607","bbp_ajaxurl":"\/forums\/topic\/false-positives\/?bbp-ajax=true","generic_ajax_error":"Something went wrong. Refresh your browser and try again."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/wp-content/plugins/bbpress/templates/default/js/engagements.min.js?ver=2.6.9" id="bbpress-engagements-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/sourcebuster/sourcebuster.min.js" id="sourcebuster-js-js"></script>
+<script type="text/javascript" id="wc-order-attribution-js-extra">
+/* <![CDATA[ */
+var wc_order_attribution = {"params":{"lifetime":1.0e-5,"session":30,"ajaxurl":"\/wp-admin\/admin-ajax.php","prefix":"wc_order_attribution_","allowTracking":true},"fields":{"source_type":"current.typ","referrer":"current_add.rf","utm_campaign":"current.cmp","utm_source":"current.src","utm_medium":"current.mdm","utm_content":"current.cnt","utm_id":"current.id","utm_term":"current.trm","session_entry":"current_add.ep","session_start_time":"current_add.fd","session_pages":"session.pgs","session_count":"udata.vst","user_agent":"udata.uag"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/frontend/order-attribution.min.js" id="wc-order-attribution-js"></script>
+<script data-service="jetpack-statistics" data-category="statistics" type="text/plain" data-cmplz-src="https://stats.wp.com/e-202417.js" id="jetpack-stats-js" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="jetpack-stats-js-after">
+/* <![CDATA[ */
+_stq = window._stq || [];
+_stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"206848719\",\"post\":\"1025607\",\"tz\":\"2\",\"srv\":\"www.politepix.com\",\"j\":\"1:13.3.1\"}") ]);
+_stq.push([ "clickTrackerInit", "206848719", "1025607" ]);
+/* ]]> */
+</script>
+<script type="text/javascript" id="cmplz-cookiebanner-js-extra">
+/* <![CDATA[ */
+var complianz = {"prefix":"cmplz_","user_banner_id":"1","set_cookies":[],"block_ajax_content":"","banner_version":"18","version":"7.0.4","store_consent":"","do_not_track_enabled":"1","consenttype":"optin","region":"eu","geoip":"","dismiss_timeout":"","disable_cookiebanner":"","soft_cookiewall":"","dismiss_on_scroll":"","cookie_expiry":"365","url":"\/wp-json\/complianz\/v1\/","locale":"lang=en&locale=en_US","set_cookies_on_root":"","cookie_domain":"","current_policy_id":"16","cookie_path":"\/","categories":{"statistics":"statistics","marketing":"marketing"},"tcf_active":"","placeholdertext":"Click to accept {category} cookies and enable this content","css_file":"\/wp-content\/uploads\/complianz\/css\/banner-{banner_id}-{type}.css?v=18","page_links":{"eu":{"cookie-statement":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"},"privacy-statement":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"},"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"us":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"uk":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"ca":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"au":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"za":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"br":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}}},"tm_categories":"","forceEnableStats":"","preview":"","clean_cookies":"","aria_label":"Click to accept {category} cookies and enable this content"};
+/* ]]> */
+</script>
+<script defer type="text/javascript" src="/wp-content/plugins/complianz-gdpr/cookiebanner/js/complianz.min.js?ver=1710283454" id="cmplz-cookiebanner-js"></script>
+</body>
+</html>

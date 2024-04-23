@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>OpenEars with music in the background &#8211; Politepix</title>
+		<atom:link href="/forums/topic/openears-with-music-in-the-background/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/openears-with-music-in-the-background/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:02:38 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/openears-with-music-in-the-background/#post-1019037</guid>
+					<title><![CDATA[OpenEars with music in the background]]></title>
+					<link>/forums/topic/openears-with-music-in-the-background/#post-1019037</link>
+					<pubDate>Thu, 28 Nov 2013 10:30:45 +0000</pubDate>
+					<dc:creator>SparkyNZ</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi, has anybody tried using OpenEars in a noisy environment with lots of music or speech? I&#8217;m just wondering if there&#8217;s any way to train it to detect the subtleties of my voice over others? :)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-with-music-in-the-background/#post-1019038</guid>
+					<title><![CDATA[Reply To: OpenEars with music in the background]]></title>
+					<link>/forums/topic/openears-with-music-in-the-background/#post-1019038</link>
+					<pubDate>Thu, 28 Nov 2013 12:38:58 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Sorry, it isn&#8217;t possible to train OpenEars&#8217;s PocketsphinxController speech recognition class to a particular voice purely through the use of OpenEars (if you can also use a server, the acoustic models can be adapted using these instructions: <a href="http://cmusphinx.sourceforge.net/wiki/tutorialadapt" rel="nofollow">http://cmusphinx.sourceforge.net/wiki/tutorialadapt</a>). In a noisy environment filtering out background noise might have to be accomplished via headset mic, mic directionality, or a distinct volume level difference between the spoken instruction and the background noise, or non-keywords might be possible to filter out after speech including noise has been captured by use of the Rejecto plugin (although this is tricky even with the use of Rejecto).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-with-music-in-the-background/#post-1019044</guid>
+					<title><![CDATA[Reply To: OpenEars with music in the background]]></title>
+					<link>/forums/topic/openears-with-music-in-the-background/#post-1019044</link>
+					<pubDate>Sat, 30 Nov 2013 06:12:50 +0000</pubDate>
+					<dc:creator>SparkyNZ</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks Halle. I just gave it a try in my car. Unfortunately the music didn&#8217;t have to be very loud for it to stop working. A shame.. Howevever, I did suspect this would be the case months before even looking for voice recognition. My car used to have a voice recognition system built into it (in Japanese) &#8211; shame I couldn&#8217;t use that mic with my iPod.. but that wouldn&#8217;t suit everyone. :-)</p>
+<p>I did find OpenEars very easy to use though &#8211; excellent job.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

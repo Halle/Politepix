@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>OpenEars and RapidEars Delegates &#8211; Politepix</title>
+		<atom:link href="/forums/topic/openears-and-rapidears-delegates/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/openears-and-rapidears-delegates/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:45:06 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/openears-and-rapidears-delegates/#post-10586</guid>
+					<title><![CDATA[OpenEars and RapidEars Delegates]]></title>
+					<link>/forums/topic/openears-and-rapidears-delegates/#post-10586</link>
+					<pubDate>Thu, 19 Jul 2012 15:58:30 +0000</pubDate>
+					<dc:creator>lookbadgers</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m getting great results so far with RapidEars, I just have a few question around how the delegates work.</p>
+<p>The main delegate I&#8217;m interested in is rapidEarsDidDetectLiveSpeechAsWordArray, this is firing almost for every word said.  If words are said in rapid fire this will return multiple words.  This list of words will then be reset after rapidEarsDidDetectFinishedSpeechAsWordArray is called.  Which is great and exactly what I want to happen.</p>
+<p>What I would like to know is the order in which the delegates are called.  From my own testing the results seem to suggest the order of calls are:</p>
+<p>pocketsphinxDidStartListening<br />
+rapidEarsDidDetectLiveSpeechAsWordArray<br />
+rapidEarsDidDetectLiveSpeechAsWordArray&#8230; (x many)<br />
+pocketsphinxDidDetectFinishedSpeech<br />
+rapidEarsDidDetectLiveSpeechAsWordArray<br />
+rapidEarsDidDetectFinishedSpeechAsWordArray<br />
+pocketsphinxDidStartListening<br />
+rapidEarsDidDetectLiveSpeechAsWordArray<br />
+rapidEarsDidDetectLiveSpeechAsWordArray&#8230; (x many)<br />
+&#8230;.</p>
+<p>However pocketsphinxDidStopListening doesn&#8217;t appear to be called, should this not be called as some point before pocketsphinxDidStartListening is called? Or should pocketsphinxDidStartListening not be called except for the very first time?</p>
+<p>What causes rapidEarsDidDetectFinishedSpeechAsWordArray to be called?  Does it still work on the second of silence? </p>
+<p>Just to confirm but pocketsphinxDidReceiveHypothese should no longer should be callled?</p>
+<p>What sort of delay if any will be caused when it&#8217;s switching between these states?  I&#8217;m mainly interested in trying to find out if any words will be lost if they are said between rapidEarsDidDetectFinishedSpeechAsWordArray and pocketsphinxDidStartListening  being called, how is the reconigition loop affected, should I make the user wait before continuing to speak?</p>
+<p>Thank you</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-and-rapidears-delegates/#post-10630</guid>
+					<title><![CDATA[Reply To: OpenEars and RapidEars Delegates]]></title>
+					<link>/forums/topic/openears-and-rapidears-delegates/#post-10630</link>
+					<pubDate>Fri, 20 Jul 2012 09:53:42 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<blockquote><p>What I would like to know is the order in which the delegates are called.</p></blockquote>
+<p>Good question &#8212; this is really pretty dependent on what is happening/what you are doing. It isn&#8217;t so much that there is a particular order to expect but that there are particular events which will result in a certain delegate callback. The basic thing that you will see is the start event, then lots and lots of updates of the live speech event (as you mention) followed by a finalized speech event.</p>
+<blockquote><p>However pocketsphinxDidStopListening doesn’t appear to be called, should this not be called as some point before pocketsphinxDidStartListening is called? Or should pocketsphinxDidStartListening not be called except for the very first time?</p></blockquote>
+<p>I think this is an example of flawed naming on my part &#8212; pocketsphinxDidStartListening and pocketsphinxDidStopListening are not actually analogs. pocketsphinxDidStartListening is called when entering the listening loop, pocketsphinxDidStopListening is called when turning off the recognition engine finally.</p>
+<blockquote><p>What causes rapidEarsDidDetectFinishedSpeechAsWordArray to be called? Does it still work on the second of silence?</p></blockquote>
+<p>Correct, there are lots of attempts to recognize during the speech, and then once there is a pause there is a finalized, higher-accuracy attempt that is very similar to the default recognition behavior of OpenEars. It can be turned off (and should be turned off to save a few cycles) if you are only interested in the live speech but I left the option in there of using it so you aren&#8217;t excluded from the old-style pause-based recognition if you choose RapidEars. You can turn it off by setting this:</p>
+<p>[self.pocketsphinxController setFinalizeHypothesis:TRUE];</p>
+<p>to this:</p>
+<p>[self.pocketsphinxController setFinalizeHypothesis:FALSE];</p>
+<blockquote><p>Just to confirm but pocketsphinxDidReceiveHypothese should no longer should be callled?</p></blockquote>
+<p>Correct.</p>
+<blockquote><p>What sort of delay if any will be caused when it’s switching between these states? I’m mainly interested in trying to find out if any words will be lost if they are said between rapidEarsDidDetectFinishedSpeechAsWordArray and pocketsphinxDidStartListening being called, how is the reconigition loop affected, should I make the user wait before continuing to speak?</p></blockquote>
+<p>Just like with OpenEars, the engine is not taking in new audio while it is performing that pause-based finalized recognition (if you tell it to stop finalizing the expected behavior is that it shouldn&#8217;t have gaps in listening &#8212; let me know if that isn&#8217;t the case). But there shouldn&#8217;t be a delay in the time between returning the hypothesis and going back to listening.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-and-rapidears-delegates/#post-10631</guid>
+					<title><![CDATA[Reply To: OpenEars and RapidEars Delegates]]></title>
+					<link>/forums/topic/openears-and-rapidears-delegates/#post-10631</link>
+					<pubDate>Fri, 20 Jul 2012 13:21:01 +0000</pubDate>
+					<dc:creator>lookbadgers</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Excellent, thank you for the very complete answers.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

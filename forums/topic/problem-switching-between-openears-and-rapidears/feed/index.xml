@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Problem switching between OpenEars and RapidEars &#8211; Politepix</title>
+		<atom:link href="/forums/topic/problem-switching-between-openears-and-rapidears/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/problem-switching-between-openears-and-rapidears/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:44:54 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/problem-switching-between-openears-and-rapidears/#post-13477</guid>
+					<title><![CDATA[Problem switching between OpenEars and RapidEars]]></title>
+					<link>/forums/topic/problem-switching-between-openears-and-rapidears/#post-13477</link>
+					<pubDate>Sun, 25 Nov 2012 17:41:56 +0000</pubDate>
+					<dc:creator>Matt</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Everyone,</p>
+<p>I am working on an app where the user presses a button to enable word recognition using OpenEars. Pressing this button trigger the &#8216;retrospectiveWordRecognition&#8217; method. The user can then press another button to trigger word recognition using RapidEars. Pressing this button triggers the &#8216;realtimeWordRecognition&#8217; method.</p>
+<p>The app crashes when the user switches between the two. The debugger indicates the problem is with the &#8216;- (PocketsphinxController *)retroPocketsphinxController&#8217; and &#8216;- (PocketsphinxController *)realPocketsphinxController&#8217; methods.</p>
+<p>Has anyone experienced this problem? </p>
+<p>I have declared two instances of PocketsphinxController. One for OpenEars and one for RapidEars. Is this necessary?</p>
+<p>Regards,</p>
+<p>Matt</p>
+<p>-(IBAction)retrospectiveWordRecognition:(id)sender<br />
+{<br />
+    retrolmGenerator = [[LanguageModelGenerator alloc] init];</p>
+<p>    NSArray *retroWords = [NSArray arrayWithObjects:<br />
+             @&#8221;ONE&#8221;,<br />
+             @&#8221;TWO&#8221;,<br />
+             @&#8221;THREE&#8221;,<br />
+             @&#8221;FOUR&#8221;,<br />
+             @&#8221;FIVE&#8221;,<br />
+             nil];</p>
+<p>    retroName = @&#8221;NameIWantForMyLanguageModelFiles&#8221;;</p>
+<p>    retroErr = [retrolmGenerator generateLanguageModelFromArray:retroWords withFilesNamed:retroName];</p>
+<p>    NSDictionary *retroLanguageGeneratorResults = nil;</p>
+<p>    retrolmPath = nil;<br />
+    retrodicPath = nil;</p>
+<p>    if([retroErr code] == noErr)<br />
+    {<br />
+        retroLanguageGeneratorResults = [retroErr userInfo];</p>
+<p>        retrolmPath = [retroLanguageGeneratorResults objectForKey:@&#8221;LMPath&#8221;];</p>
+<p>        retrodicPath = [retroLanguageGeneratorResults objectForKey:@&#8221;DictionaryPath&#8221;];<br />
+    }</p>
+<p>    else<br />
+    {<br />
+        NSLog(@&#8221;Error: %@&#8221;,[retroErr localizedDescription]);<br />
+    }</p>
+<p>    [self.retroPocketsphinxController startListeningWithLanguageModelAtPath:retrolmPath dictionaryAtPath:retrodicPath languageModelIsJSGF:NO];<br />
+}</p>
+<p>-(IBAction)realtimeWordRecognition:(id)sender<br />
+{<br />
+    reallmGenerator = [[LanguageModelGenerator alloc] init];</p>
+<p>    NSArray *realWords = [NSArray arrayWithObjects:<br />
+                           @&#8221;ONE&#8221;,<br />
+                           @&#8221;TWO&#8221;,<br />
+                           @&#8221;THREE&#8221;,<br />
+                           @&#8221;FOUR&#8221;,<br />
+                           @&#8221;FIVE&#8221;,<br />
+                           nil];</p>
+<p>    realName = @&#8221;NameIWantForMyLanguageModelFiles&#8221;;</p>
+<p>    realErr = [reallmGenerator generateLanguageModelFromArray:realWords withFilesNamed:realName];</p>
+<p>    NSDictionary *realWordsLanguageGeneratorResults = nil;</p>
+<p>    reallmPath = nil;<br />
+    realdicPath = nil;</p>
+<p>    if([realErr code] == noErr)<br />
+    {<br />
+        realWordsLanguageGeneratorResults = [realErr userInfo];</p>
+<p>        reallmPath = [realWordsLanguageGeneratorResults objectForKey:@&#8221;LMPath&#8221;];</p>
+<p>        realdicPath = [realWordsLanguageGeneratorResults objectForKey:@&#8221;DictionaryPath&#8221;];<br />
+    }</p>
+<p>    else<br />
+    {<br />
+        NSLog(@&#8221;Error: %@&#8221;,[realErr localizedDescription]);<br />
+    }</p>
+<p>    [self.realPocketsphinxController startRealtimeListeningWithLanguageModelAtPath:reallmPath andDictionaryAtPath:realdicPath];</p>
+<p>    [self.realPocketsphinxController setRapidEarsToVerbose:FALSE]; // This defaults to FALSE but will give a lot of debug readout if set TRUE</p>
+<p>    [self.realPocketsphinxController setRapidEarsAccuracy:1]; // This defaults to 20, maximum accuracy, but can be set as low as 1 to save CPU</p>
+<p>    [self.realPocketsphinxController setFinalizeHypothesis:TRUE]; // This defaults to TRUE and will return a final hypothesis, but can be turned off to save a little CPU and will then return no final hypothesis; only partial &#8220;live&#8221; hypotheses.</p>
+<p>    [self.realPocketsphinxController setFasterPartials:TRUE]; // This will give faster rapid recognition with less accuracy. This is what you want in most cases since more accuracy for partial hypotheses will have a delay.</p>
+<p>    [self.realPocketsphinxController setFasterFinals:FALSE]; // This will give an accurate final recognition. You can have earlier final recognitions with less accuracy as well by setting this to TRUE.<br />
+}</p>
+<p>&#8211; (PocketsphinxController *)retroPocketsphinxController<br />
+{<br />
+	if (retroPocketsphinxController == nil)<br />
+    {<br />
+		retroPocketsphinxController = [[PocketsphinxController alloc] init];<br />
+	}</p>
+<p>	return retroPocketsphinxController;<br />
+}</p>
+<p>&#8211; (PocketsphinxController *)realPocketsphinxController<br />
+{<br />
+    if (realPocketsphinxController == nil)<br />
+    {<br />
+		realPocketsphinxController = [[PocketsphinxController alloc] init];<br />
+	}</p>
+<p>	return realPocketsphinxController;<br />
+}</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problem-switching-between-openears-and-rapidears/#post-13501</guid>
+					<title><![CDATA[Reply To: Problem switching between OpenEars and RapidEars]]></title>
+					<link>/forums/topic/problem-switching-between-openears-and-rapidears/#post-13501</link>
+					<pubDate>Sun, 25 Nov 2012 20:17:54 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>It shouldn&#8217;t be necessary to have two instances, and it is probably harmful since they may both be accessing the driver and the VAD in a way that is unexpected due to ARC. </p>
+<p>Both PocketsphinxController and PocketsphinxController+RapidEars use a PocketsphinxController instance, so you should be able to use a single instance of PocketsphinxController for both, and when you want to listen with RapidEars use RapidEars&#8217; start method of startRealtimeListeningWithLanguageModelAtPath: and when you want to listen without RapidEars use the basic PocketsphinxController startListeningWithLanguageModelAtPath: method. Just be sure that you use the stopListening method for either before you start the other one. I&#8217;ve personally used both from the same PocketsphinxController instance in the same session so I would expect it to work.</p>
+<p>Let me know if this helps.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

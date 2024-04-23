@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Pregenerate Language Model &#8211; Politepix</title>
+		<atom:link href="/forums/topic/pregenerate-language-model/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/pregenerate-language-model/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:59:58 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/pregenerate-language-model/#post-1017342</guid>
+					<title><![CDATA[Pregenerate Language Model]]></title>
+					<link>/forums/topic/pregenerate-language-model/#post-1017342</link>
+					<pubDate>Thu, 30 May 2013 19:32:58 +0000</pubDate>
+					<dc:creator>abshih</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello, </p>
+<p>I believe I read the tutorial and it mentions that you can pregenerate this language model so users don&#8217;t have to generate the language model each time the app initializes the pocketsphinx.</p>
+<p>Currently, I am generating the language model on initialization and for some reason it works most of the time, however if I add words it will sometimes crash. I also get warnings </p>
+<p>sih_add WARNING: repeated hashing of &#8216;REFRESH&#8217;, older value will be overridden.<br />
+sih_add WARNING: repeated hashing of &#8216;THREE&#8217;, older value will be overridden.</p>
+<p>Here is the code I use:</p>
+<pre><code> LanguageModelGenerator *lmGenerator = [[LanguageModelGenerator alloc] init];
+                
+                NSArray *words = [NSArray arrayWithObjects:@&quot;OPEN REQUEST&quot;, @&quot;ONE&quot;, @&quot;TWO&quot;,@&quot;THREE&quot;, @&quot;FOUR&quot;, @&quot;FIVE&quot;, @&quot;SIX&quot;, @&quot;SEVEN&quot;, @&quot;EIGHT&quot;, @&quot;NINE&quot;, @&quot;ZERO&quot;, @&quot;CURRENT STATUS&quot;, @&quot;UNASSIGNED TAB&quot;, @&quot;MY OPEN TAB&quot;, @&quot;MY TEAM TAB&quot;, @&quot;PENDING TAB&quot;, @&quot;AUTO REFRESH ON&quot;, @&quot;AUTO REFRESH OFF&quot;, @&quot;SELECT ROW&quot;, @&quot;PAGE UP&quot;, @&quot;PAGE DOWN&quot;, nil];
+                NSString *name = @&quot;HDMLanguageModel&quot;;
+                NSError *err = [lmGenerator generateLanguageModelFromArray:words withFilesNamed:name];
+                
+                
+                NSDictionary *languageGeneratorResults = nil;
+                
+                NSString *lmPath = nil;
+                NSString *dicPath = nil;
+                
+                if([err code] == noErr) {
+                    
+                    languageGeneratorResults = [err userInfo];
+                    
+                    lmPath = [languageGeneratorResults objectForKey:@&quot;LMPath&quot;];
+                    dicPath = [languageGeneratorResults objectForKey:@&quot;DictionaryPath&quot;];
+                    
+                } else {
+                    NSLog(@&quot;Error: %@&quot;,[err localizedDescription]);
+                }
+                
+                //STARTING LISTENING
+                [self.pocketsphinxController startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath languageModelIsJSGF:NO];
+</code></pre>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pregenerate-language-model/#post-1017345</guid>
+					<title><![CDATA[Reply To: Pregenerate Language Model]]></title>
+					<link>/forums/topic/pregenerate-language-model/#post-1017345</link>
+					<pubDate>Thu, 30 May 2013 19:51:52 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>If you are reporting a crash, you must turn on OpenEarsLogging and verbosePocketsphinx as I described twice in your other question. Please read the post I linked to in that question and turn on all logging and post the output.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pregenerate-language-model/#post-1017346</guid>
+					<title><![CDATA[Reply To: Pregenerate Language Model]]></title>
+					<link>/forums/topic/pregenerate-language-model/#post-1017346</link>
+					<pubDate>Thu, 30 May 2013 19:54:12 +0000</pubDate>
+					<dc:creator>abshih</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello Halle,</p>
+<p>I have verbose turned on, but I have no experienced the crash since turning on Verbose. I am wondering how do you pre-generate the language so I don&#8217;t have to do the above code everytime I want to start PocketSphinx,</p>
+<p>Thanks,<br />
+Alan</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pregenerate-language-model/#post-1017347</guid>
+					<title><![CDATA[Reply To: Pregenerate Language Model]]></title>
+					<link>/forums/topic/pregenerate-language-model/#post-1017347</link>
+					<pubDate>Thu, 30 May 2013 20:01:06 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You can read this to learn how to create a model in advance:<br />
+<a href="/2012/11/02/openears-tips-1-create-a-language-model-before-runtime-from-a-text-file/">/2012/11/02/openears-tips-1-create-a-language-model-before-runtime-from-a-text-file/</a></p>
+<p>Please don&#8217;t report any more crashing issues unless you are willing to post logs.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pregenerate-language-model/#post-1017352</guid>
+					<title><![CDATA[Reply To: Pregenerate Language Model]]></title>
+					<link>/forums/topic/pregenerate-language-model/#post-1017352</link>
+					<pubDate>Fri, 31 May 2013 15:48:40 +0000</pubDate>
+					<dc:creator>abshih</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello Halle,</p>
+<p>If I have verbose mode turned on. I will post back if I experience the issue again.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

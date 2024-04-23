@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Retrieve ASCII phonemes and bypass local vocab matching &#8211; Politepix</title>
+		<atom:link href="/forums/topic/retrieve-ascii-phonemes-and-bypass-local-vocab-matching/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/retrieve-ascii-phonemes-and-bypass-local-vocab-matching/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:07:27 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/retrieve-ascii-phonemes-and-bypass-local-vocab-matching/#post-1021041</guid>
+					<title><![CDATA[Retrieve ASCII phonemes and bypass local vocab matching]]></title>
+					<link>/forums/topic/retrieve-ascii-phonemes-and-bypass-local-vocab-matching/#post-1021041</link>
+					<pubDate>Sat, 26 Apr 2014 21:57:44 +0000</pubDate>
+					<dc:creator>box</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p><strong>The big picture and why I want to accomplish this&#8230;</strong><br />
+My App doesn&#8217;t use a vocabulary as you&#8217;d normally use to be recognized. I have an SQL database with (could be millions, currently thousands of) sentences and words that are ALL UGC (user generated content), which is constantly changing, deleting, and adding. I need the user&#8217;s mobile device&#8217;s pocketsphinx to take the ps_decoder_t Lattice data it builds and convert it to ACII phonemes that I can send to my server to search for a match on the database.</p>
+<p>I&#8217;ve dug in pretty deep into the pocketsphinx and OpenEars code to try and edit a way to convert and pass ASCII phonemes to OpenEars. It&#8217;s over my head I think&#8230; And after compiling the modified pocketsphinx, I&#8217;d have an OpenEars delegate observer to be notified like this on iOS: </p>
+<p>&#8211; (void) pocketsphinxDidCreatePhonemes: (NSString *) phonemes</p>
+<p>Any help or advice to make this happen will be GREATLY appreciated. I&#8217;m a decent developer but I don&#8217;t know as much about speech recognition as I should, so please be gentile.</p>
+<p><em>Also, here are some pointers so you don&#8217;t have to mention them:</em><br />
+&#8211; I know phonetics aren&#8217;t visibly available in pocketsphinx as-is. I&#8217;ve worked with them in sphinx4 though.<br />
+&#8211; I know openeears doesn&#8217;t and won&#8217;t do this now or never<br />
+&#8211; Currently I&#8217;m using (Other than pocketsphinx) paid online Speech services such as NDEV, ATT, and iSpeech, and they work fine, (especially NDEV Nuance mobile) but all still take way too long to retrieve recognition as they ALL require sending audio recording files over the internet. Then after its finally received, I send the recognition to my database to be matched. Takes way too long. Plus they&#8217;re expensive, proprietary, and not open source.</p>
+<p>Thanks!!<br />
+-Joseph</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/retrieve-ascii-phonemes-and-bypass-local-vocab-matching/#post-1021046</guid>
+					<title><![CDATA[Reply To: Retrieve ASCII phonemes and bypass local vocab matching]]></title>
+					<link>/forums/topic/retrieve-ascii-phonemes-and-bypass-local-vocab-matching/#post-1021046</link>
+					<pubDate>Sun, 27 Apr 2014 14:37:28 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>I honestly don&#8217;t think this is possible as a simple change to Pocketsphinx. This isn&#8217;t an advertised feature of Rejecto and as such could encounter implementation changes later, however, you could try doing this with the current version of Rejecto. The further problem though is that phoneme-based recognition is inaccurate.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/retrieve-ascii-phonemes-and-bypass-local-vocab-matching/#post-1021062</guid>
+					<title><![CDATA[Reply To: Retrieve ASCII phonemes and bypass local vocab matching]]></title>
+					<link>/forums/topic/retrieve-ascii-phonemes-and-bypass-local-vocab-matching/#post-1021062</link>
+					<pubDate>Sun, 27 Apr 2014 16:18:25 +0000</pubDate>
+					<dc:creator>box</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for your response!</p>
+<p>Two questions&#8230;</p>
+<p>1) Do you think it could be possible to convert Pocketsphinx current decoder to comething that could be sent to my server/database? My problem is, is I don&#8217;t fully understand the data that Pocketsphinx uses to find a hypothesis.</p>
+<p>2) I do know that phoneme recognition is inaccurate, but I plan on making up for it on the database query side of things. Each record in the DB has multiple phoneme-based pronunciations and MySQL has very fast searching capabilities. Would it be possible for you to show me or explain to me how to do this with Rejecto?</p>
+<p>Thanks!<br />
+-Joe</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/retrieve-ascii-phonemes-and-bypass-local-vocab-matching/#post-1021063</guid>
+					<title><![CDATA[Reply To: Retrieve ASCII phonemes and bypass local vocab matching]]></title>
+					<link>/forums/topic/retrieve-ascii-phonemes-and-bypass-local-vocab-matching/#post-1021063</link>
+					<pubDate>Sun, 27 Apr 2014 17:37:07 +0000</pubDate>
+					<dc:creator>box</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Are you referring to using Rejecto with <a href="http://cmusphinx.sourceforge.net/wiki/phonemerecognition" title="this method" target="_blank" rel="nofollow">this method</a>? I know it was done using Sphinx3, but I&#8217;m open to trying that over rewriting some Pocketsphinx code&#8230;</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/retrieve-ascii-phonemes-and-bypass-local-vocab-matching/#post-1021081</guid>
+					<title><![CDATA[Reply To: Retrieve ASCII phonemes and bypass local vocab matching]]></title>
+					<link>/forums/topic/retrieve-ascii-phonemes-and-bypass-local-vocab-matching/#post-1021081</link>
+					<pubDate>Mon, 28 Apr 2014 18:11:05 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>1) Do you think it could be possible to convert Pocketsphinx current decoder to comething that could be sent to my server/database? My problem is, is I don’t fully understand the data that Pocketsphinx uses to find a hypothesis.</p></blockquote>
+<p>You can use SaveThatWave to save utterances as WAV files and send them to a cloud decoder if you like. It should also be possible to turn off local recognition by setting self.pocketsphinxController.processSpeechLocally = FALSE (I&#8217;m slightly hesitant on that one because I just noticed that I left it out of my testbed so I&#8217;m not 100% on whether it&#8217;s currently working, but I would expect it to).</p>
+<blockquote><p>2) I do know that phoneme recognition is inaccurate, but I plan on making up for it on the database query side of things. Each record in the DB has multiple phoneme-based pronunciations and MySQL has very fast searching capabilities. Would it be possible for you to show me or explain to me how to do this with Rejecto?</p></blockquote>
+<p>I don&#8217;t think the underlying issue with phoneme-based recognition is that there isn&#8217;t enough data about phonemes in words, but that there isn&#8217;t any context anymore, but I think it&#8217;s reasonable to experiment and find out how it works in your own implementation. You can receive the actual Rejecto phoneme that was received if you set Rejecto&#8217;s setter method &#8211; (void) deliverRejectedSpeechInHypotheses:(BOOL)trueorfalse; to TRUE when initially setting up the LanguageModelGenerator.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

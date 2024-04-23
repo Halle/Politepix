@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Repeats in NSLog &#8211; Politepix</title>
+		<atom:link href="/forums/topic/repeats-in-nslog/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/repeats-in-nslog/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:05:40 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/repeats-in-nslog/#post-1022168</guid>
+					<title><![CDATA[Repeats in NSLog]]></title>
+					<link>/forums/topic/repeats-in-nslog/#post-1022168</link>
+					<pubDate>Mon, 11 Aug 2014 14:03:16 +0000</pubDate>
+					<dc:creator>ThatGuy</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello World,<br />
+     My application has multiple view controllers which all have <code>[self.pocketsphinxController startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[AcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;] languageModelIsJSGF:NO];</code> in the viewDidLoad method and <code>[self.pocketsphinxController stopListening];</code> when dismissing the view controller with a button.  However, when I enter one view controller, exit, and then go to another view controller it displays the same statements over and over again in the NSLog depending on how many view controllers I have visited.  My app works perfectly fine, but I would like to get this fixed.</p>
+<p>NSLog (without the date and time, or my personal stuff):</p>
+<pre><code>acousticModelPath is 
+Pocketsphinx calibration has started.
+Pocketsphinx calibration is complete.
+Pocketsphinx is now listening.
+Pocketsphinx has stopped listening.
+acousticModelPath is
+Pocketsphinx calibration has started.
+Pocketsphinx calibration has started.
+Pocketsphinx calibration is complete.
+Pocketsphinx calibration is complete.
+Pocketsphinx is now listening.
+Pocketsphinx is now listening.
+Pocketsphinx has stopped listening.
+Pocketsphinx has stopped listening.
+acousticModelPath is 
+Pocketsphinx calibration has started.
+Pocketsphinx calibration has started.
+Pocketsphinx calibration has started.
+Pocketsphinx calibration is complete.
+Pocketsphinx calibration is complete.
+Pocketsphinx calibration is complete.
+Pocketsphinx is now listening.
+Pocketsphinx is now listening.
+Pocketsphinx is now listening.
+Pocketsphinx has stopped listening.
+Pocketsphinx has stopped listening.
+Pocketsphinx has stopped listening.
+acousticModelPath is 
+Pocketsphinx calibration has started.
+Pocketsphinx calibration has started.
+Pocketsphinx calibration has started.
+Pocketsphinx calibration has started.
+Pocketsphinx calibration is complete.
+Pocketsphinx calibration is complete.
+Pocketsphinx calibration is complete.
+Pocketsphinx calibration is complete.
+Pocketsphinx has stopped listening.
+Pocketsphinx has stopped listening.
+Pocketsphinx has stopped listening.
+Pocketsphinx has stopped listening.
+acousticModelPath is 
+Pocketsphinx calibration has started.
+Pocketsphinx calibration has started.
+Pocketsphinx calibration has started.
+Pocketsphinx calibration has started.
+Pocketsphinx calibration has started.
+Pocketsphinx calibration is complete.
+Pocketsphinx calibration is complete.
+Pocketsphinx calibration is complete.
+Pocketsphinx calibration is complete.
+Pocketsphinx calibration is complete.
+Pocketsphinx has stopped listening.
+Pocketsphinx has stopped listening.
+Pocketsphinx has stopped listening.
+Pocketsphinx has stopped listening.
+Pocketsphinx has stopped listening.</code></pre>
+<p>etc&#8230;</p>
+<p>So I don&#8217;t know what the problem is and was wondering if you guys could help?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/repeats-in-nslog/#post-1022169</guid>
+					<title><![CDATA[Reply To: Repeats in NSLog]]></title>
+					<link>/forums/topic/repeats-in-nslog/#post-1022169</link>
+					<pubDate>Mon, 11 Aug 2014 14:21:12 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>You either have many PocketsphinxControllers in your app (you can only have one) or you have one PocketsphinxController but many instantiated OpenEarsEventsObserver delegates. Either of these will probably be due to your view controllers having an issue that prevents ARC from releasing them.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/repeats-in-nslog/#post-1022170</guid>
+					<title><![CDATA[Reply To: Repeats in NSLog]]></title>
+					<link>/forums/topic/repeats-in-nslog/#post-1022170</link>
+					<pubDate>Mon, 11 Aug 2014 14:42:37 +0000</pubDate>
+					<dc:creator>ThatGuy</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>So are you saying that I should only declare <code>PocketSphinxController *pocketsphinxController</code> in only one header file and reference it from different view controllers?  I have <code>[self.openEarsEventsObserver setDelegate:self];</code> in the viewDidLoad methods of all of the view controllers and this as well </p>
+<pre><code>- (OpenEarsEventsObserver *)openEarsEventsObserver {
+    
+	if (openEarsEventsObserver == nil) {
+		openEarsEventsObserver = [[OpenEarsEventsObserver alloc] init];
+	}
+	return openEarsEventsObserver;
+}</code></pre>
+<p>regarding the openEarsEventsObserver.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/repeats-in-nslog/#post-1022171</guid>
+					<title><![CDATA[Reply To: Repeats in NSLog]]></title>
+					<link>/forums/topic/repeats-in-nslog/#post-1022171</link>
+					<pubDate>Mon, 11 Aug 2014 14:50:54 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>So are you saying that I should only declare PocketSphinxController *pocketsphinxController in only one header file and reference it from different view controllers?</p></blockquote>
+<p>This isn&#8217;t quite how object declaration and definitions work in Objective-C. From the docs:</p>
+<blockquote><p>Warning<br />
+There can only be one PocketsphinxController instance in your app.</p></blockquote>
+<p>That means a single declaration and definition, and a single instance of that declaration/definition. It&#8217;s fine (and intended) to have lots of OpenEarsEventsObserver instances, but if you have lots of them instantiated at once you&#8217;ll need to do some logical control in order to prevent them all from sending callbacks simultaneously if that isn&#8217;t the result you want.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/repeats-in-nslog/#post-1022172</guid>
+					<title><![CDATA[Reply To: Repeats in NSLog]]></title>
+					<link>/forums/topic/repeats-in-nslog/#post-1022172</link>
+					<pubDate>Mon, 11 Aug 2014 16:55:04 +0000</pubDate>
+					<dc:creator>ThatGuy</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ok, so I just put NSLog <code>(@&quot;%@&quot;, self.pocketsphinxController);</code> in the viewDidLoad methods and they showed different instances <code>&lt;PocketsphinxController: 0x987f590&gt;</code> and <code>&lt;PocketsphinxController: 0x98a3ab0&gt;</code>.  So how does one make them the same instance.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/repeats-in-nslog/#post-1022173</guid>
+					<title><![CDATA[Reply To: Repeats in NSLog]]></title>
+					<link>/forums/topic/repeats-in-nslog/#post-1022173</link>
+					<pubDate>Mon, 11 Aug 2014 17:31:05 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry, it isn&#8217;t possible to help out with learning Objective-C here – I can only give support for OpenEars questions. </p>
+<p>This is a good book for getting started learning Objective-C and Cocoa Touch for iOS development: <a href="http://www.bignerdranch.com/we-write/ios-programming.html" rel="nofollow">http://www.bignerdranch.com/we-write/ios-programming.html</a></p>
+<p>This is an good free course if classes are more your thing: <a href="https://itunes.apple.com/us/course/developing-ios-7-apps-for/id733644550" rel="nofollow">https://itunes.apple.com/us/course/developing-ios-7-apps-for/id733644550</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/repeats-in-nslog/#post-1022174</guid>
+					<title><![CDATA[Reply To: Repeats in NSLog]]></title>
+					<link>/forums/topic/repeats-in-nslog/#post-1022174</link>
+					<pubDate>Mon, 11 Aug 2014 18:13:11 +0000</pubDate>
+					<dc:creator>ThatGuy</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hey, it was just a problem with ARC I believe, I just put <code>self.openEarsEventsObserver = nil;</code> when exiting the view controller.  Thanks for your assistance Halle.  </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/repeats-in-nslog/#post-1022175</guid>
+					<title><![CDATA[Reply To: Repeats in NSLog]]></title>
+					<link>/forums/topic/repeats-in-nslog/#post-1022175</link>
+					<pubDate>Mon, 11 Aug 2014 18:18:10 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, nice troubleshooting.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

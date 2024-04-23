@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>ARG &#8211; Multiple conflicting APIs &#8211; Politepix</title>
+		<atom:link href="/forums/topic/arg-multiple-conflicting-apis/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/arg-multiple-conflicting-apis/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:07:16 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/arg-multiple-conflicting-apis/#post-1021206</guid>
+					<title><![CDATA[ARG &#8211; Multiple conflicting APIs]]></title>
+					<link>/forums/topic/arg-multiple-conflicting-apis/#post-1021206</link>
+					<pubDate>Tue, 13 May 2014 20:26:53 +0000</pubDate>
+					<dc:creator>geareddev</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>I am working on an augmented reality game which uses a binaural audio engine called Papa Engine and a low level audio processing api called Novocaine.  Novocaine reroutes the microphone data through the users headphones.   I mix binaural sound effects into that to create the illusion that these sounds are real (and in 3D space).  </p>
+<p>Novocaine is open source, but Papa Engine is not.  It took me a while, but I managed to get the two of those to play nicely together.  Enter OpenEars.  I also want my ARG to do voice recognition.  During the experience, there is a narrator which tells you what to do.  When I disable Novocaine and Papa Engine, OpenEars works great.  When I enable either of those first, the application crashes when I call &#8220;pocketsphinxController startListeningWithLanguageModelAtPath.&#8221;   If I enable OpenEars first, the other two work, and pocketsphinxController says that it is listening but voice recognition stops functioning.</p>
+<p>Is there any way to setup the audio sessions so that I can get all three of these to play nice?  </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/arg-multiple-conflicting-apis/#post-1021207</guid>
+					<title><![CDATA[Reply To: ARG &#8211; Multiple conflicting APIs]]></title>
+					<link>/forums/topic/arg-multiple-conflicting-apis/#post-1021207</link>
+					<pubDate>Tue, 13 May 2014 20:39:13 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Sorry, this is unlikely to work although I wish I could give you more encouraging news. Here is a bit more about it from the FAQ: <a href="/openears/support/#Q_I8217m_trying_to_use_a_sound_framework_like_Finch_or_another_OpenAL_wrapper_and_things_aren8217t_working_as_expected">/openears/support/#Q_I8217m_trying_to_use_a_sound_framework_like_Finch_or_another_OpenAL_wrapper_and_things_aren8217t_working_as_expected</a></p>
+<p>Basically, all of these frameworks are making a bid for the session and they all probably require it to a similar extent because low-latency audio i/o is resource-demanding. But, you might be able to find out a bit more about the precise point at which it is breaking if you enable logging: <a href="/forums/topic/install-issues-and-their-solutions/">/forums/topic/install-issues-and-their-solutions/</a> and you can also try searching these forums for some info about PocketsphinxController&#8217;s audioSessionMixing property, which is designed to allow session mixing (although this scenario with two other frameworks may still be a bit too much).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/arg-multiple-conflicting-apis/#post-1021208</guid>
+					<title><![CDATA[Reply To: ARG &#8211; Multiple conflicting APIs]]></title>
+					<link>/forums/topic/arg-multiple-conflicting-apis/#post-1021208</link>
+					<pubDate>Tue, 13 May 2014 20:57:36 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Wanted to add: if you search these forums for ideas about audioSessionMixing and session mixing in general, it&#8217;s probably best to stick with posts from the last year or so, since I migrated those methods into PocketsphinxController and there will probably be some out-of-date suggestions recommending accessing the session via AudioSessionManager properties directly (not advisable now).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/arg-multiple-conflicting-apis/#post-1021230</guid>
+					<title><![CDATA[Reply To: ARG &#8211; Multiple conflicting APIs]]></title>
+					<link>/forums/topic/arg-multiple-conflicting-apis/#post-1021230</link>
+					<pubDate>Fri, 16 May 2014 20:36:07 +0000</pubDate>
+					<dc:creator>geareddev</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>At this point, I don&#8217;t even need PapaEngine and OpenEars to work at the same time.  I just need my app to not crash when I activate OpenEars after PapaEngine.  Unfortunately, PapaEngine is a singleton class, and there&#8217;s no real way to turn it off.  I&#8217;m not sure how it holds onto the audio session, or how to temporarily disable it from the outside.</p>
+<p>Everything appears to work up until this point:</p>
+<p>[11748:60b] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+  :: Buffer::copyHeaderFrom(ch 2 2, fr 256 4096)<br />
+  ::  Error: An error occured in the CSL nextBuffer method: Can&#8217;t reallocate buffers at run-time</p>
+<p>[11748:60b] preferredSampleRateCheck is incorrect, we will change it.</p>
+<p>It is at this point that the app crashes.   The crash occurs inside:<br />
+AudioToolbox`AURemoteIO::PerformIO</p>
+<p>Is there anyway to prevent this crash?  I am okay with the two APIs not working simultaneously, but I need to be able to alternate between the two.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/arg-multiple-conflicting-apis/#post-1021231</guid>
+					<title><![CDATA[Reply To: ARG &#8211; Multiple conflicting APIs]]></title>
+					<link>/forums/topic/arg-multiple-conflicting-apis/#post-1021231</link>
+					<pubDate>Fri, 16 May 2014 21:21:58 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry, that looks like it is due to PapaEngine not being able to share the session or (as far as I can tell) release the remoteIO input while it isn&#8217;t using it, so I&#8217;m not really able to offer help from this side of the picture if it runs as a singleton that can&#8217;t be stopped. </p>
+<p>It&#8217;s unlikely to work to run a generalized engine that requires complete control over the session and i/o at the same time as performing low-latency speech recognition from a mic stream. OpenEars is designed to recover gracefully from other audio session usages when it starts listening, but it can&#8217;t avoid taking over the audio stream while it is being asked to perform recognition.</p>
+<p>Did you try my suggestion of researching session mixing results in these forums?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/arg-multiple-conflicting-apis/#post-1021232</guid>
+					<title><![CDATA[Reply To: ARG &#8211; Multiple conflicting APIs]]></title>
+					<link>/forums/topic/arg-multiple-conflicting-apis/#post-1021232</link>
+					<pubDate>Fri, 16 May 2014 21:37:00 +0000</pubDate>
+					<dc:creator>geareddev</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>When I add this code:</p>
+<p>[[AudioSessionManager sharedAudioSessionManager] setSoundMixing:true];<br />
+self.pocketsphinxController.audioSessionMixing = TRUE;</p>
+<p>It only crashes about 50% of the time.  When it doesn&#8217;t crash, I get a constant stream of this in the console:</p>
+<p> :: Buffer::copyHeaderFrom(ch 2 2, fr 256 2048)<br />
+  ::  Error: An error occured in the CSL nextBuffer method: Can&#8217;t reallocate buffers at run-time</p>
+<p>But otherwise both APIs seem to function.   I get binaural sounds, and speech detection works.  If I can manage to hack this together so that it doesn&#8217;t crash at all, that would be great.  I have tried modifying constants such as those in AudioConstants.h but the OpenEars logging seems to suggest that my values are being ignored.  I have a gut feeling that if I could match up the buffer sizes that I could make these two play nice.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/arg-multiple-conflicting-apis/#post-1021233</guid>
+					<title><![CDATA[Reply To: ARG &#8211; Multiple conflicting APIs]]></title>
+					<link>/forums/topic/arg-multiple-conflicting-apis/#post-1021233</link>
+					<pubDate>Fri, 16 May 2014 23:44:11 +0000</pubDate>
+					<dc:creator>geareddev</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I went into OpenEars and modified kBufferLength to match the buffer used by PapaEngine.</p>
+<p>//changed from 0.12800<br />
+ #define kBufferLength 0.005805 </p>
+<p>Both APIs play nicely now, but the speech recognition isn&#8217;t functioning all that well.  It only detects a word about 20% of the time, and is often wrong.   Will playing with any of the other constants improve the speech recognition and return it to its functional state?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/arg-multiple-conflicting-apis/#post-1021234</guid>
+					<title><![CDATA[Reply To: ARG &#8211; Multiple conflicting APIs]]></title>
+					<link>/forums/topic/arg-multiple-conflicting-apis/#post-1021234</link>
+					<pubDate>Sat, 17 May 2014 02:22:12 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry, those settings are not optional. They are required for recognition. I&#8217;m afraid troubleshooting this is a bit beyond the support I can give you since it is an issue originating from another framework. I would focus the research on how to shut PapaEngine off or suspend it while another framework is making required changes to the session.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

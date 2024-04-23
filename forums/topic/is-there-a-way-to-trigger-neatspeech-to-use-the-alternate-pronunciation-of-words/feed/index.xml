@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Is there a way to trigger NeatSpeech to use the alternate pronunciation of words &#8211; Politepix</title>
+		<atom:link href="/forums/topic/is-there-a-way-to-trigger-neatspeech-to-use-the-alternate-pronunciation-of-words/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/is-there-a-way-to-trigger-neatspeech-to-use-the-alternate-pronunciation-of-words/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:43:43 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/is-there-a-way-to-trigger-neatspeech-to-use-the-alternate-pronunciation-of-words/#post-1018423</guid>
+					<title><![CDATA[Is there a way to trigger NeatSpeech to use the alternate pronunciation of words]]></title>
+					<link>/forums/topic/is-there-a-way-to-trigger-neatspeech-to-use-the-alternate-pronunciation-of-words/#post-1018423</link>
+					<pubDate>Wed, 25 Sep 2013 17:27:51 +0000</pubDate>
+					<dc:creator>tbeagley</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>e.g.: &#8220;read&#8221; is always spoken as &#8220;red&#8221;, a more extreme example being &#8220;trial&#8221; is always spoken as &#8220;try-uhl&#8221; even when it&#8217;s the suffix of a word and should be &#8220;tree-uhl&#8221;.</p>
+<p>On a related note, are there any scientific or medical dictionaries for NeatSpeech? Where would I find documentation on custom or alternate dictionaries?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/is-there-a-way-to-trigger-neatspeech-to-use-the-alternate-pronunciation-of-words/#post-1018425</guid>
+					<title><![CDATA[Reply To: Is there a way to trigger NeatSpeech to use the alternate pronunciation of words]]></title>
+					<link>/forums/topic/is-there-a-way-to-trigger-neatspeech-to-use-the-alternate-pronunciation-of-words/#post-1018425</link>
+					<pubDate>Wed, 25 Sep 2013 17:51:52 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hmm, although a lot of work went into this for 1.5, there isn&#8217;t an objective fix for it. It&#8217;s a difficult question in speech in general because it involves successfully tagging a part of speech and the variation thereof, which is usually going to be a 90%-accurate thing even when it&#8217;s going well. I can recommend two workarounds for you:</p>
+<p>1. You can try editing the problem entries in NeatSpeechRequired.bundle/lib/dicts/cmu/cmudict-0.4.out and see if that is the entry being used in that case, for instance this one:</p>
+<p>(&#8220;read&#8221; nil (((r eh d) 1)))</p>
+<p>can be changed to </p>
+<p>(&#8220;read&#8221; nil (((r iy d) 1)))</p>
+<p>2. Cheat. If you want it to sound like &#8220;reed&#8221;, use &#8220;reed&#8221;. If you want the suffix form of trial, use &#8220;tree all&#8221;.</p>
+<blockquote><p>On a related note, are there any scientific or medical dictionaries for NeatSpeech? Where would I find documentation on custom or alternate dictionaries?</p></blockquote>
+<p>There is no documentation for this because NeatSpeech is currently limited to its built-in methodology for finding pronunciations. However, I think you could probably add pronunciations for jargon directly to NeatSpeechRequired.bundle/lib/dicts/cmu/cmudict-0.4.out if you can observe its formatting method. My method is just to find the phonemes (the short pronunciation elements) by looking up a rhyming word from the same dictionary, so if I needed to add &#8220;Endometrial&#8221; my steps would be as follows:</p>
+<p>• Find the phonemes by looking up its syllable components &#8220;end&#8221;, &#8220;oh&#8221;, &#8220;me&#8221;, &#8220;tree&#8221; and &#8220;all&#8221; in the same dictionary.<br />
+* Observe that in this dictionary a syllable is written as follows, with the phonemes in the syllable in parentheses followed by a 1 for a stressed syllable and followed by a 0 for an unstressed syllable: ((eh n d) 1)<br />
+• Observe that the entire set of syllables is enclosed in parentheses<br />
+• Observe that the final parentheses surround the initial string which is the word in lowercase inside quotes followed by nil plus the enclosed syllables.<br />
+• Make sure that I put my final entry in the correct alphabetical position in the dictionary. My entry looks like this: (&#8220;endometrial&#8221; nil (((eh n d) 0) ((ow) 0) ((m iy) 1) ((t r iy) 0) ((ao l) 0)))</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/is-there-a-way-to-trigger-neatspeech-to-use-the-alternate-pronunciation-of-words/#post-1018427</guid>
+					<title><![CDATA[Reply To: Is there a way to trigger NeatSpeech to use the alternate pronunciation of words]]></title>
+					<link>/forums/topic/is-there-a-way-to-trigger-neatspeech-to-use-the-alternate-pronunciation-of-words/#post-1018427</link>
+					<pubDate>Wed, 25 Sep 2013 18:23:55 +0000</pubDate>
+					<dc:creator>tbeagley</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Very helpful, thank you.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

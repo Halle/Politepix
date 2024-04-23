@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Children&#039;s voices &#8211; Politepix</title>
+		<atom:link href="/forums/topic/childrens-voices/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/childrens-voices/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:55:47 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/childrens-voices/#post-1017290</guid>
+					<title><![CDATA[Children&#039;s voices]]></title>
+					<link>/forums/topic/childrens-voices/#post-1017290</link>
+					<pubDate>Thu, 23 May 2013 22:31:57 +0000</pubDate>
+					<dc:creator>woodyard</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>My app uses a dynamically created grammar of ten words.  Recognition for adult voices works well, but recognition of children&#8217;s voices is about 20% lower.</p>
+<p>There is an old post regarding keyword spotting here that talks about the use of the kFILLPROB parameter:</p>
+<p><a href="/forums/topic/add-key-word-spotting-to-openears-library/">/forums/topic/add-key-word-spotting-to-openears-library/</a></p>
+<p>I&#8217;m wondering if adjusting this value might resolve the issue?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/childrens-voices/#post-1017293</guid>
+					<title><![CDATA[Reply To: Children&#039;s voices]]></title>
+					<link>/forums/topic/childrens-voices/#post-1017293</link>
+					<pubDate>Fri, 24 May 2013 07:21:08 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Historically, people have had pretty good results by doing some adaptation using kid speech:</p>
+<p><a href="/2012/11/19/openears-tip-and-tricks-3-acoustic-model-adaptation/">/2012/11/19/openears-tip-and-tricks-3-acoustic-model-adaptation/</a></p>
+<p>I don&#8217;t know why raising or lowering the filler dictionary probability would affect recognition of speech for a different group of speakers but there&#8217;s no harm in trying it.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

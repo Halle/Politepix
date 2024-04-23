@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>API for ios application &#8211; Politepix</title>
+		<atom:link href="/forums/topic/api-for-ios-application/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/api-for-ios-application/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:02:51 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/api-for-ios-application/#post-1018054</guid>
+					<title><![CDATA[API for ios application]]></title>
+					<link>/forums/topic/api-for-ios-application/#post-1018054</link>
+					<pubDate>Mon, 26 Aug 2013 11:18:11 +0000</pubDate>
+					<dc:creator>krysler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi. I&#8217;m new and I hope I arrived to teh right place.</p>
+<p>We have two appplications in appstore. We want to add voice recgnition support to them in specific pages. In short, the user creates, in this specific page, a list of items from a &#8220;bank&#8221; of about 200 items (household goods). Right now he tap e + sign, select the item, change teh quantity (optional) and hit th e+ again to select teh next otem (or &#8220;Save&#8221; to finish).<br />
+I want to add teh voice recognition so the user says &#8220;Add chair&#8221; or &#8220;Add Kitchenware&#8221; (add will be translated to teh + and Chair will search in teh list). Then the item is presented (like it is done now with the tapping and typing) and he can say (optiuonal) &#8220;Quantity 5&#8221; and then &#8220;Add Sofa&#8221; etc.<br />
+The issue is that I don&#8217;t want a delay. I tried an app(voice shopping) that uses ispeach and teh time it takes to identify the item is too long.</p>
+<p>Is your product us teh right one for this purpose? What do I need to buy? How much the license will cost?  Does your product suupot other languages?</p>
+<p>Two last comments: There is no option to ask the user to train the application, the list might be modified by the user (mainly adding items) </p>
+<p>Thanks</p>
+<p>Shai</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/api-for-ios-application/#post-1018130</guid>
+					<title><![CDATA[Reply To: API for ios application]]></title>
+					<link>/forums/topic/api-for-ios-application/#post-1018130</link>
+					<pubDate>Mon, 26 Aug 2013 16:17:13 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Krysler,</p>
+<p>It sounds to me like OpenEars or RapidEars might work well for your needs. You can try them both and see whether one of them is a fit for you. They should both be pretty fast since they are processing the speech right on the device, but RapidEars is the fastest since it can do recognition on the speech while it is actually still in progress.</p>
+<p>OpenEars is free for use in your App Store app, while RapidEars is not free. You can read more about RapidEars&#8217; pricing and other info at its page: <a href="/rapidears">/rapidears</a> or the shop page: <a href="/shop">/shop</a></p>
+<p>The main OpenEars page is here: <a href="/openears">/openears</a></p>
+<p>Both OpenEars and RapidEars now support English and Spanish. You can dynamically create new language models (vocabularies) in English or in Spanish whenever you want using OpenEars&#8217; class LanguageModelGenerator. There is no way to train recognition to a particular user&#8217;s voice but you can can always change the vocabulary programmatically.</p>
+<p>I hope this is helpful,</p>
+<p>Halle</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/api-for-ios-application/#post-1018143</guid>
+					<title><![CDATA[Reply To: API for ios application]]></title>
+					<link>/forums/topic/api-for-ios-application/#post-1018143</link>
+					<pubDate>Tue, 27 Aug 2013 09:47:37 +0000</pubDate>
+					<dc:creator>krysler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle</p>
+<p>Thanks for you answer. It is very helpful.<br />
+If I go for it, I will use RapidEars as response time is important to us.</p>
+<p>But before I dive into the water, I want to check with you some more points to see that I go in teh right direction</p>
+<p>Currently, there are about 200 items in the list. If the user looks, for example, for  Chair, he starts typing c..h..a… and with every letter the list is shrunk. In this case the list is reduced to 4-5 items that contain the string &#8220;cha&#8221; in their name.  There are several items that have the word Chair in them (Chair / Chair, Arm/ Porch chair, etc.)  and there are also items that are not chairs just have the string cha in them. So, the user starts typing and when the list is shrunk to several items, he just taps on the right one.</p>
+<p>My main goal is to shrink the list of items by the voice recognition so that the user doesn&#8217;t need to type. </p>
+<p>I see it working this way: The users Says &#8220;Chair&#8221; and the VR will bring anything that has &#8220;Chair&#8221; (or similar word) in it. (I  guess that in this case the smilarity will be by the sound and not by the  letters). The list is then shrunk and the use taps on the required item.<br />
+Is this something that fits your product?</p>
+<p>Thanks</p>
+<p>Shai</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/api-for-ios-application/#post-1018144</guid>
+					<title><![CDATA[Reply To: API for ios application]]></title>
+					<link>/forums/topic/api-for-ios-application/#post-1018144</link>
+					<pubDate>Tue, 27 Aug 2013 09:55:01 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Shai,</p>
+<p>OpenEars and RapidEars can be used for the purpose you&#8217;ve described, but the only way to see how it works in practice and whether it is going to fit your needs is going to be to test it out. You can implement it using the tutorial generator here: <a href="/openears/tutorial">/openears/tutorial</a> (Select &#8220;Offline, live speech recognition which recognizes speech in realtime (paid plugin)&#8221;) and  make sure to test using a device and not the Simulator since device recognition is significantly better.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

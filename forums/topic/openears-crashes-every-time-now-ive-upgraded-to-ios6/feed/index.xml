@@ -1,0 +1,888 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>PocketsphinxController plus Nuance SDK breaks AudioSessionManager in iOS6 &#8211; Politepix</title>
+		<atom:link href="/forums/topic/openears-crashes-every-time-now-ive-upgraded-to-ios6/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/openears-crashes-every-time-now-ive-upgraded-to-ios6/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:39:08 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/openears-crashes-every-time-now-ive-upgraded-to-ios6/#post-11285</guid>
+					<title><![CDATA[PocketsphinxController plus Nuance SDK breaks AudioSessionManager in iOS6]]></title>
+					<link>/forums/topic/openears-crashes-every-time-now-ive-upgraded-to-ios6/#post-11285</link>
+					<pubDate>Tue, 25 Sep 2012 14:27:49 +0000</pubDate>
+					<dc:creator>explodingphone</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I have recently tested my app on iOS6 as a client was experiencing problems with crashing every time Open Ears tried to start listening for speech recognition.</p>
+<p>The crash seems to happen once the device calls &#8211; (void)pocketsphinxDidStartListening; but it doesn&#8217;t seem to get any audio input.</p>
+<p>Here is the output of _pocketsphinxController.verbosePocketSphinx = TRUE;</p>
+<p><code><br />
+INFO: cmd_ln.c(706): Parsing command line:<br />
+\<br />
+	-lm /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/Documents/OpenEarsDynamicGrammar.DMP \<br />
+	-dict /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/Documents/OpenEarsDynamicGrammar.dic \<br />
+	-hmm /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/test.app \<br />
+	-lw 6.500000 \<br />
+	-maxhmmpf 3000 \<br />
+	-samprate 16000 </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-alpha		0.97		9.700000e-01<br />
+-argfile<br />
+-ascale		20.0		2.000000e+01<br />
+-aw		1		1<br />
+-backtrace	no		no<br />
+-beam		1e-48		1.000000e-48<br />
+-bestpath	yes		yes<br />
+-bestpathlw	9.5		9.500000e+00<br />
+-bghist		no		no<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		8.0<br />
+-compallsen	no		no<br />
+-debug				0<br />
+-dict				/var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/Documents/OpenEarsDynamicGrammar.dic<br />
+-dictcase	no		no<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-ds		1		1<br />
+-fdict<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-featparams<br />
+-fillprob	1e-8		1.000000e-08<br />
+-frate		100		100<br />
+-fsg<br />
+-fsgusealtpron	yes		yes<br />
+-fsgusefiller	yes		yes<br />
+-fwdflat	yes		yes<br />
+-fwdflatbeam	1e-64		1.000000e-64<br />
+-fwdflatefwid	4		4<br />
+-fwdflatlw	8.5		8.500000e+00<br />
+-fwdflatsfwin	25		25<br />
+-fwdflatwbeam	7e-29		7.000000e-29<br />
+-fwdtree	yes		yes<br />
+-hmm				/var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/test.app<br />
+-input_endian	little		little<br />
+-jsgf<br />
+-kdmaxbbi	-1		-1<br />
+-kdmaxdepth	0		0<br />
+-kdtree<br />
+-latsize	5000		5000<br />
+-lda<br />
+-ldadim		0		0<br />
+-lextreedump	0		0<br />
+-lifter		0		0<br />
+-lm				/var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/Documents/OpenEarsDynamicGrammar.DMP<br />
+-lmctl<br />
+-lmname		default		default<br />
+-logbase	1.0001		1.000100e+00<br />
+-logfn<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.333333e+02<br />
+-lpbeam		1e-40		1.000000e-40<br />
+-lponlybeam	7e-29		7.000000e-29<br />
+-lw		6.5		6.500000e+00<br />
+-maxhmmpf	-1		3000<br />
+-maxnewoov	20		20<br />
+-maxwpf		-1		-1<br />
+-mdef<br />
+-mean<br />
+-mfclogdir<br />
+-min_endfr	0		0<br />
+-mixw<br />
+-mixwfloor	0.0000001	1.000000e-07<br />
+-mllr<br />
+-mmap		yes		yes<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		40<br />
+-nwpen		1.0		1.000000e+00<br />
+-pbeam		1e-48		1.000000e-48<br />
+-pip		1.0		1.000000e+00<br />
+-pl_beam	1e-10		1.000000e-10<br />
+-pl_pbeam	1e-5		1.000000e-05<br />
+-pl_window	0		0<br />
+-rawlogdir<br />
+-remove_dc	no		no<br />
+-round_filters	yes		yes<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-sendump<br />
+-senlogdir<br />
+-senmgau<br />
+-silprob	0.005		5.000000e-03<br />
+-smoothspec	no		no<br />
+-svspec<br />
+-tmat<br />
+-tmatfloor	0.0001		1.000000e-04<br />
+-topn		4		4<br />
+-topn_beam	0		0<br />
+-toprule<br />
+-transform	legacy		legacy<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	6.855498e+03<br />
+-usewdphones	no		no<br />
+-uw		1.0		1.000000e+00<br />
+-var<br />
+-varfloor	0.0001		1.000000e-04<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wbeam		7e-29		7.000000e-29<br />
+-wip		0.65		6.500000e-01<br />
+-wlen		0.025625	2.562500e-02</p>
+<p>2012-09-25 15:18:34.827 test[791:907] Pocketsphinx is starting up.<br />
+2012-09-25 15:18:34.861 test[791:907] [NMSP_ERROR] check status Error: 696e6974 init -&gt; line: 318<br />
+INFO: cmd_ln.c(706): Parsing command line:<br />
+\<br />
+	-nfilt 20 \<br />
+	-lowerf 1 \<br />
+	-upperf 4000 \<br />
+	-wlen 0.025 \<br />
+	-transform dct \<br />
+	-round_filters no \<br />
+	-remove_dc yes \<br />
+	-svspec 0-12/13-25/26-38 \<br />
+	-feat 1s_c_d_dd \<br />
+	-agc none \<br />
+	-cmn current \<br />
+	-cmninit 47 \<br />
+	-varnorm no </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-alpha		0.97		9.700000e-01<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		47<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-frate		100		100<br />
+-input_endian	little		little<br />
+-lda<br />
+-ldadim		0		0<br />
+-lifter		0		0<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.000000e+00<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		20<br />
+-remove_dc	no		yes<br />
+-round_filters	yes		no<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-smoothspec	no		no<br />
+-svspec				0-12/13-25/26-38<br />
+-transform	legacy		dct<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	4.000000e+03<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear</p>
+<p>-wlen		0.025625	2.500000e-02</p>
+<p>INFO: acmod.c(250): Parsed model-specific feature parameters from /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/test.app/feat.params<br />
+INFO: feat.c(713): Initializing feature stream to type: '1s_c_d_dd', ceplen=13, CMN='current', VARNORM='no', AGC='none'<br />
+INFO: cmn.c(142): mean[0]= 12.00, mean[1..12]= 0.0<br />
+INFO: acmod.c(171): Using subvector specification 0-12/13-25/26-38<br />
+INFO: mdef.c(517): Reading model definition: /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/test.app/mdef<br />
+INFO: mdef.c(528): Found byte-order mark BMDF, assuming this is a binary mdef file<br />
+INFO: bin_mdef.c(336): Reading binary model definition: /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/test.app/mdef<br />
+INFO: bin_mdef.c(513): 50 CI-phone, 143047 CD-phone, 3 emitstate/phone, 150 CI-sen, 5150 Sen, 27135 Sen-Seq<br />
+INFO: tmat.c(205): Reading HMM transition probability matrices: /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/test.app/transition_matrices<br />
+INFO: acmod.c(125): Attempting to use SCHMM computation module<br />
+INFO: ms_gauden.c(198): Reading mixture gaussian parameter: /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/test.app/means<br />
+INFO: ms_gauden.c(292): 1 codebook, 3 feature, size:<br />
+INFO: ms_gauden.c(294):  256x13<br />
+INFO: ms_gauden.c(294):  256x13<br />
+INFO: ms_gauden.c(294):  256x13<br />
+INFO: ms_gauden.c(198): Reading mixture gaussian parameter: /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/test.app/variances<br />
+INFO: ms_gauden.c(292): 1 codebook, 3 feature, size:<br />
+INFO: ms_gauden.c(294):  256x13<br />
+INFO: ms_gauden.c(294):  256x13<br />
+INFO: ms_gauden.c(294):  256x13<br />
+INFO: ms_gauden.c(354): 0 variance values floored<br />
+INFO: s2_semi_mgau.c(995): Loading senones from dump file /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/test.app/sendump<br />
+INFO: s2_semi_mgau.c(1019): BEGIN FILE FORMAT DESCRIPTION<br />
+INFO: s2_semi_mgau.c(1114): Using memory-mapped I/O for senones<br />
+INFO: s2_semi_mgau.c(1391): Maximum top-N: 4 Top-N beams: 0 0 0<br />
+INFO: dict.c(317): Allocating 4127 * 20 bytes (80 KiB) for word entries<br />
+INFO: dict.c(332): Reading main dictionary: /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/Documents/OpenEarsDynamicGrammar.dic<br />
+INFO: dict.c(211): Allocated 0 KiB for strings, 0 KiB for phones<br />
+INFO: dict.c(335): 20 words read<br />
+INFO: dict.c(341): Reading filler dictionary: /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/test.app/noisedict<br />
+INFO: dict.c(211): Allocated 0 KiB for strings, 0 KiB for phones<br />
+INFO: dict.c(344): 11 words read<br />
+INFO: dict2pid.c(400): Building PID tables for dictionary<br />
+INFO: dict2pid.c(408): Allocating 50^3 * 2 bytes (244 KiB) for word-initial triphones<br />
+INFO: dict2pid.c(135): Allocated 30200 bytes (29 KiB) for word-final triphones<br />
+INFO: dict2pid.c(199): Allocated 30200 bytes (29 KiB) for single-phone word triphones<br />
+INFO: ngram_model_arpa.c(84): No \data\ mark in LM file<br />
+INFO: ngram_model_dmp.c(146): Will use memory-mapped I/O for LM file<br />
+INFO: ngram_model_dmp.c(201): ngrams 1=17, 2=28, 3=26<br />
+INFO: ngram_model_dmp.c(248):       17 = LM.unigrams(+trailer) read<br />
+INFO: ngram_model_dmp.c(298):       28 = LM.bigrams(+trailer) read<br />
+INFO: ngram_model_dmp.c(326):       26 = LM.trigrams read<br />
+INFO: ngram_model_dmp.c(353):        7 = LM.prob2 entries read<br />
+INFO: ngram_model_dmp.c(375):        7 = LM.bo_wt2 entries read<br />
+INFO: ngram_model_dmp.c(398):        3 = LM.prob3 entries read<br />
+INFO: ngram_model_dmp.c(428):        1 = LM.tseg_base entries read<br />
+INFO: ngram_model_dmp.c(486):       17 = ascii word strings read<br />
+INFO: ngram_search_fwdtree.c(99): 13 unique initial diphones<br />
+INFO: ngram_search_fwdtree.c(147): 0 root, 0 non-root channels, 12 single-phone words<br />
+INFO: ngram_search_fwdtree.c(186): Creating search tree<br />
+INFO: ngram_search_fwdtree.c(191): before: 0 root, 0 non-root channels, 12 single-phone words<br />
+INFO: ngram_search_fwdtree.c(326): after: max nonroot chan increased to 185<br />
+INFO: ngram_search_fwdtree.c(338): after: 13 root, 57 non-root channels, 11 single-phone words<br />
+INFO: ngram_search_fwdflat.c(167): fwdflat: min_ef_width = 4, max_sf_win = 25<br />
+makeFullPathname /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/Library/Application Support/vst_dns_cache.dat<br />
+ 2012-09-25 15:18:35.192 test[791:5b03] 15:18:35.192  shm_open failed: "AppleAURemoteIO.i.72497" (23) flags=0x2 errno=2<br />
+2012-09-25 15:18:35.197 test[791:5b03] 15:18:35.193  AURemoteIO::ChangeHardwareFormats: error 3<br />
+2012-09-25 15:18:35.199 test[791:5b03] 15:18:35.200  shm_open failed: "AppleAURemoteIO.i.72497" (23) flags=0x2 errno=2<br />
+2012-09-25 15:18:35.201 test[791:5b03] 15:18:35.201  AURemoteIO::ChangeHardwareFormats: error 3<br />
+2012-09-25 15:18:35.275 test[791:5b03] 15:18:35.275  shm_open failed: "AppleAURemoteIO.i.72497" (23) flags=0x2 errno=2<br />
+2012-09-25 15:18:35.278 test[791:5b03] 15:18:35.278  AURemoteIO::ChangeHardwareFormats: error 3<br />
+2012-09-25 15:18:35.883 test[791:907] Pocketsphinx calibration has started.<br />
+2012-09-25 15:18:38.126 test[791:907] Setting up the continuous recognition loop has failed for some reason, please turn on OPENEARSLOGGING in OpenEarsConfig.h to learn more.<br />
+2012-09-25 15:18:38.129 test[791:907] Pocketsphinx calibration is complete.<br />
+2012-09-25 15:18:38.130 test[791:907] Pocketsphinx is now listening.<br />
+2012-09-25 15:19:20.518 test[791:7103] [NMSP_ERROR] Session idle for too long timer fired, disconnecting.<br />
+</code></p>
+<p>The oddest part of this situation is that iOS5 never caused any issue like this, so I&#8217;m fairly sure it&#8217;s in the upgrade. I&#8217;ve installed the lasted OpenEars framework to be sure, but that hasn&#8217;t had much impact.</p>
+<p>I&#8217;ve searched for the CAListenerProxy errors but now found anything particularly useful.</p>
+<p>Is this a known issue? Any ideas would be appreciated please.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-crashes-every-time-now-ive-upgraded-to-ios6/#post-11286</guid>
+					<title><![CDATA[Reply To: OpenEars crashes every time now I&#039;ve upgraded to iOS6]]></title>
+					<link>/forums/topic/openears-crashes-every-time-now-ive-upgraded-to-ios6/#post-11286</link>
+					<pubDate>Tue, 25 Sep 2012 14:35:50 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, I haven&#8217;t heard of this before but it looks like something is going awry with the audio session. OpenEarsLogging turns on verbosity for the audio session, can you run your test again with [OpenEarsLogging startOpenEarsLogging] running and show me the output? Is there anything special about the app as far as the audio session or other media objects goes?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-crashes-every-time-now-ive-upgraded-to-ios6/#post-11287</guid>
+					<title><![CDATA[Reply To: OpenEars crashes every time now I&#039;ve upgraded to iOS6]]></title>
+					<link>/forums/topic/openears-crashes-every-time-now-ive-upgraded-to-ios6/#post-11287</link>
+					<pubDate>Tue, 25 Sep 2012 14:42:06 +0000</pubDate>
+					<dc:creator>explodingphone</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>There&#8217;s nothing particularly special about the audio session or anything. Nuance Dragon SDK is there to allow for long text entry, but this isn&#8217;t allocated or initialised by the time this crash is happening, and they played together nicely in iOS5.</p>
+<p>Open Ears logging:<br />
+<code><br />
+2012-09-25 15:38:42.943 test[819:907] Starting OpenEars logging for OpenEars version {{{{1.2.2}}}} on device: iPhone running iOS version: 6.000000<br />
+2012-09-25 15:38:42.946 test[819:907] Normalized array contains the following entries:<br />
+(<br />
+    ...<br />
+)<br />
+2012-09-25 15:38:42.952 test[819:907] Starting dynamic language model generation<br />
+2012-09-25 15:38:42.958 test[819:907] Able to open /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/Documents/OpenEarsDynamicGrammar.corpus for reading<br />
+2012-09-25 15:38:42.960 test[819:907] Able to open /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/Documents/OpenEarsDynamicGrammar_pipe.txt for writing<br />
+2012-09-25 15:38:42.962 test[819:907] Starting text2wfreq_impl<br />
+2012-09-25 15:38:42.985 test[819:907] Done with text2wfreq_impl<br />
+2012-09-25 15:38:42.993 test[819:907] Able to open /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/Documents/OpenEarsDynamicGrammar_pipe.txt for reading.<br />
+2012-09-25 15:38:42.997 test[819:907] Able to open /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/Documents/OpenEarsDynamicGrammar.vocab for reading.<br />
+2012-09-25 15:38:43.002 test[819:907] Starting wfreq2vocab<br />
+2012-09-25 15:38:43.007 test[819:907] Done with wfreq2vocab<br />
+2012-09-25 15:38:43.012 test[819:907] Starting text2idngram<br />
+2012-09-25 15:38:43.034 test[819:907] Done with text2idngram<br />
+2012-09-25 15:38:43.039 test[819:907] Starting idngram2lm</p>
+<p>2012-09-25 15:38:43.059 test[819:907] Done with idngram2lm<br />
+2012-09-25 15:38:43.060 test[819:907] Starting sphinx_lm_convert<br />
+2012-09-25 15:38:43.064 test[819:907] Finishing sphinx_lm_convert<br />
+2012-09-25 15:38:43.070 test[819:907] Done creating language model with CMUCLMTK in 0.116787 seconds.<br />
+2012-09-25 15:38:43.367 test[819:907] I'm done running performDictionaryLookup and it took 0.193136 seconds<br />
+2012-09-25 15:38:43.375 test[819:907] I'm done running dynamic language model generation and it took 370276723.375013 seconds<br />
+2012-09-25 15:38:46.053 test[819:907] A sample rate was requested that isn't one of the two supported values of 16000 or 8000 so we will use the default of 16000.<br />
+2012-09-25 15:38:46.057 test[819:907] The audio session has never been initialized so we will do that now.<br />
+2012-09-25 15:38:46.058 test[819:907] Checking and resetting all audio session settings.<br />
+2012-09-25 15:38:46.060 test[819:907] audioCategory is incorrect, we will change it.<br />
+2012-09-25 15:38:46.061 test[819:907] audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.<br />
+2012-09-25 15:38:46.063 test[819:907] bluetoothInput is incorrect, we will change it.<br />
+2012-09-25 15:38:46.064 test[819:907] bluetooth input is now on the correct setting of 1.<br />
+2012-09-25 15:38:46.065 test[819:907] categoryDefaultToSpeaker is incorrect, we will change it.<br />
+2012-09-25 15:38:46.067 test[819:907] CategoryDefaultToSpeaker is now on the correct setting of 1.<br />
+2012-09-25 15:38:46.068 test[819:907] preferredBufferSize is incorrect, we will change it.<br />
+2012-09-25 15:38:46.069 test[819:907] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2012-09-25 15:38:46.070 test[819:907] preferredSampleRateCheck is incorrect, we will change it.<br />
+2012-09-25 15:38:46.072 test[819:907] preferred hardware sample rate is now on the correct setting of 16000.000000.<br />
+2012-09-25 15:38:46.139 test[819:907] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2012-09-25 15:38:46.140 test[819:907] Exiting startAudioSession.<br />
+2012-09-25 15:38:46.143 test[819:6607] Recognition loop has started<br />
+INFO: cmd_ln.c(706): Parsing command line:<br />
+\<br />
+	-lm /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/Documents/OpenEarsDynamicGrammar.DMP \<br />
+	-dict /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/Documents/OpenEarsDynamicGrammar.dic \<br />
+	-hmm /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/test.app \<br />
+	-lw 6.500000 \<br />
+	-maxhmmpf 3000 \<br />
+	-samprate 16000 </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-alpha		0.97		9.700000e-01<br />
+-argfile<br />
+-ascale		20.0		2.000000e+01<br />
+-aw		1		1<br />
+-backtrace	no		no<br />
+-beam		1e-48		1.000000e-48<br />
+-bestpath	yes		yes<br />
+-bestpathlw	9.5		9.500000e+00<br />
+-bghist		no		no<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		8.0<br />
+-compallsen	no		no<br />
+-debug				0<br />
+-dict				/var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/Documents/OpenEarsDynamicGrammar.dic<br />
+-dictcase	no		no<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-ds		1		1<br />
+-fdict<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-featparams<br />
+-fillprob	1e-8		1.000000e-08<br />
+-frate		100		100<br />
+-fsg<br />
+-fsgusealtpron	yes		yes<br />
+-fsgusefiller	yes		yes<br />
+-fwdflat	yes		yes<br />
+-fwdflatbeam	1e-64		1.000000e-64<br />
+-fwdflatefwid	4		4<br />
+-fwdflatlw	8.5		8.500000e+00<br />
+-fwdflatsfwin	25		25<br />
+-fwdflatwbeam	7e-29		7.000000e-29<br />
+-fwdtree	yes		yes<br />
+-hmm				/var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/test.app<br />
+-input_endian	little		little<br />
+-jsgf<br />
+-kdmaxbbi	-1		-1<br />
+-kdmaxdepth	0		0<br />
+-kdtree<br />
+-latsize	5000		5000<br />
+-lda<br />
+-ldadim		0		0<br />
+-lextreedump	0		0<br />
+-lifter		0		0<br />
+-lm				/var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/Documents/OpenEarsDynamicGrammar.DMP<br />
+-lmctl<br />
+-lmname		default		default<br />
+-logbase	1.0001		1.000100e+00<br />
+-logfn<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.333333e+02<br />
+-lpbeam		1e-40		1.000000e-40<br />
+-lponlybeam	7e-29		7.000000e-29<br />
+-lw		6.5		6.500000e+00<br />
+-maxhmmpf	-1		3000<br />
+-maxnewoov	20		20<br />
+-maxwpf		-1		-1<br />
+-mdef<br />
+-mean<br />
+-mfclogdir<br />
+-min_endfr	0		0<br />
+-mixw<br />
+-mixwfloor	0.0000001	1.000000e-07<br />
+-mllr<br />
+-mmap		yes		yes<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		40<br />
+-nwpen		1.0		1.000000e+00<br />
+-pbeam		1e-48		1.000000e-48<br />
+-pip		1.0		1.000000e+00<br />
+-pl_beam	1e-10		1.000000e-10<br />
+-pl_pbeam	1e-5		1.000000e-05<br />
+-pl_window	0		0<br />
+-rawlogdir<br />
+-remove_dc	no		no<br />
+-round_filters	yes		yes<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-sendump<br />
+-senlogdir<br />
+-senmgau<br />
+-silprob	0.005		5.000000e-03<br />
+-smoothspec	no		no<br />
+-svspec<br />
+-tmat<br />
+-tmatfloor	0.0001		1.000000e-04<br />
+-topn		4		4<br />
+-topn_beam	0		0<br />
+-toprule<br />
+-transform	legacy		legacy<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	6.855498e+03<br />
+-usewdphones	no		no<br />
+-uw		1.0		1.000000e+00<br />
+-var<br />
+-varfloor	0.0001		1.000000e-04<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wbeam		7e-29		7.000000e-29<br />
+-wip		0.65		6.500000e-01<br />
+-wlen		0.025625	2.562500e-02</p>
+<p>2012-09-25 15:38:46.156 test[819:907] Pocketsphinx is starting up.<br />
+2012-09-25 15:38:46.194 test[819:907] [NMSP_ERROR] check status Error: 696e6974 init -&gt; line: 318<br />
+INFO: cmd_ln.c(706): Parsing command line:<br />
+\<br />
+	-nfilt 20 \<br />
+	-lowerf 1 \<br />
+	-upperf 4000 \<br />
+	-wlen 0.025 \<br />
+	-transform dct \<br />
+	-round_filters no \<br />
+	-remove_dc yes \<br />
+	-svspec 0-12/13-25/26-38 \<br />
+	-feat 1s_c_d_dd \<br />
+	-agc none \<br />
+	-cmn current \<br />
+	-cmninit 47 \<br />
+	-varnorm no </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-alpha		0.97		9.700000e-01<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		47<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-frate		100		100<br />
+-input_endian	little		little<br />
+-lda<br />
+-ldadim		0		0<br />
+-lifter		0		0<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.000000e+00<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		20<br />
+-remove_dc	no		yes<br />
+-round_filters	yes		no<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-smoothspec	no		no<br />
+-svspec				0-12/13-25/26-38<br />
+-transform	legacy		dct<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	4.000000e+03<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wlen		0.025625	2.500000e-02</p>
+<p>INFO: acmod.c(250): Parsed model-specific feature parameters from /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/test.app/feat.params<br />
+INFO: feat.c(713): Initializing feature stream to type: '1s_c_d_dd', ceplen=13, CMN='current', VARNORM='no', AGC='none'<br />
+INFO: cmn.c(142): mean[0]= 12.00, mean[1..12]= 0.0<br />
+INFO: acmod.c(171): Using subvector specification 0-12/13-25/26-38<br />
+INFO: mdef.c(517): Reading model definition: /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/test.app/mdef<br />
+INFO: mdef.c(528): Found byte-order mark BMDF, assuming this is a binary mdef file<br />
+INFO: bin_mdef.c(336): Reading binary model definition: /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/test.app/mdef<br />
+INFO: bin_mdef.c(513): 50 CI-phone, 143047 CD-phone, 3 emitstate/phone, 150 CI-sen, 5150 Sen, 27135 Sen-Seq<br />
+INFO: tmat.c(205): Reading HMM transition probability matrices: /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/test.app/transition_matrices<br />
+INFO: acmod.c(125): Attempting to use SCHMM computation module<br />
+INFO: ms_gauden.c(198): Reading mixture gaussian parameter: /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/test.app/means<br />
+INFO: ms_gauden.c(292): 1 codebook, 3 feature, size:<br />
+INFO: ms_gauden.c(294):  256x13<br />
+INFO: ms_gauden.c(294):  256x13<br />
+INFO: ms_gauden.c(294):  256x13<br />
+INFO: ms_gauden.c(198): Reading mixture gaussian parameter: /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/test.app/variances<br />
+INFO: ms_gauden.c(292): 1 codebook, 3 feature, size:<br />
+INFO: ms_gauden.c(294):  256x13<br />
+INFO: ms_gauden.c(294):  256x13<br />
+INFO: ms_gauden.c(294):  256x13<br />
+INFO: ms_gauden.c(354): 0 variance values floored<br />
+INFO: s2_semi_mgau.c(995): Loading senones from dump file /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/test.app/sendump<br />
+INFO: s2_semi_mgau.c(1019): BEGIN FILE FORMAT DESCRIPTION<br />
+INFO: s2_semi_mgau.c(1114): Using memory-mapped I/O for senones<br />
+INFO: s2_semi_mgau.c(1391): Maximum top-N: 4 Top-N beams: 0 0 0<br />
+INFO: dict.c(317): Allocating 4127 * 20 bytes (80 KiB) for word entries<br />
+INFO: dict.c(332): Reading main dictionary: /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/Documents/OpenEarsDynamicGrammar.dic<br />
+INFO: dict.c(211): Allocated 0 KiB for strings, 0 KiB for phones<br />
+INFO: dict.c(335): 20 words read<br />
+INFO: dict.c(341): Reading filler dictionary: /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/test.app/noisedict<br />
+INFO: dict.c(211): Allocated 0 KiB for strings, 0 KiB for phones<br />
+INFO: dict.c(344): 11 words read<br />
+INFO: dict2pid.c(400): Building PID tables for dictionary<br />
+INFO: dict2pid.c(408): Allocating 50^3 * 2 bytes (244 KiB) for word-initial triphones<br />
+makeFullPathname /var/mobile/Applications/3EBCB88B-8610-4F6B-ACD0-016FB0B8024A/Library/Application Support/vst_dns_cache.dat<br />
+ INFO: dict2pid.c(135): Allocated 30200 bytes (29 KiB) for word-final triphones<br />
+INFO: dict2pid.c(199): Allocated 30200 bytes (29 KiB) for single-phone word triphones<br />
+INFO: ngram_model_arpa.c(84): No \data\ mark in LM file<br />
+INFO: ngram_model_dmp.c(146): Will use memory-mapped I/O for LM file<br />
+INFO: ngram_model_dmp.c(201): ngrams 1=17, 2=28, 3=26<br />
+INFO: ngram_model_dmp.c(248):       17 = LM.unigrams(+trailer) read<br />
+INFO: ngram_model_dmp.c(298):       28 = LM.bigrams(+trailer) read<br />
+INFO: ngram_model_dmp.c(326):       26 = LM.trigrams read<br />
+INFO: ngram_model_dmp.c(353):        7 = LM.prob2 entries read<br />
+INFO: ngram_model_dmp.c(375):        7 = LM.bo_wt2 entries read<br />
+INFO: ngram_model_dmp.c(398):        3 = LM.prob3 entries read<br />
+INFO: ngram_model_dmp.c(428):        1 = LM.tseg_base entries read<br />
+INFO: ngram_model_dmp.c(486):       17 = ascii word strings read<br />
+INFO: ngram_search_fwdtree.c(99): 13 unique initial diphones<br />
+INFO: ngram_search_fwdtree.c(147): 0 root, 0 non-root channels, 12 single-phone words<br />
+INFO: ngram_search_fwdtree.c(186): Creating search tree<br />
+INFO: ngram_search_fwdtree.c(191): before: 0 root, 0 non-root channels, 12 single-phone words<br />
+INFO: ngram_search_fwdtree.c(326): after: max nonroot chan increased to 185<br />
+INFO: ngram_search_fwdtree.c(338): after: 13 root, 57 non-root channels, 11 single-phone words<br />
+INFO: ngram_search_fwdflat.c(167): fwdflat: min_ef_width = 4, max_sf_win = 25<br />
+2012-09-25 15:38:46.385 test[819:6607] Starting openAudioDevice on the device.<br />
+2012-09-25 15:38:46.388 test[819:6607] Audio unit wrapper successfully created.<br />
+2012-09-25 15:38:46.407 test[819:907] Audio route has changed for the following reason:<br />
+2012-09-25 15:38:46.408 test[819:907] There has been a change of category<br />
+2012-09-25 15:38:46.409 test[819:907] The previous audio route was SpeakerAndMicrophone<br />
+2012-09-25 15:38:46.535 test[819:907] This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is Speaker<br />
+2012-09-25 15:38:46.536 test[819:907] Audio route has changed for the following reason:<br />
+2012-09-25 15:38:46.541 test[819:907] There has been a change of category<br />
+2012-09-25 15:38:46.542 test[819:6607] Set audio route to Speaker<br />
+2012-09-25 15:38:46.542 test[819:907] The previous audio route was MicrophoneBuiltIn<br />
+2012-09-25 15:38:46.544 test[819:6607] Checking and resetting all audio session settings.<br />
+2012-09-25 15:38:46.545 test[819:907] This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is Speaker<br />
+2012-09-25 15:38:46.546 test[819:6607] audioCategory is incorrect, we will change it.<br />
+2012-09-25 15:38:46.782 test[819:6607] audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.<br />
+2012-09-25 15:38:46.786 test[819:6607] bluetoothInput is incorrect, we will change it.<br />
+2012-09-25 15:38:46.791 test[819:5c03] 15:38:46.792  shm_open failed: "AppleAURemoteIO.i.724ba" (23) flags=0x2 errno=2<br />
+2012-09-25 15:38:46.795 test[819:5c03] 15:38:46.795  AURemoteIO::ChangeHardwareFormats: error 3<br />
+2012-09-25 15:38:46.796 test[819:5c03] 15:38:46.797  shm_open failed: "AppleAURemoteIO.i.724ba" (23) flags=0x2 errno=2<br />
+2012-09-25 15:38:46.797 test[819:5c03] 15:38:46.798  AURemoteIO::ChangeHardwareFormats: error 3<br />
+2012-09-25 15:38:46.805 test[819:6607] bluetooth input is now on the correct setting of 1.<br />
+2012-09-25 15:38:46.808 test[819:6607] categoryDefaultToSpeaker is incorrect, we will change it.<br />
+2012-09-25 15:38:46.808 test[819:907] Audio route has changed for the following reason:<br />
+2012-09-25 15:38:46.810 test[819:907] There has been a change of category<br />
+2012-09-25 15:38:46.811 test[819:907] The previous audio route was Speaker<br />
+2012-09-25 15:38:46.893 test[819:6607] CategoryDefaultToSpeaker is now on the correct setting of 1.<br />
+2012-09-25 15:38:46.895 test[819:6607] preferredBufferSize is correct, we will leave it as it is.<br />
+2012-09-25 15:38:46.897 test[819:6607] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2012-09-25 15:38:46.896 test[819:5c03] 15:38:46.896  shm_open failed: "AppleAURemoteIO.i.724ba" (23) flags=0x2 errno=2<br />
+2012-09-25 15:38:46.898 test[819:6607] Setting the variables for the device and starting it.<br />
+2012-09-25 15:38:46.900 test[819:6607] Looping through ringbuffer sections and pre-allocating them.<br />
+2012-09-25 15:38:46.895 test[819:907] This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is SpeakerAndMicrophone<br />
+2012-09-25 15:38:46.899 test[819:5c03] 15:38:46.899  AURemoteIO::ChangeHardwareFormats: error 3<br />
+2012-09-25 15:38:46.907 test[819:907] Audio route has changed for the following reason:<br />
+2012-09-25 15:38:46.908 test[819:907] There has been a change of category<br />
+2012-09-25 15:38:46.909 test[819:907] The previous audio route was ReceiverAndMicrophone<br />
+2012-09-25 15:38:47.497 test[819:6607] Started audio output unit.<br />
+2012-09-25 15:38:47.499 test[819:907] This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is SpeakerAndMicrophone<br />
+2012-09-25 15:38:47.500 test[819:6607] Calibration has started<br />
+2012-09-25 15:38:47.500 test[819:907] Pocketsphinx calibration has started.<br />
+2012-09-25 15:38:47.624 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:47.752 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:47.880 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:48.008 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:48.136 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:48.264 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:48.392 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:48.520 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:48.648 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:48.776 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:48.904 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:49.032 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:49.160 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:49.288 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:49.416 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:49.544 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:49.672 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:49.744 test[819:6607] cont_ad_calib failed<br />
+2012-09-25 15:38:49.746 test[819:6607] Calibration has completed<br />
+2012-09-25 15:38:49.746 test[819:907] Setting up the continuous recognition loop has failed for some reason, please turn on OPENEARSLOGGING in OpenEarsConfig.h to learn more.<br />
+2012-09-25 15:38:49.748 test[819:907] Pocketsphinx calibration is complete.<br />
+2012-09-25 15:38:49.749 test[819:6607] Project has these words in its dictionary:<br />
+...</p>
+<p>2012-09-25 15:38:49.750 test[819:6607] Listening.<br />
+2012-09-25 15:38:49.751 test[819:907] Pocketsphinx is now listening.<br />
+2012-09-25 15:38:49.800 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:49.928 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:50.056 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:50.184 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:50.312 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:50.440 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:50.568 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:50.696 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:50.824 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:50.952 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:51.080 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:51.208 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:51.336 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:51.464 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:51.592 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:51.720 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:51.848 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:51.976 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:52.104 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:52.232 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:52.360 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:52.488 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:52.616 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:52.744 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:52.872 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:53.000 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:53.128 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:53.256 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:53.384 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:53.512 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:53.640 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:53.768 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:53.896 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:54.024 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:54.152 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:54.280 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:54.408 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:54.536 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:54.664 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:54.792 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:54.920 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:55.048 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:55.176 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:55.304 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:55.432 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:55.560 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:55.688 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:55.816 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:55.944 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:56.072 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:56.200 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:56.328 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:56.456 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:56.584 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:56.712 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:56.840 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:56.968 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:57.096 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:57.224 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:57.352 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:57.480 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:57.608 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2012-09-25 15:38:57.736 test[819:8703] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+...<br />
+</code></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-crashes-every-time-now-ive-upgraded-to-ios6/#post-11288</guid>
+					<title><![CDATA[Reply To: OpenEars crashes every time now I&#039;ve upgraded to iOS6]]></title>
+					<link>/forums/topic/openears-crashes-every-time-now-ive-upgraded-to-ios6/#post-11288</link>
+					<pubDate>Tue, 25 Sep 2012 14:46:54 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Which iPhone?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-crashes-every-time-now-ive-upgraded-to-ios6/#post-11289</guid>
+					<title><![CDATA[Reply To: OpenEars crashes every time now I&#039;ve upgraded to iOS6]]></title>
+					<link>/forums/topic/openears-crashes-every-time-now-ive-upgraded-to-ios6/#post-11289</link>
+					<pubDate>Tue, 25 Sep 2012 14:48:15 +0000</pubDate>
+					<dc:creator>explodingphone</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This is on an iPhone 4S with iOS6.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-crashes-every-time-now-ive-upgraded-to-ios6/#post-11290</guid>
+					<title><![CDATA[Reply To: OpenEars crashes every time now I&#039;ve upgraded to iOS6]]></title>
+					<link>/forums/topic/openears-crashes-every-time-now-ive-upgraded-to-ios6/#post-11290</link>
+					<pubDate>Tue, 25 Sep 2012 14:49:58 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, I&#8217;ll check it out and get back to you.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-crashes-every-time-now-ive-upgraded-to-ios6/#post-11291</guid>
+					<title><![CDATA[Reply To: OpenEars crashes every time now I&#039;ve upgraded to iOS6]]></title>
+					<link>/forums/topic/openears-crashes-every-time-now-ive-upgraded-to-ios6/#post-11291</link>
+					<pubDate>Tue, 25 Sep 2012 14:53:30 +0000</pubDate>
+					<dc:creator>explodingphone</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Cheers</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-crashes-every-time-now-ive-upgraded-to-ios6/#post-11292</guid>
+					<title><![CDATA[Reply To: OpenEars crashes every time now I&#039;ve upgraded to iOS6]]></title>
+					<link>/forums/topic/openears-crashes-every-time-now-ive-upgraded-to-ios6/#post-11292</link>
+					<pubDate>Tue, 25 Sep 2012 15:57:54 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Do you see this on the same device and OS with the sample app?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-crashes-every-time-now-ive-upgraded-to-ios6/#post-11293</guid>
+					<title><![CDATA[Reply To: OpenEars crashes every time now I&#039;ve upgraded to iOS6]]></title>
+					<link>/forums/topic/openears-crashes-every-time-now-ive-upgraded-to-ios6/#post-11293</link>
+					<pubDate>Tue, 25 Sep 2012 16:05:13 +0000</pubDate>
+					<dc:creator>explodingphone</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>No, the sample app seems to run fine, which seems to indicate that it&#8217;s not a library issue. It&#8217;s strange that the app doesn&#8217;t seem to be able to get audio though.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-crashes-every-time-now-ive-upgraded-to-ios6/#post-11294</guid>
+					<title><![CDATA[Reply To: OpenEars crashes every time now I&#039;ve upgraded to iOS6]]></title>
+					<link>/forums/topic/openears-crashes-every-time-now-ive-upgraded-to-ios6/#post-11294</link>
+					<pubDate>Tue, 25 Sep 2012 16:41:17 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, since that means that it is something relating to code that I don&#8217;t have access to, let me explain what is weird in the logging and maybe it will point you towards what to check out.</p>
+<p>Early on in the app session your category is set (correctly) the first time and we&#8217;d normally expect it to remain that way for the rest of the app session unless it is overridden by a call to audiosession or AVAudioSession or the use of a media object like AVPlayer or MPMoviePlayerController:</p>
+<p><b>2012-09-25 15:38:46.061 test[819:907] audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.</b></p>
+<p>Then some very normal stuff is done to bluetooth, default to speaker, etc, with no errors returned. At this point the audio session settings look very normal and if an attempt were made here to start the audio unit I would expect it to work.</p>
+<p>Then the device has some kind of DNS library issue which might be unrelated:</p>
+<p><b>2012-09-25 15:38:46.194 test[819:907] [NMSP_ERROR] check status Error: 696e6974 init -> line: 318</b></p>
+<p>However, if this is an automatic function of the Nuance SDK it is a sign that its objects might be instantiated at this point.</p>
+<p>PocketsphinxController continues starting up and gets as far as it can without any errors before it needs to start the audio unit, which is when things get weird:<br />
+<b><br />
+2012-09-25 15:38:46.407 test[819:907] Audio route has changed for the following reason:<br />
+2012-09-25 15:38:46.408 test[819:907] There has been a change of category<br />
+2012-09-25 15:38:46.409 test[819:907] The previous audio route was SpeakerAndMicrophone<br />
+2012-09-25 15:38:46.535 test[819:907] This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is Speaker<br />
+2012-09-25 15:38:46.536 test[819:907] Audio route has changed for the following reason:<br />
+2012-09-25 15:38:46.541 test[819:907] There has been a change of category<br />
+2012-09-25 15:38:46.542 test[819:6607] Set audio route to Speaker<br />
+2012-09-25 15:38:46.542 test[819:907] The previous audio route was MicrophoneBuiltIn<br />
+2012-09-25 15:38:46.544 test[819:6607] Checking and resetting all audio session settings.<br />
+2012-09-25 15:38:46.545 test[819:907] This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is Speaker<br />
+2012-09-25 15:38:46.546 test[819:6607] audioCategory is incorrect, we will change it.<br />
+2012-09-25 15:38:46.782 test[819:6607] audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.<br />
+2012-09-25 15:38:46.786 test[819:6607] bluetoothInput is incorrect, we will change it.<br />
+2012-09-25 15:38:46.791 test[819:5c03] 15:38:46.792 shm_open failed: &#8220;AppleAURemoteIO.i.724ba&#8221; (23) flags=0x2 errno=2<br />
+2012-09-25 15:38:46.795 test[819:5c03] 15:38:46.795 AURemoteIO::ChangeHardwareFormats: error 3<br />
+2012-09-25 15:38:46.796 test[819:5c03] 15:38:46.797 shm_open failed: &#8220;AppleAURemoteIO.i.724ba&#8221; (23) flags=0x2 errno=2<br />
+2012-09-25 15:38:46.797 test[819:5c03] 15:38:46.798 AURemoteIO::ChangeHardwareFormats: error 3<br />
+2012-09-25 15:38:46.805 test[819:6607] bluetooth input is now on the correct setting of 1.<br />
+2012-09-25 15:38:46.808 test[819:6607] categoryDefaultToSpeaker is incorrect, we will change it.<br />
+2012-09-25 15:38:46.808 test[819:907] Audio route has changed for the following reason:<br />
+2012-09-25 15:38:46.810 test[819:907] There has been a change of category<br />
+2012-09-25 15:38:46.811 test[819:907] The previous audio route was Speaker<br />
+2012-09-25 15:38:46.893 test[819:6607] CategoryDefaultToSpeaker is now on the correct setting of 1.<br />
+2012-09-25 15:38:46.895 test[819:6607] preferredBufferSize is correct, we will leave it as it is.<br />
+2012-09-25 15:38:46.897 test[819:6607] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2012-09-25 15:38:46.896 test[819:5c03] 15:38:46.896 shm_open failed: &#8220;AppleAURemoteIO.i.724ba&#8221; (23) flags=0x2 errno=2<br />
+2012-09-25 15:38:46.898 test[819:6607] Setting the variables for the device and starting it.<br />
+2012-09-25 15:38:46.900 test[819:6607] Looping through ringbuffer sections and pre-allocating them.<br />
+2012-09-25 15:38:46.895 test[819:907] This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is SpeakerAndMicrophone<br />
+2012-09-25 15:38:46.899 test[819:5c03] 15:38:46.899 AURemoteIO::ChangeHardwareFormats: error 3<br />
+2012-09-25 15:38:46.907 test[819:907] Audio route has changed for the following reason:<br />
+2012-09-25 15:38:46.908 test[819:907] There has been a change of category<br />
+2012-09-25 15:38:46.909 test[819:907] The previous audio route was ReceiverAndMicrophone<br />
+2012-09-25 15:38:47.497 test[819:6607] Started audio output unit.<br />
+2012-09-25 15:38:47.499 test[819:907] This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is SpeakerAndMicrophone<br />
+</b><br />
+I count 4 category changes and 4 route changes resulting from it, all in approximately one second. That seems like something trying to override the OpenEars settings in an automatic way.  You can see that at the moment that the audio unit begins, it isn&#8217;t set to a category which has a recording input, because the next thing that happens is that OpenEarsLogging announces that there was a route change to a route that contains a recording input (the last line above). The fact that the audio unit is trying to start at a time in which it seems like it has a mic input, then it disappears while the unit starts, is probably the origin of the crash.</p>
+<p>Are you completely positive that there is nothing going on with your Nuance SDK at the time that PocketsphinxController has started? Because that would make a lot of sense as the source of objects which are listening for audio session changes and automatically reacting to them. Otherwise, do a case-insensitive search of your app for &#8220;audiosession&#8221; and see if there are any AudioSession or AVAudioSession calls made by the app. You might also want to look for AVPlayer, AVAudioRecorder and/or MPMovieController objects (or other objects that assert their own audio session settings) that are instantiated at that time. I will keep looking into it in the meantime so please let me know if you find a cause in your app.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

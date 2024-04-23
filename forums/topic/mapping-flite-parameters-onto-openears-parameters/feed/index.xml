@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Mapping flite parameters onto openears parameters &#8211; Politepix</title>
+		<atom:link href="/forums/topic/mapping-flite-parameters-onto-openears-parameters/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/mapping-flite-parameters-onto-openears-parameters/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:54:47 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/mapping-flite-parameters-onto-openears-parameters/#post-1017054</guid>
+					<title><![CDATA[Mapping flite parameters onto openears parameters]]></title>
+					<link>/forums/topic/mapping-flite-parameters-onto-openears-parameters/#post-1017054</link>
+					<pubDate>Wed, 24 Apr 2013 17:29:42 +0000</pubDate>
+					<dc:creator>mhornyak</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>I&#8217;m moving an application that was using Flite directly to OpenEars.  I want to know what the mappings are between the floats from 0..2 that OpenEars uses and the parameters that Flite uses for these values:</p>
+<p>target_mean -&gt; int_f0_target_mean</p>
+<p>target_stddev -&gt; int_f0_target_stddev</p>
+<p>duration_stretch -&gt; duration_stretch</p>
+<p>Thanks,</p>
+<p>Matt</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/mapping-flite-parameters-onto-openears-parameters/#post-1017055</guid>
+					<title><![CDATA[Reply To: Mapping flite parameters onto openears parameters]]></title>
+					<link>/forums/topic/mapping-flite-parameters-onto-openears-parameters/#post-1017055</link>
+					<pubDate>Wed, 24 Apr 2013 17:50:03 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Matt,</p>
+<p>Briefly, they are the float multiplication factor (0.1<->2.0) passed to FliteController as the target_mean/target_stddev/duration_stretch properties (or the default of 1.0 if those properties of FliteController are not set), multiplied by the default int_f0_target_mean/int_f0_target_stddev/duration_stretch that is stored in the voice framework. Those defaults are different in each voice.</p>
+<p>An example: You set FliteController.target_mean to 1.1 and you are using the voice Slt.framework which contains a default int_f0_target_mean of 170.0, so FliteController ends up sending an int_f0_target_mean of 187. i.e. it tracks 1:1 but rather than setting it directly, you manipulate the encapsulated voice default values by use of the +/- 1.0 multiplier. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

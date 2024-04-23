@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>followed tutorial, not working for me &#8211; Politepix</title>
+		<atom:link href="/forums/topic/followed-tutorial-not-working-for-me/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/followed-tutorial-not-working-for-me/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:56:53 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/followed-tutorial-not-working-for-me/#post-1022311</guid>
+					<title><![CDATA[followed tutorial, not working for me]]></title>
+					<link>/forums/topic/followed-tutorial-not-working-for-me/#post-1022311</link>
+					<pubDate>Wed, 20 Aug 2014 15:57:26 +0000</pubDate>
+					<dc:creator>JonLocate</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I need to implement voice recognition in my application, so I decided to try the OpenEars SDK. I&#8217;ve followed the tutorial on your website exactly but it is not working for me. I get no errors and the OpenEarsLogging is not showing any errors, it gets as far as creating the language model but then does not do anything else. I set the openEarsEventObserverDelegate to self and then startListeningWithLanguageModel, but nothing happens. I was expecting some of the logs in the delegate methods to log but they don&#8217;t.</p>
+<p>Heres is my code</p>
+<p>can be seen at stack overflow if you&#8217;d like to see the code better formatted</p>
+<p><a href="http://stackoverflow.com/questions/25408087/ios-openears-tutorial-not-working-for-me" rel="nofollow">http://stackoverflow.com/questions/25408087/ios-openears-tutorial-not-working-for-me</a></p>
+<p>.h </p>
+<p>#import &lt;UIKit/UIKit.h&gt;<br />
+#import &lt;OpenEars/PocketsphinxController.h&gt;<br />
+#import &lt;OpenEars/AcousticModel.h&gt;<br />
+#import &lt;OpenEars/OpenEarsEventsObserver.h&gt;</p>
+<p>@interface SpeechViewController : UIViewController &lt;OpenEarsEventsObserverDelegate&gt;</p>
+<p>@property (strong, nonatomic) PocketsphinxController *pocketSphinxController;<br />
+@property (strong, nonatomic) OpenEarsEventsObserver *openEarsEventObserver;</p>
+<p>@property (strong, nonatomic) IBOutlet UILabel *resultsLabel;</p>
+<p>&#8211; (IBAction)talkButton:(id)sender;</p>
+<p>@end</p>
+<p>.m</p>
+<p>#import &#8220;SpeechViewController.h&#8221;<br />
+#import &lt;OpenEars/LanguageModelGenerator.h&gt;<br />
+#import &lt;OpenEars/OpenEarsLogging.h&gt;</p>
+<p>@interface SpeechViewController ()</p>
+<p>@end</p>
+<p>@implementation SpeechViewController</p>
+<p>&#8211; (void)viewDidLoad<br />
+{<br />
+    [super viewDidLoad];<br />
+    // Do any additional setup after loading the view, typically from a nib.</p>
+<p>    [_openEarsEventObserver setDelegate:self];</p>
+<p>    [OpenEarsLogging startOpenEarsLogging];<br />
+}</p>
+<p>&#8211; (void)didReceiveMemoryWarning<br />
+{<br />
+    [super didReceiveMemoryWarning];<br />
+    // Dispose of any resources that can be recreated.<br />
+}</p>
+<p>&#8211; (PocketsphinxController *)pocketSphinxController<br />
+{<br />
+    if (_pocketSphinxController == nil)<br />
+    {<br />
+        _pocketSphinxController = [[PocketsphinxController alloc] init];<br />
+    }</p>
+<p>    return _pocketSphinxController;<br />
+}</p>
+<p>&#8211; (OpenEarsEventsObserver *)openEarsEventObserver<br />
+{<br />
+    if (_openEarsEventObserver == nil)<br />
+    {<br />
+        _openEarsEventObserver = [[OpenEarsEventsObserver alloc] init];<br />
+    }</p>
+<p>    return _openEarsEventObserver;<br />
+}</p>
+<p>&#8211; (IBAction)talkButton:(id)sender<br />
+{</p>
+<p>    LanguageModelGenerator *LangGen = [[LanguageModelGenerator alloc] init];</p>
+<p>    NSArray *words = [NSArray arrayWithObjects:@&#8221;HELLO WORLD&#8221;, @&#8221;HELLO&#8221;, @&#8221;WORLD&#8221;, @&#8221;TEST&#8221;, @&#8221;SPEECH&#8221;, @&#8221;LOCATION&#8221;, nil];<br />
+    NSString *name = @&#8221;LangModelName&#8221;;<br />
+    NSError *err = [LangGen generateLanguageModelFromArray:words withFilesNamed:name forAcousticModelAtPath:[AcousticModel pathToModel:@&#8221;AcousticModelEnglish&#8221;]];</p>
+<p>    NSDictionary *languageGeneratorResults = nil;</p>
+<p>    NSString *lmPath = nil;<br />
+    NSString *dicPath = nil;</p>
+<p>    if ([err code] == noErr)<br />
+    {<br />
+        languageGeneratorResults = [err userInfo];</p>
+<p>        lmPath = [languageGeneratorResults objectForKey:@&#8221;LMPath&#8221;];<br />
+        dicPath = [languageGeneratorResults objectForKey:@&#8221;DictionaryPath&#8221;];<br />
+    }<br />
+    else<br />
+    {<br />
+        NSLog(@&#8221;Error: %@&#8221;, [err localizedDescription]);<br />
+    }</p>
+<p>    // was putting either here or in viewDidLoad<br />
+    //[_openEarsEventObserver setDelegate:self];</p>
+<p>    [_pocketSphinxController startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[AcousticModel pathToModel:@&#8221;AcousticModelEnglish&#8221;] languageModelIsJSGF:NO];</p>
+<p>}</p>
+<p>&#8211; (void)pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID<br />
+{<br />
+    NSLog(@&#8221;The Recieved Hypothesis is %@ with a score of %@ and an ID of %@&#8221;, hypothesis, recognitionScore, utteranceID);</p>
+<p>    [self.resultsLabel setText:hypothesis];<br />
+}</p>
+<p>&#8211; (void)pocketsphinxDidStartCalibration<br />
+{<br />
+    NSLog(@&#8221;Calibration started&#8221;);<br />
+}</p>
+<p>&#8211; (void)pocketsphinxDidCompleteCalibration<br />
+{<br />
+    NSLog(@&#8221;Calibration is complete&#8221;);<br />
+}</p>
+<p>&#8211; (void)pocketsphinxDidStartListening<br />
+{<br />
+    NSLog(@&#8221;Now listening&#8221;);<br />
+}</p>
+<p>&#8211; (void)pocketsphinxDidDetectSpeech<br />
+{<br />
+    NSLog(@&#8221;Detecting speech&#8221;);<br />
+}</p>
+<p>&#8211; (void)pocketsphinxDidDetectFinishedSpeech<br />
+{<br />
+    NSLog(@&#8221;Finished detecting speech&#8221;);<br />
+}</p>
+<p>&#8211; (void)pocketsphinxDidStopListening<br />
+{<br />
+    NSLog(@&#8221;Stopped listening&#8221;);<br />
+}</p>
+<p>&#8211; (void)pocketsphinxDidSuspendRecognition<br />
+{<br />
+    NSLog(@&#8221;Suspended recognition&#8221;);<br />
+}</p>
+<p>&#8211; (void)pocketsphinxDidResumeRecognition<br />
+{<br />
+    NSLog(@&#8221;Resumed recognition&#8221;);<br />
+}</p>
+<p>&#8211; (void)pocketsphinxDidChangeLanguageModelToFile:(NSString *)newLanguageModelPathAsString andDictionary:(NSString *)newDictionaryPathAsString<br />
+{<br />
+    NSLog(@&#8221;Now using following language model: \n%@ and the following dictionary: %@&#8221;, newLanguageModelPathAsString, newDictionaryPathAsString);<br />
+}</p>
+<p>&#8211; (void)pocketSphinxContinuousSetupDidFail<br />
+{<br />
+    NSLog(@&#8221;PocketSphinx has failed :(&#8220;);<br />
+}</p>
+<p>&#8211; (void)testRecognitionCompleted<br />
+{<br />
+    NSLog(@&#8221;A test file submitted for recognition is now complete&#8221;);<br />
+}</p>
+<p>@end</p>
+<p>To my eyes thats exactly the way it&#8217;s laid out in the tutorial. Does anybody have any ideas why this would not work?</p>
+<p>thanks very much!</p>
+<p>logging info</p>
+<p>2014-08-20 16:56:37.625 OpenEarsTest[382:60b] Starting OpenEars logging for OpenEars version 1.7 on 32-bit device: iPad running iOS version: 7.100000<br />
+2014-08-20 16:56:40.468 OpenEarsTest[382:60b] acousticModelPath is /var/mobile/Applications/7E1E39CB-4194-4F73-B3FC-8997C8C161A0/OpenEarsTest.app/AcousticModelEnglish.bundle<br />
+2014-08-20 16:56:40.567 OpenEarsTest[382:60b] Starting dynamic language model generation<br />
+2014-08-20 16:56:40.574 OpenEarsTest[382:60b] Able to open /var/mobile/Applications/7E1E39CB-4194-4F73-B3FC-8997C8C161A0/Library/Caches/LangModelName.corpus for reading<br />
+2014-08-20 16:56:40.576 OpenEarsTest[382:60b] Able to open /var/mobile/Applications/7E1E39CB-4194-4F73-B3FC-8997C8C161A0/Library/Caches/LangModelName_pipe.txt for writing<br />
+2014-08-20 16:56:40.578 OpenEarsTest[382:60b] Starting text2wfreq_impl<br />
+2014-08-20 16:56:40.602 OpenEarsTest[382:60b] Done with text2wfreq_impl<br />
+2014-08-20 16:56:40.604 OpenEarsTest[382:60b] Able to open /var/mobile/Applications/7E1E39CB-4194-4F73-B3FC-8997C8C161A0/Library/Caches/LangModelName_pipe.txt for reading.<br />
+2014-08-20 16:56:40.607 OpenEarsTest[382:60b] Able to open /var/mobile/Applications/7E1E39CB-4194-4F73-B3FC-8997C8C161A0/Library/Caches/LangModelName.vocab for reading.<br />
+2014-08-20 16:56:40.609 OpenEarsTest[382:60b] Starting wfreq2vocab<br />
+2014-08-20 16:56:40.611 OpenEarsTest[382:60b] Done with wfreq2vocab<br />
+2014-08-20 16:56:40.613 OpenEarsTest[382:60b] Starting text2idngram<br />
+2014-08-20 16:56:40.651 OpenEarsTest[382:60b] Done with text2idngram<br />
+2014-08-20 16:56:40.658 OpenEarsTest[382:60b] Starting idngram2lm</p>
+<p>2014-08-20 16:56:40.672 OpenEarsTest[382:60b] Done with idngram2lm<br />
+2014-08-20 16:56:40.673 OpenEarsTest[382:60b] Starting sphinx_lm_convert<br />
+2014-08-20 16:56:40.687 OpenEarsTest[382:60b] Finishing sphinx_lm_convert<br />
+2014-08-20 16:56:40.695 OpenEarsTest[382:60b] Done creating language model with CMUCLMTK in 0.126219 seconds.<br />
+2014-08-20 16:56:40.874 OpenEarsTest[382:60b] I&#8217;m done running performDictionaryLookup and it took 0.148703 seconds<br />
+2014-08-20 16:56:40.882 OpenEarsTest[382:60b] I&#8217;m done running dynamic language model generation and it took 0.411740 seconds</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/followed-tutorial-not-working-for-me/#post-1022314</guid>
+					<title><![CDATA[Reply To: followed tutorial, not working for me]]></title>
+					<link>/forums/topic/followed-tutorial-not-working-for-me/#post-1022314</link>
+					<pubDate>Wed, 20 Aug 2014 17:52:29 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>I&#8217;ll be happy to help you out, just do me a favor and choose a single venue for asking so that I don&#8217;t have doubled work keeping track of both locations.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/followed-tutorial-not-working-for-me/#post-1022316</guid>
+					<title><![CDATA[Reply To: followed tutorial, not working for me]]></title>
+					<link>/forums/topic/followed-tutorial-not-working-for-me/#post-1022316</link>
+					<pubDate>Wed, 20 Aug 2014 22:14:13 +0000</pubDate>
+					<dc:creator>JonLocate</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thank you! I deleted that Stack post.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/followed-tutorial-not-working-for-me/#post-1022320</guid>
+					<title><![CDATA[Reply To: followed tutorial, not working for me]]></title>
+					<link>/forums/topic/followed-tutorial-not-working-for-me/#post-1022320</link>
+					<pubDate>Thu, 21 Aug 2014 06:39:46 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thank you! OK, the first step is to turn on verbosePocketsphinx and show me the output – if there is an issue with language or acoustic model it will be logged there.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/followed-tutorial-not-working-for-me/#post-1022321</guid>
+					<title><![CDATA[Reply To: followed tutorial, not working for me]]></title>
+					<link>/forums/topic/followed-tutorial-not-working-for-me/#post-1022321</link>
+					<pubDate>Thu, 21 Aug 2014 06:53:24 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The other thing is that you&#8217;re referencing the ivars throughout (they aren&#8217;t necessary and are going away in the upcoming tutorial version) but the tutorial always references the properties with self, so I would follow that convention in order to make use of the lazy initializers every time. When you show me the logging, make sure to show the complete logging without removing anything, since it can sometimes seem less important than it is.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/followed-tutorial-not-working-for-me/#post-1022323</guid>
+					<title><![CDATA[Reply To: followed tutorial, not working for me]]></title>
+					<link>/forums/topic/followed-tutorial-not-working-for-me/#post-1022323</link>
+					<pubDate>Thu, 21 Aug 2014 09:13:33 +0000</pubDate>
+					<dc:creator>JonLocate</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>hey Halle, thanks for your replies. I&#8217;ve updated my code a little, to closer match the tutorial. Also I am not sure what you mean by ivars?</p>
+<p>the delegate methods are still in my code but i didn&#8217;t post them just to make the code shorter. also i turned on verbosePocketSphinx (i think) and the logging output is the same as when only using [OpenEarLogging startOpenEarsLogging].</p>
+<p>header file</p>
+<p>#import &lt;UIKit/UIKit.h&gt;<br />
+#import &lt;OpenEars/PocketsphinxController.h&gt;<br />
+#import &lt;OpenEars/AcousticModel.h&gt;<br />
+#import &lt;OpenEars/OpenEarsEventsObserver.h&gt;</p>
+<p>@interface SpeechViewController : UIViewController &lt;OpenEarsEventsObserverDelegate&gt;<br />
+{<br />
+    PocketsphinxController *pocketSphinxController;<br />
+    OpenEarsEventsObserver *openEarsEventObserver;<br />
+}</p>
+<p>@property (strong, nonatomic) PocketsphinxController *pocketSphinxController;<br />
+@property (strong, nonatomic) OpenEarsEventsObserver *openEarsEventObserver;</p>
+<p>@property (strong, nonatomic) IBOutlet UILabel *resultsLabel;</p>
+<p>&#8211; (IBAction)talkButton:(id)sender;</p>
+<p>@end</p>
+<p>implementation</p>
+<p>#import &#8220;SpeechViewController.h&#8221;<br />
+#import &lt;OpenEars/LanguageModelGenerator.h&gt;<br />
+#import &lt;OpenEars/OpenEarsLogging.h&gt;</p>
+<p>@interface SpeechViewController () &lt;OpenEarsEventsObserverDelegate&gt;</p>
+<p>@end</p>
+<p>@implementation SpeechViewController</p>
+<p>@synthesize pocketSphinxController;<br />
+@synthesize openEarsEventObserver;</p>
+<p>&#8211; (void)viewDidLoad<br />
+{<br />
+    [super viewDidLoad];<br />
+	// Do any additional setup after loading the view, typically from a nib.</p>
+<p>    [openEarsEventObserver setDelegate:self];</p>
+<p>    pocketSphinxController.verbosePocketSphinx = true;</p>
+<p>    [OpenEarsLogging startOpenEarsLogging];<br />
+}</p>
+<p>&#8211; (void)didReceiveMemoryWarning<br />
+{<br />
+    [super didReceiveMemoryWarning];<br />
+    // Dispose of any resources that can be recreated.<br />
+}</p>
+<p>&#8211; (PocketsphinxController *)pocketSphinxController<br />
+{<br />
+    if (pocketSphinxController == nil)<br />
+    {<br />
+        pocketSphinxController = [[PocketsphinxController alloc] init];<br />
+    }</p>
+<p>    return pocketSphinxController;<br />
+}</p>
+<p>&#8211; (OpenEarsEventsObserver *)openEarsEventObserver<br />
+{<br />
+    if (openEarsEventObserver == nil)<br />
+    {<br />
+        openEarsEventObserver = [[OpenEarsEventsObserver alloc] init];<br />
+    }</p>
+<p>    return openEarsEventObserver;<br />
+}</p>
+<p>&#8211; (IBAction)talkButton:(id)sender<br />
+{</p>
+<p>    LanguageModelGenerator *LangGen = [[LanguageModelGenerator alloc] init];</p>
+<p>    NSArray *words = [NSArray arrayWithObjects:@&#8221;HELLO WORLD&#8221;, @&#8221;HELLO&#8221;, @&#8221;WORLD&#8221;, @&#8221;TEST&#8221;, @&#8221;SPEECH&#8221;, @&#8221;LOCATION&#8221;, nil];<br />
+    NSString *name = @&#8221;LangModelName&#8221;;<br />
+    NSError *err = [LangGen generateLanguageModelFromArray:words withFilesNamed:name forAcousticModelAtPath:[AcousticModel pathToModel:@&#8221;AcousticModelEnglish&#8221;]];</p>
+<p>    NSDictionary *languageGeneratorResults = nil;</p>
+<p>    NSString *lmPath = nil;<br />
+    NSString *dicPath = nil;</p>
+<p>    if ([err code] == noErr)<br />
+    {<br />
+        languageGeneratorResults = [err userInfo];</p>
+<p>        lmPath = [languageGeneratorResults objectForKey:@&#8221;LMPath&#8221;];<br />
+        dicPath = [languageGeneratorResults objectForKey:@&#8221;DictionaryPath&#8221;];<br />
+    }<br />
+    else<br />
+    {<br />
+        NSLog(@&#8221;Error: %@&#8221;, [err localizedDescription]);<br />
+    }</p>
+<p>    //[openEarsEventObserver setDelegate:self];</p>
+<p>    [pocketSphinxController startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[AcousticModel pathToModel:@&#8221;AcousticModelEnglish&#8221;] languageModelIsJSGF:NO];</p>
+<p>}</p>
+<p>&#8211; (void)pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID<br />
+{<br />
+    NSLog(@&#8221;The Recieved Hypothesis is %@ with a score of %@ and an ID of %@&#8221;, hypothesis, recognitionScore, utteranceID);</p>
+<p>    [self.resultsLabel setText:hypothesis];<br />
+}</p>
+<p>logging</p>
+<p>2014-08-21 10:03:46.900 OpenEarsTest[192:60b] Starting OpenEars logging for OpenEars version 1.7 on 32-bit device: iPad running iOS version: 7.100000<br />
+2014-08-21 10:03:49.715 OpenEarsTest[192:60b] acousticModelPath is /var/mobile/Applications/7E1E39CB-4194-4F73-B3FC-8997C8C161A0/OpenEarsTest.app/AcousticModelEnglish.bundle<br />
+2014-08-21 10:03:49.800 OpenEarsTest[192:60b] Starting dynamic language model generation<br />
+2014-08-21 10:03:49.806 OpenEarsTest[192:60b] Able to open /var/mobile/Applications/7E1E39CB-4194-4F73-B3FC-8997C8C161A0/Library/Caches/LangModelName.corpus for reading<br />
+2014-08-21 10:03:49.809 OpenEarsTest[192:60b] Able to open /var/mobile/Applications/7E1E39CB-4194-4F73-B3FC-8997C8C161A0/Library/Caches/LangModelName_pipe.txt for writing<br />
+2014-08-21 10:03:49.811 OpenEarsTest[192:60b] Starting text2wfreq_impl<br />
+2014-08-21 10:03:49.834 OpenEarsTest[192:60b] Done with text2wfreq_impl<br />
+2014-08-21 10:03:49.836 OpenEarsTest[192:60b] Able to open /var/mobile/Applications/7E1E39CB-4194-4F73-B3FC-8997C8C161A0/Library/Caches/LangModelName_pipe.txt for reading.<br />
+2014-08-21 10:03:49.838 OpenEarsTest[192:60b] Able to open /var/mobile/Applications/7E1E39CB-4194-4F73-B3FC-8997C8C161A0/Library/Caches/LangModelName.vocab for reading.<br />
+2014-08-21 10:03:49.840 OpenEarsTest[192:60b] Starting wfreq2vocab<br />
+2014-08-21 10:03:49.842 OpenEarsTest[192:60b] Done with wfreq2vocab<br />
+2014-08-21 10:03:49.844 OpenEarsTest[192:60b] Starting text2idngram<br />
+2014-08-21 10:03:49.867 OpenEarsTest[192:60b] Done with text2idngram<br />
+2014-08-21 10:03:49.878 OpenEarsTest[192:60b] Starting idngram2lm</p>
+<p>2014-08-21 10:03:49.892 OpenEarsTest[192:60b] Done with idngram2lm<br />
+2014-08-21 10:03:49.894 OpenEarsTest[192:60b] Starting sphinx_lm_convert<br />
+2014-08-21 10:03:49.908 OpenEarsTest[192:60b] Finishing sphinx_lm_convert<br />
+2014-08-21 10:03:49.915 OpenEarsTest[192:60b] Done creating language model with CMUCLMTK in 0.114059 seconds.<br />
+2014-08-21 10:03:50.093 OpenEarsTest[192:60b] I&#8217;m done running performDictionaryLookup and it took 0.147953 seconds<br />
+2014-08-21 10:03:50.101 OpenEarsTest[192:60b] I&#8217;m done running dynamic language model generation and it took 0.384307 seconds</p>
+<p>i doubt it has anything to do with how i imported OpenEars into my project since all the classes and methods are fully visible and showing no errors, but i could be wrong, maybe there is a missing reference to something?</p>
+<p>thanks very much!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/followed-tutorial-not-working-for-me/#post-1022324</guid>
+					<title><![CDATA[Reply To: followed tutorial, not working for me]]></title>
+					<link>/forums/topic/followed-tutorial-not-working-for-me/#post-1022324</link>
+					<pubDate>Thu, 21 Aug 2014 09:33:33 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Quick question –– we could troubleshoot this some more and I&#8217;m sure a straightforward reason will shake out once we get the logging turned on (I&#8217;m almost certain at this point that it is because you&#8217;re referencing the ivars you created with the underscores in front of them –– an ivar is an instance variable of a class and that convention with the underscore is intended to make it clear when an instance variable is being referenced rather than a property, but the tutorial code is designed to only ever reference by class property), but why don&#8217;t you just exactly copy and paste the tutorial code since it is known to work? </p>
+<p>The tutorial is designed to avoid any possible memory management or referencing mistakes that can happen with objects that perform many asynchronous operations with callbacks over their lifetime, and the changes you&#8217;ve made to it aren&#8217;t that minor since they change the way that those objects are addressed in a way that works around those failsafes. </p>
+<p>Can you start by doing a complete copy and paste so we can have a clean slate, and then once that is working, go ahead and ask me the questions about changes you&#8217;d like to make that led to making those alterations?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/followed-tutorial-not-working-for-me/#post-1022325</guid>
+					<title><![CDATA[Reply To: followed tutorial, not working for me]]></title>
+					<link>/forums/topic/followed-tutorial-not-working-for-me/#post-1022325</link>
+					<pubDate>Thu, 21 Aug 2014 10:06:18 +0000</pubDate>
+					<dc:creator>JonLocate</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>ok, i&#8217;ll copy and paste the tutorial and see how i get on. Is this line the correct way to start the verbosePocketSphinx logging?</p>
+<p>pocketSphinxController.verbosePocketSphinx = true;</p>
+<p>thanks</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/followed-tutorial-not-working-for-me/#post-1022326</guid>
+					<title><![CDATA[Reply To: followed tutorial, not working for me]]></title>
+					<link>/forums/topic/followed-tutorial-not-working-for-me/#post-1022326</link>
+					<pubDate>Thu, 21 Aug 2014 10:09:52 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yes, if you are successfully addressing the object after it has been instantiated (but in that case you would do so using self.pocketsphinxController as shown in the tutorial, or you would make the call to set verbosePocketsphinx inside of the lazy allocation method). You can also see an example of all of that including a call to verbosePocketsphinx in the sample app that ships with the framework.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/followed-tutorial-not-working-for-me/#post-1022327</guid>
+					<title><![CDATA[Reply To: followed tutorial, not working for me]]></title>
+					<link>/forums/topic/followed-tutorial-not-working-for-me/#post-1022327</link>
+					<pubDate>Thu, 21 Aug 2014 10:41:15 +0000</pubDate>
+					<dc:creator>JonLocate</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>well it works! I completely copy and pasted the tutorial and it worked perfectly! I didnt&#8217; think I needed to create those instance variables in the .h file and synthesize them in the .m, but I guess I needed to! How come you have to do it this way instead of just referencing the properties? I&#8217;ve seen it work fine for other things, for example, Apples Location Manager class. You create a property of a LocationManager, then you can set the class you are working on as the delegate and reference it as self.LocationManager or _LocationManager and it works fine without having to create the ivars or synthesize them. I guess they are completey differnt classes though!</p>
+<p>Thanks for the help!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

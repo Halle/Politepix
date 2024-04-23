@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>When will a Wave file start saving? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/when-will-a-wave-file-start-saving/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/when-will-a-wave-file-start-saving/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:48:12 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/when-will-a-wave-file-start-saving/#post-1015557</guid>
+					<title><![CDATA[When will a Wave file start saving?]]></title>
+					<link>/forums/topic/when-will-a-wave-file-start-saving/#post-1015557</link>
+					<pubDate>Tue, 05 Feb 2013 15:40:09 +0000</pubDate>
+					<dc:creator>Geri</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>SaveThatWave wrote a date to the filename, if I&#8217;m right. Is that the time of writeout success?</p>
+<p>If so, then if that date is earlier than hypothesis callback timestamp, I can safely suppose that they&#8217;re paired (the wave file with a given hypothesis)?</p>
+<p>Should I stop my saveThatWaveController on every detectFinishedSpeech/stopListening/suspendRecognition, or it will be stopped automatically (so the wasSaved will be invoked on every case )?</p>
+<p>Sorry for this many question, but that wavWasSaved holds really no information about the content in it.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/when-will-a-wave-file-start-saving/#post-1015558</guid>
+					<title><![CDATA[Reply To: When will a Wave file start saving?]]></title>
+					<link>/forums/topic/when-will-a-wave-file-start-saving/#post-1015558</link>
+					<pubDate>Tue, 05 Feb 2013 15:55:35 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p><em>If so, then if that date is earlier than hypothesis callback timestamp, I can safely suppose that they’re paired (the wave file with a given hypothesis)?</em></p>
+<p>I would expect this assumption to be correct. It is difficult to imagine a circumstance under which a hypothesis will return before the wav is able to be written out. But you won&#8217;t always have a matching hypothesis for a WAV because not every hypothesis has content. You can decide what you&#8217;d like to do about those cases since it will vary from project to project.</p>
+<p><em>Should I stop my saveThatWaveController on every detectFinishedSpeech/stopListening/suspendRecognition, or it will be stopped automatically (so the wasSaved will be invoked on every case )?</em></p>
+<p>You should just leave it running; it will only do something when it has speech to save.</p>
+<p><em>Sorry for this many question, but that wavWasSaved holds really no information about the content in it.</em></p>
+<p>The only thing it knows about is the timestamp, since it isn&#8217;t bound to recognition, which is a positive thing because it means you can run it with recognition turned off in order to use OpenEars as a voice activity detector, or with n-best recognition on (many hypotheses for a single utterance, some of which are null) or when a null hypothesis is silently returned such as happens for the majority of hypotheses when using Rejecto. Although SaveThatWave works well with hypotheses, it saves all detected speech, not all non-null hypotheses.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/when-will-a-wave-file-start-saving/#post-1015559</guid>
+					<title><![CDATA[Reply To: When will a Wave file start saving?]]></title>
+					<link>/forums/topic/when-will-a-wave-file-start-saving/#post-1015559</link>
+					<pubDate>Tue, 05 Feb 2013 16:04:15 +0000</pubDate>
+					<dc:creator>Geri</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks.<br />
+I have returnNullHypotheses turned on, so I will have a didReceiveHypothesis on every sound input I had.</p>
+<p>So if I&#8217;m right, In a way like this, I can safely pair up every hypo&#8217; with the latest wave on the disk, right?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/when-will-a-wave-file-start-saving/#post-1015560</guid>
+					<title><![CDATA[Reply To: When will a Wave file start saving?]]></title>
+					<link>/forums/topic/when-will-a-wave-file-start-saving/#post-1015560</link>
+					<pubDate>Tue, 05 Feb 2013 16:09:30 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That would definitely be my expectation. Since this is the first time I&#8217;ve heard of this use, it would be great if you could let me know if that expectation is correct, but I&#8217;d be pretty surprised if it weren&#8217;t.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/when-will-a-wave-file-start-saving/#post-1015561</guid>
+					<title><![CDATA[Reply To: When will a Wave file start saving?]]></title>
+					<link>/forums/topic/when-will-a-wave-file-start-saving/#post-1015561</link>
+					<pubDate>Tue, 05 Feb 2013 16:17:21 +0000</pubDate>
+					<dc:creator>Geri</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sounds great, though, I cannot prove it I think.</p>
+<p>Actually I want to use this setup to build a database of wave files, and the paired hypotheses, to see the accuracy/error range after an in-house testing of around 20-40 people.</p>
+<p>So all I will see  is a table of wave/hypo&#8217; pairs, but I won&#8217;t have information if they&#8217;re paired up right or wrong. :(</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/when-will-a-wave-file-start-saving/#post-1015562</guid>
+					<title><![CDATA[Reply To: When will a Wave file start saving?]]></title>
+					<link>/forums/topic/when-will-a-wave-file-start-saving/#post-1015562</link>
+					<pubDate>Tue, 05 Feb 2013 16:28:53 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>If you are worried that a recognition might sometimes take less time than a file write (I&#8217;m not sure I would worry about this in practice), you can keep an int property that is the number of WAV writeouts and another that is the number of returned hypotheses and do something special when a hyp returns and the number of hyps is larger than the number of WAV writeouts. It is also a good way to test whether I&#8217;m right.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/when-will-a-wave-file-start-saving/#post-1015563</guid>
+					<title><![CDATA[Reply To: When will a Wave file start saving?]]></title>
+					<link>/forums/topic/when-will-a-wave-file-start-saving/#post-1015563</link>
+					<pubDate>Tue, 05 Feb 2013 16:37:22 +0000</pubDate>
+					<dc:creator>Geri</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yep, I will do something like that.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

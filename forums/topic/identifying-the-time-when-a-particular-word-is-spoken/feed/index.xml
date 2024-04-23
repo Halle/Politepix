@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Identifying the time when a particular word is spoken &#8211; Politepix</title>
+		<atom:link href="/forums/topic/identifying-the-time-when-a-particular-word-is-spoken/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/identifying-the-time-when-a-particular-word-is-spoken/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:39:54 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/identifying-the-time-when-a-particular-word-is-spoken/#post-10026</guid>
+					<title><![CDATA[Identifying the time when a particular word is spoken]]></title>
+					<link>/forums/topic/identifying-the-time-when-a-particular-word-is-spoken/#post-10026</link>
+					<pubDate>Mon, 02 Jul 2012 23:41:33 +0000</pubDate>
+					<dc:creator>amial</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Say the program is listening to a phrase &#8220;This is cool&#8221;. In addition to recognizing that the phrase &#8220;This is cool&#8221; was spoken,  I also want to know that the word &#8220;cool&#8221; was spoken 2.32 seconds into &#8220;This is cool&#8221;. </p>
+<p>Thanks a lot for any help. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/identifying-the-time-when-a-particular-word-is-spoken/#post-10027</guid>
+					<title><![CDATA[Reply To: Identifying the time when a particular word is spoken]]></title>
+					<link>/forums/topic/identifying-the-time-when-a-particular-word-is-spoken/#post-10027</link>
+					<pubDate>Tue, 03 Jul 2012 07:25:57 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>There is no feature that can do this, sorry.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

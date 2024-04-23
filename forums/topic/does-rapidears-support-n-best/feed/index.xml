@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Does RapidEars support n-best? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/does-rapidears-support-n-best/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/does-rapidears-support-n-best/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:44:00 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/does-rapidears-support-n-best/#post-1017543</guid>
+					<title><![CDATA[Does RapidEars support n-best?]]></title>
+					<link>/forums/topic/does-rapidears-support-n-best/#post-1017543</link>
+					<pubDate>Fri, 21 Jun 2013 22:04:10 +0000</pubDate>
+					<dc:creator>mcurtiss</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I want to do realtime speech recognition in my app, but I want to plug the output from RapidEars into a Markov model to determine the next state.  N-best (including scores) would be really useful here.  It doesn&#8217;t seem to work with RapidEars (OpenEars only).  Am I wrong?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/does-rapidears-support-n-best/#post-1017546</guid>
+					<title><![CDATA[Reply To: Does RapidEars support n-best?]]></title>
+					<link>/forums/topic/does-rapidears-support-n-best/#post-1017546</link>
+					<pubDate>Sat, 22 Jun 2013 07:27:03 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>You are right, n-best isn&#8217;t enabled in RapidEars.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Politepix &#187; All Posts</title>
+		<atom:link href="/forums/forum/openears-plugins/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/forum/openears-plugins/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:23:24 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+		
+					
+				<item>
+					<guid>/forums/topic/how-to-use-speech-recognition-for-previously-recorded-raw-audio/#post-1033169</guid>
+					<title><![CDATA[Reply To: How to use Speech recognition for previously recorded raw audio]]></title>
+					<link>/forums/topic/how-to-use-speech-recognition-for-previously-recorded-raw-audio/#post-1033169</link>
+					<pubDate>Fri, 14 Aug 2020 13:27:19 +0000</pubDate>
+					<dc:creator>toinedeboer@outlook.com</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for your reply, ill take look.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-to-use-speech-recognition-for-previously-recorded-raw-audio/#post-1033168</guid>
+					<title><![CDATA[Reply To: How to use Speech recognition for previously recorded raw audio]]></title>
+					<link>/forums/topic/how-to-use-speech-recognition-for-previously-recorded-raw-audio/#post-1033168</link>
+					<pubDate>Fri, 14 Aug 2020 12:53:03 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>This is not really an intended/supported feature of OpenEars, so I don&#8217;t really recommend it and can&#8217;t offer support assistance, but it is possible using the APIs which are intended for testing found in OEPocketsphinxController. If you take a look in the docs or header for the APIs beginning with runRecognitionOnWavFileAtPath and pathToTestFile, you can learn more about how this would work. This isn&#8217;t going to give identical results to your android code. Good luck!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-to-use-speech-recognition-for-previously-recorded-raw-audio/#post-1033167</guid>
+					<title><![CDATA[How to use Speech recognition for previously recorded raw audio]]></title>
+					<link>/forums/topic/how-to-use-speech-recognition-for-previously-recorded-raw-audio/#post-1033167</link>
+					<pubDate>Fri, 14 Aug 2020 11:44:12 +0000</pubDate>
+					<dc:creator>toinedeboer@outlook.com</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>For Android I have been using PocketSphinx for doing speech recognition for previously recorded audio parts, a single word represented in a byte array (PCM16).</p>
+<p>Can this be done by OpenEars as well?<br />
+(without needed to use the microphone implementation)</p>
+<p>Maybe the Android (PocketSphinx) code make my requirements more clear<br />
+// decoder is PcoektSphinx decoder, loaded with language models etc.<br />
+decoder.StartUtt();<br />
+decoder.ProcessRaw(audioBytesShorts, audioBytesShortsLength, false, true);<br />
+decoder.EndUtt();</p>
+<p>var finalHypothesis = decoder.Hyp();<br />
+var nbestIterator = decoder.Nbest()?.Iterator(); &#8230; etc</p>
+<p>Is something possible with OpenEars for iOS?<br />
+That would be great, instead of needed to make PocketSphinx workable on iOS myself.<br />
+Kind Regards,<br />
+Toine</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/oeeventsobserver-n-best-hypothesis/#post-1032910</guid>
+					<title><![CDATA[Reply To: OEEventsObserver: N best hypothesis]]></title>
+					<link>/forums/topic/oeeventsobserver-n-best-hypothesis/#post-1032910</link>
+					<pubDate>Tue, 03 Sep 2019 08:28:51 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Sorry, there isn&#8217;t existing sample code for this and I unfortunately don&#8217;t have time at the moment to provide an example. However, it is known to work according to the instructions in the documentation and headers, so I recommend just taking some time and giving it a careful read, particularly relating to the details of how to get specific callbacks from OEEventsObserver (for instance, n-best) by changing settings in OEPocketsphinxController.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/oeeventsobserver-n-best-hypothesis/#post-1032909</guid>
+					<title><![CDATA[OEEventsObserver: N best hypothesis]]></title>
+					<link>/forums/topic/oeeventsobserver-n-best-hypothesis/#post-1032909</link>
+					<pubDate>Sun, 01 Sep 2019 01:04:58 +0000</pubDate>
+					<dc:creator>zhoul22</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>Could you please provide some code instruction on how to use the pocketsphinxDidReceiveNBestHypothesisArray function? </p>
+<p>I am following the sample app codes and am interested in obtaining the n-best hypothesis and recognition scores for my application. </p>
+<p>Many thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/timing-information-for-runrecognitiononwavfile/#post-1032827</guid>
+					<title><![CDATA[Reply To: Timing information for runRecognitionOnWavFile]]></title>
+					<link>/forums/topic/timing-information-for-runrecognitiononwavfile/#post-1032827</link>
+					<pubDate>Fri, 17 May 2019 15:19:10 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Sorry, runRecognitionOnWaveFile is an OpenEars-only method, not a RapidEars method, so it shouldn&#8217;t invoke a RapidEars callback. Have you tried it out with pathToTestFile? I am doubtful that there is a way to do exactly what you&#8217;re trying for here, but pathToTestFile will invoke RapidEars hypothesis callbacks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/timing-information-for-runrecognitiononwavfile/#post-1032826</guid>
+					<title><![CDATA[Timing information for runRecognitionOnWavFile]]></title>
+					<link>/forums/topic/timing-information-for-runrecognitiononwavfile/#post-1032826</link>
+					<pubDate>Fri, 17 May 2019 15:13:03 +0000</pubDate>
+					<dc:creator>michaelgallacher</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I need timing information for speech recognized in a WAV file.  I have successfully retrieved hypotheses from OpenEars.  I added RapidEarsDemo but am not getting any RapidEars events when calling <code>runRecognitionOnWavFile</code>.  I am specifically hoping for:</p>
+<p><code>rapidEarsDidDetectFinishedSpeech(asWordArray words: [Any]!, scoreArray scores: [Any]!, startTime startTimes: [Any]!, endTime endTimes: [Any]!)</code></p>
+<p>to be called but (based on the method name) it appears it will only be called when finished speech is detected while using real-time listening.</p>
+<p>Is timing supported for WAV files or is it only available for real-time?  I will provide logging if this scenario is supported.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-demo/#post-1032810</guid>
+					<title><![CDATA[Reply To: NeatSpeech Demo]]></title>
+					<link>/forums/topic/neatspeech-demo/#post-1032810</link>
+					<pubDate>Tue, 16 Apr 2019 06:58:38 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Sorry, no, there are no samples or Xamarin support, so it may not be the right solution for your needs.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-demo/#post-1032809</guid>
+					<title><![CDATA[NeatSpeech Demo]]></title>
+					<link>/forums/topic/neatspeech-demo/#post-1032809</link>
+					<pubDate>Tue, 16 Apr 2019 06:02:37 +0000</pubDate>
+					<dc:creator>abutler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Do you have a demo of NeatSpeech or OpenEars so I can appreciate the quality of the TTS before buying the library or investing my time with this?</p>
+<p>I see that you don&#8217;t support Xamarin, but the Xamarin TTS uses the Apple iOS TTS library which is not that good.  Presumably you would have a better solution.</p>
+<p>Regards,<br />
+Arthur</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/mixing-with-other-audio/#post-1032742</guid>
+					<title><![CDATA[Reply To: Mixing with other audio.]]></title>
+					<link>/forums/topic/mixing-with-other-audio/#post-1032742</link>
+					<pubDate>Thu, 14 Mar 2019 12:37:05 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sure, it&#8217;s in the API definition – it is for use while recognition isn&#8217;t in progress, if PocketsphinxController is usually doing something undesired to your session while recognition isn&#8217;t in progress. While recognition is in progress, it is expected that PocketsphinxController always normalizes to the session settings it is designed around.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

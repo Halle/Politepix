@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Using FliteController to create an audio file but avoid playing it &#8211; Politepix</title>
+		<atom:link href="/forums/topic/using-flitecontroller-to-create-an-audio-file-but-avoid-playing-it/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/using-flitecontroller-to-create-an-audio-file-but-avoid-playing-it/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:05:06 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/using-flitecontroller-to-create-an-audio-file-but-avoid-playing-it/#post-1022158</guid>
+					<title><![CDATA[Using FliteController to create an audio file but avoid playing it]]></title>
+					<link>/forums/topic/using-flitecontroller-to-create-an-audio-file-but-avoid-playing-it/#post-1022158</link>
+					<pubDate>Sat, 09 Aug 2014 15:06:47 +0000</pubDate>
+					<dc:creator>jnanin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>I am trying to create an audio file from a speech utterance with FliteController, and it works as expected:</p>
+<p>    [self.fliteController say:message withVoice:self.slt];<br />
+    NSData *voiceData =  self.fliteController.speechData;</p>
+<p>I can save that NSData to a file and plays perfectly.</p>
+<p>However, I&#8217;d like to avoid playing the message, but I don&#8217;t see how can I &#8220;load&#8221; the NSString message without playing it.</p>
+<p>I&#8217;ve tried with the following properties:</p>
+<p>    [self.fliteController setQuietFlite:YES];<br />
+    [self.fliteController setNoAudioSessionOverrides:YES];</p>
+<p>But the audio file is played anyway.</p>
+<p>Any ideas?</p>
+<p>Thank you very much in advance.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-flitecontroller-to-create-an-audio-file-but-avoid-playing-it/#post-1022159</guid>
+					<title><![CDATA[Reply To: Using FliteController to create an audio file but avoid playing it]]></title>
+					<link>/forums/topic/using-flitecontroller-to-create-an-audio-file-but-avoid-playing-it/#post-1022159</link>
+					<pubDate>Sat, 09 Aug 2014 15:12:18 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Sorry, this isn&#8217;t supported in the API.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

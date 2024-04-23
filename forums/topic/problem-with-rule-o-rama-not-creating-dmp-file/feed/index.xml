@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Problem with Rule-O-Rama not creating .DMP file &#8211; Politepix</title>
+		<atom:link href="/forums/topic/problem-with-rule-o-rama-not-creating-dmp-file/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/problem-with-rule-o-rama-not-creating-dmp-file/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:50:43 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/problem-with-rule-o-rama-not-creating-dmp-file/#post-1022125</guid>
+					<title><![CDATA[Problem with Rule-O-Rama not creating .DMP file]]></title>
+					<link>/forums/topic/problem-with-rule-o-rama-not-creating-dmp-file/#post-1022125</link>
+					<pubDate>Wed, 06 Aug 2014 20:12:47 +0000</pubDate>
+					<dc:creator>Paul Cantrell</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m trying the demo application with a dictionary based grammar. It was too slow, so I decided to give RuleORama a try. Using the grammar as suggested in the tutorial, I run the generateFastGrammarFromDictionary method and it appears to work, but when I look in the Caches directory (this is on iOS) I just see the .dic file but not the DMP file. Then when I try to start listening, it complains because the .DMP file isn&#8217;t there. At first I thought I had broken the code, so I re-downloaded it and tried again and got exactly the same results.</p>
+<p>Is it me, or is there a problem with the RuleORama sample?</p>
+<p>Here&#8217;s the log output:</p>
+<p>2014-08-06 16:08:40.227 OpenEarsSampleApp[41364:60b] Dynamic language generator completed successfully, you can find your new files ShareableFirstGrammer.DMP<br />
+ and<br />
+ShareableFirstGrammer.dic<br />
+ at the paths<br />
+/Users/paul/Library/Application Support/iPhone Simulator/7.1/Applications/D9428AA2-036F-4E61-A784-73B51546BF36/Library/Caches/ShareableFirstGrammer.DMP<br />
+and<br />
+/Users/paul/Library/Application Support/iPhone Simulator/7.1/Applications/D9428AA2-036F-4E61-A784-73B51546BF36/Library/Caches/ShareableFirstGrammer.dic</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problem-with-rule-o-rama-not-creating-dmp-file/#post-1022126</guid>
+					<title><![CDATA[Reply To: Problem with Rule-O-Rama not creating .DMP file]]></title>
+					<link>/forums/topic/problem-with-rule-o-rama-not-creating-dmp-file/#post-1022126</link>
+					<pubDate>Wed, 06 Aug 2014 20:29:15 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Providing a DMP in caches has never been a feature of the demos, but the grammar should work fine when you pass the path to the engine despite the reported error in logging.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problem-with-rule-o-rama-not-creating-dmp-file/#post-1022131</guid>
+					<title><![CDATA[Reply To: Problem with Rule-O-Rama not creating .DMP file]]></title>
+					<link>/forums/topic/problem-with-rule-o-rama-not-creating-dmp-file/#post-1022131</link>
+					<pubDate>Wed, 06 Aug 2014 22:40:01 +0000</pubDate>
+					<dc:creator>Paul Cantrell</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Halle,</p>
+<p>Thank you for the quick reply. I&#8217;m seeing weird stuff trying to use the fast grammar&#8230; I suspect there are some rules as to what combinations of rules are allowed that I&#8217;m not understanding.</p>
+<p>I have a grammar which works great if I use generateGrammarFromDictionary but dies if I use generateFastGrammarFromDictionary. I get a few different failures depending on which keywords I use (Can/Will).</p>
+<p>This one hangs on startup (but works fine when not &#8220;Fast&#8221;):<br />
+    NSDictionary *grammar = @{<br />
+        OneOfTheseCanBeSaidOnce :<br />
+            @[<br />
+                @{ ThisWillBeSaidOnce : @[ @{ThisWillBeSaidOnce : @[@&#8221;A S A&#8221;] }, @{OneOfTheseCanBeSaidOnce : @[@&#8221;1&#8243;, @&#8221;2&#8243;, @&#8221;3&#8243;, @&#8221;4&#8243;, @&#8221;E&#8221;]}]},<br />
+                @{ ThisWillBeSaidOnce : @[@&#8221;PATIENT EDUCATION PROVIDED&#8221;]},<br />
+                @{ ThisWillBeSaidOnce : @[ @{ThisWillBeSaidOnce : @[@&#8221;HEART&#8221;] }, @{OneOfTheseCanBeSaidOnce : @[@&#8221;R R R&#8221;, @&#8221;OTHER&#8221;]}]},<br />
+                @{ ThisWillBeSaidOnce : @[ @{ThisWillBeSaidOnce : @[@&#8221;LUNGS&#8221;] }, @{OneOfTheseCanBeSaidOnce : @[@&#8221;C T A&#8221;, @&#8221;OTHER&#8221;]}]},<br />
+            ]<br />
+    };<br />
+This one crashes with an Index 1 beyond bounds [0 .. 0]:</p>
+<p>    NSDictionary *grammar = @{<br />
+        OneOfTheseWillBeSaidOnce :<br />
+            @[<br />
+                @{ ThisCanBeSaidOnce : @[ @{ThisWillBeSaidOnce : @[@&#8221;A S A&#8221;] }, @{OneOfTheseCanBeSaidOnce : @[@&#8221;1&#8243;, @&#8221;2&#8243;, @&#8221;3&#8243;, @&#8221;4&#8243;, @&#8221;E&#8221;]}]},<br />
+                @{ ThisCanBeSaidOnce : @[@&#8221;PATIENT EDUCATION PROVIDED&#8221;]},<br />
+                @{ ThisCanBeSaidOnce : @[ @{ThisWillBeSaidOnce : @[@&#8221;HEART&#8221;] }, @{OneOfTheseCanBeSaidOnce : @[@&#8221;R R R&#8221;, @&#8221;OTHER&#8221;]}]},<br />
+                @{ ThisCanBeSaidOnce : @[ @{ThisWillBeSaidOnce : @[@&#8221;LUNGS&#8221;] }, @{OneOfTheseCanBeSaidOnce : @[@&#8221;C T A&#8221;, @&#8221;OTHER&#8221;]}]},<br />
+            ]<br />
+    };<br />
+2014-08-06 18:30:05.203 OpenEarsSampleApp[43771:60b] *** Terminating app due to uncaught exception &#8216;NSRangeException&#8217;, reason: &#8216;*** -[__NSArrayI objectAtIndex:]: index 1 beyond bounds [0 .. 0]&#8217;<br />
+*** First throw call stack:<br />
+(<br />
+	0   CoreFoundation                      0x025571e4 __exceptionPreprocess + 180<br />
+	1   libobjc.A.dylib                     0x022d68e5 objc_exception_throw + 44<br />
+	2   CoreFoundation                      0x0250b8b2 -[__NSArrayI objectAtIndex:] + 210<br />
+	3   OpenEarsSampleApp                   0x0011eccb OpenEarsSampleApp + 1170635<br />
+	4   OpenEarsSampleApp                   0x00121743 OpenEarsSampleApp + 1181507<br />
+	5   OpenEarsSampleApp                   0x00121bf0 OpenEarsSampleApp + 1182704<br />
+	6   OpenEarsSampleApp                   0x00121e2d OpenEarsSampleApp + 1183277<br />
+	7   OpenEarsSampleApp                   0x00004595 OpenEarsSampleApp + 13717</p>
+<p>I feel like I must be missing a basic concept of how the rules are supposed to work&#8230; I&#8217;ve read the RuleORama Manual, but it just gives the same example as in the tutorial. Is there some other documentation I should be reading?</p>
+<p>Thanks again for any help you can give me&#8230;</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problem-with-rule-o-rama-not-creating-dmp-file/#post-1022148</guid>
+					<title><![CDATA[Reply To: Problem with Rule-O-Rama not creating .DMP file]]></title>
+					<link>/forums/topic/problem-with-rule-o-rama-not-creating-dmp-file/#post-1022148</link>
+					<pubDate>Fri, 08 Aug 2014 07:25:34 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Paul,</p>
+<p>This sounds a bit like an edge case bug due to RuleORama being quite new, and I may need to add some grammar examples to my testbed. I will check out your example and get back to you.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problem-with-rule-o-rama-not-creating-dmp-file/#post-1022149</guid>
+					<title><![CDATA[Reply To: Problem with Rule-O-Rama not creating .DMP file]]></title>
+					<link>/forums/topic/problem-with-rule-o-rama-not-creating-dmp-file/#post-1022149</link>
+					<pubDate>Fri, 08 Aug 2014 09:53:29 +0000</pubDate>
+					<dc:creator>Paul Cantrell</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks Halle,</p>
+<p>I have a fairly quick deadline to get something working so that the team can decide whether to go with OpenEars or some other recognition system. I&#8217;m trying to construct a grammar that will allow accurate filling in of a medical form. The two problems I&#8217;m having is getting a grammar fast enough to work (base OpenEars is too slow by the time I have a dozen rules) and how to input numbers (It&#8217;s working okay in base OpenEars but I&#8217;m using the optional repetitions to allow entry of numbers (so, 231 would be &#8220;200 30 1&#8221; which I can recognize as a single number and combine. Not sure what to do about that with Rule-O-Rama not allowing optional repetitions. How do people acquire numbers typically? But of course, until I can get a grammar to load without crashing, those issues are moot. Thanks for any help you can give me&#8230; We think OpenEars would be great for our project if we can figure out a few of these issues.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problem-with-rule-o-rama-not-creating-dmp-file/#post-1022150</guid>
+					<title><![CDATA[Reply To: Problem with Rule-O-Rama not creating .DMP file]]></title>
+					<link>/forums/topic/problem-with-rule-o-rama-not-creating-dmp-file/#post-1022150</link>
+					<pubDate>Fri, 08 Aug 2014 10:29:55 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Paul,</p>
+<p>Of course I&#8217;d like for you to choose OpenEars, but I understand if this bug is a decision factor for you right now since it can only be investigated and fixed in the time available.</p>
+<p>Number acquisition with a complex grammar is a somewhat difficult question across all speech solutions (you might see this when Googling it here and at Stack Overflow). But based on your description, it might not be the ideal case for a grammar if the ability to repeat is central to the vocabulary&#8217;s utility. Have you tried it as a language model instead of a grammar?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problem-with-rule-o-rama-not-creating-dmp-file/#post-1022151</guid>
+					<title><![CDATA[Reply To: Problem with Rule-O-Rama not creating .DMP file]]></title>
+					<link>/forums/topic/problem-with-rule-o-rama-not-creating-dmp-file/#post-1022151</link>
+					<pubDate>Fri, 08 Aug 2014 10:47:43 +0000</pubDate>
+					<dc:creator>Paul Cantrell</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Halle,</p>
+<p>Thanks for the reply. Of course, the frustrating part is that I had it all working using the base OpenEars grammar, but as I added rules it got slower geometrically. (with 3 or 4 rules it was recognizing in 1-2 seconds, by 12-15 rules it was taking 2 minutes or more).</p>
+<p>The ability to repeat is only important as a way to gather numbers, I don&#8217;t use it elsewhere in the grammar. For instance, if the user says &#8220;Weight 152 pounds&#8221; I just encoded all the numbers, (1-10, 10,20,..100, 100,200,300) with an optional repeat and then post processed the &#8220;100 50 2&#8221; as 152. Pretty ugly, I know, but worked fairly well.</p>
+<p>I&#8217;ll do some research into language model vs grammar, are you suggesting that I might want to plug in my own language model into Open Ears, or were you speaking more generically? Maybe you could suggest a google search or a seminal web site where I could look that up?</p>
+<p>Right now my fallback strategy is to keep the number of rules small enough that base OpenEars would have the required speed, but that&#8217;s probably not a good long term strategy (4 or so rules at a time is pretty limiting). Or else maybe you will find the bug in Rule-O-Rama and I can make that work (but I don&#8217;t know how I&#8217;ll handle numbers in that case).</p>
+<p>Sorry to take so much of your time&#8230;</p>
+<p>Paul</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problem-with-rule-o-rama-not-creating-dmp-file/#post-1022152</guid>
+					<title><![CDATA[Reply To: Problem with Rule-O-Rama not creating .DMP file]]></title>
+					<link>/forums/topic/problem-with-rule-o-rama-not-creating-dmp-file/#post-1022152</link>
+					<pubDate>Fri, 08 Aug 2014 11:10:31 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Paul,</p>
+<p>The geometric slowdown is going to be largely due to the optional repetitions – it&#8217;s the reason they had to be cut from RuleORama. They create a really big search space. JSGF grammars without optional repetitions are also a lot slower than language models, and RuleORama can help with that kind of grammar, but there is little to be done about unbounded repetitions causing slowdowns in a grammar.</p>
+<p>OpenEars also has an easy system for creating probabilistic language models instead of grammars (it&#8217;s even easier to use than the grammar system). Just check out the sample app or tutorial&#8217;s example of creating a language model, or the docs about LanguageModelGenerator&#8217;s method: </p>
+<pre>- (NSError *) generateLanguageModelFromArray:(NSArray *)languageModelArray withFilesNamed:(NSString *)fileName forAcousticModelAtPath:(NSString *)acousticModelPath;</pre>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problem-with-rule-o-rama-not-creating-dmp-file/#post-1022153</guid>
+					<title><![CDATA[Reply To: Problem with Rule-O-Rama not creating .DMP file]]></title>
+					<link>/forums/topic/problem-with-rule-o-rama-not-creating-dmp-file/#post-1022153</link>
+					<pubDate>Fri, 08 Aug 2014 11:49:11 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, so the crasher is due to an actual logical contradiction in the ruleset (although it is a bug that this results in a crash rather than a helpful message or a helpful best-effort attempt to fulfill the request). </p>
+<p>The contradiction is that you have a rule &#8220;OneOfTheseWillBeSaidOnce&#8221; (so far so good) but all of the top-level rules contained in that are &#8220;ThisCanBeSaidOnce&#8221;, meaning that there is also a state in which none of the statements will be uttered and that is valid. That means that a nonexistent statement is one of the things in the set of utterances that will be said, and that makes RuleORama sad. It runs if I change one of the &#8220;CanBeSaid&#8221; rules to a &#8220;WillBeSaid&#8221; (I presume it will also run if I change them to expected strings rather than more rules). </p>
+<p>Stock OpenEars deals with this gracefully but it is still possible that it is leading to undesired results that are less obvious. To troubleshoot the one that hangs, just turn on all the logging (OpenEarsLogging and verbosePocketsphinx) and it will probably give an actual error or warning about the cause of the hang.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

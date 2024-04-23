@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Compatibility issue with CMU JSGF example &#8211; Politepix</title>
+		<atom:link href="/forums/topic/enabling-jsgf-causes-an-exc_bad_access-error/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/enabling-jsgf-causes-an-exc_bad_access-error/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:57:16 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/enabling-jsgf-causes-an-exc_bad_access-error/#post-11680</guid>
+					<title><![CDATA[Compatibility issue with CMU JSGF example]]></title>
+					<link>/forums/topic/enabling-jsgf-causes-an-exc_bad_access-error/#post-11680</link>
+					<pubDate>Wed, 24 Oct 2012 14:30:42 +0000</pubDate>
+					<dc:creator>Jandr50</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Using the newest version of OpenEars.</p>
+<p>I&#8217;ve tried this with my own app, could not figure out why it was crashing, then attempted on the OpenEarsSampleApp that came with the framework, and it did the same thing.</p>
+<p>Here&#8217;s what I attempted:<br />
+Take the sample app.<br />
+Copy the &#8216;OpenEars1.gram&#8221; and &#8220;OpenEars2.gram&#8221; files into the project folder.<br />
+Right before the<br />
+<code><br />
+[self.pocketsphinxController startListeningWithLanguageModelAtPath:self.pathToGrammarToStartAppWith dictionaryAtPath:self.pathToDictionaryToStartAppWith languageModelIsJSGF:FALSE];<br />
+</code><br />
+call, I changed the path with a new variable that grabs the grammar file from the bundle.<br />
+<code><br />
+NSString *jsgfPath = [[NSBundle mainBundle]pathForResource:@"OpenEars2" ofType:@"gram"];<br />
+[self.pocketsphinxController startListeningWithLanguageModelAtPath:jsgfPath dictionaryAtPath:self.pathToDictionaryToStartAppWith languageModelIsJSGF:TRUE];<br />
+</code><br />
+Soon as calibration finishes, this triggers a crash. Is there more to enabling JSGF that I seem to be missing? </p>
+<p>Thanks</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/enabling-jsgf-causes-an-exc_bad_access-error/#post-11682</guid>
+					<title><![CDATA[Reply To: Enabling JSGF causes an EXC_BAD_ACCESS error]]></title>
+					<link>/forums/topic/enabling-jsgf-causes-an-exc_bad_access-error/#post-11682</link>
+					<pubDate>Wed, 24 Oct 2012 14:36:53 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, I will check it out on Friday, but can you post the output of OpenEarsLogging and verbosePocketSphinx here so I can get a head start?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/enabling-jsgf-causes-an-exc_bad_access-error/#post-11683</guid>
+					<title><![CDATA[Reply To: Enabling JSGF causes an EXC_BAD_ACCESS error]]></title>
+					<link>/forums/topic/enabling-jsgf-causes-an-exc_bad_access-error/#post-11683</link>
+					<pubDate>Wed, 24 Oct 2012 14:44:55 +0000</pubDate>
+					<dc:creator>Jandr50</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sure can. </p>
+<p><code><br />
+2012-10-24 10:41:03.629 OpenEarsSampleApp[31311:907] Starting OpenEars logging for OpenEars version {{{{1.2.2}}}} on device: iPhone running iOS version: 6.000000<br />
+2012-10-24 10:41:03.636 OpenEarsSampleApp[31311:907] Normalized array contains the following entries:<br />
+(<br />
+    SUNDAY,<br />
+    MONDAY,<br />
+    TUESDAY,<br />
+    WEDNESDAY,<br />
+    THURSDAY,<br />
+    FRIDAY,<br />
+    SATURDAY,<br />
+    QUIDNUNC,<br />
+    "CHANGE MODEL"<br />
+)<br />
+2012-10-24 10:41:03.641 OpenEarsSampleApp[31311:907] Starting dynamic language model generation<br />
+2012-10-24 10:41:03.647 OpenEarsSampleApp[31311:907] Able to open /var/mobile/Applications/E76B971A-81E3-4CFF-B2CA-EFA537E40D5A/Documents/OpenEarsDynamicGrammar.corpus for reading<br />
+2012-10-24 10:41:03.650 OpenEarsSampleApp[31311:907] Able to open /var/mobile/Applications/E76B971A-81E3-4CFF-B2CA-EFA537E40D5A/Documents/OpenEarsDynamicGrammar_pipe.txt for writing<br />
+2012-10-24 10:41:03.652 OpenEarsSampleApp[31311:907] Starting text2wfreq_impl<br />
+2012-10-24 10:41:03.675 OpenEarsSampleApp[31311:907] Done with text2wfreq_impl<br />
+2012-10-24 10:41:03.679 OpenEarsSampleApp[31311:907] Able to open /var/mobile/Applications/E76B971A-81E3-4CFF-B2CA-EFA537E40D5A/Documents/OpenEarsDynamicGrammar_pipe.txt for reading.<br />
+2012-10-24 10:41:03.682 OpenEarsSampleApp[31311:907] Able to open /var/mobile/Applications/E76B971A-81E3-4CFF-B2CA-EFA537E40D5A/Documents/OpenEarsDynamicGrammar.vocab for reading.<br />
+2012-10-24 10:41:03.683 OpenEarsSampleApp[31311:907] Starting wfreq2vocab<br />
+2012-10-24 10:41:03.690 OpenEarsSampleApp[31311:907] Done with wfreq2vocab<br />
+2012-10-24 10:41:03.693 OpenEarsSampleApp[31311:907] Starting text2idngram<br />
+2012-10-24 10:41:03.716 OpenEarsSampleApp[31311:907] Done with text2idngram<br />
+2012-10-24 10:41:03.721 OpenEarsSampleApp[31311:907] Starting idngram2lm</p>
+<p>2012-10-24 10:41:03.736 OpenEarsSampleApp[31311:907] Done with idngram2lm<br />
+2012-10-24 10:41:03.738 OpenEarsSampleApp[31311:907] Starting sphinx_lm_convert<br />
+2012-10-24 10:41:03.757 OpenEarsSampleApp[31311:907] Finishing sphinx_lm_convert<br />
+2012-10-24 10:41:03.765 OpenEarsSampleApp[31311:907] Done creating language model with CMUCLMTK in 0.122089 seconds.<br />
+2012-10-24 10:41:04.066 OpenEarsSampleApp[31311:907] The word QUIDNUNC was not found in the dictionary /var/mobile/Applications/E76B971A-81E3-4CFF-B2CA-EFA537E40D5A/OpenEarsSampleApp.app/cmu07a.dic.<br />
+2012-10-24 10:41:04.068 OpenEarsSampleApp[31311:907] Now using the fallback method to look up the word QUIDNUNC<br />
+2012-10-24 10:41:04.077 OpenEarsSampleApp[31311:907] Using convertGraphemes for the word or phrase QUIDNUNC which doesn't appear in the dictionary<br />
+2012-10-24 10:41:04.146 OpenEarsSampleApp[31311:907] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the default phonetic lookup dictionary is that your words are not in English or aren't dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2012-10-24 10:41:04.217 OpenEarsSampleApp[31311:907] I'm done running performDictionaryLookup and it took 0.340675 seconds<br />
+2012-10-24 10:41:04.224 OpenEarsSampleApp[31311:907] I'm done running dynamic language model generation and it took 372782464.224639 seconds<br />
+2012-10-24 10:41:04.226 OpenEarsSampleApp[31311:907] Dynamic language generator completed successfully, you can find your new files OpenEarsDynamicGrammar.DMP<br />
+ and<br />
+OpenEarsDynamicGrammar.dic<br />
+ at the paths<br />
+/var/mobile/Applications/E76B971A-81E3-4CFF-B2CA-EFA537E40D5A/Documents/OpenEarsDynamicGrammar.DMP<br />
+and<br />
+/var/mobile/Applications/E76B971A-81E3-4CFF-B2CA-EFA537E40D5A/Documents/OpenEarsDynamicGrammar.dic<br />
+2012-10-24 10:41:04.229 OpenEarsSampleApp[31311:907] </p>
+<p>Welcome to the OpenEars sample project. This project understands the words:<br />
+BACKWARD,<br />
+CHANGE,<br />
+FORWARD,<br />
+GO,<br />
+LEFT,<br />
+MODEL,<br />
+RIGHT,<br />
+TURN,<br />
+and if you say "CHANGE MODEL" it will switch to its dynamically-generated model which understands the words:<br />
+CHANGE,<br />
+MODEL,<br />
+MONDAY,<br />
+TUESDAY,<br />
+WEDNESDAY,<br />
+THURSDAY,<br />
+FRIDAY,<br />
+SATURDAY,<br />
+SUNDAY,<br />
+QUIDNUNC<br />
+2012-10-24 10:41:04.232 OpenEarsSampleApp[31311:907] A sample rate was requested that isn't one of the two supported values of 16000 or 8000 so we will use the default of 16000.<br />
+2012-10-24 10:41:04.237 OpenEarsSampleApp[31311:907] The audio session has never been initialized so we will do that now.<br />
+2012-10-24 10:41:04.239 OpenEarsSampleApp[31311:907] Checking and resetting all audio session settings.<br />
+2012-10-24 10:41:04.241 OpenEarsSampleApp[31311:907] audioCategory is incorrect, we will change it.<br />
+2012-10-24 10:41:04.244 OpenEarsSampleApp[31311:907] audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.<br />
+2012-10-24 10:41:04.246 OpenEarsSampleApp[31311:907] bluetoothInput is incorrect, we will change it.<br />
+2012-10-24 10:41:04.248 OpenEarsSampleApp[31311:907] bluetooth input is now on the correct setting of 1.<br />
+2012-10-24 10:41:04.250 OpenEarsSampleApp[31311:907] categoryDefaultToSpeaker is incorrect, we will change it.<br />
+2012-10-24 10:41:04.252 OpenEarsSampleApp[31311:907] CategoryDefaultToSpeaker is now on the correct setting of 1.<br />
+2012-10-24 10:41:04.254 OpenEarsSampleApp[31311:907] preferredBufferSize is incorrect, we will change it.<br />
+2012-10-24 10:41:04.257 OpenEarsSampleApp[31311:907] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2012-10-24 10:41:04.259 OpenEarsSampleApp[31311:907] preferredSampleRateCheck is incorrect, we will change it.<br />
+2012-10-24 10:41:04.261 OpenEarsSampleApp[31311:907] preferred hardware sample rate is now on the correct setting of 16000.000000.<br />
+2012-10-24 10:41:04.338 OpenEarsSampleApp[31311:907] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2012-10-24 10:41:04.346 OpenEarsSampleApp[31311:907] Exiting startAudioSession.<br />
+2012-10-24 10:41:04.350 OpenEarsSampleApp[31311:3b03] Recognition loop has started<br />
+INFO: cmd_ln.c(706): Parsing command line:<br />
+\<br />
+	-jsgf /var/mobile/Applications/E76B971A-81E3-4CFF-B2CA-EFA537E40D5A/OpenEarsSampleApp.app/OpenEars2.gram \<br />
+	-dict /var/mobile/Applications/E76B971A-81E3-4CFF-B2CA-EFA537E40D5A/OpenEarsSampleApp.app/OpenEars1.dic \<br />
+	-hmm /var/mobile/Applications/E76B971A-81E3-4CFF-B2CA-EFA537E40D5A/OpenEarsSampleApp.app \<br />
+	-lw 3.000000 \<br />
+	-maxhmmpf 3000 \<br />
+	-samprate 16000 </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-alpha		0.97		9.700000e-01<br />
+-argfile<br />
+-ascale		20.0		2.000000e+01<br />
+-aw		1		1<br />
+-backtrace	no		no<br />
+-beam		1e-48		1.000000e-48<br />
+-bestpath	yes		yes<br />
+-bestpathlw	9.5		9.500000e+00<br />
+-bghist		no		no<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		8.0<br />
+-compallsen	no		no<br />
+-debug				0<br />
+-dict				/var/mobile/Applications/E76B971A-81E3-4CFF-B2CA-EFA537E40D5A/OpenEarsSampleApp.app/OpenEars1.dic<br />
+-dictcase	no		no<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-ds		1		1<br />
+-fdict<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-featparams<br />
+-fillprob	1e-8		1.000000e-08<br />
+-frate		100		100<br />
+-fsg<br />
+-fsgusealtpron	yes		yes<br />
+-fsgusefiller	yes		yes<br />
+-fwdflat	yes		yes<br />
+-fwdflatbeam	1e-64		1.000000e-64<br />
+-fwdflatefwid	4		4<br />
+-fwdflatlw	8.5		8.500000e+00<br />
+-fwdflatsfwin	25		25<br />
+-fwdflatwbeam	7e-29		7.000000e-29<br />
+-fwdtree	yes		yes<br />
+-hmm				/var/mobile/Applications/E76B971A-81E3-4CFF-B2CA-EFA537E40D5A/OpenEarsSampleApp.app<br />
+-input_endian	little		little<br />
+-jsgf				/var/mobile/Applications/E76B971A-81E3-4CFF-B2CA-EFA537E40D5A/OpenEarsSampleApp.app/OpenEars2.gram<br />
+-kdmaxbbi	-1		-1<br />
+-kdmaxdepth	0		0<br />
+-kdtree<br />
+-latsize	5000		5000<br />
+-lda<br />
+-ldadim		0		0<br />
+-lextreedump	0		0<br />
+-lifter		0		0<br />
+-lm<br />
+-lmctl<br />
+-lmname		default		default<br />
+-logbase	1.0001		1.000100e+00<br />
+-logfn<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.333333e+02<br />
+-lpbeam		1e-40		1.000000e-40<br />
+-lponlybeam	7e-29		7.000000e-29<br />
+-lw		6.5		3.000000e+00<br />
+-maxhmmpf	-1		3000<br />
+-maxnewoov	20		20<br />
+-maxwpf		-1		-1<br />
+-mdef<br />
+-mean<br />
+-mfclogdir<br />
+-min_endfr	0		0<br />
+-mixw<br />
+-mixwfloor	0.0000001	1.000000e-07<br />
+-mllr<br />
+-mmap		yes		yes<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		40<br />
+-nwpen		1.0		1.000000e+00<br />
+-pbeam		1e-48		1.000000e-48<br />
+-pip		1.0		1.000000e+00<br />
+-pl_beam	1e-10		1.000000e-10<br />
+-pl_pbeam	1e-5		1.000000e-05<br />
+-pl_window	0		0<br />
+-rawlogdir<br />
+-remove_dc	no		no<br />
+-round_filters	yes		yes<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-sendump<br />
+-senlogdir<br />
+-senmgau<br />
+-silprob	0.005		5.000000e-03<br />
+-smoothspec	no		no<br />
+-svspec<br />
+-tmat<br />
+-tmatfloor	0.0001		1.000000e-04<br />
+-topn		4		4<br />
+-topn_beam	0		0<br />
+-toprule<br />
+-transform	legacy		legacy<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	6.855498e+03<br />
+-usewdphones	no		no<br />
+-uw		1.0		1.000000e+00<br />
+-var<br />
+-varfloor	0.0001		1.000000e-04<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wbeam		7e-29		7.000000e-29<br />
+-wip		0.65		6.500000e-01<br />
+-wlen		0.025625	2.562500e-02</p>
+<p>2012-10-24 10:41:04.399 OpenEarsSampleApp[31311:907] Pocketsphinx is starting up.<br />
+INFO: cmd_ln.c(706): Parsing command line:<br />
+\<br />
+	-nfilt 20 \<br />
+	-lowerf 1 \<br />
+	-upperf 4000 \<br />
+	-wlen 0.025 \<br />
+	-transform dct \<br />
+	-round_filters no \<br />
+	-remove_dc yes \<br />
+	-svspec 0-12/13-25/26-38 \<br />
+	-feat 1s_c_d_dd \<br />
+	-agc none \<br />
+	-cmn current \<br />
+	-cmninit 47 \<br />
+	-varnorm no </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-alpha		0.97		9.700000e-01<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		47<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-frate		100		100<br />
+-input_endian	little		little<br />
+-lda<br />
+-ldadim		0		0<br />
+-lifter		0		0<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.000000e+00<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		20<br />
+-remove_dc	no		yes<br />
+-round_filters	yes		no<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-smoothspec	no		no<br />
+-svspec				0-12/13-25/26-38<br />
+-transform	legacy		dct<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	4.000000e+03<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wlen		0.025625	2.500000e-02</p>
+<p>INFO: acmod.c(250): Parsed model-specific feature parameters from /var/mobile/Applications/E76B971A-81E3-4CFF-B2CA-EFA537E40D5A/OpenEarsSampleApp.app/feat.params<br />
+2012-10-24 10:41:04.414 OpenEarsSampleApp[31311:907] The audio session has already been initialized but we will override its properties.<br />
+INFO: feat.c(713): Initializing feature stream to type: '1s_c_d_dd', ceplen=13, CMN='current', VARNORM='no', AGC='none'<br />
+INFO: cmn.c(142): mean[0]= 12.00, mean[1..12]= 0.0<br />
+INFO: acmod.c(171): Using subvector specification 0-12/13-25/26-38<br />
+INFO: mdef.c(517): Reading model definition: /var/mobile/Applications/E76B971A-81E3-4CFF-B2CA-EFA537E40D5A/OpenEarsSampleApp.app/mdef<br />
+INFO: mdef.c(528): Found byte-order mark BMDF, assuming this is a binary mdef file<br />
+INFO: bin_mdef.c(336): Reading binary model definition: /var/mobile/Applications/E76B971A-81E3-4CFF-B2CA-EFA537E40D5A/OpenEarsSampleApp.app/mdef<br />
+2012-10-24 10:41:04.421 OpenEarsSampleApp[31311:907] Checking and resetting all audio session settings.<br />
+2012-10-24 10:41:04.428 OpenEarsSampleApp[31311:907] audioCategory is correct, we will leave it as it is.<br />
+2012-10-24 10:41:04.431 OpenEarsSampleApp[31311:907] bluetoothInput is correct, we will leave it as it is.<br />
+2012-10-24 10:41:04.433 OpenEarsSampleApp[31311:907] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2012-10-24 10:41:04.436 OpenEarsSampleApp[31311:907] preferredBufferSize is correct, we will leave it as it is.<br />
+2012-10-24 10:41:04.439 OpenEarsSampleApp[31311:907] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2012-10-24 10:41:04.442 OpenEarsSampleApp[31311:907] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2012-10-24 10:41:04.446 OpenEarsSampleApp[31311:907] Exiting startAudioSession.<br />
+2012-10-24 10:41:04.459 OpenEarsSampleApp[31311:907] Audio route has changed for the following reason:<br />
+2012-10-24 10:41:04.461 OpenEarsSampleApp[31311:907] There has been a change of category<br />
+2012-10-24 10:41:04.465 OpenEarsSampleApp[31311:907] The previous audio route was Speaker<br />
+2012-10-24 10:41:04.469 OpenEarsSampleApp[31311:907] This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is SpeakerAndMicrophone<br />
+INFO: bin_mdef.c(513): 50 CI-phone, 143047 CD-phone, 3 emitstate/phone, 150 CI-sen, 5150 Sen, 27135 Sen-Seq<br />
+INFO: tmat.c(205): Reading HMM transition probability matrices: /var/mobile/Applications/E76B971A-81E3-4CFF-B2CA-EFA537E40D5A/OpenEarsSampleApp.app/transition_matrices<br />
+INFO: acmod.c(125): Attempting to use SCHMM computation module<br />
+INFO: ms_gauden.c(198): Reading mixture gaussian parameter: /var/mobile/Applications/E76B971A-81E3-4CFF-B2CA-EFA537E40D5A/OpenEarsSampleApp.app/means<br />
+INFO: ms_gauden.c(292): 1 codebook, 3 feature, size:<br />
+INFO: ms_gauden.c(294):  256x13<br />
+INFO: ms_gauden.c(294):  256x13<br />
+INFO: ms_gauden.c(294):  256x13<br />
+INFO: ms_gauden.c(198): Reading mixture gaussian parameter: /var/mobile/Applications/E76B971A-81E3-4CFF-B2CA-EFA537E40D5A/OpenEarsSampleApp.app/variances<br />
+INFO: ms_gauden.c(292): 1 codebook, 3 feature, size:<br />
+INFO: ms_gauden.c(294):  256x13<br />
+INFO: ms_gauden.c(294):  256x13<br />
+INFO: ms_gauden.c(294):  256x13<br />
+INFO: ms_gauden.c(354): 0 variance values floored<br />
+INFO: s2_semi_mgau.c(995): Loading senones from dump file /var/mobile/Applications/E76B971A-81E3-4CFF-B2CA-EFA537E40D5A/OpenEarsSampleApp.app/sendump<br />
+INFO: s2_semi_mgau.c(1019): BEGIN FILE FORMAT DESCRIPTION<br />
+INFO: s2_semi_mgau.c(1114): Using memory-mapped I/O for senones<br />
+INFO: s2_semi_mgau.c(1391): Maximum top-N: 4 Top-N beams: 0 0 0<br />
+INFO: dict.c(317): Allocating 4115 * 20 bytes (80 KiB) for word entries<br />
+INFO: dict.c(332): Reading main dictionary: /var/mobile/Applications/E76B971A-81E3-4CFF-B2CA-EFA537E40D5A/OpenEarsSampleApp.app/OpenEars1.dic<br />
+INFO: dict.c(211): Allocated 0 KiB for strings, 0 KiB for phones<br />
+INFO: dict.c(335): 8 words read<br />
+INFO: dict.c(341): Reading filler dictionary: /var/mobile/Applications/E76B971A-81E3-4CFF-B2CA-EFA537E40D5A/OpenEarsSampleApp.app/noisedict<br />
+INFO: dict.c(211): Allocated 0 KiB for strings, 0 KiB for phones<br />
+INFO: dict.c(344): 11 words read<br />
+INFO: dict2pid.c(400): Building PID tables for dictionary<br />
+INFO: dict2pid.c(408): Allocating 50^3 * 2 bytes (244 KiB) for word-initial triphones<br />
+INFO: dict2pid.c(135): Allocated 30200 bytes (29 KiB) for word-final triphones<br />
+INFO: dict2pid.c(199): Allocated 30200 bytes (29 KiB) for single-phone word triphones<br />
+INFO: fsg_search.c(145): FSG(beam: -1080, pbeam: -1080, wbeam: -634; wip: -13, pip: 0)<br />
+INFO: jsgf.c(546): Defined rule: PUBLIC<br />
+INFO: fsg_model.c(215): Computing transitive closure for null transitions<br />
+INFO: fsg_model.c(270): 0 null transitions added<br />
+ERROR: "fsg_search.c", line 334: The word 'QUIDNUNC' is missing in the dictionary<br />
+2012-10-24 10:41:04.645 OpenEarsSampleApp[31311:3b03] Starting openAudioDevice on the device.<br />
+2012-10-24 10:41:04.647 OpenEarsSampleApp[31311:3b03] Audio unit wrapper successfully created.<br />
+2012-10-24 10:41:04.653 OpenEarsSampleApp[31311:3b03] Set audio route to SpeakerAndMicrophone<br />
+2012-10-24 10:41:04.654 OpenEarsSampleApp[31311:3b03] Checking and resetting all audio session settings.<br />
+2012-10-24 10:41:04.656 OpenEarsSampleApp[31311:3b03] audioCategory is correct, we will leave it as it is.<br />
+2012-10-24 10:41:04.658 OpenEarsSampleApp[31311:3b03] bluetoothInput is correct, we will leave it as it is.<br />
+2012-10-24 10:41:04.660 OpenEarsSampleApp[31311:3b03] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2012-10-24 10:41:04.662 OpenEarsSampleApp[31311:3b03] preferredBufferSize is correct, we will leave it as it is.<br />
+2012-10-24 10:41:04.664 OpenEarsSampleApp[31311:3b03] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2012-10-24 10:41:04.666 OpenEarsSampleApp[31311:3b03] Setting the variables for the device and starting it.<br />
+2012-10-24 10:41:04.668 OpenEarsSampleApp[31311:3b03] Looping through ringbuffer sections and pre-allocating them.<br />
+2012-10-24 10:41:05.244 OpenEarsSampleApp[31311:3b03] Started audio output unit.<br />
+2012-10-24 10:41:05.248 OpenEarsSampleApp[31311:3b03] Calibration has started<br />
+2012-10-24 10:41:05.248 OpenEarsSampleApp[31311:907] Pocketsphinx calibration has started.<br />
+2012-10-24 10:41:07.491 OpenEarsSampleApp[31311:3b03] Calibration has completed<br />
+2012-10-24 10:41:07.491 OpenEarsSampleApp[31311:907] Pocketsphinx calibration is complete.<br />
+2012-10-24 10:41:07.494 OpenEarsSampleApp[31311:3b03] Project has these words in its dictionary:<br />
+BACKWARD<br />
+CHANGE<br />
+FORWARD<br />
+GO<br />
+LEFT<br />
+MODEL<br />
+RIGHT<br />
+TURN<br />
+2012-10-24 10:41:07.495 OpenEarsSampleApp[31311:907] I'm running flite<br />
+2012-10-24 10:41:07.496 OpenEarsSampleApp[31311:3b03] Listening.<br />
+2012-10-24 10:41:07.497 OpenEarsSampleApp[31311:907] Checking and resetting all audio session settings.<br />
+2012-10-24 10:41:07.501 OpenEarsSampleApp[31311:907] audioCategory is correct, we will leave it as it is.<br />
+2012-10-24 10:41:07.503 OpenEarsSampleApp[31311:907] bluetoothInput is correct, we will leave it as it is.<br />
+2012-10-24 10:41:07.505 OpenEarsSampleApp[31311:907] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2012-10-24 10:41:07.509 OpenEarsSampleApp[31311:907] preferredBufferSize is correct, we will leave it as it is.<br />
+2012-10-24 10:41:07.512 OpenEarsSampleApp[31311:907] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2012-10-24 10:41:07.961 OpenEarsSampleApp[31311:907] I'm done running flite and it took 0.463920 seconds<br />
+2012-10-24 10:41:07.963 OpenEarsSampleApp[31311:907] Flite audio player was nil when referenced so attempting to allocate a new audio player.<br />
+2012-10-24 10:41:07.965 OpenEarsSampleApp[31311:907] Loading speech data for Flite concluded successfully.<br />
+2012-10-24 10:41:08.061 OpenEarsSampleApp[31311:907] Pocketsphinx is now listening.<br />
+2012-10-24 10:41:08.065 OpenEarsSampleApp[31311:907] Flite sending suspend recognition notification.<br />
+2012-10-24 10:41:08.067 OpenEarsSampleApp[31311:907] Flite has started speaking<br />
+2012-10-24 10:41:09.984 OpenEarsSampleApp[31311:907] AVAudioPlayer did finish playing with success flag of 1<br />
+2012-10-24 10:41:10.146 OpenEarsSampleApp[31311:907] Flite sending resume recognition notification.<br />
+2012-10-24 10:41:10.649 OpenEarsSampleApp[31311:907] Flite has finished speaking<br />
+(lldb)<br />
+</code><br />
+Followed by termination with Thread 6: EXC_BAD_ACCESS (code=1, address=0x1c);</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/enabling-jsgf-causes-an-exc_bad_access-error/#post-11684</guid>
+					<title><![CDATA[Reply To: Enabling JSGF causes an EXC_BAD_ACCESS error]]></title>
+					<link>/forums/topic/enabling-jsgf-causes-an-exc_bad_access-error/#post-11684</link>
+					<pubDate>Wed, 24 Oct 2012 14:47:03 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Does it work if you use a grammar and dictionary combination that doesn&#8217;t result in this error from the logs:</p>
+<p>ERROR: &#8220;fsg_search.c&#8221;, line 334: The word &#8216;QUIDNUNC&#8217; is missing in the dictionary</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/enabling-jsgf-causes-an-exc_bad_access-error/#post-11685</guid>
+					<title><![CDATA[Reply To: Enabling JSGF causes an EXC_BAD_ACCESS error]]></title>
+					<link>/forums/topic/enabling-jsgf-causes-an-exc_bad_access-error/#post-11685</link>
+					<pubDate>Wed, 24 Oct 2012 14:51:12 +0000</pubDate>
+					<dc:creator>Jandr50</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I think I&#8217;ve solved it. In my hurry to test this out trying to find my crash, I was loading OpenEars2.gram thinking that was the starting file. Turns out if the dictionary doesn&#8217;t match the grammar file it crashes hard.</p>
+<p>Switching to OpenEars1.gram seems to work, now just trying to see if that&#8217;s the same problem my project had.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/enabling-jsgf-causes-an-exc_bad_access-error/#post-11687</guid>
+					<title><![CDATA[Reply To: Enabling JSGF causes an EXC_BAD_ACCESS error]]></title>
+					<link>/forums/topic/enabling-jsgf-causes-an-exc_bad_access-error/#post-11687</link>
+					<pubDate>Wed, 24 Oct 2012 14:57:16 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, let me know if the issue persists with your own app.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/enabling-jsgf-causes-an-exc_bad_access-error/#post-11688</guid>
+					<title><![CDATA[Reply To: Enabling JSGF causes an EXC_BAD_ACCESS error]]></title>
+					<link>/forums/topic/enabling-jsgf-causes-an-exc_bad_access-error/#post-11688</link>
+					<pubDate>Wed, 24 Oct 2012 15:22:31 +0000</pubDate>
+					<dc:creator>Jandr50</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>After reconfirming how it was supposed to be working, I&#8217;ve come to the conclusion it&#8217;s unable to parse the grammar file. </p>
+<p>I was trying to use the example JSGF example from <a href="http://cmusphinx.sourceforge.net/sphinx4/javadoc/edu/cmu/sphinx/jsgf/JSGFGrammar.html" rel="nofollow">CMUSphinx&#8217;s page</a>, which is<br />
+<code><br />
+#JSGF V1.0;<br />
+grammar samplegrammar;<br />
+public  =   ;<br />
+ =  ;<br />
+ = /10/ open |/2/ close |/1/ delete |/1/ move;<br />
+ = [the | a] (window | file | menu);<br />
+ = (please | kindly | could you | oh mighty computer) *;<br />
+ = [ please | thanks | thank you ];<br />
+</code></p>
+<p>and it was throwing an index out of bounds exception. If I change it to a more direct set of phrases<br />
+<code><br />
+#JSGF V1.0;<br />
+grammar samplegrammar;<br />
+public  =<br />
+OPEN THE WINDOW |<br />
+CLOSE THE WINDOW |<br />
+DELETE THE WINDOW |<br />
+DELETE THE FILE |<br />
+CLOSE THE FILE;<br />
+</code></p>
+<p>It seems to work fine. Honestly though, I can probably get away with simple phrase detection like this for this project.</p>
+<p>EDIT: the tags were parsing out of the CMU code here, but the example on the page still lists it.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/enabling-jsgf-causes-an-exc_bad_access-error/#post-11690</guid>
+					<title><![CDATA[Reply To: Enabling JSGF causes an EXC_BAD_ACCESS error]]></title>
+					<link>/forums/topic/enabling-jsgf-causes-an-exc_bad_access-error/#post-11690</link>
+					<pubDate>Wed, 24 Oct 2012 15:31:12 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, I will put this down as a bug since it should also be able to parse CMU&#8217;s version, but I&#8217;m glad it&#8217;s working for you.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/enabling-jsgf-causes-an-exc_bad_access-error/#post-1015795</guid>
+					<title><![CDATA[Reply To: Compatibility issue with CMU JSGF example]]></title>
+					<link>/forums/topic/enabling-jsgf-causes-an-exc_bad_access-error/#post-1015795</link>
+					<pubDate>Tue, 05 Mar 2013 07:03:10 +0000</pubDate>
+					<dc:creator>dashesy</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am trying 1.3, and it seems the parsing problem is still there, Is that right or maybe I am doing something wrong.<br />
+I also get a crash, and when I look at the verbose output I see this:</p>
+<p>ERROR: &#8220;jsgf_parser.y&#8221;, line 155: syntax error, unexpected RULENAME, expecting TOKEN or &#8216;;&#8217; at line 3 current token &#8221;</p>
+<p>Any advice is appreciated</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/enabling-jsgf-causes-an-exc_bad_access-error/#post-1015796</guid>
+					<title><![CDATA[Reply To: Compatibility issue with CMU JSGF example]]></title>
+					<link>/forums/topic/enabling-jsgf-causes-an-exc_bad_access-error/#post-1015796</link>
+					<pubDate>Tue, 05 Mar 2013 07:13:32 +0000</pubDate>
+					<dc:creator>dashesy</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>On further attempt I added a semicolon to the first line, and now it is parsed correctly!<br />
+just wanted to let you know it requires &#8220;#JSGF V1.0;&#8221;</p>
+<p>Thanks</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

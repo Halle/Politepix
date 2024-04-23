@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Cannot get the Neatspeech to work? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/cannot-get-the-neatspeech-to-work/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/cannot-get-the-neatspeech-to-work/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:43:51 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/cannot-get-the-neatspeech-to-work/#post-1018044</guid>
+					<title><![CDATA[Cannot get the Neatspeech to work?]]></title>
+					<link>/forums/topic/cannot-get-the-neatspeech-to-work/#post-1018044</link>
+					<pubDate>Mon, 26 Aug 2013 02:31:53 +0000</pubDate>
+					<dc:creator>forum_user19</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I have a working openears app working with the default slt voice.<br />
+I then download and add in emma and Neatspeech plugin both framework<br />
+and voices folder. I then add</p>
+<p>&#8211; (Emma *)emma {<br />
+    if (emma == nil) {<br />
+        emma = [[Emma alloc] init];<br />
+    }<br />
+        //emma = [[Emma alloc]initWithPitch:0.0 speed:0.0 transform:0.0]; }<br />
+    return emma; }</p>
+<p>and this</p>
+<p>  [self.fliteController sayWithNeatSpeech:@&#8221;I have always wished for my computer to be as easy to use as my telephone; my wish has come true because I can no longer figure out how to use my telephone.&#8221; withVoice:self.emma];</p>
+<p>and all I can get is this below&#8230; iOS 6 WHAT iS the DEAL???</p>
+<p>2013-08-25 19:23:38.111 TelemetryPro[6720:c07] starting update thread<br />
+2013-08-25 19:23:38.125 TelemetryPro[6720:c07] -[FliteController sayWithNeatSpeech:withVoice:]: unrecognized selector sent to instance 0x91ceda0<br />
+2013-08-25 19:23:38.126 TelemetryPro[6720:c07] *** Terminating app due to uncaught exception &#8216;NSInvalidArgumentException&#8217;, reason: &#8216;-[FliteController sayWithNeatSpeech:withVoice:]: unrecognized selector sent to instance 0x91ceda0&#8217;<br />
+*** First throw call stack:<br />
+(0x25b1012 0x1ecde7e 0x263c4bd 0x25a0bbc 0x25a094e 0x2a3c 0x911103 0x91142b 0x92d3fd 0x911103 0x91142b 0x912314 0x875227 0x87bf53 0x87489d 0x85e506 0x85e76f 0x85e905 0x867917 0x82b96c 0x82c94b 0x83dcb5 0x83ebeb 0x830698 0x250cdf9 0x250cad0 0x2526bf5 0x2526962 0x2557bb6 0x2556f44 0x2556e1b 0x82c17a 0x82dffc 0x295d 0x2885)<br />
+libc++abi.dylib: terminate called throwing an exception<br />
+(lldb) </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/cannot-get-the-neatspeech-to-work/#post-1018045</guid>
+					<title><![CDATA[Reply To: Cannot get the Neatspeech to work?]]></title>
+					<link>/forums/topic/cannot-get-the-neatspeech-to-work/#post-1018045</link>
+					<pubDate>Mon, 26 Aug 2013 03:11:38 +0000</pubDate>
+					<dc:creator>forum_user19</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Also, I do not have in &#8220;listening&#8221; stuff in the project.<br />
+I just want Text to speech. I think the standard openears works ok<br />
+with just text to speech but Neatspeech does not, Can you check this out<br />
+and tell me how I just do text to speech with Neatspeech.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/cannot-get-the-neatspeech-to-work/#post-1018048</guid>
+					<title><![CDATA[Reply To: Cannot get the Neatspeech to work?]]></title>
+					<link>/forums/topic/cannot-get-the-neatspeech-to-work/#post-1018048</link>
+					<pubDate>Mon, 26 Aug 2013 06:54:34 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>This happens if you&#8217;ve missed a step in the installation from the tutorial and documentation where you add the -ObjC linker flag to your target. Just take a second look at the tutorial for adding NeatSpeech and give some extra attention to the step &#8220;Preparing to use Plugins&#8221;.</p>
+<blockquote><p>
+and all I can get is this below… iOS 6 WHAT iS the DEAL???
+</p></blockquote>
+<p>I&#8217;d prefer to avoid this kind of tone here. It&#8217;s normal in programming projects that even experienced developers make minor mistakes in the process of getting a piece of software working &#8212; it could be me overlooking a step when releasing a plugin or it could be you innocently missing a step in the tutorial &#8212; so it&#8217;s much better for everyone to keep things constructive. I have removed your second post saying the same thing and changed your username to something that will have less of a likelihood of causing confusion.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

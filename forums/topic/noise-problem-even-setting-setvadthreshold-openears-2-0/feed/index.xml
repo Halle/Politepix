@@ -1,0 +1,796 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] Noise problem even setting setVadThreshold openEars 2.0 &#8211; Politepix</title>
+		<atom:link href="/forums/topic/noise-problem-even-setting-setvadthreshold-openears-2-0/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/noise-problem-even-setting-setvadthreshold-openears-2-0/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:08:03 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/noise-problem-even-setting-setvadthreshold-openears-2-0/#post-1024045</guid>
+					<title><![CDATA[[Resolved] Noise problem even setting setVadThreshold openEars 2.0]]></title>
+					<link>/forums/topic/noise-problem-even-setting-setvadthreshold-openears-2-0/#post-1024045</link>
+					<pubDate>Thu, 01 Jan 2015 22:21:04 +0000</pubDate>
+					<dc:creator>maxgarmar</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi guys,</p>
+<p>I was using until now openears 1.66 in an app which is currently working in Spanish and I have to say that I was really happy with the results and the accuracy.<br />
+Then some days ago I realized that this version has problems with &#8220;ch&#8221; middle-phonemes words.<br />
+For instance:<br />
+&#8220;Leche&#8221; is working perfectly but however &#8220;Lechuga&#8221; is impossible to recognize.<br />
+Then I read on the changelog the correction on 1.7.1 version about spanish phonemes and I guess this will solve my problem and I will be the happiest guy in the world :D. But I cannot download this version only the 2.0.<br />
+I tried the 2.0 and then the words with &#8220;ch&#8221; in the middle are working now but the accuracy is worse than 1.66 and with a TV making noises in background openears is too sensitive and is crazy how it keeps listening in comparison with 1.66. I read all the post about that and I tried to change the values:</p>
+<pre><code>[[OEPocketsphinxController sharedInstance] setSecondsOfSilenceToDetect:0.2];
+ [[OEPocketsphinxController sharedInstance] setVadThreshold:3.0];</code></pre>
+<p>but does not seems to do anything, I don&#8217;t feel any difference perhaps I am setting the values in the wrong place.</p>
+<p>Anyway, could I download or get 1.7.1 version somehow?, would be awesome. I don&#8217;t find it in any place. If it is not possible, please could you help me to use 2.0 correctly?.</p>
+<p>Thanks in advance ! and really you are doing a good job</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/noise-problem-even-setting-setvadthreshold-openears-2-0/#post-1024048</guid>
+					<title><![CDATA[Reply To: [Resolved] Noise problem even setting setVadThreshold openEars 2.0]]></title>
+					<link>/forums/topic/noise-problem-even-setting-setvadthreshold-openears-2-0/#post-1024048</link>
+					<pubDate>Fri, 02 Jan 2015 08:18:29 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>A couple of things that should help. </p>
+<p>The first is that you can&#8217;t use unrealistically low secondsOfSilenceToDetect values like .1 or .2 with OpenEars 2.0 anymore. There isn&#8217;t an advantage to using a pause detection of a length which is less than a speaker&#8217;s actual pause (at least .3 seconds if not more) so this has never provided a benefit as a UI for the user and causes actual speech to be interrupted, as well as speech-like sounds to be submitted constantly for recognition. It doesn&#8217;t result in a real-time-like user experience because speech still has to be processed as a whole, and it is more frequently in the process of being submitted for recognition, meaning it is likely to not be listening at the time that the user is speaking due to processing. </p>
+<p>secondsOfSilenceToDetect values that were significantly shorter than a speaker&#8217;s pause have been the cause of almost all of the issues reported for 2.0, so it&#8217;s pretty likely I&#8217;m going to limit that property to realistic values in upcoming versions. It will need to be increased to a value greater than .2 for 2.0.</p>
+<p>From the upgrade guide: </p>
+<pre>
+Another API change is that before you start setting properties of OEPocketsphinxController for the first time, it is necessary to call its setActive method:
+
+[[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil];
+</pre>
+<p>If you haven&#8217;t called setActive: and your vadThreshold settings are the first properties you&#8217;re setting, this will cause them not to take effect.</p>
+<p>Lastly, you can set vadThreshold to a value higher than 3.0 if 3.0 is still causing oversensitive recognition, although this is probably more due to the secondsOfSilenceToDetect setting.</p>
+<p>Sorry, it isn&#8217;t possible to offer dual support to 1.x and 2.x simultaneously – if there are issues with 2.0 they need to be reported and then they will be fixed.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/noise-problem-even-setting-setvadthreshold-openears-2-0/#post-1024049</guid>
+					<title><![CDATA[Reply To: [Resolved] Noise problem even setting setVadThreshold openEars 2.0]]></title>
+					<link>/forums/topic/noise-problem-even-setting-setvadthreshold-openears-2-0/#post-1024049</link>
+					<pubDate>Fri, 02 Jan 2015 09:45:09 +0000</pubDate>
+					<dc:creator>maxgarmar</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks Halle for that fast answer. </p>
+<p>Ok I will try the couple of things you told me, but then before I would like to know a couple of things to fully understand how this is working. </p>
+<p>First, what are the realistic values for secondsOfSilenceToDetect being the minimum .3 as you told me? What would be the best value for you if I tell you that I&#8217;m recognizing maximum 3 words in a phrase but normally it will be just one word?</p>
+<p>Another thing is, I would like to know what is the maximum value for the vadThreshold to play with it. </p>
+<p>Thanks a lot </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/noise-problem-even-setting-setvadthreshold-openears-2-0/#post-1024050</guid>
+					<title><![CDATA[Reply To: [Resolved] Noise problem even setting setVadThreshold openEars 2.0]]></title>
+					<link>/forums/topic/noise-problem-even-setting-setvadthreshold-openears-2-0/#post-1024050</link>
+					<pubDate>Fri, 02 Jan 2015 10:59:15 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>The maximum value for vadThreshold is 4.0. </p>
+<p>I would expect 2.0-3.0 to work fine for most applications as long as the secondsOfSilenceToDetect has a realistic relationship with user pauses.</p>
+<p>Regarding secondsOfSilenceToDetect, the smallest value I would expect to begin to give a good user experience is .3, since that is getting towards the average durations that speakers pause between utterances. I would probably expect it to be a bit larger at .4 or maybe .5 since the intention isn&#8217;t to only catch the speech of speakers whose pauses are shorter than the average.</p>
+<p>If you are ever trying to recognize more than one word at a time this should be a value that is distinctly longer than a normal inter-word pause, since setting it to the same length or shorter means you are insuring that the user will have their speech interrupted and recognized while they are still in the process of active app-directed speech, and that also means their subsequent speech will not be heard by the engine while it is in the process of performing recognition on the partial speech that it interrupted, which is a big downside risk for a speech UX. That&#8217;s what the default value of .7 is meant to help with. Probably a value like .5 is still reasonable here to split the difference between good UX in terms of getting all the speech and good UX in terms of reactivity.</p>
+<p>I don&#8217;t think there is a big gain in setting it to a tiny value purely in terms of the sense of reactiveness, because that latency is only going to be a small percentage of the overall interaction time which includes the time the user spoke, and their actual intended period of silence, and the time that the engine took to process the entire finalized speech, which is likely to be a minimum of 3 seconds overall (assuming that everything else that happens in your UI as a result of the speech is instantaneous), making a question of tenths of a second one way or another not the biggest part of the puzzle in terms of UX. </p>
+<p>In some cases I think the idea behind setting it very low is to give a RapidEars-like lack of latency, but RapidEars returns the user speech continuously while it is still in progress, which is just a very different UX to the UX of complete utterances being analyzed after they have been finished, regardless of the secondsOfSilenceToDetect time.</p>
+<p>In the absence of a real-time approach like that in RapidEars, I think it&#8217;s likely to make speech UI users happier when the secondsOfSilenceToDetect corresponds to their intention to denote that their app-directed speech is finished, versus other events such as a inter-word pause or hesitation.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/noise-problem-even-setting-setvadthreshold-openears-2-0/#post-1024053</guid>
+					<title><![CDATA[Reply To: [Resolved] Noise problem even setting setVadThreshold openEars 2.0]]></title>
+					<link>/forums/topic/noise-problem-even-setting-setvadthreshold-openears-2-0/#post-1024053</link>
+					<pubDate>Fri, 02 Jan 2015 14:29:38 +0000</pubDate>
+					<dc:creator>maxgarmar</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi, </p>
+<p>regarding what you you told me about where to set the vadThreshold and secondsOfSilenceToDetect, I was setting those values before setActive line, so I would expect that when I move it after this line I would feel a real difference. But I am sorry, nothing changed.</p>
+<p>Tests:</p>
+<p>vadThreshold = 4.0 (maximun)<br />
+secondsOfSilenceToDetect= 0.3</p>
+<p>and with the TV in background with a normal level of sound, the recognition does not stop &#8230; and it recognize 6 or 7 words.. when I just said one.</p>
+<p>after this test I changed secondsOfSilenceToDetect to 0.4 and 0.5 but not with better results&#8230; I really don&#8217;t get what&#8217;s going on. What am I doing wrong, Halle? </p>
+<p>Could I get somehow 1.7.1 version ? I would like to make tests with it to see the results. </p>
+<p>Thanks, I hope we can get this working</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/noise-problem-even-setting-setvadthreshold-openears-2-0/#post-1024056</guid>
+					<title><![CDATA[Reply To: [Resolved] Noise problem even setting setVadThreshold openEars 2.0]]></title>
+					<link>/forums/topic/noise-problem-even-setting-setvadthreshold-openears-2-0/#post-1024056</link>
+					<pubDate>Fri, 02 Jan 2015 15:03:33 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, can you make a replication case for me so I can see what you&#8217;re seeing exactly? </p>
+<p>What I would need is a recording of your speech (in the environment you&#8217;re describing) added to pathToTestFile (there is a commented-out usage of pathToTestFile in the sample app and you can read more about it in OEPocketsphinxController.h) and the changes to the sample app which will demonstrate this issue (I believe the only changes should be vadThreshold, secondsOfSilenceToDetect, the generation of your language model, and the selection of the Spanish acoustic model). Once you can demonstrate the issue to yourself using the sample app, contact me through the contact form with a place to download your recording and a description of your changes to the sample app and I will test it out and get back to you. Sorry you&#8217;re having this issue and I promise I&#8217;ll check it out.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/noise-problem-even-setting-setvadthreshold-openears-2-0/#post-1024060</guid>
+					<title><![CDATA[Reply To: [Resolved] Noise problem even setting setVadThreshold openEars 2.0]]></title>
+					<link>/forums/topic/noise-problem-even-setting-setvadthreshold-openears-2-0/#post-1024060</link>
+					<pubDate>Fri, 02 Jan 2015 20:08:39 +0000</pubDate>
+					<dc:creator>maxgarmar</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ok here we go. </p>
+<p>This is the complete code I changed on ViewController.m of the test application. You could see how I set the values and everything.</p>
+<pre><code>//  ViewController.m
+//  OpenEarsSampleApp
+//
+//  ViewController.m demonstrates the use of the OpenEars framework. 
+//
+//  Copyright Politepix UG (haftungsbeschränkt) 2014. All rights reserved.
+//  /
+//  Contact at /contact
+//
+//  This file is licensed under the Politepix Shared Source license found in the root of the source distribution.
+
+// **************************************************************************************************************************************************************
+// **************************************************************************************************************************************************************
+// **************************************************************************************************************************************************************
+// IMPORTANT NOTE: Audio driver and hardware behavior is completely different between the Simulator and a real device. It is not informative to test OpenEars&#039; accuracy on the Simulator, and please do not report Simulator-only bugs since I only actively support 
+// the device driver. Please only do testing/bug reporting based on results on a real device such as an iPhone or iPod Touch. Thanks!
+// **************************************************************************************************************************************************************
+// **************************************************************************************************************************************************************
+// **************************************************************************************************************************************************************
+
+#import &quot;ViewController.h&quot;
+#import &lt;OpenEars/OEPocketsphinxController.h&gt;
+#import &lt;OpenEars/OEFliteController.h&gt;
+#import &lt;OpenEars/OELanguageModelGenerator.h&gt;
+#import &lt;OpenEars/OELogging.h&gt;
+#import &lt;OpenEars/OEAcousticModel.h&gt;
+#import &lt;Slt/Slt.h&gt;
+
+@interface ViewController()
+
+// UI actions, not specifically related to OpenEars other than the fact that they invoke OpenEars methods.
+- (IBAction) stopButtonAction;
+- (IBAction) startButtonAction;
+- (IBAction) suspendListeningButtonAction;
+- (IBAction) resumeListeningButtonAction;
+
+// Example for reading out the input audio levels without locking the UI using an NSTimer
+
+- (void) startDisplayingLevels;
+- (void) stopDisplayingLevels;
+
+// These three are the important OpenEars objects that this class demonstrates the use of.
+@property (nonatomic, strong) Slt *slt;
+
+@property (nonatomic, strong) OEEventsObserver *openEarsEventsObserver;
+@property (nonatomic, strong) OEPocketsphinxController *pocketsphinxController;
+@property (nonatomic, strong) OEFliteController *fliteController;
+
+// Some UI, not specifically related to OpenEars.
+@property (nonatomic, strong) IBOutlet UIButton *stopButton;
+@property (nonatomic, strong) IBOutlet UIButton *startButton;
+@property (nonatomic, strong) IBOutlet UIButton *suspendListeningButton;	
+@property (nonatomic, strong) IBOutlet UIButton *resumeListeningButton;	
+@property (nonatomic, strong) IBOutlet UITextView *statusTextView;
+@property (nonatomic, strong) IBOutlet UITextView *heardTextView;
+@property (nonatomic, strong) IBOutlet UILabel *pocketsphinxDbLabel;
+@property (nonatomic, strong) IBOutlet UILabel *fliteDbLabel;
+@property (nonatomic, assign) BOOL usingStartingLanguageModel;
+@property (nonatomic, assign) int restartAttemptsDueToPermissionRequests;
+@property (nonatomic, assign) BOOL startupFailedDueToLackOfPermissions;
+
+// Things which help us show off the dynamic language features.
+@property (nonatomic, copy) NSString *pathToFirstDynamicallyGeneratedLanguageModel;
+@property (nonatomic, copy) NSString *pathToFirstDynamicallyGeneratedDictionary;
+@property (nonatomic, copy) NSString *pathToSecondDynamicallyGeneratedLanguageModel;
+@property (nonatomic, copy) NSString *pathToSecondDynamicallyGeneratedDictionary;
+
+// Our NSTimer that will help us read and display the input and output levels without locking the UI
+@property (nonatomic, strong) 	NSTimer *uiUpdateTimer;
+
+@end
+
+@implementation ViewController
+
+#define kLevelUpdatesPerSecond 18 // We&#039;ll have the ui update 18 times a second to show some fluidity without hitting the CPU too hard.
+
+//#define kGetNbest // Uncomment this if you want to try out nbest
+#pragma mark - 
+#pragma mark Memory Management
+
+- (void)dealloc {
+    [self stopDisplayingLevels];
+}
+
+#pragma mark -
+#pragma mark View Lifecycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.fliteController = [[OEFliteController alloc] init];
+    self.openEarsEventsObserver = [[OEEventsObserver alloc] init];
+    self.openEarsEventsObserver.delegate = self;
+    self.slt = [[Slt alloc] init];
+    
+    self.restartAttemptsDueToPermissionRequests = 0;
+    self.startupFailedDueToLackOfPermissions = FALSE;
+    
+    // [OELogging startOpenEarsLogging]; // Uncomment me for OELogging, which is verbose logging about internal OpenEars operations such as audio settings. If you have issues, show this logging in the forums.
+    //[OEPocketsphinxController sharedInstance].verbosePocketSphinx = TRUE; // Uncomment this for much more verbose speech recognition engine output. If you have issues, show this logging in the forums.
+    
+    [self.openEarsEventsObserver setDelegate:self]; // Make this class the delegate of OpenEarsObserver so we can get all of the messages about what OpenEars is doing.
+    
+    [[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil]; // Call this before setting any OEPocketsphinxController characteristics
+    
+    [[OEPocketsphinxController sharedInstance] setSecondsOfSilenceToDetect:0.3];
+    [[OEPocketsphinxController sharedInstance] setVadThreshold:4.0];
+    
+    // This is the language model we&#039;re going to start up with. The only reason I&#039;m making it a class property is that I reuse it a bunch of times in this example, 
+    // but you can pass the string contents directly to OEPocketsphinxController:startListeningWithLanguageModelAtPath:dictionaryAtPath:languageModelIsJSGF:
+    
+    NSArray *firstLanguageArray = @[@&quot;ADIOS&quot;,
+                                    @&quot;LECHUGA&quot;,
+                                    @&quot;MADRID&quot;,
+                                    @&quot;BARCELONA&quot;,
+                                    @&quot;PARIS&quot;,
+                                    @&quot;ROMA&quot;,
+                                    @&quot;MAINZ&quot;,
+                                    @&quot;HOLA&quot;];
+    
+    OELanguageModelGenerator *languageModelGenerator = [[OELanguageModelGenerator alloc] init];
+    
+    // languageModelGenerator.verboseLanguageModelGenerator = TRUE; // Uncomment me for verbose language model generator debug output.
+
+    NSError *error = [languageModelGenerator generateLanguageModelFromArray:firstLanguageArray withFilesNamed:@&quot;FirstOpenEarsDynamicLanguageModel&quot; forAcousticModelAtPath:[OEAcousticModel pathToModel:@&quot;AcousticModelSpanish&quot;]]; // Change &quot;AcousticModelSpanish&quot; to &quot;AcousticModelSpanish&quot; in order to create a language model for Spanish recognition instead of English.
+    
+    
+    if(error) {
+        NSLog(@&quot;Dynamic language generator reported error %@&quot;, [error description]);	
+    } else {
+        self.pathToFirstDynamicallyGeneratedLanguageModel = [languageModelGenerator pathToSuccessfullyGeneratedLanguageModelWithRequestedName:@&quot;FirstOpenEarsDynamicLanguageModel&quot;];
+        self.pathToFirstDynamicallyGeneratedDictionary = [languageModelGenerator pathToSuccessfullyGeneratedDictionaryWithRequestedName:@&quot;FirstOpenEarsDynamicLanguageModel&quot;];
+    }
+    
+    self.usingStartingLanguageModel = TRUE; // This is not an OpenEars thing, this is just so I can switch back and forth between the two models in this sample app.
+    
+    // Here is an example of dynamically creating an in-app grammar.
+    
+    // We want it to be able to response to the speech &quot;CHANGE MODEL&quot; and a few other things.  Items we want to have recognized as a whole phrase (like &quot;CHANGE MODEL&quot;) 
+    // we put into the array as one string (e.g. &quot;CHANGE MODEL&quot; instead of &quot;CHANGE&quot; and &quot;MODEL&quot;). This increases the probability that they will be recognized as a phrase. This works even better starting with version 1.0 of OpenEars.
+    
+    
+    NSArray *secondLanguageArray = @[@&quot;ADIOS&quot;,
+                                    @&quot;LECHUGA&quot;,
+                                    @&quot;MADRID&quot;,
+                                    @&quot;BARCELONA&quot;,
+                                    @&quot;PARIS&quot;,
+                                    @&quot;ROMA&quot;,
+                                    @&quot;MAINZ&quot;,
+                                    @&quot;HOLA&quot;];
+    
+    // The last entry, quidnunc, is an example of a word which will not be found in the lookup dictionary and will be passed to the fallback method. The fallback method is slower,
+    // so, for instance, creating a new language model from dictionary words will be pretty fast, but a model that has a lot of unusual names in it or invented/rare/recent-slang
+    // words will be slower to generate. You can use this information to give your users good UI feedback about what the expectations for wait times should be.
+    
+    // I don&#039;t think it&#039;s beneficial to lazily instantiate OELanguageModelGenerator because you only need to give it a single message and then release it.
+    // If you need to create a very large model or any size of model that has many unusual words that have to make use of the fallback generation method,
+    // you will want to run this on a background thread so you can give the user some UI feedback that the task is in progress.
+        
+    // generateLanguageModelFromArray:withFilesNamed returns an NSError which will either have a value of noErr if everything went fine or a specific error if it didn&#039;t.
+    error = [languageModelGenerator generateLanguageModelFromArray:secondLanguageArray withFilesNamed:@&quot;SecondOpenEarsDynamicLanguageModel&quot; forAcousticModelAtPath:[OEAcousticModel pathToModel:@&quot;AcousticModelSpanish&quot;]]; // Change &quot;AcousticModelSpanish&quot; to &quot;AcousticModelSpanish&quot; in order to create a language model for Spanish recognition instead of English.
+    
+    //    NSError *error = [languageModelGenerator generateLanguageModelFromTextFile:[NSString stringWithFormat:@&quot;%@/%@&quot;,[[NSBundle mainBundle] resourcePath], @&quot;OpenEarsCorpus.txt&quot;] withFilesNamed:@&quot;SecondOpenEarsDynamicLanguageModel&quot; forAcousticModelAtPath:[OEAcousticModel pathToModel:@&quot;AcousticModelSpanish&quot;]]; // Try this out to see how generating a language model from a corpus works.
+    
+    
+    if(error) {
+        NSLog(@&quot;Dynamic language generator reported error %@&quot;, [error description]);	
+    }	else {
+        
+        self.pathToSecondDynamicallyGeneratedLanguageModel = [languageModelGenerator pathToSuccessfullyGeneratedLanguageModelWithRequestedName:@&quot;SecondOpenEarsDynamicLanguageModel&quot;]; // We&#039;ll set our new .languagemodel file to be the one to get switched to when the words &quot;CHANGE MODEL&quot; are recognized.
+        self.pathToSecondDynamicallyGeneratedDictionary = [languageModelGenerator pathToSuccessfullyGeneratedDictionaryWithRequestedName:@&quot;SecondOpenEarsDynamicLanguageModel&quot;];; // We&#039;ll set our new dictionary to be the one to get switched to when the words &quot;CHANGE MODEL&quot; are recognized.
+        
+        // Next, an informative message.
+        
+        NSLog(@&quot;\n\nWelcome to the OpenEars sample project. This project understands the words:\nBACKWARD,\nCHANGE,\nFORWARD,\nGO,\nLEFT,\nMODEL,\nRIGHT,\nTURN,\nand if you say \&quot;CHANGE MODEL\&quot; it will switch to its dynamically-generated model which understands the words:\nCHANGE,\nMODEL,\nMONDAY,\nTUESDAY,\nWEDNESDAY,\nTHURSDAY,\nFRIDAY,\nSATURDAY,\nSUNDAY,\nQUIDNUNC&quot;);
+        
+        // This is how to start the continuous listening loop of an available instance of OEPocketsphinxController. We won&#039;t do this if the language generation failed since it will be listening for a command to change over to the generated language.
+        
+        [[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil]; // Call this once before setting properties of the OEPocketsphinxController instance.
+        
+        
+        [[OEPocketsphinxController sharedInstance] setSecondsOfSilenceToDetect:0.3];
+        [[OEPocketsphinxController sharedInstance] setVadThreshold:4.0];
+
+        [OEPocketsphinxController sharedInstance].pathToTestFile = [[NSBundle mainBundle] pathForResource:@&quot;openears&quot; ofType:@&quot;wav&quot;];  // This is how you could use a test WAV (mono/16-bit/16k) rather than live recognition
+       
+        
+        if(![OEPocketsphinxController sharedInstance].isListening) {
+            [[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:self.pathToFirstDynamicallyGeneratedLanguageModel dictionaryAtPath:self.pathToFirstDynamicallyGeneratedDictionary acousticModelAtPath:[OEAcousticModel pathToModel:@&quot;AcousticModelSpanish&quot;] languageModelIsJSGF:FALSE]; // Start speech recognition if we aren&#039;t already listening.
+        }
+        // [self startDisplayingLevels] is not an OpenEars method, just a very simple approach for level reading
+        // that I&#039;ve included with this sample app. My example implementation does make use of two OpenEars
+        // methods:	the pocketsphinxInputLevel method of OEPocketsphinxController and the fliteOutputLevel
+        // method of fliteController. 
+        //
+        // The example is meant to show one way that you can read those levels continuously without locking the UI, 
+        // by using an NSTimer, but the OpenEars level-reading methods 
+        // themselves do not include multithreading code since I believe that you will want to design your own 
+        // code approaches for level display that are tightly-integrated with your interaction design and the  
+        // graphics API you choose. 
+   
+        [self startDisplayingLevels];
+        
+        // Here is some UI stuff that has nothing specifically to do with OpenEars implementation
+        self.startButton.hidden = TRUE;
+        self.stopButton.hidden = TRUE;
+        self.suspendListeningButton.hidden = TRUE;
+        self.resumeListeningButton.hidden = TRUE;
+    }
+}
+
+#pragma mark -
+#pragma mark OEEventsObserver delegate methods
+
+// What follows are all of the delegate methods you can optionally use once you&#039;ve instantiated an OEEventsObserver and set its delegate to self. 
+// I&#039;ve provided some pretty granular information about the exact phase of the Pocketsphinx listening loop, the Audio Session, and Flite, but I&#039;d expect 
+// that the ones that will really be needed by most projects are the following:
+//
+//- (void) pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID;
+//- (void) audioSessionInterruptionDidBegin;
+//- (void) audioSessionInterruptionDidEnd;
+//- (void) audioRouteDidChangeToRoute:(NSString *)newRoute;
+//- (void) pocketsphinxDidStartListening;
+//- (void) pocketsphinxDidStopListening;
+//
+// It isn&#039;t necessary to have a OEPocketsphinxController or a OEFliteController instantiated in order to use these methods.  If there isn&#039;t anything instantiated that will
+// send messages to an OEEventsObserver, all that will happen is that these methods will never fire.  You also do not have to create a OEEventsObserver in
+// the same class or view controller in which you are doing things with a OEPocketsphinxController or OEFliteController; you can receive updates from those objects in
+// any class in which you instantiate an OEEventsObserver and set its delegate to self.
+
+// This is an optional delegate method of OEEventsObserver which delivers the text of speech that Pocketsphinx heard and analyzed, along with its accuracy score and utterance ID.
+- (void) pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID {
+    
+    NSLog(@&quot;Local callback: The received hypothesis is %@ with a score of %@ and an ID of %@&quot;, hypothesis, recognitionScore, utteranceID); // Log it.
+    if([hypothesis isEqualToString:@&quot;CHANGE MODEL&quot;]) { // If the user says &quot;CHANGE MODEL&quot;, we will switch to the alternate model (which happens to be the dynamically generated model).
+        
+        // Here is an example of language model switching in OpenEars. Deciding on what logical basis to switch models is your responsibility.
+        // For instance, when you call a customer service line and get a response tree that takes you through different options depending on what you say to it,
+        // the models are being switched as you progress through it so that only relevant choices can be understood. The construction of that logical branching and 
+        // how to react to it is your job, OpenEars just lets you send the signal to switch the language model when you&#039;ve decided it&#039;s the right time to do so.
+        
+        if(self.usingStartingLanguageModel) { // If we&#039;re on the starting model, switch to the dynamically generated one.
+            
+            // You can only change language models with ARPA grammars in OpenEars (the ones that end in .languagemodel or .DMP). 
+            // Trying to switch between JSGF models (the ones that end in .gram) will return no result.
+            [[OEPocketsphinxController sharedInstance] changeLanguageModelToFile:self.pathToSecondDynamicallyGeneratedLanguageModel withDictionary:self.pathToSecondDynamicallyGeneratedDictionary]; 
+            self.usingStartingLanguageModel = FALSE;
+        } else { // If we&#039;re on the dynamically generated model, switch to the start model (this is just an example of a trigger and method for switching models).
+            [[OEPocketsphinxController sharedInstance] changeLanguageModelToFile:self.pathToFirstDynamicallyGeneratedLanguageModel withDictionary:self.pathToFirstDynamicallyGeneratedDictionary];
+            self.usingStartingLanguageModel = TRUE;
+        }
+    }
+    
+    self.heardTextView.text = [NSString stringWithFormat:@&quot;Heard: \&quot;%@\&quot;&quot;, hypothesis]; // Show it in the status box.
+    
+    // This is how to use an available instance of OEFliteController. We&#039;re going to repeat back the command that we heard with the voice we&#039;ve chosen.
+    [self.fliteController say:[NSString stringWithFormat:@&quot;You said %@&quot;,hypothesis] withVoice:self.slt];
+}
+
+#ifdef kGetNbest   
+- (void) pocketsphinxDidReceiveNBestHypothesisArray:(NSArray *)hypothesisArray { // Pocketsphinx has an n-best hypothesis dictionary.
+    NSLog(@&quot;Local callback:  hypothesisArray is %@&quot;,hypothesisArray);   
+}
+#endif
+// An optional delegate method of OEEventsObserver which informs that there was an interruption to the audio session (e.g. an incoming phone call).
+- (void) audioSessionInterruptionDidBegin {
+    NSLog(@&quot;Local callback:  AudioSession interruption began.&quot;); // Log it.
+    self.statusTextView.text = @&quot;Status: AudioSession interruption began.&quot;; // Show it in the status box.
+    NSError *error = nil;
+    if([OEPocketsphinxController sharedInstance].isListening) {
+        error = [[OEPocketsphinxController sharedInstance] stopListening]; // React to it by telling Pocketsphinx to stop listening (if it is listening) since it will need to restart its loop after an interruption.
+        if(error) NSLog(@&quot;Error while stopping listening in audioSessionInterruptionDidBegin: %@&quot;, error);
+    }
+}
+
+// An optional delegate method of OEEventsObserver which informs that the interruption to the audio session ended.
+- (void) audioSessionInterruptionDidEnd {
+    NSLog(@&quot;Local callback:  AudioSession interruption ended.&quot;); // Log it.
+    self.statusTextView.text = @&quot;Status: AudioSession interruption ended.&quot;; // Show it in the status box.
+    // We&#039;re restarting the previously-stopped listening loop.
+    if(![OEPocketsphinxController sharedInstance].isListening){
+        [[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:self.pathToFirstDynamicallyGeneratedLanguageModel dictionaryAtPath:self.pathToFirstDynamicallyGeneratedDictionary acousticModelAtPath:[OEAcousticModel pathToModel:@&quot;AcousticModelSpanish&quot;] languageModelIsJSGF:FALSE]; // Start speech recognition if we aren&#039;t currently listening.    
+    }
+}
+
+// An optional delegate method of OEEventsObserver which informs that the audio input became unavailable.
+- (void) audioInputDidBecomeUnavailable {
+    NSLog(@&quot;Local callback:  The audio input has become unavailable&quot;); // Log it.
+    self.statusTextView.text = @&quot;Status: The audio input has become unavailable&quot;; // Show it in the status box.
+    NSError *error = nil;
+    if([OEPocketsphinxController sharedInstance].isListening){
+        error = [[OEPocketsphinxController sharedInstance] stopListening]; // React to it by telling Pocketsphinx to stop listening since there is no available input (but only if we are listening).
+        if(error) NSLog(@&quot;Error while stopping listening in audioInputDidBecomeUnavailable: %@&quot;, error);
+    }
+}
+
+// An optional delegate method of OEEventsObserver which informs that the unavailable audio input became available again.
+- (void) audioInputDidBecomeAvailable {
+    NSLog(@&quot;Local callback: The audio input is available&quot;); // Log it.
+    self.statusTextView.text = @&quot;Status: The audio input is available&quot;; // Show it in the status box.
+    if(![OEPocketsphinxController sharedInstance].isListening) {
+        [[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:self.pathToFirstDynamicallyGeneratedLanguageModel dictionaryAtPath:self.pathToFirstDynamicallyGeneratedDictionary acousticModelAtPath:[OEAcousticModel pathToModel:@&quot;AcousticModelSpanish&quot;] languageModelIsJSGF:FALSE]; // Start speech recognition, but only if we aren&#039;t already listening.
+    }
+}
+// An optional delegate method of OEEventsObserver which informs that there was a change to the audio route (e.g. headphones were plugged in or unplugged).
+- (void) audioRouteDidChangeToRoute:(NSString *)newRoute {
+    NSLog(@&quot;Local callback: Audio route change. The new audio route is %@&quot;, newRoute); // Log it.
+    self.statusTextView.text = [NSString stringWithFormat:@&quot;Status: Audio route change. The new audio route is %@&quot;,newRoute]; // Show it in the status box.
+    
+    NSError *error = [[OEPocketsphinxController sharedInstance] stopListening]; // React to it by telling the Pocketsphinx loop to shut down and then start listening again on the new route
+    
+    if(error)NSLog(@&quot;Local callback: error while stopping listening in audioRouteDidChangeToRoute: %@&quot;,error);
+
+    if(![OEPocketsphinxController sharedInstance].isListening) {
+        [[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:self.pathToFirstDynamicallyGeneratedLanguageModel dictionaryAtPath:self.pathToFirstDynamicallyGeneratedDictionary acousticModelAtPath:[OEAcousticModel pathToModel:@&quot;AcousticModelSpanish&quot;] languageModelIsJSGF:FALSE]; // Start speech recognition if we aren&#039;t already listening.
+    }
+}
+
+// An optional delegate method of OEEventsObserver which informs that the Pocketsphinx recognition loop has entered its actual loop.
+// This might be useful in debugging a conflict between another sound class and Pocketsphinx.
+- (void) pocketsphinxRecognitionLoopDidStart {
+    
+    NSLog(@&quot;Local callback: Pocketsphinx started.&quot;); // Log it.
+    self.statusTextView.text = @&quot;Status: Pocketsphinx started.&quot;; // Show it in the status box.
+}
+
+// An optional delegate method of OEEventsObserver which informs that Pocketsphinx is now listening for speech.
+- (void) pocketsphinxDidStartListening {
+    
+    NSLog(@&quot;Local callback: Pocketsphinx is now listening.&quot;); // Log it.
+    self.statusTextView.text = @&quot;Status: Pocketsphinx is now listening.&quot;; // Show it in the status box.
+    
+    self.startButton.hidden = TRUE; // React to it with some UI changes.
+    self.stopButton.hidden = FALSE;
+    self.suspendListeningButton.hidden = FALSE;
+    self.resumeListeningButton.hidden = TRUE;
+}
+
+// An optional delegate method of OEEventsObserver which informs that Pocketsphinx detected speech and is starting to process it.
+- (void) pocketsphinxDidDetectSpeech {
+    NSLog(@&quot;Local callback: Pocketsphinx has detected speech.&quot;); // Log it.
+    self.statusTextView.text = @&quot;Status: Pocketsphinx has detected speech.&quot;; // Show it in the status box.
+}
+
+// An optional delegate method of OEEventsObserver which informs that Pocketsphinx detected a second of silence, indicating the end of an utterance. 
+// This was added because developers requested being able to time the recognition speed without the speech time. The processing time is the time between 
+// this method being called and the hypothesis being returned.
+- (void) pocketsphinxDidDetectFinishedSpeech {
+    NSLog(@&quot;Local callback: Pocketsphinx has detected a second of silence, concluding an utterance.&quot;); // Log it.
+    self.statusTextView.text = @&quot;Status: Pocketsphinx has detected finished speech.&quot;; // Show it in the status box.
+}
+
+// An optional delegate method of OEEventsObserver which informs that Pocketsphinx has exited its recognition loop, most 
+// likely in response to the OEPocketsphinxController being told to stop listening via the stopListening method.
+- (void) pocketsphinxDidStopListening {
+    NSLog(@&quot;Local callback: Pocketsphinx has stopped listening.&quot;); // Log it.
+    self.statusTextView.text = @&quot;Status: Pocketsphinx has stopped listening.&quot;; // Show it in the status box.
+}
+
+// An optional delegate method of OEEventsObserver which informs that Pocketsphinx is still in its listening loop but it is not
+// Going to react to speech until listening is resumed.  This can happen as a result of Flite speech being
+// in progress on an audio route that doesn&#039;t support simultaneous Flite speech and Pocketsphinx recognition,
+// or as a result of the OEPocketsphinxController being told to suspend recognition via the suspendRecognition method.
+- (void) pocketsphinxDidSuspendRecognition {
+    NSLog(@&quot;Local callback: Pocketsphinx has suspended recognition.&quot;); // Log it.
+    self.statusTextView.text = @&quot;Status: Pocketsphinx has suspended recognition.&quot;; // Show it in the status box.
+}
+
+// An optional delegate method of OEEventsObserver which informs that Pocketsphinx is still in its listening loop and after recognition
+// having been suspended it is now resuming.  This can happen as a result of Flite speech completing
+// on an audio route that doesn&#039;t support simultaneous Flite speech and Pocketsphinx recognition,
+// or as a result of the OEPocketsphinxController being told to resume recognition via the resumeRecognition method.
+- (void) pocketsphinxDidResumeRecognition {
+    NSLog(@&quot;Local callback: Pocketsphinx has resumed recognition.&quot;); // Log it.
+    self.statusTextView.text = @&quot;Status: Pocketsphinx has resumed recognition.&quot;; // Show it in the status box.
+}
+
+// An optional delegate method which informs that Pocketsphinx switched over to a new language model at the given URL in the course of
+// recognition. This does not imply that it is a valid file or that recognition will be successful using the file.
+- (void) pocketsphinxDidChangeLanguageModelToFile:(NSString *)newLanguageModelPathAsString andDictionary:(NSString *)newDictionaryPathAsString {
+    NSLog(@&quot;Local callback: Pocketsphinx is now using the following language model: \n%@ and the following dictionary: %@&quot;,newLanguageModelPathAsString,newDictionaryPathAsString);
+}
+
+// An optional delegate method of OEEventsObserver which informs that Flite is speaking, most likely to be useful if debugging a
+// complex interaction between sound classes. You don&#039;t have to do anything yourself in order to prevent Pocketsphinx from listening to Flite talk and trying to recognize the speech.
+- (void) fliteDidStartSpeaking {
+    NSLog(@&quot;Local callback: Flite has started speaking&quot;); // Log it.
+    self.statusTextView.text = @&quot;Status: Flite has started speaking.&quot;; // Show it in the status box.
+}
+
+// An optional delegate method of OEEventsObserver which informs that Flite is finished speaking, most likely to be useful if debugging a
+// complex interaction between sound classes.
+- (void) fliteDidFinishSpeaking {
+    NSLog(@&quot;Local callback: Flite has finished speaking&quot;); // Log it.
+    self.statusTextView.text = @&quot;Status: Flite has finished speaking.&quot;; // Show it in the status box.
+}
+
+- (void) pocketSphinxContinuousSetupDidFailWithReason:(NSString *)reasonForFailure { // This can let you know that something went wrong with the recognition loop startup. Turn on [OELogging startOpenEarsLogging] to learn why.
+    NSLog(@&quot;Local callback: Setting up the continuous recognition loop has failed for the reason %@, please turn on [OELogging startOpenEarsLogging] to learn more.&quot;, reasonForFailure); // Log it.
+    self.statusTextView.text = @&quot;Status: Not possible to start recognition loop.&quot;; // Show it in the status box.	
+}
+
+- (void) pocketSphinxContinuousTeardownDidFailWithReason:(NSString *)reasonForFailure { // This can let you know that something went wrong with the recognition loop startup. Turn on [OELogging startOpenEarsLogging] to learn why.
+    NSLog(@&quot;Local callback: Tearing down the continuous recognition loop has failed for the reason %@, please turn on [OELogging startOpenEarsLogging] to learn more.&quot;, reasonForFailure); // Log it.
+    self.statusTextView.text = @&quot;Status: Not possible to cleanly end recognition loop.&quot;; // Show it in the status box.	
+}
+
+- (void) testRecognitionCompleted { // A test file which was submitted for direct recognition via the audio driver is done.
+    NSLog(@&quot;Local callback: A test file which was submitted for direct recognition via the audio driver is done.&quot;); // Log it.
+    NSError *error = nil;
+    if([OEPocketsphinxController sharedInstance].isListening) { // If we&#039;re listening, stop listening.
+        error = [[OEPocketsphinxController sharedInstance] stopListening];
+        if(error) NSLog(@&quot;Error while stopping listening in testRecognitionCompleted: %@&quot;, error);
+    }
+    
+}
+/** Pocketsphinx couldn&#039;t start because it has no mic permissions (will only be returned on iOS7 or later).*/
+- (void) pocketsphinxFailedNoMicPermissions {
+    NSLog(@&quot;Local callback: The user has never set mic permissions or denied permission to this app&#039;s mic, so listening will not start.&quot;);
+    self.startupFailedDueToLackOfPermissions = TRUE;
+}
+
+/** The user prompt to get mic permissions, or a check of the mic permissions, has completed with a TRUE or a FALSE result  (will only be returned on iOS7 or later).*/
+- (void) micPermissionCheckCompleted:(BOOL)result {
+    if(result) {
+        self.restartAttemptsDueToPermissionRequests++;
+        if(self.restartAttemptsDueToPermissionRequests == 1 &amp;&amp; self.startupFailedDueToLackOfPermissions) { // If we get here because there was an attempt to start which failed due to lack of permissions, and now permissions have been requested and they returned true, we restart exactly once with the new permissions.
+            NSError *error = nil;
+            if([OEPocketsphinxController sharedInstance].isListening){
+                error = [[OEPocketsphinxController sharedInstance] stopListening]; // Stop listening if we are listening.
+                if(error) NSLog(@&quot;Error while stopping listening in micPermissionCheckCompleted: %@&quot;, error);
+            }
+            if(!error &amp;&amp; ![OEPocketsphinxController sharedInstance].isListening) { // If there was no error and we aren&#039;t listening, start listening.
+                [[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:self.pathToFirstDynamicallyGeneratedLanguageModel dictionaryAtPath:self.pathToFirstDynamicallyGeneratedDictionary acousticModelAtPath:[OEAcousticModel pathToModel:@&quot;AcousticModelSpanish&quot;] languageModelIsJSGF:FALSE]; // Start speech recognition.
+                    self.startupFailedDueToLackOfPermissions = FALSE;
+            }
+        }
+    }
+}
+
+#pragma mark -
+#pragma mark UI
+
+// This is not OpenEars-specific stuff, just some UI behavior
+
+- (IBAction) suspendListeningButtonAction { // This is the action for the button which suspends listening without ending the recognition loop
+    [[OEPocketsphinxController sharedInstance] suspendRecognition];	
+    
+    self.startButton.hidden = TRUE;
+    self.stopButton.hidden = FALSE;
+    self.suspendListeningButton.hidden = TRUE;
+    self.resumeListeningButton.hidden = FALSE;
+}
+
+- (IBAction) resumeListeningButtonAction { // This is the action for the button which resumes listening if it has been suspended
+    [[OEPocketsphinxController sharedInstance] resumeRecognition];
+    
+    self.startButton.hidden = TRUE;
+    self.stopButton.hidden = FALSE;
+    self.suspendListeningButton.hidden = FALSE;
+    self.resumeListeningButton.hidden = TRUE;	
+}
+
+- (IBAction) stopButtonAction { // This is the action for the button which shuts down the recognition loop.
+    NSError *error = nil;
+    if([OEPocketsphinxController sharedInstance].isListening) { // Stop if we are currently listening.
+        error = [[OEPocketsphinxController sharedInstance] stopListening];
+        if(error)NSLog(@&quot;Error stopping listening in stopButtonAction: %@&quot;, error);
+    }
+    self.startButton.hidden = FALSE;
+    self.stopButton.hidden = TRUE;
+    self.suspendListeningButton.hidden = TRUE;
+    self.resumeListeningButton.hidden = TRUE;
+}
+
+- (IBAction) startButtonAction { // This is the action for the button which starts up the recognition loop again if it has been shut down.
+    if(![OEPocketsphinxController sharedInstance].isListening) {
+        [[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:self.pathToFirstDynamicallyGeneratedLanguageModel dictionaryAtPath:self.pathToFirstDynamicallyGeneratedDictionary acousticModelAtPath:[OEAcousticModel pathToModel:@&quot;AcousticModelSpanish&quot;] languageModelIsJSGF:FALSE]; // Start speech recognition if we aren&#039;t already listening.
+    }
+    self.startButton.hidden = TRUE;
+    self.stopButton.hidden = FALSE;
+    self.suspendListeningButton.hidden = FALSE;
+    self.resumeListeningButton.hidden = TRUE;
+}
+
+#pragma mark -
+#pragma mark Example for reading out Pocketsphinx and Flite audio levels without locking the UI by using an NSTimer
+
+// What follows are not OpenEars methods, just an approach for level reading
+// that I&#039;ve included with this sample app. My example implementation does make use of two OpenEars
+// methods:	the pocketsphinxInputLevel method of OEPocketsphinxController and the fliteOutputLevel
+// method of OEFliteController. 
+//
+// The example is meant to show one way that you can read those levels continuously without locking the UI, 
+// by using an NSTimer, but the OpenEars level-reading methods 
+// themselves do not include multithreading code since I believe that you will want to design your own 
+// code approaches for level display that are tightly-integrated with your interaction design and the  
+// graphics API you choose. 
+// 
+// Please note that if you use my sample approach, you should pay attention to the way that the timer is always stopped in
+// dealloc. This should prevent you from having any difficulties with deallocating a class due to a running NSTimer process.
+
+- (void) startDisplayingLevels { // Start displaying the levels using a timer
+    [self stopDisplayingLevels]; // We never want more than one timer valid so we&#039;ll stop any running timers first.
+    self.uiUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/kLevelUpdatesPerSecond target:self selector:@selector(updateLevelsUI) userInfo:nil repeats:YES];
+}
+
+- (void) stopDisplayingLevels { // Stop displaying the levels by stopping the timer if it&#039;s running.
+    if(self.uiUpdateTimer &amp;&amp; [self.uiUpdateTimer isValid]) { // If there is a running timer, we&#039;ll stop it here.
+        [self.uiUpdateTimer invalidate];
+        self.uiUpdateTimer = nil;
+    }
+}
+
+- (void) updateLevelsUI { // And here is how we obtain the levels.  This method includes the actual OpenEars methods and uses their results to update the UI of this view controller.
+    
+    self.pocketsphinxDbLabel.text = [NSString stringWithFormat:@&quot;Pocketsphinx Input level:%f&quot;,[[OEPocketsphinxController sharedInstance] pocketsphinxInputLevel]];  //pocketsphinxInputLevel is an OpenEars method of the class OEPocketsphinxController.
+    
+    if(self.fliteController.speechInProgress) {
+        self.fliteDbLabel.text = [NSString stringWithFormat:@&quot;Flite Output level: %f&quot;,[self.fliteController fliteOutputLevel]]; // fliteOutputLevel is an OpenEars method of the class OEFliteController.
+    }
+}
+
+@end
+</code></pre>
+<p>This was the result in the console:</p>
+<p><strong>2015-01-02 20:48:16.057 OpenEarsSampleApp[1154:60b] Local callback: Pocketsphinx is now listening.<br />
+2015-01-02 20:48:16.062 OpenEarsSampleApp[1154:60b] Local callback: Pocketsphinx started.<br />
+2015-01-02 20:48:16.115 OpenEarsSampleApp[1154:60b] Local callback: Pocketsphinx has detected speech.<br />
+2015-01-02 20:48:32.753 OpenEarsSampleApp[1154:60b] Local callback: Pocketsphinx has detected a second of silence, concluding an utterance.<br />
+2015-01-02 20:48:33.136 OpenEarsSampleApp[1154:60b] Local callback: The received hypothesis is ROMA with a score of 0 and an ID of 0<br />
+2015-01-02 20:48:33.364 OpenEarsSampleApp[1154:60b] Local callback: Flite has started speaking<br />
+2015-01-02 20:48:33.372 OpenEarsSampleApp[1154:60b] Local callback: Pocketsphinx has suspended recognition.<br />
+2015-01-02 20:48:35.130 OpenEarsSampleApp[1154:60b] Local callback: Flite has finished speaking<br />
+2015-01-02 20:48:35.137 OpenEarsSampleApp[1154:60b] Local callback: Pocketsphinx has resumed recognition.</strong></p>
+<p><a href="https://dl.dropboxusercontent.com/u/6380067/openears.wav" title="openears.wav" target="_blank" rel="nofollow"></a></p>
+<p>Here is the link to download the voice recording regarding that I did it with the internal microphone of iPhone 5 perfectly working with the version 1.66 of openEars. I hope this can help us to find what&#8217;s going on.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/noise-problem-even-setting-setvadthreshold-openears-2-0/#post-1024063</guid>
+					<title><![CDATA[Reply To: [Resolved] Noise problem even setting setVadThreshold openEars 2.0]]></title>
+					<link>/forums/topic/noise-problem-even-setting-setvadthreshold-openears-2-0/#post-1024063</link>
+					<pubDate>Fri, 02 Jan 2015 20:13:40 +0000</pubDate>
+					<dc:creator>maxgarmar</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry I was trying to add the link via the tag &#8220;link&#8221; from the editor but I don&#8217;t see the result finally. I edited two times but did not work. Or perhaps it is hidden ?</p>
+<p>anyway here it is without the tag:</p>
+<p><a href="https://dl.dropboxusercontent.com/u/6380067/openears.wav.zip" rel="nofollow">https://dl.dropboxusercontent.com/u/6380067/openears.wav.zip</a></p>
+<p>and compressed.</p>
+<p>Sorry for writing again.</p>
+<p>Thanks</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/noise-problem-even-setting-setvadthreshold-openears-2-0/#post-1024077</guid>
+					<title><![CDATA[Reply To: [Resolved] Noise problem even setting setVadThreshold openEars 2.0]]></title>
+					<link>/forums/topic/noise-problem-even-setting-setvadthreshold-openears-2-0/#post-1024077</link>
+					<pubDate>Mon, 05 Jan 2015 14:17:22 +0000</pubDate>
+					<dc:creator>maxgarmar</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle, </p>
+<p>How far did you get with the problem I was facing ? as you see the recognition thread never ends while my recording is working (because the TV in background) with 1.x it&#8217;s stop in every word I say. That&#8217;s the problem I think. 2.0 never stops listening because the noise.</p>
+<p>By the way, playing around your nice framework I just realized if you add any word that before was not recognizing to the <strong>LanguageModelGeneratorLookupList.text</strong> file then the recognition works perfectly. So my problem is solved for one specific word which is crazy if I have to add all the words which the framework is not recognizing.<br />
+Then I looked at the same file in 2.0 version and I see that that dictionary is exactly the same like 1.x but still it is working for words that 1.x does not recognize except that you add them to the dictionary.<br />
+I hope it helps you to find what&#8217;s happening.</p>
+<p>Thanks</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/noise-problem-even-setting-setvadthreshold-openears-2-0/#post-1024078</guid>
+					<title><![CDATA[Reply To: [Resolved] Noise problem even setting setVadThreshold openEars 2.0]]></title>
+					<link>/forums/topic/noise-problem-even-setting-setvadthreshold-openears-2-0/#post-1024078</link>
+					<pubDate>Mon, 05 Jan 2015 15:57:50 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yep, I&#8217;ve taken a look at your example and I think I have an idea what the issue is due to. I will be running tests for a few days and then I may have either a fix to push or a beta for you to check out. I appreciate the good example, it was very helpful.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

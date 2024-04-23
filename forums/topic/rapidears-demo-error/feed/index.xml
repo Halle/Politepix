@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>RapidEars Demo Error &#8211; Politepix</title>
+		<atom:link href="/forums/topic/rapidears-demo-error/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/rapidears-demo-error/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:49:08 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/rapidears-demo-error/#post-1016914</guid>
+					<title><![CDATA[RapidEars Demo Error]]></title>
+					<link>/forums/topic/rapidears-demo-error/#post-1016914</link>
+					<pubDate>Wed, 10 Apr 2013 20:34:28 +0000</pubDate>
+					<dc:creator>harrypell</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>I am trying to install the RapidEars demo to test it out. However, I am getting this error on build&#8230;</p>
+<p>Stray &#8216;{&#8216; between Objective-C ++ methods</p>
+<p>&#8230;on the following line in PocketsphinxController+RapidEars.h&#8230;<br />
+@interface PocketsphinxController (RapidEars) {<br />
+}</p>
+<p>Otherwise OpenEars is working successfully and I have also got the Rejecto demo working. I am trying to build on an original iPad.</p>
+<p>Any suggestions?</p>
+<p>Many thanks</p>
+<p>Harriet</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-demo-error/#post-1016915</guid>
+					<title><![CDATA[Reply To: RapidEars Demo Error]]></title>
+					<link>/forums/topic/rapidears-demo-error/#post-1016915</link>
+					<pubDate>Wed, 10 Apr 2013 20:48:11 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Harriet,</p>
+<p>Hmm, there are no C++ methods in RapidEars so this may be due to a detail of your project. Do you perhaps have a C++ compilation flag set in the project? </p>
+<p>Alternately, have you set the -ObjC other linker flag in your target/project settings as per the tutorial?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-demo-error/#post-1016916</guid>
+					<title><![CDATA[Reply To: RapidEars Demo Error]]></title>
+					<link>/forums/topic/rapidears-demo-error/#post-1016916</link>
+					<pubDate>Wed, 10 Apr 2013 21:01:46 +0000</pubDate>
+					<dc:creator>harrypell</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>I definitely have the -ObjC other linker flag. I&#8217;m afraid I don&#8217;t know how to check for a C++ compilation flag. (Or what one is&#8230;)</p>
+<p>Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-demo-error/#post-1016917</guid>
+					<title><![CDATA[Reply To: RapidEars Demo Error]]></title>
+					<link>/forums/topic/rapidears-demo-error/#post-1016917</link>
+					<pubDate>Wed, 10 Apr 2013 21:07:44 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hmm, this is a new issue to me. Is this a new app that was created from the tutorial or an existing app that RapidEars was added to?</p>
+<p>Do you have the import statement for <OpenEars/PocketsphinxController.h> before the one for <RapidEars/PocketsphinxController+RapidEars.h> or afterwards?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-demo-error/#post-1016918</guid>
+					<title><![CDATA[Reply To: RapidEars Demo Error]]></title>
+					<link>/forums/topic/rapidears-demo-error/#post-1016918</link>
+					<pubDate>Wed, 10 Apr 2013 21:57:48 +0000</pubDate>
+					<dc:creator>harrypell</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>I am adding RapidEars to an existing project. I wonder if it&#8217;s the ASIHTTPRequest which is causing problems.</p>
+<p>It might be worth my gutting it and adding RapidEars to a cleanr version of the file. I&#8217;ll give this a whirl tomorrow and see if that sorts out the error.</p>
+<p>Thanks for your help.</p>
+<p>Harriet</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-demo-error/#post-1016925</guid>
+					<title><![CDATA[Reply To: RapidEars Demo Error]]></title>
+					<link>/forums/topic/rapidears-demo-error/#post-1016925</link>
+					<pubDate>Thu, 11 Apr 2013 06:52:01 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Oh, it&#8217;s pretty likely to be ASIHTTPRequest since it hasn&#8217;t been actively maintained in a while. The C++ thing is likely due to an unusual project flag added for another framework&#8217;s requirements.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

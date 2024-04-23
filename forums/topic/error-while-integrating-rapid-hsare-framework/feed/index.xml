@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Error while integrating RapidEarsDemo framework &#8211; Politepix</title>
+		<atom:link href="/forums/topic/error-while-integrating-rapid-hsare-framework/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/error-while-integrating-rapid-hsare-framework/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:44:56 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/error-while-integrating-rapid-hsare-framework/#post-12507</guid>
+					<title><![CDATA[Error while integrating RapidEarsDemo framework]]></title>
+					<link>/forums/topic/error-while-integrating-rapid-hsare-framework/#post-12507</link>
+					<pubDate>Mon, 12 Nov 2012 19:12:37 +0000</pubDate>
+					<dc:creator>ravi_chunara</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>Please help me for solving the following error. I did exactly same as shown in tutorial. But still got the following error.</p>
+<p>Undefined symbols for architecture i386:<br />
+  &#8220;_input_sample_rate&#8221;, referenced from:<br />
+      -[PocketsphinxController(RapidEars) startRealtimeListeningWithLanguageModelAtPath:andDictionaryAtPath:] in RapidEarsDemo(PocketsphinxController+RapidEars.o)<br />
+      -[ContinuousModel(RapidEars) realtimeListeningLoopWithLanguageModelAtPath:andDictionaryAtPath:] in RapidEarsDemo(ContinuousModel+RapidEars.o)<br />
+      -[RECommandArray commandArrayForlanguageModel:andDictionaryPath:isJSGF:] in RapidEarsDemo(RECommandArray.o)<br />
+      -[PocketsphinxController(RapidEars) startRealtimeListeningWithLanguageModelAtPath:andDictionaryAtPath:] in RapidEarsDemo(PocketsphinxController+RapidEars.o)<br />
+      -[ContinuousModel(RapidEars) realtimeListeningLoopWithLanguageModelAtPath:andDictionaryAtPath:] in RapidEarsDemo(ContinuousModel+RapidEars.o)<br />
+      -[RECommandArray commandArrayForlanguageModel:andDictionaryPath:isJSGF:] in RapidEarsDemo(RECommandArray.o)<br />
+      -[PocketsphinxController(RapidEars) startRealtimeListeningWithLanguageModelAtPath:andDictionaryAtPath:] in RapidEarsDemo(PocketsphinxController+RapidEars.o)<br />
+      -[ContinuousModel(RapidEars) realtimeListeningLoopWithLanguageModelAtPath:andDictionaryAtPath:] in RapidEarsDemo(ContinuousModel+RapidEars.o)<br />
+      -[RECommandArray commandArrayForlanguageModel:andDictionaryPath:isJSGF:] in RapidEarsDemo(RECommandArray.o)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-while-integrating-rapid-hsare-framework/#post-12508</guid>
+					<title><![CDATA[Reply To: Error while integrating rapid hsare framework]]></title>
+					<link>/forums/topic/error-while-integrating-rapid-hsare-framework/#post-12508</link>
+					<pubDate>Mon, 12 Nov 2012 19:13:32 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You are using an old version of OpenEars, just update to the current OpenEars version.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-while-integrating-rapid-hsare-framework/#post-12511</guid>
+					<title><![CDATA[Reply To: Error while integrating RapidEarsDemo framework]]></title>
+					<link>/forums/topic/error-while-integrating-rapid-hsare-framework/#post-12511</link>
+					<pubDate>Mon, 12 Nov 2012 19:43:58 +0000</pubDate>
+					<dc:creator>ravi_chunara</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks it&#8217;s resolved. I appreciate your quick reply.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-while-integrating-rapid-hsare-framework/#post-12513</guid>
+					<title><![CDATA[Reply To: Error while integrating RapidEarsDemo framework]]></title>
+					<link>/forums/topic/error-while-integrating-rapid-hsare-framework/#post-12513</link>
+					<pubDate>Mon, 12 Nov 2012 19:46:20 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Super, glad to hear it!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

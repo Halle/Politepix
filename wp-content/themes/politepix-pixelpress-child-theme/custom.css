@@ -1,0 +1,396 @@
+/* 
+WOO CUSTOM STYLESHEET
+---------------------
+
+Instructions:
+
+Add your custom styles in this file instead of style.css so it 
+is easier to update the theme. Simply copy an existing style 
+from style.css to this file, and modify it to your liking. */
+
+
+/* 
+GLOBAL STYLES
+----------------
+Add styles beneath this line that you want to be applied across your entire site */
+
+
+/* 
+DESKTOP STYLES
+-----------------
+Add styles inside the media query below that you only want to be applied to the desktop layout of your site */
+
+#bbpress-forums .status-closed {
+	color: #555!important;
+}
+
+#bbpress-forums .status-closed a.bbp-topic-permalink,#bbpress-forums .status-closed a {
+	color: #337383!important;
+}
+
+.entry table tbody tr th {
+	border-right:3px solid #e6e6e6!important;
+}
+
+.single-product .images {
+	width:190px!important;
+}
+
+body {
+	background: #f9f9f9;
+	color:#606668!important;
+}
+body.home {
+	background: #f1f1f1;
+}
+/*
+.woocommerce-page ul.products li.product {
+min-height:320px!important;
+}
+*/
+.archive-header {
+  font-weight: normal;
+}
+
+#contactForm fieldset.forms {
+padding:20px;
+margin:0px;
+	background-color:#f1f1f1;
+width:93%;
+}
+
+.post.contact-form {
+margin-left:0px!important;
+}
+
+article.slide-content.col-full.not-video div.entry p a img {
+	height:220px!important;
+	width:auto!important;
+}
+
+article.slide-content.col-full.not-video div.entry p {
+	margin-bottom:5px!important;
+}
+
+section#home-portfolio.minor.flexslider div.col-full header.section-title {
+	padding-bottom:1px!important;
+	margin-bottom:1px!important;
+}
+
+section#home-portfolio.minor.flexslider div.col-full div.flex-direction-nav {
+	display:none!important;
+}
+
+nav#navigation ul#main-nav.nav.fl {
+display:block!important;
+background-color:white!important;
+z-index:999!important;
+}
+a#logo img {
+height:23px!important;
+width:auto!important;
+}
+
+article.portfolio-item a.item div.img-wrap {
+margin: 0 0 0 0!important;
+padding: 0 0 0 0!important;
+height:105px!important;
+}
+
+#header-social.social.fr a.subscribe, #header-social.social.fr a.twitter{
+width:20px!important;
+height:20px!important;
+}
+
+div.col-full div.flex-viewport ul.slides li, div.col-full div.flex-viewport ul.slides li article.portfolio-item {
+width:185px!important;
+padding-right:0px!important;
+margin-right:0px!important;
+}
+
+article.portfolio-item div.mask div.content {
+padding-left:9px!important;
+padding-top:7px!important;
+}
+
+article.portfolio-item a.item div.img-wrap img.woo-image {
+
+-webkit-background-clip: border-box;
+-webkit-background-origin: padding-box;
+-webkit-background-size: auto;
+-webkit-box-shadow: none!important;
+-webkit-font-smoothing: antialiased;
+-webkit-transition-delay: 0s;
+-webkit-transition-duration: 0.1s;
+-webkit-transition-property: opacity;
+-webkit-transition-timing-function: ease-out;
+background-attachment: scroll;
+background-clip: border-box;
+background-color: transparent!important;
+background-image: none;
+background-origin: padding-box;
+background-size: auto;
+border-bottom-color: transparent!important;
+border-bottom-left-radius: 0px!important;
+border-bottom-right-radius: 0px!important;
+border-bottom-style: none!important;
+border-bottom-width: 0px!important;
+border-left-color: transparent!important;
+border-left-style: none!important;
+border-left-width: 0px!important;
+border-right-color: transparent!important;
+border-right-style: none!important;
+border-right-width: 0px!important;
+border-top-color: transparent!important;
+border-top-left-radius: 0px!important;
+border-top-right-radius: 0px!important;
+border-top-style: none!important;
+border-top-width: 0px!important;
+box-shadow: none!important;
+color: transparent!important;
+margin-bottom: 0px!important;
+margin-left: 0px!important;
+margin-right: 0px!important;
+margin-top: 0px!important;
+max-width: 100%;
+padding-bottom: 4px!important;
+padding-left: 0px!important;
+padding-right: 0px!important;
+padding-top: 0px!important;
+height:110px!important;
+width:auto!important;
+}
+
+.the_basics .woo-sc-box.note.large.rounded.full {
+	-webkit-box-shadow: rgba(0, 0, 0, 0.496094) 0px 1px 6px 0px;
+	-webkit-font-smoothing: antialiased;
+	background-color: 
+	rgba(0, 0, 0, 0);
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(
+	white), color-stop(0.15, 
+	white), to(
+	rgb(245, 245, 245)));
+	border-bottom-color: 
+	rgb(142, 148, 150);
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+	border-bottom-style: none;
+	border-bottom-width: 0px;
+	border-left-color: 
+	rgb(142, 148, 150);
+	border-left-style: none;
+	border-left-width: 0px;
+	border-right-color: 
+	rgb(142, 148, 150);
+	border-right-style: none;
+	border-right-width: 0px;
+	border-top-color: 
+	rgb(142, 148, 150);
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	border-top-style: none;
+	border-top-width: 0px;
+	box-shadow: rgba(0, 0, 0, 0.496094) 0px 1px 6px 0px;
+	color: rgb(95, 95, 95);
+	text-shadow: 1px 1px 0 #fff;
+	font-family: Montserrat, sans-serif;
+	background-image:none!important;
+	padding: 20px;
+}
+
+table.mlabels, table.memname tr, table.memname tr td,table.memname tr td.paramname,table.mlabels tr, table.mlabels tr td,table.mlabels tr td.paramname,td.mlabels-left,td.mlabels-right {
+	width:auto!important;
+	border:0!important;
+	background-color:#fff!important;
+	color:#666;
+
+}
+
+table.mlabels td,table.mlabels td.mlabels-left {
+padding:0!important;
+margin:0!important;
+background-color:rgb(249, 249, 249)!important;
+}
+table.memname {
+width:auto!important;
+	padding:20px!important; 
+	border: 1px solid rgb(230, 230, 230);
+}
+
+table.memname tr td,table.mlabels tr td {
+padding-bottom:0px!important;
+padding-top:0px!important;
+}
+.framework_image img.size-full {
+border:0!important;
+border-radius:0!important;
+-webkit-box-shadow:none!important;
+background-color:none!important;
+background-color:transparent!important;
+box-shadow: none!important;
+}
+
+.tutorial_class tr.on_off th {
+	background-color:#fff;
+	text-align:left;
+	border-bottom-color: rgb(230, 230, 230)!important;
+	border-bottom-style: solid!important;
+	border-bottom-width: 1px!important;
+	font-weight:normal!important;
+}
+.summary {
+	width:64%!important;
+}
+
+#logo.fl {
+	margin-right: 0px!important;
+	padding-right: 0px!important;
+}
+
+.home #main section:first-child:after {
+  background: url(/wp-content/uploads/bg-section-bottom.png) repeat-x;
+}
+.home #main section:first-child:before {
+  background: url(/wp-content/uploads/bg-section-top.png) repeat-x;
+}
+
+.section-title h1, 
+.section-title.portfolio h1,
+.widget h3, 
+#comments .comment .reply a,
+.home .section-title h1,
+.follow-link a,
+a.button,
+a.woo-sc-button.custom,
+a.comment-reply-link,
+#commentform #submit,
+.submit,
+input[type=submit],
+input.button,
+button.button {
+	font-family: "Georgia", serif !important;
+	font-style:normal!important;
+}
+
+input[type="text"], input.input-text, textarea, input.txt  {
+
+	border: 1px #DDD solid;
+	margin-bottom: 6px;
+}
+
+input.input-text {
+
+	margin-top:6px;
+}
+.widget_product_search form input#s {
+border: 1px #DDD solid;	
+}
+
+
+
+
+ul.nav li a {
+	padding: .5em .1em;
+	color: #4a4a4a;
+}
+section#home-portfolio.minor.flexslider h1 {
+display:none!important;
+}
+
+a.woo-sc-button.custom.medium {
+margin-bottom:0px!important;
+
+}
+.slide-content-container a {
+	color:#1b6476;
+}
+
+#bbpress-forums div.bbp-topic-content blockquote p, #bbpress-forums div.bbp-reply-content blockquote p,
+#bbpress-forums div.bbp-topic-content blockquote q p, #bbpress-forums div.bbp-reply-content blockquote q p{
+border-left: 3px solid #969696;
+	padding-left:8px!important;
+}
+
+#bbpress-forums div.bbp-topic-content blockquote, #bbpress-forums div.bbp-reply-content blockquote,
+#bbpress-forums div.bbp-topic-content blockquote q, #bbpress-forums div.bbp-reply-content blockquote q{
+	font-style: italic;
+}
+
+
+#bbpress-forums #bbp-search-form {
+	display:none!important;
+}
+
+
+h3#order_review_heading {
+display:none;
+}
+
+.niceness {
+font-family: 'Satisfy', cursive;
+font-size:2em;
+}
+
+ul.products li.product h3 {
+margin: 1em 0 0.857em;
+font-size: 1em!important;
+min-height:60px;
+overflow: hidden;
+}
+
+div.widget_shopping_cart_content p.buttons a.button {
+min-width:140px;
+}
+
+div.widget_shopping_cart_content p.buttons a.button.checkout {
+margin-top:10px!important;
+}
+
+.single-post p{
+
+font-family: 'Sorts Mill Goudy', serif;
+font-size:1.25em;
+color:#444;
+
+}
+
+.single-post pre {
+width:150%;
+
+}
+
+.mini-cart a.cart-parent {
+	background: url(/wp-content/themes/politepix-pixelpress-child-theme/images/ico-cart.png)!important;
+	background-size:21px auto!important;
+	background-position: 4px 5px!important;
+	background-repeat:no-repeat!important;
+}
+
+#header #header-social a.subscribe {
+  background-image: url(/wp-content/themes/politepix-pixelpress-child-theme/images/header-social/rss.png)!important;
+  background-size:24px auto!important;
+  background-position: 2px 0px;
+  }
+#header #header-social a.twitter {
+  background-image: url(/wp-content/themes/politepix-pixelpress-child-theme/images/header-social/twitter.png)!important;
+  background-size:22px auto!important;
+  background-position: 3px 2px;  
+}
+
+
+@media only screen and (min-width: 768px) {
+	/* Desktop styles go here */
+#header #main-nav li a {
+padding-left:.7em!important;
+}
+	#navigation {
+height:40px!important;
+}
+#header.col-full {
+height:48px!important;
+
+
+}
+
+}
+

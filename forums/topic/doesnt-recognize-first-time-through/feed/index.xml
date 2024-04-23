@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>doesn&#039;t recognize first time through &#8211; Politepix</title>
+		<atom:link href="/forums/topic/doesnt-recognize-first-time-through/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/doesnt-recognize-first-time-through/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:56:52 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/doesnt-recognize-first-time-through/#post-1022381</guid>
+					<title><![CDATA[doesn&#039;t recognize first time through]]></title>
+					<link>/forums/topic/doesnt-recognize-first-time-through/#post-1022381</link>
+					<pubDate>Tue, 26 Aug 2014 18:01:47 +0000</pubDate>
+					<dc:creator>boombatz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>HI,<br />
+It doesn&#8217;t recognize speech the first time I start my app. It just hangs like it&#8217;s waiting for speech. Once I press the home button and then bring up the app again it works fine. Any suggestions? Thanks.<br />
+Marc</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/doesnt-recognize-first-time-through/#post-1022382</guid>
+					<title><![CDATA[Reply To: doesn&#039;t recognize first time through]]></title>
+					<link>/forums/topic/doesnt-recognize-first-time-through/#post-1022382</link>
+					<pubDate>Tue, 26 Aug 2014 18:15:00 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, this is going to be something about the app, so start from a clean version with the sample app or a tutorial example and compare the working version to the version in which it doesn&#8217;t work. </p>
+<p>You can turn on verbosePocketsphinx and OpenEarsLogging for assistance doing this troubleshooting for yourself, since when both of them are turned on they show any errors or warnings. You can search your own log output for the words &#8220;error&#8221; and/or &#8220;warning&#8221; in order to use the logging output for troubleshooting. Good luck!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/doesnt-recognize-first-time-through/#post-1022383</guid>
+					<title><![CDATA[Reply To: doesn&#039;t recognize first time through]]></title>
+					<link>/forums/topic/doesnt-recognize-first-time-through/#post-1022383</link>
+					<pubDate>Tue, 26 Aug 2014 18:22:03 +0000</pubDate>
+					<dc:creator>boombatz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Great. Thanks. I&#8217;ll give it a try. Works great, otherwise &#8211; in English and Spanish.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

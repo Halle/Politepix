@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Playing voice out left channel only &#8211; Politepix</title>
+		<atom:link href="/forums/topic/playing-voice-out-left-channel-only/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/playing-voice-out-left-channel-only/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:51:04 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/playing-voice-out-left-channel-only/#post-12477</guid>
+					<title><![CDATA[Playing voice out left channel only]]></title>
+					<link>/forums/topic/playing-voice-out-left-channel-only/#post-12477</link>
+					<pubDate>Mon, 12 Nov 2012 08:20:55 +0000</pubDate>
+					<dc:creator>josh</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I know this is a bizarre question but I was wondering using NeatSpeech is it was possible to only play voice audio out the left channel on the headphones instead of both?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/playing-voice-out-left-channel-only/#post-12478</guid>
+					<title><![CDATA[Reply To: Playing voice out left channel only]]></title>
+					<link>/forums/topic/playing-voice-out-left-channel-only/#post-12478</link>
+					<pubDate>Mon, 12 Nov 2012 08:26:56 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Josh,</p>
+<p>I honestly have no idea! I&#8217;ve never considered channel-splitting on the new iPads. But, if it is possible to do this at all, it is most likely controlled by the audio session setting, so the good news is that it probably isn&#8217;t dependent on NeatSpeech but instead something that could (possibly) be achieved by changing OpenEars&#8217; general audio session settings in AudioSessionManager. &#8220;Is is possible to route audio output out of a single channel on a stereo iPad?&#8221; might be an interesting question for Stack Overflow.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/playing-voice-out-left-channel-only/#post-1021309</guid>
+					<title><![CDATA[Reply To: Playing voice out left channel only]]></title>
+					<link>/forums/topic/playing-voice-out-left-channel-only/#post-1021309</link>
+					<pubDate>Sun, 18 May 2014 06:48:06 +0000</pubDate>
+					<dc:creator>Oztron</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I would like to reopen this discussion regarding routing of speech output. It would be VERY useful if synthesized speech could be dynamically routed to one or the other headphone speaker by an app. This would allow an app to send speech from 2 different voice profiles to 2 different audio channels. Perhaps even doing the reverse and suppressing output for the opposite channel might afford a cheap n easy way to route the audio to a single L/R channel.<br />
+Has any development of this been done since the preceding 2012 posting? </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/playing-voice-out-left-channel-only/#post-1021310</guid>
+					<title><![CDATA[Reply To: Playing voice out left channel only]]></title>
+					<link>/forums/topic/playing-voice-out-left-channel-only/#post-1021310</link>
+					<pubDate>Sun, 18 May 2014 08:13:46 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Sorry, this isn&#8217;t a feature of OpenEars.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

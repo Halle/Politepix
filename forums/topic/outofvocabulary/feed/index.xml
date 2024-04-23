@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] OutOfVocabulary &#8211; Politepix</title>
+		<atom:link href="/forums/topic/outofvocabulary/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/outofvocabulary/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:39:17 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/outofvocabulary/#post-4124</guid>
+					<title><![CDATA[[Resolved] OutOfVocabulary]]></title>
+					<link>/forums/topic/outofvocabulary/#post-4124</link>
+					<pubDate>Sun, 12 Jun 2011 22:03:48 +0000</pubDate>
+					<dc:creator>akaniklaus</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Dear Halle,</p>
+<p>I want to get the hypothesis only if the spoken word is &#8220;probably&#8221; within my vocabulary. Is there any way to neglect low confidence hypotheses or map them to a predefined value?</p>
+<p>In other words, I do not want Pocketsphinx to map OOV words to wrong hypotheses.</p>
+<p>Note: Only a single word may be OOV within a sentence. I do not want to ignore the whole sentence in that case.</p>
+<p>Btw, I do not have any progress about my last question due to lots of other works I am working on, I will share here when I have any progress.</p>
+<p>Thank you,</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/outofvocabulary/#post-4125</guid>
+					<title><![CDATA[Reply To: OutOfVocabulary]]></title>
+					<link>/forums/topic/outofvocabulary/#post-4125</link>
+					<pubDate>Mon, 13 Jun 2011 07:33:31 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi akaniklaus,</p>
+<p>I&#8217;d have to recommend that you bring your Pocketsphinx functionality questions to the Pocketsphinx support board since they are the originators and maintainers of the code you have questions about. You&#8217;re always welcome to ask me questions about accessing Pocketsphinx functions you are already making use of in C or on the command line via Objective-C, but unfortunately I can&#8217;t offer general &#8220;how do I handle research task x with Pocketsphinx&#8221; support here since it is such a broad subject and one with its own support system.</p>
+<p>Thanks,</p>
+<p>Halle</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/outofvocabulary/#post-7282</guid>
+					<title><![CDATA[Reply To: OutOfVocabulary]]></title>
+					<link>/forums/topic/outofvocabulary/#post-7282</link>
+					<pubDate>Mon, 18 Jul 2011 08:41:26 +0000</pubDate>
+					<dc:creator>jimmyno</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi akaniklaus,<br />
+do you managed to get lucky with the words out vocabulary? I&#8217;m looking in the Pocketsphinx forum , hoping to find a general method robust enough, but for now I have not found anything more than what I have done alone.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/outofvocabulary/#post-11116</guid>
+					<title><![CDATA[Reply To: OutOfVocabulary]]></title>
+					<link>/forums/topic/outofvocabulary/#post-11116</link>
+					<pubDate>Fri, 14 Sep 2012 15:03:19 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Updated: you can now handle out of vocabulary rejection using Politepix&#8217;s <a href="/shop/rejectodemo" rel="nofollow">Rejecto</a> plugin for OpenEars.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

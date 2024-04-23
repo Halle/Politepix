@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Using OpenEars in unit tests &#8211; Politepix</title>
+		<atom:link href="/forums/topic/using-openears-in-unit-tests/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/using-openears-in-unit-tests/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:59:55 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/using-openears-in-unit-tests/#post-1017381</guid>
+					<title><![CDATA[Using OpenEars in unit tests]]></title>
+					<link>/forums/topic/using-openears-in-unit-tests/#post-1017381</link>
+					<pubDate>Wed, 05 Jun 2013 02:55:24 +0000</pubDate>
+					<dc:creator>fushunpoon</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>PocketSphinxController provides a useful function called <code>runRecognitionOnWavFileAtPath:</code>. I would like to execute this as a part of my<br />
+<a href="https://github.com/allending/Kiwi" title="Kiwi" rel="nofollow">Kiwi</a> test suite.</p>
+<p>I have a unit test target set up called &#8220;MyProjectTests&#8221; but it cannot seem to find any headers associated with the framework, nor can the OpenEars.framework be added to the list of frameworks and libraries to link with in <code>Build Phrases</code> for that target.</p>
+<p>How may I accomplish this?</p>
+<p>Thanks,</p>
+<p>Hok</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-openears-in-unit-tests/#post-1017395</guid>
+					<title><![CDATA[Reply To: Using OpenEars in unit tests]]></title>
+					<link>/forums/topic/using-openears-in-unit-tests/#post-1017395</link>
+					<pubDate>Wed, 05 Jun 2013 09:41:47 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Hok,</p>
+<p>OpenEars.framework is a totally normal compiled framework with public headers (but it is not a static library project), so I would just continue troubleshooting your issue of not being able to find the headers. Maybe you need to add the headers to Header Search Paths, or maybe you are trying to integrate the framework project as if it were a static library project instead of integrating the compiled framework as if it were something like AVFoundation.framework.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-openears-in-unit-tests/#post-1017398</guid>
+					<title><![CDATA[Reply To: Using OpenEars in unit tests]]></title>
+					<link>/forums/topic/using-openears-in-unit-tests/#post-1017398</link>
+					<pubDate>Wed, 05 Jun 2013 14:39:32 +0000</pubDate>
+					<dc:creator>fushunpoon</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for your feedback; I managed to re-organise my test target completely and added the OpenEars and Slt frameworks to the project separately. Now it&#8217;s possible to reference OpenEars in test targets.</p>
+<p>Cheers!</p>
+<p>Hok</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-openears-in-unit-tests/#post-1017399</guid>
+					<title><![CDATA[Reply To: Using OpenEars in unit tests]]></title>
+					<link>/forums/topic/using-openears-in-unit-tests/#post-1017399</link>
+					<pubDate>Wed, 05 Jun 2013 14:42:34 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That is great news, I&#8217;m glad it&#8217;s working for you.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-openears-in-unit-tests/#post-1017407</guid>
+					<title><![CDATA[Reply To: Using OpenEars in unit tests]]></title>
+					<link>/forums/topic/using-openears-in-unit-tests/#post-1017407</link>
+					<pubDate>Wed, 05 Jun 2013 18:05:21 +0000</pubDate>
+					<dc:creator>fushunpoon</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Another question for you, Halle.</p>
+<p>It would be very useful to be able to write automatic tests that verify any one particular language model recognises pre-recorded segments of speech. However, the only function that is able to perform this task, <code>runRecognitionOnWavFileAtPath:</code>, DOES NOT RETURN A HYPOTHESIS!</p>
+<p>In order for a unit test to verify that a wav file is correctly interpreted as a the expected sentence, the only way I see it being possible is to capture NSLog into a file first (see <a href="http://parmanoir.com/Redirecting_NSLog_to_a_file" rel="nofollow">http://parmanoir.com/Redirecting_NSLog_to_a_file</a>) and then opening that file to make assertions afterwards.</p>
+<p>The problem with that approach is that while I can stomach the horribleness, XCode relies on NSLog to be written to the console to provide accurate test reporting so even redirecting NSLog is not an attractive option.</p>
+<p>Please return a hypothesis or something so that automated testing can be done. Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-openears-in-unit-tests/#post-1017412</guid>
+					<title><![CDATA[Reply To: Using OpenEars in unit tests]]></title>
+					<link>/forums/topic/using-openears-in-unit-tests/#post-1017412</link>
+					<pubDate>Wed, 05 Jun 2013 20:03:14 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Why can&#8217;t you use the delegate method where the hypothesis is returned? How do you test other results that are returned in delegate methods?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-openears-in-unit-tests/#post-1017416</guid>
+					<title><![CDATA[Reply To: Using OpenEars in unit tests]]></title>
+					<link>/forums/topic/using-openears-in-unit-tests/#post-1017416</link>
+					<pubDate>Thu, 06 Jun 2013 08:03:44 +0000</pubDate>
+					<dc:creator>fushunpoon</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Okay, so it occurred to me that the <code>OpenEarsEventsObserver</code> class registers itself for <code>NSNotifications</code> on the main thread when it&#8217;s initialised, which is how it hears about events. This is asynchronous whereas unit test execution is just synchronous.</p>
+<p>The solution was to use <a href="https://github.com/allending/Kiwi/wiki/Asynchronous-Testing" title="Kiwi's Asynchronous primitives" rel="nofollow"></a> so that we assert that the value _eventually_ becomes the one we are looking for. The timeout needs to be set to at least 1s, so that the delegate has a chance to receive the message: in the delegate method I assign onto a property that I&#8217;m asserting over.</p>
+<p>You can still use <code>runRecognitionOnWavFileAtPath:</code>: the documentation claims that it&#8217;s &#8216;synchronous&#8217;, which may have been the thing that misled me.<br />
+So good stuff that that&#8217;s working.</p>
+<p>Halle, I noticed that OpenEars can&#8217;t be tested in a Logic Test with this method (see the definitions of Application and Logic tests <a href="http://developer.apple.com/library/ios/#documentation/DeveloperTools/Conceptual/UnitTesting/02-Setting_Up_Unit_Tests_in_a_Project/setting_up.html#//apple_ref/doc/uid/TP40002143-CH3-SW1" title="here" rel="nofollow">here</a>.</p>
+<p>Is there a way to make OpenEars recognition work without having the application host our tests (i.e. setting <code>TEST_HOST</code> to the application binary)? In principle I think checking whether a WAV test resource is recognised correctly is pure enough to be a &#8216;Logic&#8217; test rather than an &#8216;Application&#8217; test.</p>
+<p>I&#8217;ll be happy to provide some example code if it helps you debug this.</p>
+<p>Cheers.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-openears-in-unit-tests/#post-1017417</guid>
+					<title><![CDATA[Reply To: Using OpenEars in unit tests]]></title>
+					<link>/forums/topic/using-openears-in-unit-tests/#post-1017417</link>
+					<pubDate>Thu, 06 Jun 2013 08:09:48 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Nope, not currently possible. It isn&#8217;t a bug but I&#8217;ll enter it as a feature request.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-openears-in-unit-tests/#post-1017418</guid>
+					<title><![CDATA[Reply To: Using OpenEars in unit tests]]></title>
+					<link>/forums/topic/using-openears-in-unit-tests/#post-1017418</link>
+					<pubDate>Thu, 06 Jun 2013 08:27:54 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>BTW, please be so kind as to read these posts on the pocketsphinx board about what you can expect when enabling an automated WAV test with pocketsphinx and what you need to take into account in order to get deterministic results, so we can avoid the non-constructive tone that this request for assistance took on:</p>
+<p><a href="http://sourceforge.net/p/cmusphinx/discussion/search/?q=different+results&#038;project=0" rel="nofollow">http://sourceforge.net/p/cmusphinx/discussion/search/?q=different+results&#038;project=0</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Recognize entire phrase &#8211; Politepix</title>
+		<atom:link href="/forums/topic/recognize-entire-phrase/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/recognize-entire-phrase/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:07:38 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/recognize-entire-phrase/#post-1016874</guid>
+					<title><![CDATA[Recognize entire phrase]]></title>
+					<link>/forums/topic/recognize-entire-phrase/#post-1016874</link>
+					<pubDate>Sat, 06 Apr 2013 15:01:18 +0000</pubDate>
+					<dc:creator>catdsnny</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Is it possible to force recognition of an entire phrase instead of component words within phrase?  For example, if I pass a dictionary with the following entries:</p>
+<p>&#8220;Miller Street&#8221;<br />
+&#8220;Jones Street&#8221;<br />
+&#8220;Franklin Avenue&#8221;</p>
+<p>I only want to receive those entire phrases back and none of the component words.  Right now, the library is returning &#8220;Jones&#8221; as a hypothesis, using the example above.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recognize-entire-phrase/#post-1016875</guid>
+					<title><![CDATA[Reply To: Recognize entire phrase]]></title>
+					<link>/forums/topic/recognize-entire-phrase/#post-1016875</link>
+					<pubDate>Sat, 06 Apr 2013 15:04:14 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Is this with OpenEars or RapidEars?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recognize-entire-phrase/#post-1016902</guid>
+					<title><![CDATA[Reply To: Recognize entire phrase]]></title>
+					<link>/forums/topic/recognize-entire-phrase/#post-1016902</link>
+					<pubDate>Wed, 10 Apr 2013 14:19:01 +0000</pubDate>
+					<dc:creator>catdsnny</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Open ears with Rejecto</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recognize-entire-phrase/#post-1016903</guid>
+					<title><![CDATA[Reply To: Recognize entire phrase]]></title>
+					<link>/forums/topic/recognize-entire-phrase/#post-1016903</link>
+					<pubDate>Wed, 10 Apr 2013 14:27:17 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, a couple suggestions. The first is to make sure that you are entering those items into LanguageModelGenerator as phrases rather than discrete words, which should raise the probability of them being detected as phrases. But in order to absolutely require that they are detected as phrases, you can try one of the following two approaches:</p>
+<p>1. The not-so-easy but correct way: use a JSGF grammar instead of an ARPA model. This allows you to set rules for what can be recognized. It&#8217;s not-so-easy because you have to learn about how JSGF works and define the rule structure yourself.</p>
+<p>2. The easy and cheap way: turn them into a single word (&#8220;MillerStreet&#8221;) and then re-insert the space for display to the user.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recognize-entire-phrase/#post-1020918</guid>
+					<title><![CDATA[Reply To: Recognize entire phrase]]></title>
+					<link>/forums/topic/recognize-entire-phrase/#post-1020918</link>
+					<pubDate>Mon, 21 Apr 2014 14:31:52 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Please check out the new dynamic generation language for OpenEars added with version 1.7: <a href="/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/">/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recognize-entire-phrase/#post-1021028</guid>
+					<title><![CDATA[Reply To: Recognize entire phrase]]></title>
+					<link>/forums/topic/recognize-entire-phrase/#post-1021028</link>
+					<pubDate>Thu, 24 Apr 2014 17:07:29 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>In addition to the dynamic grammar generation that has been added to stock OpenEars in version 1.7, there is also a new plugin called RuleORama which can use the same API in order to generate grammars which are a bit faster and compatible with RapidEars: <a href="/ruleorama">/ruleorama</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Custom dictionary speech recognition only kind of working. &#8211; Politepix</title>
+		<atom:link href="/forums/topic/custom-dictionary-speech-recognition-only-kind-of-working/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/custom-dictionary-speech-recognition-only-kind-of-working/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:49:16 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/custom-dictionary-speech-recognition-only-kind-of-working/#post-1021440</guid>
+					<title><![CDATA[Custom dictionary speech recognition only kind of working.]]></title>
+					<link>/forums/topic/custom-dictionary-speech-recognition-only-kind-of-working/#post-1021440</link>
+					<pubDate>Fri, 30 May 2014 13:20:01 +0000</pubDate>
+					<dc:creator>davestrand</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>I am sifting through the other forum posts, and can&#8217;t seem to resolve my issue..</p>
+<p>I seem to be having problems with voice recognition of certain words.  My app is designed to update the vocabulary based on the current situation.  Usually that means it changes the available vocabulary every few seconds, but occasionally it might fire off two vocabulary changes within a second.  At any rate, it appears to be switching vocabularies, but many words don’t seem to be understood (Like NO or TAVERN).   I do have it generating a random string to name each vocabulary change, and can verify that it’s creating these in the Cache and with the “Pocketsphinx is now using the following language model:” log, it does appear to be logging the correct dictionary and path. </p>
+<p>2014-05-30 06:00:29.054 VoiceGame[2522:60b] Pocketsphinx is now using the following language model:<br />
+/var/mobile/Applications/DA1C44EA-09CE-4714-83FA-B72B42E5DD13/Library/Caches/K7do2JmCR9j8BXfuWbzk.DMP and the following dictionary: /var/mobile/Applications/DA1C44EA-09CE-4714-83FA-B72B42E5DD13/Library/Caches/K7do2JmCR9j8BXfuWbzk.dic</p>
+<p>I followed through with your tutorial, as well as using code suggested by you to me, here on the forum.  But, it’s probably something with my code that is misplaced or called incorrectly.  If you could help me locate this error I would be most grateful.</p>
+<p>In ViewDid Load I have…</p>
+<p> 	`//[OpenEarsLogging startOpenEarsLogging]; // Uncomment me for OpenEarsLogging</p>
+<p>[self.openEarsEventsObserver setDelegate:self]; </p>
+<p> [self reLoadLanguageBasedOnNewVariables]; //this is also setting up startListening  below.</p>
+<p> [self startListening];</p>
+<p>[self startDisplayingLevels];<br />
+	//I’ll probably get rid of or modify these buttons eventually.<br />
+	self.startButton.hidden = TRUE;<br />
+	self.stopButton.hidden = TRUE;<br />
+	self.suspendListeningButton.hidden = TRUE;<br />
+	self.resumeListeningButton.hidden = TRUE;`</p>
+<p>And I made a method to load the new language when variables change&#8230;</p>
+<pre><code>- (void) reLoadLanguageBasedOnNewVariables {
+     NSLog(@&quot;RELOAD LANGUAGE&quot;);
+    NSString *randomName = [self genRandStringLength:20];
+    
+    LanguageModelGenerator *lmGenerator = [[LanguageModelGenerator alloc] init]; 
+    
+    NSString* actionText = [player shipPlayerWordsAction];
+    NSString* actionsLimited = [player shipActionOptionsLimited];
+    NSString* exitsText = [player shipPlayerWordsExits];
+    NSString* inventoryText = [player shipPlayerWordsInventory];
+    NSString* objectsInRoomText = [player shipPlayerWordsObjectsInRoom];
+    multipleChoiceWords = [player shipMultipleChoiceWords];
+    NSArray* languageArray1;
+    
+    if (inConversation) {
+        //NSLog(@&quot;set array for conversation vocab&quot;);
+        languageArray1 = [[NSArray alloc] initWithArray:[NSArray arrayWithObjects: // All capital letters.
+                                                        actionsLimited,
+                                                        multipleChoiceWords,
+                                                        nil]];
+        
+        
+        
+    } else {
+        
+        //NSLog(@&quot;set array for conversation vocab&quot;);
+        languageArray1 = [[NSArray alloc] initWithArray:[NSArray arrayWithObjects: // All capital letters.
+                                                              actionText,
+                                                              exitsText,
+                                                              inventoryText,
+                                                              objectsInRoomText,
+                                                              nil]];
+    }
+    
+   // NSLog(@&quot;language array is now %@.&quot;,languageArray1);
+    
+    //lets try to bring in a random filename and create new dic files for each movement
+    NSString *name = randomName;
+    
+    NSError *err = [lmGenerator generateLanguageModelFromArray:languageArray1 withFilesNamed:name forAcousticModelAtPath:[AcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;]]; //&lt;&lt;&lt;CONFIRMED //might slow down
+    
+   // NSDictionary *dynamicLanguageGenerationResultsDictionary = nil;
+    
+    NSDictionary *languageGeneratorResults = nil; 
+    
+    lmPath = nil; 
+    dicPath = nil; 
+    
+	
+    if([err code] == noErr) { 
+        
+        languageGeneratorResults = [err userInfo]; 
+        
+        lmPath = [languageGeneratorResults objectForKey:@&quot;LMPath&quot;]; 
+        dicPath = [languageGeneratorResults objectForKey:@&quot;DictionaryPath&quot;]; 
+    
+        // NSLog(@&quot;the dic path here is %@&quot;,dicPath); //correct path, but the switch goes to older path
+        self.pathToDynamicallyGeneratedGrammar = lmPath; // We&#039;ll set our new .languagemodel file
+		self.pathToDynamicallyGeneratedDictionary = dicPath; // We&#039;ll set our new dictionary
+        
+        [self.pocketsphinxController changeLanguageModelToFile:lmPath withDictionary:dicPath]; //This is the piece that actually saves the new files in the cache
+        
+        //[self pocketsphinxDidChangeLanguageModelToFile:lmPath andDictionary:dicPath]; //This is the second time this is called, I think the first time happens automagically, but now it&#039;s at least pulling the correct path. Correction, now it&#039;s no longer pulling the latest path.
+        
+    } else { 
+        NSLog(@&quot;Error: %@&quot;,[err localizedDescription]);
+    }
+    
+}
+
+On ViewDidLoad it also triggers this startListening method..
+- (void) startListening {
+
+    [self.pocketsphinxController startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[AcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;] languageModelIsJSGF:NO]; // Change &quot;AcousticModelEnglish&quot; to &quot;AcousticModelSpanish&quot; to perform Spanish recognition instead of English.
+    
+    //NOT SURE IF NEEDED speechRecognitionBeforePause = TRUE; // not confirmed
+}</code></pre>
+<p>And then I occasionally call the [self reLoadLanguageBasedOnNewVariables]; when there is new vocabulary to understand.  Every time the new language is launched, I do see the log indicate that “Pocketsphinx is now using the following language model”  and can verify that in my cache the correct words seem to be listed inside of each dic…  but for some reason it doesn’t seem to understand many of those words.</p>
+<p>In a sample of my dic files it shows</p>
+<pre><code>INVENTORY	IH N V AH N T AO R IY
+NO	N OW
+PAUSE	P AO Z
+SAY	S EY
+UNPAUSE	AH N P AO Z 
+YES	Y EH S</code></pre>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/custom-dictionary-speech-recognition-only-kind-of-working/#post-1021456</guid>
+					<title><![CDATA[Reply To: Custom dictionary speech recognition only kind of working.]]></title>
+					<link>/forums/topic/custom-dictionary-speech-recognition-only-kind-of-working/#post-1021456</link>
+					<pubDate>Sat, 31 May 2014 09:16:06 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This sounds like a bit of a complex issue because of this line:</p>
+<blockquote><p>Usually that means it changes the available vocabulary every few seconds, but occasionally it might fire off two vocabulary changes within a second. </p></blockquote>
+<p>It sounds like there is some kind of event which is external to the progress of the speech recognition that causes a sudden vocabulary change or repeated changes and I can imagine that there could be some unexpected results of two arbitrary changes in very close proximity. Model changing is very fast but it does take a bit of real time and it involves two interdependent files, so I can think of a couple ways this could not work out.</p>
+<p>My general advice is to reexamine this design since it&#8217;s a little bit at odds with my design assumption that most vocabulary changes will occur as a result of a recognition event or an interaction event driven by the user rather than an external event that could lead to multiple changes inside of a second (doesn&#8217;t mean my assumption is correct and your design is incorrect, just that that is the assumption, right or wrong, and the design may work against it and raise more issues than just this one, even if it&#8217;s an interesting design).</p>
+<p>But we can also try to troubleshoot it to see if it is unrelated to the model switching. I think my first interest in troubleshooting is to take one of the DMP/dic pairs that is giving weird results and testing it alone in the sample app with no switching, so you can verify that it works well in the absence of other issues possibly related to timing. Recognition of individual words can be impaired for a couple of reasons even if they appear in the respective files, in the case that there is some kind of issue with the phonetic transcription or if there is a very similar-sounding other word in the vocabulary. </p>
+<p>To look into this further, can you isolate a DMP/.dic pair in which some of the words are understood well and others aren&#8217;t which manifests the issue when used as the starting language model for the sample app, so we can examine it? If I&#8217;m not mistaken you should also have an .arpa file generated at the same time which will show you the probability model so let&#8217;s take a look at that too.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/custom-dictionary-speech-recognition-only-kind-of-working/#post-1021457</guid>
+					<title><![CDATA[Reply To: Custom dictionary speech recognition only kind of working.]]></title>
+					<link>/forums/topic/custom-dictionary-speech-recognition-only-kind-of-working/#post-1021457</link>
+					<pubDate>Sat, 31 May 2014 14:14:47 +0000</pubDate>
+					<dc:creator>davestrand</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sounds like a plan. I think we will find out that even the slower vocabulary transitions have some kind of error.  You are correct, there are three files created, the arpa, dic, and DMP.  I&#8217;m not too sure how to inspect them, so I have uploaded them to a folder for you to scope out.  </p>
+<p>In this scenario, I am trying to say the word NO, but it always thinks I am saying YES.  No means no, right?</p>
+<p>Here are the files:<br />
+<a href="http://secret.strandland.com/halle/" rel="nofollow">http://secret.strandland.com/halle/</a></p>
+<p>and..<br />
+<code>Users/davelevy/Library/Application Support/iPhone Simulator/7.1-64/Applications/E3667FB5-52D3-4F18-9C54-D9ED81BB304C/Library/Caches/JxCJL6ji2xJYlBdpWhFI.DMP and the following dictionary: /Users/davelevy/Library/Application Support/iPhone Simulator/7.1-64/Applications/E3667FB5-52D3-4F18-9C54-D9ED81BB304C/Library/Caches/JxCJL6ji2xJYlBdpWhFI.dic</code></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/custom-dictionary-speech-recognition-only-kind-of-working/#post-1021458</guid>
+					<title><![CDATA[Reply To: Custom dictionary speech recognition only kind of working.]]></title>
+					<link>/forums/topic/custom-dictionary-speech-recognition-only-kind-of-working/#post-1021458</link>
+					<pubDate>Sat, 31 May 2014 14:52:23 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, here is what jumps out at me right off the bat:</p>
+<p>1. I looked at the ARPA model and it is being calculated correctly given its input, and the phonetic dictionary looks normal to me and doesn&#8217;t seem to be missing alternate pronunciation, so I don&#8217;t expect anything bad due to that. The files not existing or being malformed seems like something we can rule out since they seem to be mathematically and syntactically correct and as you&#8217;ve shown, they are found by the app and some of your utterances are recognized.</p>
+<p>2. The commas that the words are being submitted with as a separator have no role in your language model and can only be confusing things, so I would remove them. The ARPA model shows many bigrams and trigrams (sequences of two or three words) with an extraneous comma separating the words in the utterance. They maaaybe have no negative effect, but they could be making things weird and they are definitely not doing anything useful such as providing contextual information to the engine.</p>
+<p>3. Unless you are expecting a user to make the utterance &#8220;NO YES&#8221;, there shouldn&#8217;t be a phrase like &#8220;NO, YES&#8221; being submitted to LanguageModelGenerator, because it is a signal that &#8220;NO YES&#8221; is an expected utterance and the rest of the model math will include this assumption versus other possibilities. i.e. if it isn&#8217;t a real thing users will say, it is going to make your model less accurate overall. I think maybe this is happening unintentionally due to the text-munging that precedes creating these models with LanguageModelGenerator – it is probably supposed to separate your words into separate NSStrings but instead is making one big string with comma separators and giving that string to LanguageModelGenerator, which then treats the comma separators as important and treats all the words as a single sequential expected utterance.</p>
+<p>Examples of this phenomenon from your ARPA model, which means that individual strings consisting of multiple words separated by a comma are getting submitted:</p>
+<pre>
+\2-grams:
+-0.6021 &lt;s&gt; NO, 0.0000
+-0.6021 &lt;s&gt; PAUSE, 0.0000
+-0.3010 INVENTORY, UNPAUSE 0.0000 <-- this means that this is highly-expected as a user utterance because it was submitted together
+-0.3010 NO, YES 0.0000 <-- this means that this is highly-expected as a user utterance because it was submitted together
+</pre>
+<p>4. Never test recognition using the Simulator – it can lead you into troubleshooting phantoms. Only test recognition and accuracy issues on a real device.</p>
+<p>Suggested plan of action: fix #2 and #3 by making sure that your text preprocessing before submitting your NSArray to LanguageModelGenerator includes getting rid of comma separators and splitting words on either side of a comma into separate NSStrings. This may indirectly result in an improvement to the quality of the phonetic dictionary as well, we'll see. Then test on a physical device and see if the situation is improved, and let me know your results.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/custom-dictionary-speech-recognition-only-kind-of-working/#post-1021471</guid>
+					<title><![CDATA[Reply To: Custom dictionary speech recognition only kind of working.]]></title>
+					<link>/forums/topic/custom-dictionary-speech-recognition-only-kind-of-working/#post-1021471</link>
+					<pubDate>Sun, 01 Jun 2014 12:35:48 +0000</pubDate>
+					<dc:creator>davestrand</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Removing the commas made the voice recognition work a million times better.  Thank you so much!  The commas were in there for the visual element of the app, I didn&#8217;t know they would impact the speech recognition.  I will also look into the “NO YES” stuff as well. :)  Thanks a million!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/custom-dictionary-speech-recognition-only-kind-of-working/#post-1021472</guid>
+					<title><![CDATA[Reply To: Custom dictionary speech recognition only kind of working.]]></title>
+					<link>/forums/topic/custom-dictionary-speech-recognition-only-kind-of-working/#post-1021472</link>
+					<pubDate>Sun, 01 Jun 2014 13:17:03 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You&#8217;re welcome!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

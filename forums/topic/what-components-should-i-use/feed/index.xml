@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>What components should I use? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/what-components-should-i-use/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/what-components-should-i-use/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:50:47 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/what-components-should-i-use/#post-1022025</guid>
+					<title><![CDATA[What components should I use?]]></title>
+					<link>/forums/topic/what-components-should-i-use/#post-1022025</link>
+					<pubDate>Mon, 21 Jul 2014 21:51:47 +0000</pubDate>
+					<dc:creator>jorkos</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hey guys, i&#8217;m creating an app where users have to read the words that are presented on the screen. There is a limited vocabulary of words in the app (around 300). In the interface, the user clicks on the record button before they begin speaking and then an end button when they are finished. What components would you recommend I use for this project? Thanks so much for your input.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/what-components-should-i-use/#post-1022041</guid>
+					<title><![CDATA[Reply To: What components should I use?]]></title>
+					<link>/forums/topic/what-components-should-i-use/#post-1022041</link>
+					<pubDate>Tue, 22 Jul 2014 16:02:40 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>This is a bit different from how OpenEars works by default:</p>
+<blockquote><p>the user clicks on the record button before they begin speaking and then an end button when they are finished</p></blockquote>
+<p>So you might want to reexamine the design a bit. The goal of OpenEars is continuous listening which automatically detects speech rather than the user stopping and starting listening with a manual interaction, and there is no API method that is designed for that UI.</p>
+<p>You can probably do this with just OpenEars, and if you want to screen out noises and utterances that aren&#8217;t in your vocabulary you might want to add Rejecto.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Neatspeech &#8211; progress inside a long text &#8211; Politepix</title>
+		<atom:link href="/forums/topic/neatspeech-progress-inside-a-long-text/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/neatspeech-progress-inside-a-long-text/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:44:21 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/neatspeech-progress-inside-a-long-text/#post-1015765</guid>
+					<title><![CDATA[Neatspeech &#8211; progress inside a long text]]></title>
+					<link>/forums/topic/neatspeech-progress-inside-a-long-text/#post-1015765</link>
+					<pubDate>Fri, 01 Mar 2013 10:17:38 +0000</pubDate>
+					<dc:creator>alexbrie</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>My app currently uses the original flite, adapted for my special needs. I am considering purchasing NeatSpeech in order to improve the voice qualities. </p>
+<p>Basically, I need a granular access to the text fragment currently spoken &#8211; I want to visually highlight the current text fragment spoken.</p>
+<p>In my adaptation, a background thread generates the wav for each fragment, while the foreground thread sends it to the audioplayer and highlights the previously generated one. </p>
+<p>NeatSpeech already does this, but without giving me any notification as to which fragment (of the larger text it received) is currently spoken. </p>
+<p>Sure, I could just send NeatSpeech smaller phrases &#8211; but then I&#8217;d artificially insert delays(caused by voice generating the wav)  after each small fragment/sentence &#8211; and I don&#8217;t want to.</p>
+<p>What I would need is some way to inspect the  NSRange for the fragment-currently spoken out of the original large text that I sent to Neat Speech &#8211; and be notified when NeatSpeech started speaking a new fragment (a notification that sends a nsrange for the fragment that has just been passed to the audioplayer would fit both needs). </p>
+<p>Also, and this is a question, if the voice is currently saying a big text, calling it again with yet another text will do what? (A &#8211; push the new text in the queue for background processing, B &#8211; stop the current speech and replace it with the new one or C &#8211; none of the above)</p>
+<p>Thanks for your help and guidance<br />
+Alex</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-progress-inside-a-long-text/#post-1015767</guid>
+					<title><![CDATA[Reply To: Neatspeech – progress inside a long text]]></title>
+					<link>/forums/topic/neatspeech-progress-inside-a-long-text/#post-1015767</link>
+					<pubDate>Fri, 01 Mar 2013 13:06:06 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Alex,</p>
+<p>I&#8217;ve gotten multiple requests for information about which queue item is being played, so I&#8217;m hearing that and think I am going to try add it as a feature. The way it would work would be to add another OpenEarsEventsObserver callback that states the phrase that is about to be played as an NSString. Will that be granular enough for you? NeatSpeech separates clauses in a long statement and plays them separately, so this would tell you a specific sentence clause that is being played rather than the whole long text. Returning NSRange would be pretty far out of the usual API return value so I don&#8217;t think that would work well for most other users, but your feedback on the idea of getting the current queue item that is about to play as an NSString would be valuable.</p>
+<p>To answer your question, NeatSpeech puts the new statement at the end of the queue, meaning you can always send new data and it will just get queued behind what is already there. If you want to clear the queue first, you can send the message stopSpeaking to NeatSpeech before queueing new speech, which will stop it immediately, or send stopSpeakingAfterCurrentItemInQueue and it will finish the current item and then stop, after which you can send more statements.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

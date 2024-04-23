@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Unlimited vocabulary &#8211; Politepix</title>
+		<atom:link href="/forums/topic/unlimited-vocabulary/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/unlimited-vocabulary/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:54:59 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/unlimited-vocabulary/#post-1016943</guid>
+					<title><![CDATA[Unlimited vocabulary]]></title>
+					<link>/forums/topic/unlimited-vocabulary/#post-1016943</link>
+					<pubDate>Sat, 13 Apr 2013 13:27:47 +0000</pubDate>
+					<dc:creator>craigburns55</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>It looks like OpenEars recognizes only words declared in a &#8220;vocabulary&#8221;. Is that correct? Is RapidEars able to hear conversational speech and put it into text format? My app needs to &#8220;hear&#8221; conversation that cannot be anticipated or pre-coded.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/unlimited-vocabulary/#post-1016944</guid>
+					<title><![CDATA[Reply To: Unlimited vocabulary]]></title>
+					<link>/forums/topic/unlimited-vocabulary/#post-1016944</link>
+					<pubDate>Sat, 13 Apr 2013 13:50:43 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Correct, for offline speech recognition you always have to define a vocabulary. If you want to do large vocabulary dictation tasks of any possible word in a language, that is necessary to do with a server-based product. Both OpenEars and RapidEars are frameworks for recognizing speech without requiring a network connection or the use of a server so they make use of a predefined vocabulary.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

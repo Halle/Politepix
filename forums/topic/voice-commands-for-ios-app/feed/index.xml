@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Voice commands for iOS app &#8211; Politepix</title>
+		<atom:link href="/forums/topic/voice-commands-for-ios-app/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/voice-commands-for-ios-app/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:05:56 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/voice-commands-for-ios-app/#post-1020727</guid>
+					<title><![CDATA[Voice commands for iOS app]]></title>
+					<link>/forums/topic/voice-commands-for-ios-app/#post-1020727</link>
+					<pubDate>Mon, 07 Apr 2014 16:42:01 +0000</pubDate>
+					<dc:creator>Alexey</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>I think this is a probably very common usage for OpenEars as dictionary size is very limited.</p>
+<p>I did all the code according tutorial and I found that app tries to recognise my speech using only words from the dictionary. So if I have 3 words in dictionary anything I say will be chosen from this dictionary.<br />
+Is it right?<br />
+If yes &#8211; I completely didn&#8217;t get what supposed recognitionScore in pocketsphinxDidReceiveHypothesis:recognitionScore:utteranceID: mean. It just assign random values. If I say actual word from the dictionary it can be -4000, or -2000 or 0. If I say word not in dictionary hypothesis is still word from the dictionary and recognitionScore can be even closer to zero than actual word&#8230;</p>
+<p>Am I right that for my case (I need to recognise 3-5 commands, single words) I must include Rejecto?<br />
+Is there any way to improve recognition of reject (at least make it stricter, I&#8217;m ok if it won&#8217;t recognise correct word but I don&#8217;t need false triggering).</p>
+<p>Cheers!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/voice-commands-for-ios-app/#post-1020728</guid>
+					<title><![CDATA[Reply To: Voice commands for iOS app]]></title>
+					<link>/forums/topic/voice-commands-for-ios-app/#post-1020728</link>
+					<pubDate>Mon, 07 Apr 2014 19:05:04 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Alexey,</p>
+<p>This is the usage case that Rejecto was designed for – the scores in general are not very informative with a language model that small, unfortunately.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/voice-commands-for-ios-app/#post-1020729</guid>
+					<title><![CDATA[Reply To: Voice commands for iOS app]]></title>
+					<link>/forums/topic/voice-commands-for-ios-app/#post-1020729</link>
+					<pubDate>Mon, 07 Apr 2014 19:06:53 +0000</pubDate>
+					<dc:creator>Alexey</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks, Halle.</p>
+<p>That what I understood.<br />
+Am I right that there is no way to make Rejecto more strict? Or &#8220;teach&#8221; it somehow?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/voice-commands-for-ios-app/#post-1020730</guid>
+					<title><![CDATA[Reply To: Voice commands for iOS app]]></title>
+					<link>/forums/topic/voice-commands-for-ios-app/#post-1020730</link>
+					<pubDate>Mon, 07 Apr 2014 19:18:20 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You can raise its weighting versus the rest of the language model – have you given that a try?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/voice-commands-for-ios-app/#post-1020731</guid>
+					<title><![CDATA[Reply To: Voice commands for iOS app]]></title>
+					<link>/forums/topic/voice-commands-for-ios-app/#post-1020731</link>
+					<pubDate>Mon, 07 Apr 2014 19:28:03 +0000</pubDate>
+					<dc:creator>Alexey</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Nope. I didn&#8217;t know how to do that. I&#8217;ll dig the documentation. I just noticed that with Rejecto all scores became zero, so I thought that all guesses are equally weighted now.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/voice-commands-for-ios-app/#post-1020732</guid>
+					<title><![CDATA[Reply To: Voice commands for iOS app]]></title>
+					<link>/forums/topic/voice-commands-for-ios-app/#post-1020732</link>
+					<pubDate>Mon, 07 Apr 2014 19:34:44 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>There&#8217;s a weight argument in the main Rejecto method for language model generation, so I&#8217;d check it out and see if it accomplishes your goal. If you&#8217;re seeing questionable accuracy please make sure you aren&#8217;t testing on the Simulator.</p>
+<p>The scores really can&#8217;t be relied on for any logical purpose in general app code – if I hadn&#8217;t forwarded them to the API in the early versions due to a wish to replicate the research-related functions of Pocketsphinx I would probably remove them now since they lead to quite a bit of confusion, but at this point it would most likely cause too much code breakage in developers&#8217; apps to remove them.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

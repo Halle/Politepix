@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>How to add more words to RapidEars vocabulary list? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/how-to-add-more-words-to-rapidears-vocabulary-list/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/how-to-add-more-words-to-rapidears-vocabulary-list/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:43:34 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/how-to-add-more-words-to-rapidears-vocabulary-list/#post-1018859</guid>
+					<title><![CDATA[How to add more words to RapidEars vocabulary list?]]></title>
+					<link>/forums/topic/how-to-add-more-words-to-rapidears-vocabulary-list/#post-1018859</link>
+					<pubDate>Mon, 11 Nov 2013 03:51:58 +0000</pubDate>
+					<dc:creator>quietp3512</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>I have downloaded the sample app of OpenEars and integrated RapidEars demo plugin to it.The sample app comes with some predefined vocabulary like &#8220;LEFT,RIGHT,TURN,GO&#8221;, etc.So my question is, how can we add more words to this vocabulary.Could you please provide a good tutorial for adding more words?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-to-add-more-words-to-rapidears-vocabulary-list/#post-1018860</guid>
+					<title><![CDATA[Reply To: How to add more words to RapidEars vocabulary list?]]></title>
+					<link>/forums/topic/how-to-add-more-words-to-rapidears-vocabulary-list/#post-1018860</link>
+					<pubDate>Mon, 11 Nov 2013 07:38:17 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>You can learn about creating your own vocabulary using OpenEars&#8217; tutorial: <a href="/openears/tutorial">/openears/tutorial</a></p>
+<p>Explanations and examples for creating language models can also be found in the sample app comments regarding its object dynamicLanguageModel and in the OpenEars documentation for the class LanguageModelGenerator.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-to-add-more-words-to-rapidears-vocabulary-list/#post-1018861</guid>
+					<title><![CDATA[Reply To: How to add more words to RapidEars vocabulary list?]]></title>
+					<link>/forums/topic/how-to-add-more-words-to-rapidears-vocabulary-list/#post-1018861</link>
+					<pubDate>Mon, 11 Nov 2013 07:59:15 +0000</pubDate>
+					<dc:creator>quietp3512</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi thanks for your response.</p>
+<p>I have one more doubt. Which method will be called , if the word or phrase not found in the predefined vocabulary list??</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-to-add-more-words-to-rapidears-vocabulary-list/#post-1018862</guid>
+					<title><![CDATA[Reply To: How to add more words to RapidEars vocabulary list?]]></title>
+					<link>/forums/topic/how-to-add-more-words-to-rapidears-vocabulary-list/#post-1018862</link>
+					<pubDate>Mon, 11 Nov 2013 08:16:05 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>No recognition callback is called when no word is recognized. You can see the list of other callbacks in the sample app, tutorial and documentation. </p>
+<p>BTW, please don&#8217;t create multiple accounts &#8212; I will merge this one with the other two. It&#8217;s OK to keep using the account you posted with previously (the one which is now shown as the author of this post) if you have new questions.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

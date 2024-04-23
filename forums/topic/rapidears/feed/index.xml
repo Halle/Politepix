@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Recognizing words which aren&#039;t in the vocabulary &#8211; Politepix</title>
+		<atom:link href="/forums/topic/rapidears/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/rapidears/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:43:26 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/rapidears/#post-1018841</guid>
+					<title><![CDATA[Recognizing words which aren&#039;t in the vocabulary]]></title>
+					<link>/forums/topic/rapidears/#post-1018841</link>
+					<pubDate>Fri, 08 Nov 2013 10:53:14 +0000</pubDate>
+					<dc:creator>quietp3512</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Will rapidears recognize whatever words we have spoke out or this will only recognize a group of words which is already defined inside a textfile?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears/#post-1018842</guid>
+					<title><![CDATA[Reply To: RapidEars]]></title>
+					<link>/forums/topic/rapidears/#post-1018842</link>
+					<pubDate>Fri, 08 Nov 2013 10:59:26 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>RapidEars is a plugin for OpenEars which extends its functionality in one specific way, by doing recognition in realtime as the user is speaking instead of performing recognition after the user has completed their speech and paused for a certain period of time. To learn about how OpenEars uses a vocabulary that you define dynamically at runtime from an array of words or phrases, there is a good explanation in <a href="/openears/#Basic_concepts">the documentation about the basics of offline speech recognition</a> from the main OpenEars page and examples in the <a href="/openears/tutorial">OpenEars tutorial</a> and the sample app that ships with the OpenEars distribution. </p>
+<p>The short answer is that all speech recognition uses a predefined list of words in a text file or memory structure of some kind. However, cloud-based speech recognition is able to use a much larger word list than recognition that is being performed on a handheld device because of the greater CPU and memory resources available, meaning that it can give the impression of recognizing &#8220;everything a user says&#8221;, while an offline SDK such as OpenEars needs to be used with a smaller chosen word set that applies to the specific task of the application rather than being generalized to any application.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears/#post-1018843</guid>
+					<title><![CDATA[Reply To: RapidEars]]></title>
+					<link>/forums/topic/rapidears/#post-1018843</link>
+					<pubDate>Fri, 08 Nov 2013 11:05:39 +0000</pubDate>
+					<dc:creator>quietp3512</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>is there a method to get the words even if the word does&#8217;nt match</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears/#post-1018844</guid>
+					<title><![CDATA[Reply To: RapidEars]]></title>
+					<link>/forums/topic/rapidears/#post-1018844</link>
+					<pubDate>Fri, 08 Nov 2013 11:19:03 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>No, there is no kind of speech recognition that can recognize words that aren&#8217;t defined somewhere within the recognition system, or in a data source that the recognition system has access to.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears/#post-1018845</guid>
+					<title><![CDATA[Reply To: RapidEars]]></title>
+					<link>/forums/topic/rapidears/#post-1018845</link>
+					<pubDate>Fri, 08 Nov 2013 11:21:14 +0000</pubDate>
+					<dc:creator>quietp3512</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>actually cant we get the word we spoke?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears/#post-1018846</guid>
+					<title><![CDATA[Reply To: RapidEars]]></title>
+					<link>/forums/topic/rapidears/#post-1018846</link>
+					<pubDate>Fri, 08 Nov 2013 11:30:12 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m sorry, I don&#8217;t quite understand how your last question is different from the two I just answered. If it is a new question but I&#8217;m not quite following it, could you please clarify it further so I can help? Otherwise I think it may have already been addressed above in my explanation and in the links I gave, and also in the documentation, sample app, and the tutorial for OpenEars, which all talk about the kind of predefined-vocabulary recognition that OpenEars is designed for. Thanks for your interest!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears/#post-1018847</guid>
+					<title><![CDATA[Reply To: RapidEars]]></title>
+					<link>/forums/topic/rapidears/#post-1018847</link>
+					<pubDate>Fri, 08 Nov 2013 11:33:04 +0000</pubDate>
+					<dc:creator>quietp3512</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>if a person spoke out a word.I would like to get the word which the person spoke out.Is there a way to get it. If i speak out &#8220;WORD&#8221;. I should get WORD.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears/#post-1018848</guid>
+					<title><![CDATA[Reply To: RapidEars]]></title>
+					<link>/forums/topic/rapidears/#post-1018848</link>
+					<pubDate>Fri, 08 Nov 2013 11:35:19 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, take a look at my answer above.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears/#post-1019027</guid>
+					<title><![CDATA[Reply To: Recognizing words which aren&#039;t in the vocabulary]]></title>
+					<link>/forums/topic/rapidears/#post-1019027</link>
+					<pubDate>Wed, 27 Nov 2013 08:42:17 +0000</pubDate>
+					<dc:creator>man oram</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>There seems to be problems with the rejecto programming, it is responding to words not in its vocabulary, when the whole reason the software is called rejecto is that is sould rejecto any word not in its vocabulary. For example when  I can say “Australia”, or “My name is geoff”, custom message 1 recognizing!!! those words are  not in vacabulary.. please help from this</p>
+<p>see my rejecto module </p>
+<p> LanguageModelGenerator *lmGenerator = [[LanguageModelGenerator alloc] init];<br />
+            NSArray *words = [[NSArray alloc] initWithArray:[NSArray arrayWithObjects:@&#8221;CUSTOMONE&#8221;,@&#8221;CUSTOMTWO&#8221;,@&#8221;CUSTOMTHREE&#8221;,@&#8221;THANKYOUSCREEN&#8221;,<br />
+                                                         @&#8221;HOMESCREEN&#8221;,<br />
+                                                        @&#8221;TOOCLOSESCREEN&#8221;,<br />
+                                                         nil]];<br />
+        NSString *name = @&#8221;NameIWantForMyLanguageModelFiles&#8221;;<br />
+NSError *err = [lmGenerator generateRejectingLanguageModelFromArray:words<br />
+                withFilesNamed:name withOptionalExclusions:nil usingVowelsOnly:TRUE withWeight:nil forAcousticModelAtPath:[AcousticModel pathToModel:@&#8221;AcousticModelEnglish&#8221;]];</p>
+<p>Mano</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears/#post-1019028</guid>
+					<title><![CDATA[Reply To: Recognizing words which aren&#039;t in the vocabulary]]></title>
+					<link>/forums/topic/rapidears/#post-1019028</link>
+					<pubDate>Wed, 27 Nov 2013 09:01:45 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Mano,</p>
+<p>Speech recognition is a complex application and depending on the requirements of the app, Rejecto may or may not work right out of the box in the way you&#8217;re expecting. It isn&#8217;t a scam or a programming error, it&#8217;s just the usual challenges of machine perception that are the reasons we don&#8217;t have perfect universal speech recognition working without the network in our phones already.</p>
+<p>The language model generation command has several arguments that are designed to let its behavior be customized to a particular vocabulary for best rejection performance, which you can read about in its documentation. The argument you might want to check out first is withWeight:. </p>
+<p>In general, offline speech in an app is the kind of project where you&#8217;ll be happier with the results if you go into it expecting to spend a bit of time testing, refining, asking constructive questions and reading the docs, because every application is different and approaches that work well for one might need to be altered for the next. Thanks for giving Rejecto a try!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

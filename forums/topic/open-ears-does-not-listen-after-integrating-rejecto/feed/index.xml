@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] OpenEars does not listen after integrating Rejecto. &#8211; Politepix</title>
+		<atom:link href="/forums/topic/open-ears-does-not-listen-after-integrating-rejecto/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/open-ears-does-not-listen-after-integrating-rejecto/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:51:00 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/open-ears-does-not-listen-after-integrating-rejecto/#post-1021199</guid>
+					<title><![CDATA[[Resolved] OpenEars does not listen after integrating Rejecto.]]></title>
+					<link>/forums/topic/open-ears-does-not-listen-after-integrating-rejecto/#post-1021199</link>
+					<pubDate>Tue, 13 May 2014 07:19:45 +0000</pubDate>
+					<dc:creator>NiteshDulal</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi<br />
+I have been using this fantastic voice recognition framework in my app.<br />
+I was successful in the running the basic version of open ears for offline speech recognition from this tutorial<br />
+<a href="/openears/tutorial/">/openears/tutorial/</a><br />
+It worked like charm but its accuracy suffered when i increased the words in the array.<br />
+So after searching a lot i saw that many people were using Rejecto to increase the accuracy so i download the sample and integrate it in my app as well as the sample open ears app.<br />
+It works great in the sample app but not in my app. The listening doesnt start in my app<br />
+I have set the other linkers flag . </p>
+<p>This is the code</p>
+<p>LanguageModelGenerator *lmGenerator = [[LanguageModelGenerator alloc] init];<br />
+    NSArray *words = [NSArray arrayWithObjects:@&#8221;TURN EAST&#8221;, @&#8221;TURN WEST&#8221;,@&#8221;LUCKY&#8221;,@&#8221;UNLUCKY&#8221;, nil];</p>
+<p>    NSString *name = @&#8221;Fight<br />
+    //NSError *err = [lmGenerator generateLanguageModelFromArray:words withFilesNamed:name forAcousticModelAtPath:[AcousticModel pathToModel:@&#8221;AcousticModelEnglish&#8221;]];<br />
+    NSError *err = [lmGenerator generateRejectingLanguageModelFromArray:words<br />
+                                                         withFilesNamed:name<br />
+                                                 withOptionalExclusions:nil<br />
+                                                        usingVowelsOnly:FALSE<br />
+                                                             withWeight:nil<br />
+                                                 forAcousticModelAtPath:[AcousticModel pathToModel:@&#8221;AcousticModelEnglish&#8221;]];</p>
+<p>    NSDictionary *languageGeneratorResults = nil;</p>
+<p>    if([err code] == noErr) {</p>
+<p>        languageGeneratorResults = [err userInfo];</p>
+<p>        lmPath = [languageGeneratorResults objectForKey:@&#8221;LMPath&#8221;];<br />
+        dicPath = [languageGeneratorResults objectForKey:@&#8221;DictionaryPath&#8221;];</p>
+<p>    } else {<br />
+        NSLog(@&#8221;Error: %@&#8221;,[err localizedDescription]);<br />
+    }<br />
+    [self.openEarsEventsObserver setDelegate:self];</p>
+<p>    [self.pocketsphinxController startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[AcousticModel pathToModel:@&#8221;AcousticModelEnglish&#8221;] languageModelIsJSGF:NO];</p>
+<p>Am i missing something?<br />
+Thanks in advance for your help.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/open-ears-does-not-listen-after-integrating-rejecto/#post-1021201</guid>
+					<title><![CDATA[Reply To: [Resolved] OpenEars does not listen after integrating Rejecto.]]></title>
+					<link>/forums/topic/open-ears-does-not-listen-after-integrating-rejecto/#post-1021201</link>
+					<pubDate>Tue, 13 May 2014 09:17:54 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Sure, please check out the post <a href="/forums/topic/install-issues-and-their-solutions/">Please read before you post – how to troubleshoot and provide logging info here</a> so you can see how to turn on and share the logging that provides troubleshooting information for this kind of issue.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/open-ears-does-not-listen-after-integrating-rejecto/#post-1021560</guid>
+					<title><![CDATA[Reply To: [Resolved] OpenEars does not listen after integrating Rejecto.]]></title>
+					<link>/forums/topic/open-ears-does-not-listen-after-integrating-rejecto/#post-1021560</link>
+					<pubDate>Sat, 07 Jun 2014 20:20:32 +0000</pubDate>
+					<dc:creator>derekm9292</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m having the same issue. I turned on logging and it looks like it started listening, but no hypotheses are ever being returned.</p>
+<p>2014-06-07 13:18:13.124 VoiceSnap[405:60b] [Quincy] WARNING: Detecting crashes is NOT enabled due to running the app with a debugger attached.<br />
+2014-06-07 13:18:13.349 VoiceSnap[405:60b] Starting OpenEars logging for OpenEars version 1.65 on 64-bit device: iPhone running iOS version: 7.100000<br />
+2014-06-07 13:18:13.356 VoiceSnap[405:60b] Normalized array contains the following entries:<br />
+(<br />
+    TEST,<br />
+    &#8220;TURN RIGHT&#8221;<br />
+)<br />
+2014-06-07 13:18:13.498 VoiceSnap[405:60b] I&#8217;m done running performDictionaryLookup and it took 0.055117 seconds<br />
+2014-06-07 13:18:13.506 VoiceSnap[405:60b] Starting dynamic language model generation<br />
+2014-06-07 13:18:13.514 VoiceSnap[405:60b] Able to open /var/mobile/Applications/63FFED11-8C69-4C61-B5EA-2DCEB385E65F/Library/Caches/PictureCommands.corpus for reading<br />
+2014-06-07 13:18:13.516 VoiceSnap[405:60b] Able to open /var/mobile/Applications/63FFED11-8C69-4C61-B5EA-2DCEB385E65F/Library/Caches/PictureCommands_pipe.txt for writing<br />
+2014-06-07 13:18:13.516 VoiceSnap[405:60b] Starting text2wfreq_impl<br />
+2014-06-07 13:18:13.525 VoiceSnap[405:60b] Done with text2wfreq_impl<br />
+2014-06-07 13:18:13.526 VoiceSnap[405:60b] Able to open /var/mobile/Applications/63FFED11-8C69-4C61-B5EA-2DCEB385E65F/Library/Caches/PictureCommands_pipe.txt for reading.<br />
+2014-06-07 13:18:13.527 VoiceSnap[405:60b] Able to open /var/mobile/Applications/63FFED11-8C69-4C61-B5EA-2DCEB385E65F/Library/Caches/PictureCommands.vocab for reading.<br />
+2014-06-07 13:18:13.528 VoiceSnap[405:60b] Starting wfreq2vocab<br />
+2014-06-07 13:18:13.531 VoiceSnap[405:60b] Done with wfreq2vocab<br />
+2014-06-07 13:18:13.532 VoiceSnap[405:60b] Starting text2idngram<br />
+2014-06-07 13:18:13.546 VoiceSnap[405:60b] Done with text2idngram<br />
+2014-06-07 13:18:13.551 VoiceSnap[405:60b] Starting idngram2lm</p>
+<p>2014-06-07 13:18:13.571 VoiceSnap[405:60b] Done with idngram2lm<br />
+2014-06-07 13:18:13.571 VoiceSnap[405:60b] Starting sphinx_lm_convert<br />
+2014-06-07 13:18:13.579 VoiceSnap[405:60b] Finishing sphinx_lm_convert<br />
+2014-06-07 13:18:13.582 VoiceSnap[405:60b] Done creating language model with CMUCLMTK in 0.075650 seconds.<br />
+2014-06-07 13:18:13.583 VoiceSnap[405:60b] Starting sphinx_lm_convert<br />
+2014-06-07 13:18:13.587 VoiceSnap[405:60b] Finishing sphinx_lm_convert<br />
+2014-06-07 13:18:13.589 VoiceSnap[405:60b] I&#8217;m done running dynamic language model generation and it took 423865093.589445 seconds<br />
+2014-06-07 13:18:13.605 VoiceSnap[405:60b] User gave mic permission for this app.<br />
+2014-06-07 13:18:13.606 VoiceSnap[405:60b] User gave mic permission for this app.<br />
+2014-06-07 13:18:13.607 VoiceSnap[405:60b] Leaving sample rate at the default of 16000.<br />
+2014-06-07 13:18:13.608 VoiceSnap[405:60b] The audio session has never been initialized so we will do that now.<br />
+2014-06-07 13:18:13.608 VoiceSnap[405:60b] Checking and resetting all audio session settings.<br />
+2014-06-07 13:18:13.608 VoiceSnap[405:60b] audioCategory is incorrect, we will change it.<br />
+2014-06-07 13:18:13.609 VoiceSnap[405:60b] audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.<br />
+2014-06-07 13:18:13.609 VoiceSnap[405:60b] bluetoothInput is incorrect, we will change it.<br />
+2014-06-07 13:18:13.610 VoiceSnap[405:60b] bluetooth input is now on the correct setting of 1.<br />
+2014-06-07 13:18:13.611 VoiceSnap[405:60b] Output Device: ReceiverAndMicrophone.<br />
+2014-06-07 13:18:13.611 VoiceSnap[405:60b] categoryDefaultToSpeaker is incorrect, we will change it.<br />
+2014-06-07 13:18:13.612 VoiceSnap[405:60b] CategoryDefaultToSpeaker is now on the correct setting of 1.<br />
+2014-06-07 13:18:13.612 VoiceSnap[405:60b] preferredBufferSize is incorrect, we will change it.<br />
+2014-06-07 13:18:13.613 VoiceSnap[405:60b] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2014-06-07 13:18:13.613 VoiceSnap[405:60b] preferredSampleRateCheck is incorrect, we will change it.<br />
+2014-06-07 13:18:13.614 VoiceSnap[405:60b] preferred hardware sample rate is now on the correct setting of 16000.000000.<br />
+2014-06-07 13:18:13.643 VoiceSnap[405:60b] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2014-06-07 13:18:13.643 VoiceSnap[405:60b] Exiting startAudioSession.<br />
+2014-06-07 13:18:13.645 VoiceSnap[405:5d0b] setSecondsOfSilence value of 0.000000 was too large or too small or was NULL, using default of 0.700000.<br />
+2014-06-07 13:18:13.646 VoiceSnap[405:5d0b] Project has these words or phrases in its dictionary:<br />
+___REJ_AA<br />
+___REJ_AE<br />
+___REJ_AH<br />
+___REJ_AO<br />
+___REJ_AW<br />
+___REJ_AY<br />
+___REJ_B<br />
+___REJ_CH<br />
+___REJ_D<br />
+___REJ_DH<br />
+___REJ_EH<br />
+___REJ_ER<br />
+___REJ_EY<br />
+___REJ_F<br />
+___REJ_G<br />
+___REJ_HH<br />
+___REJ_IH<br />
+___REJ_IY<br />
+___REJ_JH<br />
+___REJ_K<br />
+___REJ_L<br />
+___REJ_M<br />
+___REJ_N<br />
+___REJ_NG<br />
+___REJ_OW<br />
+___REJ_OY<br />
+___REJ_P<br />
+___REJ_R<br />
+___REJ_S<br />
+___REJ_SH<br />
+___REJ_T<br />
+___REJ_TH<br />
+___REJ_UH<br />
+___REJ_UW<br />
+___REJ_V<br />
+___REJ_W<br />
+___REJ_Y<br />
+___REJ_Z<br />
+___REJ_ZH<br />
+RIGHT<br />
+TEST<br />
+TURN<br />
+2014-06-07 13:18:13.646 VoiceSnap[405:5d0b] Recognition loop has started</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/open-ears-does-not-listen-after-integrating-rejecto/#post-1021561</guid>
+					<title><![CDATA[Reply To: [Resolved] OpenEars does not listen after integrating Rejecto.]]></title>
+					<link>/forums/topic/open-ears-does-not-listen-after-integrating-rejecto/#post-1021561</link>
+					<pubDate>Sat, 07 Jun 2014 20:24:03 +0000</pubDate>
+					<dc:creator>derekm9292</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>If I uncomment the old code and comment out the new code, the hypotheses are returned just fine.</p>
+<p>NSError *err = [languageGen generateLanguageModelFromArray:self.languageModel withFilesNamed:name forAcousticModelAtPath:[AcousticModel pathToModel:@&#8221;AcousticModelEnglish&#8221;]];</p>
+<p>//NSError *err = [languageGen generateRejectingLanguageModelFromArray:self.languageModel withFilesNamed:name withOptionalExclusions:nil usingVowelsOnly:FALSE withWeight:nil forAcousticModelAtPath:[AcousticModel pathToModel:@&#8221;AcousticModelEnglish&#8221;]];</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/open-ears-does-not-listen-after-integrating-rejecto/#post-1021563</guid>
+					<title><![CDATA[Reply To: [Resolved] OpenEars does not listen after integrating Rejecto.]]></title>
+					<link>/forums/topic/open-ears-does-not-listen-after-integrating-rejecto/#post-1021563</link>
+					<pubDate>Sat, 07 Jun 2014 20:39:46 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You can see if Rejecto is just overzealously detecting Rejecto hypotheses and rejecting them if you set [self.languageModelGenerator deliverRejectedSpeechInHypotheses:TRUE] after initializing LanguageModelGenerator. If that is the case you can either turn down the weight or exclude some Rejecto phonemes to reduce the rejection effect. If you&#8217;d like to troubleshoot it more, please turn on verbosePocketsphinx and show the complete session log.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/open-ears-does-not-listen-after-integrating-rejecto/#post-1021564</guid>
+					<title><![CDATA[Reply To: [Resolved] OpenEars does not listen after integrating Rejecto.]]></title>
+					<link>/forums/topic/open-ears-does-not-listen-after-integrating-rejecto/#post-1021564</link>
+					<pubDate>Sat, 07 Jun 2014 21:14:33 +0000</pubDate>
+					<dc:creator>derekm9292</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I tried setting: [languageGen deliverRejectedSpeechInHypotheses:TRUE];</p>
+<p>I also tried setting the weight to [NSNumber numberWithFloat:0.1];</p>
+<p>Neither seemed to help.</p>
+<p>Here&#8217;s the log with verbosePocketsphinx set: </p>
+<p>2014-06-07 13:56:15.588 VoiceSnap[485:60b] [Quincy] WARNING: Detecting crashes is NOT enabled due to running the app with a debugger attached.<br />
+2014-06-07 13:56:15.756 VoiceSnap[485:60b] Starting OpenEars logging for OpenEars version 1.65 on 64-bit device: iPhone running iOS version: 7.100000<br />
+2014-06-07 13:56:15.760 VoiceSnap[485:60b] Normalized array contains the following entries:<br />
+(<br />
+    &#8220;VOICE SNAP TAKE A PICTURE&#8221;,<br />
+    &#8220;VOICE SNAP TAKE A PHOTO&#8221;,<br />
+    &#8220;VOICE SNAP A PHOTO&#8221;,<br />
+    &#8220;TAKE A PHOTO&#8221;,<br />
+    &#8220;TAKE A PICTURE&#8221;<br />
+)<br />
+2014-06-07 13:56:15.895 VoiceSnap[485:60b] I&#8217;m done running performDictionaryLookup and it took 0.051399 seconds<br />
+2014-06-07 13:56:15.902 VoiceSnap[485:60b] Starting dynamic language model generation<br />
+2014-06-07 13:56:15.909 VoiceSnap[485:60b] Able to open /var/mobile/Applications/63FFED11-8C69-4C61-B5EA-2DCEB385E65F/Library/Caches/PictureCommands.corpus for reading<br />
+2014-06-07 13:56:15.911 VoiceSnap[485:60b] Able to open /var/mobile/Applications/63FFED11-8C69-4C61-B5EA-2DCEB385E65F/Library/Caches/PictureCommands_pipe.txt for writing<br />
+2014-06-07 13:56:15.911 VoiceSnap[485:60b] Starting text2wfreq_impl<br />
+2014-06-07 13:56:15.918 VoiceSnap[485:60b] Done with text2wfreq_impl<br />
+2014-06-07 13:56:15.919 VoiceSnap[485:60b] Able to open /var/mobile/Applications/63FFED11-8C69-4C61-B5EA-2DCEB385E65F/Library/Caches/PictureCommands_pipe.txt for reading.<br />
+2014-06-07 13:56:15.920 VoiceSnap[485:60b] Able to open /var/mobile/Applications/63FFED11-8C69-4C61-B5EA-2DCEB385E65F/Library/Caches/PictureCommands.vocab for reading.<br />
+2014-06-07 13:56:15.921 VoiceSnap[485:60b] Starting wfreq2vocab<br />
+2014-06-07 13:56:15.923 VoiceSnap[485:60b] Done with wfreq2vocab<br />
+2014-06-07 13:56:15.924 VoiceSnap[485:60b] Starting text2idngram<br />
+2014-06-07 13:56:15.937 VoiceSnap[485:60b] Done with text2idngram<br />
+2014-06-07 13:56:15.942 VoiceSnap[485:60b] Starting idngram2lm</p>
+<p>2014-06-07 13:56:16.009 VoiceSnap[485:60b] Done with idngram2lm<br />
+2014-06-07 13:56:16.009 VoiceSnap[485:60b] Starting sphinx_lm_convert<br />
+2014-06-07 13:56:16.018 VoiceSnap[485:60b] Finishing sphinx_lm_convert<br />
+2014-06-07 13:56:16.021 VoiceSnap[485:60b] Done creating language model with CMUCLMTK in 0.118209 seconds.<br />
+2014-06-07 13:56:16.022 VoiceSnap[485:60b] Starting sphinx_lm_convert<br />
+2014-06-07 13:56:16.028 VoiceSnap[485:60b] Finishing sphinx_lm_convert<br />
+2014-06-07 13:56:16.030 VoiceSnap[485:60b] I&#8217;m done running dynamic language model generation and it took 423867376.030317 seconds<br />
+2014-06-07 13:56:16.050 VoiceSnap[485:60b] User gave mic permission for this app.<br />
+2014-06-07 13:56:16.051 VoiceSnap[485:60b] User gave mic permission for this app.<br />
+2014-06-07 13:56:16.052 VoiceSnap[485:60b] Leaving sample rate at the default of 16000.<br />
+2014-06-07 13:56:16.053 VoiceSnap[485:60b] The audio session has never been initialized so we will do that now.<br />
+2014-06-07 13:56:16.054 VoiceSnap[485:60b] Checking and resetting all audio session settings.<br />
+2014-06-07 13:56:16.055 VoiceSnap[485:60b] audioCategory is incorrect, we will change it.<br />
+2014-06-07 13:56:16.056 VoiceSnap[485:60b] audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.<br />
+2014-06-07 13:56:16.056 VoiceSnap[485:60b] bluetoothInput is incorrect, we will change it.<br />
+2014-06-07 13:56:16.057 VoiceSnap[485:60b] bluetooth input is now on the correct setting of 1.<br />
+2014-06-07 13:56:16.059 VoiceSnap[485:60b] Output Device: ReceiverAndMicrophone.<br />
+2014-06-07 13:56:16.060 VoiceSnap[485:60b] categoryDefaultToSpeaker is incorrect, we will change it.<br />
+2014-06-07 13:56:16.061 VoiceSnap[485:60b] CategoryDefaultToSpeaker is now on the correct setting of 1.<br />
+2014-06-07 13:56:16.062 VoiceSnap[485:60b] preferredBufferSize is incorrect, we will change it.<br />
+2014-06-07 13:56:16.062 VoiceSnap[485:60b] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2014-06-07 13:56:16.063 VoiceSnap[485:60b] preferredSampleRateCheck is incorrect, we will change it.<br />
+2014-06-07 13:56:16.064 VoiceSnap[485:60b] preferred hardware sample rate is now on the correct setting of 16000.000000.<br />
+2014-06-07 13:56:16.103 VoiceSnap[485:60b] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2014-06-07 13:56:16.104 VoiceSnap[485:60b] Exiting startAudioSession.<br />
+2014-06-07 13:56:16.105 VoiceSnap[485:5d0b] setSecondsOfSilence value of 0.000000 was too large or too small or was NULL, using default of 0.700000.<br />
+2014-06-07 13:56:16.107 VoiceSnap[485:5d0b] Project has these words or phrases in its dictionary:<br />
+___REJ_AA<br />
+___REJ_AE<br />
+___REJ_AO<br />
+___REJ_AW<br />
+___REJ_AY<br />
+___REJ_B<br />
+___REJ_CH<br />
+___REJ_D<br />
+___REJ_DH<br />
+___REJ_EH<br />
+___REJ_ER<br />
+___REJ_F<br />
+___REJ_G<br />
+___REJ_HH<br />
+___REJ_IH<br />
+___REJ_IY<br />
+___REJ_JH<br />
+___REJ_K<br />
+___REJ_L<br />
+___REJ_M<br />
+___REJ_N<br />
+___REJ_NG<br />
+___REJ_OW<br />
+___REJ_OY<br />
+___REJ_P<br />
+___REJ_R<br />
+___REJ_S<br />
+___REJ_SH<br />
+___REJ_T<br />
+___REJ_TH<br />
+___REJ_UH<br />
+___REJ_UW<br />
+___REJ_V<br />
+___REJ_W<br />
+___REJ_Y<br />
+___REJ_Z<br />
+___REJ_ZH<br />
+A<br />
+A(2)<br />
+PHOTO<br />
+PICTURE<br />
+SNAP<br />
+TAKE<br />
+VOICE<br />
+2014-06-07 13:56:16.107 VoiceSnap[485:5d0b] Recognition loop has started<br />
+INFO: file_omitted(0): Parsing command line:<br />
+\<br />
+	-lm /var/mobile/Applications/63FFED11-8C69-4C61-B5EA-2DCEB385E65F/Library/Caches/PictureCommands.DMP \<br />
+	-beam 1e-96 \<br />
+	-dict /var/mobile/Applications/63FFED11-8C69-4C61-B5EA-2DCEB385E65F/Library/Caches/PictureCommands.dic \<br />
+	-fwdflatbeam 1e-128 \<br />
+	-hmm /var/mobile/Applications/63FFED11-8C69-4C61-B5EA-2DCEB385E65F/VoiceSnap.app/AcousticModelEnglish.bundle \<br />
+	-lw 6.500000 \<br />
+	-samprate 16000 </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-alpha		0.97		9.700000e-01<br />
+-argfile<br />
+-ascale		20.0		2.000000e+01<br />
+-aw		1		1<br />
+-backtrace	no		no<br />
+-beam		1e-48		1.000000e-96<br />
+-bestpath	yes		yes<br />
+-bestpathlw	9.5		9.500000e+00<br />
+-bghist		no		no<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		8.0<br />
+-compallsen	no		no<br />
+-debug				0<br />
+-dict				/var/mobile/Applications/63FFED11-8C69-4C61-B5EA-2DCEB385E65F/Library/Caches/PictureCommands.dic<br />
+-dictcase	no		no<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-ds		1		1<br />
+-fdict<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-featparams<br />
+-fillprob	1e-8		1.000000e-08<br />
+-frate		100		100<br />
+-fsg<br />
+-fsgusealtpron	yes		yes<br />
+-fsgusefiller	yes		yes<br />
+-fwdflat	yes		yes<br />
+-fwdflatbeam	1e-64		1.000000e-128<br />
+-fwdflatefwid	4		4<br />
+-fwdflatlw	8.5		8.500000e+00<br />
+-fwdflatsfwin	25		25<br />
+-fwdflatwbeam	7e-29		7.000000e-29<br />
+-fwdtree	yes		yes<br />
+-hmm				/var/mobile/Applications/63FFED11-8C69-4C61-B5EA-2DCEB385E65F/VoiceSnap.app/AcousticModelEnglish.bundle<br />
+-input_endian	little		little<br />
+-jsgf<br />
+-kdmaxbbi	-1		-1<br />
+-kdmaxdepth	0		0<br />
+-kdtree<br />
+-latsize	5000		5000<br />
+-lda<br />
+-ldadim		0		0<br />
+-lextreedump	0		0<br />
+-lifter		0		0<br />
+-lm				/var/mobile/Applications/63FFED11-8C69-4C61-B5EA-2DCEB385E65F/Library/Caches/PictureCommands.DMP<br />
+-lmctl<br />
+-lmname		default		default<br />
+-logbase	1.0001		1.000100e+00<br />
+-logfn<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.333333e+02<br />
+-lpbeam		1e-40		1.000000e-40<br />
+-lponlybeam	7e-29		7.000000e-29<br />
+-lw		6.5		6.500000e+00<br />
+-maxhmmpf	-1		-1<br />
+-maxnewoov	20		20<br />
+-maxwpf		-1		-1<br />
+-mdef<br />
+-mean<br />
+-mfclogdir<br />
+-min_endfr	0		0<br />
+-mixw<br />
+-mixwfloor	0.0000001	1.000000e-07<br />
+-mllr<br />
+-mmap		yes		yes<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		40<br />
+-nwpen		1.0		1.000000e+00<br />
+-pbeam		1e-48		1.000000e-48<br />
+-pip		1.0		1.000000e+00<br />
+-pl_beam	1e-10		1.000000e-10<br />
+-pl_pbeam	1e-5		1.000000e-05<br />
+-pl_window	0		0<br />
+-rawlogdir<br />
+-remove_dc	no		no<br />
+-round_filters	yes		yes<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-sendump<br />
+-senlogdir<br />
+-senmgau<br />
+-silprob	0.005		5.000000e-03<br />
+-smoothspec	no		no<br />
+-svspec<br />
+-tmat<br />
+-tmatfloor	0.0001		1.000000e-04<br />
+-topn		4		4<br />
+-topn_beam	0		0<br />
+-toprule<br />
+-transform	legacy		legacy<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	6.855498e+03<br />
+-usewdphones	no		no<br />
+-uw		1.0		1.000000e+00<br />
+-var<br />
+-varfloor	0.0001		1.000000e-04<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wbeam		7e-29		7.000000e-29<br />
+-wip		0.65		6.500000e-01<br />
+-wlen		0.025625	2.562500e-02</p>
+<p>INFO: file_omitted(0): Parsing command line:<br />
+\<br />
+	-nfilt 20 \<br />
+	-lowerf 1 \<br />
+	-upperf 4000 \<br />
+	-wlen 0.025 \<br />
+	-transform dct \<br />
+	-round_filters no \<br />
+	-remove_dc yes \<br />
+	-svspec 0-12/13-25/26-38 \<br />
+	-feat 1s_c_d_dd \<br />
+	-agc none \<br />
+	-cmn current \<br />
+	-cmninit 47 \<br />
+	-varnorm no </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-alpha		0.97		9.700000e-01<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		47<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-frate		100		100<br />
+-input_endian	little		little<br />
+-lda<br />
+-ldadim		0		0<br />
+-lifter		0		0<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.000000e+00<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		20<br />
+-remove_dc	no		yes<br />
+-round_filters	yes		no<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-smoothspec	no		no<br />
+-svspec				0-12/13-25/26-38<br />
+-transform	legacy		dct<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	4.000000e+03<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wlen		0.025625	2.500000e-02</p>
+<p>INFO: file_omitted(0): Parsed model-specific feature parameters from /var/mobile/Applications/63FFED11-8C69-4C61-B5EA-2DCEB385E65F/VoiceSnap.app/AcousticModelEnglish.bundle/feat.params<br />
+INFO: file_omitted(0): Initializing feature stream to type: &#8216;1s_c_d_dd&#8217;, ceplen=13, CMN=&#8217;current&#8217;, VARNORM=&#8217;no&#8217;, AGC=&#8217;none&#8217;<br />
+INFO: file_omitted(0): mean[0]= 12.00, mean[1..12]= 0.0<br />
+INFO: file_omitted(0): Using subvector specification 0-12/13-25/26-38<br />
+INFO: file_omitted(0): Reading model definition: /var/mobile/Applications/63FFED11-8C69-4C61-B5EA-2DCEB385E65F/VoiceSnap.app/AcousticModelEnglish.bundle/mdef<br />
+INFO: file_omitted(0): Found byte-order mark BMDF, assuming this is a binary mdef file<br />
+INFO: file_omitted(0): Reading binary model definition: /var/mobile/Applications/63FFED11-8C69-4C61-B5EA-2DCEB385E65F/VoiceSnap.app/AcousticModelEnglish.bundle/mdef<br />
+INFO: file_omitted(0): 50 CI-phone, 143047 CD-phone, 3 emitstate/phone, 150 CI-sen, 5150 Sen, 27135 Sen-Seq<br />
+INFO: file_omitted(0): Reading HMM transition probability matrices: /var/mobile/Applications/63FFED11-8C69-4C61-B5EA-2DCEB385E65F/VoiceSnap.app/AcousticModelEnglish.bundle/transition_matrices<br />
+INFO: file_omitted(0): Attempting to use SCHMM computation module<br />
+INFO: file_omitted(0): Reading mixture gaussian parameter: /var/mobile/Applications/63FFED11-8C69-4C61-B5EA-2DCEB385E65F/VoiceSnap.app/AcousticModelEnglish.bundle/means<br />
+INFO: file_omitted(0): 1 codebook, 3 feature, size:<br />
+INFO: file_omitted(0):  256&#215;13<br />
+INFO: file_omitted(0):  256&#215;13<br />
+INFO: file_omitted(0):  256&#215;13<br />
+INFO: file_omitted(0): Reading mixture gaussian parameter: /var/mobile/Applications/63FFED11-8C69-4C61-B5EA-2DCEB385E65F/VoiceSnap.app/AcousticModelEnglish.bundle/variances<br />
+INFO: file_omitted(0): 1 codebook, 3 feature, size:<br />
+INFO: file_omitted(0):  256&#215;13<br />
+INFO: file_omitted(0):  256&#215;13<br />
+INFO: file_omitted(0):  256&#215;13<br />
+INFO: file_omitted(0): 0 variance values floored<br />
+INFO: file_omitted(0): Loading senones from dump file /var/mobile/Applications/63FFED11-8C69-4C61-B5EA-2DCEB385E65F/VoiceSnap.app/AcousticModelEnglish.bundle/sendump<br />
+INFO: file_omitted(0): BEGIN FILE FORMAT DESCRIPTION<br />
+INFO: file_omitted(0): Using memory-mapped I/O for senones<br />
+INFO: file_omitted(0): Maximum top-N: 4 Top-N beams: 0 0 0<br />
+INFO: file_omitted(0): Allocating 4151 * 32 bytes (129 KiB) for word entries<br />
+INFO: file_omitted(0): Reading main dictionary: /var/mobile/Applications/63FFED11-8C69-4C61-B5EA-2DCEB385E65F/Library/Caches/PictureCommands.dic<br />
+INFO: file_omitted(0): Allocated 0 KiB for strings, 0 KiB for phones<br />
+INFO: file_omitted(0): 44 words read<br />
+INFO: file_omitted(0): Reading filler dictionary: /var/mobile/Applications/63FFED11-8C69-4C61-B5EA-2DCEB385E65F/VoiceSnap.app/AcousticModelEnglish.bundle/noisedict<br />
+INFO: file_omitted(0): Allocated 0 KiB for strings, 0 KiB for phones<br />
+INFO: file_omitted(0): 11 words read<br />
+INFO: file_omitted(0): Building PID tables for dictionary<br />
+INFO: file_omitted(0): Allocating 50^3 * 2 bytes (244 KiB) for word-initial triphones<br />
+INFO: file_omitted(0): Allocated 60400 bytes (58 KiB) for word-final triphones<br />
+INFO: file_omitted(0): Allocated 60400 bytes (58 KiB) for single-phone word triphones<br />
+ERROR: &#8220;file_omitted&#8221;, line 0: File /var/mobile/Applications/63FFED11-8C69-4C61-B5EA-2DCEB385E65F/Library/Caches/PictureCommands.DMP not found<br />
+ERROR: &#8220;file_omitted&#8221;, line 0: Dump file /var/mobile/Applications/63FFED11-8C69-4C61-B5EA-2DCEB385E65F/Library/Caches/PictureCommands.DMP not found<br />
+ERROR: &#8220;file_omitted&#8221;, line 0: Failed to read language model file: /var/mobile/Applications/63FFED11-8C69-4C61-B5EA-2DCEB385E65F/Library/Caches/PictureCommands.DMP</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/open-ears-does-not-listen-after-integrating-rejecto/#post-1021565</guid>
+					<title><![CDATA[Reply To: [Resolved] OpenEars does not listen after integrating Rejecto.]]></title>
+					<link>/forums/topic/open-ears-does-not-listen-after-integrating-rejecto/#post-1021565</link>
+					<pubDate>Sun, 08 Jun 2014 03:04:17 +0000</pubDate>
+					<dc:creator>derekm9292</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I have a feeling that this could really improve the quality of my app and would buy it in a heart beat if it does, but since I&#8217;m having trouble with the demo I&#8217;m not really sure. I&#8217;m hoping you might have run into this issue before or might know what&#8217;s wrong. Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/open-ears-does-not-listen-after-integrating-rejecto/#post-1021567</guid>
+					<title><![CDATA[Reply To: [Resolved] OpenEars does not listen after integrating Rejecto.]]></title>
+					<link>/forums/topic/open-ears-does-not-listen-after-integrating-rejecto/#post-1021567</link>
+					<pubDate>Sun, 08 Jun 2014 07:32:51 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, the extended logging shows you what the problem is:</p>
+<blockquote><p>ERROR: “file_omitted”, line 0: File /var/mobile/Applications/63FFED11-8C69-4C61-B5EA-2DCEB385E65F/Library/Caches/PictureCommands.DMP not found<br />
+ERROR: “file_omitted”, line 0: Dump file /var/mobile/Applications/63FFED11-8C69-4C61-B5EA-2DCEB385E65F/Library/Caches/PictureCommands.DMP not found<br />
+ERROR: “file_omitted”, line 0: Failed to read language model file: /var/mobile/Applications/63FFED11-8C69-4C61-B5EA-2DCEB385E65F/Library/Caches/PictureCommands.DMP
+</p></blockquote>
+<p>This is the underlying cause of the DMP not being found:</p>
+<blockquote><p>Starting OpenEars logging for OpenEars version 1.65</p></blockquote>
+<p>Which relates to this item from the <a href="/openears/support/#Q_I8217m_having_an_issue_with_Rejecto_or_with_an_app_that_Rejecto_is_added_to">FAQ</a>:</p>
+<blockquote><p>Q: I’m having an issue with Rejecto, or with an app that Rejecto is added to.</p>
+<p>A: Please make sure you are using OpenEars version 1.66 or newer.</p>
+</blockquote>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/open-ears-does-not-listen-after-integrating-rejecto/#post-1021586</guid>
+					<title><![CDATA[Reply To: [Resolved] OpenEars does not listen after integrating Rejecto.]]></title>
+					<link>/forums/topic/open-ears-does-not-listen-after-integrating-rejecto/#post-1021586</link>
+					<pubDate>Mon, 09 Jun 2014 01:47:29 +0000</pubDate>
+					<dc:creator>derekm9292</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Oh, sorry about that. I thought I was on the newest version. That fixed it.</p>
+<p>Besides Rejecto, what&#8217;s the best way to achieve recognition of just a few commands? If there is background noise or other people talking my app has a really hard time tracking if the command was spoken. This makes sense to me because the framework is trying to parse everything that has been spoken, but is there a way to search the audio for very specific phrases such as my commands? Such that, even if other people are talking or there is mucic in the background it will still pick my phrase out of the audio? I&#8217;m not exactly sure how the speech recognition algorithm works so this may seem like a dumb question.</p>
+<p>Thanks,<br />
+Derek</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/open-ears-does-not-listen-after-integrating-rejecto/#post-1021587</guid>
+					<title><![CDATA[Reply To: [Resolved] OpenEars does not listen after integrating Rejecto.]]></title>
+					<link>/forums/topic/open-ears-does-not-listen-after-integrating-rejecto/#post-1021587</link>
+					<pubDate>Mon, 09 Jun 2014 01:53:47 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Derek,</p>
+<p>There isn&#8217;t a solution with the exact features you are asking for, but you might want to try out using a grammar instead of a language model (Rejecto isn&#8217;t yet compatible with this approach): <a href="/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/">/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

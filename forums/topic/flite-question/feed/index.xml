@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] Flite question &#8211; Politepix</title>
+		<atom:link href="/forums/topic/flite-question/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/flite-question/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:39:11 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/flite-question/#post-11233</guid>
+					<title><![CDATA[[Resolved] Flite question]]></title>
+					<link>/forums/topic/flite-question/#post-11233</link>
+					<pubDate>Sat, 22 Sep 2012 06:14:40 +0000</pubDate>
+					<dc:creator>tnt-touch</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am using flite in my app.<br />
+1. How can I include only flite in my final app and not all of the framework?<br />
+2. What exactly do I have to mention in my e.g. About view about politepix and flite? do I have to e.g. have all the text of the licenses in a textview?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-question/#post-11234</guid>
+					<title><![CDATA[Reply To: Flite question]]></title>
+					<link>/forums/topic/flite-question/#post-11234</link>
+					<pubDate>Sat, 22 Sep 2012 08:17:18 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Check out the FAQ for these answers:<a href="/openears/support">/openears/support</a></p>
+<p>I think it&#8217;s fine to use the text I mentioned in the FAQ as long as you link to the CMU license somewhere (either to a reprint of it on your site or on one of their sites). Conforming to the CMU license isn&#8217;t something I can speak definitively about since it isn&#8217;t my license but in my experience the goal isn&#8217;t to put long licenses into your apps but to make sure that app users can access the licenses. Thanks for paying attention to crediting and licensing!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-question/#post-11235</guid>
+					<title><![CDATA[Reply To: Flite question]]></title>
+					<link>/forums/topic/flite-question/#post-11235</link>
+					<pubDate>Sat, 22 Sep 2012 14:27:58 +0000</pubDate>
+					<dc:creator>tnt-touch</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thank you very much&#8230;I will have all the licenses in my web site and the text you have in license.txt I will have it in my About view. I think it will be correct for all of us!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-question/#post-11238</guid>
+					<title><![CDATA[Reply To: Flite question]]></title>
+					<link>/forums/topic/flite-question/#post-11238</link>
+					<pubDate>Sat, 22 Sep 2012 16:38:49 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sounds good!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

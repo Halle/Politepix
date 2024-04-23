@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>NeatSpeech) the question about the speaking speed &#8211; Politepix</title>
+		<atom:link href="/forums/topic/neatspeech-the-question-about-the-speaking-speed/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/neatspeech-the-question-about-the-speaking-speed/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:44:29 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/neatspeech-the-question-about-the-speaking-speed/#post-1015622</guid>
+					<title><![CDATA[NeatSpeech) the question about the speaking speed]]></title>
+					<link>/forums/topic/neatspeech-the-question-about-the-speaking-speed/#post-1015622</link>
+					<pubDate>Thu, 14 Feb 2013 05:25:23 +0000</pubDate>
+					<dc:creator>hitoshi</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello, Halle.</p>
+<p>I have some questions.<br />
+That&#8217;s about the speed at &#8220;initWithPitch:pitch:speed:transform:&#8221; method of &#8220;NeatSpeechVoice&#8221; class.</p>
+<p>The speed value is used to a scale of -1.0 &lt;&minus;&gt; 1.0.<br />
+Then, based on 0.0, how many times as fast as that in -1.0 &lt;&minus;&gt; 1.0?<br />
+I would like to show in the format like &#8220;x2.0&#8221; to the user.</p>
+<p>When changing the speed value,<br />
+Is the amount of change fluctuated with a constant acceleration,<br />
+ or with a constant velocity?<br />
+Please let me know if there is a calculation formula.</p>
+<p>And, do the speed value affect the waiting time at the punctuation marks?</p>
+<p>Best regards,<br />
+Hitoshi</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-the-question-about-the-speaking-speed/#post-1015625</guid>
+					<title><![CDATA[Reply To: NeatSpeech) the question about the speaking speed]]></title>
+					<link>/forums/topic/neatspeech-the-question-about-the-speaking-speed/#post-1015625</link>
+					<pubDate>Thu, 14 Feb 2013 08:40:51 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello Hitoshi,</p>
+<p>It is dependent on encapsulated details of the voice (it is specific to each voice) and it is also subject to change, so I can&#8217;t easily answer this question with a formula. If you&#8217;re curious about this for a specific voice, I think the full logging might give you enough information that you could time the playback and find out.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-the-question-about-the-speaking-speed/#post-1015646</guid>
+					<title><![CDATA[Reply To: NeatSpeech) the question about the speaking speed]]></title>
+					<link>/forums/topic/neatspeech-the-question-about-the-speaking-speed/#post-1015646</link>
+					<pubDate>Sat, 16 Feb 2013 17:41:15 +0000</pubDate>
+					<dc:creator>hitoshi</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi, Halle.</p>
+<p>I see.<br />
+I&#8217;ll investigate the speed by actually reproducing sample sounds. </p>
+<p>Thank you for your qucik reply.</p>
+<p>Hitoshi</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

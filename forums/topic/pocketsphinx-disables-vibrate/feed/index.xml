@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Pocketsphinx disables vibrate? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/pocketsphinx-disables-vibrate/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/pocketsphinx-disables-vibrate/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:38:38 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/pocketsphinx-disables-vibrate/#post-11636</guid>
+					<title><![CDATA[Pocketsphinx disables vibrate?]]></title>
+					<link>/forums/topic/pocketsphinx-disables-vibrate/#post-11636</link>
+					<pubDate>Thu, 18 Oct 2012 10:19:02 +0000</pubDate>
+					<dc:creator>n0r_ka</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I have a problem&#8230; I&#8217;m using AudioServicesPlaySystemSound(kSystemSoundID_Vibrate) to make the phone vibrate, but when Pocketsphinx is starting up and starts to calibrate it disables it somehow. That wouldn&#8217;t be that much of a problem, but if I turn of the recognition (stopListening) it doesn&#8217;t enable the vibration again. </p>
+<p>Is that the way it&#8217;s meant to be, or is it a bug? Or am I doing something wrong?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pocketsphinx-disables-vibrate/#post-11638</guid>
+					<title><![CDATA[Reply To: Pocketsphinx disables vibrate?]]></title>
+					<link>/forums/topic/pocketsphinx-disables-vibrate/#post-11638</link>
+					<pubDate>Thu, 18 Oct 2012 10:39:34 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The audio session that is required for an app that plays back and records audio disables system sounds, unfortunately. You can try enabling OpenEars&#8217; AudioSessionManager&#8217;s soundMixing property as described in this thread: <a href="/forums/topic/flitecontroller-pauses-music/">/forums/topic/flitecontroller-pauses-music/</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

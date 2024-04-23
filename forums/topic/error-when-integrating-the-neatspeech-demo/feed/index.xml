@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Error when integrating the NeatSpeech demo &#8211; Politepix</title>
+		<atom:link href="/forums/topic/error-when-integrating-the-neatspeech-demo/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/error-when-integrating-the-neatspeech-demo/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:44:43 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/error-when-integrating-the-neatspeech-demo/#post-14891</guid>
+					<title><![CDATA[Error when integrating the NeatSpeech demo]]></title>
+					<link>/forums/topic/error-when-integrating-the-neatspeech-demo/#post-14891</link>
+					<pubDate>Thu, 13 Dec 2012 13:53:19 +0000</pubDate>
+					<dc:creator>appcontrol</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi there,</p>
+<p>I have a projet with OpenEars (1.2.4) integrated in it, for speech synthesis only. When I try to replace the SLT voice with one of the demo voices, the app crashes at the first synthesis, with the following message in the debug console: &#8220;Error: flite_hts_engine: specify models(trees) for each parameter.&#8221;</p>
+<p>Did I miss something in the installation document?</p>
+<p>Thanks,<br />
+Vincent.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-when-integrating-the-neatspeech-demo/#post-14892</guid>
+					<title><![CDATA[Reply To: Error when integrating the NeatSpeech demo]]></title>
+					<link>/forums/topic/error-when-integrating-the-neatspeech-demo/#post-14892</link>
+					<pubDate>Thu, 13 Dec 2012 14:05:38 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>Can you show the code you used? It just sounds a bit like the Emma voice (or whichever voice) is not instantiated at the time you are calling it.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-when-integrating-the-neatspeech-demo/#post-14893</guid>
+					<title><![CDATA[Reply To: Error when integrating the NeatSpeech demo]]></title>
+					<link>/forums/topic/error-when-integrating-the-neatspeech-demo/#post-14893</link>
+					<pubDate>Thu, 13 Dec 2012 14:06:19 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You can also contact me through the contact form and I&#8217;ll give you an address to email your code or project to if you want to use your free support email.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-when-integrating-the-neatspeech-demo/#post-14894</guid>
+					<title><![CDATA[Reply To: Error when integrating the NeatSpeech demo]]></title>
+					<link>/forums/topic/error-when-integrating-the-neatspeech-demo/#post-14894</link>
+					<pubDate>Thu, 13 Dec 2012 14:14:33 +0000</pubDate>
+					<dc:creator>appcontrol</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>thanks for the swift reaction, this is really good.</p>
+<p>Here&#8217;s a code extract, the crash error occurs on the line where the stEmma (static variable) is initialized.</p>
+<p>Thanks,<br />
+Vincent</p>
+<p>==========</p>
+<p>+(void) sayText:(NSString*)text{</p>
+<p>    if(stFliteController == nil){<br />
+        stFliteController = [[FliteController alloc]init];<br />
+    }</p>
+<p>    if(stEmma == nil){<br />
+        stEmma = [[Emma alloc]initWithPitch:0.0f speed:0.0f transform:0.0f];<br />
+    }</p>
+<p>    if(theQueue == nil){<br />
+        theQueue = [[NSMutableArray alloc]initWithCapacity:10];<br />
+    }</p>
+<p>    if([stFliteController speechInProgress]){<br />
+        // NSLog(@&#8221;AudioSingleton sayText:%@ &#8211;&gt; Will queue it&#8221;, text);<br />
+        [theQueue addObject:text];<br />
+    }<br />
+    else{<br />
+        // NSLog(@&#8221;AudioSingleton sayText:%@ &#8211;&gt; will say it&#8221;, text);<br />
+        [stFliteController sayWithNeatSpeech:text withVoice:stEmma];<br />
+    }<br />
+}</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-when-integrating-the-neatspeech-demo/#post-14895</guid>
+					<title><![CDATA[Reply To: Error when integrating the NeatSpeech demo]]></title>
+					<link>/forums/topic/error-when-integrating-the-neatspeech-demo/#post-14895</link>
+					<pubDate>Thu, 13 Dec 2012 14:39:53 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, I see a few issues. The first is that the tutorial gives an example of how to do the memory management for both FliteController and FliteController+Neatspeech voices, and it&#8217;s a good idea to use it since it avoids issues related to memory management. This looks like the initialization occurs inside of an instance method of a shared object, which seems like there are a few ways it could be going wrong. There&#8217;s no need to put NeatSpeech inside a singleton or do something with queueing since NeatSpeech manages its own queue internally and it is multithreaded and expects to be instantiated in one view controller, not in a singleton whose thread we don&#8217;t know.</p>
+<p>I would just set it up like the tutorial example:</p>
+<p><a href="/openears/tutorial">/openears/tutorial</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-when-integrating-the-neatspeech-demo/#post-14896</guid>
+					<title><![CDATA[Reply To: Error when integrating the NeatSpeech demo]]></title>
+					<link>/forums/topic/error-when-integrating-the-neatspeech-demo/#post-14896</link>
+					<pubDate>Thu, 13 Dec 2012 15:25:11 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Just to explain a bit more about the internal queueing, you can send text to sayWithNeatSpeech: whenever you want, and if speech is currently in progress the new text will be queued behind the scenes and spoken when previous queued speech is done. Or you can send a single very large piece of text and NeatSpeech will break it down and queue it up on its own. You can also dump the queue. It&#8217;s built on the assumption that you will need to queue and manages its whole process of putting synthesis on a secondary thread and keeping the results that are delivered by OpenEarsEventsObserver on mainThread.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-when-integrating-the-neatspeech-demo/#post-14897</guid>
+					<title><![CDATA[Reply To: Error when integrating the NeatSpeech demo]]></title>
+					<link>/forums/topic/error-when-integrating-the-neatspeech-demo/#post-14897</link>
+					<pubDate>Thu, 13 Dec 2012 16:50:34 +0000</pubDate>
+					<dc:creator>appcontrol</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for your answers.</p>
+<p>The singleton is there because of the way the app is using sound, not to encapsulate NeatSpeech. And this works with the Slt voice, so I hoped it would be easy to switch to NeatSpeech.</p>
+<p>Regarding the queuing, it&#8217;s in place because Slt and the previous sound mechanism I used could&#8217;t handle it, and the text come in chunks because of the nature of the app.</p>
+<p>I did not expect such a difference between OpenEars and NeatSpeech, but I&#8217;ll test further, and let you know if I need more support.</p>
+<p>Vincent.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-when-integrating-the-neatspeech-demo/#post-14901</guid>
+					<title><![CDATA[Reply To: Error when integrating the NeatSpeech demo]]></title>
+					<link>/forums/topic/error-when-integrating-the-neatspeech-demo/#post-14901</link>
+					<pubDate>Fri, 14 Dec 2012 14:24:34 +0000</pubDate>
+					<dc:creator>appcontrol</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>So, at this point I have something equivalent to the tutorial working, and by the way, the NeatSpeech voices are really good compared to the free ones&#8230;</p>
+<p>But I&#8217;m still struggling to integrate it in my application, even in one of the many view controllers I have. Does NeatSpeech assumes, that the objects will be properties of the root view controller, or can it be any VC ?</p>
+<p>Thanks,<br />
+Vincent</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-when-integrating-the-neatspeech-demo/#post-14902</guid>
+					<title><![CDATA[Reply To: Error when integrating the NeatSpeech demo]]></title>
+					<link>/forums/topic/error-when-integrating-the-neatspeech-demo/#post-14902</link>
+					<pubDate>Fri, 14 Dec 2012 14:30:26 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Any VC. They can also be instantiated in a model that is controlled in a VC without any multithreading; the only reason I say to put them in a VC is that they should be on mainThread and not in a singleton but instead something which has a particular location in the view hierarchy and is normally memory managed.</p>
+<p>How are you struggling? Are you instantiating the voice and the fliteController in the emma and fliteController lazy instantiation method that is shown in the tutorial and then referencing them with self. as in:</p>
+<p>[self.fliteController sayWithNeatSpeech:@&#8221;I have always wished for my computer to be as easy to use as my telephone; my wish has come true because I can no longer figure out how to use my telephone.&#8221; withVoice:self.emma];</p>
+<p>?</p>
+<p>I&#8217;m here to help, just let me know what the hangup is and I&#8217;m sure we can figure it out.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-when-integrating-the-neatspeech-demo/#post-14903</guid>
+					<title><![CDATA[Reply To: Error when integrating the NeatSpeech demo]]></title>
+					<link>/forums/topic/error-when-integrating-the-neatspeech-demo/#post-14903</link>
+					<pubDate>Fri, 14 Dec 2012 14:35:44 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This would be the lazy instantiation approach:</p>
+<p>1. Make sure you&#8217;ve imported FliteController+NeatSpeech.h in the VC header after the import of FliteController.h,<br />
+2. Create an ivar and property of the voice and of the FliteController in the VC header, synthesize both in the VC implementation, and for each, override their accessor method with the following lazy accessors:</p>
+<pre>
+- (Emma *)emma {
+	if (emma == nil) {
+		emma = [[Emma alloc]initWithPitch:0.0 speed:0.0 transform:0.0];
+	}
+	return emma;
+}
+
+- (FliteController *)fliteController {
+	if (fliteController == nil) {
+		fliteController = [[FliteController alloc] init];
+        
+	}
+	return fliteController;
+}
+
+</pre>
+<p>Then, you don&#8217;t initialize either ever, or do any checking of whether they are instantiated, and you don&#8217;t have to queue, you just reference them like so:</p>
+<p>[self.fliteController sayWithNeatSpeech:@&#8221;I have always wished for my computer to be as easy to use as my telephone; my wish has come true because I can no longer figure out how to use my telephone.&#8221; withVoice:self.emma];</p>
+<p>Also, just for sanity, double-check that you&#8217;ve added the -ObjC other linker flag to the target.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

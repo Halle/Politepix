@@ -1,0 +1,1423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>How can I decrease processing time? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/how-can-i-decrease-processing-time/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/how-can-i-decrease-processing-time/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:08:33 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/how-can-i-decrease-processing-time/#post-1021862</guid>
+					<title><![CDATA[How can I decrease processing time?]]></title>
+					<link>/forums/topic/how-can-i-decrease-processing-time/#post-1021862</link>
+					<pubDate>Sun, 06 Jul 2014 19:37:53 +0000</pubDate>
+					<dc:creator>detrop</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Is it possible to decrease processing time?  The hypothesis is returned after at least a few seconds.  I am not using a large corpus,  just 14 words.</p>
+<p>Here is my log.</p>
+<p>2014-07-06 15:36:12.448 amn[1650:60b] Pocketsphinx calibration has started.<br />
+2014-07-06 15:36:14.651 amn[1650:60b] Pocketsphinx calibration is complete.<br />
+2014-07-06 15:36:14.653 amn[1650:60b] Pocketsphinx is now listening.<br />
+2014-07-06 15:36:19.403 amn[1650:60b] Pocketsphinx has detected speech.<br />
+2014-07-06 15:36:20.769 amn[1650:60b] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2014-07-06 15:36:23.143 amn[1650:60b] The received hypothesis is 1 2 3 with a score of -10036 and an ID of 000000000</p>
+<p>Thanks</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-can-i-decrease-processing-time/#post-1021863</guid>
+					<title><![CDATA[Reply To: How can I decrease processing time?]]></title>
+					<link>/forums/topic/how-can-i-decrease-processing-time/#post-1021863</link>
+					<pubDate>Sun, 06 Jul 2014 19:49:24 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>That&#8217;s an unusually long processing time. If you&#8217;d like to show the complete logging (verbosePocketsphinx and OpenEarsLogging both turned on without anything omitted) I can see if I can give you some suggestions: </p>
+<p><a href="/forums/topic/install-issues-and-their-solutions/">/forums/topic/install-issues-and-their-solutions/</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-can-i-decrease-processing-time/#post-1021893</guid>
+					<title><![CDATA[Reply To: How can I decrease processing time?]]></title>
+					<link>/forums/topic/how-can-i-decrease-processing-time/#post-1021893</link>
+					<pubDate>Mon, 07 Jul 2014 15:27:09 +0000</pubDate>
+					<dc:creator>detrop</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hey Halle,</p>
+<p>Sorry,  I kind of assumed that this lag was normal,  I guess not&#8230;</p>
+<p>Here is my complete log,  with Sphinx and OpenEars logging everything out.  Let me know what you might think is wrong.  I am basically doing Keyword Spotting against like 14 words in all,  I think it can work faster than it is now.</p>
+<p>Thanks!</p>
+<p>2014-07-07 11:15:35.664 smn[2051:60b] Starting OpenEars logging for OpenEars version 1.7 on 32-bit device: iPhone running iOS version: 7.100000<br />
+2014-07-07 11:15:35.690 smn[2051:60b] User gave mic permission for this app.<br />
+2014-07-07 11:15:35.697 smn[2051:60b] Leaving sample rate at the default of 16000.<br />
+2014-07-07 11:15:35.699 smn[2051:60b] The audio session has never been initialized so we will do that now.<br />
+2014-07-07 11:15:35.701 smn[2051:60b] Checking and resetting all audio session settings.<br />
+2014-07-07 11:15:35.702 smn[2051:60b] audioCategory is incorrect, we will change it.<br />
+2014-07-07 11:15:35.703 smn[2051:60b] audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.<br />
+2014-07-07 11:15:35.704 smn[2051:60b] bluetoothInput is incorrect, we will change it.<br />
+2014-07-07 11:15:35.706 smn[2051:60b] bluetooth input is now on the correct setting of 1.<br />
+2014-07-07 11:15:35.711 smn[2051:60b] Output Device: ReceiverAndMicrophone.<br />
+2014-07-07 11:15:35.713 smn[2051:60b] categoryDefaultToSpeaker is incorrect, we will change it.<br />
+2014-07-07 11:15:35.714 smn[2051:60b] CategoryDefaultToSpeaker is now on the correct setting of 1.<br />
+2014-07-07 11:15:35.715 smn[2051:60b] preferredBufferSize is incorrect, we will change it.<br />
+2014-07-07 11:15:35.716 smn[2051:60b] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2014-07-07 11:15:35.717 smn[2051:60b] preferredSampleRateCheck is incorrect, we will change it.<br />
+2014-07-07 11:15:35.718 smn[2051:60b] preferred hardware sample rate is now on the correct setting of 16000.000000.<br />
+2014-07-07 11:15:35.934 smn[2051:60b] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2014-07-07 11:15:35.936 smn[2051:60b] Exiting startAudioSession.<br />
+2014-07-07 11:15:35.947 smn[2051:4807] Valid setSecondsOfSilence value of 0.200000 will be used.<br />
+2014-07-07 11:15:35.952 smn[2051:4807] Project has these words or phrases in its dictionary:<br />
+0<br />
+1<br />
+2<br />
+3<br />
+4<br />
+5<br />
+6<br />
+7<br />
+8<br />
+9<br />
+CLEAR<br />
+FORGET<br />
+FORGET(2)<br />
+IT<br />
+NAME<br />
+NUMBER<br />
+SAVE<br />
+2014-07-07 11:15:35.956 smn[2051:4807] Recognition loop has started<br />
+INFO: file_omitted(0): Parsing command line:<br />
+\<br />
+    -jsgf /var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/Library/Caches/CommandsAndIntegersDict.gram \<br />
+    -beam 1e-66 \<br />
+    -bestpath yes \<br />
+    -dict /var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/Library/Caches/CommandsAndIntegersDict.dic \<br />
+    -hmm /var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/smn.app/AcousticModelEnglish.bundle \<br />
+    -lw 3.000000 \<br />
+    -samprate 16000 </p>
+<p>Current configuration:<br />
+[NAME]      [DEFLT]     [VALUE]<br />
+-agc        none        none<br />
+-agcthresh  2.0     2.000000e+00<br />
+-alpha      0.97        9.700000e-01<br />
+-argfile<br />
+-ascale     20.0        2.000000e+01<br />
+-aw     1       1<br />
+-backtrace  no      no<br />
+-beam       1e-48       1.000000e-66<br />
+-bestpath   yes     yes<br />
+-bestpathlw 9.5     9.500000e+00<br />
+-bghist     no      no<br />
+-ceplen     13      13<br />
+-cmn        current     current<br />
+-cmninit    8.0     8.0<br />
+-compallsen no      no<br />
+-debug              0<br />
+-dict               /var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/Library/Caches/CommandsAndIntegersDict.dic<br />
+-dictcase   no      no<br />
+-dither     no      no<br />
+-doublebw   no      no<br />
+-ds     1       1<br />
+-fdict<br />
+-feat       1s_c_d_dd   1s_c_d_dd<br />
+-featparams<br />
+-fillprob   1e-8        1.000000e-08<br />
+-frate      100     100<br />
+-fsg<br />
+-fsgusealtpron  yes     yes<br />
+-fsgusefiller   yes     yes<br />
+-fwdflat    yes     yes<br />
+-fwdflatbeam    1e-64       1.000000e-64<br />
+-fwdflatefwid   4       4<br />
+-fwdflatlw  8.5     8.500000e+00<br />
+-fwdflatsfwin   25      25<br />
+-fwdflatwbeam   7e-29       7.000000e-29<br />
+-fwdtree    yes     yes<br />
+-hmm                /var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/smn.app/AcousticModelEnglish.bundle<br />
+-input_endian   little      little<br />
+-jsgf               /var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/Library/Caches/CommandsAndIntegersDict.gram<br />
+-kdmaxbbi   -1      -1<br />
+-kdmaxdepth 0       0<br />
+-kdtree<br />
+-latsize    5000        5000<br />
+-lda<br />
+-ldadim     0       0<br />
+-lextreedump    0       0<br />
+-lifter     0       0<br />
+-lm<br />
+-lmctl<br />
+-lmname     default     default<br />
+-logbase    1.0001      1.000100e+00<br />
+-logfn<br />
+-logspec    no      no<br />
+-lowerf     133.33334   1.333333e+02<br />
+-lpbeam     1e-40       1.000000e-40<br />
+-lponlybeam 7e-29       7.000000e-29<br />
+-lw     6.5     3.000000e+00<br />
+-maxhmmpf   -1      -1<br />
+-maxnewoov  20      20<br />
+-maxwpf     -1      -1<br />
+-mdef<br />
+-mean<br />
+-mfclogdir<br />
+-min_endfr  0       0<br />
+-mixw<br />
+-mixwfloor  0.0000001   1.000000e-07<br />
+-mllr<br />
+-mmap       yes     yes<br />
+-ncep       13      13<br />
+-nfft       512     512<br />
+-nfilt      40      40<br />
+-nwpen      1.0     1.000000e+00<br />
+-pbeam      1e-48       1.000000e-48<br />
+-pip        1.0     1.000000e+00<br />
+-pl_beam    1e-10       1.000000e-10<br />
+-pl_pbeam   1e-5        1.000000e-05<br />
+-pl_window  0       0<br />
+-rawlogdir<br />
+-remove_dc  no      no<br />
+-round_filters  yes     yes<br />
+-samprate   16000       1.600000e+04<br />
+-seed       -1      -1<br />
+-sendump<br />
+-senlogdir<br />
+-senmgau<br />
+-silprob    0.005       5.000000e-03<br />
+-smoothspec no      no<br />
+-svspec<br />
+-tmat<br />
+-tmatfloor  0.0001      1.000000e-04<br />
+-topn       4       4<br />
+-topn_beam  0       0<br />
+-toprule<br />
+-transform  legacy      legacy<br />
+-unit_area  yes     yes<br />
+-upperf     6855.4976   6.855498e+03<br />
+-usewdphones    no      no<br />
+-uw     1.0     1.000000e+00<br />
+-var<br />
+-varfloor   0.0001      1.000000e-04<br />
+-varnorm    no      no<br />
+-verbose    no      no<br />
+-warp_params<br />
+-warp_type  inverse_linear  inverse_linear<br />
+-wbeam      7e-29       7.000000e-29<br />
+-wip        0.65        6.500000e-01<br />
+-wlen       0.025625    2.562500e-02</p>
+<p>INFO: file_omitted(0): Parsing command line:<br />
+\<br />
+    -nfilt 20 \<br />
+    -lowerf 1 \<br />
+    -upperf 4000 \<br />
+    -wlen 0.025 \<br />
+    -transform dct \<br />
+    -round_filters no \<br />
+    -remove_dc yes \<br />
+    -svspec 0-12/13-25/26-38 \<br />
+    -feat 1s_c_d_dd \<br />
+    -agc none \<br />
+    -cmn current \<br />
+    -cmninit 47 \<br />
+    -varnorm no </p>
+<p>Current configuration:<br />
+[NAME]      [DEFLT]     [VALUE]<br />
+-agc        none        none<br />
+-agcthresh  2.0     2.000000e+00<br />
+-alpha      0.97        9.700000e-01<br />
+-ceplen     13      13<br />
+-cmn        current     current<br />
+-cmninit    8.0     47<br />
+-dither     no      no<br />
+-doublebw   no      no<br />
+-feat       1s_c_d_dd   1s_c_d_dd<br />
+-frate      100     100<br />
+-input_endian   little      little<br />
+-lda<br />
+-ldadim     0       0<br />
+-lifter     0       0<br />
+-logspec    no      no<br />
+-lowerf     133.33334   1.000000e+00<br />
+-ncep       13      13<br />
+-nfft       512     512<br />
+-nfilt      40      20<br />
+-remove_dc  no      yes<br />
+-round_filters  yes     no<br />
+-samprate   16000       1.600000e+04<br />
+-seed       -1      -1<br />
+-smoothspec no      no<br />
+-svspec             0-12/13-25/26-38<br />
+-transform  legacy      dct<br />
+-unit_area  yes     yes<br />
+-upperf     6855.4976   4.000000e+03<br />
+-varnorm    no      no<br />
+-verbose    no      no<br />
+-warp_params<br />
+-warp_type  inverse_linear  inverse_linear<br />
+-wlen       0.025625    2.500000e-02</p>
+<p>INFO: file_omitted(0): Parsed model-specific feature parameters from /var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/smn.app/AcousticModelEnglish.bundle/feat.params<br />
+INFO: file_omitted(0): Initializing feature stream to type: &#8216;1s_c_d_dd&#8217;, ceplen=13, CMN=&#8217;current&#8217;, VARNORM=&#8217;no&#8217;, AGC=&#8217;none&#8217;<br />
+INFO: file_omitted(0): mean[0]= 12.00, mean[1..12]= 0.0<br />
+INFO: file_omitted(0): Using subvector specification 0-12/13-25/26-38<br />
+INFO: file_omitted(0): Reading model definition: /var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/smn.app/AcousticModelEnglish.bundle/mdef<br />
+INFO: file_omitted(0): Found byte-order mark BMDF, assuming this is a binary mdef file<br />
+INFO: file_omitted(0): Reading binary model definition: /var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/smn.app/AcousticModelEnglish.bundle/mdef<br />
+INFO: file_omitted(0): 50 CI-phone, 143047 CD-phone, 3 emitstate/phone, 150 CI-sen, 5150 Sen, 27135 Sen-Seq<br />
+INFO: file_omitted(0): Reading HMM transition probability matrices: /var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/smn.app/AcousticModelEnglish.bundle/transition_matrices<br />
+INFO: file_omitted(0): Attempting to use SCHMM computation module<br />
+INFO: file_omitted(0): Reading mixture gaussian parameter: /var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/smn.app/AcousticModelEnglish.bundle/means<br />
+INFO: file_omitted(0): 1 codebook, 3 feature, size:<br />
+INFO: file_omitted(0):  256&#215;13<br />
+INFO: file_omitted(0):  256&#215;13<br />
+INFO: file_omitted(0):  256&#215;13<br />
+INFO: file_omitted(0): Reading mixture gaussian parameter: /var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/smn.app/AcousticModelEnglish.bundle/variances<br />
+INFO: file_omitted(0): 1 codebook, 3 feature, size:<br />
+INFO: file_omitted(0):  256&#215;13<br />
+INFO: file_omitted(0):  256&#215;13<br />
+INFO: file_omitted(0):  256&#215;13<br />
+INFO: file_omitted(0): 0 variance values floored<br />
+INFO: file_omitted(0): Loading senones from dump file /var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/smn.app/AcousticModelEnglish.bundle/sendump<br />
+INFO: file_omitted(0): BEGIN FILE FORMAT DESCRIPTION<br />
+INFO: file_omitted(0): Using memory-mapped I/O for senones<br />
+INFO: file_omitted(0): Maximum top-N: 4 Top-N beams: 0 0 0<br />
+INFO: file_omitted(0): Allocating 4124 * 20 bytes (80 KiB) for word entries<br />
+INFO: file_omitted(0): Reading main dictionary: /var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/Library/Caches/CommandsAndIntegersDict.dic<br />
+INFO: file_omitted(0): Allocated 0 KiB for strings, 0 KiB for phones<br />
+INFO: file_omitted(0): 17 words read<br />
+INFO: file_omitted(0): Reading filler dictionary: /var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/smn.app/AcousticModelEnglish.bundle/noisedict<br />
+INFO: file_omitted(0): Allocated 0 KiB for strings, 0 KiB for phones<br />
+INFO: file_omitted(0): 11 words read<br />
+INFO: file_omitted(0): Building PID tables for dictionary<br />
+INFO: file_omitted(0): Allocating 50^3 * 2 bytes (244 KiB) for word-initial triphones<br />
+INFO: file_omitted(0): Allocated 30200 bytes (29 KiB) for word-final triphones<br />
+INFO: file_omitted(0): Allocated 30200 bytes (29 KiB) for single-phone word triphones<br />
+INFO: file_omitted(0): FSG(beam: -1484, pbeam: -1080, wbeam: -634; wip: -13, pip: 0)<br />
+INFO: file_omitted(0): Defined rule: &lt;CommandsAndIntegersDict.g00000&gt;<br />
+INFO: file_omitted(0): Defined rule: &lt;CommandsAndIntegersDict.rule_0&gt;<br />
+INFO: file_omitted(0): Defined rule: &lt;CommandsAndIntegersDict.g00002&gt;<br />
+INFO: file_omitted(0): Defined rule: &lt;CommandsAndIntegersDict.rule_1&gt;<br />
+INFO: file_omitted(0): Defined rule: &lt;CommandsAndIntegersDict.g00004&gt;<br />
+INFO: file_omitted(0): Defined rule: &lt;CommandsAndIntegersDict.g00005&gt;<br />
+INFO: file_omitted(0): Defined rule: &lt;CommandsAndIntegersDict.rule_2&gt;<br />
+INFO: file_omitted(0): Defined rule: &lt;CommandsAndIntegersDict.g00007&gt;<br />
+INFO: file_omitted(0): Defined rule: PUBLIC &lt;CommandsAndIntegersDict.rule_3&gt;<br />
+INFO: file_omitted(0): Right recursion &lt;CommandsAndIntegersDict.g00005&gt; 21 =&gt; 17<br />
+INFO: file_omitted(0): Computing transitive closure for null transitions<br />
+INFO: file_omitted(0): 353 null transitions added<br />
+INFO: file_omitted(0): Adding silence transitions for &lt;sil&gt; to FSG<br />
+INFO: file_omitted(0): Added 37 silence word transitions<br />
+INFO: file_omitted(0): Adding silence transitions for ++NOISE++ to FSG<br />
+INFO: file_omitted(0): Added 37 silence word transitions<br />
+INFO: file_omitted(0): Adding silence transitions for ++BREATH++ to FSG<br />
+INFO: file_omitted(0): Added 37 silence word transitions<br />
+INFO: file_omitted(0): Adding silence transitions for ++SMACK++ to FSG<br />
+INFO: file_omitted(0): Added 37 silence word transitions<br />
+INFO: file_omitted(0): Adding silence transitions for ++COUGH++ to FSG<br />
+INFO: file_omitted(0): Added 37 silence word transitions<br />
+INFO: file_omitted(0): Adding silence transitions for ++LAUGH++ to FSG<br />
+INFO: file_omitted(0): Added 37 silence word transitions<br />
+INFO: file_omitted(0): Adding silence transitions for ++TONE++ to FSG<br />
+INFO: file_omitted(0): Added 37 silence word transitions<br />
+INFO: file_omitted(0): Adding silence transitions for ++UH++ to FSG<br />
+INFO: file_omitted(0): Added 37 silence word transitions<br />
+INFO: file_omitted(0): Adding silence transitions for ++UM++ to FSG<br />
+INFO: file_omitted(0): Added 37 silence word transitions<br />
+INFO: file_omitted(0): Added 1 alternate word transitions<br />
+INFO: file_omitted(0): Allocated 3774 bytes (3 KiB) for left and right context phones<br />
+INFO: file_omitted(0): 511 HMM nodes in lextree (468 leaves)<br />
+INFO: file_omitted(0): Allocated 57232 bytes (55 KiB) for all lextree nodes<br />
+INFO: file_omitted(0): Allocated 52416 bytes (51 KiB) for lextree leafnodes<br />
+2014-07-07 11:15:36.225 smn[2051:4807] Starting openAudioDevice on the device.<br />
+2014-07-07 11:15:36.227 smn[2051:4807] Audio unit wrapper successfully created.<br />
+2014-07-07 11:15:36.234 smn[2051:4807] Set audio route to SpeakerAndMicrophone<br />
+2014-07-07 11:15:36.237 smn[2051:4807] Restoring SmartCMN value of 47.000000<br />
+2014-07-07 11:15:36.240 smn[2051:4807] Checking and resetting all audio session settings.<br />
+2014-07-07 11:15:36.242 smn[2051:4807] audioCategory is correct, we will leave it as it is.<br />
+2014-07-07 11:15:36.244 smn[2051:4807] bluetoothInput is correct, we will leave it as it is.<br />
+2014-07-07 11:15:36.245 smn[2051:4807] Output Device: SpeakerAndMicrophone.<br />
+2014-07-07 11:15:36.246 smn[2051:4807] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2014-07-07 11:15:36.247 smn[2051:4807] preferredBufferSize is incorrect, we will change it.<br />
+2014-07-07 11:15:36.248 smn[2051:4807] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2014-07-07 11:15:36.249 smn[2051:4807] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2014-07-07 11:15:36.250 smn[2051:4807] Setting the variables for the device and starting it.<br />
+2014-07-07 11:15:36.251 smn[2051:4807] Looping through ringbuffer sections and pre-allocating them.<br />
+2014-07-07 11:15:36.576 smn[2051:4807] Started audio output unit.<br />
+2014-07-07 11:15:36.578 smn[2051:4807] Calibration has started<br />
+2014-07-07 11:15:36.578 smn[2051:60b] Pocketsphinx calibration has started.<br />
+2014-07-07 11:15:38.783 smn[2051:4807] Calibration has completed<br />
+2014-07-07 11:15:38.783 smn[2051:60b] Pocketsphinx calibration is complete.<br />
+2014-07-07 11:15:38.787 smn[2051:4807] Listening.<br />
+2014-07-07 11:15:38.788 smn[2051:60b] Pocketsphinx is now listening.<br />
+2014-07-07 11:15:43.007 smn[2051:4807] Speech detected&#8230;<br />
+2014-07-07 11:15:43.010 smn[2051:60b] Pocketsphinx has detected speech.<br />
+2014-07-07 11:15:43.874 smn[2051:4807] Stopping audio unit.<br />
+2014-07-07 11:15:43.874 smn[2051:60b] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2014-07-07 11:15:44.004 smn[2051:4807] Audio Output Unit stopped, cleaning up variable states.<br />
+2014-07-07 11:15:44.005 smn[2051:4807] Processing speech, please wait&#8230;<br />
+INFO: file_omitted(0): 62 frames, 14836 HMMs (239/fr), 15565 senones (251/fr), 18819 history entries (303/fr)</p>
+<p>INFO: file_omitted(0): Start node 7.0:20:22<br />
+INFO: file_omitted(0): Start node 4.0:8:8<br />
+INFO: file_omitted(0): Start node 5.0:8:15<br />
+INFO: file_omitted(0): Start node NAME.0:8:13<br />
+INFO: file_omitted(0): Start node SAVE.0:8:19<br />
+INFO: file_omitted(0): Start node ++UM++.0:7:11<br />
+INFO: file_omitted(0): Start node ++UM++.0:7:11<br />
+INFO: file_omitted(0): Start node ++UM++.0:7:11<br />
+INFO: file_omitted(0): Start node ++UM++.0:7:11<br />
+INFO: file_omitted(0): Start node ++UM++.0:7:11<br />
+INFO: file_omitted(0): Start node ++UM++.0:7:11<br />
+INFO: file_omitted(0): Start node ++UM++.0:7:11<br />
+INFO: file_omitted(0): Start node ++UM++.0:7:11<br />
+INFO: file_omitted(0): Start node ++UM++.0:7:11<br />
+INFO: file_omitted(0): Start node ++UM++.0:7:11<br />
+INFO: file_omitted(0): Start node 2.0:5:16<br />
+INFO: file_omitted(0): Start node 8.0:5:30<br />
+INFO: file_omitted(0): Start node ++UM++.0:5:12<br />
+INFO: file_omitted(0): Start node ++UM++.0:5:12<br />
+INFO: file_omitted(0): Start node ++UM++.0:5:12<br />
+INFO: file_omitted(0): Start node ++UM++.0:5:12<br />
+INFO: file_omitted(0): Start node ++TONE++.0:4:14<br />
+INFO: file_omitted(0): Start node ++NOISE++.0:4:29<br />
+INFO: file_omitted(0): Start node ++TONE++.0:4:14<br />
+INFO: file_omitted(0): Start node ++NOISE++.0:4:29<br />
+INFO: file_omitted(0): Start node ++TONE++.0:4:14<br />
+INFO: file_omitted(0): Start node ++NOISE++.0:4:29<br />
+INFO: file_omitted(0): Start node ++TONE++.0:4:14<br />
+INFO: file_omitted(0): Start node ++NOISE++.0:4:29<br />
+INFO: file_omitted(0): Start node ++TONE++.0:4:14<br />
+INFO: file_omitted(0): Start node ++TONE++.0:4:16<br />
+INFO: file_omitted(0): Start node ++TONE++.0:4:16<br />
+INFO: file_omitted(0): Start node ++TONE++.0:4:16<br />
+INFO: file_omitted(0): Start node ++TONE++.0:4:16<br />
+INFO: file_omitted(0): Start node ++TONE++.0:4:16<br />
+INFO: file_omitted(0): Start node ++LAUGH++.0:3:30<br />
+INFO: file_omitted(0): Start node ++COUGH++.0:3:25<br />
+INFO: file_omitted(0): Start node ++BREATH++.0:3:10<br />
+INFO: file_omitted(0): Start node ++LAUGH++.0:3:30<br />
+INFO: file_omitted(0): Start node ++COUGH++.0:3:25<br />
+INFO: file_omitted(0): Start node ++BREATH++.0:3:10<br />
+INFO: file_omitted(0): Start node ++LAUGH++.0:3:30<br />
+INFO: file_omitted(0): Start node ++COUGH++.0:3:25<br />
+INFO: file_omitted(0): Start node ++BREATH++.0:3:10<br />
+INFO: file_omitted(0): Start node ++LAUGH++.0:3:30<br />
+INFO: file_omitted(0): Start node ++COUGH++.0:3:25<br />
+INFO: file_omitted(0): Start node ++BREATH++.0:3:10<br />
+INFO: file_omitted(0): Start node ++NOISE++.0:3:29<br />
+INFO: file_omitted(0): Start node ++LAUGH++.0:3:30<br />
+INFO: file_omitted(0): Start node ++COUGH++.0:3:25<br />
+INFO: file_omitted(0): Start node ++BREATH++.0:3:10<br />
+INFO: file_omitted(0): Start node ++NOISE++.0:3:29<br />
+INFO: file_omitted(0): Start node ++LAUGH++.0:3:32<br />
+INFO: file_omitted(0): Start node ++COUGH++.0:3:26<br />
+INFO: file_omitted(0): Start node ++BREATH++.0:3:10<br />
+INFO: file_omitted(0): Start node ++NOISE++.0:3:29<br />
+INFO: file_omitted(0): Start node ++LAUGH++.0:3:32<br />
+INFO: file_omitted(0): Start node ++COUGH++.0:3:26<br />
+INFO: file_omitted(0): Start node ++BREATH++.0:3:10<br />
+INFO: file_omitted(0): Start node ++NOISE++.0:3:29<br />
+INFO: file_omitted(0): Start node ++LAUGH++.0:3:32<br />
+INFO: file_omitted(0): Start node ++COUGH++.0:3:26<br />
+INFO: file_omitted(0): Start node ++BREATH++.0:3:10<br />
+INFO: file_omitted(0): Start node ++NOISE++.0:3:29<br />
+INFO: file_omitted(0): Start node ++LAUGH++.0:3:32<br />
+INFO: file_omitted(0): Start node ++COUGH++.0:3:26<br />
+INFO: file_omitted(0): Start node ++BREATH++.0:3:10<br />
+INFO: file_omitted(0): Start node ++TONE++.0:3:16<br />
+INFO: file_omitted(0): Start node ++COUGH++.0:3:26<br />
+INFO: file_omitted(0): Start node ++NOISE++.0:3:29<br />
+INFO: file_omitted(0): Start node ++LAUGH++.0:3:32<br />
+INFO: file_omitted(0): Start node ++COUGH++.0:3:26<br />
+INFO: file_omitted(0): Start node ++BREATH++.0:3:10<br />
+INFO: file_omitted(0): Start node ++TONE++.0:3:16<br />
+INFO: file_omitted(0): Start node ++COUGH++.0:3:26<br />
+INFO: file_omitted(0): Start node ++TONE++.0:3:16<br />
+INFO: file_omitted(0): Start node ++COUGH++.0:3:26<br />
+INFO: file_omitted(0): Start node ++TONE++.0:3:16<br />
+INFO: file_omitted(0): Start node ++COUGH++.0:3:26<br />
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:29<br />
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:29<br />
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:29<br />
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:29<br />
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:29<br />
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:29<br />
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:29<br />
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:29<br />
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:29<br />
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:29<br />
+INFO: file_omitted(0): Start node ++NOISE++.0:2:29<br />
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:32<br />
+INFO: file_omitted(0): Start node ++BREATH++.0:2:10<br />
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:29<br />
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:29<br />
+INFO: file_omitted(0): Start node ++NOISE++.0:2:29<br />
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:32<br />
+INFO: file_omitted(0): Start node ++BREATH++.0:2:10<br />
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:29<br />
+INFO: file_omitted(0): Start node ++NOISE++.0:2:29<br />
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:32<br />
+INFO: file_omitted(0): Start node ++BREATH++.0:2:10<br />
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:29<br />
+INFO: file_omitted(0): Start node ++NOISE++.0:2:29<br />
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:32<br />
+INFO: file_omitted(0): Start node ++BREATH++.0:2:10<br />
+INFO: file_omitted(0): End node &lt;sil&gt;.59:61:61 (-715)<br />
+INFO: file_omitted(0): End node &lt;sil&gt;.59:61:61 (-715)<br />
+INFO: file_omitted(0): End node &lt;sil&gt;.59:61:61 (-715)<br />
+INFO: file_omitted(0): End node &lt;sil&gt;.59:61:61 (-715)<br />
+INFO: file_omitted(0): End node &lt;sil&gt;.59:61:61 (-715)<br />
+INFO: file_omitted(0): End node &lt;sil&gt;.59:61:61 (-715)<br />
+INFO: file_omitted(0): End node &lt;sil&gt;.59:61:61 (-715)<br />
+INFO: file_omitted(0): End node &lt;sil&gt;.59:61:61 (-715)<br />
+INFO: file_omitted(0): End node &lt;sil&gt;.59:61:61 (-715)<br />
+INFO: file_omitted(0): End node &lt;sil&gt;.59:61:61 (-715)<br />
+INFO: file_omitted(0): End node &lt;sil&gt;.59:61:61 (-715)<br />
+INFO: file_omitted(0): End node &lt;sil&gt;.59:61:61 (-715)<br />
+INFO: file_omitted(0): End node &lt;sil&gt;.59:61:61 (-715)<br />
+INFO: file_omitted(0): End node &lt;sil&gt;.59:61:61 (-715)<br />
+INFO: file_omitted(0): End node 1.28:46:61 (-2364)<br />
+INFO: file_omitted(0): lattice start node &lt;s&gt;.0 end node &lt;/s&gt;.62<br />
+INFO: file_omitted(0): Normalizer P(O) = alpha(&lt;/s&gt;:62:62) = -319417<br />
+INFO: file_omitted(0): Joint P(O,S) = -330699 P(S|O) = -11282<br />
+2014-07-07 11:15:45.041 smn[2051:4807] Pocketsphinx heard &#8220;8 8 1&#8221; with a score of (-11282) and an utterance ID of 000000000.<br />
+2014-07-07 11:15:45.048 smn[2051:60b] The received hypothesis is 8 8 1 with a score of -11282 and an ID of 000000000<br />
+2014-07-07 11:15:45.051 smn[2051:4807] Checking and resetting all audio session settings.<br />
+2014-07-07 11:15:45.054 smn[2051:4807] audioCategory is correct, we will leave it as it is.<br />
+2014-07-07 11:15:45.056 smn[2051:4807] bluetoothInput is correct, we will leave it as it is.<br />
+2014-07-07 11:15:45.057 smn[2051:4807] Output Device: SpeakerAndMicrophone.<br />
+2014-07-07 11:15:45.058 smn[2051:4807] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2014-07-07 11:15:45.060 smn[2051:4807] preferredBufferSize is incorrect, we will change it.<br />
+2014-07-07 11:15:45.062 smn[2051:4807] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2014-07-07 11:15:45.063 smn[2051:4807] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2014-07-07 11:15:45.064 smn[2051:4807] Setting the variables for the device and starting it.<br />
+2014-07-07 11:15:45.064 smn[2051:4807] Looping through ringbuffer sections and pre-allocating them.<br />
+2014-07-07 11:15:45.152 smn[2051:4807] Started audio output unit.<br />
+2014-07-07 11:15:45.154 smn[2051:4807] Listening.<br />
+2014-07-07 11:15:45.156 smn[2051:60b] Pocketsphinx is now listening.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-can-i-decrease-processing-time/#post-1021894</guid>
+					<title><![CDATA[Reply To: How can I decrease processing time?]]></title>
+					<link>/forums/topic/how-can-i-decrease-processing-time/#post-1021894</link>
+					<pubDate>Mon, 07 Jul 2014 17:37:07 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ah, OK, this is a grammar rather than a language model. That can take more time to return, especially with numbers which often have few phonemes. Are you generating your grammars using the OpenEars grammar API or by hand?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-can-i-decrease-processing-time/#post-1021904</guid>
+					<title><![CDATA[Reply To: How can I decrease processing time?]]></title>
+					<link>/forums/topic/how-can-i-decrease-processing-time/#post-1021904</link>
+					<pubDate>Tue, 08 Jul 2014 13:59:27 +0000</pubDate>
+					<dc:creator>detrop</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I think I am doing it by hand.  This is my instance method that is triggering speech recognition in my app.</p>
+<pre><code>
+- (IBAction)activateSpeech:(UIButton *)sender {
+    LanguageModelGenerator *lmGenerator = [[LanguageModelGenerator alloc] init];
+    NSString *name = @&quot;CommandsAndIntegersDict&quot;;
+    NSDictionary *grammarDict = @{
+                                    ThisWillBeSaidOnce : @[
+                                        @{
+                                            OneOfTheseCanBeSaidOnce : @[@&quot;NAME&quot;, @&quot;NUMBER&quot;, @&quot;SAVE&quot;, @&quot;CLEAR&quot;, @&quot;FORGET IT&quot;]
+                                        },
+                                        @{
+                                            ThisCanBeSaidWithOptionalRepetitions : @[
+                                                @{
+                                                    OneOfTheseWillBeSaidOnce : @[@&quot;0&quot;, @&quot;1&quot;, @&quot;2&quot;,@&quot;3&quot;, @&quot;4&quot;, @&quot;5&quot;,@&quot;6&quot;,@&quot;7&quot;,@&quot;8&quot;,@&quot;9&quot;]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                };
+    
+    NSError *err = [lmGenerator generateGrammarFromDictionary:grammarDict withFilesNamed:name forAcousticModelAtPath:[AcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;]];
+    
+    NSDictionary *languageGeneratorResults = nil;
+    NSString *lmPath = nil;
+    NSString *dicPath = nil;
+	
+    if ([err code] == noErr) {
+        languageGeneratorResults = [err userInfo];
+		
+        lmPath = [languageGeneratorResults objectForKey:@&quot;LMPath&quot;];
+        dicPath = [languageGeneratorResults objectForKey:@&quot;DictionaryPath&quot;];
+		
+    } else {
+        NSLog(@&quot;Error: %@&quot;, [err localizedDescription]);
+    }
+    
+    [OpenEarsLogging startOpenEarsLogging];
+    [self.openEarsEventsObserver setDelegate:self];
+    [self.pocketsphinxController setProcessSpeechLocally:TRUE];
+    [self.pocketsphinxController setReturnNbest:TRUE];
+    [self.pocketsphinxController setVerbosePocketSphinx:TRUE];
+    [self.pocketsphinxController setSecondsOfSilenceToDetect:0.2];
+    
+    if ([sender isSelected]) {
+        if (![self.pocketsphinxController isSuspended]) {
+            [self.pocketsphinxController suspendRecognition];
+        }
+        
+        [sender setSelected:NO];
+    } else {
+        if (![self.pocketsphinxController isListening]) {
+            [self.pocketsphinxController
+                startListeningWithLanguageModelAtPath:lmPath
+                dictionaryAtPath:dicPath
+                acousticModelAtPath:[AcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;]
+                languageModelIsJSGF:YES
+             ];
+        }
+
+        if ([self.pocketsphinxController isSuspended]) {
+            [self.pocketsphinxController resumeRecognition];
+        }
+        
+        [sender setSelected:YES];
+    }
+}
+</code></pre>
+<p>As you can see I have the grammarDict dictionary,  is this what you mean by doing &#8220;by hand&#8221;?  Sorry,  I am not as proficient with PocketSphinx,  or speech recognition for that matter.  Thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-can-i-decrease-processing-time/#post-1021907</guid>
+					<title><![CDATA[Reply To: How can I decrease processing time?]]></title>
+					<link>/forums/topic/how-can-i-decrease-processing-time/#post-1021907</link>
+					<pubDate>Tue, 08 Jul 2014 14:03:36 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That&#8217;s OK, I just wanted to know whether you were using OpenEars&#8217; new method for creating grammars (you are). I think that the slowness is probably coming from the use of ThisCanBeSaidWithOptionalRepetitions in your grammar dictionary, which requires more overhead since there are many more possible states for the grammar.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-can-i-decrease-processing-time/#post-1021909</guid>
+					<title><![CDATA[Reply To: How can I decrease processing time?]]></title>
+					<link>/forums/topic/how-can-i-decrease-processing-time/#post-1021909</link>
+					<pubDate>Tue, 08 Jul 2014 17:23:52 +0000</pubDate>
+					<dc:creator>detrop</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ok,  I changed my grammar to something very simple.</p>
+<pre><code>
+NSDictionary *grammarDict = @{
+                                ThisWillBeSaidOnce : @[
+                                    @{
+                                        ThisCanBeSaidWithOptionalRepetitions : @[
+                                            @{OneOfTheseWillBeSaidOnce : @[@&quot;SAVE&quot;, @&quot;CLEAR&quot;]}
+                                        ]
+                                    }
+                                ]
+                            };
+</code></pre>
+<p>But its still kind of slow.  Here is my log.  What do you think?  Anything I can do to speed things up?  I need to record a bunch of commands in different sequences,  which is why I need to use ThisCanBeSaidWithOptionalRepetitions.</p>
+<pre><code>
+2014-07-08 13:19:17.276 savemynumber[2589:60b] Starting OpenEars logging for OpenEars version 1.7 on 32-bit device: iPhone running iOS version: 7.100000
+2014-07-08 13:19:17.289 savemynumber[2589:60b] User gave mic permission for this app.
+2014-07-08 13:19:17.293 savemynumber[2589:60b] Leaving sample rate at the default of 16000.
+2014-07-08 13:19:17.296 savemynumber[2589:60b] The audio session has never been initialized so we will do that now.
+2014-07-08 13:19:17.298 savemynumber[2589:60b] Checking and resetting all audio session settings.
+2014-07-08 13:19:17.299 savemynumber[2589:60b] audioCategory is incorrect, we will change it.
+2014-07-08 13:19:17.300 savemynumber[2589:60b] audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.
+2014-07-08 13:19:17.302 savemynumber[2589:60b] bluetoothInput is incorrect, we will change it.
+2014-07-08 13:19:17.303 savemynumber[2589:60b] bluetooth input is now on the correct setting of 1.
+2014-07-08 13:19:17.305 savemynumber[2589:60b] Output Device: ReceiverAndMicrophone.
+2014-07-08 13:19:17.306 savemynumber[2589:60b] categoryDefaultToSpeaker is incorrect, we will change it.
+2014-07-08 13:19:17.307 savemynumber[2589:60b] CategoryDefaultToSpeaker is now on the correct setting of 1.
+2014-07-08 13:19:17.309 savemynumber[2589:60b] preferredBufferSize is incorrect, we will change it.
+2014-07-08 13:19:17.311 savemynumber[2589:60b] PreferredBufferSize is now on the correct setting of 0.128000.
+2014-07-08 13:19:17.312 savemynumber[2589:60b] preferredSampleRateCheck is incorrect, we will change it.
+2014-07-08 13:19:17.314 savemynumber[2589:60b] preferred hardware sample rate is now on the correct setting of 16000.000000.
+2014-07-08 13:19:17.351 savemynumber[2589:60b] AudioSessionManager startAudioSession has reached the end of the initialization.
+2014-07-08 13:19:17.353 savemynumber[2589:60b] Exiting startAudioSession.
+2014-07-08 13:19:17.361 savemynumber[2589:4807] Valid setSecondsOfSilence value of 0.200000 will be used.
+2014-07-08 13:19:17.360 savemynumber[2589:3c07] Audio route has changed for the following reason:
+2014-07-08 13:19:17.371 savemynumber[2589:4807] Project has these words or phrases in its dictionary:
+CLEAR
+SAVE
+2014-07-08 13:19:17.372 savemynumber[2589:3c07] There has been a change of category
+2014-07-08 13:19:17.374 savemynumber[2589:3c07] The previous audio route was Speaker
+2014-07-08 13:19:17.377 savemynumber[2589:4807] Recognition loop has started
+2014-07-08 13:19:17.376 savemynumber[2589:3c07] This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is SpeakerAndMicrophone
+INFO: file_omitted(0): Parsing command line:
+\
+	-jsgf /var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/Library/Caches/CommandsAndIntegersDict.gram \
+	-beam 1e-66 \
+	-bestpath yes \
+	-dict /var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/Library/Caches/CommandsAndIntegersDict.dic \
+	-hmm /var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/savemynumber.app/AcousticModelEnglish.bundle \
+	-lw 3.000000 \
+	-samprate 16000 
+
+Current configuration:
+[NAME]		[DEFLT]		[VALUE]
+-agc		none		none
+-agcthresh	2.0		2.000000e+00
+-alpha		0.97		9.700000e-01
+-argfile			
+-ascale		20.0		2.000000e+01
+-aw		1		1
+-backtrace	no		no
+-beam		1e-48		1.000000e-66
+-bestpath	yes		yes
+-bestpathlw	9.5		9.500000e+00
+-bghist		no		no
+-ceplen		13		13
+-cmn		current		current
+-cmninit	8.0		8.0
+-compallsen	no		no
+-debug				0
+-dict				/var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/Library/Caches/CommandsAndIntegersDict.dic
+-dictcase	no		no
+-dither		no		no
+-doublebw	no		no
+-ds		1		1
+-fdict				
+-feat		1s_c_d_dd	1s_c_d_dd
+-featparams			
+-fillprob	1e-8		1.000000e-08
+-frate		100		100
+-fsg				
+-fsgusealtpron	yes		yes
+-fsgusefiller	yes		yes
+-fwdflat	yes		yes
+-fwdflatbeam	1e-64		1.000000e-64
+-fwdflatefwid	4		4
+-fwdflatlw	8.5		8.500000e+00
+-fwdflatsfwin	25		25
+-fwdflatwbeam	7e-29		7.000000e-29
+-fwdtree	yes		yes
+-hmm				/var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/savemynumber.app/AcousticModelEnglish.bundle
+-input_endian	little		little
+-jsgf				/var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/Library/Caches/CommandsAndIntegersDict.gram
+-kdmaxbbi	-1		-1
+-kdmaxdepth	0		0
+-kdtree				
+-latsize	5000		5000
+-lda				
+-ldadim		0		0
+-lextreedump	0		0
+-lifter		0		0
+-lm				
+-lmctl				
+-lmname		default		default
+-logbase	1.0001		1.000100e+00
+-logfn				
+-logspec	no		no
+-lowerf		133.33334	1.333333e+02
+-lpbeam		1e-40		1.000000e-40
+-lponlybeam	7e-29		7.000000e-29
+-lw		6.5		3.000000e+00
+-maxhmmpf	-1		-1
+-maxnewoov	20		20
+-maxwpf		-1		-1
+-mdef				
+-mean				
+-mfclogdir			
+-min_endfr	0		0
+-mixw				
+-mixwfloor	0.0000001	1.000000e-07
+-mllr				
+-mmap		yes		yes
+-ncep		13		13
+-nfft		512		512
+-nfilt		40		40
+-nwpen		1.0		1.000000e+00
+-pbeam		1e-48		1.000000e-48
+-pip		1.0		1.000000e+00
+-pl_beam	1e-10		1.000000e-10
+-pl_pbeam	1e-5		1.000000e-05
+-pl_window	0		0
+-rawlogdir			
+-remove_dc	no		no
+-round_filters	yes		yes
+-samprate	16000		1.600000e+04
+-seed		-1		-1
+-sendump			
+-senlogdir			
+-senmgau			
+-silprob	0.005		5.000000e-03
+-smoothspec	no		no
+-svspec				
+-tmat				
+-tmatfloor	0.0001		1.000000e-04
+-topn		4		4
+-topn_beam	0		0
+-toprule			
+-transform	legacy		legacy
+-unit_area	yes		yes
+-upperf		6855.4976	6.855498e+03
+-usewdphones	no		no
+-uw		1.0		1.000000e+00
+-var				
+-varfloor	0.0001		1.000000e-04
+-varnorm	no		no
+-verbose	no		no
+-warp_params			
+-warp_type	inverse_linear	inverse_linear
+-wbeam		7e-29		7.000000e-29
+-wip		0.65		6.500000e-01
+-wlen		0.025625	2.562500e-02
+
+INFO: file_omitted(0): Parsing command line:
+\
+	-nfilt 20 \
+	-lowerf 1 \
+	-upperf 4000 \
+	-wlen 0.025 \
+	-transform dct \
+	-round_filters no \
+	-remove_dc yes \
+	-svspec 0-12/13-25/26-38 \
+	-feat 1s_c_d_dd \
+	-agc none \
+	-cmn current \
+	-cmninit 47 \
+	-varnorm no 
+
+Current configuration:
+[NAME]		[DEFLT]		[VALUE]
+-agc		none		none
+-agcthresh	2.0		2.000000e+00
+-alpha		0.97		9.700000e-01
+-ceplen		13		13
+-cmn		current		current
+-cmninit	8.0		47
+-dither		no		no
+-doublebw	no		no
+-feat		1s_c_d_dd	1s_c_d_dd
+-frate		100		100
+-input_endian	little		little
+-lda				
+-ldadim		0		0
+-lifter		0		0
+-logspec	no		no
+-lowerf		133.33334	1.000000e+00
+-ncep		13		13
+-nfft		512		512
+-nfilt		40		20
+-remove_dc	no		yes
+-round_filters	yes		no
+-samprate	16000		1.600000e+04
+-seed		-1		-1
+-smoothspec	no		no
+-svspec				0-12/13-25/26-38
+-transform	legacy		dct
+-unit_area	yes		yes
+-upperf		6855.4976	4.000000e+03
+-varnorm	no		no
+-verbose	no		no
+-warp_params			
+-warp_type	inverse_linear	inverse_linear
+-wlen		0.025625	2.500000e-02
+
+INFO: file_omitted(0): Parsed model-specific feature parameters from /var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/savemynumber.app/AcousticModelEnglish.bundle/feat.params
+INFO: file_omitted(0): Initializing feature stream to type: &#039;1s_c_d_dd&#039;, ceplen=13, CMN=&#039;current&#039;, VARNORM=&#039;no&#039;, AGC=&#039;none&#039;
+INFO: file_omitted(0): mean[0]= 12.00, mean[1..12]= 0.0
+INFO: file_omitted(0): Using subvector specification 0-12/13-25/26-38
+INFO: file_omitted(0): Reading model definition: /var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/savemynumber.app/AcousticModelEnglish.bundle/mdef
+INFO: file_omitted(0): Found byte-order mark BMDF, assuming this is a binary mdef file
+INFO: file_omitted(0): Reading binary model definition: /var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/savemynumber.app/AcousticModelEnglish.bundle/mdef
+INFO: file_omitted(0): 50 CI-phone, 143047 CD-phone, 3 emitstate/phone, 150 CI-sen, 5150 Sen, 27135 Sen-Seq
+INFO: file_omitted(0): Reading HMM transition probability matrices: /var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/savemynumber.app/AcousticModelEnglish.bundle/transition_matrices
+INFO: file_omitted(0): Attempting to use SCHMM computation module
+INFO: file_omitted(0): Reading mixture gaussian parameter: /var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/savemynumber.app/AcousticModelEnglish.bundle/means
+INFO: file_omitted(0): 1 codebook, 3 feature, size: 
+INFO: file_omitted(0):  256x13
+INFO: file_omitted(0):  256x13
+INFO: file_omitted(0):  256x13
+INFO: file_omitted(0): Reading mixture gaussian parameter: /var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/savemynumber.app/AcousticModelEnglish.bundle/variances
+INFO: file_omitted(0): 1 codebook, 3 feature, size: 
+INFO: file_omitted(0):  256x13
+INFO: file_omitted(0):  256x13
+INFO: file_omitted(0):  256x13
+INFO: file_omitted(0): 0 variance values floored
+INFO: file_omitted(0): Loading senones from dump file /var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/savemynumber.app/AcousticModelEnglish.bundle/sendump
+INFO: file_omitted(0): BEGIN FILE FORMAT DESCRIPTION
+INFO: file_omitted(0): Using memory-mapped I/O for senones
+INFO: file_omitted(0): Maximum top-N: 4 Top-N beams: 0 0 0
+INFO: file_omitted(0): Allocating 4109 * 20 bytes (80 KiB) for word entries
+INFO: file_omitted(0): Reading main dictionary: /var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/Library/Caches/CommandsAndIntegersDict.dic
+INFO: file_omitted(0): Allocated 0 KiB for strings, 0 KiB for phones
+INFO: file_omitted(0): 2 words read
+INFO: file_omitted(0): Reading filler dictionary: /var/mobile/Applications/EF1397CA-48BC-41E8-A25F-800ACA9CD71F/savemynumber.app/AcousticModelEnglish.bundle/noisedict
+INFO: file_omitted(0): Allocated 0 KiB for strings, 0 KiB for phones
+INFO: file_omitted(0): 11 words read
+INFO: file_omitted(0): Building PID tables for dictionary
+INFO: file_omitted(0): Allocating 50^3 * 2 bytes (244 KiB) for word-initial triphones
+INFO: file_omitted(0): Allocated 30200 bytes (29 KiB) for word-final triphones
+INFO: file_omitted(0): Allocated 30200 bytes (29 KiB) for single-phone word triphones
+INFO: file_omitted(0): FSG(beam: -1484, pbeam: -1080, wbeam: -634; wip: -13, pip: 0)
+INFO: file_omitted(0): Defined rule: &lt;CommandsAndIntegersDict.g00000&gt;
+INFO: file_omitted(0): Defined rule: &lt;CommandsAndIntegersDict.rule_0&gt;
+INFO: file_omitted(0): Defined rule: &lt;CommandsAndIntegersDict.g00002&gt;
+INFO: file_omitted(0): Defined rule: &lt;CommandsAndIntegersDict.g00003&gt;
+INFO: file_omitted(0): Defined rule: &lt;CommandsAndIntegersDict.rule_1&gt;
+INFO: file_omitted(0): Defined rule: &lt;CommandsAndIntegersDict.g00005&gt;
+INFO: file_omitted(0): Defined rule: PUBLIC &lt;CommandsAndIntegersDict.rule_2&gt;
+INFO: file_omitted(0): Right recursion &lt;CommandsAndIntegersDict.g00003&gt; 10 =&gt; 6
+INFO: file_omitted(0): Computing transitive closure for null transitions
+INFO: file_omitted(0): 117 null transitions added
+INFO: file_omitted(0): Adding silence transitions for &lt;sil&gt; to FSG
+INFO: file_omitted(0): Added 18 silence word transitions
+INFO: file_omitted(0): Adding silence transitions for ++NOISE++ to FSG
+INFO: file_omitted(0): Added 18 silence word transitions
+INFO: file_omitted(0): Adding silence transitions for ++BREATH++ to FSG
+INFO: file_omitted(0): Added 18 silence word transitions
+INFO: file_omitted(0): Adding silence transitions for ++SMACK++ to FSG
+INFO: file_omitted(0): Added 18 silence word transitions
+INFO: file_omitted(0): Adding silence transitions for ++COUGH++ to FSG
+INFO: file_omitted(0): Added 18 silence word transitions
+INFO: file_omitted(0): Adding silence transitions for ++LAUGH++ to FSG
+INFO: file_omitted(0): Added 18 silence word transitions
+INFO: file_omitted(0): Adding silence transitions for ++TONE++ to FSG
+INFO: file_omitted(0): Added 18 silence word transitions
+INFO: file_omitted(0): Adding silence transitions for ++UH++ to FSG
+INFO: file_omitted(0): Added 18 silence word transitions
+INFO: file_omitted(0): Adding silence transitions for ++UM++ to FSG
+INFO: file_omitted(0): Added 18 silence word transitions
+INFO: file_omitted(0): Added 0 alternate word transitions
+INFO: file_omitted(0): Allocated 1836 bytes (1 KiB) for left and right context phones
+INFO: file_omitted(0): 173 HMM nodes in lextree (168 leaves)
+INFO: file_omitted(0): Allocated 19376 bytes (18 KiB) for all lextree nodes
+INFO: file_omitted(0): Allocated 18816 bytes (18 KiB) for lextree leafnodes
+2014-07-08 13:19:17.563 savemynumber[2589:4807] Starting openAudioDevice on the device.
+2014-07-08 13:19:17.565 savemynumber[2589:4807] Audio unit wrapper successfully created.
+2014-07-08 13:19:17.572 savemynumber[2589:4807] Set audio route to SpeakerAndMicrophone
+2014-07-08 13:19:17.574 savemynumber[2589:4807] Restoring SmartCMN value of 47.000000
+2014-07-08 13:19:17.575 savemynumber[2589:4807] Checking and resetting all audio session settings.
+2014-07-08 13:19:17.576 savemynumber[2589:4807] audioCategory is correct, we will leave it as it is.
+2014-07-08 13:19:17.577 savemynumber[2589:4807] bluetoothInput is correct, we will leave it as it is.
+2014-07-08 13:19:17.578 savemynumber[2589:4807] Output Device: SpeakerAndMicrophone.
+2014-07-08 13:19:17.579 savemynumber[2589:4807] categoryDefaultToSpeaker is correct, we will leave it as it is.
+2014-07-08 13:19:17.581 savemynumber[2589:4807] preferredBufferSize is incorrect, we will change it.
+2014-07-08 13:19:17.584 savemynumber[2589:4807] PreferredBufferSize is now on the correct setting of 0.128000.
+2014-07-08 13:19:17.585 savemynumber[2589:4807] preferredSampleRateCheck is correct, we will leave it as it is.
+2014-07-08 13:19:17.586 savemynumber[2589:4807] Setting the variables for the device and starting it.
+2014-07-08 13:19:17.587 savemynumber[2589:4807] Looping through ringbuffer sections and pre-allocating them.
+2014-07-08 13:19:17.907 savemynumber[2589:4807] Started audio output unit.
+2014-07-08 13:19:17.911 savemynumber[2589:4807] Calibration has started
+2014-07-08 13:19:17.912 savemynumber[2589:60b] Pocketsphinx calibration has started.
+2014-07-08 13:19:20.115 savemynumber[2589:4807] Calibration has completed
+2014-07-08 13:19:20.116 savemynumber[2589:60b] Pocketsphinx calibration is complete.
+2014-07-08 13:19:20.117 savemynumber[2589:4807] Listening.
+2014-07-08 13:19:20.118 savemynumber[2589:60b] Pocketsphinx is now listening.
+2014-07-08 13:19:23.969 savemynumber[2589:4807] Speech detected...
+2014-07-08 13:19:23.971 savemynumber[2589:60b] Pocketsphinx has detected speech.
+2014-07-08 13:19:24.824 savemynumber[2589:4807] Stopping audio unit.
+2014-07-08 13:19:24.824 savemynumber[2589:60b] Pocketsphinx has detected a period of silence, concluding an utterance.
+2014-07-08 13:19:24.952 savemynumber[2589:4807] Audio Output Unit stopped, cleaning up variable states.
+2014-07-08 13:19:24.955 savemynumber[2589:4807] Processing speech, please wait...
+INFO: file_omitted(0): 62 frames, 6212 HMMs (100/fr), 3380 senones (54/fr), 4115 history entries (66/fr)
+
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:33
+INFO: file_omitted(0): Start node ++UM++.0:2:10
+INFO: file_omitted(0): Start node ++UH++.0:2:8
+INFO: file_omitted(0): Start node ++NOISE++.0:2:23
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:28
+INFO: file_omitted(0): Start node ++COUGH++.0:2:22
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:33
+INFO: file_omitted(0): Start node ++UM++.0:2:10
+INFO: file_omitted(0): Start node ++UH++.0:2:8
+INFO: file_omitted(0): Start node ++NOISE++.0:2:23
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:28
+INFO: file_omitted(0): Start node ++COUGH++.0:2:22
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:33
+INFO: file_omitted(0): Start node ++UM++.0:2:10
+INFO: file_omitted(0): Start node ++UH++.0:2:8
+INFO: file_omitted(0): Start node ++NOISE++.0:2:23
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:28
+INFO: file_omitted(0): Start node ++COUGH++.0:2:22
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:33
+INFO: file_omitted(0): Start node ++UM++.0:2:10
+INFO: file_omitted(0): Start node ++UH++.0:2:8
+INFO: file_omitted(0): Start node ++NOISE++.0:2:23
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:28
+INFO: file_omitted(0): Start node ++COUGH++.0:2:22
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:33
+INFO: file_omitted(0): Start node ++UM++.0:2:10
+INFO: file_omitted(0): Start node ++UH++.0:2:9
+INFO: file_omitted(0): Start node ++NOISE++.0:2:23
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:28
+INFO: file_omitted(0): Start node ++COUGH++.0:2:23
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:33
+INFO: file_omitted(0): Start node ++UM++.0:2:10
+INFO: file_omitted(0): Start node ++UH++.0:2:9
+INFO: file_omitted(0): Start node ++NOISE++.0:2:23
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:28
+INFO: file_omitted(0): Start node ++COUGH++.0:2:23
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:33
+INFO: file_omitted(0): Start node ++UM++.0:2:10
+INFO: file_omitted(0): Start node ++UH++.0:2:9
+INFO: file_omitted(0): Start node ++NOISE++.0:2:23
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:28
+INFO: file_omitted(0): Start node ++COUGH++.0:2:23
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:33
+INFO: file_omitted(0): Start node ++UM++.0:2:10
+INFO: file_omitted(0): Start node ++UH++.0:2:9
+INFO: file_omitted(0): Start node ++NOISE++.0:2:23
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:29
+INFO: file_omitted(0): Start node ++COUGH++.0:2:23
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:33
+INFO: file_omitted(0): Start node ++UM++.0:2:10
+INFO: file_omitted(0): Start node ++UH++.0:2:9
+INFO: file_omitted(0): Start node ++NOISE++.0:2:23
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:28
+INFO: file_omitted(0): Start node ++COUGH++.0:2:23
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:33
+INFO: file_omitted(0): Start node ++UM++.0:2:10
+INFO: file_omitted(0): Start node ++UH++.0:2:9
+INFO: file_omitted(0): Start node ++NOISE++.0:2:23
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:29
+INFO: file_omitted(0): Start node ++COUGH++.0:2:23
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:33
+INFO: file_omitted(0): Start node ++UM++.0:2:10
+INFO: file_omitted(0): Start node ++UH++.0:2:9
+INFO: file_omitted(0): Start node ++NOISE++.0:2:23
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:28
+INFO: file_omitted(0): Start node ++COUGH++.0:2:23
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:33
+INFO: file_omitted(0): Start node ++UM++.0:2:10
+INFO: file_omitted(0): Start node ++UH++.0:2:9
+INFO: file_omitted(0): Start node ++NOISE++.0:2:23
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:29
+INFO: file_omitted(0): Start node ++COUGH++.0:2:23
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:33
+INFO: file_omitted(0): Start node ++UM++.0:2:10
+INFO: file_omitted(0): Start node ++UH++.0:2:9
+INFO: file_omitted(0): Start node ++NOISE++.0:2:23
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:28
+INFO: file_omitted(0): Start node ++COUGH++.0:2:23
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:33
+INFO: file_omitted(0): Start node ++UM++.0:2:10
+INFO: file_omitted(0): Start node ++UH++.0:2:9
+INFO: file_omitted(0): Start node ++NOISE++.0:2:23
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:29
+INFO: file_omitted(0): Start node ++COUGH++.0:2:23
+INFO: file_omitted(0): End node &lt;sil&gt;.58:60:61 (-728)
+INFO: file_omitted(0): End node &lt;sil&gt;.58:60:61 (-728)
+INFO: file_omitted(0): End node &lt;sil&gt;.58:60:61 (-728)
+INFO: file_omitted(0): End node &lt;sil&gt;.58:60:61 (-728)
+INFO: file_omitted(0): End node &lt;sil&gt;.58:60:61 (-728)
+INFO: file_omitted(0): End node &lt;sil&gt;.58:60:61 (-728)
+INFO: file_omitted(0): End node &lt;sil&gt;.58:60:61 (-728)
+INFO: file_omitted(0): End node &lt;sil&gt;.58:60:61 (-728)
+INFO: file_omitted(0): End node &lt;sil&gt;.58:60:61 (-728)
+INFO: file_omitted(0): End node &lt;sil&gt;.58:60:61 (-728)
+INFO: file_omitted(0): End node &lt;sil&gt;.58:60:61 (-728)
+INFO: file_omitted(0): End node &lt;sil&gt;.58:60:61 (-728)
+INFO: file_omitted(0): End node &lt;sil&gt;.58:60:61 (-728)
+INFO: file_omitted(0): End node &lt;sil&gt;.58:60:61 (-728)
+INFO: file_omitted(0): End node CLEAR.22:45:61 (-3049)
+INFO: file_omitted(0): lattice start node &lt;s&gt;.0 end node &lt;/s&gt;.62
+INFO: file_omitted(0): Normalizer P(O) = alpha(&lt;/s&gt;:62:62) = -314060
+INFO: file_omitted(0): Joint P(O,S) = -314060 P(S|O) = 0
+2014-07-08 13:19:25.263 savemynumber[2589:4807] Pocketsphinx heard &quot;CLEAR&quot; with a score of (0) and an utterance ID of 000000000.
+2014-07-08 13:19:25.267 savemynumber[2589:4807] Checking and resetting all audio session settings.
+2014-07-08 13:19:25.269 savemynumber[2589:4807] audioCategory is correct, we will leave it as it is.
+2014-07-08 13:19:25.270 savemynumber[2589:4807] bluetoothInput is correct, we will leave it as it is.
+2014-07-08 13:19:25.271 savemynumber[2589:4807] Output Device: SpeakerAndMicrophone.
+2014-07-08 13:19:25.271 savemynumber[2589:4807] categoryDefaultToSpeaker is correct, we will leave it as it is.
+2014-07-08 13:19:25.264 savemynumber[2589:60b] The received hypothesis is CLEAR with a score of 0 and an ID of 000000000
+2014-07-08 13:19:25.272 savemynumber[2589:4807] preferredBufferSize is incorrect, we will change it.
+2014-07-08 13:19:25.274 savemynumber[2589:4807] PreferredBufferSize is now on the correct setting of 0.128000.
+2014-07-08 13:19:25.277 savemynumber[2589:4807] preferredSampleRateCheck is correct, we will leave it as it is.
+2014-07-08 13:19:25.279 savemynumber[2589:4807] Setting the variables for the device and starting it.
+2014-07-08 13:19:25.280 savemynumber[2589:4807] Looping through ringbuffer sections and pre-allocating them.
+2014-07-08 13:19:25.332 savemynumber[2589:4807] Started audio output unit.
+2014-07-08 13:19:25.335 savemynumber[2589:4807] Listening.
+2014-07-08 13:19:25.336 savemynumber[2589:60b] Pocketsphinx is now listening.
+2014-07-08 13:19:26.392 savemynumber[2589:4807] Speech detected...
+2014-07-08 13:19:26.394 savemynumber[2589:60b] Pocketsphinx has detected speech.
+2014-07-08 13:19:27.254 savemynumber[2589:4807] Stopping audio unit.
+2014-07-08 13:19:27.254 savemynumber[2589:60b] Pocketsphinx has detected a period of silence, concluding an utterance.
+2014-07-08 13:19:27.383 savemynumber[2589:4807] Audio Output Unit stopped, cleaning up variable states.
+2014-07-08 13:19:27.384 savemynumber[2589:4807] Processing speech, please wait...
+INFO: file_omitted(0): 62 frames, 5962 HMMs (96/fr), 3349 senones (54/fr), 4359 history entries (70/fr)
+
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:32
+INFO: file_omitted(0): Start node ++UM++.0:2:23
+INFO: file_omitted(0): Start node ++NOISE++.0:2:25
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:28
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:32
+INFO: file_omitted(0): Start node ++UM++.0:2:23
+INFO: file_omitted(0): Start node ++NOISE++.0:2:25
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:28
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:32
+INFO: file_omitted(0): Start node ++UM++.0:2:23
+INFO: file_omitted(0): Start node ++NOISE++.0:2:25
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:28
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:32
+INFO: file_omitted(0): Start node ++UM++.0:2:23
+INFO: file_omitted(0): Start node ++NOISE++.0:2:25
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:28
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:32
+INFO: file_omitted(0): Start node ++UM++.0:2:23
+INFO: file_omitted(0): Start node ++NOISE++.0:2:25
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:28
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:32
+INFO: file_omitted(0): Start node ++UM++.0:2:23
+INFO: file_omitted(0): Start node ++NOISE++.0:2:25
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:28
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:32
+INFO: file_omitted(0): Start node ++UM++.0:2:23
+INFO: file_omitted(0): Start node ++NOISE++.0:2:25
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:28
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:33
+INFO: file_omitted(0): Start node ++UM++.0:2:23
+INFO: file_omitted(0): Start node ++NOISE++.0:2:25
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:28
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:32
+INFO: file_omitted(0): Start node ++UM++.0:2:23
+INFO: file_omitted(0): Start node ++NOISE++.0:2:25
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:28
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:33
+INFO: file_omitted(0): Start node ++UM++.0:2:23
+INFO: file_omitted(0): Start node ++NOISE++.0:2:25
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:28
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:32
+INFO: file_omitted(0): Start node ++UM++.0:2:23
+INFO: file_omitted(0): Start node ++NOISE++.0:2:25
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:28
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:33
+INFO: file_omitted(0): Start node ++UM++.0:2:23
+INFO: file_omitted(0): Start node ++NOISE++.0:2:25
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:28
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:32
+INFO: file_omitted(0): Start node ++UM++.0:2:23
+INFO: file_omitted(0): Start node ++NOISE++.0:2:25
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:28
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:33
+INFO: file_omitted(0): Start node ++UM++.0:2:23
+INFO: file_omitted(0): Start node ++NOISE++.0:2:25
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:28
+INFO: file_omitted(0): End node &lt;sil&gt;.58:60:61 (-623)
+INFO: file_omitted(0): End node &lt;sil&gt;.58:60:61 (-623)
+INFO: file_omitted(0): End node &lt;sil&gt;.58:60:61 (-623)
+INFO: file_omitted(0): End node &lt;sil&gt;.58:60:61 (-623)
+INFO: file_omitted(0): End node &lt;sil&gt;.58:60:61 (-623)
+INFO: file_omitted(0): End node &lt;sil&gt;.58:60:61 (-623)
+INFO: file_omitted(0): End node &lt;sil&gt;.58:60:61 (-623)
+INFO: file_omitted(0): End node &lt;sil&gt;.58:60:61 (-623)
+INFO: file_omitted(0): End node &lt;sil&gt;.58:60:61 (-623)
+INFO: file_omitted(0): End node &lt;sil&gt;.58:60:61 (-623)
+INFO: file_omitted(0): End node &lt;sil&gt;.58:60:61 (-623)
+INFO: file_omitted(0): End node &lt;sil&gt;.58:60:61 (-623)
+INFO: file_omitted(0): End node &lt;sil&gt;.58:60:61 (-623)
+INFO: file_omitted(0): End node &lt;sil&gt;.58:60:61 (-623)
+INFO: file_omitted(0): End node CLEAR.21:43:61 (-3129)
+INFO: file_omitted(0): lattice start node &lt;s&gt;.0 end node &lt;/s&gt;.62
+INFO: file_omitted(0): Normalizer P(O) = alpha(&lt;/s&gt;:62:62) = -314316
+INFO: file_omitted(0): Joint P(O,S) = -314316 P(S|O) = 0
+2014-07-08 13:19:27.717 savemynumber[2589:4807] Pocketsphinx heard &quot;CLEAR&quot; with a score of (0) and an utterance ID of 000000001.
+2014-07-08 13:19:27.722 savemynumber[2589:4807] Checking and resetting all audio session settings.
+2014-07-08 13:19:27.719 savemynumber[2589:60b] The received hypothesis is CLEAR with a score of 0 and an ID of 000000001
+2014-07-08 13:19:27.724 savemynumber[2589:4807] audioCategory is correct, we will leave it as it is.
+2014-07-08 13:19:27.727 savemynumber[2589:4807] bluetoothInput is correct, we will leave it as it is.
+2014-07-08 13:19:27.729 savemynumber[2589:4807] Output Device: SpeakerAndMicrophone.
+2014-07-08 13:19:27.730 savemynumber[2589:4807] categoryDefaultToSpeaker is correct, we will leave it as it is.
+2014-07-08 13:19:27.731 savemynumber[2589:4807] preferredBufferSize is incorrect, we will change it.
+2014-07-08 13:19:27.734 savemynumber[2589:4807] PreferredBufferSize is now on the correct setting of 0.128000.
+2014-07-08 13:19:27.736 savemynumber[2589:4807] preferredSampleRateCheck is correct, we will leave it as it is.
+2014-07-08 13:19:27.737 savemynumber[2589:4807] Setting the variables for the device and starting it.
+2014-07-08 13:19:27.738 savemynumber[2589:4807] Looping through ringbuffer sections and pre-allocating them.
+2014-07-08 13:19:27.763 savemynumber[2589:4807] Started audio output unit.
+2014-07-08 13:19:27.765 savemynumber[2589:4807] Listening.
+2014-07-08 13:19:27.766 savemynumber[2589:60b] Pocketsphinx is now listening.
+2014-07-08 13:19:28.448 savemynumber[2589:4807] Speech detected...
+2014-07-08 13:19:28.450 savemynumber[2589:60b] Pocketsphinx has detected speech.
+2014-07-08 13:19:29.429 savemynumber[2589:4807] Stopping audio unit.
+2014-07-08 13:19:29.430 savemynumber[2589:60b] Pocketsphinx has detected a period of silence, concluding an utterance.
+2014-07-08 13:19:29.559 savemynumber[2589:4807] Audio Output Unit stopped, cleaning up variable states.
+2014-07-08 13:19:29.560 savemynumber[2589:4807] Processing speech, please wait...
+INFO: file_omitted(0): cmn_prior_update: from &lt; 47.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00 &gt;
+INFO: file_omitted(0): cmn_prior_update: to   &lt; 51.80 -0.15 -1.69 -1.21 -0.46 -1.93 -1.51 -0.06 -0.96 -0.81 -0.36 -0.45 -0.90 &gt;
+INFO: file_omitted(0): 74 frames, 7958 HMMs (107/fr), 4340 senones (58/fr), 6681 history entries (90/fr)
+
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:42
+INFO: file_omitted(0): Start node ++TONE++.0:2:41
+INFO: file_omitted(0): Start node ++NOISE++.0:2:37
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:42
+INFO: file_omitted(0): Start node ++COUGH++.0:2:38
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:42
+INFO: file_omitted(0): Start node ++TONE++.0:2:41
+INFO: file_omitted(0): Start node ++NOISE++.0:2:37
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:42
+INFO: file_omitted(0): Start node ++COUGH++.0:2:38
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:42
+INFO: file_omitted(0): Start node ++TONE++.0:2:41
+INFO: file_omitted(0): Start node ++NOISE++.0:2:37
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:42
+INFO: file_omitted(0): Start node ++COUGH++.0:2:38
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:42
+INFO: file_omitted(0): Start node ++TONE++.0:2:41
+INFO: file_omitted(0): Start node ++NOISE++.0:2:37
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:42
+INFO: file_omitted(0): Start node ++COUGH++.0:2:38
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:42
+INFO: file_omitted(0): Start node ++TONE++.0:2:41
+INFO: file_omitted(0): Start node ++NOISE++.0:2:37
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:42
+INFO: file_omitted(0): Start node ++COUGH++.0:2:38
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:42
+INFO: file_omitted(0): Start node ++TONE++.0:2:41
+INFO: file_omitted(0): Start node ++NOISE++.0:2:37
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:42
+INFO: file_omitted(0): Start node ++COUGH++.0:2:38
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:42
+INFO: file_omitted(0): Start node ++TONE++.0:2:41
+INFO: file_omitted(0): Start node ++NOISE++.0:2:37
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:42
+INFO: file_omitted(0): Start node ++COUGH++.0:2:38
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:42
+INFO: file_omitted(0): Start node ++TONE++.0:2:41
+INFO: file_omitted(0): Start node ++NOISE++.0:2:37
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:42
+INFO: file_omitted(0): Start node ++COUGH++.0:2:38
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:42
+INFO: file_omitted(0): Start node ++TONE++.0:2:41
+INFO: file_omitted(0): Start node ++NOISE++.0:2:37
+INFO: file_omitted(0): Start node ++LAUGH++.0:2:42
+INFO: file_omitted(0): Start node ++COUGH++.0:2:38
+INFO: file_omitted(0): End node &lt;sil&gt;.69:71:73 (-669)
+INFO: file_omitted(0): End node &lt;sil&gt;.69:71:73 (-669)
+INFO: file_omitted(0): End node &lt;sil&gt;.69:71:73 (-669)
+INFO: file_omitted(0): End node &lt;sil&gt;.69:71:73 (-669)
+INFO: file_omitted(0): End node &lt;sil&gt;.69:71:73 (-669)
+INFO: file_omitted(0): End node &lt;sil&gt;.69:71:73 (-669)
+INFO: file_omitted(0): End node &lt;sil&gt;.69:71:73 (-669)
+INFO: file_omitted(0): End node &lt;sil&gt;.69:71:73 (-669)
+INFO: file_omitted(0): End node &lt;sil&gt;.69:71:73 (-669)
+INFO: file_omitted(0): End node &lt;sil&gt;.69:71:73 (-669)
+INFO: file_omitted(0): End node &lt;sil&gt;.69:71:73 (-669)
+INFO: file_omitted(0): End node &lt;sil&gt;.69:71:73 (-669)
+INFO: file_omitted(0): End node &lt;sil&gt;.69:71:73 (-669)
+INFO: file_omitted(0): End node &lt;sil&gt;.69:71:73 (-669)
+INFO: file_omitted(0): End node SAVE.26:50:73 (-3205)
+INFO: file_omitted(0): lattice start node &lt;s&gt;.0 end node &lt;/s&gt;.74
+INFO: file_omitted(0): Normalizer P(O) = alpha(&lt;/s&gt;:74:74) = -340582
+INFO: file_omitted(0): Joint P(O,S) = -340582 P(S|O) = 0
+2014-07-08 13:19:30.019 savemynumber[2589:4807] Pocketsphinx heard &quot;SAVE&quot; with a score of (0) and an utterance ID of 000000002.
+2014-07-08 13:19:30.023 savemynumber[2589:4807] Checking and resetting all audio session settings.
+2014-07-08 13:19:30.020 savemynumber[2589:60b] The received hypothesis is SAVE with a score of 0 and an ID of 000000002
+2014-07-08 13:19:30.025 savemynumber[2589:4807] audioCategory is correct, we will leave it as it is.
+2014-07-08 13:19:30.028 savemynumber[2589:4807] bluetoothInput is correct, we will leave it as it is.
+2014-07-08 13:19:30.029 savemynumber[2589:4807] Output Device: SpeakerAndMicrophone.
+2014-07-08 13:19:30.030 savemynumber[2589:4807] categoryDefaultToSpeaker is correct, we will leave it as it is.
+2014-07-08 13:19:30.031 savemynumber[2589:4807] preferredBufferSize is incorrect, we will change it.
+2014-07-08 13:19:30.034 savemynumber[2589:4807] PreferredBufferSize is now on the correct setting of 0.128000.
+2014-07-08 13:19:30.035 savemynumber[2589:4807] preferredSampleRateCheck is correct, we will leave it as it is.
+2014-07-08 13:19:30.036 savemynumber[2589:4807] Setting the variables for the device and starting it.
+2014-07-08 13:19:30.037 savemynumber[2589:4807] Looping through ringbuffer sections and pre-allocating them.
+2014-07-08 13:19:30.067 savemynumber[2589:4807] Started audio output unit.
+2014-07-08 13:19:30.069 savemynumber[2589:4807] Listening.
+2014-07-08 13:19:30.071 savemynumber[2589:60b] Pocketsphinx is now listening.
+</code></pre>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-can-i-decrease-processing-time/#post-1021910</guid>
+					<title><![CDATA[Reply To: How can I decrease processing time?]]></title>
+					<link>/forums/topic/how-can-i-decrease-processing-time/#post-1021910</link>
+					<pubDate>Tue, 08 Jul 2014 17:29:11 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hmm, I&#8217;m only seeing processing times of a quarter second to a second in that log. Is it possible something else (maybe the UI?) is giving the impression of it being slow?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-can-i-decrease-processing-time/#post-1021913</guid>
+					<title><![CDATA[Reply To: How can I decrease processing time?]]></title>
+					<link>/forums/topic/how-can-i-decrease-processing-time/#post-1021913</link>
+					<pubDate>Wed, 09 Jul 2014 16:17:38 +0000</pubDate>
+					<dc:creator>detrop</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am seeing at least 5 seconds processing time in some cases.  I updated my grammar to this:</p>
+<pre><code>
+NSDictionary *grammarDict = @{
+                                ThisWillBeSaidOnce : @[
+                                    @{
+                                        ThisCanBeSaidWithOptionalRepetitions : @[
+                                            @{OneOfTheseWillBeSaidOnce : @[@&quot;SAVE&quot;, @&quot;CLEAR&quot;, @&quot;0&quot;, @&quot;1&quot;, @&quot;2&quot;]}
+                                        ]
+                                    }
+                                ]
+                            };
+</code></pre>
+<p>I really think I am doing something wrong,  theres no way it can be this slow.  Waze is fast,  and its using OpenEars.  </p>
+<p>Here is the log:</p>
+<pre><code>
+2014-07-09 12:11:20.638 savemynumber[3100:4807] Speech detected...
+2014-07-09 12:11:20.640 savemynumber[3100:60b] Pocketsphinx has detected speech.
+2014-07-09 12:11:24.565 savemynumber[3100:4807] Stopping audio unit.
+2014-07-09 12:11:24.565 savemynumber[3100:60b] Pocketsphinx has detected a period of silence, concluding an utterance.
+2014-07-09 12:11:24.692 savemynumber[3100:4807] Audio Output Unit stopped, cleaning up variable states.
+2014-07-09 12:11:24.694 savemynumber[3100:4807] Processing speech, please wait...
+INFO: file_omitted(0): cmn_prior_update: from &lt; 55.81 -1.54  1.05 -0.48 -1.33 -2.62 -1.26 -1.17 -0.95 -0.43 -0.09 -0.41 -0.51 &gt;
+INFO: file_omitted(0): cmn_prior_update: to   &lt; 55.45 -1.77  1.15 -0.36 -1.46 -2.64 -1.16 -1.13 -1.00 -0.45 -0.10 -0.40 -0.56 &gt;
+INFO: file_omitted(0): 385 frames, 34661 HMMs (90/fr), 29877 senones (77/fr), 28089 history entries (72/fr)
+
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:36
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:36
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:36
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:36
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:36
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:36
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:36
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:36
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:36
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:36
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:36
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:36
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:36
+INFO: file_omitted(0): Start node &lt;sil&gt;.0:2:36
+INFO: file_omitted(0): End node 2.376:381:384 (-1120)
+INFO: file_omitted(0): End node 2.376:381:384 (-1120)
+INFO: file_omitted(0): End node &lt;sil&gt;.375:377:384 (-589)
+INFO: file_omitted(0): End node &lt;sil&gt;.375:377:384 (-589)
+INFO: file_omitted(0): End node &lt;sil&gt;.375:377:384 (-589)
+INFO: file_omitted(0): End node &lt;sil&gt;.375:377:384 (-589)
+INFO: file_omitted(0): End node &lt;sil&gt;.375:377:384 (-589)
+INFO: file_omitted(0): End node &lt;sil&gt;.375:377:384 (-589)
+INFO: file_omitted(0): End node &lt;sil&gt;.375:377:384 (-589)
+INFO: file_omitted(0): End node &lt;sil&gt;.375:377:384 (-589)
+INFO: file_omitted(0): End node &lt;sil&gt;.375:377:384 (-589)
+INFO: file_omitted(0): End node &lt;sil&gt;.375:377:384 (-589)
+INFO: file_omitted(0): End node &lt;sil&gt;.375:377:384 (-589)
+INFO: file_omitted(0): End node &lt;sil&gt;.375:377:384 (-589)
+INFO: file_omitted(0): End node &lt;sil&gt;.375:377:384 (-589)
+INFO: file_omitted(0): End node &lt;sil&gt;.375:377:384 (-589)
+INFO: file_omitted(0): End node &lt;sil&gt;.375:377:384 (-589)
+INFO: file_omitted(0): End node 2.346:351:384 (-1233)
+INFO: file_omitted(0): End node 2.346:351:384 (-1233)
+INFO: file_omitted(0): lattice start node &lt;s&gt;.0 end node &lt;/s&gt;.385
+INFO: file_omitted(0): Normalizer P(O) = alpha(&lt;/s&gt;:385:385) = -1889401
+INFO: file_omitted(0): Joint P(O,S) = -1973138 P(S|O) = -83737
+2014-07-09 12:11:29.049 savemynumber[3100:4807] Pocketsphinx heard &quot;0 2 2 0 2 2 0 2 2 2 2 2 0 2 2&quot; with a score of (-83737) and an utterance ID of 000000003.
+2014-07-09 12:11:29.050 savemynumber[3100:60b] The received hypothesis is 0 2 2 0 2 2 0 2 2 2 2 2 0 2 2 with a score of -83737 and an ID of 000000003
+2014-07-09 12:11:29.131 savemynumber[3100:4807] Checking and resetting all audio session settings.
+2014-07-09 12:11:29.133 savemynumber[3100:4807] audioCategory is correct, we will leave it as it is.
+2014-07-09 12:11:29.134 savemynumber[3100:4807] bluetoothInput is correct, we will leave it as it is.
+2014-07-09 12:11:29.135 savemynumber[3100:4807] Output Device: SpeakerAndMicrophone.
+2014-07-09 12:11:29.136 savemynumber[3100:4807] categoryDefaultToSpeaker is correct, we will leave it as it is.
+2014-07-09 12:11:29.137 savemynumber[3100:4807] preferredBufferSize is incorrect, we will change it.
+2014-07-09 12:11:29.139 savemynumber[3100:4807] PreferredBufferSize is now on the correct setting of 0.128000.
+2014-07-09 12:11:29.140 savemynumber[3100:4807] preferredSampleRateCheck is correct, we will leave it as it is.
+2014-07-09 12:11:29.141 savemynumber[3100:4807] Setting the variables for the device and starting it.
+2014-07-09 12:11:29.142 savemynumber[3100:4807] Looping through ringbuffer sections and pre-allocating them.
+2014-07-09 12:11:29.169 savemynumber[3100:4807] Started audio output unit.
+2014-07-09 12:11:29.170 savemynumber[3100:4807] Listening.
+2014-07-09 12:11:29.171 savemynumber[3100:60b] Pocketsphinx is now listening.
+</code></pre>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-can-i-decrease-processing-time/#post-1021914</guid>
+					<title><![CDATA[Reply To: How can I decrease processing time?]]></title>
+					<link>/forums/topic/how-can-i-decrease-processing-time/#post-1021914</link>
+					<pubDate>Wed, 09 Jul 2014 16:23:30 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Waze is using language models rather than grammars to the best of my knowledge. </p>
+<p>Using optional repetitions is going to make responses slower, there&#8217;s no way around it because it&#8217;s a far bigger search space and finite state grammars are slower than probability models in pocketsphinx. </p>
+<p>You can either use language models instead, or you can use grammars without optional repetitions for good performance (RuleORama will also improve performance, but it doesn&#8217;t support optional repetitions at all). </p>
+<p>Having multiple commands in different sequences doesn&#8217;t create a requirement for repetitions per se, since multiple commands are received and understood in the course of continuous recognition under normal usage. Can you describe the types of different commands and series of commands you&#8217;d like to understand, with examples? Maybe I can help you construct a grammar that doesn&#8217;t rely on optional repetitions.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

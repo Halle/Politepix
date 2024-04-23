@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Slow TTS when long text &#8211; Politepix</title>
+		<atom:link href="/forums/topic/slow-tts-when-long-text/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/slow-tts-when-long-text/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:54:45 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/slow-tts-when-long-text/#post-1017057</guid>
+					<title><![CDATA[Slow TTS when long text]]></title>
+					<link>/forums/topic/slow-tts-when-long-text/#post-1017057</link>
+					<pubDate>Wed, 24 Apr 2013 19:39:38 +0000</pubDate>
+					<dc:creator>dannyshmueli</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>I&#8217;v playing with OpenEars for few days now and i really like it :)</p>
+<p>One issue though (i dont know if it&#8217;s OpenEars specific): when i try to TTS large text (say from an article) it takes it a long time until it starts playing it.</p>
+<p>Small text: 1.5 seconds</p>
+<p>Large text: 74 seconds</p>
+<p>The long wait is due to:</p>
+<blockquote><p>cst_wave *speechwaveform = flite_text_to_wave(statementToSay,voice);</p></blockquote>
+<p> in FliteController.h ,I added NSLog output of the time it takes this call to finish.</p>
+<p>Is there any way of speeding this up?</p>
+<p>Thanks,</p>
+<p>Danny</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/slow-tts-when-long-text/#post-1017058</guid>
+					<title><![CDATA[Reply To: Slow TTS when long text]]></title>
+					<link>/forums/topic/slow-tts-when-long-text/#post-1017058</link>
+					<pubDate>Wed, 24 Apr 2013 19:53:59 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Danny,</p>
+<p>I&#8217;m glad to hear you&#8217;re enjoying OpenEars. The fact that all text is rendered at once and then played when it&#8217;s all ready is a limitation of FliteController, but NeatSpeech (a paid plugin for OpenEars here: <a href="/neatspeech">/neatspeech</a>) was created in order to speed up speech by streaming long speech in segments instead of first rendering everything and then playing, so you might want to give its demo a try and see if it helps with your requirements. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/slow-tts-when-long-text/#post-1017061</guid>
+					<title><![CDATA[Reply To: Slow TTS when long text]]></title>
+					<link>/forums/topic/slow-tts-when-long-text/#post-1017061</link>
+					<pubDate>Thu, 25 Apr 2013 16:43:40 +0000</pubDate>
+					<dc:creator>dannyshmueli</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>Thanks for the quick reply i&#8217;ll give it a NeatSpeech plugin a try</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>no hypothesis being returned after changing model &#8211; Politepix</title>
+		<atom:link href="/forums/topic/no-hypothesis-being-returned-after-changing-model/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/no-hypothesis-being-returned-after-changing-model/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:47:58 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/no-hypothesis-being-returned-after-changing-model/#post-1015838</guid>
+					<title><![CDATA[no hypothesis being returned after changing model]]></title>
+					<link>/forums/topic/no-hypothesis-being-returned-after-changing-model/#post-1015838</link>
+					<pubDate>Sun, 10 Mar 2013 09:02:23 +0000</pubDate>
+					<dc:creator>bluemoonj</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>hi there,<br />
+First time to integrate OpenEars into a new project, we need to dynamic generate models and switch on demand. </p>
+<p>OpenEars works fine with first model, it serves our purpose, but once we changed model (our new models are generated with same filename), OpenEars say detected utterance, but never returns hypothesis. I went into the document folder, new model was generated with same filename.</p>
+<p>==== some NSLog messages like following. </p>
+<p>Pocketsphinx has detected speech.<br />
+2013-03-10 00:41:39.984 Globish dictionary[25335:11f03] Pocketsphinx has detected a second of silence, concluding an utterance.<br />
+2013-03-10 00:41:40.003 Globish dictionary[25335:11f03] Pocketsphinx is now listening.<br />
+2013-03-10 00:41:40.806 Globish dictionary[25335:11f03] Pocketsphinx has detected speech.<br />
+2013-03-10 00:41:47.190 Globish dictionary[25335:11f03] Pocketsphinx has detected a second of silence, concluding an utterance.<br />
+2013-03-10 00:41:47.224 Globish dictionary[25335:11f03] Pocketsphinx is now listening.</p>
+<p>anyone has idea what happened? or is is because I cannot use same filename for new models? please advice.</p>
+<p>thanks in advance. </p>
+<p>Paul</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/no-hypothesis-being-returned-after-changing-model/#post-1015839</guid>
+					<title><![CDATA[Reply To: no hypothesis being returned after changing model]]></title>
+					<link>/forums/topic/no-hypothesis-being-returned-after-changing-model/#post-1015839</link>
+					<pubDate>Sun, 10 Mar 2013 09:16:14 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Paul,</p>
+<p>Please check out the troubleshooting starting points in this post: </p>
+<p><a href="/forums/topic/install-issues-and-their-solutions/">/forums/topic/install-issues-and-their-solutions/</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/no-hypothesis-being-returned-after-changing-model/#post-1015844</guid>
+					<title><![CDATA[Reply To: no hypothesis being returned after changing model]]></title>
+					<link>/forums/topic/no-hypothesis-being-returned-after-changing-model/#post-1015844</link>
+					<pubDate>Sun, 10 Mar 2013 17:32:39 +0000</pubDate>
+					<dc:creator>bluemoonj</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>hi Hale, thanks for pointing to the troubleshooting post.<br />
+I have followed the post and turn on logging. Some messages in console as follow:</p>
+<p>2013-03-10 10:26:49.996 Globish dictionary[4371:907] Pocketsphinx is now using the following language model:<br />
+/var/mobile/Applications/7B4BE7D5-073F-454B-9FAC-6EDB1117CF8C/Documents/randomWordsDynamicModel.DMP and the following dictionary: /var/mobile/Applications/7B4BE7D5-073F-454B-9FAC-6EDB1117CF8C/Documents/randomWordsDynamicModel.dic<br />
+2013-03-10 10:26:51.587 Globish dictionary[4371:3a03] Speech detected&#8230;<br />
+2013-03-10 10:26:51.591 Globish dictionary[4371:907] Pocketsphinx has detected speech.<br />
+2013-03-10 10:26:52.756 Globish dictionary[4371:3a03] Stopping audio unit.<br />
+2013-03-10 10:26:52.760 Globish dictionary[4371:907] Pocketsphinx has detected a second of silence, concluding an utterance.<br />
+2013-03-10 10:26:52.891 Globish dictionary[4371:3a03] Audio Output Unit stopped, cleaning up variable states.<br />
+2013-03-10 10:26:52.899 Globish dictionary[4371:3a03] Processing speech, please wait&#8230;<br />
+INFO: cmn_prior.c(121): cmn_prior_update: from<br />
+INFO: cmn_prior.c(139): cmn_prior_update: to<br />
+INFO: ngram_search_fwdtree.c(1549):      632 words recognized (9/fr)<br />
+INFO: ngram_search_fwdtree.c(1551):     1737 senones evaluated (25/fr)<br />
+INFO: ngram_search_fwdtree.c(1553):      691 channels searched (10/fr), 0 1st, 691 last<br />
+INFO: ngram_search_fwdtree.c(1557):      691 words for which last channels evaluated (10/fr)<br />
+INFO: ngram_search_fwdtree.c(1560):        0 candidate words for entering last phone (0/fr)<br />
+INFO: ngram_search_fwdtree.c(1562): fwdtree 0.15 CPU 0.210 xRT<br />
+INFO: ngram_search_fwdtree.c(1565): fwdtree 1.38 wall 1.998 xRT<br />
+INFO: ngram_search_fwdflat.c(316): Utterance vocabulary contains 2 words<br />
+INFO: ngram_search_fwdflat.c(951):       85 words recognized (1/fr)<br />
+INFO: ngram_search_fwdflat.c(953):      204 senones evaluated (3/fr)<br />
+INFO: ngram_search_fwdflat.c(955):      131 channels searched (1/fr)<br />
+INFO: ngram_search_fwdflat.c(957):      131 words searched (1/fr)<br />
+INFO: ngram_search_fwdflat.c(959):       59 word transitions (0/fr)<br />
+INFO: ngram_search_fwdflat.c(962): fwdflat 0.03 CPU 0.043 xRT<br />
+INFO: ngram_search_fwdflat.c(965): fwdflat 0.05 wall 0.076 xRT<br />
+INFO: ngram_search.c(1217):  not found in last frame, using .67 instead<br />
+INFO: ngram_search.c(1269): lattice start node .0 end node .59<br />
+INFO: ngram_search.c(1297): Eliminated 0 nodes before end node<br />
+INFO: ngram_search.c(1402): Lattice has 17 nodes, 2 links<br />
+INFO: ps_lattice.c(1367): Normalizer P(O) = alpha(:59:67) = -2846433<br />
+INFO: ps_lattice.c(1405): Joint P(O,S) = -2846433 P(S|O) = 0<br />
+INFO: ngram_search.c(891): bestpath 0.00 CPU 0.000 xRT<br />
+INFO: ngram_search.c(894): bestpath 0.00 wall 0.001 xRT<br />
+2013-03-10 10:26:52.963 Globish dictionary[4371:3a03] Pocketsphinx heard &#8220;&#8221; with a score of (0) and an utterance ID of 000000002.<br />
+2013-03-10 10:26:52.971 Globish dictionary[4371:3a03] Hypothesis was null so we aren&#8217;t returning it. If you want null hypotheses to also be returned, set PocketsphinxController&#8217;s property returnNullHypotheses to TRUE before starting PocketsphinxController.<br />
+2013-03-10 10:26:52.975 Globish dictionary[4371:3a03] Checking and resetting all audio session settings.<br />
+2013-03-10 10:26:52.979 Globish dictionary[4371:3a03] audioCategory is correct, we will leave it as it is.<br />
+2013-03-10 10:26:52.985 Globish dictionary[4371:3a03] bluetoothInput is correct, we will leave it as it is.<br />
+2013-03-10 10:26:53.021 Globish dictionary[4371:3a03] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2013-03-10 10:26:53.028 Globish dictionary[4371:3a03] preferredBufferSize is correct, we will leave it as it is.<br />
+2013-03-10 10:26:53.037 Globish dictionary[4371:3a03] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2013-03-10 10:26:53.043 Globish dictionary[4371:3a03] Setting the variables for the device and starting it.<br />
+2013-03-10 10:26:53.052 Globish dictionary[4371:3a03] Looping through ringbuffer sections and pre-allocating them.<br />
+2013-03-10 10:26:53.138 Globish dictionary[4371:3a03] Started audio output unit.<br />
+2013-03-10 10:26:53.146 Globish dictionary[4371:3a03] Listening.<br />
+2013-03-10 10:26:53.151 Globish dictionary[4371:907] Pocketsphinx is now listening.<br />
+2013-03-10 10:26:56.420 Globish dictionary[4371:3a03] Speech detected&#8230;<br />
+2013-03-10 10:26:56.427 Globish dictionary[4371:907] Pocketsphinx has detected speech.<br />
+2013-03-10 10:26:58.005 Globish dictionary[4371:3a03] Stopping audio unit.<br />
+2013-03-10 10:26:58.009 Globish dictionary[4371:907] Pocketsphinx has detected a second of silence, concluding an utterance.<br />
+2013-03-10 10:26:58.137 Globish dictionary[4371:3a03] Audio Output Unit stopped, cleaning up variable states.<br />
+2013-03-10 10:26:58.145 Globish dictionary[4371:3a03] Processing speech, please wait&#8230;<br />
+INFO: cmn_prior.c(121): cmn_prior_update: from<br />
+INFO: cmn_prior.c(139): cmn_prior_update: to<br />
+INFO: ngram_search_fwdtree.c(1549):      980 words recognized (9/fr)<br />
+INFO: ngram_search_fwdtree.c(1551):     2763 senones evaluated (26/fr)<br />
+INFO: ngram_search_fwdtree.c(1553):     1070 channels searched (10/fr), 0 1st, 1070 last<br />
+INFO: ngram_search_fwdtree.c(1557):     1070 words for which last channels evaluated (10/fr)<br />
+INFO: ngram_search_fwdtree.c(1560):        0 candidate words for entering last phone (0/fr)<br />
+INFO: ngram_search_fwdtree.c(1562): fwdtree 0.22 CPU 0.209 xRT<br />
+INFO: ngram_search_fwdtree.c(1565): fwdtree 1.78 wall 1.681 xRT<br />
+INFO: ngram_search_fwdflat.c(316): Utterance vocabulary contains 2 words<br />
+INFO: ngram_search_fwdflat.c(951):      127 words recognized (1/fr)<br />
+INFO: ngram_search_fwdflat.c(953):      315 senones evaluated (3/fr)<br />
+INFO: ngram_search_fwdflat.c(955):      166 channels searched (1/fr)<br />
+INFO: ngram_search_fwdflat.c(957):      166 words searched (1/fr)<br />
+INFO: ngram_search_fwdflat.c(959):       76 word transitions (0/fr)<br />
+INFO: ngram_search_fwdflat.c(962): fwdflat 0.04 CPU 0.034 xRT<br />
+INFO: ngram_search_fwdflat.c(965): fwdflat 0.07 wall 0.064 xRT<br />
+INFO: ngram_search.c(1217):  not found in last frame, using .104 instead<br />
+INFO: ngram_search.c(1269): lattice start node .0 end node .2<br />
+INFO: ngram_search.c(1297): Eliminated 20 nodes before end node<br />
+INFO: ngram_search.c(1402): Lattice has 22 nodes, 1 links<br />
+INFO: ps_lattice.c(1367): Normalizer P(O) = alpha(:2:104) = -3090709<br />
+INFO: ps_lattice.c(1405): Joint P(O,S) = -3090709 P(S|O) = 0<br />
+INFO: ngram_search.c(891): bestpath 0.00 CPU 0.000 xRT<br />
+INFO: ngram_search.c(894): bestpath 0.00 wall 0.001 xRT<br />
+2013-03-10 10:26:58.227 Globish dictionary[4371:3a03] Pocketsphinx heard &#8220;&#8221; with a score of (0) and an utterance ID of 000000003.<br />
+2013-03-10 10:26:58.234 Globish dictionary[4371:3a03] Hypothesis was null so we aren&#8217;t returning it. If you want null hypotheses to also be returned, set PocketsphinxController&#8217;s property returnNullHypotheses to TRUE before starting PocketsphinxController.<br />
+2013-03-10 10:26:58.238 Globish dictionary[4371:3a03] Checking and resetting all audio session settings.<br />
+2013-03-10 10:26:58.243 Globish dictionary[4371:3a03] audioCategory is correct, we will leave it as it is.<br />
+2013-03-10 10:26:58.248 Globish dictionary[4371:3a03] bluetoothInput is correct, we will leave it as it is.<br />
+2013-03-10 10:26:58.253 Globish dictionary[4371:3a03] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2013-03-10 10:26:58.259 Globish dictionary[4371:3a03] preferredBufferSize is correct, we will leave it as it is.<br />
+2013-03-10 10:26:58.279 Globish dictionary[4371:3a03] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2013-03-10 10:26:58.296 Globish dictionary[4371:3a03] Setting the variables for the device and starting it.<br />
+2013-03-10 10:26:58.300 Globish dictionary[4371:3a03] Looping through ringbuffer sections and pre-allocating them.<br />
+2013-03-10 10:26:58.389 Globish dictionary[4371:3a03] Started audio output unit.<br />
+2013-03-10 10:26:58.394 Globish dictionary[4371:3a03] Listening.<br />
+2013-03-10 10:26:58.398 Globish dictionary[4371:907] Pocketsphinx is now listening.<br />
+2013-03-10 10:26:59.336 Globish dictionary[4371:907] Pocketsphinx has suspended recognition.</p>
+<p>anyone has idea why there is no hypothesis being returned? It is strange that the first round before changing model always work, but just after changing model, no more hypothesis&#8230;<br />
+any help is appreciated.</p>
+<p>Paul</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/no-hypothesis-being-returned-after-changing-model/#post-1015845</guid>
+					<title><![CDATA[Reply To: no hypothesis being returned after changing model]]></title>
+					<link>/forums/topic/no-hypothesis-being-returned-after-changing-model/#post-1015845</link>
+					<pubDate>Sun, 10 Mar 2013 17:36:14 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, please generate the new models with a unique filename instead of the same one as the previous model. I expect this will fix your issue.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/no-hypothesis-being-returned-after-changing-model/#post-1015846</guid>
+					<title><![CDATA[Reply To: no hypothesis being returned after changing model]]></title>
+					<link>/forums/topic/no-hypothesis-being-returned-after-changing-model/#post-1015846</link>
+					<pubDate>Sun, 10 Mar 2013 18:30:39 +0000</pubDate>
+					<dc:creator>bluemoonj</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>hi Halle, </p>
+<p>thank you for the help. indeed the filename seems cannot be the same as current using model. </p>
+<p>so my solution is to use two different filenames and just cycle through them, it works fine so far. </p>
+<p>again, your help is much appreciated!</p>
+<p>Paul</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/no-hypothesis-being-returned-after-changing-model/#post-1015847</guid>
+					<title><![CDATA[Reply To: no hypothesis being returned after changing model]]></title>
+					<link>/forums/topic/no-hypothesis-being-returned-after-changing-model/#post-1015847</link>
+					<pubDate>Sun, 10 Mar 2013 18:34:48 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m happy to hear it helped!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

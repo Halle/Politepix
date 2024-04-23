@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Creating WaveForm while speaking &#8211; Politepix</title>
+		<atom:link href="/forums/topic/creating-waveform-while-speaking/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/creating-waveform-while-speaking/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:07:11 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/creating-waveform-while-speaking/#post-1021354</guid>
+					<title><![CDATA[Creating WaveForm while speaking]]></title>
+					<link>/forums/topic/creating-waveform-while-speaking/#post-1021354</link>
+					<pubDate>Fri, 23 May 2014 11:46:24 +0000</pubDate>
+					<dc:creator>guysch</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hey,</p>
+<p>First of all I would like to thank you for this awesome library! </p>
+<p>I would like to add some graphic representation of the user voice (just like siri on ios 7).. I found some examples that can help me draw the wave form, my problem is how can I access the microphone data (I haven&#8217;t found any delegate method that can pass the voice data so I can parse it into a wave form)</p>
+<p>am I missing something? </p>
+<p>Thanks in advance and keep up the good work :)</p>
+<p>Guy.  </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/creating-waveform-while-speaking/#post-1021359</guid>
+					<title><![CDATA[Reply To: Creating WaveForm while speaking]]></title>
+					<link>/forums/topic/creating-waveform-while-speaking/#post-1021359</link>
+					<pubDate>Fri, 23 May 2014 13:56:09 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Sure, just check out the sample app which ships with the main distribution in order to see examples of OpenEars level reading methods with comments on their use.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/creating-waveform-while-speaking/#post-1021360</guid>
+					<title><![CDATA[Reply To: Creating WaveForm while speaking]]></title>
+					<link>/forums/topic/creating-waveform-while-speaking/#post-1021360</link>
+					<pubDate>Fri, 23 May 2014 14:26:37 +0000</pubDate>
+					<dc:creator>guysch</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Great that exactly what I was looking for, thanks again (:</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/creating-waveform-while-speaking/#post-1021361</guid>
+					<title><![CDATA[Reply To: Creating WaveForm while speaking]]></title>
+					<link>/forums/topic/creating-waveform-while-speaking/#post-1021361</link>
+					<pubDate>Fri, 23 May 2014 14:37:08 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You&#8217;re welcome :)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

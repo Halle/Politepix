@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Project can find the OpenEars framework headers, but not Slt :-( &#8211; Politepix</title>
+		<atom:link href="/forums/topic/project-can-find-the-openears-framework-headers-but-not-slt/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/project-can-find-the-openears-framework-headers-but-not-slt/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:57:28 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/project-can-find-the-openears-framework-headers-but-not-slt/#post-14190</guid>
+					<title><![CDATA[Project can find the OpenEars framework headers, but not Slt :-(]]></title>
+					<link>/forums/topic/project-can-find-the-openears-framework-headers-but-not-slt/#post-14190</link>
+					<pubDate>Sat, 01 Dec 2012 20:55:42 +0000</pubDate>
+					<dc:creator>flint</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello everyone,</p>
+<p>I have a problem integrating with OpenEars:</p>
+<p>* following the instructions in the tutorial, I drag the Framework folder to my project<br />
+* I try to import  and<br />
+* When building, only the OpenEars headers can be found</p>
+<p>This is the error:</p>
+<blockquote><p>
+Lexical or Preprocessor Issue<br />
+&#8216;Slt/Slt.h&#8217; file not found
+</p></blockquote>
+<p>I can successfully instantiate &#8216;FliteController&#8217; object with [[FliteController alloc] init].</p>
+<p>&#8212;</p>
+<p>Other information:<br />
+* this is an existing project<br />
+* if I start a completely new project and follow the tutorial, then it works fine<br />
+* comparing the Build Settings for the existing and new projects doesn&#8217;t show any useful differences<br />
+* Framework Search Path is &#8220;$(SRCROOT)/Framework&#8221;<br />
+* which is evalutated to /Users/matthew/Dev/projectfolder/projectname/Framework<br />
+* the Framework folder contains both &#8216;OpenEars.framework&#8217; and &#8216;Slt.framework&#8217;<br />
+* both frameworks are including in my build target</p>
+<p>So I can&#8217;t figure out why &#8220;OpenEars&#8221; headers are found but &#8220;Slt&#8221; headers are not :-(</p>
+<p>Any ideas gratefully received!</p>
+<p>Matthew</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/project-can-find-the-openears-framework-headers-but-not-slt/#post-14191</guid>
+					<title><![CDATA[Reply To: Project can find the OpenEars framework headers, but not Slt :-(]]></title>
+					<link>/forums/topic/project-can-find-the-openears-framework-headers-but-not-slt/#post-14191</link>
+					<pubDate>Sat, 01 Dec 2012 21:06:34 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Matthew,</p>
+<p>Generally this only happens if the settings in the &#8220;Add files&#8221; dialog when doing the import are wrong with regard to these instructions:</p>
+<blockquote><p>Make absolutely sure that in the add dialog “Create groups for any added folders” is selected and NOT “Create folder references for any added folders” because the wrong setting here will prevent your app from working.</p></blockquote>
+<p>The other possibility is that the version of OpenEars in your existing app is an old version, or the path to the framework in the search path leads to an old version.</p>
+<p>Otherwise, it&#8217;s always a good step to clean the project, and to quit and restart Xcode. Let me know if any of this helps.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/project-can-find-the-openears-framework-headers-but-not-slt/#post-14269</guid>
+					<title><![CDATA[Reply To: Project can find the OpenEars framework headers, but not Slt :-(]]></title>
+					<link>/forums/topic/project-can-find-the-openears-framework-headers-but-not-slt/#post-14269</link>
+					<pubDate>Sat, 01 Dec 2012 21:37:07 +0000</pubDate>
+					<dc:creator>flint</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Halle,</p>
+<p>Thank-you for your reply. I&#8217;m pretty sure I did the import correctly, and they are using the same version.</p>
+<p>I am making progress though &#8211; by just using this new &#8216;xcproject&#8217; and importing my project&#8217;s existing classes into it. The existing project was getting quite disorganised anyway!</p>
+<p>Thanks for taking the time to reply!</p>
+<p>Matthew</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/project-can-find-the-openears-framework-headers-but-not-slt/#post-14270</guid>
+					<title><![CDATA[Reply To: Project can find the OpenEars framework headers, but not Slt :-(]]></title>
+					<link>/forums/topic/project-can-find-the-openears-framework-headers-but-not-slt/#post-14270</link>
+					<pubDate>Sat, 01 Dec 2012 21:41:28 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yeah, I suppose that somehow or other it has to be a project settings issue if the tutorial method works but it doesn&#8217;t work in the existing project. Glad to hear you are getting better results with a new project and I hope it continues to go smoothly.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/project-can-find-the-openears-framework-headers-but-not-slt/#post-1018632</guid>
+					<title><![CDATA[Reply To: Project can find the OpenEars framework headers, but not Slt :-(]]></title>
+					<link>/forums/topic/project-can-find-the-openears-framework-headers-but-not-slt/#post-1018632</link>
+					<pubDate>Tue, 15 Oct 2013 11:39:14 +0000</pubDate>
+					<dc:creator>Claude</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This just happened to me with fresh downloads of OpenEars. It looks like it is an Xcode 5 issue, Xcode is adding absolute paths, not relative paths when frameworks are added. See <a href="http://stackoverflow.com/questions/19109085/adding-frameworks-to-project-in-xcode-5-and-having-relative-paths-added" rel="nofollow">http://stackoverflow.com/questions/19109085/adding-frameworks-to-project-in-xcode-5-and-having-relative-paths-added</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/project-can-find-the-openears-framework-headers-but-not-slt/#post-1018633</guid>
+					<title><![CDATA[Reply To: Project can find the OpenEars framework headers, but not Slt :-(]]></title>
+					<link>/forums/topic/project-can-find-the-openears-framework-headers-but-not-slt/#post-1018633</link>
+					<pubDate>Tue, 15 Oct 2013 11:46:36 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Claude,</p>
+<p>Can you elaborate a little on how the use of an absolute path which exists causes Slt.h to not be found at its location after a different framework is added? Although I read the SO discussion I&#8217;m not quite following yet how it causes breakage in this scenario (although I fully understand why that Xcode 5 bug would be annoying over the life of a project). Thank you!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/project-can-find-the-openears-framework-headers-but-not-slt/#post-1018634</guid>
+					<title><![CDATA[Reply To: Project can find the OpenEars framework headers, but not Slt :-(]]></title>
+					<link>/forums/topic/project-can-find-the-openears-framework-headers-but-not-slt/#post-1018634</link>
+					<pubDate>Tue, 15 Oct 2013 12:01:59 +0000</pubDate>
+					<dc:creator>Claude</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sure!</p>
+<p>Xcode does a little too much sometimes when showing you your search paths, it is hard to sometimes see exactly what is &#8220;under the hood&#8221; so I use a basic text editor for those difficult cases. I use BBEdit BTW, great product!</p>
+<p>In the Finder, right click on your Xcode project and select &#8220;Show Package Contents.&#8221; This will open the Xcode project file bundle. Drag project.pbxproj to your text editor.</p>
+<p>Search for PolitePix until you find some lines that look something like this:</p>
+<p>    &#8220;\\\&#8221;$(SRCROOT)/../externals/OtherCompany/OtherFramework\\\&#8221;&#8221;,<br />
+    &#8220;/Users/claude/Documents/myproject/workspaces/externals/politepix/OpenEars&#8221;,</p>
+<p>(Note, you may have even more backslashes if you added more than one framework.) This is wrong. Change it to look like this:</p>
+<p>    &#8220;\&#8221;$(SRCROOT)/../externals/externals/OtherCompany/OtherFramework\&#8221;&#8221;,<br />
+    &#8220;\&#8221;$(SRCROOT)/../externals/politepix/OpenEars\&#8221;&#8221;,</p>
+<p>You&#8217;ll have 2 sections like this to fix and of course your local paths will likely be different than mine! You should now be able to find your old frameworks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/project-can-find-the-openears-framework-headers-but-not-slt/#post-1018635</guid>
+					<title><![CDATA[Reply To: Project can find the OpenEars framework headers, but not Slt :-(]]></title>
+					<link>/forums/topic/project-can-find-the-openears-framework-headers-but-not-slt/#post-1018635</link>
+					<pubDate>Tue, 15 Oct 2013 12:08:03 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Aha, so the issue isn&#8217;t specifically that the paths are absolute but that they are kind of mangled by Xcode, am I understanding correctly? Thank you for following up.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/project-can-find-the-openears-framework-headers-but-not-slt/#post-1018636</guid>
+					<title><![CDATA[Reply To: Project can find the OpenEars framework headers, but not Slt :-(]]></title>
+					<link>/forums/topic/project-can-find-the-openears-framework-headers-but-not-slt/#post-1018636</link>
+					<pubDate>Tue, 15 Oct 2013 12:09:54 +0000</pubDate>
+					<dc:creator>Claude</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yes, the SO posting wasn&#8217;t exactly correct. Yes, the new frameworks have absolute paths but it mangles the existing frameworks paths! This is for Xcode Version 5.0 (5A1413) if that helps.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/project-can-find-the-openears-framework-headers-but-not-slt/#post-1018637</guid>
+					<title><![CDATA[Reply To: Project can find the OpenEars framework headers, but not Slt :-(]]></title>
+					<link>/forums/topic/project-can-find-the-openears-framework-headers-but-not-slt/#post-1018637</link>
+					<pubDate>Tue, 15 Oct 2013 12:13:42 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sheesh. Off to file a radar.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

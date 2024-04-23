@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Mixed Pocketsphinx &amp; rapidEars &#8211; Politepix</title>
+		<atom:link href="/forums/topic/mixed-pocketsphinx-rapidears/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/mixed-pocketsphinx-rapidears/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:43:35 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/mixed-pocketsphinx-rapidears/#post-1018689</guid>
+					<title><![CDATA[Mixed Pocketsphinx &amp; rapidEars]]></title>
+					<link>/forums/topic/mixed-pocketsphinx-rapidears/#post-1018689</link>
+					<pubDate>Fri, 18 Oct 2013 23:25:50 +0000</pubDate>
+					<dc:creator>Claude</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m integrating RapidEars (and Rejecto) into my app, so far I&#8217;ve only put in the code that&#8217;s in the tutorial, but I&#8217;m seeing something which is probably ok, but want to double check.</p>
+<p>Should I be seeing mixed Pocketsphinx &amp; RapidEars delegate calls? Once I started using rapidEars  I expected to only see the RapidEar delegates called.</p>
+<p>Thanks!</p>
+<blockquote><p>2013-10-18 19:08:45.965 Bamboo[45418:a0b] Pocketsphinx calibration has started.<br />
+2013-10-18 19:08:48.166 Bamboo[45418:a0b] Pocketsphinx calibration is complete.<br />
+2013-10-18 19:08:48.166 Bamboo[45418:a0b] Pocketsphinx is now listening.<br />
+2013-10-18 19:08:53.831 Bamboo[45418:a0b] Pocketsphinx has detected speech.<br />
+2013-10-18 19:08:53.831 Bamboo[45418:a0b] rapidEarsDidDetectBeginningOfSpeech<br />
+2013-10-18 19:08:54.237 Bamboo[45418:a0b] rapidEarsDidReceiveLiveSpeechHypothesis: LICENSEREJECTO, score=198748464<br />
+2013-10-18 19:08:55.299 Bamboo[45418:a0b] rapidEarsDidReceiveFinishedSpeechHypothesis: LICENSEREJECTO, score=198748464<br />
+2013-10-18 19:08:55.299 Bamboo[45418:a0b] rapidEarsDidDetectEndOfSpeech<br />
+2013-10-18 19:08:55.300 Bamboo[45418:a0b] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-18 19:08:55.311 Bamboo[45418:a0b] Pocketsphinx is now listening.<br />
+2013-10-18 19:08:56.730 Bamboo[45418:a0b] Pocketsphinx has detected speech.<br />
+2013-10-18 19:08:56.731 Bamboo[45418:a0b] rapidEarsDidDetectBeginningOfSpeech<br />
+2013-10-18 19:08:56.738 Bamboo[45418:a0b] rapidEarsDidReceiveLiveSpeechHypothesis: LICENSEREJECTO, score=198748464</p></blockquote>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/mixed-pocketsphinx-rapidears/#post-1018691</guid>
+					<title><![CDATA[Reply To: Mixed Pocketsphinx &amp; rapidEars]]></title>
+					<link>/forums/topic/mixed-pocketsphinx-rapidears/#post-1018691</link>
+					<pubDate>Sat, 19 Oct 2013 08:11:54 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Claude,</p>
+<p>RapidEars extends PocketsphinxController (it adds some new methods to it which are supported by RapidEars&#8217; source and there are a few parts of PocketsphinxController that it consequently doesn&#8217;t use) so it&#8217;s correct that both PocketsphinxController and RapidEars are represented in the callbacks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

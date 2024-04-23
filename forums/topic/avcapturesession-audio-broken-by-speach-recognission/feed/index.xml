@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>AVCaptureSession audio combined with speech recognition &#8211; Politepix</title>
+		<atom:link href="/forums/topic/avcapturesession-audio-broken-by-speach-recognission/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/avcapturesession-audio-broken-by-speach-recognission/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:07:55 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/avcapturesession-audio-broken-by-speach-recognission/#post-1022188</guid>
+					<title><![CDATA[AVCaptureSession audio combined with speech recognition]]></title>
+					<link>/forums/topic/avcapturesession-audio-broken-by-speach-recognission/#post-1022188</link>
+					<pubDate>Tue, 12 Aug 2014 23:53:48 +0000</pubDate>
+					<dc:creator>decoder</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi there&#8230; I&#8217;m evaluating OpenEars with PocketsphinxController for my App (iOS 7.1, iPhone4s)</p>
+<p>I&#8217;m recording video and audio (with AVFoundation-&gt;AVCaptureSession &#8212; AVCam sample code) and in parallel I use pocketsphinxcontroller to recognise voice for starting/stopping the video recording.</p>
+<p>The video/audio recording starts just fine, but after few seconds, while i&#8217;m speaking some commands the audio suddenly stops in the video capture and doesn&#8217;t come back unless I start the video capture session again.</p>
+<p>The pocketsphinxcontroller recognition works just fine.</p>
+<p>Here are my settings (not using flite or any other audio out playback):<br />
+    pocketsphinxController.returnNbest = YES;<br />
+    pocketsphinxController.nBestNumber = 5;<br />
+    self.pocketsphinxController.audioSessionMixing = YES;<br />
+    self.pocketsphinxController.outputAudio = NO;</p>
+<p>tried: self.pocketsphinxController.audioMode = @&#8221;VoiceChat&#8221;; too but no success.</p>
+<p>This is the debug log. It seems that the audio breaks approximatively around:</p>
+<p>2014-08-13 01:35:53.954 [5950:8707]</p>
+<p>&#8230;.</p>
+<p>2014-08-13 01:35:53.884 [5950:60b] Validating ROAD<br />
+2014-08-13 01:35:53.892 [5950:60b] Command ROAD Not Found in Keywords<br />
+2014-08-13 01:35:53.888 [5950:8707] audioCategory is correct, we will leave it as it is.<br />
+2014-08-13 01:35:53.894 [5950:60b] Hypothesis 1: ROAD with a score of -29048<br />
+2014-08-13 01:35:53.894 [5950:8707] bluetoothInput is incorrect, we will change it.<br />
+2014-08-13 01:35:53.896 [5950:60b] Hypothesis 2: EVIDENCE with a score of -29137<br />
+2014-08-13 01:35:53.902 [5950:60b] Hypothesis 3: SPEED with a score of -49907<br />
+2014-08-13 01:35:53.904 [5950:60b] Hypothesis 4:  with a score of -50079<br />
+2014-08-13 01:35:53.910 [5950:60b] Hypothesis 5: STOP with a score of -50234<br />
+2014-08-13 01:35:53.927 [5950:8707] bluetooth input is now on the correct setting of 1.<br />
+2014-08-13 01:35:53.927 [5950:8707] bluetooth input is now on the correct setting of 1.<br />
+2014-08-13 01:35:53.954 [5950:8707] Output Device: SpeakerAndMicrophone.<br />
+2014-08-13 01:35:53.960 [5950:8707] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2014-08-13 01:35:53.965 [5950:8707] OverrideCategoryMixWithOthers is incorrect, we will change it.<br />
+2014-08-13 01:35:53.970 [5950:8707] OverrideCategoryMixWithOthers is now on the correct setting of 1.<br />
+2014-08-13 01:35:53.978 [5950:8707] preferredBufferSize is incorrect, we will change it.<br />
+2014-08-13 01:35:53.982 [5950:8707] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2014-08-13 01:35:53.989 [5950:8707] preferredSampleRateCheck is incorrect, we will change it.<br />
+2014-08-13 01:35:54.736 [5950:8707] preferred hardware sample rate is now on the correct setting of 16000.000000.<br />
+2014-08-13 01:35:54.738 [5950:8707] Setting the variables for the device and starting it.<br />
+2014-08-13 01:35:54.740 [5950:8707] Looping through ringbuffer sections and pre-allocating them.<br />
+2014-08-13 01:35:54.853 [5950:8707] Started audio output unit.<br />
+2014-08-13 01:35:54.862 [5950:8707] Listening.</p>
+<p>I suspect that the adjustments that are done and the restart of the audio unit is the reason of breaking the audio capture but what could be the reason of that?</p>
+<p>Thanks,<br />
+Daniel</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/avcapturesession-audio-broken-by-speach-recognission/#post-1022194</guid>
+					<title><![CDATA[Reply To: AVCaptureSession audio combined with speech recognition]]></title>
+					<link>/forums/topic/avcapturesession-audio-broken-by-speach-recognission/#post-1022194</link>
+					<pubDate>Wed, 13 Aug 2014 07:41:33 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Yes, this is a known issue due to AV objects having as stringent audio session requirements as OpenEars. You can search for the keywords audio coexistence, or video, in these forums to read much more about it.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/avcapturesession-audio-broken-by-speach-recognission/#post-1022343</guid>
+					<title><![CDATA[Reply To: AVCaptureSession audio combined with speech recognition]]></title>
+					<link>/forums/topic/avcapturesession-audio-broken-by-speach-recognission/#post-1022343</link>
+					<pubDate>Fri, 22 Aug 2014 18:44:21 +0000</pubDate>
+					<dc:creator>decoder</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>@Halle: Thanks for the feedback. Didn&#8217;t found anything that could fix the issue on the fly but while experimenting different values I got it working by doing:</p>
+<p>    self.pocketsphinxController.audioMode = @&#8221;VideoRecording&#8221;;<br />
+    self.pocketsphinxController.audioSessionMixing = YES;<br />
+    self.pocketsphinxController.outputAudio = NO;</p>
+<p>before doing startListeningWithLanguageModelAtPath</p>
+<p>Now it still happens very seldom, so I restart the session automatically from the pocketSphinxContinuousSetupDidFail function. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/avcapturesession-audio-broken-by-speach-recognission/#post-1022344</guid>
+					<title><![CDATA[Reply To: AVCaptureSession audio combined with speech recognition]]></title>
+					<link>/forums/topic/avcapturesession-audio-broken-by-speach-recognission/#post-1022344</link>
+					<pubDate>Fri, 22 Aug 2014 18:55:38 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, good to know. I am working on some new coexistence code right now, so if you&#8217;d like to send me a sample app to test against that shows the unwanted behavior, future versions of OpenEars may handle this without any issues. But the sample app has to be extremely simple, as simple as possible to demonstrate the issue –– everything in a single view controller and only a few methods. If you&#8217;d like to send it, send me a note via the contact form.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/avcapturesession-audio-broken-by-speach-recognission/#post-1022612</guid>
+					<title><![CDATA[Reply To: AVCaptureSession audio combined with speech recognition]]></title>
+					<link>/forums/topic/avcapturesession-audio-broken-by-speach-recognission/#post-1022612</link>
+					<pubDate>Tue, 23 Sep 2014 22:05:03 +0000</pubDate>
+					<dc:creator>decoder</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for your feedback. Tested the same code with iOS 8 and got another issue when switching video recording to another file. Apparently, this time the video recording can&#8217;t start anymore (or the delegate doesn&#8217;t fire correctly).</p>
+<p>Generally OpenEars collides somehow with the AVCaptureSession (or other way around).</p>
+<p>When I&#8217;ll get some time I will try to add Voice Commands to the AVCam sample from Apple (<a href="https://developer.apple.com/library/ios/samplecode/AVCam/Introduction/Intro.html" rel="nofollow">https://developer.apple.com/library/ios/samplecode/AVCam/Introduction/Intro.html</a>) and hopefully I will be able to reproduces these conflicts.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/avcapturesession-audio-broken-by-speach-recognission/#post-1022613</guid>
+					<title><![CDATA[Reply To: AVCaptureSession audio combined with speech recognition]]></title>
+					<link>/forums/topic/avcapturesession-audio-broken-by-speach-recognission/#post-1022613</link>
+					<pubDate>Tue, 23 Sep 2014 22:22:28 +0000</pubDate>
+					<dc:creator>decoder</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Looked into the debug info and found that after I get this debug message: &#8220;Stopping audio unit&#8221; the AVCapture doesn&#8217;t work stable.</p>
+<p>Apparently, if I speak when stooping/restarting video recording, erratically, &#8220;Stopping audio unit&#8221; appears and the problems occurs.</p>
+<p>If I turn off the OpenEars completely everything woks fine with the recording so it is definitively a conflict.</p>
+<p>Forgot the say&#8230; On iOS8 if I apply the &#8220;patch&#8221; the video session is even more unstable.</p>
+<p>Do you know what really means &#8220;Stopping audio unit.&#8221; and what could be the reason of this?</p>
+<p>Here&#8217;s excerpt of the debug log:<br />
+2014-09-24 00:07:25.365 Streetcorder[4816:624437] Stopping audio unit.<br />
+2014-09-24 00:07:25.365 Streetcorder[4816:624371] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2014-09-24 00:07:25.408 Streetcorder[4816:624437] Audio Output Unit stopped, cleaning up variable states.<br />
+2014-09-24 00:07:25.409 Streetcorder[4816:624437] Processing speech, please wait&#8230;</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/avcapturesession-audio-broken-by-speach-recognission/#post-1022614</guid>
+					<title><![CDATA[Reply To: AVCaptureSession audio combined with speech recognition]]></title>
+					<link>/forums/topic/avcapturesession-audio-broken-by-speach-recognission/#post-1022614</link>
+					<pubDate>Wed, 24 Sep 2014 03:20:40 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yes, this is due to two conflicting audio sessions with different sample rates and bitrates. You are welcome to send me a very simple sample app demonstrating the issue if you would like to see this as a possible future feature.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/avcapturesession-audio-broken-by-speach-recognission/#post-1023668</guid>
+					<title><![CDATA[Reply To: AVCaptureSession audio combined with speech recognition]]></title>
+					<link>/forums/topic/avcapturesession-audio-broken-by-speach-recognission/#post-1023668</link>
+					<pubDate>Tue, 23 Dec 2014 09:28:45 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This kind of video object coexistence ought to work by default with OpenEars 2.0, but I&#8217;m waiting to hear some feedback about it from the developers who have these features in their apps.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/avcapturesession-audio-broken-by-speach-recognission/#post-1023671</guid>
+					<title><![CDATA[Reply To: AVCaptureSession audio combined with speech recognition]]></title>
+					<link>/forums/topic/avcapturesession-audio-broken-by-speach-recognission/#post-1023671</link>
+					<pubDate>Tue, 23 Dec 2014 13:13:26 +0000</pubDate>
+					<dc:creator>decoder</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle, Thanks for the new release!<br />
+I will upgrade to 2.0 these days and I&#8217;ll come back with some feedback about this issue. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/avcapturesession-audio-broken-by-speach-recognission/#post-1023673</guid>
+					<title><![CDATA[Reply To: AVCaptureSession audio combined with speech recognition]]></title>
+					<link>/forums/topic/avcapturesession-audio-broken-by-speach-recognission/#post-1023673</link>
+					<pubDate>Tue, 23 Dec 2014 13:20:37 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Super, no rush at all but I will be interested in your results. Remember to first remove any workarounds you put in to get this working, so they don&#8217;t interfere with the default behavior. </p>
+<p>This feature is a work in progress and probably needs a fair amount of feedback to catch lots of cases, so don&#8217;t be discouraged if it doesn&#8217;t work ideally for your case yet, just let me know what is happening when it doesn&#8217;t do the right thing and if possible give me a replication case so I can look into it.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

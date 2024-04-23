@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Logging Time of Word Recognition &#8211; Politepix</title>
+		<atom:link href="/forums/topic/logging-time-of-word-recognition/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/logging-time-of-word-recognition/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:44:54 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/logging-time-of-word-recognition/#post-13088</guid>
+					<title><![CDATA[Logging Time of Word Recognition]]></title>
+					<link>/forums/topic/logging-time-of-word-recognition/#post-13088</link>
+					<pubDate>Mon, 19 Nov 2012 12:22:17 +0000</pubDate>
+					<dc:creator>Matt</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Everyone,</p>
+<p>Does anyone know if there is a way of logging the time of recognition of each word that RapidEars identifies?</p>
+<p>Matt</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/logging-time-of-word-recognition/#post-13089</guid>
+					<title><![CDATA[Reply To: Logging Time of Word Recognition]]></title>
+					<link>/forums/topic/logging-time-of-word-recognition/#post-13089</link>
+					<pubDate>Mon, 19 Nov 2012 12:29:25 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Matt,</p>
+<p>You could just give yourself a timestamp using [NSDate date] in whichever RapidEars+OpenEarsEventsObserver delegate method you are taking your recognition results from. If you want it in a particular format you can create an NSDataFormatter as an ivar of your view controller and keep reusing it to get the formatted timestamp:</p>
+<p><a href="http://stackoverflow.com/questions/2035201/iphone-nsdateformatter" rel="nofollow">http://stackoverflow.com/questions/2035201/iphone-nsdateformatter</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

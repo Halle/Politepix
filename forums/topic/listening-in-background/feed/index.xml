@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Listening in Background &#8211; Politepix</title>
+		<atom:link href="/forums/topic/listening-in-background/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/listening-in-background/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:59:16 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/listening-in-background/#post-1018031</guid>
+					<title><![CDATA[Listening in Background]]></title>
+					<link>/forums/topic/listening-in-background/#post-1018031</link>
+					<pubDate>Fri, 23 Aug 2013 20:42:55 +0000</pubDate>
+					<dc:creator>jsteffey@hatci.com</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>We have an App that can listen in the background, but it only works if we start listening while the App is in the foreground, and then switch to the background, and we can see the red bar at the top.</p>
+<p>But when we try to start listening while already in the background, we encounter an exception. Below is the logging output:</p>
+<p>Recognition loop has started<br />
+Starting openAudioDevice on the device.<br />
+Audio unit wrapper successfully created.<br />
+12:27:41.633 &lt;0x4d89000&gt; AURemoteIO::Initialize failed: -12985 (enable 3, outf&lt; 1 ch,  16000 Hz, Int16&gt; inf&lt; 1 ch,  16000 Hz, Int16&gt;)<br />
+Couldn&#8217;t initialize audio unit: -12985<br />
+openAudioDevice failed</p>
+<p>We have set our App to use the background mode plays audio, so that&#8217;s why it works in the first scenario. Any thoughts on why we have trouble starting in the background?</p>
+<p>Thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/listening-in-background/#post-1018032</guid>
+					<title><![CDATA[Reply To: Listening in Background]]></title>
+					<link>/forums/topic/listening-in-background/#post-1018032</link>
+					<pubDate>Fri, 23 Aug 2013 20:50:06 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Hmm, I don&#8217;t think it&#8217;s possible to start up remoteio audio recording while in the background. My understanding is that the background mode can background a recording that is already in process but not start one. Have you encountered other examples in which this works?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/listening-in-background/#post-1018135</guid>
+					<title><![CDATA[Reply To: Listening in Background]]></title>
+					<link>/forums/topic/listening-in-background/#post-1018135</link>
+					<pubDate>Mon, 26 Aug 2013 18:57:45 +0000</pubDate>
+					<dc:creator>jsteffey@hatci.com</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>We have not encountered any other examples. I&#8217;ll keep looking into it but you may be right that background mode cannot start a recording.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/listening-in-background/#post-1018217</guid>
+					<title><![CDATA[Reply To: Listening in Background]]></title>
+					<link>/forums/topic/listening-in-background/#post-1018217</link>
+					<pubDate>Mon, 02 Sep 2013 05:56:59 +0000</pubDate>
+					<dc:creator>pooja</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi<br />
+I am working on an App that can listen in the background, app starts listening when it is in foreground and then switch to background.<br />
+Can you please help me in achieving this.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/listening-in-background/#post-1018221</guid>
+					<title><![CDATA[Reply To: Listening in Background]]></title>
+					<link>/forums/topic/listening-in-background/#post-1018221</link>
+					<pubDate>Mon, 02 Sep 2013 17:57:04 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Pooja, </p>
+<p>This question is unlikely to get an answer because it requests a very large amount of work from the other party &#8212; you are basically requesting a complete tutorial. The other longer thread in which you asked this question has all the info needed in order to answer your question, please give it another read-through and try out some or all of the suggestions in it.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

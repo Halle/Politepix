@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Background speech &#8211; Politepix</title>
+		<atom:link href="/forums/topic/background-speech/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/background-speech/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:00:05 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/background-speech/#post-1017308</guid>
+					<title><![CDATA[Background speech]]></title>
+					<link>/forums/topic/background-speech/#post-1017308</link>
+					<pubDate>Sun, 26 May 2013 00:03:09 +0000</pubDate>
+					<dc:creator>adamastern</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Is it possible to have openears speak in whilst an app is in the background? I have looked at a few threads on here but none have a definitive answer. Has anyone done this?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/background-speech/#post-1017309</guid>
+					<title><![CDATA[Reply To: Background speech]]></title>
+					<link>/forums/topic/background-speech/#post-1017309</link>
+					<pubDate>Sun, 26 May 2013 09:33:17 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>There are many reports of getting this working:<br />
+<a href="/forums/topic/flite-in-background/">/forums/topic/flite-in-background/</a><br />
+<a href="/forums/topic/keeping-audio-running-when-app-goes-into-background/">/forums/topic/keeping-audio-running-when-app-goes-into-background/</a><br />
+<a href="/forums/topic/openears-listening-while-app-is-in-background/">/forums/topic/openears-listening-while-app-is-in-background/</a></p>
+<p>The last has a lot of detail on background TTS starting with the first post from gotok.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

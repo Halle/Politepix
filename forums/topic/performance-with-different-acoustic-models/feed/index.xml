@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Performance with different acoustic models &#8211; Politepix</title>
+		<atom:link href="/forums/topic/performance-with-different-acoustic-models/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/performance-with-different-acoustic-models/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:57:37 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/performance-with-different-acoustic-models/#post-1017379</guid>
+					<title><![CDATA[Performance with different acoustic models]]></title>
+					<link>/forums/topic/performance-with-different-acoustic-models/#post-1017379</link>
+					<pubDate>Tue, 04 Jun 2013 19:52:34 +0000</pubDate>
+					<dc:creator>OT</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I was wondering if anyone has tried using different acoustic models from the default ones that come with OpenEars (which are trained on 8kHz sampled speech)?</p>
+<p>If so, could you please describe which models you&#8217;ve used and let me know if you noticed any difference in the ASR performance. (this will obviously depend on the task/grammar, but even at the high-level I&#8217;m curious in other people experience with different acoustic models).</p>
+<p>Two that come to mind are Voxforge (actually they seem to have couple of different acoustic models) and CMU Spinhx 16kHz HUB4 models from <a href="http://sourceforge.net/projects/cmusphinx/files/Acoustic%20and%20Language%20Models/US%20English%20HUB4%20Acoustic%20Model/" rel="nofollow">http://sourceforge.net/projects/cmusphinx/files/Acoustic%20and%20Language%20Models/US%20English%20HUB4%20Acoustic%20Model/</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

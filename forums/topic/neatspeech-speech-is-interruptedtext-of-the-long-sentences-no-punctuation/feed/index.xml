@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>NeatSpeech) Speech is interrupted(text of the long sentences, no punctuation) &#8211; Politepix</title>
+		<atom:link href="/forums/topic/neatspeech-speech-is-interruptedtext-of-the-long-sentences-no-punctuation/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/neatspeech-speech-is-interruptedtext-of-the-long-sentences-no-punctuation/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:44:23 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/neatspeech-speech-is-interruptedtext-of-the-long-sentences-no-punctuation/#post-1015623</guid>
+					<title><![CDATA[NeatSpeech) Speech is interrupted(text of the long sentences, no punctuation)]]></title>
+					<link>/forums/topic/neatspeech-speech-is-interruptedtext-of-the-long-sentences-no-punctuation/#post-1015623</link>
+					<pubDate>Thu, 14 Feb 2013 08:29:55 +0000</pubDate>
+					<dc:creator>hitoshi</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello, Halle.</p>
+<p>With the licensed NeatSpeech version,<br />
+when I check the operations for speed test on the iPhone4 device(iOS6.1),<br />
+I got to find a bug.</p>
+<p>I created a long text that contains no punctuation.<br />
+And, I set the text to the argument of the &#8220;sayWithNeatSpeech:withVoice:&#8221;.</p>
+<p>As a result, when 21.62 seconds has elapsed since the start speaking(The bottom line is &#8216;FliteController.audioPlayer.isPlaying=YES&#8217;), the speech was stopped.</p>
+<p>It is the same result even if I change the slow speed.(When 21.62 seconds has elapsed, it stopped.)<br />
+And, This is the same result on the iPhone5.</p>
+<p>Thank you for your consideration.<br />
+Your anticipated assistance in this matter is greatly appreciated.</p>
+<p>Best regards,<br />
+Hitoshi</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-speech-is-interruptedtext-of-the-long-sentences-no-punctuation/#post-1015624</guid>
+					<title><![CDATA[Reply To: NeatSpeech) Speech is interrupted(text of the long sentences, no punctuation)]]></title>
+					<link>/forums/topic/neatspeech-speech-is-interruptedtext-of-the-long-sentences-no-punctuation/#post-1015624</link>
+					<pubDate>Thu, 14 Feb 2013 08:36:11 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello Hitoshi,</p>
+<p>This isn&#8217;t a bug, there is a maximum length that is possible with a single utterance that has no punctuation in order to prevent unacceptable memory overhead. The maximum length  is longer than unpunctuated sentences ever are in English. Just continue to use punctuation or add the pause token that is described in the documentation.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-speech-is-interruptedtext-of-the-long-sentences-no-punctuation/#post-1015647</guid>
+					<title><![CDATA[Reply To: NeatSpeech) Speech is interrupted(text of the long sentences, no punctuation)]]></title>
+					<link>/forums/topic/neatspeech-speech-is-interruptedtext-of-the-long-sentences-no-punctuation/#post-1015647</link>
+					<pubDate>Sat, 16 Feb 2013 19:25:55 +0000</pubDate>
+					<dc:creator>hitoshi</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Umm.. This isn&#8217;t a bug.<br />
+Is that so? I&#8217;m sorry to hear that&#8230;</p>
+<p>I think I should not let the users listen to incomplete speech.<br />
+In the next version, I&#8217;d like you to to consider that &#8220;sayWithNeatSpeech:withVoice:&#8221; returns the BOOL value.<br />
+(When incomplete voice is made, I wish the sound engine to return NO without reconstructing sound.)</p>
+<p>As far as I examined, when becoming incomplete sound, &#8220;FliteController.audioPlayer&#8221; becomes the  following condition.<br />
+FliteController.audioPlayer.duration = 20.83sec<br />
+FliteController.audioPlayer.data.length = 2,000,044byte</p>
+<p>This means that there is possibility to become incomplete data when it reconstructs slowly using short text.<br />
+For example, it occurs in the following case;<br />
+speed=-1.0f<br />
+text=&#8221;w w w w w w w w w w w w w w w w w w w w w w w w w w &#8221;  (Only 52 characters!)</p>
+<p>I think that it is difficult to judge with only text length.<br />
+It is appropriate that we judge by the result of creating speech data, isn&#8217;t it?</p>
+<p>Thank you very much for your understanding.<br />
+Hitoshi</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-speech-is-interruptedtext-of-the-long-sentences-no-punctuation/#post-1015649</guid>
+					<title><![CDATA[Reply To: NeatSpeech) Speech is interrupted(text of the long sentences, no punctuation)]]></title>
+					<link>/forums/topic/neatspeech-speech-is-interruptedtext-of-the-long-sentences-no-punctuation/#post-1015649</link>
+					<pubDate>Sun, 17 Feb 2013 00:09:49 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Hitoshi,</p>
+<p>Can you give an example of a real sentence from your app that you need to say that encounters this limit and is not possible to place any commas, periods, or the pause token in? The sentence consisting of >20 repetitions of the letter w in a row doesn&#8217;t look like something that occurs in a real app interaction, but if I&#8217;m not correct about that, you could perform it in your app without a problem by programmatically placing a comma or a pause token in between the middle two &#8220;w&#8221;s, or between all of them. Unfortunately it isn&#8217;t possible to return anything from say:withNeatSpeech:usingVoice: because it is an asynchronous method and the time of the utterance is known after synthesizing it.</p>
+<p>The size of the maximum unpunctuated utterance was intentionally chosen based on the fact that it is several times larger than real sentence clauses in English. You can see this in the case of your choice of &#8220;w&#8221;, which contains the syllables of two complete words (&#8216;double&#8217; and &#8216;you&#8217;). In order for a sentence clause to occur which needed to render as many syllables as your test sentence, it would need to be an unpunctuated clause containing ~52 words. I&#8217;m not aware of a clause like this. But the pause token was added to the API specifically so that you would never need to have your users hear speech that is cut off, since you can programmatically insert it into long text that lacks punctuation.</p>
+<p>I&#8217;m not opposed to examining this in the long term, but I&#8217;d want to start with a real usage case that is creating an issue for someone in their app.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-speech-is-interruptedtext-of-the-long-sentences-no-punctuation/#post-1015682</guid>
+					<title><![CDATA[Reply To: NeatSpeech) Speech is interrupted(text of the long sentences, no punctuation)]]></title>
+					<link>/forums/topic/neatspeech-speech-is-interruptedtext-of-the-long-sentences-no-punctuation/#post-1015682</link>
+					<pubDate>Tue, 19 Feb 2013 09:32:07 +0000</pubDate>
+					<dc:creator>hitoshi</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi, Halle.</p>
+<p>I gave an extreme example. I know that this case is very rare on the real text.<br />
+However, I have ever heard the sentence that was interrupted on our app with NeatSpeech.<br />
+(Sorry, I do not remember whether it was what kind of sentence.<br />
+ It was certain that I made the app speak most slowly.)</p>
+<p>Our application deals with a variety of text datas.<br />
+It is too difficult to determine the point at which to set the punctuations.</p>
+<p>If I set a lot of punctuations for a rainy day(=when it was set to speed=-1.0f),<br />
+the engine would unnatural speech in the normal speed.<br />
+And yet, I am anxious lest the speech is interrupted.</p>
+<p>I suggest the following;<br />
+Would you like to provide new methods split &#8220;sayWithNeatSpeech:withVoice:&#8221; ?<br />
+e.g.<br />
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br />
+[FliteController Class]<br />
+-(void)makeSayWithNeatSpeech:(NSString *)statement withVoice:(NeatSpeechVoice *)voiceToUse;<br />
+&#8230;This is the function of only the creation of the speech data. It does not start the speech.</p>
+<p>-(BOOL)sayQueue;<br />
+&#8230;Say the sentence made on &#8220;makeSayWithNeatSpeech:withVoice:&#8221;.<br />
+ If the engine have not created yet, it return No.</p>
+<p>[OpenEarsEventsObserverDelegate Protocol]<br />
+-(void)fliteDidMakeSpeaking:(BOOL)result;<br />
+&#8230;This is the notification of &#8220;The engine created speech data.&#8221;.<br />
+   If there is a problem with the data created, result = No.<br />
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+<p>Another benefit of this proposal is also available.<br />
+Under present conditions, when we called &#8220;sayWithNeatSpeech:withVoice:&#8221;,<br />
+we need to wait just a moment to begin speech.</p>
+<p>If we can create the speech data in advance, at the timing when the user taps the play button<br />
+we can play immediately speech data.</p>
+<p>Your kind consideration of this matter would be sincerely appreciated.<br />
+Best regards,<br />
+Hitoshi</p>
+<p>P.S.<br />
+I&#8217;m afraid my expressions may be rude or hard to read, because I&#8217;m not so good at English.<br />
+I will try hard to learn English.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-speech-is-interruptedtext-of-the-long-sentences-no-punctuation/#post-1015683</guid>
+					<title><![CDATA[Reply To: NeatSpeech) Speech is interrupted(text of the long sentences, no punctuation)]]></title>
+					<link>/forums/topic/neatspeech-speech-is-interruptedtext-of-the-long-sentences-no-punctuation/#post-1015683</link>
+					<pubDate>Tue, 19 Feb 2013 09:47:44 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Hitoshi,</p>
+<p>Your English is great and I know how it is to have to speak with subtlety in a second language, since I have to use a second language frequently and also worry that I sound too brusque when I am making requests.</p>
+<p>I will definitely take your suggestion on board and consider the best way to integrate it in a future version, thank you for your suggestions. The most likely solution to the long unpunctuated speech question will just be to force a split on long unpunctuated text streams, since the lack of punctuation means there will be no contextual cues and the location of the split can be arbitrary (meaning: without any punctuation, we don&#8217;t know where the writer of the sentence meant to have clauses or emphasis, so we can split it anywhere because there is no better option). I&#8217;m not sure if I want to change the API to accomplish this goal but I will consider what you said.</p>
+<p>To give you a preview for how I would be likely to do the long sentence splitting, I will probably implement an NSScanner to count incidents of whitespace between words and pick an arbitrary value that are &#8220;too many&#8221; spaces without there also being any punctuation or pauses, and insert a pause token before sending it to synthesis. So you could also use this as your workaround right now if you need this immediately.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-speech-is-interruptedtext-of-the-long-sentences-no-punctuation/#post-1015685</guid>
+					<title><![CDATA[Reply To: NeatSpeech) Speech is interrupted(text of the long sentences, no punctuation)]]></title>
+					<link>/forums/topic/neatspeech-speech-is-interruptedtext-of-the-long-sentences-no-punctuation/#post-1015685</link>
+					<pubDate>Tue, 19 Feb 2013 14:12:18 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I wanted to mention that in order to look into this issue it is still important to receive an example of this which occurs naturally in your app, since it is needed in order to design an appropriate fix and to assign the fix a priority. So far, there has never been a bug report of this occurring &#8220;in the wild&#8221; because it was designed to be an improbable event, so it would be good to get a real example of how it occurred in your app in a form that prevents the pause token from being used, in order to understand the first case of it appearing as an issue.</p>
+<p>If your app reads different sources, just let me know about a source which leads to this issue &#8212; you can also inform me by email in order to keep it private.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-speech-is-interruptedtext-of-the-long-sentences-no-punctuation/#post-1015702</guid>
+					<title><![CDATA[Reply To: NeatSpeech) Speech is interrupted(text of the long sentences, no punctuation)]]></title>
+					<link>/forums/topic/neatspeech-speech-is-interruptedtext-of-the-long-sentences-no-punctuation/#post-1015702</link>
+					<pubDate>Thu, 21 Feb 2013 05:47:15 +0000</pubDate>
+					<dc:creator>hitoshi</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi, Halle.</p>
+<p>Thank you so much.</p>
+<p>So far, I did not found the text of the problem.<br />
+If I find that, I will report to you immediately.</p>
+<p>I will try the method to force a split on long unpunctuated text streams.</p>
+<p>I appreciate all your help.<br />
+Hitoshi</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

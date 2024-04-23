@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Recording OpenEars Audio Input to File &#8211; Politepix</title>
+		<atom:link href="/forums/topic/recording-openears-audion-input-to-file/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/recording-openears-audion-input-to-file/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:48:27 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/recording-openears-audion-input-to-file/#post-13054</guid>
+					<title><![CDATA[Recording OpenEars Audio Input to File]]></title>
+					<link>/forums/topic/recording-openears-audion-input-to-file/#post-13054</link>
+					<pubDate>Sat, 17 Nov 2012 04:18:01 +0000</pubDate>
+					<dc:creator>Lann</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello, I have OpenEars working in my application but desperately need to record the audio to file. Any example of how to do this would be helpful. Here is the approach I have tried so far which does not work:</p>
+<p>ContinuousModel.mm (Line 1322) :</p>
+<p>    NSUInteger dataLength = [wavData length];<br />
+    SInt16 *wavSamples = (SInt16*)malloc(dataLength);<br />
+    memcpy(wavSamples, [wavData bytes], dataLength);</p>
+<p>/***** WRITE The WAV DATA TO FILE ******/<br />
+NSLog(@&#8221;Writing to file&#8221;);</p>
+<p>NSFileHandle *file;<br />
+NSMutableData *data;</p>
+<p>data = [NSMutableData dataWithBytes:wavSamples length:dataLength];</p>
+<p>file = [NSFileHandle fileHandleForWritingAtPath: @&#8221;/tmp/quickfox.wav&#8221;];</p>
+<p>if (file == nil)<br />
+      NSLog(@&#8221;Failed to open file&#8221;);</p>
+<p>[file writeData: data];<br />
+[file closeFile];<br />
+[file release];<br />
+/**************************************/</p>
+<p>I have started a stackoverflow.com question for this as well: <a href="http://stackoverflow.com/questions/13427619/openears-how-to-record-audio-data-to-file" rel="nofollow">http://stackoverflow.com/questions/13427619/openears-how-to-record-audio-data-to-file</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recording-openears-audion-input-to-file/#post-13066</guid>
+					<title><![CDATA[Reply To: Recording OpenEars Audion Input to File]]></title>
+					<link>/forums/topic/recording-openears-audion-input-to-file/#post-13066</link>
+					<pubDate>Sun, 18 Nov 2012 10:34:27 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>Maybe SaveThatWave does what you&#8217;d like: <a href="/shop/savethatwavedemo">/shop/savethatwavedemo</a>. It wraps up starting/stopping non-blocking WAV saving from incoming speech, and notifications that the file was recorded with the path to the recording as part of the notification, handles logic for suspending/resuming and other corner cases, and wraps up deleting a single recording and deleting all recordings. You can use the tutorial tool to integrate it very easily: <a href="/openears/tutorial">/openears/tutorial</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recording-openears-audion-input-to-file/#post-13111</guid>
+					<title><![CDATA[Reply To: Recording OpenEars Audion Input to File]]></title>
+					<link>/forums/topic/recording-openears-audion-input-to-file/#post-13111</link>
+					<pubDate>Mon, 19 Nov 2012 21:41:48 +0000</pubDate>
+					<dc:creator>Lann</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Halle, it does, and you are a sexy man! This is exactly what i was looking for. I am getting an error during installation that pocketsphinxController.outputAudio is undefined. I&#8217;m not sure how to tell which version of OpenEars i&#8217;m running. This may be a huge problem for me because I have somewhat heavily modified OpenEars for my project and it may have been based on a version that does not have this method.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recording-openears-audion-input-to-file/#post-13112</guid>
+					<title><![CDATA[Reply To: Recording OpenEars Audion Input to File]]></title>
+					<link>/forums/topic/recording-openears-audion-input-to-file/#post-13112</link>
+					<pubDate>Mon, 19 Nov 2012 21:52:02 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Right, you&#8217;ll need at least version 1.2 for plugin compatibility. Can you download current version 1.2.4, diff your customizations and reintegrate them into it? There are a few nice additions and fixes since the version you must be working with, so it&#8217;s probably worthwhile.</p>
+<p>Generally the version can be found in the OpenEars.xcodeproj source files in the comments at the top, and in a file called Version.txt in the root of the OpenEars directory. Since 1.2 it is also shown in the manual and in OpenEarsLogging.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recording-openears-audion-input-to-file/#post-14831</guid>
+					<title><![CDATA[Reply To: Reply To: Recording OpenEars Audion Input to File]]></title>
+					<link>/forums/topic/recording-openears-audion-input-to-file/#post-14831</link>
+					<pubDate>Sat, 08 Dec 2012 05:22:27 +0000</pubDate>
+					<dc:creator>Lann</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>When attempting to link the SaveThatWaveDemo I get the following linker error:</p>
+<p> &#8220;_input_sample_rate&#8221;, referenced from:<br />
+      -[SaveThatWaveController bufferIsAvailable:] in SaveThatWaveDemo(SaveThatWaveController.o)<br />
+      -[SaveThatWaveController pocketsphinxDidDetectFinishedSpeech] in SaveThatWaveDemo(SaveThatWaveController.o)</p>
+<p>This seems to be a valid error since the variable in OpenEars 1.2.4 is actually called &#8220;input_sample_rate&#8221;. </p>
+<p>Could you please provide a new binary for SaveThatWaveController.o?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recording-openears-audion-input-to-file/#post-14833</guid>
+					<title><![CDATA[Reply To: Recording OpenEars Audion Input to File]]></title>
+					<link>/forums/topic/recording-openears-audion-input-to-file/#post-14833</link>
+					<pubDate>Sat, 08 Dec 2012 09:13:11 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The underscore is part of the linker reporting, it isn&#8217;t related to the binary which definitely works with the current version of OpenEars. </p>
+<p>This is an normal issue with installing the plugin &#8212; can you make sure that you&#8217;ve followed all of the steps in the tutorial at <a href="/openears/tutorial">/openears/tutorial</a> including adding the -ObjC linker flag in the right place and making sure that your project isn&#8217;t still linked to an old version of OpenEars?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

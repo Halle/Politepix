@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Multi digit number recognition &#8211; Politepix</title>
+		<atom:link href="/forums/topic/multi-digit-number-recognition/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/multi-digit-number-recognition/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:43:17 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/multi-digit-number-recognition/#post-1019021</guid>
+					<title><![CDATA[Multi digit number recognition]]></title>
+					<link>/forums/topic/multi-digit-number-recognition/#post-1019021</link>
+					<pubDate>Tue, 26 Nov 2013 23:48:39 +0000</pubDate>
+					<dc:creator>montage</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I can&#8217;t seem to figure out how to get mult-digit numbers to be correctly identified. I have a requirement to be able to recognize numbers from one (1) to thirty-five (35). RapidEars seems to be recognizing one (1) to twenty (20) but when I get to twenty-one or higher it recognizes the individual components.  i.e. twenty-one recognized &#8216;twenty&#8217; and &#8216;one&#8217;. I&#8217;ve tried for example adding &#8216;TWENTYONE&#8217; and &#8216;TWENTY ONE&#8217; to the language model and both are getting ignored. </p>
+<p>Has anyone successfully implemented recognition for multi-digit numbers? </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multi-digit-number-recognition/#post-1019026</guid>
+					<title><![CDATA[Reply To: Multi digit number recognition]]></title>
+					<link>/forums/topic/multi-digit-number-recognition/#post-1019026</link>
+					<pubDate>Wed, 27 Nov 2013 08:15:36 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>The issue here is one with speech recognition in general. If you have the words twenty and one in your model, there is no difference in phonemes between the user utterance &#8220;twenty-one&#8221; and &#8220;twenty, one&#8221; from the perspective of the engine (we can hear some elision in the compound version but that is probably not accounted for much in the general-purpose acoustic model and it isn&#8217;t going to be written out differently in the phonetic dictionary). It&#8217;s a tossup which version will be recognized and it sounds like there is a bias for the non-compound version.  </p>
+<p>Something that could help would be to manually increase the probability of the compound number in your language model. If you show the .arpa contents here I can give some hints about what kind of alterations to make. This is kind of hacky IMO but I&#8217;ve had good results with it as an approach to similar puzzles in the past.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multi-digit-number-recognition/#post-1019034</guid>
+					<title><![CDATA[Reply To: Multi digit number recognition]]></title>
+					<link>/forums/topic/multi-digit-number-recognition/#post-1019034</link>
+					<pubDate>Wed, 27 Nov 2013 18:02:56 +0000</pubDate>
+					<dc:creator>montage</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the prompt response. Here is the .arpa file. I am currently only using TWENTYONE (21) and TWENTYTWO (22) as test cases. If this works I will need to have the full range from TWENTYONE (21)  to THIRTYFIVE (35).</p>
+<p>Beginning of data mark: \data\<br />
+ngram 1=nr            # number of 1-grams<br />
+ngram 2=nr            # number of 2-grams<br />
+ngram 3=nr            # number of 3-grams</p>
+<p>\1-grams:<br />
+p_1     wd_1 bo_wt_1<br />
+\2-grams:<br />
+p_2     wd_1 wd_2 bo_wt_2<br />
+\3-grams:<br />
+p_3     wd_1 wd_2 wd_3 </p>
+<p>end of data mark: \end\</p>
+<p>\data\<br />
+ngram 1=29<br />
+ngram 2=54<br />
+ngram 3=27</p>
+<p>\1-grams:<br />
+-98.8186 &lt;/s&gt;	-1.1303<br />
+-0.3010 &lt;s&gt;	0.0000<br />
+-1.7324 BLOCKED	-0.3010<br />
+-1.7324 EIGHT	-0.3010<br />
+-1.7324 EIGHTTEEN	-0.3010<br />
+-1.7324 ELEVEN	-0.3010<br />
+-1.7324 FIFTEEN	-0.3010<br />
+-1.7324 FIVE	-0.3010<br />
+-1.7324 FOUR	-0.3010<br />
+-1.7324 FOURTEEN	-0.3010<br />
+-1.7324 GOAL	-0.3010<br />
+-1.7324 MISS	-0.3010<br />
+-1.7324 NINE	-0.3010<br />
+-1.7324 NINETEEN	-0.3010<br />
+-1.7324 ONE	-0.3010<br />
+-1.7324 SEVEN	-0.3010<br />
+-1.7324 SEVENTEEN	-0.3010<br />
+-1.7324 SHOT	-0.3010<br />
+-1.7324 SIX	-0.3010<br />
+-1.7324 SIXTEEN	-0.3010<br />
+-1.7324 TEN	-0.3010<br />
+-1.7324 THIRTEEN	-0.3010<br />
+-1.7324 THIRTY	-0.3010<br />
+-1.7324 THREE	-0.3010<br />
+-1.7324 TWELVE	-0.3010<br />
+-1.7324 TWENTY	-0.3010<br />
+-1.7324 TWENTYONE	-0.3010<br />
+-1.7324 TWENTYTWO	-0.3010<br />
+-1.7324 TWO	-0.3010</p>
+<p>\2-grams:<br />
+-1.7324 &lt;s&gt; BLOCKED 0.0000<br />
+-1.7324 &lt;s&gt; EIGHT 0.0000<br />
+-1.7324 &lt;s&gt; EIGHTTEEN 0.0000<br />
+-1.7324 &lt;s&gt; ELEVEN 0.0000<br />
+-1.7324 &lt;s&gt; FIFTEEN 0.0000<br />
+-1.7324 &lt;s&gt; FIVE 0.0000<br />
+-1.7324 &lt;s&gt; FOUR 0.0000<br />
+-1.7324 &lt;s&gt; FOURTEEN 0.0000<br />
+-1.7324 &lt;s&gt; GOAL 0.0000<br />
+-1.7324 &lt;s&gt; MISS 0.0000<br />
+-1.7324 &lt;s&gt; NINE 0.0000<br />
+-1.7324 &lt;s&gt; NINETEEN 0.0000<br />
+-1.7324 &lt;s&gt; ONE 0.0000<br />
+-1.7324 &lt;s&gt; SEVEN 0.0000<br />
+-1.7324 &lt;s&gt; SEVENTEEN 0.0000<br />
+-1.7324 &lt;s&gt; SHOT 0.0000<br />
+-1.7324 &lt;s&gt; SIX 0.0000<br />
+-1.7324 &lt;s&gt; SIXTEEN 0.0000<br />
+-1.7324 &lt;s&gt; TEN 0.0000<br />
+-1.7324 &lt;s&gt; THIRTEEN 0.0000<br />
+-1.7324 &lt;s&gt; THIRTY 0.0000<br />
+-1.7324 &lt;s&gt; THREE 0.0000<br />
+-1.7324 &lt;s&gt; TWELVE 0.0000<br />
+-1.7324 &lt;s&gt; TWENTY 0.0000<br />
+-1.7324 &lt;s&gt; TWENTYONE 0.0000<br />
+-1.7324 &lt;s&gt; TWENTYTWO 0.0000<br />
+-1.7324 &lt;s&gt; TWO 0.0000<br />
+-0.3010 BLOCKED &lt;/s&gt; 1.1303<br />
+-0.3010 EIGHT &lt;/s&gt; 1.1303<br />
+-0.3010 EIGHTTEEN &lt;/s&gt; 1.1303<br />
+-0.3010 ELEVEN &lt;/s&gt; 1.1303<br />
+-0.3010 FIFTEEN &lt;/s&gt; 1.1303<br />
+-0.3010 FIVE &lt;/s&gt; 1.1303<br />
+-0.3010 FOUR &lt;/s&gt; 1.1303<br />
+-0.3010 FOURTEEN &lt;/s&gt; 1.1303<br />
+-0.3010 GOAL &lt;/s&gt; 1.1303<br />
+-0.3010 MISS &lt;/s&gt; 1.1303<br />
+-0.3010 NINE &lt;/s&gt; 1.1303<br />
+-0.3010 NINETEEN &lt;/s&gt; 1.1303<br />
+-0.3010 ONE &lt;/s&gt; 1.1303<br />
+-0.3010 SEVEN &lt;/s&gt; 1.1303<br />
+-0.3010 SEVENTEEN &lt;/s&gt; 1.1303<br />
+-0.3010 SHOT &lt;/s&gt; 1.1303<br />
+-0.3010 SIX &lt;/s&gt; 1.1303<br />
+-0.3010 SIXTEEN &lt;/s&gt; 1.1303<br />
+-0.3010 TEN &lt;/s&gt; 1.1303<br />
+-0.3010 THIRTEEN &lt;/s&gt; 1.1303<br />
+-0.3010 THIRTY &lt;/s&gt; 1.1303<br />
+-0.3010 THREE &lt;/s&gt; 1.1303<br />
+-0.3010 TWELVE &lt;/s&gt; 1.1303<br />
+-0.3010 TWENTY &lt;/s&gt; 1.1303<br />
+-0.3010 TWENTYONE &lt;/s&gt; 1.1303<br />
+-0.3010 TWENTYTWO &lt;/s&gt; 1.1303<br />
+-0.3010 TWO &lt;/s&gt; 1.1303</p>
+<p>\3-grams:<br />
+-0.3010 &lt;s&gt; BLOCKED &lt;/s&gt;<br />
+-0.3010 &lt;s&gt; EIGHT &lt;/s&gt;<br />
+-0.3010 &lt;s&gt; EIGHTTEEN &lt;/s&gt;<br />
+-0.3010 &lt;s&gt; ELEVEN &lt;/s&gt;<br />
+-0.3010 &lt;s&gt; FIFTEEN &lt;/s&gt;<br />
+-0.3010 &lt;s&gt; FIVE &lt;/s&gt;<br />
+-0.3010 &lt;s&gt; FOUR &lt;/s&gt;<br />
+-0.3010 &lt;s&gt; FOURTEEN &lt;/s&gt;<br />
+-0.3010 &lt;s&gt; GOAL &lt;/s&gt;<br />
+-0.3010 &lt;s&gt; MISS &lt;/s&gt;<br />
+-0.3010 &lt;s&gt; NINE &lt;/s&gt;<br />
+-0.3010 &lt;s&gt; NINETEEN &lt;/s&gt;<br />
+-0.3010 &lt;s&gt; ONE &lt;/s&gt;<br />
+-0.3010 &lt;s&gt; SEVEN &lt;/s&gt;<br />
+-0.3010 &lt;s&gt; SEVENTEEN &lt;/s&gt;<br />
+-0.3010 &lt;s&gt; SHOT &lt;/s&gt;<br />
+-0.3010 &lt;s&gt; SIX &lt;/s&gt;<br />
+-0.3010 &lt;s&gt; SIXTEEN &lt;/s&gt;<br />
+-0.3010 &lt;s&gt; TEN &lt;/s&gt;<br />
+-0.3010 &lt;s&gt; THIRTEEN &lt;/s&gt;<br />
+-0.3010 &lt;s&gt; THIRTY &lt;/s&gt;<br />
+-0.3010 &lt;s&gt; THREE &lt;/s&gt;<br />
+-0.3010 &lt;s&gt; TWELVE &lt;/s&gt;<br />
+-0.3010 &lt;s&gt; TWENTY &lt;/s&gt;<br />
+-0.3010 &lt;s&gt; TWENTYONE &lt;/s&gt;<br />
+-0.3010 &lt;s&gt; TWENTYTWO &lt;/s&gt;<br />
+-0.3010 &lt;s&gt; TWO &lt;/s&gt; </p>
+<p>\end\</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multi-digit-number-recognition/#post-1019036</guid>
+					<title><![CDATA[Reply To: Multi digit number recognition]]></title>
+					<link>/forums/topic/multi-digit-number-recognition/#post-1019036</link>
+					<pubDate>Thu, 28 Nov 2013 08:16:03 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, so to increase the probability you want to approach zero, which means incrementally adding positive values to your negative values indicated by -0.3010 and -1.7324 just for your 1-grams, 2-grams and 3-grams above TWENTY (just edit them directly in the file referenced above and use that edited .arpa file rather than the .DMP in startListeningWithLanguageModelAtPath:). I would set up a test to try to find the threshold where you stop experiencing the bias towards the individual values by incrementally adding the same small value to all of them (say 0.0100) until they are large enough that the recognition behavior changes to your satisfaction. You can test against the same input by using the pathToTestFile test capability of PocketsphinxController.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multi-digit-number-recognition/#post-1019065</guid>
+					<title><![CDATA[Reply To: Multi digit number recognition]]></title>
+					<link>/forums/topic/multi-digit-number-recognition/#post-1019065</link>
+					<pubDate>Mon, 02 Dec 2013 21:44:00 +0000</pubDate>
+					<dc:creator>montage</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>So the edited .arpa file path replaces the language model path in:</p>
+<p>startRealtimeListeningWithLanguageModelAtPath:<br />
+dictionaryAtPath:<br />
+acousticModelAtPath:</p>
+<p>?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multi-digit-number-recognition/#post-1019066</guid>
+					<title><![CDATA[Reply To: Multi digit number recognition]]></title>
+					<link>/forums/topic/multi-digit-number-recognition/#post-1019066</link>
+					<pubDate>Mon, 02 Dec 2013 22:03:10 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>startRealtimeListeningWithLanguageModelAtPath:</p>
+<p>It replaces the argument you normally pass the DMP file to.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multi-digit-number-recognition/#post-1019076</guid>
+					<title><![CDATA[Reply To: Multi digit number recognition]]></title>
+					<link>/forums/topic/multi-digit-number-recognition/#post-1019076</link>
+					<pubDate>Tue, 03 Dec 2013 22:43:22 +0000</pubDate>
+					<dc:creator>montage</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Interesting, in adjusting the probability values I was able to get TwentyOne properly recognized but I am unable to get TwentyTwo recognized. RapidEars insists on returning two terms when TWENTYTWO is spoken. I&#8217;m wondering if there a different way of specifying the dictionary terms that might lend itself to more accuracy.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multi-digit-number-recognition/#post-1019089</guid>
+					<title><![CDATA[Reply To: Multi digit number recognition]]></title>
+					<link>/forums/topic/multi-digit-number-recognition/#post-1019089</link>
+					<pubDate>Thu, 05 Dec 2013 12:00:54 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>There will be some tipping point at which the probability of TWENTYTWO is higher than the two words TWENTY and TWO. Make sure you&#8217;re catching all of the places in which TWENTYTWO is referenced in the file &#8212; it will appear in the 1-grams, 2-grams and 3-grams. If &#8220;TWENTYTWO&#8221; never matches that could be due to something wrong with its phonetic dictionary (.dic) entry.</p>
+<p>Silly question &#8212; why can&#8217;t you make use of the hypothesis &#8220;TWENTY TWO&#8221; in order to call the method you would call for the hypothesis &#8220;TWENTYTWO&#8221;?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multi-digit-number-recognition/#post-1019122</guid>
+					<title><![CDATA[Reply To: Multi digit number recognition]]></title>
+					<link>/forums/topic/multi-digit-number-recognition/#post-1019122</link>
+					<pubDate>Tue, 10 Dec 2013 21:24:47 +0000</pubDate>
+					<dc:creator>montage</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That is what I have had to end up doing. Tuning the probability wasn&#8217;t giving me the accuracy I required so I ended up putting more effort into the hypothesis processor and it appears to be working better.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

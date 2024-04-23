@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Maximum number of words that can be added to the language dictionary &#8211; Politepix</title>
+		<atom:link href="/forums/topic/maximum-number-of-words-that-can-be-added-to-the-language-dictionary/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/maximum-number-of-words-that-can-be-added-to-the-language-dictionary/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:56:57 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/maximum-number-of-words-that-can-be-added-to-the-language-dictionary/#post-1019796</guid>
+					<title><![CDATA[Maximum number of words that can be added to the language dictionary]]></title>
+					<link>/forums/topic/maximum-number-of-words-that-can-be-added-to-the-language-dictionary/#post-1019796</link>
+					<pubDate>Mon, 20 Jan 2014 06:59:40 +0000</pubDate>
+					<dc:creator>hari</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>i am creating an iOS app for full language recognition .I want to know the maximum number of words that can be added to the language dictionary ,any one please reply</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/maximum-number-of-words-that-can-be-added-to-the-language-dictionary/#post-1019797</guid>
+					<title><![CDATA[Reply To: Maximum number of words that can be added to the language dictionary]]></title>
+					<link>/forums/topic/maximum-number-of-words-that-can-be-added-to-the-language-dictionary/#post-1019797</link>
+					<pubDate>Mon, 20 Jan 2014 08:05:37 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Sorry, you can&#8217;t use offline recognition for large vocabulary recognition. A good language model size for OpenEars is no more than ~1000 words and smaller models than that will perform better and be more accurate. This kind of recognition is used for a particular search domain, i.e. where you know something about the topic of the speech you are trying to recognize and can design a vocabulary that corresponds to it.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/maximum-number-of-words-that-can-be-added-to-the-language-dictionary/#post-1019799</guid>
+					<title><![CDATA[Reply To: Maximum number of words that can be added to the language dictionary]]></title>
+					<link>/forums/topic/maximum-number-of-words-that-can-be-added-to-the-language-dictionary/#post-1019799</link>
+					<pubDate>Mon, 20 Jan 2014 09:53:55 +0000</pubDate>
+					<dc:creator>hari</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>thanks for replying,</p>
+<p> I have <a href="https://svn.code.sf.net/p/cmusphinx/code/trunk/pocketsphinx/model/lm/en_US/cmu07a.dic" rel="nofollow">https://svn.code.sf.net/p/cmusphinx/code/trunk/pocketsphinx/model/lm/en_US/cmu07a.dic</a> dictionary with me. I want to know whether it can be used in iPhone or not.It is having more than 50,000 words in it.is it possible using your sdk.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/maximum-number-of-words-that-can-be-added-to-the-language-dictionary/#post-1019800</guid>
+					<title><![CDATA[Reply To: Maximum number of words that can be added to the language dictionary]]></title>
+					<link>/forums/topic/maximum-number-of-words-that-can-be-added-to-the-language-dictionary/#post-1019800</link>
+					<pubDate>Mon, 20 Jan 2014 10:15:52 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello Hari,</p>
+<p>It isn&#8217;t the dictionary that defines which words Pocketsphinx is able to recognize. The dictionary is used by the language model or grammar to find the pronunciation of a word which is already part of a language model or grammar. So the idea of using a dictionary with Pocketsphinx or OpenEars&#8217; implementation of Pocketsphinx is not the right one, since the dictionary is not the vocabulary. How this works is going to be important to understand regardless of the size of the vocabulary you choose to go with. The OpenEars docs and the Pocketsphinx docs each cover this so they are worth a look.</p>
+<p>Regarding your follow-up question, I did answer it above without any ambiguity. If you want to do large vocabulary recognition with Pocketsphinx, it will have to be done as or via a network service. Even if you do take that approach, there are no pre-rolled large vocabulary sets for Pocketsphinx which cover likely speech for an iPhone user in 2014, so in order to get good accuracy rates, you would have to create your own language model consisting of real phrases your users would say rather than dropping something in which has already been created, since an inappropriate language model will lead to low accuracy.</p>
+<p>BTW, you don&#8217;t need to add cmu07a.dic to an OpenEars app &#8212; it is already in the English acoustic model bundle under the name LanguageModelGeneratorLookupList.text.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

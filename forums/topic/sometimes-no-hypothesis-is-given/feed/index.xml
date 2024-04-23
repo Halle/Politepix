@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Sometimes no hypothesis is given &#8211; Politepix</title>
+		<atom:link href="/forums/topic/sometimes-no-hypothesis-is-given/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/sometimes-no-hypothesis-is-given/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:43:32 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/sometimes-no-hypothesis-is-given/#post-1018988</guid>
+					<title><![CDATA[Sometimes no hypothesis is given]]></title>
+					<link>/forums/topic/sometimes-no-hypothesis-is-given/#post-1018988</link>
+					<pubDate>Tue, 26 Nov 2013 05:10:31 +0000</pubDate>
+					<dc:creator>Lann</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am using OpenEars with Rejecto (paid) and sometimes recognition will detect that speech has finished, but no hypothesis is given. Is there a callback that I can use in this situation? Is there a way for me to know when this specific situation occurs?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/sometimes-no-hypothesis-is-given/#post-1018989</guid>
+					<title><![CDATA[Reply To: Sometimes no hypothesis is given]]></title>
+					<link>/forums/topic/sometimes-no-hypothesis-is-given/#post-1018989</link>
+					<pubDate>Tue, 26 Nov 2013 07:55:00 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Lann,</p>
+<p>This can happen if the speech was only perceived as containing noises, or perceived as only containing rejected speech (that is, it is Rejecto working as designed). You can ask for all null hypotheses to also be returned by setting PocketsphinxController&#8217;s returnNullHypotheses to TRUE (you will receive hypotheses that are NULL and ones that are this string:@&#8221;&#8221;), and you can ask for rejected speech to be returned in a hypothesis in the form of Rejecto-formatted phonemes by setting Rejecto&#8217;s deliverRejectedSpeechInHypotheses to TRUE.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/sometimes-no-hypothesis-is-given/#post-1018990</guid>
+					<title><![CDATA[Reply To: Sometimes no hypothesis is given]]></title>
+					<link>/forums/topic/sometimes-no-hypothesis-is-given/#post-1018990</link>
+					<pubDate>Tue, 26 Nov 2013 09:21:53 +0000</pubDate>
+					<dc:creator>Lann</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks! That worked for me.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

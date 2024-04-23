@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Soft-start Engine &#8211; Politepix</title>
+		<atom:link href="/forums/topic/soft-start-engine/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/soft-start-engine/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:48:13 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/soft-start-engine/#post-1015471</guid>
+					<title><![CDATA[Soft-start Engine]]></title>
+					<link>/forums/topic/soft-start-engine/#post-1015471</link>
+					<pubDate>Fri, 25 Jan 2013 14:21:12 +0000</pubDate>
+					<dc:creator>jbsilb</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m having one challenge that I&#8217;d love to get feedback from the community on:</p>
+<p>When I start Listening, there&#8217;s a bit of a lag, so I typically prefer to start the system prior to requiring any speech input. Unfortunately, that means that it automatically jumps into recognition mode, which can cause code to be implemented that&#8217;s not useful. </p>
+<p>I&#8217;ve solved this in the past by blocking based on a boolean, but this seems inefficient and still seems to frequently lead to words getting queued in the hypothesis, and the first recognition being error prone.</p>
+<p>Is there a way to &#8220;soft start&#8221; the engine so that there isn&#8217;t a lag between first request and &#8220;ready&#8221; state, while not starting the actual recognition process?</p>
+<p>Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/soft-start-engine/#post-1015472</guid>
+					<title><![CDATA[Reply To: Soft-start Engine]]></title>
+					<link>/forums/topic/soft-start-engine/#post-1015472</link>
+					<pubDate>Fri, 25 Jan 2013 14:28:57 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome, </p>
+<p>This is not actually advisable, because the lag is the voice activity detection checking the noise levels in the room and calibrating itself to distinguish between silence and speech in the current conditions before the user starts speaking. If this is done at some arbitrary time before the user is just about to talk, the calibration isn&#8217;t being performed for the environment which exists in the timeframe in which the user is speaking. This will lead to error-prone recognition.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/soft-start-engine/#post-1015473</guid>
+					<title><![CDATA[Reply To: Soft-start Engine]]></title>
+					<link>/forums/topic/soft-start-engine/#post-1015473</link>
+					<pubDate>Fri, 25 Jan 2013 14:34:52 +0000</pubDate>
+					<dc:creator>jbsilb</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi, </p>
+<p>Thanks for the suggestion. Strictly speaking, however, it&#8217;s not an arbitrary time, it&#8217;s usually 15-20 seconds prior to the first voice input required (in the car).</p>
+<p>What&#8217;s the recommended audio environment for calibration? Only ambient noise? </p>
+<p>We&#8217;d like to make sure users have some sort of queue so that they might turn off radios, etc if that aids in calibration.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/soft-start-engine/#post-1015474</guid>
+					<title><![CDATA[Reply To: Soft-start Engine]]></title>
+					<link>/forums/topic/soft-start-engine/#post-1015474</link>
+					<pubDate>Fri, 25 Jan 2013 14:40:37 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yup, for speech recognition the optimal environment is always as quiet as possible, since background noise will either occlude the speech or cause an attempt to recognize it. So if the users are in the car and they are just using the built-in phone mic, it&#8217;s a good suggestion for them to turn off the radio. The important thing about calibration is that it is done on an environment that matches the speech environment, meaning that if the user is going to talk over the radio even if you suggest that they not do that, you want the radio on during calibration because silence in that case means &#8220;the user isn&#8217;t talking but there is quieter radio noise running in the background&#8221;.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/soft-start-engine/#post-1015475</guid>
+					<title><![CDATA[Reply To: Soft-start Engine]]></title>
+					<link>/forums/topic/soft-start-engine/#post-1015475</link>
+					<pubDate>Fri, 25 Jan 2013 16:21:58 +0000</pubDate>
+					<dc:creator>jbsilb</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The one other thing we noticed is that every time the language model changes, the system starts listening and recognizing. Is that correct?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/soft-start-engine/#post-1015476</guid>
+					<title><![CDATA[Reply To: Soft-start Engine]]></title>
+					<link>/forums/topic/soft-start-engine/#post-1015476</link>
+					<pubDate>Fri, 25 Jan 2013 16:32:46 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sort of &#8212; these are all things that happen when the engine is started (calibration, listening, language model switching), so they aren&#8217;t responsible for starting it.  Switching language models is something you can do while listening is in progress so the impression that it starts listening comes from the context in which you are preventing entry into the listening loop.</p>
+<p>I think what you&#8217;re seeing is that the overall listening method is recursive, so events which return it to the top of the loop will end-run your method of preventing recognition. I think the startup time is just a second or so, are you seeing significantly longer waits to start?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

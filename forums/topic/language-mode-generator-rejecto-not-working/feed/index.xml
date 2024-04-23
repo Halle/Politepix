@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] Language mode generator + rejecto not working &#8211; Politepix</title>
+		<atom:link href="/forums/topic/language-mode-generator-rejecto-not-working/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/language-mode-generator-rejecto-not-working/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:50:20 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/language-mode-generator-rejecto-not-working/#post-1023407</guid>
+					<title><![CDATA[[Resolved] Language mode generator + rejecto not working]]></title>
+					<link>/forums/topic/language-mode-generator-rejecto-not-working/#post-1023407</link>
+					<pubDate>Thu, 11 Dec 2014 14:08:24 +0000</pubDate>
+					<dc:creator>nrbrook</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>If I create a new iOS project, set the -ObjC linker flag, drag in Open ears, rejecto, the acoustic models, and in viewDidAppear add:</p>
+<pre><code>NSArray *languageArray = @[@&quot;BACK&quot;, @&quot;NEXT&quot;, @&quot;REPEAT&quot;];
+    
+    OELanguageModelGenerator *languageModelGenerator = [[OELanguageModelGenerator alloc] init];
+    
+    //    languageModelGenerator.verboseLanguageModelGenerator = TRUE; // Uncomment me for verbose debug output
+    
+    // generateLanguageModelFromArray:withFilesNamed returns an NSError which will either have a value of noErr if everything went fine or a specific error if it didn&#039;t.
+    NSError *error = [languageModelGenerator generateRejectingLanguageModelFromArray:languageArray withFilesNamed:@&quot;OpenEarsDynamicGrammar&quot; withOptionalExclusions:nil usingVowelsOnly:NO withWeight:nil forAcousticModelAtPath:[OEAcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;]];
+    
+    NSDictionary *dynamicLanguageGenerationResultsDictionary = nil;
+    if([error code] != noErr) {
+        NSLog(@&quot;Dynamic language generator reported error %@&quot;, [error description]);
+    } else {
+        dynamicLanguageGenerationResultsDictionary = [error userInfo];
+        
+        NSString *lmFile = [dynamicLanguageGenerationResultsDictionary objectForKey:@&quot;LMFile&quot;];
+        NSString *dictionaryFile = [dynamicLanguageGenerationResultsDictionary objectForKey:@&quot;DictionaryFile&quot;];
+        NSString *lmPath = [dynamicLanguageGenerationResultsDictionary objectForKey:@&quot;LMPath&quot;];
+        NSString *dictionaryPath = [dynamicLanguageGenerationResultsDictionary objectForKey:@&quot;DictionaryPath&quot;];
+        
+        NSLog(@&quot;Dynamic language generator completed successfully, you can find your new files %@\n and \n%@\n at the paths \n%@ \nand \n%@&quot;, lmFile,dictionaryFile,lmPath,dictionaryPath);
+    }</code></pre>
+<p>it hangs.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/language-mode-generator-rejecto-not-working/#post-1023409</guid>
+					<title><![CDATA[Reply To: [Resolved] Language mode generator + rejecto not working]]></title>
+					<link>/forums/topic/language-mode-generator-rejecto-not-working/#post-1023409</link>
+					<pubDate>Thu, 11 Dec 2014 14:15:20 +0000</pubDate>
+					<dc:creator>nrbrook</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ok, thanks, however now the same code outputs:</p>
+<p>Dynamic language generator completed successfully, you can find your new files (null)<br />
+ and<br />
+(null)<br />
+ at the paths<br />
+(null)<br />
+and<br />
+(null)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/language-mode-generator-rejecto-not-working/#post-1023410</guid>
+					<title><![CDATA[Reply To: [Resolved] Language mode generator + rejecto not working]]></title>
+					<link>/forums/topic/language-mode-generator-rejecto-not-working/#post-1023410</link>
+					<pubDate>Thu, 11 Dec 2014 14:27:28 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This isn&#8217;t how the paths are referenced in 2.0:</p>
+<pre>
+ dynamicLanguageGenerationResultsDictionary = [error userInfo];
+        
+        NSString *lmFile = [dynamicLanguageGenerationResultsDictionary objectForKey:@"LMFile"];
+        NSString *dictionaryFile = [dynamicLanguageGenerationResultsDictionary objectForKey:@"DictionaryFile"];
+        NSString *lmPath = [dynamicLanguageGenerationResultsDictionary objectForKey:@"LMPath"];
+        NSString *dictionaryPath = [dynamicLanguageGenerationResultsDictionary objectForKey:@"DictionaryPath"];
+        </pre>
+<p>To see how this works now, take a look at the upgrade guide under the section &#8220;Step 5: architectural changes.&#8221;:</p>
+<p><a href="/upgradeguide">/upgradeguide</a></p>
+<p>If you&#8217;ve been using 1.x, even if you&#8217;re making a new app, it&#8217;s a good idea to read the upgrade guide and the headers for the classes you&#8217;re using (or their docs) to find out about API changes. The sample app and tutorial are up to date with 2.0, so it&#8217;s fine to copy and paste code out of them.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/language-mode-generator-rejecto-not-working/#post-1023411</guid>
+					<title><![CDATA[Reply To: [Resolved] Language mode generator + rejecto not working]]></title>
+					<link>/forums/topic/language-mode-generator-rejecto-not-working/#post-1023411</link>
+					<pubDate>Thu, 11 Dec 2014 14:37:11 +0000</pubDate>
+					<dc:creator>nrbrook</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ok thanks.  If I have a static language model do I still require the rejecto plugin in my project which uses that language model?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/language-mode-generator-rejecto-not-working/#post-1023412</guid>
+					<title><![CDATA[Reply To: [Resolved] Language mode generator + rejecto not working]]></title>
+					<link>/forums/topic/language-mode-generator-rejecto-not-working/#post-1023412</link>
+					<pubDate>Thu, 11 Dec 2014 14:39:25 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You&#8217;re welcome.</p>
+<blockquote><p>If I have a static language model do I still require the rejecto plugin in my project which uses that language model?</p></blockquote>
+<p>Yes, this is a requirement.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

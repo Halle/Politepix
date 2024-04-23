@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>How do I add full phrases? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/how-do-i-add-full-phrases/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/how-do-i-add-full-phrases/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:09:13 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/how-do-i-add-full-phrases/#post-1022690</guid>
+					<title><![CDATA[How do I add full phrases?]]></title>
+					<link>/forums/topic/how-do-i-add-full-phrases/#post-1022690</link>
+					<pubDate>Tue, 07 Oct 2014 22:04:44 +0000</pubDate>
+					<dc:creator>Serkes</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>For example,<br />
+If I add the phrase &#8220;Uncle Will&#8221; to the dictionary then this causes the dictionary to register the word&#8217;s &#8220;Uncle&#8221; and &#8220;Will&#8221; as their own words.</p>
+<p>My question is, how can I make it so the words &#8220;Uncle&#8221; and &#8220;Will&#8221; are only recognized when they are together in the proper order (&#8220;Uncle Will&#8221;)?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-do-i-add-full-phrases/#post-1022693</guid>
+					<title><![CDATA[Reply To: How do I add full phrases?]]></title>
+					<link>/forums/topic/how-do-i-add-full-phrases/#post-1022693</link>
+					<pubDate>Wed, 08 Oct 2014 05:42:31 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Here is a blog post all about using rules-based grammars with OpenEars: </p>
+<p><a href="/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/">/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

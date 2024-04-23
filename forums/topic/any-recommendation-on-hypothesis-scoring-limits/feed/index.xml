@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Any recommendation on Hypothesis scoring limits? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/any-recommendation-on-hypothesis-scoring-limits/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/any-recommendation-on-hypothesis-scoring-limits/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:48:16 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/any-recommendation-on-hypothesis-scoring-limits/#post-1015440</guid>
+					<title><![CDATA[Any recommendation on Hypothesis scoring limits?]]></title>
+					<link>/forums/topic/any-recommendation-on-hypothesis-scoring-limits/#post-1015440</link>
+					<pubDate>Tue, 22 Jan 2013 13:52:57 +0000</pubDate>
+					<dc:creator>Geri</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Is there any recommendation on hypothesis scoring limits?<br />
+I&#8217;d need around 4 categories, I&#8217;m just prototypeing now.</p>
+<p>You said &#8220;WORD&#8221;.<br />
+Seems you said &#8220;WORD&#8221;.<br />
+Probably you said something like &#8220;WORD&#8221;.<br />
+Sorry, I couldn&#8217;t understand what you said.</p>
+<p>What could be the hypothesis scrore limits for these?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/any-recommendation-on-hypothesis-scoring-limits/#post-1015441</guid>
+					<title><![CDATA[Reply To: Any recommendation on Hypothesis scoring limits?]]></title>
+					<link>/forums/topic/any-recommendation-on-hypothesis-scoring-limits/#post-1015441</link>
+					<pubDate>Tue, 22 Jan 2013 14:08:29 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>Here are the previous discussions:</p>
+<p><a href="/forums/topic/how-does-recognition-score-works/">/forums/topic/how-does-recognition-score-works/</a><br />
+<a href="/forums/topic/scores-used-in-openears/">/forums/topic/scores-used-in-openears/</a></p>
+<p>You can&#8217;t use ranges to limit because you don&#8217;t know what the environmental factors are, but something you can experiment with is detecting cases where the top n-best and the second-closest n-best are close and the overall range is large. i.e. 1-best is -50000 and 2-best is -50500 suggests to me that it&#8217;s a close call. But you can&#8217;t say &#8220;below -50000 is wrong&#8221;.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Changing Language Model doesn&#039;t work the second time. &#8211; Politepix</title>
+		<atom:link href="/forums/topic/changing-language-model-doesnt-work-the-second-time/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/changing-language-model-doesnt-work-the-second-time/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:40:20 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/changing-language-model-doesnt-work-the-second-time/#post-8250</guid>
+					<title><![CDATA[Changing Language Model doesn&#039;t work the second time.]]></title>
+					<link>/forums/topic/changing-language-model-doesnt-work-the-second-time/#post-8250</link>
+					<pubDate>Sat, 17 Dec 2011 23:29:24 +0000</pubDate>
+					<dc:creator>aerialcombat</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m creating language model files dynamically. </p>
+<p>The first &#8220;StartListeningWith&#8230;&#8221; (Model A) works great with no problem.</p>
+<p>When I &#8220;ChangeLanguageModelToFile&#8221; (Model B), It changes without a problem also.</p>
+<p>But, when I try to change the Language Model for the second time (to Model C) it starts having recognition problems. It keeps getting empty hypothesis back.</p>
+<p>I&#8217;m wondering, is it designed this way, or is it a programming error on my part?</p>
+<p>I tried suspending/resuming while changing language models, etc. I couldn&#8217;t get it to work the second time changing around. I&#8217;m not using threaded model. If it worked the first time, I don&#8217;t see why second time should be a problem.</p>
+<p>Please help. Thank you.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/changing-language-model-doesnt-work-the-second-time/#post-8251</guid>
+					<title><![CDATA[Reply To: Changing Language Model doesn&#039;t work the second time.]]></title>
+					<link>/forums/topic/changing-language-model-doesnt-work-the-second-time/#post-8251</link>
+					<pubDate>Sat, 17 Dec 2011 23:50:12 +0000</pubDate>
+					<dc:creator>aerialcombat</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I seemed to have answered my own question. I had to change LM File names between language models. Thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/changing-language-model-doesnt-work-the-second-time/#post-8254</guid>
+					<title><![CDATA[Reply To: Changing Language Model doesn&#039;t work the second time.]]></title>
+					<link>/forums/topic/changing-language-model-doesnt-work-the-second-time/#post-8254</link>
+					<pubDate>Tue, 20 Dec 2011 22:42:43 +0000</pubDate>
+					<dc:creator>Isaac Squires</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ah!  I was having the same problem, I&#8217;ll try that out.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

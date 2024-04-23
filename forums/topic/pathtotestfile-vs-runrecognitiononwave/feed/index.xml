@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>pathToTestFile vs runRecognitionOnWave &#8211; Politepix</title>
+		<atom:link href="/forums/topic/pathtotestfile-vs-runrecognitiononwave/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/pathtotestfile-vs-runrecognitiononwave/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:00:43 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/pathtotestfile-vs-runrecognitiononwave/#post-1024011</guid>
+					<title><![CDATA[pathToTestFile vs runRecognitionOnWave]]></title>
+					<link>/forums/topic/pathtotestfile-vs-runrecognitiononwave/#post-1024011</link>
+					<pubDate>Sat, 27 Dec 2014 23:13:08 +0000</pubDate>
+					<dc:creator>davestrand</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am attempting to port my Push-To-Talk microphone into Version 2.0 but having a little difficulty. </p>
+<p>Am I reading correctly that runRecognitionOnWavFileAtPath is replaced in version 2.0 with<br />
+[OEPocketsphinxController sharedInstance].pathToTestFile = [[NSBundle mainBundle] pathForResource:@&#8221;sound&#8221; ofType:@&#8221;wav&#8221;];?  </p>
+<p>Or should I be able to continue to use runRecognitionOnWav?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pathtotestfile-vs-runrecognitiononwave/#post-1024012</guid>
+					<title><![CDATA[Reply To: pathToTestFile vs runRecognitionOnWave]]></title>
+					<link>/forums/topic/pathtotestfile-vs-runrecognitiononwave/#post-1024012</link>
+					<pubDate>Sun, 28 Dec 2014 02:27:18 +0000</pubDate>
+					<dc:creator>davestrand</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>p.s.  I did read the text below quite a few times&#8230;  but I can&#8217;t seem to get the audio file to trigger the recognition.</p>
+<blockquote><p>In contrast with using the method runRecognitionOnWavFileAtPath to receive a single recognition from a file, with this approach the audio file will have its buffers injected directly into the audio driver circular buffer for maximum fidelity to the goal of testing the entire codebase that is in use when doing a live recognition, including the whole driver and the listening loop including all of its features. This is for creating tests for yourself and for sharing automatically replicable issue reports with Politepix.</p></blockquote>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pathtotestfile-vs-runrecognitiononwave/#post-1024013</guid>
+					<title><![CDATA[Reply To: pathToTestFile vs runRecognitionOnWave]]></title>
+					<link>/forums/topic/pathtotestfile-vs-runrecognitiononwave/#post-1024013</link>
+					<pubDate>Sun, 28 Dec 2014 07:59:53 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Dave,</p>
+<p>No API changes to either of those methods in 2.0. </p>
+<p>the pathToTestFile property is for doing automated testing or replicating an issue with the complete continuous listening context, and was introduced in mid-2013 and continues to be available: <a href="/2013/08/26/openears-1-5/">/2013/08/26/openears-1-5/</a>. You may have seen me recently mention it in a discussion about how to replicate a recognition issue in 2.0, but the discussion wasn&#8217;t about pathToTestFile itself or changes to it.</p>
+<p>runRecognitionOnWavFileAtPath:usingLanguageModelAtPath:dictionaryAtPath:acousticModelAtPath:languageModelIsJSGF: is a convenience method for running recognition once on a complete WAV (although I don&#8217;t really recommend using it in a UI – it was made available as an early test method and has been kept around as a way of seeing whether the continuous driver is introducing issues since its results can be compared with pathToTestFile which uses the driver, since it doesn&#8217;t use the driver) and has been there since 2012 and continues to be available.</p>
+<p>They are both intended as testing tools, and as a testing tool pathToTestFile is greatly preferred since it tests the entire continuous listening context. If you are using either for something else, it makes sense to just use the one which you find simpler to use or is more semantically related to your task (that would seem to be runRecognitionOnWavFileAtPath:usingLanguageModelAtPath:dictionaryAtPath:acousticModelAtPath:languageModelIsJSGF:).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

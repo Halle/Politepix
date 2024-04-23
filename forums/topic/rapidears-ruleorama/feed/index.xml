@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] RapidEars + RuleORama &#8211; Politepix</title>
+		<atom:link href="/forums/topic/rapidears-ruleorama/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/rapidears-ruleorama/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:50:26 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/rapidears-ruleorama/#post-1022990</guid>
+					<title><![CDATA[[Resolved] RapidEars + RuleORama]]></title>
+					<link>/forums/topic/rapidears-ruleorama/#post-1022990</link>
+					<pubDate>Mon, 17 Nov 2014 18:17:37 +0000</pubDate>
+					<dc:creator>adb</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I had no problems implementing RapidEars with the simple test array from the OpenEars demo. I can not seem to now add RuleORama to the mix. I am not clear on what method I should use to start up the pocketsphinxController. For OpenEars we used startListeningWithLanguageModelAtPath: and with RapidEars we moved to startRealtimeListeningWithLanguageModelAtPath: and in the documentation for RuleORama it moves back to startListeningWithLanguageModelAtPath: so which should we be using for the combo. When I tried building my rule dict with generateFastGrammarFromDictionary: and loading up pocketsphinxController with startRealtimeListeningWithLanguageModelAtPath: it does not seem to work. I received this message in the console with verbose off &#8220;Number of entries reached the size of the hash.  Run the program again with a larger has size -hash.&#8221;</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-ruleorama/#post-1022991</guid>
+					<title><![CDATA[Reply To: [Resolved] RapidEars + RuleORama]]></title>
+					<link>/forums/topic/rapidears-ruleorama/#post-1022991</link>
+					<pubDate>Mon, 17 Nov 2014 18:28:40 +0000</pubDate>
+					<dc:creator>adb</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Well, interestingly enough it is my rule dictionary that is causing the problem.</p>
+<p>@{ ThisCanBeSaidWithOptionalRepetitions :<br />
+                                                    @[<br />
+                                                        @{ OneOfTheseWillBeSaidOnce : @[@&#8221;1&#8243;,@&#8221;2&#8243;,@&#8221;3&#8243;,@&#8221;4&#8243;,@&#8221;5&#8243;,@&#8221;6&#8243;,@&#8221;7&#8243;,@&#8221;8&#8243;,@&#8221;9&#8243;,@&#8221;10&#8243;,<br />
+                                                                                        @&#8221;11&#8243;,@&#8221;12&#8243;,@&#8221;13&#8243;,@&#8221;14&#8243;,@&#8221;15&#8243;,@&#8221;16&#8243;,@&#8221;17&#8243;,@&#8221;18&#8243;,@&#8221;19&#8243;,@&#8221;20&#8243;,<br />
+                                                                                        @&#8221;21&#8243;,@&#8221;22&#8243;,@&#8221;23&#8243;,@&#8221;24&#8243;,@&#8221;25&#8243;,@&#8221;26&#8243;,@&#8221;27&#8243;,@&#8221;28&#8243;,@&#8221;29&#8243;,@&#8221;30&#8243;,<br />
+                                                                                        @&#8221;31&#8243;,@&#8221;32&#8243;,@&#8221;33&#8243;,@&#8221;34&#8243;,@&#8221;35&#8243;,@&#8221;36&#8243;,@&#8221;37&#8243;,@&#8221;38&#8243;,@&#8221;39&#8243;,@&#8221;40&#8243;,<br />
+                                                                                        @&#8221;41&#8243;,@&#8221;42&#8243;,@&#8221;43&#8243;,@&#8221;44&#8243;,@&#8221;45&#8243;,@&#8221;46&#8243;,@&#8221;47&#8243;,@&#8221;48&#8243;,@&#8221;49&#8243;,@&#8221;50&#8243;,<br />
+                                                                                        @&#8221;51&#8243;,@&#8221;52&#8243;,@&#8221;53&#8243;,@&#8221;54&#8243;,@&#8221;55&#8243;,@&#8221;56&#8243;,@&#8221;57&#8243;,@&#8221;58&#8243;,@&#8221;59&#8243;,@&#8221;60&#8243;,<br />
+                                                                                        @&#8221;61&#8243;,@&#8221;62&#8243;,@&#8221;63&#8243;,@&#8221;64&#8243;,@&#8221;65&#8243;,@&#8221;66&#8243;,@&#8221;67&#8243;,@&#8221;68&#8243;,@&#8221;69&#8243;,@&#8221;70&#8243;,<br />
+                                                                                        @&#8221;71&#8243;,@&#8221;72&#8243;,@&#8221;73&#8243;,@&#8221;74&#8243;,@&#8221;75&#8243;,@&#8221;76&#8243;,@&#8221;77&#8243;,@&#8221;78&#8243;,@&#8221;79&#8243;,@&#8221;80&#8243;,<br />
+                                                                                        @&#8221;81&#8243;,@&#8221;82&#8243;,@&#8221;83&#8243;,@&#8221;84&#8243;,@&#8221;85&#8243;,@&#8221;86&#8243;,@&#8221;87&#8243;,@&#8221;88&#8243;,@&#8221;89&#8243;,@&#8221;90&#8243;,<br />
+                                                                                        @&#8221;91&#8243;,@&#8221;92&#8243;,@&#8221;93&#8243;,@&#8221;94&#8243;,@&#8221;95&#8243;,@&#8221;96&#8243;,@&#8221;97&#8243;,@&#8221;98&#8243;,@&#8221;99&#8243;,@&#8221;100&#8243;]},<br />
+                                                       @{ OneOfTheseWillBeSaidOnce : @[@&#8221;HOUR&#8221;, @&#8221;HOURS&#8221;, @&#8221;MINUTE&#8221;, @&#8221;MINUTES&#8221;, @&#8221;SECOND&#8221;, @&#8221;SECONDS&#8221;]}<br />
+                                                    ]},</p>
+<p>When I cut down the OneOfTheseWillBeSaidOnce to just @[&#8220;1&#8221;] it works like intended with generateFastGrammarFromDictionary: and startRealtimeListeningWithLanguageModelAtPath:. Any Ideas on this? I didn&#8217;t think this was that large.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-ruleorama/#post-1022992</guid>
+					<title><![CDATA[Reply To: [Resolved] RapidEars + RuleORama]]></title>
+					<link>/forums/topic/rapidears-ruleorama/#post-1022992</link>
+					<pubDate>Mon, 17 Nov 2014 19:49:17 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>ThisCanBeSaidWithOptionalRepetitions is actually not supported by RuleORama (I think this is mentioned in the docs and headers) so it is supposed to fall back to a single repetition in that case. In the event that it isn&#8217;t actually doing so, you may want to try using the supported grammar declarations (basically, everything that doesn&#8217;t have optional repetitions since they blow up the possible grammar size enormously).</p>
+<p>For an offline grammar that is actually pretty big – grammars have a much heavier overhead than statistical models so they do need to be smaller in order to perform. RuleORama specifically expects smaller grammars than you could get away with using the stock OpenEars grammar interface, which is a tradeoff in exchange for its faster recognition times.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-ruleorama/#post-1022993</guid>
+					<title><![CDATA[Reply To: [Resolved] RapidEars + RuleORama]]></title>
+					<link>/forums/topic/rapidears-ruleorama/#post-1022993</link>
+					<pubDate>Mon, 17 Nov 2014 19:56:24 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>By the way, ThisCanBeSaidWithOptionalRepetitions around a single ruleset with two obligatory utterances isn&#8217;t actually necessary – it just tells the engine that the ruleset will either not be stated, or it will be stated one or more times, but this is the default expectation for any ruleset or statistical model since the user may not speak, or may say the required utterance, or may say it a few times.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-ruleorama/#post-1022996</guid>
+					<title><![CDATA[Reply To: [Resolved] RapidEars + RuleORama]]></title>
+					<link>/forums/topic/rapidears-ruleorama/#post-1022996</link>
+					<pubDate>Mon, 17 Nov 2014 22:23:13 +0000</pubDate>
+					<dc:creator>adb</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I see what you are saying about the repetitions but even if I change it to:<br />
+ @{ OneOfTheseCanBeSaidOnce : @[@&#8221;1&#8243;,@&#8221;2&#8243;,@&#8221;3&#8243;,@&#8221;4&#8243;,@&#8221;5&#8243;,@&#8221;6&#8243;,@&#8221;7&#8243;,@&#8221;8&#8243;,@&#8221;9&#8243;,@&#8221;10&#8243;,<br />
+                                                                             @&#8221;11&#8243;,@&#8221;12&#8243;,@&#8221;13&#8243;,@&#8221;14&#8243;,@&#8221;15&#8243;,@&#8221;16&#8243;,@&#8221;17&#8243;,@&#8221;18&#8243;,@&#8221;19&#8243;,@&#8221;20&#8243;,<br />
+                                                                             @&#8221;21&#8243;,@&#8221;22&#8243;,@&#8221;23&#8243;,@&#8221;24&#8243;,@&#8221;25&#8243;,@&#8221;26&#8243;,@&#8221;27&#8243;,@&#8221;28&#8243;,@&#8221;29&#8243;,@&#8221;30&#8243;,<br />
+                                                                             @&#8221;31&#8243;,@&#8221;32&#8243;,@&#8221;33&#8243;,@&#8221;34&#8243;,@&#8221;35&#8243;,@&#8221;36&#8243;,@&#8221;37&#8243;,@&#8221;38&#8243;,@&#8221;39&#8243;,@&#8221;40&#8243;,<br />
+                                                                             @&#8221;41&#8243;,@&#8221;42&#8243;,@&#8221;43&#8243;,@&#8221;44&#8243;,@&#8221;45&#8243;,@&#8221;46&#8243;,@&#8221;47&#8243;,@&#8221;48&#8243;,@&#8221;49&#8243;,@&#8221;50&#8243;,<br />
+                                                                             @&#8221;51&#8243;,@&#8221;52&#8243;,@&#8221;53&#8243;,@&#8221;54&#8243;,@&#8221;55&#8243;,@&#8221;56&#8243;,@&#8221;57&#8243;,@&#8221;58&#8243;,@&#8221;59&#8243;,@&#8221;60&#8243;,<br />
+                                                                             @&#8221;61&#8243;,@&#8221;62&#8243;,@&#8221;63&#8243;,@&#8221;64&#8243;,@&#8221;65&#8243;,@&#8221;66&#8243;,@&#8221;67&#8243;,@&#8221;68&#8243;,@&#8221;69&#8243;,@&#8221;70&#8243;,<br />
+                                                                             @&#8221;71&#8243;,@&#8221;72&#8243;,@&#8221;73&#8243;,@&#8221;74&#8243;,@&#8221;75&#8243;,@&#8221;76&#8243;,@&#8221;77&#8243;,@&#8221;78&#8243;,@&#8221;79&#8243;,@&#8221;80&#8243;,<br />
+                                                                             @&#8221;81&#8243;,@&#8221;82&#8243;,@&#8221;83&#8243;,@&#8221;84&#8243;,@&#8221;85&#8243;,@&#8221;86&#8243;,@&#8221;87&#8243;,@&#8221;88&#8243;,@&#8221;89&#8243;,@&#8221;90&#8243;,<br />
+                                                                             @&#8221;91&#8243;,@&#8221;92&#8243;,@&#8221;93&#8243;,@&#8221;94&#8243;,@&#8221;95&#8243;,@&#8221;96&#8243;,@&#8221;97&#8243;,@&#8221;98&#8243;,@&#8221;99&#8243;,@&#8221;100&#8243;]},<br />
+                                              @{ OneOfTheseCanBeSaidOnce : @[@&#8221;HOUR&#8221;, @&#8221;HOURS&#8221;, @&#8221;MINUTE&#8221;, @&#8221;MINUTES&#8221;, @&#8221;SECOND&#8221;, @&#8221;SECONDS&#8221;]}</p>
+<p>it will still not create the rule set.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-ruleorama/#post-1022997</guid>
+					<title><![CDATA[Reply To: [Resolved] RapidEars + RuleORama]]></title>
+					<link>/forums/topic/rapidears-ruleorama/#post-1022997</link>
+					<pubDate>Mon, 17 Nov 2014 22:57:11 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yes, RuleORama was envisioned for smaller grammars than the stock OpenEars grammar tool can handle due to the fact that it provides more speed. This one has > 800 potential utterances so it isn&#8217;t a small grammar for RuleORama. </p>
+<p>It might work better as a stock OpenEars grammar assuming that you change it so that the numbers equal to and greater than 20 are formed with a rule declaring the base 10 number (i.e.&#8221;20&#8243;) followed by the numbers 1-9, which lets you avoid a single rule with 100 entries.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-ruleorama/#post-1022998</guid>
+					<title><![CDATA[Reply To: [Resolved] RapidEars + RuleORama]]></title>
+					<link>/forums/topic/rapidears-ruleorama/#post-1022998</link>
+					<pubDate>Mon, 17 Nov 2014 23:03:31 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Is it correct that OneOfTheseCanBeSaidOnce is being used for both, or does a valid utterance for this grammar actually have to be OneOfTheseWillBeSaidOnce (meaning they are both required)? Having them both be OneOfTheseWillBeSaidOnce will reduce the number of variations a bit. Another thing that might help is reducing to 72 rather than 100, since none of those time measurements (hour, minutes, seconds) are generally dictated in numbers larger than 72.</p>
+<p>I would also consider dropping the SECOND/SECONDS plural variations since it doubles the grammar size.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-ruleorama/#post-1022999</guid>
+					<title><![CDATA[Reply To: [Resolved] RapidEars + RuleORama]]></title>
+					<link>/forums/topic/rapidears-ruleorama/#post-1022999</link>
+					<pubDate>Mon, 17 Nov 2014 23:17:03 +0000</pubDate>
+					<dc:creator>adb</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>All valid points. The rule set was just something I slapped together quickly to try out JSGF. Yes, unfortunately the idea is that they could for example say 1 hour 30 seconds (with a few other commands leading up to that). Can different be rule sets be swapped out for the pocketsphinxController in the rapidEarsDidReceiveFinshedSpeechHypothesis like was done in the OpenEars demo app? Maybe I can tackle this with splitting the rules up. Btw, the response time is great with pairing the two.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-ruleorama/#post-1023002</guid>
+					<title><![CDATA[Reply To: [Resolved] RapidEars + RuleORama]]></title>
+					<link>/forums/topic/rapidears-ruleorama/#post-1023002</link>
+					<pubDate>Mon, 17 Nov 2014 23:25:23 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yes, you can dynamically switch between rulesets, but I would also recommend trying out my suggestions at the end of the previous post (limit numbers to 72, get rid of the plural word variations, and change OneOfTheseCanBeSaidOnce to OneOfTheseWillBeSaidOnce) and see if it ends up with few enough combinations to work. I think that should reduce the ~800 combinations to ~200 which might be small enough to work without a notable impact on the usability of the grammars.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-ruleorama/#post-1023003</guid>
+					<title><![CDATA[Reply To: [Resolved] RapidEars + RuleORama]]></title>
+					<link>/forums/topic/rapidears-ruleorama/#post-1023003</link>
+					<pubDate>Mon, 17 Nov 2014 23:54:05 +0000</pubDate>
+					<dc:creator>adb</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yeah. The problem was is that they needed to be optional not required so I could not change it that way. I did split up the rules and built one with 72#s and minus the plurals. Thanks for the help on clearing this up. I will just have to keep playing with smaller subsets of rules. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] RuleORama and complex rules &#8211; Politepix</title>
+		<atom:link href="/forums/topic/ruleorama-and-complex-rules/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/ruleorama-and-complex-rules/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:50:19 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/ruleorama-and-complex-rules/#post-1023473</guid>
+					<title><![CDATA[[Resolved] RuleORama and complex rules]]></title>
+					<link>/forums/topic/ruleorama-and-complex-rules/#post-1023473</link>
+					<pubDate>Thu, 11 Dec 2014 21:14:22 +0000</pubDate>
+					<dc:creator>jalban</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I have an application with grammar rules such that, once the first word is spoken, the list of possible second words change. I don&#8217;t see a way to model that with RuleORama. Is that possible?</p>
+<p>If my overall grammar is small (&lt; 50 words), will even make much of an improvement?</p>
+<p>Or would just Rejecto make the most difference?</p>
+<p>Thanks<br />
+John</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/ruleorama-and-complex-rules/#post-1023475</guid>
+					<title><![CDATA[Reply To: [Resolved] RuleORama and complex rules]]></title>
+					<link>/forums/topic/ruleorama-and-complex-rules/#post-1023475</link>
+					<pubDate>Thu, 11 Dec 2014 21:20:37 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Sure, I think you should be able to use the OEPocketsphinxController method changeLanguageModelToFile: in order to change between any kind of dynamically-generated files (language models, stock grammars, or RuleORama grammars). So you can create a small model or grammar for the initial interaction, testing whether a grammar or language model is more effective, and then moving to the next language model or grammar for the follow-up vocabulary phase, switching between them in realtime based on the user input.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

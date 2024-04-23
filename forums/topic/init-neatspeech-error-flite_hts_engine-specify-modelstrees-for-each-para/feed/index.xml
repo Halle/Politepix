@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Init NeatSpeech: Error: flite_hts_engine: specify models(trees) for each para… &#8211; Politepix</title>
+		<atom:link href="/forums/topic/init-neatspeech-error-flite_hts_engine-specify-modelstrees-for-each-para/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/init-neatspeech-error-flite_hts_engine-specify-modelstrees-for-each-para/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:48:18 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/init-neatspeech-error-flite_hts_engine-specify-modelstrees-for-each-para/#post-1015431</guid>
+					<title><![CDATA[Init NeatSpeech: Error: flite_hts_engine: specify models(trees) for each para…]]></title>
+					<link>/forums/topic/init-neatspeech-error-flite_hts_engine-specify-modelstrees-for-each-para/#post-1015431</link>
+					<pubDate>Mon, 21 Jan 2013 17:46:28 +0000</pubDate>
+					<dc:creator>Geri</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Error: flite_hts_engine: specify models(trees) for each parameter.</p>
+<p>Exactly.<br />
+I&#8217;m planning to convince the guys here to purchase NeatSpeech, but I cannot try it out in my own implementation, and go along with protoyping.</p>
+<p>My code plays <em>FliteVoices</em> well, then I switch to <em>NeatSpeech</em>, allocating one of the Voices, thats fine, but initializing makes my app exit(0); I cannot even @catch it.</p>
+<p>Since the code has nothing concrete yet beyond the actual testbed, I&#8217;m happy to share at: <a href="https://www.dropbox.com/sh/nnnr82rsuwq2h1e/l0KKNb94tt/Speech" rel="nofollow">https://www.dropbox.com/sh/nnnr82rsuwq2h1e/l0KKNb94tt/Speech</a></p>
+<p>If one of you support guys could take a look on it, see it crashing, fix, then send it back to me, or a tiny answer here, we&#8217;d really appreciate.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/init-neatspeech-error-flite_hts_engine-specify-modelstrees-for-each-para/#post-1015434</guid>
+					<title><![CDATA[Reply To: Init NeatSpeech: Error: flite_hts_engine: specify models(trees) for each para…]]></title>
+					<link>/forums/topic/init-neatspeech-error-flite_hts_engine-specify-modelstrees-for-each-para/#post-1015434</link>
+					<pubDate>Mon, 21 Jan 2013 18:04:17 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>This is happening because you dragged in the voice frameworks, but you didn&#8217;t drag in the folder called VoiceData that is also in the demo disk image. So the frameworks are added to your project but the actual voice data is not (those are the models that it is complaining about not having). I can work on returning a more informative error under this circumstance. </p>
+<p>When you drag in the VoiceData folder from the disk image, make sure that in the add dialog &#8220;Create groups for any added folders&#8221; is selected and NOT &#8220;Create folder references for any added folders&#8221; so that the VoiceData folder models are added at the right location in your bundle, and clean your project before rebuilding to reduce the likelihood of Xcode being spooky. Let me know if that helps.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/init-neatspeech-error-flite_hts_engine-specify-modelstrees-for-each-para/#post-1015437</guid>
+					<title><![CDATA[Reply To: Init NeatSpeech: Error: flite_hts_engine: specify models(trees) for each para…]]></title>
+					<link>/forums/topic/init-neatspeech-error-flite_hts_engine-specify-modelstrees-for-each-para/#post-1015437</link>
+					<pubDate>Tue, 22 Jan 2013 09:55:40 +0000</pubDate>
+					<dc:creator>Geri</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks. Lovely support. The voice quality has not improved so much, by the way :/</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/init-neatspeech-error-flite_hts_engine-specify-modelstrees-for-each-para/#post-1015438</guid>
+					<title><![CDATA[Reply To: Init NeatSpeech: Error: flite_hts_engine: specify models(trees) for each para…]]></title>
+					<link>/forums/topic/init-neatspeech-error-flite_hts_engine-specify-modelstrees-for-each-para/#post-1015438</link>
+					<pubDate>Tue, 22 Jan 2013 09:57:55 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Glad it&#8217;s working for you.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

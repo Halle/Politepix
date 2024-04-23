@@ -1,0 +1,3201 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+<meta charset="UTF-8">
+
+<title>Topic: RapidEars 2.04 &#8211; crash when using within Cocos2d | Politepix</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="/wp-content/uploads/omgf/omgf-stylesheet-56/omgf-stylesheet-56.css?ver=1668781124" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" type="text/css" href="/wp-content/themes/politepix-pixelpress-child-theme/style.css" media="screen">
+
+<link rel="pingback" href="/xmlrpc.php">
+<meta name="robots" content="max-image-preview:large">
+<script>window._wca = window._wca || [];</script>
+<link rel="dns-prefetch" href="//stats.wp.com">
+<link rel="dns-prefetch" href="//i0.wp.com">
+<link rel="dns-prefetch" href="//c0.wp.com">
+<link rel="alternate" type="application/rss+xml" title="Politepix &raquo; Feed" href="http://feeds.feedburner.com/politepixblog">
+<link rel="alternate" type="application/rss+xml" title="Politepix &raquo; Comments Feed" href="/comments/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.5.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🐦‍⬛","🐦​⬛")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<link rel="stylesheet" id="woo-layout-css" href="/wp-content/themes/pixelpress/css/layout.css?ver=6.5.2" type="text/css" media="all">
+<link rel="stylesheet" id="woocommerce-css" href="/wp-content/themes/pixelpress/css/woocommerce.css?ver=6.5.2" type="text/css" media="all">
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="https://c0.wp.com/c/6.5.2/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<style id="wp-block-library-inline-css" type="text/css">.has-text-align-justify{text-align:justify;}</style>
+<link rel="stylesheet" id="mediaelement-css" href="https://c0.wp.com/c/6.5.2/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="https://c0.wp.com/c/6.5.2/wp-includes/js/mediaelement/wp-mediaelement.min.css" type="text/css" media="all">
+<style id="jetpack-sharing-buttons-style-inline-css" type="text/css">.jetpack-sharing-buttons__services-list{display:flex;flex-direction:row;flex-wrap:wrap;gap:0;list-style-type:none;margin:5px;padding:0}.jetpack-sharing-buttons__services-list.has-small-icon-size{font-size:12px}.jetpack-sharing-buttons__services-list.has-normal-icon-size{font-size:16px}.jetpack-sharing-buttons__services-list.has-large-icon-size{font-size:24px}.jetpack-sharing-buttons__services-list.has-huge-icon-size{font-size:36px}@media print{.jetpack-sharing-buttons__services-list{display:none!important}}.editor-styles-wrapper .wp-block-jetpack-sharing-buttons{gap:0;padding-inline-start:0}ul.jetpack-sharing-buttons__services-list.has-background{padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="bbp-default-css" href="/wp-content/plugins/bbpress/templates/default/css/bbpress.min.css?ver=2.6.9" type="text/css" media="all">
+<link rel="stylesheet" id="currency_converter_styles-css" href="/wp-content/plugins/woocommerce-currency-converter-widget/assets/css/converter.css?ver=2.2.2" type="text/css" media="all">
+<style id="woocommerce-inline-inline-css" type="text/css">.woocommerce form .form-row .required { visibility: visible; }</style>
+<link rel="stylesheet" id="cmplz-general-css" href="/wp-content/plugins/complianz-gdpr/assets/css/cookieblocker.min.css?ver=1710283454" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="https://c0.wp.com/p/jetpack/13.3.1/css/jetpack.css" type="text/css" media="all">
+<link rel="stylesheet" id="prettyPhoto-css" href="/wp-content/themes/pixelpress/includes/css/prettyPhoto.css?ver=6.5.2" type="text/css" media="all">
+<script type="text/template" id="tmpl-variation-template">
+	<div class="woocommerce-variation-description">{{{ data.variation.variation_description }}}<\/div>
+	<div class="woocommerce-variation-price">{{{ data.variation.price_html }}}<\/div>
+	<div class="woocommerce-variation-availability">{{{ data.variation.availability_html }}}<\/div>
+</script>
+<script type="text/template" id="tmpl-unavailable-variation-template">
+	<p>Sorry, this product is unavailable. Please choose a different combination.<\/p>
+</script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js" id="wp-polyfill-inert-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/dist/vendor/regenerator-runtime.min.js" id="regenerator-runtime-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/dist/vendor/wp-polyfill.min.js" id="wp-polyfill-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/dist/hooks.min.js" id="wp-hooks-js"></script>
+<script data-service="jetpack-statistics" data-category="statistics" type="text/plain" data-cmplz-src="https://stats.wp.com/w.js?ver=202417" id="woo-tracks-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/jquery/jquery.min.js" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/jquery/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/underscore.min.js" id="underscore-js"></script>
+<script type="text/javascript" id="wp-util-js-extra">
+/* <![CDATA[ */
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/wp-util.min.js" id="wp-util-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/jquery-blockui/jquery.blockUI.min.js" id="jquery-blockui-js" defer data-wp-strategy="defer"></script>
+<script type="text/javascript" id="wc-add-to-cart-variation-js-extra">
+/* <![CDATA[ */
+var wc_add_to_cart_variation_params = {"wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_no_matching_variations_text":"Sorry, no products matched your selection. Please choose a different combination.","i18n_make_a_selection_text":"Please select some product options before adding this product to your cart.","i18n_unavailable_text":"Sorry, this product is unavailable. Please choose a different combination."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/frontend/add-to-cart-variation.min.js" id="wc-add-to-cart-variation-js" defer data-wp-strategy="defer"></script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/jquery-cookie/jquery.cookie.min.js" id="jquery-cookie-js" defer data-wp-strategy="defer"></script>
+<script data-service="jetpack-statistics" data-category="statistics" type="text/plain" data-cmplz-src="https://stats.wp.com/s-202417.js" id="woocommerce-analytics-js" defer data-wp-strategy="defer"></script>
+<script type="text/javascript" src="/wp-content/themes/pixelpress/includes/js/third-party.js?ver=6.5.2" id="third party-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/prettyPhoto/jquery.prettyPhoto.min.js" id="prettyPhoto-js" data-wp-strategy="defer"></script>
+<script type="text/javascript" src="/wp-content/themes/pixelpress/includes/js/general.js?ver=6.5.2" id="general-js"></script>
+<script type="text/javascript" src="/wp-content/themes/pixelpress/includes/js/uniform.js?ver=6.5.2" id="uniform-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.5.2">
+<meta name="generator" content="WooCommerce 8.8.2">
+<link rel="canonical" href="/forums/topic/rapidears-2-04-crash-when-using-within-cocos2d/">
+<link rel="shortlink" href="/?p=1026464">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Fforums%2Ftopic%2Frapidears-2-04-crash-when-using-within-cocos2d%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Fforums%2Ftopic%2Frapidears-2-04-crash-when-using-within-cocos2d%2F#038;format=xml">
+	<style>img#wpstats{display:none}</style>
+					<style>.cmplz-hidden {
+					display: none !important;
+				}</style>		<script>( function() {
+				window.onpageshow = function( event ) {
+					// Defined window.wpforms means that a form exists on a page.
+					// If so and back/forward button has been clicked,
+					// force reload a page to prevent the submit button state stuck.
+					if ( typeof window.wpforms !== 'undefined' && event.persisted ) {
+						window.location.reload();
+					}
+				};
+			}() );</script>
+		
+<!-- Theme version -->
+<meta name="generator" content="PixelPress Politepix 1.0">
+<meta name="generator" content="PixelPress 1.5.4">
+<meta name="generator" content="WooFramework 6.2.9">
+
+<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<!--  Mobile viewport scale | Disable user zooming as the layout is optimised -->
+<meta content="initial-scale=1.0; maximum-scale=1.0; user-scalable=no" name="viewport">
+		<!--[if lt IE 9]>
+			<script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+			<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	
+<!-- Google Webfonts -->
+<link href="/wp-content/uploads/omgf/omgf-stylesheet-165/omgf-stylesheet-165.css?ver=1668781124" rel="stylesheet" type="text/css">
+
+<!-- Alt Stylesheet -->
+<link href="/wp-content/themes/pixelpress/styles/default.css" rel="stylesheet" type="text/css">
+
+<!-- Custom Favicon -->
+<link rel="shortcut icon" href="/wp-content/uploads/favicon.png">
+
+<!-- Woo Shortcodes CSS -->
+<link href="/wp-content/themes/pixelpress/functions/css/shortcodes.css" rel="stylesheet" type="text/css">
+
+<!-- Custom Stylesheet -->
+<link href="/wp-content/themes/pixelpress/custom.css" rel="stylesheet" type="text/css">
+
+<!-- Custom Stylesheet In Child Theme -->
+<link href="/wp-content/themes/politepix-pixelpress-child-theme/custom.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body data-cmplz="1" class="topic bbpress no-js topic-template-default single single-topic postid-1026464 theme-pixelpress woocommerce-no-js unknown alt-style-default has-lightbox layout-left-content">
+
+<div id="wrapper">
+
+	    
+        
+    <div id="header-wrap">
+
+		<header id="header" class="col-full">
+		
+			<div id="logo" class="fl">
+												    <a id="logo" href="/" title="iOS Frameworks for speech recognition, text to speech and more">
+				    	<img src="/wp-content/uploads/logo1.png" alt="Politepix">
+				    </a>
+			    			    
+			    <hgroup>
+			        
+					<h1 class="site-title"><a href="/">Politepix</a></h1>
+					<h2 class="site-description">iOS Frameworks for speech recognition, text to speech and more</h2>
+					<h3 class="nav-toggle"><a href="#navigation">Navigation</a></h3>
+				      	
+				</hgroup>
+			</div>
+<!-- /#logo -->		
+	        
+	        	
+	        <div id="header-right" class="fr">
+
+				<nav id="navigation" role="navigation">
+					
+					<ul id="main-nav" class="nav fl">
+<li id="menu-item-1175" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1175">
+<a href="/openears/">OpenEars</a>
+<ul class="sub-menu">
+	<li id="menu-item-11108" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11108"><a href="/openears/tutorial/">OpenEars Tutorials</a></li>
+	<li id="menu-item-1171" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1171"><a href="/openears/support/">OpenEars FAQ/Support</a></li>
+	<li id="menu-item-1189" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1189"><a href="/forums/forum/openearsforum/">OpenEars Support Forum</a></li>
+	<li id="menu-item-14947" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14947"><a href="/openearsplatform/">About the OpenEars Platform</a></li>
+</ul>
+</li>
+<li id="menu-item-11706" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-11706">
+<a href="/neatspeech">NeatSpeech</a>
+<ul class="sub-menu">
+	<li id="menu-item-11707" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11707"><a href="/forums/forum/openears-plugins/">NeatSpeech support forum</a></li>
+</ul>
+</li>
+<li id="menu-item-9871" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-9871">
+<a href="/rapidears/">RapidEars</a>
+<ul class="sub-menu">
+	<li id="menu-item-10389" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10389"><a href="/forums/forum/openears-plugins">RapidEars Support Forum</a></li>
+</ul>
+</li>
+<li id="menu-item-11030" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-11030">
+<a href="/rejecto/">Rejecto</a>
+<ul class="sub-menu">
+	<li id="menu-item-11031" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11031"><a href="/forums/forum/openears-plugins/">Rejecto Support Forum</a></li>
+</ul>
+</li>
+<li id="menu-item-13071" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13071"><a href="/savethatwave/">SaveThatWave</a></li>
+<li id="menu-item-1021000" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1021000">
+<a href="/ruleorama/">RuleORama</a>
+<ul class="sub-menu">
+	<li id="menu-item-9002" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9002"><a href="/forums/forum/openears-plugins/">RuleORama Free Support Forum</a></li>
+</ul>
+</li>
+<li id="menu-item-1178" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-1178"><a title="Blog" href="/blog/">Blog</a></li>
+<li id="menu-item-1015870" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1015870">
+<a href="/shop">Shop</a>
+<ul class="sub-menu">
+	<li id="menu-item-8499" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8499"><a href="/shop">View all products</a></li>
+	<li id="menu-item-8486" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8486"><a href="/cart/">Cart</a></li>
+	<li id="menu-item-8498" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8498"><a href="/order-tracking/">Track your order</a></li>
+	<li id="menu-item-8539" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8539"><a href="/termsandconditions/">AGB/Terms and Conditions</a></li>
+</ul>
+</li>
+</ul>			        
+			        			        <ul class="mini-cart">
+						<li>
+							<a href="/cart/" title="View your shopping cart" class="cart-parent">
+								<span> 
+							<span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&euro;</span>0.00</bdi></span><mark>0</mark>							</span>
+							</a>
+							<ul class="cart_list"><li class="empty">No products in the cart.</li></ul>						</li>
+					</ul>
+			      				      	
+				</nav><!-- /#navigation -->
+
+				
+<div id="header-social" class="social fr">
+				<a href="http://feeds.feedburner.com/politepixblog" class="subscribe" title="RSS"></a>
+
+				<a href="http://www.twitter.com/politepix" class="twitter" title="Follow me on Twitter"></a>
+
+		</div>
+<!-- /.social -->
+				
+
+			</div>
+<!-- /#header-right -->
+			
+					
+		</header><!-- /#header -->
+	
+	</div>
+<!-- /#header-wrap -->
+	
+	
+	       
+    <div id="content" class="page col-full">
+    
+    	    	
+		<section id="main" class="col-left"> 			
+
+                                                                   
+            <article class="post-1026464 topic type-topic status-publish hentry topic-tag-rapidears-crash-randomly-cocos2d">
+				
+				<header>
+			    	<h1>RapidEars 2.04 &#8211; crash when using within Cocos2d</h1>
+				</header>
+				
+                <section class="entry">
+                	
+<div id="bbpress-forums" class="bbpress-wrapper">
+
+	<div class="bbp-breadcrumb"><p><a href="/" class="bbp-breadcrumb-home">Home</a> <span class="bbp-breadcrumb-sep">&rsaquo;</span> <a href="/forums/" class="bbp-breadcrumb-root">Forums</a> <span class="bbp-breadcrumb-sep">&rsaquo;</span> <a href="/forums/forum/openears-plugins/" class="bbp-breadcrumb-forum">OpenEars plugins</a> <span class="bbp-breadcrumb-sep">&rsaquo;</span> <span class="bbp-breadcrumb-current">RapidEars 2.04 &#8211; crash when using within Cocos2d</span></p></div>
+	
+	
+	
+	
+		<div class="bbp-topic-tags"><p>Tagged:&nbsp;<a href="/forums/tags/rapidears-crash-randomly-cocos2d/" rel="tag">RapidEars crash randomly Cocos2d</a></p></div>
+		<div class="bbp-template-notice info"><ul><li class="bbp-topic-description">This topic has 22 replies, 2 voices, and was last updated <a href="/forums/topic/rapidears-2-04-crash-when-using-within-cocos2d/#post-1026500" title="Reply To: RapidEars 2.04 &#8211; crash when using within Cocos2d">8 years, 8 months ago</a> by <a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a>.</li></ul></div>
+		
+		
+			
+<div class="bbp-pagination">
+	<div class="bbp-pagination-count">Viewing 23 posts - 1 through 23 (of 23 total)</div>
+	<div class="bbp-pagination-links"></div>
+</div>
+
+
+			<div class="burma">Advertisement: <a href="/ruleorama">&ldquo;RuleORama is an OpenEars&#8482; plugin that lets you create rules-based grammars for fixed phrase recognition, fast enough for RapidEars!&rdquo;</a>
+</div>
+<p>
+</p>
+<ul id="topic-1026464-replies" class="forums bbp-replies">
+
+	<li class="bbp-header">
+		<div class="bbp-reply-author">Author</div>
+<!-- .bbp-reply-author -->
+		<div class="bbp-reply-content">Posts</div>
+<!-- .bbp-reply-content -->
+	</li>
+<!-- .bbp-header -->
+
+	<li class="bbp-body">
+
+		
+			
+				
+<div id="post-1026464" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">August 3, 2015 at 1:48 pm</span>
+
+		
+		<a href="/forums/topic/rapidears-2-04-crash-when-using-within-cocos2d/#post-1026464" class="bbp-reply-permalink">#1026464</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1026464 -->
+
+<div class="loop-item-0 user-id-1863 bbp-parent-forum-9992 bbp-parent-topic-9992 bbp-reply-position-1 odd  post-1026464 topic type-topic status-publish hentry topic-tag-rapidears-crash-randomly-cocos2d">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/anhtu/" title="View anhtu&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">anhtu</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Hello Halle,</p>
+<p>I have implemented RapidEars within Cocos2d. Sometimes, the crash occurs randomly. But, if I use Rejecto, it doesn&#8217;t occur anymore.<br>
+Here&#8217;s the call stack from the cashed thread:</p>
+<pre><code>#0	0x000000010049e260 in ___lldb_unnamed_function147$$StampDrill ()
+#1	0x000000010049b6cc in ngram_ng_score ()
+#2	0x000000010049b820 in ngram_tg_score ()
+#3	0x00000001004da308 in ngram_fwdflat_search ()
+#4	0x00000001004a12ec in ___lldb_unnamed_function155$$StampDrill ()
+#5	0x0000000100494948 in ps_end_utt ()
+#6	0x000000010048c49c in ___lldb_unnamed_function78$$StampDrill ()
+#7	0x000000010048c758 in ___lldb_unnamed_function82$$StampDrill ()
+#8	0x00000001013b0f94 in _dispatch_client_callout ()
+#9	0x00000001013c8848 in _dispatch_source_latch_and_call ()
+#10	0x00000001013b31c0 in _dispatch_source_invoke ()
+#11	0x00000001013be5d4 in _dispatch_root_queue_drain ()
+#12	0x00000001013c0248 in _dispatch_worker_thread3 ()
+#13	0x000000019496122c in _pthread_wqthread ()
+</code></pre>
+<p>Sometimes it occurs after pocketsphinxDidDetectFinishedSpeech, sometimes after<br>
+ `there is a request to change to the language model file /var/mobile/Containers/Data/Application/22012A17-E9BF-48DF-BA02-CA98251E3060/Library/Caches/lession_vocal_I_1.DMP<br>
+2015-08-03 18:34:56.095 StampDrill[49123:4165468] The language model ID is 1438601696`</p>
+<p>I searched around and got this topic <a href="/forums/topic/mixing-jsgf-and-default-using-changelanguagemodeltofile/">https://www.politepix.com/forums/topic/mixing-jsgf-and-default-using-changelanguagemodeltofile/</a> has the call stack like mine.</p>
+<p>How can I fix this problem?(for RapidEars)</p>
+<p>Thank you.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1026465" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">August 3, 2015 at 1:52 pm</span>
+
+		
+		<a href="/forums/topic/rapidears-2-04-crash-when-using-within-cocos2d/#post-1026465" class="bbp-reply-permalink">#1026465</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1026465 -->
+
+<div class="loop-item-1 user-id-4 bbp-parent-forum-9992 bbp-parent-topic-1026464 bbp-reply-position-2 even  post-1026465 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Welcome,</p>
+<p>Please check out the post <a href="/forums/topic/install-issues-and-their-solutions/">Please read before you post – how to troubleshoot and provide logging info here</a> so you can see how to turn on and share the logging that provides troubleshooting information for this kind of issue.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1026466" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">August 3, 2015 at 2:34 pm</span>
+
+		
+		<a href="/forums/topic/rapidears-2-04-crash-when-using-within-cocos2d/#post-1026466" class="bbp-reply-permalink">#1026466</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1026466 -->
+
+<div class="loop-item-2 user-id-1863 bbp-parent-forum-9992 bbp-parent-topic-1026464 bbp-reply-position-3 odd topic-author  post-1026466 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/anhtu/" title="View anhtu&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">anhtu</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Sorry, here is the log (removed my logs):</p>
+<pre><code>2015-08-03 19:27:13.864 APP_NAME[49252:4174534] Starting OpenEars logging for OpenEars version 2.03 on 64-bit device (or build): iPad running iOS version: 8.300000
+2015-08-03 19:27:13.920 APP_NAME[49252:4174534] Starting dynamic language model generation
+
+2015-08-03 19:27:14.062 APP_NAME[49252:4174534] Done creating language model with CMUCLMTK in 0.141510 seconds.
+2015-08-03 19:27:14.064 APP_NAME[49252:4174534] I&#039;m done running performDictionaryLookup and it took 0.000200 seconds
+2015-08-03 19:27:14.071 APP_NAME[49252:4174534] I&#039;m done running dynamic language model generation and it took 0.200374 seconds
+2015-08-03 19:27:14.072 APP_NAME[49252:4174534] Starting OpenEars logging for OpenEars version 2.03 on 64-bit device (or build): iPad running iOS version: 8.300000
+2015-08-03 19:27:14.080 APP_NAME[49252:4174534] cocos2d: surface size: 2048x1536
+2015-08-03 19:27:15.083 APP_NAME[49252:4174534] User gave mic permission for this app.
+2015-08-03 19:27:15.085 APP_NAME[49252:4174534] Valid setSecondsOfSilence value of 0.200000 will be used.
+2015-08-03 19:27:15.087 APP_NAME[49252:4174708] Starting listening.
+2015-08-03 19:27:15.088 APP_NAME[49252:4174708] about to set up audio session
+2015-08-03 19:27:15.246 APP_NAME[49252:4174642] Audio route has changed for the following reason:
+2015-08-03 19:27:15.249 APP_NAME[49252:4174642] There was a category change. The new category is AVAudioSessionCategoryPlayAndRecord
+2015-08-03 19:27:15.256 APP_NAME[49252:4174642] This is not a case in which OpenEars notifies of a route change. At the close of this function, the new audio route is ---SpeakerMicrophoneBuiltIn---. The previous route before changing to this route was &lt;AVAudioSessionRouteDescription: 0x170c118b0,
+inputs = (null);
+outputs = (
+           &quot;&lt;AVAudioSessionPortDescription: 0x170c11810, type = Speaker; name = Speaker; UID = Built-In Speaker; selectedDataSource = (null)&gt;&quot;
+           )&gt;.
+2015-08-03 19:27:15.268 APP_NAME[49252:4174708] done starting audio unit
+INFO: cmd_ln.c(702): Parsing command line:
+\
+-lm /var/mobile/Containers/Data/Application/662EA17C-590D-4F09-9312-520CD035DE4B/Library/Caches/lession_vocal_A_0.DMP \
+-vad_prespeech 10 \
+-vad_postspeech 20 \
+-vad_threshold 2.000000 \
+-remove_noise yes \
+-remove_silence yes \
+-bestpath yes \
+-lw 6.500000 \
+-dict /var/mobile/Containers/Data/Application/662EA17C-590D-4F09-9312-520CD035DE4B/Library/Caches/lession_vocal_A_0.dic \
+-hmm /private/var/mobile/Containers/Bundle/Application/204102C4-D4A7-4B27-ABC4-9072CA281718/APP_NAME.app/AcousticModelEnglish.bundle
+
+Current configuration:
+[NAME]		[DEFLT]		[VALUE]
+-agc		none		none
+-agcthresh	2.0		2.000000e+00
+-allphone
+-allphone_ci	no		no
+-alpha		0.97		9.700000e-01
+-argfile
+-ascale		20.0		2.000000e+01
+-aw		1		1
+-backtrace	no		no
+-beam		1e-48		1.000000e-48
+-bestpath	yes		yes
+-bestpathlw	9.5		9.500000e+00
+-bghist		no		no
+-ceplen		13		13
+-cmn		current		current
+-cmninit	8.0		8.0
+-compallsen	no		no
+-debug				0
+-dict				/var/mobile/Containers/Data/Application/662EA17C-590D-4F09-9312-520CD035DE4B/Library/Caches/lession_vocal_A_0.dic
+-dictcase	no		no
+-dither		no		no
+-doublebw	no		no
+-ds		1		1
+-fdict
+-feat		1s_c_d_dd	1s_c_d_dd
+-featparams
+-fillprob	1e-8		1.000000e-08
+-frate		100		100
+-fsg
+-fsgusealtpron	yes		yes
+-fsgusefiller	yes		yes
+-fwdflat	yes		yes
+-fwdflatbeam	1e-64		1.000000e-64
+-fwdflatefwid	4		4
+-fwdflatlw	8.5		8.500000e+00
+-fwdflatsfwin	25		25
+-fwdflatwbeam	7e-29		7.000000e-29
+-fwdtree	yes		yes
+-hmm				/private/var/mobile/Containers/Bundle/Application/204102C4-D4A7-4B27-ABC4-9072CA281718/APP_NAME.app/AcousticModelEnglish.bundle
+-input_endian	little		little
+-jsgf
+-kdmaxbbi	-1		-1
+-kdmaxdepth	0		0
+-kdtree
+-keyphrase
+-kws
+-kws_plp	1e-1		1.000000e-01
+-kws_threshold	1		1.000000e+00
+-latsize	5000		5000
+-lda
+-ldadim		0		0
+-lextreedump	0		0
+-lifter		0		0
+-lm				/var/mobile/Containers/Data/Application/662EA17C-590D-4F09-9312-520CD035DE4B/Library/Caches/lession_vocal_A_0.DMP
+-lmctl
+-lmname
+-logbase	1.0001		1.000100e+00
+-logfn
+-logspec	no		no
+-lowerf		133.33334	1.333333e+02
+-lpbeam		1e-40		1.000000e-40
+-lponlybeam	7e-29		7.000000e-29
+-lw		6.5		6.500000e+00
+-maxhmmpf	10000		10000
+-maxnewoov	20		20
+-maxwpf		-1		-1
+-mdef
+-mean
+-mfclogdir
+-min_endfr	0		0
+-mixw
+-mixwfloor	0.0000001	1.000000e-07
+-mllr
+-mmap		yes		yes
+-ncep		13		13
+-nfft		512		512
+-nfilt		40		40
+-nwpen		1.0		1.000000e+00
+-pbeam		1e-48		1.000000e-48
+-pip		1.0		1.000000e+00
+-pl_beam	1e-10		1.000000e-10
+-pl_pbeam	1e-5		1.000000e-05
+-pl_window	0		0
+-rawlogdir
+-remove_dc	no		no
+-remove_noise	yes		yes
+-remove_silence	yes		yes
+-round_filters	yes		yes
+-samprate	16000		1.600000e+04
+-seed		-1		-1
+-sendump
+-senlogdir
+-senmgau
+-silprob	0.005		5.000000e-03
+-smoothspec	no		no
+-svspec
+-tmat
+-tmatfloor	0.0001		1.000000e-04
+-topn		4		4
+-topn_beam	0		0
+-toprule
+-transform	legacy		legacy
+-unit_area	yes		yes
+-upperf		6855.4976	6.855498e+03
+-usewdphones	no		no
+-uw		1.0		1.000000e+00
+-vad_postspeech	50		20
+-vad_prespeech	10		10
+-vad_threshold	2.0		2.000000e+00
+-var
+-varfloor	0.0001		1.000000e-04
+-varnorm	no		no
+-verbose	no		no
+-warp_params
+-warp_type	inverse_linear	inverse_linear
+-wbeam		7e-29		7.000000e-29
+-wip		0.65		6.500000e-01
+-wlen		0.025625	2.562500e-02
+
+INFO: cmd_ln.c(702): Parsing command line:
+\
+-nfilt 25 \
+-lowerf 130 \
+-upperf 6800 \
+-feat 1s_c_d_dd \
+-svspec 0-12/13-25/26-38 \
+-agc none \
+-cmn current \
+-varnorm no \
+-transform dct \
+-lifter 22 \
+-cmninit 40
+
+Current configuration:
+[NAME]		[DEFLT]		[VALUE]
+-agc		none		none
+-agcthresh	2.0		2.000000e+00
+-alpha		0.97		9.700000e-01
+-ceplen		13		13
+-cmn		current		current
+-cmninit	8.0		40
+-dither		no		no
+-doublebw	no		no
+-feat		1s_c_d_dd	1s_c_d_dd
+-frate		100		100
+-input_endian	little		little
+-lda
+-ldadim		0		0
+-lifter		0		22
+-logspec	no		no
+-lowerf		133.33334	1.300000e+02
+-ncep		13		13
+-nfft		512		512
+-nfilt		40		25
+-remove_dc	no		no
+-remove_noise	yes		yes
+-remove_silence	yes		yes
+-round_filters	yes		yes
+-samprate	16000		1.600000e+04
+-seed		-1		-1
+-smoothspec	no		no
+-svspec				0-12/13-25/26-38
+-transform	legacy		dct
+-unit_area	yes		yes
+-upperf		6855.4976	6.800000e+03
+-vad_postspeech	50		20
+-vad_prespeech	10		10
+-vad_threshold	2.0		2.000000e+00
+-varnorm	no		no
+-verbose	no		no
+-warp_params
+-warp_type	inverse_linear	inverse_linear
+-wlen		0.025625	2.562500e-02
+
+INFO: acmod.c(252): Parsed model-specific feature parameters from /private/var/mobile/Containers/Bundle/Application/204102C4-D4A7-4B27-ABC4-9072CA281718/APP_NAME.app/AcousticModelEnglish.bundle/feat.params
+INFO: feat.c(715): Initializing feature stream to type: &#039;1s_c_d_dd&#039;, ceplen=13, CMN=&#039;current&#039;, VARNORM=&#039;no&#039;, AGC=&#039;none&#039;
+INFO: cmn.c(143): mean[0]= 12.00, mean[1..12]= 0.0
+INFO: acmod.c(171): Using subvector specification 0-12/13-25/26-38
+INFO: mdef.c(518): Reading model definition: /private/var/mobile/Containers/Bundle/Application/204102C4-D4A7-4B27-ABC4-9072CA281718/APP_NAME.app/AcousticModelEnglish.bundle/mdef
+INFO: mdef.c(531): Found byte-order mark BMDF, assuming this is a binary mdef file
+INFO: bin_mdef.c(336): Reading binary model definition: /private/var/mobile/Containers/Bundle/Application/204102C4-D4A7-4B27-ABC4-9072CA281718/APP_NAME.app/AcousticModelEnglish.bundle/mdef
+INFO: bin_mdef.c(516): 46 CI-phone, 168344 CD-phone, 3 emitstate/phone, 138 CI-sen, 6138 Sen, 32881 Sen-Seq
+INFO: tmat.c(206): Reading HMM transition probability matrices: /private/var/mobile/Containers/Bundle/Application/204102C4-D4A7-4B27-ABC4-9072CA281718/APP_NAME.app/AcousticModelEnglish.bundle/transition_matrices
+INFO: acmod.c(124): Attempting to use SCHMM computation module
+INFO: ms_gauden.c(198): Reading mixture gaussian parameter: /private/var/mobile/Containers/Bundle/Application/204102C4-D4A7-4B27-ABC4-9072CA281718/APP_NAME.app/AcousticModelEnglish.bundle/means
+INFO: ms_gauden.c(292): 1 codebook, 3 feature, size:
+INFO: ms_gauden.c(294):  512x13
+INFO: ms_gauden.c(294):  512x13
+INFO: ms_gauden.c(294):  512x13
+INFO: ms_gauden.c(198): Reading mixture gaussian parameter: /private/var/mobile/Containers/Bundle/Application/204102C4-D4A7-4B27-ABC4-9072CA281718/APP_NAME.app/AcousticModelEnglish.bundle/variances
+INFO: ms_gauden.c(292): 1 codebook, 3 feature, size:
+INFO: ms_gauden.c(294):  512x13
+INFO: ms_gauden.c(294):  512x13
+INFO: ms_gauden.c(294):  512x13
+INFO: ms_gauden.c(354): 0 variance values floored
+INFO: s2_semi_mgau.c(904): Loading senones from dump file /private/var/mobile/Containers/Bundle/Application/204102C4-D4A7-4B27-ABC4-9072CA281718/APP_NAME.app/AcousticModelEnglish.bundle/sendump
+INFO: s2_semi_mgau.c(928): BEGIN FILE FORMAT DESCRIPTION
+INFO: s2_semi_mgau.c(991): Rows: 512, Columns: 6138
+INFO: s2_semi_mgau.c(1023): Using memory-mapped I/O for senones
+INFO: s2_semi_mgau.c(1294): Maximum top-N: 4 Top-N beams: 0 0 0
+INFO: dict.c(320): Allocating 4110 * 32 bytes (128 KiB) for word entries
+INFO: dict.c(333): Reading main dictionary: /var/mobile/Containers/Data/Application/662EA17C-590D-4F09-9312-520CD035DE4B/Library/Caches/lession_vocal_A_0.dic
+INFO: dict.c(213): Allocated 0 KiB for strings, 0 KiB for phones
+INFO: dict.c(336): 1 words read
+INFO: dict.c(342): Reading filler dictionary: /private/var/mobile/Containers/Bundle/Application/204102C4-D4A7-4B27-ABC4-9072CA281718/APP_NAME.app/AcousticModelEnglish.bundle/noisedict
+INFO: dict.c(213): Allocated 0 KiB for strings, 0 KiB for phones
+INFO: dict.c(345): 9 words read
+INFO: dict2pid.c(396): Building PID tables for dictionary
+INFO: dict2pid.c(406): Allocating 46^3 * 2 bytes (190 KiB) for word-initial triphones
+INFO: dict2pid.c(132): Allocated 51152 bytes (49 KiB) for word-final triphones
+INFO: dict2pid.c(196): Allocated 51152 bytes (49 KiB) for single-phone word triphones
+INFO: ngram_model_arpa.c(79): No \data\ mark in LM file
+INFO: ngram_model_dmp.c(166): Will use memory-mapped I/O for LM file
+INFO: ngram_model_dmp.c(220): ngrams 1=3, 2=2, 3=1
+INFO: ngram_model_dmp.c(266):        3 = LM.unigrams(+trailer) read
+INFO: ngram_model_dmp.c(312):        2 = LM.bigrams(+trailer) read
+INFO: ngram_model_dmp.c(338):        1 = LM.trigrams read
+INFO: ngram_model_dmp.c(363):        2 = LM.prob2 entries read
+INFO: ngram_model_dmp.c(383):        3 = LM.bo_wt2 entries read
+INFO: ngram_model_dmp.c(403):        2 = LM.prob3 entries read
+INFO: ngram_model_dmp.c(431):        1 = LM.tseg_base entries read
+INFO: ngram_model_dmp.c(487):        3 = ascii word strings read
+INFO: ngram_search_fwdtree.c(99): 0 unique initial diphones
+INFO: ngram_search_fwdtree.c(148): 0 root, 0 non-root channels, 11 single-phone words
+INFO: ngram_search_fwdtree.c(186): Creating search tree
+INFO: ngram_search_fwdtree.c(192): before: 0 root, 0 non-root channels, 11 single-phone words
+INFO: ngram_search_fwdtree.c(326): after: max nonroot chan increased to 128
+ERROR: &quot;ngram_search_fwdtree.c&quot;, line 336: No word from the language model has pronunciation in the dictionary
+INFO: ngram_search_fwdtree.c(339): after: 0 root, 0 non-root channels, 10 single-phone words
+INFO: ngram_search_fwdflat.c(157): fwdflat: min_ef_width = 4, max_sf_win = 25
+2015-08-03 19:27:15.363 APP_NAME[49252:4174708] Restoring SmartCMN value of 55.322021
+2015-08-03 19:27:15.363 APP_NAME[49252:4174708] Listening.
+2015-08-03 19:27:15.364 APP_NAME[49252:4174708] Project has these words or phrases in its dictionary:
+A
+2015-08-03 19:27:15.364 APP_NAME[49252:4174708] Recognition loop has started
+2015-08-03 19:27:15.368 APP_NAME[49252:4174534] Pocketsphinx is now listening.
+2015-08-03 19:27:20.707 APP_NAME[49252:4174708] Speech detected...
+2015-08-03 19:27:20.708 APP_NAME[49252:4174708] Pocketsphinx heard &quot;&quot; with a score of (-1580) and an utterance ID of 0.
+
+2015-08-03 19:27:20.802 APP_NAME[49252:4174708] Pocketsphinx heard &quot;&quot; with a score of (-2757) and an utterance ID of 1.
+2015-08-03 19:27:20.897 APP_NAME[49252:4174708] Pocketsphinx heard &quot;&quot; with a score of (-4058) and an utterance ID of 2.
+2015-08-03 19:27:21.056 APP_NAME[49252:4174708] Pocketsphinx heard &quot;&quot; with a score of (-6635) and an utterance ID of 3.
+2015-08-03 19:27:21.169 APP_NAME[49252:4174708] End of speech detected...
+INFO: cmn_prior.c(131): cmn_prior_update: from &lt; 55.32  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00 &gt;
+INFO: cmn_prior.c(149): cmn_prior_update: to   &lt; 49.58 16.76 -1.75  9.75 -9.41  9.58  1.37  2.40 -8.62  6.90 -3.80 -2.46  6.97 &gt;
+INFO: ngram_search_fwdtree.c(1550):      483 words recognized (9/fr)
+INFO: ngram_search_fwdtree.c(1552):     1585 senones evaluated (29/fr)
+INFO: ngram_search_fwdtree.c(1556):      503 channels searched (9/fr), 0 1st, 503 last
+INFO: ngram_search_fwdtree.c(1559):      503 words for which last channels evaluated (9/fr)
+INFO: ngram_search_fwdtree.c(1561):        0 candidate words for entering last phone (0/fr)
+INFO: ngram_search_fwdtree.c(1564): fwdtree 1.15 CPU 2.137 xRT
+INFO: ngram_search_fwdtree.c(1567): fwdtree 5.64 wall 10.438 xRT
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 3 words
+INFO: ngram_search_fwdflat.c(938):      400 words recognized (7/fr)
+INFO: ngram_search_fwdflat.c(940):     1638 senones evaluated (30/fr)
+INFO: ngram_search_fwdflat.c(942):      519 channels searched (9/fr)
+INFO: ngram_search_fwdflat.c(944):      519 words searched (9/fr)
+INFO: ngram_search_fwdflat.c(947):      121 word transitions (2/fr)
+INFO: ngram_search_fwdflat.c(950): fwdflat 0.01 CPU 0.022 xRT
+INFO: ngram_search_fwdflat.c(953): fwdflat 0.01 wall 0.021 xRT
+INFO: ngram_search.c(1215): &lt;/s&gt; not found in last frame, using A.52 instead
+INFO: ngram_search.c(1268): lattice start node &lt;s&gt;.0 end node A.49
+INFO: ngram_search.c(1294): Eliminated 1 nodes before end node
+INFO: ngram_search.c(1399): Lattice has 99 nodes, 600 links
+2015-08-03 19:27:21.185 APP_NAME[49252:4174534] pocketsphinxDidDetectFinishedSpeech
+(lldb) 
+</code></pre>
+<p>and call stack:</p>
+<pre><code>Thread 14Queue : com.apple.root.default-qos (concurrent)
+#0	0x00000001004ec83c in logmath_add ()
+#1	0x00000001004c9128 in ps_lattice_bestpath ()
+#2	0x00000001004b556c in ___lldb_unnamed_function157$$StampDrill ()
+#3	0x000000010049ef3c in ps_get_hyp_vnnetvisstampdrill ()
+#4	0x000000010049e69c in ___lldb_unnamed_function74$$StampDrill ()
+#5	0x00000001004a04e8 in ___lldb_unnamed_function78$$StampDrill ()
+#6	0x00000001004a0758 in ___lldb_unnamed_function82$$StampDrill ()
+#7	0x00000001013d4f94 in _dispatch_client_callout ()
+#8	0x00000001013ec848 in _dispatch_source_latch_and_call ()
+#9	0x00000001013d71c0 in _dispatch_source_invoke ()
+#10	0x00000001013e25d4 in _dispatch_root_queue_drain ()
+#11	0x00000001013e4248 in _dispatch_worker_thread3 ()
+#12	0x000000019496122c in _pthread_wqthread ()
+</code></pre>
+<p>Thank you very much</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1026469" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">August 3, 2015 at 2:42 pm</span>
+
+		
+		<a href="/forums/topic/rapidears-2-04-crash-when-using-within-cocos2d/#post-1026469" class="bbp-reply-permalink">#1026469</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1026469 -->
+
+<div class="loop-item-3 user-id-1863 bbp-parent-forum-9992 bbp-parent-topic-1026464 bbp-reply-position-4 even topic-author  post-1026469 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/anhtu/" title="View anhtu&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">anhtu</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>and the error is  &#8220;Thread 14: EXC_BAD_ACCESS (code=1,address=xxxx)&#8221; </p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1026470" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">August 3, 2015 at 2:48 pm</span>
+
+		
+		<a href="/forums/topic/rapidears-2-04-crash-when-using-within-cocos2d/#post-1026470" class="bbp-reply-permalink">#1026470</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1026470 -->
+
+<div class="loop-item-4 user-id-4 bbp-parent-forum-9992 bbp-parent-topic-1026464 bbp-reply-position-5 odd  post-1026470 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Hmm, I don&#8217;t see a reason in the log for this crash and I&#8217;ve never had a report of one of these (the crash in the jsgf/arpa switching topic doesn&#8217;t look related to this). How is it possible that you&#8217;re running OpenEars with cocos2d, have you prevented cocos2d from making any changes to the audio session or are you running OpenEars with an overridden audio session by cocos2d? The most likely cause is that it is an audio coexistence problem due to running both libraries simultaneously.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1026471" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">August 3, 2015 at 2:52 pm</span>
+
+		
+		<a href="/forums/topic/rapidears-2-04-crash-when-using-within-cocos2d/#post-1026471" class="bbp-reply-permalink">#1026471</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1026471 -->
+
+<div class="loop-item-5 user-id-4 bbp-parent-forum-9992 bbp-parent-topic-1026464 bbp-reply-position-6 even  post-1026471 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Wait, my apologies, here is your issue from your log:</p>
+<blockquote><p>ERROR: &#8220;ngram_search_fwdtree.c&#8221;, line 336: No word from the language model has pronunciation in the dictionary</p></blockquote>
+<p>That means that your language model and dictionary don&#8217;t match in the session in which the crash occurs, so there is an exception the first time there is real speech in the audio buffer. Is there anything special about the language model generation code which could account for that, that you could share with me? </p>
+<p>I would focus troubleshooting on making sure that something isn&#8217;t happening like giving OEPocketsphinxController the path to an old dictionary somehow instead of the most-recently-generated one, or similar. Something that may help to understand what is happening is to take a look at that .dic file that is generated and used in the crashing session, and see if its contents match what you expect them to be.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1026474" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">August 4, 2015 at 4:40 am</span>
+
+		
+		<a href="/forums/topic/rapidears-2-04-crash-when-using-within-cocos2d/#post-1026474" class="bbp-reply-permalink">#1026474</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1026474 -->
+
+<div class="loop-item-6 user-id-1863 bbp-parent-forum-9992 bbp-parent-topic-1026464 bbp-reply-position-7 odd topic-author  post-1026474 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/anhtu/" title="View anhtu&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">anhtu</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>I&#8217;m using the default &#8220;AcousticModelEnglish.bundle&#8221; in OpenEars package.<br>
+I want the app can recognize letters A-Z.<br>
+The crash appears event if I keep &#8220;LanguageModelGeneratorLookupList.text&#8221; in the default or just keep A-Z.</p>
+<pre><code>NSString *name = [NSString stringWithFormat:@&quot;lession_vocal_%@_%d&quot;,
+                  [[QuestionManager sharedManager] getWordAtIndex:[index intValue]], [index intValue]];
+
+NSError *error = nil;
+NSString * curLetter = [[QuestionManager sharedManager] getWordAtIndex:[index intValue]];
+arrWords = @[curLetter];
+
+if(![GlobalData sharedInstance].isRejectoON){
+
+  error = [_languageModelGenerator generateLanguageModelFromArray:arrWords
+                                                   withFilesNamed:name
+                                           forAcousticModelAtPath:[OEAcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;]];
+  
+}else{
+  error = [_languageModelGenerator generateRejectingLanguageModelFromArray:arrWords
+                                                            withFilesNamed:name
+                                                    withOptionalExclusions:[GlobalData sharedInstance].optionalExclusion
+                                                           usingVowelsOnly:[GlobalData sharedInstance].usingVowelsOnly
+                                                                withWeight:[NSNumber numberWithFloat: [GlobalData sharedInstance].weight_rejecto]
+                                                    forAcousticModelAtPath:[OEAcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;]];
+}
+
+lmPath = nil;
+dicPath = nil;
+
+if(error != noErr) {
+  NSLog(@&quot;Dynamic language generator reported error %@&quot;, [error description]);
+} else {
+  dicPath = [_languageModelGenerator pathToSuccessfullyGeneratedDictionaryWithRequestedName:name];
+  lmPath = [_languageModelGenerator pathToSuccessfullyGeneratedLanguageModelWithRequestedName:name];
+}
+
+  [openEarsEventsObserver setDelegate:self];
+  //call before set properties
+  [pocketsphinxController setActive:TRUE error:nil];
+  [pocketsphinxController setRapidEarsToVerbose:YES];
+  [pocketsphinxController setFinalizeHypothesis:NO];
+  [pocketsphinxController setReturnDuplicatePartials:false];
+  [pocketsphinxController setReturnNullHypotheses:false];
+  [pocketsphinxController setSecondsOfSilenceToDetect:0.2];
+  [OELogging startOpenEarsLogging];
+  
+    if(!pocketsphinxController.isListening) {
+      [pocketsphinxController startRealtimeListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[OEAcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;]];
+    }else{
+      
+      [pocketsphinxController changeLanguageModelToFile:lmPath withDictionary:dicPath];
+      if (pocketsphinxController.isSuspended) {
+        [pocketsphinxController resumeRecognition];
+      }
+    }</code></pre>
+<p>The crash occurs rarely randomly and so weird. Because it doesn&#8217;t appear if I turn on Rejecto (using Rejecto)</p>
+<p>The crash occurs on RapidEars 2.03 also.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1026477" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">August 4, 2015 at 9:23 am</span>
+
+		
+		<a href="/forums/topic/rapidears-2-04-crash-when-using-within-cocos2d/#post-1026477" class="bbp-reply-permalink">#1026477</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1026477 -->
+
+<div class="loop-item-7 user-id-4 bbp-parent-forum-9992 bbp-parent-topic-1026464 bbp-reply-position-8 even  post-1026477 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Hi, </p>
+<p>You can&#8217;t change the contents of LanguageModelGeneratorLookupList.text other than to add things to it – you will definitely have crashes if you reduce the number of items in LanguageModelGeneratorLookupList.text. But my suggestion wasn&#8217;t to check out your acoustic model, it was to check out the contents of the language model and .dic file that OpenEars is generating for you. The crash is happening because they don&#8217;t match, so that is where to direct your troubleshooting.</p>
+<p>For instance, in the log you showed, there is a language model file being passed to OEPocketsphinxController called lession_vocal_A_0.DMP and a dictionary called lession_vocal_A_0.dic, and the crash is happening because lession_vocal_A_0.dic doesn&#8217;t have the words from lession_vocal_A_0.DMP in it. Please check out lession_vocal_A_0.dic and see if it contains the words you expect it to contain when there is a crash.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1026481" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">August 4, 2015 at 11:22 am</span>
+
+		
+		<a href="/forums/topic/rapidears-2-04-crash-when-using-within-cocos2d/#post-1026481" class="bbp-reply-permalink">#1026481</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1026481 -->
+
+<div class="loop-item-8 user-id-1863 bbp-parent-forum-9992 bbp-parent-topic-1026464 bbp-reply-position-9 odd topic-author  post-1026481 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/anhtu/" title="View anhtu&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">anhtu</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Here is the contents in 2 files:<br>
+lession_vocal_D_3.dic<br>
+<code>D	D IY</code></p>
+<p>lession_vocal_D_3.DMP</p>
+<p><code>Darpa Trigram LMr/var/mobile/Containers/Data/Application/2E00812C-8A05-4A6B-BFDC-475501A642DB/Library/Caches/lession_vocal_D_3.DMPˇˇˇˇBEGIN FILE FORMAT DESCRIPTION?Header string length (int32) and string (including trailing 0)OOriginal LM filename string-length (int32) and filename (including trailing 0)0(int32) version number (present iff value &lt;= 0)G(int32) original LM file modification timestamp (iff version# present)O(int32) string-length and string (including trailing 0) (iff version# present)H... previous entry continued any number of times (iff version# present)C(int32) 0 (terminating sequence of strings) (iff version# present)S(int32) log_bg_seg_sz (present iff different from default value of LOG2_BG_SEG_SZ)&quot;(int32) lm_t.ucount (must be &gt; 0)(int32) lm_t.bcount(int32) lm_t.tcount,lm_t.ucount+1 unigrams (including sentinel)ulm_t.bcount+1 bigrams (including sentinel 64 bits (bg_t) each if version=-1/-2, 128 bits (bg32_t) each if version=-3}lm_t.tcount trigrams (present iff lm_t.tcount &gt; 0 32 bits (tg_t) each if version=-1/-2, 64 bits (tg32_t) each if version=-3)(int32) lm_t.n_prob2(int32) lm_t.prob2[]4(int32) lm_t.n_bo_wt2 (present iff lm_t.tcount &gt; 0)4(int32) lm_t.bo_wt2[] (present iff lm_t.tcount &gt; 0)3(int32) lm_t.n_prob3 (present iff lm_t.tcount &gt; 0)3(int32) lm_t.prob3[] (present iff lm_t.tcount &gt; 0)B(int32) (lm_t.bcount+1)/BG_SEG_SZ+1 (present iff lm_t.tcount &gt; 0)7(int32) lm_t.tseg_base[] (present iff lm_t.tcount &gt; 0)D(int32) Sum(all word string-lengths, including trailing 0 for each)1All word strings (including trailing 0 for each)END FILE FORMAT DESCRIPTION!!!ˇˇˇˇ„e≈¬ˇˇˇˇ„e≈¬|ˇ«¬ˇˇˇˇÚöæˇˇˇˇ˝@.«˝@.«Ø%∂«ÚöæØ%∂«ÚöæØ%∂«Úöæ&lt;/s&gt;&lt;s&gt;D</code></p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1026484" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">August 4, 2015 at 11:29 am</span>
+
+		
+		<a href="/forums/topic/rapidears-2-04-crash-when-using-within-cocos2d/#post-1026484" class="bbp-reply-permalink">#1026484</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1026484 -->
+
+<div class="loop-item-9 user-id-4 bbp-parent-forum-9992 bbp-parent-topic-1026464 bbp-reply-position-10 even  post-1026484 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Don&#8217;t worry about the contents of the .DMP file, it is binary. In your .dic file, there is only a single entry, and it is the letter &#8220;D&#8221; by itself. My question from my last couple of posts is whether that is what you expect to be in your vocabulary at the time of your crash, or if you expect the contents to be different. You can check this by adding some logging that shows you your current letter, and then comparing it with the contents of the .dic file that is being used at the time of the crash. You can verify that it is the file being used because this logging line will show it being loaded:</p>
+<p><code>-dict /var/mobile/Containers/Data/Application/662EA17C-590D-4F09-9312-520CD035DE4B/Library/Caches/somedictionaryname.dic \</code></p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1026485" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">August 4, 2015 at 11:32 am</span>
+
+		
+		<a href="/forums/topic/rapidears-2-04-crash-when-using-within-cocos2d/#post-1026485" class="bbp-reply-permalink">#1026485</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1026485 -->
+
+<div class="loop-item-10 user-id-4 bbp-parent-forum-9992 bbp-parent-topic-1026464 bbp-reply-position-11 odd  post-1026485 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>By the way, your crash showed a crash with the .dic file lession_vocal_A_0.dic but you showed me the contents of a file called lession_vocal_D_3.dic. It is extremely important to only troubleshoot the files that you know are being used at the time of the crash, or you will be spending time troubleshooting working files, and not troubleshooting the files with the issue you&#8217;re asking about.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1026486" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">August 4, 2015 at 11:42 am</span>
+
+		
+		<a href="/forums/topic/rapidears-2-04-crash-when-using-within-cocos2d/#post-1026486" class="bbp-reply-permalink">#1026486</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1026486 -->
+
+<div class="loop-item-11 user-id-1863 bbp-parent-forum-9992 bbp-parent-topic-1026464 bbp-reply-position-12 even topic-author  post-1026486 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/anhtu/" title="View anhtu&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">anhtu</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>The contents of &#8216;lession_vocal_D_3.dic&#8217; and &#8216;lession_vocal_D_3.DMP&#8217; are the files which are created when the crash occurs in &#8216;D&#8217; letter. </p>
+<p>I will try to do experiments and post log + .DMP + .dic of a crash letter again.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1026487" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">August 4, 2015 at 11:47 am</span>
+
+		
+		<a href="/forums/topic/rapidears-2-04-crash-when-using-within-cocos2d/#post-1026487" class="bbp-reply-permalink">#1026487</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1026487 -->
+
+<div class="loop-item-12 user-id-4 bbp-parent-forum-9992 bbp-parent-topic-1026464 bbp-reply-position-13 odd  post-1026487 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>OK, please don&#8217;t post the contents of the DMP file since as I mentioned it is a binary. At the same time that a DMP file is created, there is also a file called .arpa created, so please show the contents of a crashing .dic file and the contents of the arpa file with the same name as a crashing .DMP file. That is, if the crash and this error:</p>
+<p><code>ERROR: &quot;ngram_search_fwdtree.c&quot;, line 336: No word from the language model has pronunciation in the dictionary</code></p>
+<p>Occur with a file called &#8220;lession_vocal_D_3.dic&#8221;, as confirmed in this line of logging before the crash (making sure that you haven&#8217;t switched to a different model after starting):</p>
+<p><code>-dict /var/mobile/Containers/Data/Application/662EA17C-590D-4F09-9312-520CD035DE4B/Library/Caches/lession_vocal_D_3.dic \</code></p>
+<p>Then please show me the contents of lession_vocal_D_3.dic and lession_vocal_D_3.arpa. Please be careful that these are really the files related to the crash.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1026488" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">August 4, 2015 at 12:07 pm</span>
+
+		
+		<a href="/forums/topic/rapidears-2-04-crash-when-using-within-cocos2d/#post-1026488" class="bbp-reply-permalink">#1026488</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1026488 -->
+
+<div class="loop-item-13 user-id-1863 bbp-parent-forum-9992 bbp-parent-topic-1026464 bbp-reply-position-14 even topic-author  post-1026488 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/anhtu/" title="View anhtu&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">anhtu</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Here is the contents of the files which you need. In this case , I tested from A-G. When came to letter C, it crashed.</p>
+<p>lession_vocal_C_2.dic file </p>
+<p><code>C	S IY</code></p>
+<p>lession_vocal_C_2.arpa</p>
+<pre><code>#############################################################################
+## Copyright (c) 1996, Carnegie Mellon University, Cambridge University,
+## Ronald Rosenfeld and Philip Clarkson
+## Version 3, Copyright (c) 2006, Carnegie Mellon University 
+## Contributors includes Wen Xu, Ananlada Chotimongkol, 
+## David Huggins-Daines, Arthur Chan and Alan Black 
+#############################################################################
+=============================================================================
+===============  This file was produced by the CMU-Cambridge  ===============
+===============     Statistical Language Modeling Toolkit     ===============
+=============================================================================
+This is a 3-gram language model, based on a vocabulary of 3 words,
+  which begins &quot;&lt;/s&gt;&quot;, &quot;&lt;s&gt;&quot;, &quot;C&quot;...
+This is a CLOSED-vocabulary model
+  (OOVs eliminated from training data and are forbidden in test data)
+Witten Bell discounting was applied.
+This file is in the ARPA-standard format introduced by Doug Paul.
+
+p(wd3|wd1,wd2)= if(trigram exists)           p_3(wd1,wd2,wd3)
+                else if(bigram w1,w2 exists) bo_wt_2(w1,w2)*p(wd3|wd2)
+                else                         p(wd3|w2)
+
+p(wd2|wd1)= if(bigram exists) p_2(wd1,wd2)
+            else              bo_wt_1(wd1)*p_1(wd2)
+
+All probs and back-off weights (bo_wt) are given in log10 form.
+
+Data formats:
+
+Beginning of data mark: \data\
+ngram 1=nr            # number of 1-grams
+ngram 2=nr            # number of 2-grams
+ngram 3=nr            # number of 3-grams
+
+\1-grams:
+p_1     wd_1 bo_wt_1
+\2-grams:
+p_2     wd_1 wd_2 bo_wt_2
+\3-grams:
+p_3     wd_1 wd_2 wd_3 
+
+end of data mark: \end\
+
+\data\
+ngram 1=3
+ngram 2=2
+ngram 3=1
+
+\1-grams:
+-98.6990 &lt;/s&gt;	0.0000
+-98.6990 &lt;s&gt;	-99.9990
+0.0000 C	-0.3010
+
+\2-grams:
+-0.3010 &lt;s&gt; C 0.0000
+-0.3010 C &lt;/s&gt; -0.3010
+
+\3-grams:
+-0.3010 &lt;s&gt; C &lt;/s&gt; 
+
+\end\
+</code></pre>
+<p>the log console</p>
+<pre><code>2015-08-04 16:37:00.758 App_Name[50514:4263641] Starting OpenEars logging for OpenEars version 2.03 on 64-bit device (or build): iPad running iOS version: 8.300000
+
+2015-08-04 16:37:00.768 App_Name[50514:4263641] Starting dynamic language model generation
+
+2015-08-04 16:37:00.892 App_Name[50514:4263641] Done creating language model with CMUCLMTK in 0.123174 seconds.
+
+2015-08-04 16:37:00.900 App_Name[50514:4263641] I&#039;m done running performDictionaryLookup and it took 0.002335 seconds
+
+2015-08-04 16:37:00.908 App_Name[50514:4263641] I&#039;m done running dynamic language model generation and it took 0.148800 seconds
+
+2015-08-04 16:37:00.908 App_Name[50514:4263641] Valid setSecondsOfSilence value of 0.200000 will be used.
+
+2015-08-04 16:37:01.017 App_Name[50514:4264050] there is a request to change to the language model file /var/mobile/Containers/Data/Application/A9D01313-E149-4F27-9067-EB2DA15AB639/Library/Caches/lession_vocal_B_1.DMP
+
+2015-08-04 16:37:01.017 App_Name[50514:4264050] The language model ID is 1438681021
+
+2015-08-04 16:37:01.032 App_Name[50514:4264050] Success loading the specified dictionary file /var/mobile/Containers/Data/Application/A9D01313-E149-4F27-9067-EB2DA15AB639/Library/Caches/lession_vocal_B_1.dic.
+
+2015-08-04 16:37:01.033 App_Name[50514:4264050] Success loading the specified language model file /var/mobile/Containers/Data/Application/A9D01313-E149-4F27-9067-EB2DA15AB639/Library/Caches/lession_vocal_B_1.DMP.
+
+2015-08-04 16:37:01.033 App_Name[50514:4263641] Pocketsphinx is now using the following language model: 
+
+/var/mobile/Containers/Data/Application/A9D01313-E149-4F27-9067-EB2DA15AB639/Library/Caches/lession_vocal_B_1.DMP and the following dictionary: /var/mobile/Containers/Data/Application/A9D01313-E149-4F27-9067-EB2DA15AB639/Library/Caches/lession_vocal_B_1.dic
+
+2015-08-04 16:37:01.039 App_Name[50514:4264050] Changed language model. Project has these words or phrases in its dictionary:
+
+B
+
+2015-08-04 16:37:01.392 App_Name[50514:4264050] Speech detected...
+
+2015-08-04 16:37:01.393 App_Name[50514:4264050] Pocketsphinx heard &quot;&quot; with a score of (-2680) and an utterance ID of 3.
+
+2015-08-04 16:37:01.394 App_Name[50514:4264050] Hypothesis was null so we aren&#039;t returning it. If you want null hypotheses to also be returned, set OEPocketsphinxController&#039;s property returnNullHypotheses to TRUE before starting OEPocketsphinxController.
+
+2015-08-04 16:37:01.544 App_Name[50514:4264050] Pocketsphinx heard &quot;B&quot; with a score of (-5403) and an utterance ID of 4.
+
+2015-08-04 16:37:01.585 App_Name[50514:4263641] rapidEarsDidReceiveFinishedSpeechHypothesis: B with score: -5403
+
+2015-08-04 16:37:01.775 App_Name[50514:4263763] End of speech detected...
+
+2015-08-04 16:37:01.779 App_Name[50514:4263641] pocketsphinxDidDetectFinishedSpeech
+
+2015-08-04 16:37:01.785 App_Name[50514:4263763] Pocketsphinx heard &quot;B&quot; with a score of (-8131) and an utterance ID of 5.
+
+2015-08-04 16:37:01.792 App_Name[50514:4263641] rapidEarsDidReceiveFinishedSpeechHypothesis: B with score: -8131
+
+2015-08-04 16:37:03.404 App_Name[50514:4263641] Starting OpenEars logging for OpenEars version 2.03 on 64-bit device (or build): iPad running iOS version: 8.300000
+
+2015-08-04 16:37:03.416 App_Name[50514:4263641] Starting dynamic language model generation
+
+2015-08-04 16:37:03.517 App_Name[50514:4263641] Done creating language model with CMUCLMTK in 0.100489 seconds.
+
+2015-08-04 16:37:03.528 App_Name[50514:4263641] I&#039;m done running performDictionaryLookup and it took 0.004014 seconds
+
+2015-08-04 16:37:03.536 App_Name[50514:4263641] I&#039;m done running dynamic language model generation and it took 0.131257 seconds
+
+2015-08-04 16:37:03.536 App_Name[50514:4263641] Valid setSecondsOfSilence value of 0.200000 will be used.
+
+2015-08-04 16:37:03.567 App_Name[50514:4264074] there is a request to change to the language model file /var/mobile/Containers/Data/Application/A9D01313-E149-4F27-9067-EB2DA15AB639/Library/Caches/lession_vocal_C_2.DMP
+
+2015-08-04 16:37:03.569 App_Name[50514:4264074] The language model ID is 1438681023
+
+App_Name(50514,0x104f10000) malloc: *** error for object 0x900000008: pointer being freed was not allocated
+
+*** set a breakpoint in malloc_error_break to debug</code></pre>
+<p>call stack</p>
+<pre><code>Thread 16Queue : com.apple.root.default-qos (concurent)
+#0	0x00000001948c7270 in __pthread_kill ()
+#1	0x0000000194965170 in pthread_kill ()
+#2	0x000000019483eb18 in abort ()
+#3	0x00000001948f42fc in free ()
+#4	0x0000000100473054 in ngram_model_set_map_words ()
+#5	0x0000000100476598 in ___lldb_unnamed_function156$$App_Name ()
+#6	0x00000001004693e4 in ps_load_dict ()
+#7	0x0000000100479c10 in ___lldb_unnamed_function183$$App_Name ()
+#8	0x00000001004611c8 in ___lldb_unnamed_function78$$App_Name ()
+#9	0x0000000100461858 in ___lldb_unnamed_function82$$App_Name ()
+#10	0x0000000101388f94 in _dispatch_client_callout ()
+#11	0x00000001013a0848 in _dispatch_source_latch_and_call ()
+#12	0x000000010138b1c0 in _dispatch_source_invoke ()
+#13	0x00000001013965d4 in _dispatch_root_queue_drain ()
+#14	0x0000000101398248 in _dispatch_worker_thread3 ()
+#15	0x000000019496122c in _pthread_wqthread ()</code></pre>
+<p>P.S: when I use REJECTO (demo version), this problem doesn&#8217;t appear. Here is the code I use:</p>
+<pre><code> error = [_languageModelGenerator generateRejectingLanguageModelFromArray:arrWords
+                                                            withFilesNamed:name
+                                                    withOptionalExclusions:[GlobalData sharedInstance].optionalExclusion
+                                                           usingVowelsOnly:[GlobalData sharedInstance].usingVowelsOnly
+                                                                withWeight:[NSNumber numberWithFloat: [GlobalData sharedInstance].weight_rejecto]
+                                                    forAcousticModelAtPath:[OEAcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;]];</code></pre>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1026489" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">August 4, 2015 at 12:10 pm</span>
+
+		
+		<a href="/forums/topic/rapidears-2-04-crash-when-using-within-cocos2d/#post-1026489" class="bbp-reply-permalink">#1026489</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1026489 -->
+
+<div class="loop-item-14 user-id-4 bbp-parent-forum-9992 bbp-parent-topic-1026464 bbp-reply-position-15 odd  post-1026489 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Hi, </p>
+<p>It&#8217;s really important that you show the complete log with verbosePocketsphinx and OELogging turned on or I can&#8217;t help you.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1026490" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">August 4, 2015 at 12:13 pm</span>
+
+		
+		<a href="/forums/topic/rapidears-2-04-crash-when-using-within-cocos2d/#post-1026490" class="bbp-reply-permalink">#1026490</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1026490 -->
+
+<div class="loop-item-15 user-id-1863 bbp-parent-forum-9992 bbp-parent-topic-1026464 bbp-reply-position-16 even topic-author  post-1026490 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/anhtu/" title="View anhtu&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">anhtu</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Sorry, I will create one again. I reseted the source code from git and forgot it.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1026491" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">August 4, 2015 at 12:15 pm</span>
+
+		
+		<a href="/forums/topic/rapidears-2-04-crash-when-using-within-cocos2d/#post-1026491" class="bbp-reply-permalink">#1026491</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1026491 -->
+
+<div class="loop-item-16 user-id-4 bbp-parent-forum-9992 bbp-parent-topic-1026464 bbp-reply-position-17 odd  post-1026491 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>OK, it would also make it easy to help out if the logs didn&#8217;t have inserted line breaks like in the last one – not so easy to read.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1026492" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">August 4, 2015 at 12:26 pm</span>
+
+		
+		<a href="/forums/topic/rapidears-2-04-crash-when-using-within-cocos2d/#post-1026492" class="bbp-reply-permalink">#1026492</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1026492 -->
+
+<div class="loop-item-17 user-id-1863 bbp-parent-forum-9992 bbp-parent-topic-1026464 bbp-reply-position-18 even topic-author  post-1026492 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/anhtu/" title="View anhtu&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">anhtu</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Here is the contents:crash when came to letter D</p>
+<p>.dic file</p>
+<p><code>D	D IY</code></p>
+<p>.arpa file</p>
+<pre><code>#############################################################################
+## Copyright (c) 1996, Carnegie Mellon University, Cambridge University,
+## Ronald Rosenfeld and Philip Clarkson
+## Version 3, Copyright (c) 2006, Carnegie Mellon University 
+## Contributors includes Wen Xu, Ananlada Chotimongkol, 
+## David Huggins-Daines, Arthur Chan and Alan Black 
+#############################################################################
+=============================================================================
+===============  This file was produced by the CMU-Cambridge  ===============
+===============     Statistical Language Modeling Toolkit     ===============
+=============================================================================
+This is a 3-gram language model, based on a vocabulary of 3 words,
+  which begins &quot;&lt;/s&gt;&quot;, &quot;&lt;s&gt;&quot;, &quot;D&quot;...
+This is a CLOSED-vocabulary model
+  (OOVs eliminated from training data and are forbidden in test data)
+Witten Bell discounting was applied.
+This file is in the ARPA-standard format introduced by Doug Paul.
+
+p(wd3|wd1,wd2)= if(trigram exists)           p_3(wd1,wd2,wd3)
+                else if(bigram w1,w2 exists) bo_wt_2(w1,w2)*p(wd3|wd2)
+                else                         p(wd3|w2)
+
+p(wd2|wd1)= if(bigram exists) p_2(wd1,wd2)
+            else              bo_wt_1(wd1)*p_1(wd2)
+
+All probs and back-off weights (bo_wt) are given in log10 form.
+
+Data formats:
+
+Beginning of data mark: \data\
+ngram 1=nr            # number of 1-grams
+ngram 2=nr            # number of 2-grams
+ngram 3=nr            # number of 3-grams
+
+\1-grams:
+p_1     wd_1 bo_wt_1
+\2-grams:
+p_2     wd_1 wd_2 bo_wt_2
+\3-grams:
+p_3     wd_1 wd_2 wd_3 
+
+end of data mark: \end\
+
+\data\
+ngram 1=3
+ngram 2=2
+ngram 3=1
+
+\1-grams:
+-98.6990 &lt;/s&gt;	0.0000
+-98.6990 &lt;s&gt;	-99.9990
+0.0000 D	-0.3010
+
+\2-grams:
+-0.3010 &lt;s&gt; D 0.0000
+-0.3010 D &lt;/s&gt; -0.3010
+
+\3-grams:
+-0.3010 &lt;s&gt; D &lt;/s&gt; 
+
+\end\
+</code></pre>
+<p>the log:</p>
+<pre><code>2015-08-04 17:18:43.475 App_Name[50827:4272534] Starting OpenEars logging for OpenEars version 2.03 on 64-bit device (or build): iPad running iOS version: 8.300000
+2015-08-04 17:18:43.525 App_Name[50827:4272534] Starting dynamic language model generation
+
+2015-08-04 17:18:43.647 App_Name[50827:4272534] Done creating language model with CMUCLMTK in 0.122107 seconds.
+2015-08-04 17:18:43.669 App_Name[50827:4272534] I&#039;m done running performDictionaryLookup and it took 0.000215 seconds
+2015-08-04 17:18:43.677 App_Name[50827:4272534] I&#039;m done running dynamic language model generation and it took 0.196122 seconds
+2015-08-04 17:18:43.678 App_Name[50827:4272534] Starting OpenEars logging for OpenEars version 2.03 on 64-bit device (or build): iPad running iOS version: 8.300000
+2015-08-04 17:18:43.685 App_Name[50827:4272534] cocos2d: surface size: 2048x1536
+2015-08-04 17:18:44.690 App_Name[50827:4272534] User gave mic permission for this app.
+2015-08-04 17:18:44.691 App_Name[50827:4272534] Valid setSecondsOfSilence value of 0.200000 will be used.
+2015-08-04 17:18:44.692 App_Name[50827:4273012] Starting listening.
+2015-08-04 17:18:44.692 App_Name[50827:4273012] about to set up audio session
+2015-08-04 17:18:44.842 App_Name[50827:4272710] Audio route has changed for the following reason:
+2015-08-04 17:18:44.846 App_Name[50827:4272710] There was a category change. The new category is AVAudioSessionCategoryPlayAndRecord
+2015-08-04 17:18:44.852 App_Name[50827:4272710] This is not a case in which OpenEars notifies of a route change. At the close of this function, the new audio route is ---SpeakerMicrophoneBuiltIn---. The previous route before changing to this route was &lt;AVAudioSessionRouteDescription: 0x170806470,
+inputs = (null);
+outputs = (
+           &quot;&lt;AVAudioSessionPortDescription: 0x17080b520, type = Speaker; name = Speaker; UID = Built-In Speaker; selectedDataSource = (null)&gt;&quot;
+           )&gt;.
+2015-08-04 17:18:44.866 App_Name[50827:4273012] done starting audio unit
+INFO: cmd_ln.c(702): Parsing command line:
+\
+-lm /var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_A_0.DMP \
+-vad_prespeech 10 \
+-vad_postspeech 20 \
+-vad_threshold 2.000000 \
+-remove_noise yes \
+-remove_silence yes \
+-bestpath yes \
+-lw 6.500000 \
+-dict /var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_A_0.dic \
+-hmm /private/var/mobile/Containers/Bundle/Application/54D4920A-C3CD-4480-94F2-8654421B4D13/App_Name.app/AcousticModelEnglish.bundle
+
+Current configuration:
+[NAME]		[DEFLT]		[VALUE]
+-agc		none		none
+-agcthresh	2.0		2.000000e+00
+-allphone
+-allphone_ci	no		no
+-alpha		0.97		9.700000e-01
+-argfile
+-ascale		20.0		2.000000e+01
+-aw		1		1
+-backtrace	no		no
+-beam		1e-48		1.000000e-48
+-bestpath	yes		yes
+-bestpathlw	9.5		9.500000e+00
+-bghist		no		no
+-ceplen		13		13
+-cmn		current		current
+-cmninit	8.0		8.0
+-compallsen	no		no
+-debug				0
+-dict				/var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_A_0.dic
+-dictcase	no		no
+-dither		no		no
+-doublebw	no		no
+-ds		1		1
+-fdict
+-feat		1s_c_d_dd	1s_c_d_dd
+-featparams
+-fillprob	1e-8		1.000000e-08
+-frate		100		100
+-fsg
+-fsgusealtpron	yes		yes
+-fsgusefiller	yes		yes
+-fwdflat	yes		yes
+-fwdflatbeam	1e-64		1.000000e-64
+-fwdflatefwid	4		4
+-fwdflatlw	8.5		8.500000e+00
+-fwdflatsfwin	25		25
+-fwdflatwbeam	7e-29		7.000000e-29
+-fwdtree	yes		yes
+-hmm				/private/var/mobile/Containers/Bundle/Application/54D4920A-C3CD-4480-94F2-8654421B4D13/App_Name.app/AcousticModelEnglish.bundle
+-input_endian	little		little
+-jsgf
+-kdmaxbbi	-1		-1
+-kdmaxdepth	0		0
+-kdtree
+-keyphrase
+-kws
+-kws_plp	1e-1		1.000000e-01
+-kws_threshold	1		1.000000e+00
+-latsize	5000		5000
+-lda
+-ldadim		0		0
+-lextreedump	0		0
+-lifter		0		0
+-lm				/var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_A_0.DMP
+-lmctl
+-lmname
+-logbase	1.0001		1.000100e+00
+-logfn
+-logspec	no		no
+-lowerf		133.33334	1.333333e+02
+-lpbeam		1e-40		1.000000e-40
+-lponlybeam	7e-29		7.000000e-29
+-lw		6.5		6.500000e+00
+-maxhmmpf	10000		10000
+-maxnewoov	20		20
+-maxwpf		-1		-1
+-mdef
+-mean
+-mfclogdir
+-min_endfr	0		0
+-mixw
+-mixwfloor	0.0000001	1.000000e-07
+-mllr
+-mmap		yes		yes
+-ncep		13		13
+-nfft		512		512
+-nfilt		40		40
+-nwpen		1.0		1.000000e+00
+-pbeam		1e-48		1.000000e-48
+-pip		1.0		1.000000e+00
+-pl_beam	1e-10		1.000000e-10
+-pl_pbeam	1e-5		1.000000e-05
+-pl_window	0		0
+-rawlogdir
+-remove_dc	no		no
+-remove_noise	yes		yes
+-remove_silence	yes		yes
+-round_filters	yes		yes
+-samprate	16000		1.600000e+04
+-seed		-1		-1
+-sendump
+-senlogdir
+-senmgau
+-silprob	0.005		5.000000e-03
+-smoothspec	no		no
+-svspec
+-tmat
+-tmatfloor	0.0001		1.000000e-04
+-topn		4		4
+-topn_beam	0		0
+-toprule
+-transform	legacy		legacy
+-unit_area	yes		yes
+-upperf		6855.4976	6.855498e+03
+-usewdphones	no		no
+-uw		1.0		1.000000e+00
+-vad_postspeech	50		20
+-vad_prespeech	10		10
+-vad_threshold	2.0		2.000000e+00
+-var
+-varfloor	0.0001		1.000000e-04
+-varnorm	no		no
+-verbose	no		no
+-warp_params
+-warp_type	inverse_linear	inverse_linear
+-wbeam		7e-29		7.000000e-29
+-wip		0.65		6.500000e-01
+-wlen		0.025625	2.562500e-02
+
+INFO: cmd_ln.c(702): Parsing command line:
+\
+-nfilt 25 \
+-lowerf 130 \
+-upperf 6800 \
+-feat 1s_c_d_dd \
+-svspec 0-12/13-25/26-38 \
+-agc none \
+-cmn current \
+-varnorm no \
+-transform dct \
+-lifter 22 \
+-cmninit 40
+
+Current configuration:
+[NAME]		[DEFLT]		[VALUE]
+-agc		none		none
+-agcthresh	2.0		2.000000e+00
+-alpha		0.97		9.700000e-01
+-ceplen		13		13
+-cmn		current		current
+-cmninit	8.0		40
+-dither		no		no
+-doublebw	no		no
+-feat		1s_c_d_dd	1s_c_d_dd
+-frate		100		100
+-input_endian	little		little
+-lda
+-ldadim		0		0
+-lifter		0		22
+-logspec	no		no
+-lowerf		133.33334	1.300000e+02
+-ncep		13		13
+-nfft		512		512
+-nfilt		40		25
+-remove_dc	no		no
+-remove_noise	yes		yes
+-remove_silence	yes		yes
+-round_filters	yes		yes
+-samprate	16000		1.600000e+04
+-seed		-1		-1
+-smoothspec	no		no
+-svspec				0-12/13-25/26-38
+-transform	legacy		dct
+-unit_area	yes		yes
+-upperf		6855.4976	6.800000e+03
+-vad_postspeech	50		20
+-vad_prespeech	10		10
+-vad_threshold	2.0		2.000000e+00
+-varnorm	no		no
+-verbose	no		no
+-warp_params
+-warp_type	inverse_linear	inverse_linear
+-wlen		0.025625	2.562500e-02
+
+INFO: acmod.c(252): Parsed model-specific feature parameters from /private/var/mobile/Containers/Bundle/Application/54D4920A-C3CD-4480-94F2-8654421B4D13/App_Name.app/AcousticModelEnglish.bundle/feat.params
+INFO: feat.c(715): Initializing feature stream to type: &#039;1s_c_d_dd&#039;, ceplen=13, CMN=&#039;current&#039;, VARNORM=&#039;no&#039;, AGC=&#039;none&#039;
+INFO: cmn.c(143): mean[0]= 12.00, mean[1..12]= 0.0
+INFO: acmod.c(171): Using subvector specification 0-12/13-25/26-38
+INFO: mdef.c(518): Reading model definition: /private/var/mobile/Containers/Bundle/Application/54D4920A-C3CD-4480-94F2-8654421B4D13/App_Name.app/AcousticModelEnglish.bundle/mdef
+INFO: mdef.c(531): Found byte-order mark BMDF, assuming this is a binary mdef file
+INFO: bin_mdef.c(336): Reading binary model definition: /private/var/mobile/Containers/Bundle/Application/54D4920A-C3CD-4480-94F2-8654421B4D13/App_Name.app/AcousticModelEnglish.bundle/mdef
+INFO: bin_mdef.c(516): 46 CI-phone, 168344 CD-phone, 3 emitstate/phone, 138 CI-sen, 6138 Sen, 32881 Sen-Seq
+INFO: tmat.c(206): Reading HMM transition probability matrices: /private/var/mobile/Containers/Bundle/Application/54D4920A-C3CD-4480-94F2-8654421B4D13/App_Name.app/AcousticModelEnglish.bundle/transition_matrices
+INFO: acmod.c(124): Attempting to use SCHMM computation module
+INFO: ms_gauden.c(198): Reading mixture gaussian parameter: /private/var/mobile/Containers/Bundle/Application/54D4920A-C3CD-4480-94F2-8654421B4D13/App_Name.app/AcousticModelEnglish.bundle/means
+INFO: ms_gauden.c(292): 1 codebook, 3 feature, size:
+INFO: ms_gauden.c(294):  512x13
+INFO: ms_gauden.c(294):  512x13
+INFO: ms_gauden.c(294):  512x13
+INFO: ms_gauden.c(198): Reading mixture gaussian parameter: /private/var/mobile/Containers/Bundle/Application/54D4920A-C3CD-4480-94F2-8654421B4D13/App_Name.app/AcousticModelEnglish.bundle/variances
+INFO: ms_gauden.c(292): 1 codebook, 3 feature, size:
+INFO: ms_gauden.c(294):  512x13
+INFO: ms_gauden.c(294):  512x13
+INFO: ms_gauden.c(294):  512x13
+INFO: ms_gauden.c(354): 0 variance values floored
+INFO: s2_semi_mgau.c(904): Loading senones from dump file /private/var/mobile/Containers/Bundle/Application/54D4920A-C3CD-4480-94F2-8654421B4D13/App_Name.app/AcousticModelEnglish.bundle/sendump
+INFO: s2_semi_mgau.c(928): BEGIN FILE FORMAT DESCRIPTION
+INFO: s2_semi_mgau.c(991): Rows: 512, Columns: 6138
+INFO: s2_semi_mgau.c(1023): Using memory-mapped I/O for senones
+INFO: s2_semi_mgau.c(1294): Maximum top-N: 4 Top-N beams: 0 0 0
+INFO: dict.c(320): Allocating 4107 * 32 bytes (128 KiB) for word entries
+INFO: dict.c(333): Reading main dictionary: /var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_A_0.dic
+INFO: dict.c(213): Allocated 0 KiB for strings, 0 KiB for phones
+INFO: dict.c(336): 2 words read
+INFO: dict.c(342): Reading filler dictionary: /private/var/mobile/Containers/Bundle/Application/54D4920A-C3CD-4480-94F2-8654421B4D13/App_Name.app/AcousticModelEnglish.bundle/noisedict
+INFO: dict.c(213): Allocated 0 KiB for strings, 0 KiB for phones
+INFO: dict.c(345): 9 words read
+INFO: dict2pid.c(396): Building PID tables for dictionary
+INFO: dict2pid.c(406): Allocating 46^3 * 2 bytes (190 KiB) for word-initial triphones
+INFO: dict2pid.c(132): Allocated 51152 bytes (49 KiB) for word-final triphones
+INFO: dict2pid.c(196): Allocated 51152 bytes (49 KiB) for single-phone word triphones
+INFO: ngram_model_arpa.c(79): No \data\ mark in LM file
+INFO: ngram_model_dmp.c(166): Will use memory-mapped I/O for LM file
+INFO: ngram_model_dmp.c(220): ngrams 1=3, 2=2, 3=1
+INFO: ngram_model_dmp.c(266):        3 = LM.unigrams(+trailer) read
+INFO: ngram_model_dmp.c(312):        2 = LM.bigrams(+trailer) read
+INFO: ngram_model_dmp.c(338):        1 = LM.trigrams read
+INFO: ngram_model_dmp.c(363):        2 = LM.prob2 entries read
+INFO: ngram_model_dmp.c(383):        3 = LM.bo_wt2 entries read
+INFO: ngram_model_dmp.c(403):        2 = LM.prob3 entries read
+INFO: ngram_model_dmp.c(431):        1 = LM.tseg_base entries read
+INFO: ngram_model_dmp.c(487):        3 = ascii word strings read
+INFO: ngram_search_fwdtree.c(99): 0 unique initial diphones
+INFO: ngram_search_fwdtree.c(148): 0 root, 0 non-root channels, 12 single-phone words
+INFO: ngram_search_fwdtree.c(186): Creating search tree
+INFO: ngram_search_fwdtree.c(192): before: 0 root, 0 non-root channels, 12 single-phone words
+INFO: ngram_search_fwdtree.c(326): after: max nonroot chan increased to 128
+ERROR: &quot;ngram_search_fwdtree.c&quot;, line 336: No word from the language model has pronunciation in the dictionary
+INFO: ngram_search_fwdtree.c(339): after: 0 root, 0 non-root channels, 11 single-phone words
+INFO: ngram_search_fwdflat.c(157): fwdflat: min_ef_width = 4, max_sf_win = 25
+2015-08-04 17:18:44.981 App_Name[50827:4273012] Restoring SmartCMN value of 55.322021
+2015-08-04 17:18:44.982 App_Name[50827:4273012] Listening.
+2015-08-04 17:18:44.982 App_Name[50827:4273012] Project has these words or phrases in its dictionary:
+A
+A(2)
+2015-08-04 17:18:44.983 App_Name[50827:4273012] Recognition loop has started
+2015-08-04 17:18:44.987 App_Name[50827:4272534] Pocketsphinx is now listening.
+2015-08-04 17:18:45.589 App_Name[50827:4273012] Speech detected...
+2015-08-04 17:18:45.591 App_Name[50827:4273012] Pocketsphinx heard &quot;&quot; with a score of (-1841) and an utterance ID of 0.
+2015-08-04 17:18:45.673 App_Name[50827:4273012] Pocketsphinx heard &quot;&quot; with a score of (-4145) and an utterance ID of 1.
+2015-08-04 17:18:45.776 App_Name[50827:4273012] End of speech detected...
+INFO: cmn_prior.c(131): cmn_prior_update: from &lt; 55.32  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00 &gt;
+INFO: cmn_prior.c(149): cmn_prior_update: to   &lt; 50.10 -2.86 -21.38  6.18  9.53  9.65 -6.16  1.99 -5.67 -2.94 -0.32 -7.97 -8.61 &gt;
+INFO: ngram_search_fwdtree.c(1550):      344 words recognized (9/fr)
+INFO: ngram_search_fwdtree.c(1552):     1104 senones evaluated (30/fr)
+INFO: ngram_search_fwdtree.c(1556):      366 channels searched (9/fr), 0 1st, 366 last
+INFO: ngram_search_fwdtree.c(1559):      366 words for which last channels evaluated (9/fr)
+INFO: ngram_search_fwdtree.c(1561):        0 candidate words for entering last phone (0/fr)
+INFO: ngram_search_fwdtree.c(1564): fwdtree 0.09 CPU 0.251 xRT
+INFO: ngram_search_fwdtree.c(1567): fwdtree 0.51 wall 1.383 xRT
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 2 words
+INFO: ngram_search_fwdflat.c(938):      230 words recognized (6/fr)
+INFO: ngram_search_fwdflat.c(940):      720 senones evaluated (19/fr)
+INFO: ngram_search_fwdflat.c(942):      267 channels searched (7/fr)
+INFO: ngram_search_fwdflat.c(944):      267 words searched (7/fr)
+INFO: ngram_search_fwdflat.c(947):       62 word transitions (1/fr)
+INFO: ngram_search_fwdflat.c(950): fwdflat 0.00 CPU 0.010 xRT
+INFO: ngram_search_fwdflat.c(953): fwdflat 0.00 wall 0.009 xRT
+INFO: ngram_search.c(1215): &lt;/s&gt; not found in last frame, using &lt;sil&gt;.35 instead
+INFO: ngram_search.c(1268): lattice start node &lt;s&gt;.0 end node &lt;sil&gt;.2
+INFO: ngram_search.c(1294): Eliminated 90 nodes before end node
+INFO: ngram_search.c(1399): Lattice has 92 nodes, 1 links
+INFO: ps_lattice.c(1368): Normalizer P(O) = alpha(&lt;sil&gt;:2:35) = -4823285
+INFO: ps_lattice.c(1403): Joint P(O,S) = -4823286 P(S|O) = -1
+INFO: ngram_search.c(890): bestpath 0.00 CPU 0.000 xRT
+INFO: ngram_search.c(893): bestpath 0.00 wall 0.001 xRT
+2015-08-04 17:18:45.781 App_Name[50827:4273012] Pocketsphinx heard &quot;&quot; with a score of (-47303) and an utterance ID of 2.
+2015-08-04 17:18:45.782 App_Name[50827:4273012] Hypothesis was null so we aren&#039;t returning it. If you want null hypotheses to also be returned, set OEPocketsphinxController&#039;s property returnNullHypotheses to TRUE before starting OEPocketsphinxController.
+2015-08-04 17:18:46.052 App_Name[50827:4273012] Speech detected...
+2015-08-04 17:18:46.053 App_Name[50827:4273012] Pocketsphinx heard &quot;&quot; with a score of (-3968) and an utterance ID of 3.
+2015-08-04 17:18:46.165 App_Name[50827:4273012] Pocketsphinx heard &quot;A&quot; with a score of (-5233) and an utterance ID of 4.
+2015-08-04 17:18:46.173 App_Name[50827:4272534] rapidEarsDidReceiveFinishedSpeechHypothesis: A with score: -5233
+2015-08-04 17:18:46.174 App_Name[50827:4272534] Play effect sound
+2015-08-04 17:18:49.159 App_Name[50827:4272534] Starting OpenEars logging for OpenEars version 2.03 on 64-bit device (or build): iPad running iOS version: 8.300000
+2015-08-04 17:18:49.172 App_Name[50827:4272534] Starting dynamic language model generation
+
+INFO: cmd_ln.c(702): Parsing command line:
+sphinx_lm_convert \
+-i /var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_B_1.arpa \
+-o /var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_B_1.DMP
+
+Current configuration:
+[NAME]		[DEFLT]	[VALUE]
+-case
+-debug			0
+-help		no	no
+-i			/var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_B_1.arpa
+-ienc
+-ifmt
+-logbase	1.0001	1.000100e+00
+-mmap		no	no
+-o			/var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_B_1.DMP
+-oenc		utf8	utf8
+-ofmt
+
+INFO: ngram_model_arpa.c(504): ngrams 1=3, 2=2, 3=1
+INFO: ngram_model_arpa.c(137): Reading unigrams
+INFO: ngram_model_arpa.c(543):        3 = #unigrams created
+INFO: ngram_model_arpa.c(197): Reading bigrams
+INFO: ngram_model_arpa.c(561):        2 = #bigrams created
+INFO: ngram_model_arpa.c(562):        2 = #prob2 entries
+INFO: ngram_model_arpa.c(570):        3 = #bo_wt2 entries
+INFO: ngram_model_arpa.c(294): Reading trigrams
+INFO: ngram_model_arpa.c(583):        1 = #trigrams created
+INFO: ngram_model_arpa.c(584):        2 = #prob3 entries
+INFO: ngram_model_dmp.c(518): Building DMP model...
+INFO: ngram_model_dmp.c(548):        3 = #unigrams created
+INFO: ngram_model_dmp.c(649):        2 = #bigrams created
+INFO: ngram_model_dmp.c(650):        2 = #prob2 entries
+INFO: ngram_model_dmp.c(657):        3 = #bo_wt2 entries
+INFO: ngram_model_dmp.c(661):        1 = #trigrams created
+INFO: ngram_model_dmp.c(662):        2 = #prob3 entries
+2015-08-04 17:18:49.299 App_Name[50827:4272534] Done creating language model with CMUCLMTK in 0.126771 seconds.
+2015-08-04 17:18:49.307 App_Name[50827:4272534] I&#039;m done running performDictionaryLookup and it took 0.002471 seconds
+2015-08-04 17:18:49.317 App_Name[50827:4272534] I&#039;m done running dynamic language model generation and it took 0.157271 seconds
+2015-08-04 17:18:49.318 App_Name[50827:4272534] Valid setSecondsOfSilence value of 0.200000 will be used.
+INFO: cmn_prior.c(131): cmn_prior_update: from &lt; 50.10 -2.86 -21.38  6.18  9.53  9.65 -6.16  1.99 -5.67 -2.94 -0.32 -7.97 -8.61 &gt;
+INFO: cmn_prior.c(149): cmn_prior_update: to   &lt; 56.52  4.14 -13.40  9.27 -0.63  2.79 -13.06 -7.02 -0.07 -7.23 -1.33 -5.36 -9.11 &gt;
+INFO: ngram_search_fwdtree.c(1550):      344 words recognized (9/fr)
+INFO: ngram_search_fwdtree.c(1552):     1131 senones evaluated (31/fr)
+INFO: ngram_search_fwdtree.c(1556):      366 channels searched (9/fr), 0 1st, 366 last
+INFO: ngram_search_fwdtree.c(1559):      366 words for which last channels evaluated (9/fr)
+INFO: ngram_search_fwdtree.c(1561):        0 candidate words for entering last phone (0/fr)
+INFO: ngram_search_fwdtree.c(1564): fwdtree 0.82 CPU 2.215 xRT
+INFO: ngram_search_fwdtree.c(1567): fwdtree 3.71 wall 10.024 xRT
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 4 words
+INFO: ngram_search_fwdflat.c(938):      302 words recognized (8/fr)
+INFO: ngram_search_fwdflat.c(940):     1162 senones evaluated (31/fr)
+INFO: ngram_search_fwdflat.c(942):      387 channels searched (10/fr)
+INFO: ngram_search_fwdflat.c(944):      387 words searched (10/fr)
+INFO: ngram_search_fwdflat.c(947):      134 word transitions (3/fr)
+INFO: ngram_search_fwdflat.c(950): fwdflat 0.00 CPU 0.009 xRT
+INFO: ngram_search_fwdflat.c(953): fwdflat 0.00 wall 0.010 xRT
+2015-08-04 17:18:49.495 App_Name[50827:4273056] there is a request to change to the language model file /var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_B_1.DMP
+2015-08-04 17:18:49.496 App_Name[50827:4273056] The language model ID is 1438683529
+INFO: cmd_ln.c(702): Parsing command line:
+
+Current configuration:
+[NAME]		[DEFLT]		[VALUE]
+-agc		none		none
+-agcthresh	2.0		2.000000e+00
+-allphone
+-allphone_ci	no		no
+-alpha		0.97		9.700000e-01
+-ascale		20.0		2.000000e+01
+-aw		1		1
+-backtrace	no		no
+-beam		1e-48		1.000000e-48
+-bestpath	yes		yes
+-bestpathlw	9.5		9.500000e+00
+-bghist		no		no
+-ceplen		13		13
+-cmn		current		current
+-cmninit	8.0		8.0
+-compallsen	no		no
+-debug				0
+-dict
+-dictcase	no		no
+-dither		no		no
+-doublebw	no		no
+-ds		1		1
+-fdict
+-feat		1s_c_d_dd	1s_c_d_dd
+-featparams
+-fillprob	1e-8		1.000000e-08
+-frate		100		100
+-fsg
+-fsgusealtpron	yes		yes
+-fsgusefiller	yes		yes
+-fwdflat	yes		yes
+-fwdflatbeam	1e-64		1.000000e-64
+-fwdflatefwid	4		4
+-fwdflatlw	8.5		8.500000e+00
+-fwdflatsfwin	25		25
+-fwdflatwbeam	7e-29		7.000000e-29
+-fwdtree	yes		yes
+-hmm
+-input_endian	little		little
+-jsgf
+-kdmaxbbi	-1		-1
+-kdmaxdepth	0		0
+-kdtree
+-keyphrase
+-kws
+-kws_plp	1e-1		1.000000e-01
+-kws_threshold	1		1.000000e+00
+-latsize	5000		5000
+-lda
+-ldadim		0		0
+-lextreedump	0		0
+-lifter		0		0
+-lm
+-lmctl
+-lmname
+-logbase	1.0001		1.000100e+00
+-logfn
+-logspec	no		no
+-lowerf		133.33334	1.333333e+02
+-lpbeam		1e-40		1.000000e-40
+-lponlybeam	7e-29		7.000000e-29
+-lw		6.5		6.500000e+00
+-maxhmmpf	10000		10000
+-maxnewoov	20		20
+-maxwpf		-1		-1
+-mdef
+-mean
+-mfclogdir
+-min_endfr	0		0
+-mixw
+-mixwfloor	0.0000001	1.000000e-07
+-mllr
+-mmap		yes		yes
+-ncep		13		13
+-nfft		512		512
+-nfilt		40		40
+-nwpen		1.0		1.000000e+00
+-pbeam		1e-48		1.000000e-48
+-pip		1.0		1.000000e+00
+-pl_beam	1e-10		1.000000e-10
+-pl_pbeam	1e-5		1.000000e-05
+-pl_window	0		0
+-rawlogdir
+-remove_dc	no		no
+-remove_noise	yes		yes
+-remove_silence	yes		yes
+-round_filters	yes		yes
+-samprate	16000		1.600000e+04
+-seed		-1		-1
+-sendump
+-senlogdir
+-senmgau
+-silprob	0.005		5.000000e-03
+-smoothspec	no		no
+-svspec
+-tmat
+-tmatfloor	0.0001		1.000000e-04
+-topn		4		4
+-topn_beam	0		0
+-toprule
+-transform	legacy		legacy
+-unit_area	yes		yes
+-upperf		6855.4976	6.855498e+03
+-usewdphones	no		no
+-uw		1.0		1.000000e+00
+-vad_postspeech	50		50
+-vad_prespeech	10		10
+-vad_threshold	2.0		2.000000e+00
+-var
+-varfloor	0.0001		1.000000e-04
+-varnorm	no		no
+-verbose	no		no
+-warp_params
+-warp_type	inverse_linear	inverse_linear
+-wbeam		7e-29		7.000000e-29
+-wip		0.65		6.500000e-01
+-wlen		0.025625	2.562500e-02
+
+INFO: dict.c(320): Allocating 4106 * 32 bytes (128 KiB) for word entries
+INFO: dict.c(333): Reading main dictionary: /var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_B_1.dic
+INFO: dict.c(213): Allocated 0 KiB for strings, 0 KiB for phones
+INFO: dict.c(336): 1 words read
+INFO: dict.c(342): Reading filler dictionary: /private/var/mobile/Containers/Bundle/Application/54D4920A-C3CD-4480-94F2-8654421B4D13/App_Name.app/AcousticModelEnglish.bundle/noisedict
+INFO: dict.c(213): Allocated 0 KiB for strings, 0 KiB for phones
+INFO: dict.c(345): 9 words read
+INFO: dict2pid.c(396): Building PID tables for dictionary
+INFO: dict2pid.c(406): Allocating 46^3 * 2 bytes (190 KiB) for word-initial triphones
+INFO: dict2pid.c(132): Allocated 51152 bytes (49 KiB) for word-final triphones
+INFO: dict2pid.c(196): Allocated 51152 bytes (49 KiB) for single-phone word triphones
+INFO: ngram_search_fwdtree.c(99): 1 unique initial diphones
+INFO: ngram_search_fwdtree.c(148): 0 root, 0 non-root channels, 10 single-phone words
+INFO: ngram_search_fwdtree.c(186): Creating search tree
+INFO: ngram_search_fwdtree.c(192): before: 0 root, 0 non-root channels, 10 single-phone words
+ERROR: &quot;ngram_search_fwdtree.c&quot;, line 336: No word from the language model has pronunciation in the dictionary
+INFO: ngram_search_fwdtree.c(339): after: 0 root, 0 non-root channels, 9 single-phone words
+2015-08-04 17:18:49.515 App_Name[50827:4273056] Success loading the specified dictionary file /var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_B_1.dic.
+INFO: ngram_model_arpa.c(79): No \data\ mark in LM file
+INFO: ngram_model_dmp.c(166): Will use memory-mapped I/O for LM file
+INFO: ngram_model_dmp.c(220): ngrams 1=3, 2=2, 3=1
+INFO: ngram_model_dmp.c(266):        3 = LM.unigrams(+trailer) read
+INFO: ngram_model_dmp.c(312):        2 = LM.bigrams(+trailer) read
+INFO: ngram_model_dmp.c(338):        1 = LM.trigrams read
+INFO: ngram_model_dmp.c(363):        2 = LM.prob2 entries read
+INFO: ngram_model_dmp.c(383):        3 = LM.bo_wt2 entries read
+INFO: ngram_model_dmp.c(403):        2 = LM.prob3 entries read
+INFO: ngram_model_dmp.c(431):        1 = LM.tseg_base entries read
+INFO: ngram_model_dmp.c(487):        3 = ascii word strings read
+INFO: ngram_search_fwdtree.c(99): 1 unique initial diphones
+INFO: ngram_search_fwdtree.c(148): 0 root, 0 non-root channels, 10 single-phone words
+INFO: ngram_search_fwdtree.c(186): Creating search tree
+INFO: ngram_search_fwdtree.c(192): before: 0 root, 0 non-root channels, 10 single-phone words
+INFO: ngram_search_fwdtree.c(326): after: max nonroot chan increased to 128
+INFO: ngram_search_fwdtree.c(339): after: 1 root, 0 non-root channels, 9 single-phone words
+INFO: ngram_search_fwdflat.c(157): fwdflat: min_ef_width = 4, max_sf_win = 25
+2015-08-04 17:18:49.518 App_Name[50827:4273056] Success loading the specified language model file /var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_B_1.DMP.
+2015-08-04 17:18:49.518 App_Name[50827:4272534] Pocketsphinx is now using the following language model:
+/var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_B_1.DMP and the following dictionary: /var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_B_1.dic
+2015-08-04 17:18:49.519 App_Name[50827:4273056] Changed language model. Project has these words or phrases in its dictionary:
+B
+INFO: cmn_prior.c(131): cmn_prior_update: from &lt; 56.52  4.14 -13.40  9.27 -0.63  2.79 -13.06 -7.02 -0.07 -7.23 -1.33 -5.36 -9.11 &gt;
+INFO: cmn_prior.c(149): cmn_prior_update: to   &lt; 56.52  4.14 -13.40  9.27 -0.63  2.79 -13.06 -7.02 -0.07 -7.23 -1.33 -5.36 -9.11 &gt;
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 0 words
+2015-08-04 17:18:49.744 App_Name[50827:4273056] Speech detected...
+2015-08-04 17:18:49.745 App_Name[50827:4273056] Pocketsphinx heard &quot;&quot; with a score of (-2471) and an utterance ID of 5.
+2015-08-04 17:18:49.745 App_Name[50827:4273056] Hypothesis was null so we aren&#039;t returning it. If you want null hypotheses to also be returned, set OEPocketsphinxController&#039;s property returnNullHypotheses to TRUE before starting OEPocketsphinxController.
+2015-08-04 17:18:49.875 App_Name[50827:4273056] Pocketsphinx heard &quot;&quot; with a score of (-3611) and an utterance ID of 6.
+2015-08-04 17:18:50.015 App_Name[50827:4273056] Pocketsphinx heard &quot;&quot; with a score of (-6506) and an utterance ID of 7.
+2015-08-04 17:18:50.134 App_Name[50827:4273056] Pocketsphinx heard &quot;&quot; with a score of (-7907) and an utterance ID of 8.
+2015-08-04 17:18:50.261 App_Name[50827:4273056] Pocketsphinx heard &quot;&quot; with a score of (-9050) and an utterance ID of 9.
+2015-08-04 17:18:50.383 App_Name[50827:4273056] End of speech detected...
+INFO: cmn_prior.c(131): cmn_prior_update: from &lt; 56.52  4.14 -13.40  9.27 -0.63  2.79 -13.06 -7.02 -0.07 -7.23 -1.33 -5.36 -9.11 &gt;
+INFO: cmn_prior.c(149): cmn_prior_update: to   &lt; 57.29  5.73 -11.50  8.72 -0.13  7.50 -5.11 -8.93 -2.48 -6.79 -6.31 -2.05 -8.11 &gt;
+INFO: ngram_search_fwdtree.c(1550):      575 words recognized (8/fr)
+INFO: ngram_search_fwdtree.c(1552):     4967 senones evaluated (72/fr)
+INFO: ngram_search_fwdtree.c(1556):     2542 channels searched (36/fr), 65 1st, 2477 last
+INFO: ngram_search_fwdtree.c(1559):      617 words for which last channels evaluated (8/fr)
+INFO: ngram_search_fwdtree.c(1561):       63 candidate words for entering last phone (0/fr)
+INFO: ngram_search_fwdtree.c(1564): fwdtree 0.14 CPU 0.201 xRT
+INFO: ngram_search_fwdtree.c(1567): fwdtree 0.86 wall 1.252 xRT
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 3 words
+INFO: ngram_search_fwdflat.c(938):      491 words recognized (7/fr)
+INFO: ngram_search_fwdflat.c(940):     4890 senones evaluated (71/fr)
+INFO: ngram_search_fwdflat.c(942):     2482 channels searched (35/fr)
+INFO: ngram_search_fwdflat.c(944):      622 words searched (9/fr)
+INFO: ngram_search_fwdflat.c(947):      130 word transitions (1/fr)
+INFO: ngram_search_fwdflat.c(950): fwdflat 0.01 CPU 0.017 xRT
+INFO: ngram_search_fwdflat.c(953): fwdflat 0.01 wall 0.013 xRT
+INFO: ngram_search.c(1215): &lt;/s&gt; not found in last frame, using B.67 instead
+INFO: ngram_search.c(1268): lattice start node &lt;s&gt;.0 end node B.55
+INFO: ngram_search.c(1294): Eliminated 4 nodes before end node
+INFO: ngram_search.c(1399): Lattice has 182 nodes, 1073 links
+INFO: ps_lattice.c(1368): Normalizer P(O) = alpha(B:55:67) = -541208
+INFO: ps_lattice.c(1403): Joint P(O,S) = -541660 P(S|O) = -452
+INFO: ngram_search.c(890): bestpath 0.00 CPU 0.003 xRT
+INFO: ngram_search.c(893): bestpath 0.00 wall 0.003 xRT
+2015-08-04 17:18:50.395 App_Name[50827:4273056] Pocketsphinx heard &quot;B&quot; with a score of (-10515) and an utterance ID of 10.
+2015-08-04 17:18:50.397 App_Name[50827:4272534] rapidEarsDidReceiveFinishedSpeechHypothesis: B with score: -10515
+2015-08-04 17:18:50.397 App_Name[50827:4272534] Play effect sound
+2015-08-04 17:18:52.427 App_Name[50827:4272534] Starting OpenEars logging for OpenEars version 2.03 on 64-bit device (or build): iPad running iOS version: 8.300000
+2015-08-04 17:18:52.438 App_Name[50827:4272534] Starting dynamic language model generation
+
+INFO: cmd_ln.c(702): Parsing command line:
+sphinx_lm_convert \
+-i /var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_C_2.arpa \
+-o /var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_C_2.DMP
+
+Current configuration:
+[NAME]		[DEFLT]	[VALUE]
+-case
+-debug			0
+-help		no	no
+-i			/var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_C_2.arpa
+-ienc
+-ifmt
+-logbase	1.0001	1.000100e+00
+-mmap		no	no
+-o			/var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_C_2.DMP
+-oenc		utf8	utf8
+-ofmt
+
+INFO: ngram_model_arpa.c(504): ngrams 1=3, 2=2, 3=1
+INFO: ngram_model_arpa.c(137): Reading unigrams
+INFO: ngram_model_arpa.c(543):        3 = #unigrams created
+INFO: ngram_model_arpa.c(197): Reading bigrams
+INFO: ngram_model_arpa.c(561):        2 = #bigrams created
+INFO: ngram_model_arpa.c(562):        2 = #prob2 entries
+INFO: ngram_model_arpa.c(570):        3 = #bo_wt2 entries
+INFO: ngram_model_arpa.c(294): Reading trigrams
+INFO: ngram_model_arpa.c(583):        1 = #trigrams created
+INFO: ngram_model_arpa.c(584):        2 = #prob3 entries
+INFO: ngram_model_dmp.c(518): Building DMP model...
+INFO: ngram_model_dmp.c(548):        3 = #unigrams created
+INFO: ngram_model_dmp.c(649):        2 = #bigrams created
+INFO: ngram_model_dmp.c(650):        2 = #prob2 entries
+INFO: ngram_model_dmp.c(657):        3 = #bo_wt2 entries
+INFO: ngram_model_dmp.c(661):        1 = #trigrams created
+INFO: ngram_model_dmp.c(662):        2 = #prob3 entries
+2015-08-04 17:18:52.554 App_Name[50827:4272534] Done creating language model with CMUCLMTK in 0.115380 seconds.
+2015-08-04 17:18:52.579 App_Name[50827:4272534] I&#039;m done running performDictionaryLookup and it took 0.004318 seconds
+2015-08-04 17:18:52.587 App_Name[50827:4272534] I&#039;m done running dynamic language model generation and it took 0.159274 seconds
+2015-08-04 17:18:52.587 App_Name[50827:4272534] Valid setSecondsOfSilence value of 0.200000 will be used.
+INFO: cmn_prior.c(131): cmn_prior_update: from &lt; 57.29  5.73 -11.50  8.72 -0.13  7.50 -5.11 -8.93 -2.48 -6.79 -6.31 -2.05 -8.11 &gt;
+INFO: cmn_prior.c(149): cmn_prior_update: to   &lt; 57.29  5.73 -11.50  8.72 -0.13  7.50 -5.11 -8.93 -2.48 -6.79 -6.31 -2.05 -8.11 &gt;
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 0 words
+2015-08-04 17:18:52.692 App_Name[50827:4273056] there is a request to change to the language model file /var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_C_2.DMP
+2015-08-04 17:18:52.693 App_Name[50827:4273056] The language model ID is 1438683532
+INFO: cmd_ln.c(702): Parsing command line:
+
+Current configuration:
+[NAME]		[DEFLT]		[VALUE]
+-agc		none		none
+-agcthresh	2.0		2.000000e+00
+-allphone
+-allphone_ci	no		no
+-alpha		0.97		9.700000e-01
+-ascale		20.0		2.000000e+01
+-aw		1		1
+-backtrace	no		no
+-beam		1e-48		1.000000e-48
+-bestpath	yes		yes
+-bestpathlw	9.5		9.500000e+00
+-bghist		no		no
+-ceplen		13		13
+-cmn		current		current
+-cmninit	8.0		8.0
+-compallsen	no		no
+-debug				0
+-dict
+-dictcase	no		no
+-dither		no		no
+-doublebw	no		no
+-ds		1		1
+-fdict
+-feat		1s_c_d_dd	1s_c_d_dd
+-featparams
+-fillprob	1e-8		1.000000e-08
+-frate		100		100
+-fsg
+-fsgusealtpron	yes		yes
+-fsgusefiller	yes		yes
+-fwdflat	yes		yes
+-fwdflatbeam	1e-64		1.000000e-64
+-fwdflatefwid	4		4
+-fwdflatlw	8.5		8.500000e+00
+-fwdflatsfwin	25		25
+-fwdflatwbeam	7e-29		7.000000e-29
+-fwdtree	yes		yes
+-hmm
+-input_endian	little		little
+-jsgf
+-kdmaxbbi	-1		-1
+-kdmaxdepth	0		0
+-kdtree
+-keyphrase
+-kws
+-kws_plp	1e-1		1.000000e-01
+-kws_threshold	1		1.000000e+00
+-latsize	5000		5000
+-lda
+-ldadim		0		0
+-lextreedump	0		0
+-lifter		0		0
+-lm
+-lmctl
+-lmname
+-logbase	1.0001		1.000100e+00
+-logfn
+-logspec	no		no
+-lowerf		133.33334	1.333333e+02
+-lpbeam		1e-40		1.000000e-40
+-lponlybeam	7e-29		7.000000e-29
+-lw		6.5		6.500000e+00
+-maxhmmpf	10000		10000
+-maxnewoov	20		20
+-maxwpf		-1		-1
+-mdef
+-mean
+-mfclogdir
+-min_endfr	0		0
+-mixw
+-mixwfloor	0.0000001	1.000000e-07
+-mllr
+-mmap		yes		yes
+-ncep		13		13
+-nfft		512		512
+-nfilt		40		40
+-nwpen		1.0		1.000000e+00
+-pbeam		1e-48		1.000000e-48
+-pip		1.0		1.000000e+00
+-pl_beam	1e-10		1.000000e-10
+-pl_pbeam	1e-5		1.000000e-05
+-pl_window	0		0
+-rawlogdir
+-remove_dc	no		no
+-remove_noise	yes		yes
+-remove_silence	yes		yes
+-round_filters	yes		yes
+-samprate	16000		1.600000e+04
+-seed		-1		-1
+-sendump
+-senlogdir
+-senmgau
+-silprob	0.005		5.000000e-03
+-smoothspec	no		no
+-svspec
+-tmat
+-tmatfloor	0.0001		1.000000e-04
+-topn		4		4
+-topn_beam	0		0
+-toprule
+-transform	legacy		legacy
+-unit_area	yes		yes
+-upperf		6855.4976	6.855498e+03
+-usewdphones	no		no
+-uw		1.0		1.000000e+00
+-vad_postspeech	50		50
+-vad_prespeech	10		10
+-vad_threshold	2.0		2.000000e+00
+-var
+-varfloor	0.0001		1.000000e-04
+-varnorm	no		no
+-verbose	no		no
+-warp_params
+-warp_type	inverse_linear	inverse_linear
+-wbeam		7e-29		7.000000e-29
+-wip		0.65		6.500000e-01
+-wlen		0.025625	2.562500e-02
+
+INFO: dict.c(320): Allocating 4106 * 32 bytes (128 KiB) for word entries
+INFO: dict.c(333): Reading main dictionary: /var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_C_2.dic
+INFO: dict.c(213): Allocated 0 KiB for strings, 0 KiB for phones
+INFO: dict.c(336): 1 words read
+INFO: dict.c(342): Reading filler dictionary: /private/var/mobile/Containers/Bundle/Application/54D4920A-C3CD-4480-94F2-8654421B4D13/App_Name.app/AcousticModelEnglish.bundle/noisedict
+INFO: dict.c(213): Allocated 0 KiB for strings, 0 KiB for phones
+INFO: dict.c(345): 9 words read
+INFO: dict2pid.c(396): Building PID tables for dictionary
+INFO: dict2pid.c(406): Allocating 46^3 * 2 bytes (190 KiB) for word-initial triphones
+INFO: dict2pid.c(132): Allocated 51152 bytes (49 KiB) for word-final triphones
+INFO: dict2pid.c(196): Allocated 51152 bytes (49 KiB) for single-phone word triphones
+INFO: ngram_search_fwdtree.c(99): 1 unique initial diphones
+INFO: ngram_search_fwdtree.c(148): 0 root, 0 non-root channels, 10 single-phone words
+INFO: ngram_search_fwdtree.c(186): Creating search tree
+INFO: ngram_search_fwdtree.c(192): before: 0 root, 0 non-root channels, 10 single-phone words
+ERROR: &quot;ngram_search_fwdtree.c&quot;, line 336: No word from the language model has pronunciation in the dictionary
+INFO: ngram_search_fwdtree.c(339): after: 0 root, 0 non-root channels, 9 single-phone words
+INFO: ngram_search_fwdtree.c(99): 1 unique initial diphones
+INFO: ngram_search_fwdtree.c(148): 0 root, 0 non-root channels, 10 single-phone words
+INFO: ngram_search_fwdtree.c(186): Creating search tree
+INFO: ngram_search_fwdtree.c(192): before: 0 root, 0 non-root channels, 10 single-phone words
+ERROR: &quot;ngram_search_fwdtree.c&quot;, line 336: No word from the language model has pronunciation in the dictionary
+INFO: ngram_search_fwdtree.c(339): after: 0 root, 0 non-root channels, 9 single-phone words
+2015-08-04 17:18:52.711 App_Name[50827:4273056] Success loading the specified dictionary file /var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_C_2.dic.
+INFO: ngram_model_arpa.c(79): No \data\ mark in LM file
+INFO: ngram_model_dmp.c(166): Will use memory-mapped I/O for LM file
+INFO: ngram_model_dmp.c(220): ngrams 1=3, 2=2, 3=1
+INFO: ngram_model_dmp.c(266):        3 = LM.unigrams(+trailer) read
+INFO: ngram_model_dmp.c(312):        2 = LM.bigrams(+trailer) read
+INFO: ngram_model_dmp.c(338):        1 = LM.trigrams read
+INFO: ngram_model_dmp.c(363):        2 = LM.prob2 entries read
+INFO: ngram_model_dmp.c(383):        3 = LM.bo_wt2 entries read
+INFO: ngram_model_dmp.c(403):        2 = LM.prob3 entries read
+INFO: ngram_model_dmp.c(431):        1 = LM.tseg_base entries read
+INFO: ngram_model_dmp.c(487):        3 = ascii word strings read
+INFO: ngram_search_fwdtree.c(99): 1 unique initial diphones
+INFO: ngram_search_fwdtree.c(148): 0 root, 0 non-root channels, 10 single-phone words
+INFO: ngram_search_fwdtree.c(186): Creating search tree
+INFO: ngram_search_fwdtree.c(192): before: 0 root, 0 non-root channels, 10 single-phone words
+INFO: ngram_search_fwdtree.c(326): after: max nonroot chan increased to 128
+INFO: ngram_search_fwdtree.c(339): after: 1 root, 0 non-root channels, 9 single-phone words
+INFO: ngram_search_fwdflat.c(157): fwdflat: min_ef_width = 4, max_sf_win = 25
+2015-08-04 17:18:52.713 App_Name[50827:4273056] Success loading the specified language model file /var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_C_2.DMP.
+2015-08-04 17:18:52.714 App_Name[50827:4273056] Changed language model. Project has these words or phrases in its dictionary:
+C
+INFO: cmn_prior.c(131): cmn_prior_update: from &lt; 57.29  5.73 -11.50  8.72 -0.13  7.50 -5.11 -8.93 -2.48 -6.79 -6.31 -2.05 -8.11 &gt;
+INFO: cmn_prior.c(149): cmn_prior_update: to   &lt; 57.29  5.73 -11.50  8.72 -0.13  7.50 -5.11 -8.93 -2.48 -6.79 -6.31 -2.05 -8.11 &gt;
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 0 words
+2015-08-04 17:18:52.724 App_Name[50827:4272534] Pocketsphinx is now using the following language model:
+/var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_C_2.DMP and the following dictionary: /var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_C_2.dic
+2015-08-04 17:18:52.829 App_Name[50827:4273056] Speech detected...
+2015-08-04 17:18:52.830 App_Name[50827:4273056] Pocketsphinx heard &quot;&quot; with a score of (-3821) and an utterance ID of 11.
+2015-08-04 17:18:52.950 App_Name[50827:4273056] Pocketsphinx heard &quot;&quot; with a score of (-4873) and an utterance ID of 12.
+2015-08-04 17:18:53.070 App_Name[50827:4273056] End of speech detected...
+INFO: cmn_prior.c(131): cmn_prior_update: from &lt; 57.29  5.73 -11.50  8.72 -0.13  7.50 -5.11 -8.93 -2.48 -6.79 -6.31 -2.05 -8.11 &gt;
+INFO: cmn_prior.c(149): cmn_prior_update: to   &lt; 58.03  3.50 -9.27  6.71 -0.63  7.91 -2.92 -6.81 -2.32 -6.02 -8.06 -2.33 -7.31 &gt;
+INFO: ngram_search_fwdtree.c(1550):      290 words recognized (8/fr)
+INFO: ngram_search_fwdtree.c(1552):     2547 senones evaluated (73/fr)
+INFO: ngram_search_fwdtree.c(1556):     1181 channels searched (33/fr), 31 1st, 1150 last
+INFO: ngram_search_fwdtree.c(1559):      310 words for which last channels evaluated (8/fr)
+INFO: ngram_search_fwdtree.c(1561):       29 candidate words for entering last phone (0/fr)
+INFO: ngram_search_fwdtree.c(1564): fwdtree 0.06 CPU 0.177 xRT
+INFO: ngram_search_fwdtree.c(1567): fwdtree 0.36 wall 1.018 xRT
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 3 words
+INFO: ngram_search_fwdflat.c(938):      242 words recognized (7/fr)
+INFO: ngram_search_fwdflat.c(940):     2652 senones evaluated (76/fr)
+INFO: ngram_search_fwdflat.c(942):     1228 channels searched (35/fr)
+INFO: ngram_search_fwdflat.c(944):      329 words searched (9/fr)
+INFO: ngram_search_fwdflat.c(947):       91 word transitions (2/fr)
+INFO: ngram_search_fwdflat.c(950): fwdflat 0.00 CPU 0.013 xRT
+INFO: ngram_search_fwdflat.c(953): fwdflat 0.00 wall 0.013 xRT
+INFO: ngram_search.c(1215): &lt;/s&gt; not found in last frame, using C.33 instead
+INFO: ngram_search.c(1268): lattice start node &lt;s&gt;.0 end node C.26
+INFO: ngram_search.c(1294): Eliminated 9 nodes before end node
+INFO: ngram_search.c(1399): Lattice has 61 nodes, 198 links
+INFO: ps_lattice.c(1368): Normalizer P(O) = alpha(C:26:33) = -297153
+INFO: ps_lattice.c(1403): Joint P(O,S) = -297589 P(S|O) = -436
+INFO: ngram_search.c(890): bestpath 0.00 CPU 0.002 xRT
+INFO: ngram_search.c(893): bestpath 0.00 wall 0.002 xRT
+2015-08-04 17:18:53.080 App_Name[50827:4273056] Pocketsphinx heard &quot;C&quot; with a score of (-5748) and an utterance ID of 13.
+2015-08-04 17:18:53.090 App_Name[50827:4272534] rapidEarsDidReceiveFinishedSpeechHypothesis: C with score: -5748
+2015-08-04 17:18:53.091 App_Name[50827:4272534] Play effect sound
+2015-08-04 17:18:55.093 App_Name[50827:4272534] Starting OpenEars logging for OpenEars version 2.03 on 64-bit device (or build): iPad running iOS version: 8.300000
+2015-08-04 17:18:55.104 App_Name[50827:4272534] Starting dynamic language model generation
+
+INFO: cmd_ln.c(702): Parsing command line:
+sphinx_lm_convert \
+-i /var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_D_3.arpa \
+-o /var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_D_3.DMP
+
+Current configuration:
+[NAME]		[DEFLT]	[VALUE]
+-case
+-debug			0
+-help		no	no
+-i			/var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_D_3.arpa
+-ienc
+-ifmt
+-logbase	1.0001	1.000100e+00
+-mmap		no	no
+-o			/var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_D_3.DMP
+-oenc		utf8	utf8
+-ofmt
+
+INFO: ngram_model_arpa.c(504): ngrams 1=3, 2=2, 3=1
+INFO: ngram_model_arpa.c(137): Reading unigrams
+INFO: ngram_model_arpa.c(543):        3 = #unigrams created
+INFO: ngram_model_arpa.c(197): Reading bigrams
+INFO: ngram_model_arpa.c(561):        2 = #bigrams created
+INFO: ngram_model_arpa.c(562):        2 = #prob2 entries
+INFO: ngram_model_arpa.c(570):        3 = #bo_wt2 entries
+INFO: ngram_model_arpa.c(294): Reading trigrams
+INFO: ngram_model_arpa.c(583):        1 = #trigrams created
+INFO: ngram_model_arpa.c(584):        2 = #prob3 entries
+INFO: ngram_model_dmp.c(518): Building DMP model...
+INFO: ngram_model_dmp.c(548):        3 = #unigrams created
+INFO: ngram_model_dmp.c(649):        2 = #bigrams created
+INFO: ngram_model_dmp.c(650):        2 = #prob2 entries
+INFO: ngram_model_dmp.c(657):        3 = #bo_wt2 entries
+INFO: ngram_model_dmp.c(661):        1 = #trigrams created
+INFO: ngram_model_dmp.c(662):        2 = #prob3 entries
+2015-08-04 17:18:55.224 App_Name[50827:4272534] Done creating language model with CMUCLMTK in 0.119595 seconds.
+2015-08-04 17:18:55.236 App_Name[50827:4272534] I&#039;m done running performDictionaryLookup and it took 0.006811 seconds
+2015-08-04 17:18:55.245 App_Name[50827:4272534] I&#039;m done running dynamic language model generation and it took 0.150872 seconds
+2015-08-04 17:18:55.246 App_Name[50827:4272534] Valid setSecondsOfSilence value of 0.200000 will be used.
+INFO: cmn_prior.c(131): cmn_prior_update: from &lt; 58.03  3.50 -9.27  6.71 -0.63  7.91 -2.92 -6.81 -2.32 -6.02 -8.06 -2.33 -7.31 &gt;
+INFO: cmn_prior.c(149): cmn_prior_update: to   &lt; 58.03  3.50 -9.27  6.71 -0.63  7.91 -2.92 -6.81 -2.32 -6.02 -8.06 -2.33 -7.31 &gt;
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 0 words
+2015-08-04 17:18:55.376 App_Name[50827:4273012] there is a request to change to the language model file /var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_D_3.DMP
+2015-08-04 17:18:55.377 App_Name[50827:4273012] The language model ID is 1438683535
+INFO: cmd_ln.c(702): Parsing command line:
+
+Current configuration:
+[NAME]		[DEFLT]		[VALUE]
+-agc		none		none
+-agcthresh	2.0		2.000000e+00
+-allphone
+-allphone_ci	no		no
+-alpha		0.97		9.700000e-01
+-ascale		20.0		2.000000e+01
+-aw		1		1
+-backtrace	no		no
+-beam		1e-48		1.000000e-48
+-bestpath	yes		yes
+-bestpathlw	9.5		9.500000e+00
+-bghist		no		no
+-ceplen		13		13
+-cmn		current		current
+-cmninit	8.0		8.0
+-compallsen	no		no
+-debug				0
+-dict
+-dictcase	no		no
+-dither		no		no
+-doublebw	no		no
+-ds		1		1
+-fdict
+-feat		1s_c_d_dd	1s_c_d_dd
+-featparams
+-fillprob	1e-8		1.000000e-08
+-frate		100		100
+-fsg
+-fsgusealtpron	yes		yes
+-fsgusefiller	yes		yes
+-fwdflat	yes		yes
+-fwdflatbeam	1e-64		1.000000e-64
+-fwdflatefwid	4		4
+-fwdflatlw	8.5		8.500000e+00
+-fwdflatsfwin	25		25
+-fwdflatwbeam	7e-29		7.000000e-29
+-fwdtree	yes		yes
+-hmm
+-input_endian	little		little
+-jsgf
+-kdmaxbbi	-1		-1
+-kdmaxdepth	0		0
+-kdtree
+-keyphrase
+-kws
+-kws_plp	1e-1		1.000000e-01
+-kws_threshold	1		1.000000e+00
+-latsize	5000		5000
+-lda
+-ldadim		0		0
+-lextreedump	0		0
+-lifter		0		0
+-lm
+-lmctl
+-lmname
+-logbase	1.0001		1.000100e+00
+-logfn
+-logspec	no		no
+-lowerf		133.33334	1.333333e+02
+-lpbeam		1e-40		1.000000e-40
+-lponlybeam	7e-29		7.000000e-29
+-lw		6.5		6.500000e+00
+-maxhmmpf	10000		10000
+-maxnewoov	20		20
+-maxwpf		-1		-1
+-mdef
+-mean
+-mfclogdir
+-min_endfr	0		0
+-mixw
+-mixwfloor	0.0000001	1.000000e-07
+-mllr
+-mmap		yes		yes
+-ncep		13		13
+-nfft		512		512
+-nfilt		40		40
+-nwpen		1.0		1.000000e+00
+-pbeam		1e-48		1.000000e-48
+-pip		1.0		1.000000e+00
+-pl_beam	1e-10		1.000000e-10
+-pl_pbeam	1e-5		1.000000e-05
+-pl_window	0		0
+-rawlogdir
+-remove_dc	no		no
+-remove_noise	yes		yes
+-remove_silence	yes		yes
+-round_filters	yes		yes
+-samprate	16000		1.600000e+04
+-seed		-1		-1
+-sendump
+-senlogdir
+-senmgau
+-silprob	0.005		5.000000e-03
+-smoothspec	no		no
+-svspec
+-tmat
+-tmatfloor	0.0001		1.000000e-04
+-topn		4		4
+-topn_beam	0		0
+-toprule
+-transform	legacy		legacy
+-unit_area	yes		yes
+-upperf		6855.4976	6.855498e+03
+-usewdphones	no		no
+-uw		1.0		1.000000e+00
+-vad_postspeech	50		50
+-vad_prespeech	10		10
+-vad_threshold	2.0		2.000000e+00
+-var
+-varfloor	0.0001		1.000000e-04
+-varnorm	no		no
+-verbose	no		no
+-warp_params
+-warp_type	inverse_linear	inverse_linear
+-wbeam		7e-29		7.000000e-29
+-wip		0.65		6.500000e-01
+-wlen		0.025625	2.562500e-02
+
+INFO: dict.c(320): Allocating 4106 * 32 bytes (128 KiB) for word entries
+INFO: dict.c(333): Reading main dictionary: /var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_D_3.dic
+INFO: dict.c(213): Allocated 0 KiB for strings, 0 KiB for phones
+INFO: dict.c(336): 1 words read
+INFO: dict.c(342): Reading filler dictionary: /private/var/mobile/Containers/Bundle/Application/54D4920A-C3CD-4480-94F2-8654421B4D13/App_Name.app/AcousticModelEnglish.bundle/noisedict
+INFO: dict.c(213): Allocated 0 KiB for strings, 0 KiB for phones
+INFO: dict.c(345): 9 words read
+INFO: dict2pid.c(396): Building PID tables for dictionary
+INFO: dict2pid.c(406): Allocating 46^3 * 2 bytes (190 KiB) for word-initial triphones
+INFO: dict2pid.c(132): Allocated 51152 bytes (49 KiB) for word-final triphones
+INFO: dict2pid.c(196): Allocated 51152 bytes (49 KiB) for single-phone word triphones
+INFO: ngram_search_fwdtree.c(99): 1 unique initial diphones
+INFO: ngram_search_fwdtree.c(148): 0 root, 0 non-root channels, 10 single-phone words
+INFO: ngram_search_fwdtree.c(186): Creating search tree
+INFO: ngram_search_fwdtree.c(192): before: 0 root, 0 non-root channels, 10 single-phone words
+ERROR: &quot;ngram_search_fwdtree.c&quot;, line 336: No word from the language model has pronunciation in the dictionary
+INFO: ngram_search_fwdtree.c(339): after: 0 root, 0 non-root channels, 9 single-phone words
+INFO: ngram_search_fwdtree.c(99): 1 unique initial diphones
+INFO: ngram_search_fwdtree.c(148): 0 root, 0 non-root channels, 10 single-phone words
+INFO: ngram_search_fwdtree.c(186): Creating search tree
+INFO: ngram_search_fwdtree.c(192): before: 0 root, 0 non-root channels, 10 single-phone words
+ERROR: &quot;ngram_search_fwdtree.c&quot;, line 336: No word from the language model has pronunciation in the dictionary
+INFO: ngram_search_fwdtree.c(339): after: 0 root, 0 non-root channels, 9 single-phone words
+INFO: ngram_search_fwdtree.c(99): 1 unique initial diphones
+INFO: ngram_search_fwdtree.c(148): 0 root, 0 non-root channels, 10 single-phone words
+INFO: ngram_search_fwdtree.c(186): Creating search tree
+INFO: ngram_search_fwdtree.c(192): before: 0 root, 0 non-root channels, 10 single-phone words
+ERROR: &quot;ngram_search_fwdtree.c&quot;, line 336: No word from the language model has pronunciation in the dictionary
+INFO: ngram_search_fwdtree.c(339): after: 0 root, 0 non-root channels, 9 single-phone words
+2015-08-04 17:18:55.393 App_Name[50827:4273012] Success loading the specified dictionary file /var/mobile/Containers/Data/Application/AE23615A-AB76-4AC4-98BB-0F72F026A2DB/Library/Caches/lession_vocal_D_3.dic.
+INFO: ngram_model_arpa.c(79): No \data\ mark in LM file
+INFO: ngram_model_dmp.c(166): Will use memory-mapped I/O for LM file
+INFO: ngram_model_dmp.c(220): ngrams 1=3, 2=2, 3=1
+INFO: ngram_model_dmp.c(266):        3 = LM.unigrams(+trailer) read
+INFO: ngram_model_dmp.c(312):        2 = LM.bigrams(+trailer) read
+INFO: ngram_model_dmp.c(338):        1 = LM.trigrams read
+INFO: ngram_model_dmp.c(363):        2 = LM.prob2 entries read
+INFO: ngram_model_dmp.c(383):        3 = LM.bo_wt2 entries read
+INFO: ngram_model_dmp.c(403):        2 = LM.prob3 entries read
+INFO: ngram_model_dmp.c(431):        1 = LM.tseg_base entries read
+INFO: ngram_model_dmp.c(487):        3 = ascii word strings read
+App_Name(50827,0x103588000) malloc: *** error for object 0x1702910d0: Invalid pointer dequeued from free list
+*** set a breakpoint in malloc_error_break to debug
+(lldb)
+</code></pre>
+<p>call stack:</p>
+<pre><code>Thread 12Queue : com.apple.root.default-qos (concurrent)
+#0	0x00000001948c7270 in __pthread_kill ()
+#1	0x0000000194965170 in pthread_kill ()
+#2	0x000000019483eb18 in abort ()
+#3	0x00000001949023e4 in nanozone_error ()
+#4	0x0000000194902550 in _nano_malloc_check_clear ()
+#5	0x00000001949010dc in nano_calloc ()
+#6	0x00000001948f595c in malloc_zone_calloc ()
+#7	0x00000001948f58bc in calloc ()
+#8	0x00000001004c7478 in __ckd_calloc_2d__ ()
+#9	0x0000000100474c40 in ngram_search_init ()
+#10	0x000000010046933c in ps_set_lm_file ()
+#11	0x0000000100479f9c in ___lldb_unnamed_function183$$StampDrill ()
+#12	0x0000000100461438 in ___lldb_unnamed_function78$$StampDrill ()
+#13	0x0000000100461ac8 in ___lldb_unnamed_function82$$StampDrill ()
+#14	0x000000010137cf94 in _dispatch_client_callout ()
+#15	0x0000000101394848 in _dispatch_source_latch_and_call ()
+#16	0x000000010137f1c0 in _dispatch_source_invoke ()
+#17	0x000000010138a5d4 in _dispatch_root_queue_drain ()
+#18	0x000000010138c248 in _dispatch_worker_thread3 ()
+#19	0x000000019496122c in _pthread_wqthread ()
+</code></pre>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1026493" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">August 4, 2015 at 12:34 pm</span>
+
+		
+		<a href="/forums/topic/rapidears-2-04-crash-when-using-within-cocos2d/#post-1026493" class="bbp-reply-permalink">#1026493</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1026493 -->
+
+<div class="loop-item-18 user-id-4 bbp-parent-forum-9992 bbp-parent-topic-1026464 bbp-reply-position-19 odd  post-1026493 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>OK, before we continue, this log shows that your OpenEars version is 2.03. Please upgrade to the most-recent versions of OpenEars before we do more troubleshooting since OpenEars 2.03 isn&#8217;t expected to be compatible with RapidEars 2.04:</p>
+<p><a href="/openears/changelog/">https://www.politepix.com/openears/changelog/</a></p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1026494" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">August 4, 2015 at 12:51 pm</span>
+
+		
+		<a href="/forums/topic/rapidears-2-04-crash-when-using-within-cocos2d/#post-1026494" class="bbp-reply-permalink">#1026494</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1026494 -->
+
+<div class="loop-item-19 user-id-1863 bbp-parent-forum-9992 bbp-parent-topic-1026464 bbp-reply-position-20 even topic-author  post-1026494 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/anhtu/" title="View anhtu&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">anhtu</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Well, it is so weird. My co-worker said he updated RapidEars to 2.04.<br>
+I will ask him to update and try again. And I will post the result tomorrow also.</p>
+<p>Thank you.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1026496" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">August 4, 2015 at 12:57 pm</span>
+
+		
+		<a href="/forums/topic/rapidears-2-04-crash-when-using-within-cocos2d/#post-1026496" class="bbp-reply-permalink">#1026496</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1026496 -->
+
+<div class="loop-item-20 user-id-4 bbp-parent-forum-9992 bbp-parent-topic-1026464 bbp-reply-position-21 odd  post-1026496 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>RapidEars could be 2.04 (the logging doesn&#8217;t say and I wouldn&#8217;t assume) however, RapidEars is just the plugin, you are also using OpenEars and you also have to use a version of OpenEars which is compatible with your version of RapidEars. When you upgrade or install RapidEars, it is also necessary to make sure you are using the latest version of OpenEars. Your version of OpenEars is version 2.03, which I would expect to have problems when used with RapidEars 2.04 since the last two OpenEars versions contained fixes for RapidEars-related issues:</p>
+<p><a href="/openears/changelog/">https://www.politepix.com/openears/changelog/</a></p>
+<p>Make sure to take all normal troubleshooting steps after your upgrade such as verifying by looking at the logging output that you are now using the current version of OpenEars and cleaning your project. Also very important to make sure that you have the standard shipping acoustic model in use since you mentioned altering it in a previous post. If you are still having issues after that we can look into this more.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1026498" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">August 5, 2015 at 4:35 am</span>
+
+		
+		<a href="/forums/topic/rapidears-2-04-crash-when-using-within-cocos2d/#post-1026498" class="bbp-reply-permalink">#1026498</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1026498 -->
+
+<div class="loop-item-21 user-id-1863 bbp-parent-forum-9992 bbp-parent-topic-1026464 bbp-reply-position-22 even topic-author  post-1026498 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/anhtu/" title="View anhtu&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">anhtu</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>I&#8217;m sorry. This is my mistake. I dont upgrade OpenEars to version 2.041. The problem is solved. Thank you very much.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1026500" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">August 5, 2015 at 9:19 am</span>
+
+		
+		<a href="/forums/topic/rapidears-2-04-crash-when-using-within-cocos2d/#post-1026500" class="bbp-reply-permalink">#1026500</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1026500 -->
+
+<div class="loop-item-22 user-id-4 bbp-parent-forum-9992 bbp-parent-topic-1026464 bbp-reply-position-23 odd  post-1026500 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Glad to hear it&#8217;s solved!</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+		
+	</li>
+<!-- .bbp-body -->
+
+	<li class="bbp-footer">
+		<div class="bbp-reply-author">Author</div>
+		<div class="bbp-reply-content">Posts</div>
+<!-- .bbp-reply-content -->
+	</li>
+<!-- .bbp-footer -->
+</ul>
+<!-- #topic-1026464-replies -->
+
+
+			
+<div class="bbp-pagination">
+	<div class="bbp-pagination-count">Viewing 23 posts - 1 through 23 (of 23 total)</div>
+	<div class="bbp-pagination-links"></div>
+</div>
+
+
+		
+		
+
+	<div id="no-reply-1026464" class="bbp-no-reply">
+		<div class="bbp-template-notice">
+			<ul>
+				<li>You must be logged in to reply to this topic.</li>
+			</ul>
+		</div>
+
+		
+			
+<form method="post" action="https://www.politepix.com/wp-login.php" class="bbp-login-form">
+	<fieldset class="bbp-form">
+		<legend>Log In</legend>
+
+		<div class="bbp-username">
+			<label for="user_login">Username: </label>
+			<input type="text" name="log" value="" size="20" maxlength="100" id="user_login" autocomplete="off">
+		</div>
+
+		<div class="bbp-password">
+			<label for="user_pass">Password: </label>
+			<input type="password" name="pwd" value="" size="20" id="user_pass" autocomplete="off">
+		</div>
+
+		<div class="bbp-remember-me">
+			<input type="checkbox" name="rememberme" value="forever" id="rememberme">
+			<label for="rememberme">Keep me signed in</label>
+		</div>
+
+		
+		<div class="bbp-submit-wrapper">
+
+			<button type="submit" name="user-submit" id="user-submit" class="button submit user-submit">Log In</button>
+
+			
+	<input type="hidden" name="user-cookie" value="1">
+
+	<input type="hidden" id="bbp_redirect_to" name="redirect_to" value="https://www.politepix.com/forums/topic/rapidears-2-04-crash-when-using-within-cocos2d/?simply_static_page=788"><input type="hidden" id="_wpnonce" name="_wpnonce" value="7d2a08c1e3"><input type="hidden" name="_wp_http_referer" value="/forums/topic/rapidears-2-04-crash-when-using-within-cocos2d/?simply_static_page=788">
+		</div>
+	</fieldset>
+</form>
+
+		
+	</div>
+
+
+
+	
+	
+
+	
+</div>
+
+					               	</section><!-- /.entry -->
+
+				                
+            </article><!-- /.post -->
+            
+              
+        
+		</section><!-- /#main -->
+		
+		
+        	
+<aside id="sidebar" class="col-right">
+
+	
+	    <div class="primary">
+		<div id="bbp_forums_widget-5" class="widget widget_display_forums">
+<h3>Forums</h3>
+		<ul class="bbp-forums-widget">
+
+			
+				<li class="bbp-forum-widget-current-forum">
+					<a class="bbp-forum-title" href="/forums/forum/openears-plugins/">
+						OpenEars plugins					</a>
+				</li>
+
+			
+				<li>
+					<a class="bbp-forum-title" href="/forums/forum/openearsforum/">
+						OpenEars					</a>
+				</li>
+
+			
+		</ul>
+
+		</div>		           
+	</div>        
+	   
+	
+	 
+	
+</aside><!-- /#sidebar -->
+
+    </div>
+<!-- /#content -->
+		
+		<footer id="footer" class="col-full">
+	
+			<div id="copyright" class="col-left">
+							<p>Politepix &copy; 2024. All Rights Reserved.</p>
+						</div>
+	
+			<div id="credit" class="col-right">
+	        <div style="text-align:right;line-height:1.3em">OpenEars® is a registered trademark of Politepix<br>AllHours® is a registered trademark of Politepix<br>The Politepix site uses cookies in order to understand how the website is used by visitors and in order to enable some required functionality. You can learn all about which cookies we use on the <a href="/about/">About</a> page, as well as everything about our privacy policy.<br>
+<a href="https://twitter.com/Politepix" rel="me">TWITTER</a> | <a href="/contact" id="impressumlink">CONTACT POLITEPIX</a><a href="/about" id="impressumlink"> | IMPRESSUM | ABOUT | LEGAL | IMPRINT</a>
+</div>			</div>
+	<a rel="me" href="https://mastodon.social/@Halle">M</a>
+		</footer><!-- /#footer  -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Consent Management powered by Complianz | GDPR/CCPA Cookie Consent https://wordpress.org/plugins/complianz-gdpr -->
+<div id="cmplz-cookiebanner-container">
+<div class="cmplz-cookiebanner cmplz-hidden banner-1 bottom-right-view-preferences optin cmplz-bottom-right cmplz-categories-type-view-preferences" aria-modal="true" data-nosnippet="true" role="dialog" aria-live="polite" aria-labelledby="cmplz-header-1-optin" aria-describedby="cmplz-message-1-optin">
+	<div class="cmplz-header">
+		<div class="cmplz-logo"></div>
+		<div class="cmplz-title" id="cmplz-header-1-optin">Manage Cookie Consent</div>
+		<div class="cmplz-close" tabindex="0" role="button" aria-label="Close dialog">
+			<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
+		</div>
+	</div>
+
+	<div class="cmplz-divider cmplz-divider-header"></div>
+	<div class="cmplz-body">
+		<div class="cmplz-message" id="cmplz-message-1-optin">To provide the best experiences, we use technologies like cookies to store and/or access device information. Consenting to these technologies will allow us to process data such as browsing behavior or unique IDs on this site. Not consenting or withdrawing consent, may adversely affect certain features and functions.</div>
+		<!-- categories start -->
+		<div class="cmplz-categories">
+			<details class="cmplz-category cmplz-functional">
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Functional</span>
+							<span class="cmplz-always-active">
+								<span class="cmplz-banner-checkbox">
+									<input type="checkbox" id="cmplz-functional-optin" data-category="cmplz_functional" class="cmplz-consent-checkbox cmplz-functional" size="40" value="1">
+									<label class="cmplz-label" for="cmplz-functional-optin" tabindex="0"><span class="screen-reader-text">Functional</span></label>
+								</span>
+								Always active							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" height="18"><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"></path></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-functional">The technical storage or access is strictly necessary for the legitimate purpose of enabling the use of a specific service explicitly requested by the subscriber or user, or for the sole purpose of carrying out the transmission of a communication over an electronic communications network.</span>
+				</div>
+			</details>
+
+			<details class="cmplz-category cmplz-preferences">
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Preferences</span>
+							<span class="cmplz-banner-checkbox">
+								<input type="checkbox" id="cmplz-preferences-optin" data-category="cmplz_preferences" class="cmplz-consent-checkbox cmplz-preferences" size="40" value="1">
+								<label class="cmplz-label" for="cmplz-preferences-optin" tabindex="0"><span class="screen-reader-text">Preferences</span></label>
+							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" height="18"><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"></path></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-preferences">The technical storage or access is necessary for the legitimate purpose of storing preferences that are not requested by the subscriber or user.</span>
+				</div>
+			</details>
+
+			<details class="cmplz-category cmplz-statistics">
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Statistics</span>
+							<span class="cmplz-banner-checkbox">
+								<input type="checkbox" id="cmplz-statistics-optin" data-category="cmplz_statistics" class="cmplz-consent-checkbox cmplz-statistics" size="40" value="1">
+								<label class="cmplz-label" for="cmplz-statistics-optin" tabindex="0"><span class="screen-reader-text">Statistics</span></label>
+							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" height="18"><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"></path></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-statistics">The technical storage or access that is used exclusively for statistical purposes.</span>
+					<span class="cmplz-description-statistics-anonymous">The technical storage or access that is used exclusively for anonymous statistical purposes. Without a subpoena, voluntary compliance on the part of your Internet Service Provider, or additional records from a third party, information stored or retrieved for this purpose alone cannot usually be used to identify you.</span>
+				</div>
+			</details>
+			<details class="cmplz-category cmplz-marketing">
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Marketing</span>
+							<span class="cmplz-banner-checkbox">
+								<input type="checkbox" id="cmplz-marketing-optin" data-category="cmplz_marketing" class="cmplz-consent-checkbox cmplz-marketing" size="40" value="1">
+								<label class="cmplz-label" for="cmplz-marketing-optin" tabindex="0"><span class="screen-reader-text">Marketing</span></label>
+							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" height="18"><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"></path></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-marketing">The technical storage or access is required to create user profiles to send advertising, or to track the user on a website or across several websites for similar marketing purposes.</span>
+				</div>
+			</details>
+		</div>
+<!-- categories end -->
+			</div>
+
+	<div class="cmplz-links cmplz-information">
+		<a class="cmplz-link cmplz-manage-options cookie-statement" href="#" data-relative_url="#cmplz-manage-consent-container">Manage options</a>
+		<a class="cmplz-link cmplz-manage-third-parties cookie-statement" href="#" data-relative_url="#cmplz-cookies-overview">Manage services</a>
+		<a class="cmplz-link cmplz-manage-vendors tcf cookie-statement" href="#" data-relative_url="#cmplz-tcf-wrapper">Manage {vendor_count} vendors</a>
+		<a class="cmplz-link cmplz-external cmplz-read-more-purposes tcf" target="_blank" rel="noopener noreferrer nofollow" href="https://cookiedatabase.org/tcf/purposes/">Read more about these purposes</a>
+			</div>
+
+	<div class="cmplz-divider cmplz-footer"></div>
+
+	<div class="cmplz-buttons">
+		<button class="cmplz-btn cmplz-accept">Accept</button>
+		<button class="cmplz-btn cmplz-deny">Deny</button>
+		<button class="cmplz-btn cmplz-view-preferences">View preferences</button>
+		<button class="cmplz-btn cmplz-save-preferences">Save preferences</button>
+		<a class="cmplz-btn cmplz-manage-options tcf cookie-statement" href="#" data-relative_url="#cmplz-manage-consent-container">View preferences</a>
+			</div>
+
+	<div class="cmplz-links cmplz-documents">
+		<a class="cmplz-link cookie-statement" href="#" data-relative_url="">{title}</a>
+		<a class="cmplz-link privacy-statement" href="#" data-relative_url="">{title}</a>
+		<a class="cmplz-link impressum" href="#" data-relative_url="">{title}</a>
+			</div>
+
+</div>
+</div>
+					<div id="cmplz-manage-consent" data-nosnippet="true">
+<button class="cmplz-btn cmplz-hidden cmplz-manage-consent manage-consent-1">Manage consent</button>
+
+</div>
+<!--[if lt IE 9]>
+<script src="https://www.politepix.com/wp-content/themes/pixelpress/includes/js/respond-IE.js"></script>
+<![endif]-->
+			<script>jQuery(document).ready(function(){
+					jQuery('.images a').attr('rel', 'prettyPhoto[product-gallery]');
+				});</script>
+			<script type="text/javascript">(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();</script>
+	<link rel="stylesheet" id="wc-blocks-style-css" href="https://c0.wp.com/p/woocommerce/8.8.2/assets/client/blocks/wc-blocks.css" type="text/css" media="all">
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/accounting/accounting.min.js" id="accounting-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/jquery/ui/core.min.js" id="jquery-ui-core-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/jquery/ui/datepicker.min.js" id="jquery-ui-datepicker-js"></script>
+<script type="text/javascript" id="jquery-ui-datepicker-js-after">
+/* <![CDATA[ */
+jQuery(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+/* ]]> */
+</script>
+<script type="text/javascript" id="woocommerce-addons-js-extra">
+/* <![CDATA[ */
+var woocommerce_addons_params = {"price_display_suffix":"","tax_enabled":"1","price_include_tax":"","display_include_tax":"","ajax_url":"\/wp-admin\/admin-ajax.php","i18n_validation_required_select":"Please choose an option.","i18n_validation_required_input":"Please enter some text in this field.","i18n_validation_required_number":"Please enter a number in this field.","i18n_validation_required_file":"Please upload a file.","i18n_validation_letters_only":"Please enter letters only.","i18n_validation_numbers_only":"Please enter numbers only.","i18n_validation_letters_and_numbers_only":"Please enter letters and numbers only.","i18n_validation_email_only":"Please enter a valid email address.","i18n_validation_min_characters":"Please enter at least %c characters.","i18n_validation_max_characters":"Please enter up to %c characters.","i18n_validation_min_number":"Please enter %c or more.","i18n_validation_max_number":"Please enter %c or less.","i18n_sub_total":"Subtotal","i18n_remaining":"<span><\/span> characters remaining","currency_format_num_decimals":"2","currency_format_symbol":"€","currency_format_decimal_sep":".","currency_format_thousand_sep":",","trim_trailing_zeros":"","is_bookings":"","trim_user_input_characters":"1000","quantity_symbol":"x ","datepicker_class":"wc_pao_datepicker","datepicker_date_format":"MM d, yy","gmt_offset":"-2","date_input_timezone_reference":"default","currency_format":"%s%v"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/wp-content/plugins/woocommerce-product-addons/assets/js/frontend/addons.min.js?ver=6.8.2" id="woocommerce-addons-js" defer data-wp-strategy="defer"></script>
+<script type="text/javascript" src="/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-image-cdn/dist/image-cdn.js?minify=false&amp;ver=132249e245926ae3e188" id="jetpack-photon-js"></script>
+<script type="text/javascript" src="/wp-content/plugins/bbpress/templates/default/js/editor.min.js?ver=2.6.9" id="bbpress-editor-js"></script>
+<script type="text/javascript" id="bbpress-engagements-js-extra">
+/* <![CDATA[ */
+var bbpEngagementJS = {"object_id":"1026464","bbp_ajaxurl":"\/forums\/topic\/rapidears-2-04-crash-when-using-within-cocos2d\/?bbp-ajax=true","generic_ajax_error":"Something went wrong. Refresh your browser and try again."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/wp-content/plugins/bbpress/templates/default/js/engagements.min.js?ver=2.6.9" id="bbpress-engagements-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/sourcebuster/sourcebuster.min.js" id="sourcebuster-js-js"></script>
+<script type="text/javascript" id="wc-order-attribution-js-extra">
+/* <![CDATA[ */
+var wc_order_attribution = {"params":{"lifetime":1.0e-5,"session":30,"ajaxurl":"\/wp-admin\/admin-ajax.php","prefix":"wc_order_attribution_","allowTracking":true},"fields":{"source_type":"current.typ","referrer":"current_add.rf","utm_campaign":"current.cmp","utm_source":"current.src","utm_medium":"current.mdm","utm_content":"current.cnt","utm_id":"current.id","utm_term":"current.trm","session_entry":"current_add.ep","session_start_time":"current_add.fd","session_pages":"session.pgs","session_count":"udata.vst","user_agent":"udata.uag"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/frontend/order-attribution.min.js" id="wc-order-attribution-js"></script>
+<script data-service="jetpack-statistics" data-category="statistics" type="text/plain" data-cmplz-src="https://stats.wp.com/e-202417.js" id="jetpack-stats-js" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="jetpack-stats-js-after">
+/* <![CDATA[ */
+_stq = window._stq || [];
+_stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"206848719\",\"post\":\"1026464\",\"tz\":\"2\",\"srv\":\"www.politepix.com\",\"j\":\"1:13.3.1\"}") ]);
+_stq.push([ "clickTrackerInit", "206848719", "1026464" ]);
+/* ]]> */
+</script>
+<script type="text/javascript" id="cmplz-cookiebanner-js-extra">
+/* <![CDATA[ */
+var complianz = {"prefix":"cmplz_","user_banner_id":"1","set_cookies":[],"block_ajax_content":"","banner_version":"18","version":"7.0.4","store_consent":"","do_not_track_enabled":"1","consenttype":"optin","region":"eu","geoip":"","dismiss_timeout":"","disable_cookiebanner":"","soft_cookiewall":"","dismiss_on_scroll":"","cookie_expiry":"365","url":"\/wp-json\/complianz\/v1\/","locale":"lang=en&locale=en_US","set_cookies_on_root":"","cookie_domain":"","current_policy_id":"16","cookie_path":"\/","categories":{"statistics":"statistics","marketing":"marketing"},"tcf_active":"","placeholdertext":"Click to accept {category} cookies and enable this content","css_file":"\/wp-content\/uploads\/complianz\/css\/banner-{banner_id}-{type}.css?v=18","page_links":{"eu":{"cookie-statement":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"},"privacy-statement":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"},"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"us":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"uk":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"ca":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"au":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"za":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"br":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}}},"tm_categories":"","forceEnableStats":"","preview":"","clean_cookies":"","aria_label":"Click to accept {category} cookies and enable this content"};
+/* ]]> */
+</script>
+<script defer type="text/javascript" src="/wp-content/plugins/complianz-gdpr/cookiebanner/js/complianz.min.js?ver=1710283454" id="cmplz-cookiebanner-js"></script>
+</body>
+</html>

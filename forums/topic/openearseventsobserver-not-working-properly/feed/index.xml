@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] OpenEarsEventsObserver not working properly &#8211; Politepix</title>
+		<atom:link href="/forums/topic/openearseventsobserver-not-working-properly/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/openearseventsobserver-not-working-properly/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:03:27 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/openearseventsobserver-not-working-properly/#post-1017607</guid>
+					<title><![CDATA[[Resolved] OpenEarsEventsObserver not working properly]]></title>
+					<link>/forums/topic/openearseventsobserver-not-working-properly/#post-1017607</link>
+					<pubDate>Wed, 03 Jul 2013 20:45:43 +0000</pubDate>
+					<dc:creator>phunkytube</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Are there any known issues (read: any past issues) with the OpenEarsEventsObserverDelegate protocol? When I send startOpenEarsLogging to the OpenEarsLogging class, it indicates that my implementation of PocketsphinxController&#8217;s speech recognition is working and that the system recognizes my speech correctly. But none of the delegate methods are being fired, and I know I&#8217;ve hooked everything up correctly. Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openearseventsobserver-not-working-properly/#post-1017608</guid>
+					<title><![CDATA[Reply To: OpenEarsEventsObserver not working properly]]></title>
+					<link>/forums/topic/openearseventsobserver-not-working-properly/#post-1017608</link>
+					<pubDate>Wed, 03 Jul 2013 20:49:49 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Nope, no reported issues with this in 3 years. Even though you&#8217;ve checked it out, it&#8217;s possible that there is something minor that isn&#8217;t quite right &#8212; would you like to show your code so I can check?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openearseventsobserver-not-working-properly/#post-1017609</guid>
+					<title><![CDATA[Reply To: OpenEarsEventsObserver not working properly]]></title>
+					<link>/forums/topic/openearseventsobserver-not-working-properly/#post-1017609</link>
+					<pubDate>Wed, 03 Jul 2013 21:10:28 +0000</pubDate>
+					<dc:creator>phunkytube</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle, thanks for the swift reply! My code is the following (with names replaced for simplicity):</p>
+<pre><code>// OpenEarsWrapper.h
+#import &lt;Foundation/Foundation.h&gt;
+#import &lt;OpenEars/OpenEarsEventsObserver.h&gt;
+
+@interface OpenEarsWrapper : NSObject &lt;OpenEarsEventsObserverDelegate&gt;
+
+- (id)initAndStartListeningWithWordsArray:(NSArray *)_words filename:(NSString *)_filename;
+
+@end
+
+// OpenEarsWrapper.m
+#import &quot;OpenEarsWrapper.h&quot;
+#import &lt;OpenEars/LanguageModelGenerator.h&gt;
+#import &lt;OpenEars/PocketsphinxController.h&gt;
+#import &lt;OpenEars/OpenEarsLogging.h&gt;
+
+@interface OpenEarsWrapper ()
+
+@property (nonatomic, strong) OpenEarsEventsObserver *openEarsEventsObserver;
+
+@property (nonatomic, strong) NSString *languageModelPath;
+@property (nonatomic, strong) NSString *dictionaryPath;
+
+@property (nonatomic, strong) PocketsphinxController *pocketSphinxController; // out of curiosity why is the &#039;s&#039; in &quot;sphinx&quot; lowercase???
+
+@end
+
+@implementation OpenEarsWrapper
+
+@synthesize openEarsEventsObserver;
+@synthesize languageModelPath, dictionaryPath;
+@synthesize pocketSphinxController;
+
+- (id)initAndStartListeningWithWordsArray:(NSArray *)_words filename:(NSString *)_filename {
+	self = [super init];
+	
+	if (self) {
+		//[OpenEarsLogging startOpenEarsLogging];
+		
+		openEarsEventsObserver = [[OpenEarsEventsObserver alloc] init];
+		[openEarsEventsObserver setDelegate:self];
+		
+		LanguageModelGenerator *languageModelGenerator = [[LanguageModelGenerator alloc] init];
+		
+		NSError *error = [languageModelGenerator generateLanguageModelFromArray:_words withFilesNamed:_filename];
+		
+		NSDictionary *languageGeneratorResults = nil;
+		
+		if ([error code] == noErr) {
+			languageGeneratorResults = [error userInfo];
+			
+			languageModelPath = [languageGeneratorResults objectForKey:kLanguageModelPathKey];
+			dictionaryPath = [languageGeneratorResults objectForKey:kDictionaryPathKey];
+		} else {
+			NSLog(@&quot;Error: %@&quot;, [error localizedDescription]);
+			return self;
+		}
+		
+		pocketSphinxController = [[PocketsphinxController alloc] init];
+		
+		[pocketSphinxController startListeningWithLanguageModelAtPath:languageModelPath dictionaryAtPath:dictionaryPath languageModelIsJSGF:NO];
+	}
+	
+	return self;
+}
+
+- (void)pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID {
+	NSLog(@&quot;why doesn&#039;t this fire!!!!&quot;);
+}
+
+@end</code></pre>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openearseventsobserver-not-working-properly/#post-1017612</guid>
+					<title><![CDATA[Reply To: OpenEarsEventsObserver not working properly]]></title>
+					<link>/forums/topic/openearseventsobserver-not-working-properly/#post-1017612</link>
+					<pubDate>Wed, 03 Jul 2013 21:28:08 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Does it work if you use the lazy allocation style shown in the tutorial and sample app?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openearseventsobserver-not-working-properly/#post-1017613</guid>
+					<title><![CDATA[Reply To: OpenEarsEventsObserver not working properly]]></title>
+					<link>/forums/topic/openearseventsobserver-not-working-properly/#post-1017613</link>
+					<pubDate>Wed, 03 Jul 2013 21:31:48 +0000</pubDate>
+					<dc:creator>phunkytube</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Unfortunately not. It&#8217;s not an issue with my device, either, since the sample app runs correctly. And the &#8216;private&#8217; instance variables (instead of, say, in the public header interface declaration) aren&#8217;t the problem either :(</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openearseventsobserver-not-working-properly/#post-1017617</guid>
+					<title><![CDATA[Reply To: OpenEarsEventsObserver not working properly]]></title>
+					<link>/forums/topic/openearseventsobserver-not-working-properly/#post-1017617</link>
+					<pubDate>Thu, 04 Jul 2013 06:37:10 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Does the sample app work for you? Do any of the delegate methods used in the sample app work in your app?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openearseventsobserver-not-working-properly/#post-1017619</guid>
+					<title><![CDATA[Reply To: OpenEarsEventsObserver not working properly]]></title>
+					<link>/forums/topic/openearseventsobserver-not-working-properly/#post-1017619</link>
+					<pubDate>Thu, 04 Jul 2013 07:49:02 +0000</pubDate>
+					<dc:creator>phunkytube</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Perfectly.</p>
+<p>No, the delegate methods used in the sample app don&#8217;t work correctly in my app – none of the delegate methods are called. I can&#8217;t imagine what is wrong with my setup&#8230; Do you have any other ideas of where to look?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openearseventsobserver-not-working-properly/#post-1017620</guid>
+					<title><![CDATA[Reply To: OpenEarsEventsObserver not working properly]]></title>
+					<link>/forums/topic/openearseventsobserver-not-working-properly/#post-1017620</link>
+					<pubDate>Thu, 04 Jul 2013 08:29:08 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Very interesting. Do you want to send it over, or send over a reduced version if you have some IP in there that you don&#8217;t want to email? If so you can drop me a note via the contact form at <a href="/contact">/contact</a> and I&#8217;ll get back to you with an email address.</p>
+<blockquote><p>// out of curiosity why is the &#8216;s&#8217; in &#8220;sphinx&#8221; lowercase???</p></blockquote>
+<p>Pocketsphinx isn&#8217;t camel-cased: <a href="https://cmusphinx.sourceforge.net/" rel="nofollow">https://cmusphinx.sourceforge.net/</a><br />
+Just respecting their orthography.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openearseventsobserver-not-working-properly/#post-1017621</guid>
+					<title><![CDATA[Reply To: OpenEarsEventsObserver not working properly]]></title>
+					<link>/forums/topic/openearseventsobserver-not-working-properly/#post-1017621</link>
+					<pubDate>Thu, 04 Jul 2013 08:30:16 +0000</pubDate>
+					<dc:creator>phunkytube</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Will do, thanks!</p>
+<p>It seems inconsistent on their website. Although the second most recent blog post has &#8220;Pocketsphinx&#8221; in the title, it also has &#8220;PocketSphinx&#8221; in the body. The API docs also have &#8220;PocketSphinx&#8221; (<a href="http://cmusphinx.sourceforge.net/api/pocketsphinx/" rel="nofollow">http://cmusphinx.sourceforge.net/api/pocketsphinx/</a>). :)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openearseventsobserver-not-working-properly/#post-1017623</guid>
+					<title><![CDATA[Reply To: OpenEarsEventsObserver not working properly]]></title>
+					<link>/forums/topic/openearseventsobserver-not-working-properly/#post-1017623</link>
+					<pubDate>Thu, 04 Jul 2013 08:41:40 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yep, you can also find incidences of it all-lowercase. Well, CMU is a research institution so they probably don&#8217;t worry much about their brand ID :) .</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

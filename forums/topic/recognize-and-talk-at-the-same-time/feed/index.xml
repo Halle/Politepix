@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Recognize and Talk at the same time? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/recognize-and-talk-at-the-same-time/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/recognize-and-talk-at-the-same-time/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:57:27 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/recognize-and-talk-at-the-same-time/#post-1019151</guid>
+					<title><![CDATA[Recognize and Talk at the same time?]]></title>
+					<link>/forums/topic/recognize-and-talk-at-the-same-time/#post-1019151</link>
+					<pubDate>Thu, 12 Dec 2013 22:26:07 +0000</pubDate>
+					<dc:creator>Claude</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Is it possible to use OpenEars+Rejecto and small vocabulary to listen and recognize while NeatSpeech is speaking?</p>
+<p>I thought I read it was possible, then I sort of remembered that it wasn&#8217;t. Wasn&#8217;t even sure how to search for it. Sorry if this is such a basic question. The recognition vocabulary would be small, just words like &#8220;Stop,&#8221; &#8220;Pause,&#8221; and a few more like that.</p>
+<p>Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recognize-and-talk-at-the-same-time/#post-1019152</guid>
+					<title><![CDATA[Reply To: Recognize and Talk at the same time?]]></title>
+					<link>/forums/topic/recognize-and-talk-at-the-same-time/#post-1019152</link>
+					<pubDate>Thu, 12 Dec 2013 22:34:18 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Claude,</p>
+<p>The way it works is that if you are using the headset you can do them both simultaneously, and if the audio route is &#8220;open&#8221;, i.e. the TTS speech would be occurring in the same open space that the mic is in, recognition will automatically suspend in the timeframe in which the TTS speech is in progress. If this weren&#8217;t the case, the TTS speech would be heard by the recognition and it would trigger your recognition events.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

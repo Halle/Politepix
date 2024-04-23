@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] Does the current SDK support iOS6? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/does-the-current-sdk-support-ios6/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/does-the-current-sdk-support-ios6/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:38:46 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/does-the-current-sdk-support-ios6/#post-11526</guid>
+					<title><![CDATA[[Resolved] Does the current SDK support iOS6?]]></title>
+					<link>/forums/topic/does-the-current-sdk-support-ios6/#post-11526</link>
+					<pubDate>Thu, 04 Oct 2012 17:29:06 +0000</pubDate>
+					<dc:creator>gregquinn</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m getting a crash as soon as my app hears any sound &#8211; does the current SDK support iOS6? I have logging and verbose set, but all I&#8217;m seeing is lldb at ps_start_utt.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/does-the-current-sdk-support-ios6/#post-11527</guid>
+					<title><![CDATA[Reply To: Does the current SDK support iOS6?]]></title>
+					<link>/forums/topic/does-the-current-sdk-support-ios6/#post-11527</link>
+					<pubDate>Thu, 04 Oct 2012 17:31:23 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hmm, yes it definitely does. That kind of sounds like a missing acoustic model or a missing part of the acoustic model (meaning perhaps something going wrong when dragging the &#8220;Framework&#8221; folder into the app). Can you run the sample app in iOS6?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/does-the-current-sdk-support-ios6/#post-11528</guid>
+					<title><![CDATA[Reply To: Does the current SDK support iOS6?]]></title>
+					<link>/forums/topic/does-the-current-sdk-support-ios6/#post-11528</link>
+					<pubDate>Thu, 04 Oct 2012 17:33:08 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>To clarify &#8212; are you saying that with [OpenEarsLogging startOpenEarsLogging] and pocketsphinxController.verbosePocketSphinx = TRUE set you receive no logging at all up to the time of the crash?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/does-the-current-sdk-support-ios6/#post-11529</guid>
+					<title><![CDATA[Reply To: Does the current SDK support iOS6?]]></title>
+					<link>/forums/topic/does-the-current-sdk-support-ios6/#post-11529</link>
+					<pubDate>Thu, 04 Oct 2012 17:59:04 +0000</pubDate>
+					<dc:creator>gregquinn</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Correct Halle; I basically imported the code from the sample into my viewcontroller code. the sample app runs fine. On googling, i see that the frameworks folder has to be added flattened out? (it seems to have symbolic linked folders) &#8211; how do i add the folder to my project? </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/does-the-current-sdk-support-ios6/#post-11530</guid>
+					<title><![CDATA[Reply To: Does the current SDK support iOS6?]]></title>
+					<link>/forums/topic/does-the-current-sdk-support-ios6/#post-11530</link>
+					<pubDate>Thu, 04 Oct 2012 18:05:22 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, it doesn&#8217;t actually have to be added in any particular way, however what&#8217;s important is that the entire Framework folder found at the root of the OpenEars distribution folder is dragged from the Finder into your project. That has to be the original Framework folder with the full contents in it that are found at the time of downloading the distribution. You can either add the contents as a reference or add them by copying, but if you add them as a reference, the folder has to stay where it was at the time the reference is added.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/does-the-current-sdk-support-ios6/#post-11531</guid>
+					<title><![CDATA[Reply To: Does the current SDK support iOS6?]]></title>
+					<link>/forums/topic/does-the-current-sdk-support-ios6/#post-11531</link>
+					<pubDate>Thu, 04 Oct 2012 18:26:43 +0000</pubDate>
+					<dc:creator>gregquinn</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, working now &#8211; FYI, in case anyone else has a problem &#8211; I needed to add the files in hub4wsj_sc_8k out of that folder and directly into the project.<br />
+Thanks for the fast responses Halle.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/does-the-current-sdk-support-ios6/#post-11532</guid>
+					<title><![CDATA[Reply To: Does the current SDK support iOS6?]]></title>
+					<link>/forums/topic/does-the-current-sdk-support-ios6/#post-11532</link>
+					<pubDate>Thu, 04 Oct 2012 18:30:45 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>No problem, glad it&#8217;s working for you.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/does-the-current-sdk-support-ios6/#post-11535</guid>
+					<title><![CDATA[Reply To: Does the current SDK support iOS6?]]></title>
+					<link>/forums/topic/does-the-current-sdk-support-ios6/#post-11535</link>
+					<pubDate>Fri, 05 Oct 2012 09:12:19 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Having tested this again, I wanted to follow up that I can&#8217;t replicate an issue with adding the Framework folder itself as shown in the tutorial so I don&#8217;t think this issue is precisely that it is necessary to import that folder&#8217;s contents individually.</p>
+<p>It&#8217;s likely that re-importing the acoustic model files individually fixes something minor that has gone wrong a bit earlier in the process with the addition of that folder (for instance if the target was accidentally unchecked while adding or it was added as a reference and the reference was somehow problematic or became so later) so I strongly endorse gregquinn&#8217;s method described above as a troubleshooting step if you see a crash when listening starts.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/does-the-current-sdk-support-ios6/#post-11617</guid>
+					<title><![CDATA[Reply To: [Resolved] Does the current SDK support iOS6?]]></title>
+					<link>/forums/topic/does-the-current-sdk-support-ios6/#post-11617</link>
+					<pubDate>Mon, 15 Oct 2012 09:51:07 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Greg,</p>
+<p>I have the definitive answer to why this is sometimes happening &#8212; OpenEars requires that everything added to mainBundle is added at the root level (just because I don&#8217;t want to open up the can of worms of either trying to figure out at what level some crucial file is added, or forcing the developer to declare it for every file that the framework uses) and in the &#8220;add file&#8221; dialog in Xcode, if the option &#8220;Create folder references for any added folders&#8221; is selected, Xcode will create a folder inside the app&#8217;s mainBundle and put the files in there. So the acoustic model files were almost certainly in your app, but they probably couldn&#8217;t be found by the framework due to being in their own directory. I have improved the documentation to make sure this is clear and I appreciate your drawing my attention to the fact that it was a pitfall.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/does-the-current-sdk-support-ios6/#post-11618</guid>
+					<title><![CDATA[Reply To: [Resolved] Does the current SDK support iOS6?]]></title>
+					<link>/forums/topic/does-the-current-sdk-support-ios6/#post-11618</link>
+					<pubDate>Mon, 15 Oct 2012 15:13:47 +0000</pubDate>
+					<dc:creator>gregquinn</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Great, thanks Halle.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

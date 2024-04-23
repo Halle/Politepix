@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Large Number Grammar &#8211; Politepix</title>
+		<atom:link href="/forums/topic/large-number-grammar/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/large-number-grammar/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:55:36 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/large-number-grammar/#post-13072</guid>
+					<title><![CDATA[Large Number Grammar]]></title>
+					<link>/forums/topic/large-number-grammar/#post-13072</link>
+					<pubDate>Sun, 18 Nov 2012 15:25:08 +0000</pubDate>
+					<dc:creator>radox1</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am working on a financial application where I would like the user to be able to input large numbers using one voice. For example I would like a user to be able to input their salary as &#8220;twenty eight thousand five hundred&#8221; rather than &#8220;two eight five zero zero zero&#8221;.</p>
+<p>I have looked around online for a number grammar which can support this but I have been unable to find one. As I imagine this is a common requirement I thought a grammar for this would be readily available. Could someone please point me in the right direction?</p>
+<p>Thanks in advance.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/large-number-grammar/#post-13073</guid>
+					<title><![CDATA[Reply To: Large Number Grammar]]></title>
+					<link>/forums/topic/large-number-grammar/#post-13073</link>
+					<pubDate>Sun, 18 Nov 2012 15:28:52 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>I&#8217;m not aware of a pre-rolled grammar for large numbers, sorry. I generally recommend not using JSGF due to slow performance and what seems like slightly buggy recognition in the engine. Have you tried generating a text corpus of number words and creating your own ARPA language model (like in this blog post: <a href="/2012/11/02/openears-tips-1-create-a-language-model-before-runtime-from-a-text-file/">/2012/11/02/openears-tips-1-create-a-language-model-before-runtime-from-a-text-file/</a>)?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/large-number-grammar/#post-13074</guid>
+					<title><![CDATA[Reply To: Large Number Grammar]]></title>
+					<link>/forums/topic/large-number-grammar/#post-13074</link>
+					<pubDate>Sun, 18 Nov 2012 17:26:12 +0000</pubDate>
+					<dc:creator>radox1</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>Thanks for the link. The text corpus to detect all of the possible numbers is going to be fairly large. Do you have any advice on then going back from the recognised strings to numbers?</p>
+<p>Ben</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/large-number-grammar/#post-13075</guid>
+					<title><![CDATA[Reply To: Large Number Grammar]]></title>
+					<link>/forums/topic/large-number-grammar/#post-13075</link>
+					<pubDate>Sun, 18 Nov 2012 20:24:24 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;ve never thought about this task so this is not coming from a position of experience with it, but if the maximum is (for instance) 999,999 this seems to me that it would need [0-9], a set of tens incrementing by ten going up to &#8220;90&#8221;, a set of hundreds incrementing by 100 going up to &#8220;900&#8221;, and a set of thousands incrementing by 1000 going up to &#8220;9000&#8221;, so a model with a base set of 40 unigrams which have equal probability of being found in a particular bigram or trigram. Out of that you can make 999,999 with the available words &#8220;nine hundred&#8221;, &#8220;ninety&#8221; &#8220;nine thousand&#8221; &#8220;nine hundred&#8221; &#8220;ninety&#8221; &#8220;nine&#8221;. It seems that interpreting this back into digits should be possible to construct a ruleset for since there are only a few variations on correct statement of a number in English. I can also see why you would want a grammar, however, to have a rules-based recognition that you can be more confident about processing backwards into digits.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/large-number-grammar/#post-13077</guid>
+					<title><![CDATA[Reply To: Large Number Grammar]]></title>
+					<link>/forums/topic/large-number-grammar/#post-13077</link>
+					<pubDate>Sun, 18 Nov 2012 22:01:08 +0000</pubDate>
+					<dc:creator>radox1</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I have tried to implement something similar and it seems to be working fairly well.</p>
+<p>I have included &#8220;and&#8221; as this is often used within numbers. &#8220;nine hundred and eight one&#8221;.</p>
+<p>One issue I am having is that &#8220;thirty&#8221; &#8220;fifty&#8221; and &#8220;eighty&#8221; are often wrongly identified as each other.</p>
+<p>I will try adding &#8220;one hundred&#8221;, &#8220;two hundred&#8221; &#8230; into the grammar as this should make it slightly easier to parse.</p>
+<p>&#8211;Current grammar&#8212;</p>
+<p>ONE<br />
+TWO<br />
+THREE<br />
+FOUR<br />
+FIVE<br />
+SIX<br />
+SEVEN<br />
+EIGHT<br />
+NINE<br />
+TEN<br />
+ELEVEN<br />
+TWELVE<br />
+THIRTEEN<br />
+FOURTEEN<br />
+FIFTEEN<br />
+SIXTEEN<br />
+SEVENTEEN<br />
+EIGHTEEN<br />
+NINETEEN<br />
+TWENTY<br />
+THIRTY<br />
+FOURTY<br />
+FIFTY<br />
+SIXTY<br />
+SEVENTY<br />
+EIGHTY<br />
+NINETY<br />
+HUNDRED<br />
+THOUSAND<br />
+MILLION<br />
+POUND<br />
+PEE<br />
+PENCE<br />
+AND</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/large-number-grammar/#post-13078</guid>
+					<title><![CDATA[Reply To: Large Number Grammar]]></title>
+					<link>/forums/topic/large-number-grammar/#post-13078</link>
+					<pubDate>Sun, 18 Nov 2012 22:06:41 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Looks like a good start. There might be an accent bias hurting accuracy since the default acoustic model is comprised of US speech. You might want to adapt the model to a variety of UK accents using your number set as the speech corpus. This may get you some improvement with the thirty/fifty/eighty issue.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/large-number-grammar/#post-13080</guid>
+					<title><![CDATA[Reply To: Large Number Grammar]]></title>
+					<link>/forums/topic/large-number-grammar/#post-13080</link>
+					<pubDate>Sun, 18 Nov 2012 23:07:13 +0000</pubDate>
+					<dc:creator>radox1</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Halle how would I go about using my number set as a speech corpus?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/large-number-grammar/#post-13081</guid>
+					<title><![CDATA[Reply To: Large Number Grammar]]></title>
+					<link>/forums/topic/large-number-grammar/#post-13081</link>
+					<pubDate>Sun, 18 Nov 2012 23:19:16 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>To learn about how an acoustic model is adapted you probably want to check out the CMU Sphinx project, since that isn&#8217;t something I can support from here beyond pointing you to the docs at the CMU project since it isn&#8217;t part of OpenEars: <a href="http://cmusphinx.sourceforge.net/wiki/tutorialadapt" rel="nofollow">http://cmusphinx.sourceforge.net/wiki/tutorialadapt</a></p>
+<p>The corpus of speech you would want to use in order to adapt to a UK accent for your particular application would have a number of different speakers with the desired UK accents saying the words for which you want more accuracy (I would have them say all of the words in your language model). Basically you will want to make recordings of your speakers saying the words and then you will use the acoustic model adaptation method linked above to integrate their speech into the acoustic model. The result ought to be that your adapted acoustic model will get better at recognizing/distinguishing between those words in the accents you include. The acoustic model you end up with can be used with OpenEars just like the default acoustic model.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/large-number-grammar/#post-13082</guid>
+					<title><![CDATA[Reply To: Large Number Grammar]]></title>
+					<link>/forums/topic/large-number-grammar/#post-13082</link>
+					<pubDate>Mon, 19 Nov 2012 00:44:25 +0000</pubDate>
+					<dc:creator>radox1</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the link. I will definitely look into that!</p>
+<p>One more thing. Is there a way to queue things to be spoken?</p>
+<p>Currently if I request the fliteController to say something whilst it is already talking it ignore it. Ideally i&#8217;d like it to queue the request and start it when the previous speech has stopped. Will I need to manually implement this behaviour?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/large-number-grammar/#post-13083</guid>
+					<title><![CDATA[Reply To: Large Number Grammar]]></title>
+					<link>/forums/topic/large-number-grammar/#post-13083</link>
+					<pubDate>Mon, 19 Nov 2012 07:26:28 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This isn&#8217;t a feature of FliteController, but <a href="/neatspeech" rel="nofollow">NeatSpeech</a> operates with a queue and it renders the new speech in the background so that it generally starts playing instantly when the previous speech is complete, and it has a male and female UK voice.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

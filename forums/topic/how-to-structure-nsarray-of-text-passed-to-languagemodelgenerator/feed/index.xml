@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>How to structure NSArray of text passed to LanguageModelGenerator? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/how-to-structure-nsarray-of-text-passed-to-languagemodelgenerator/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/how-to-structure-nsarray-of-text-passed-to-languagemodelgenerator/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:00:41 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/how-to-structure-nsarray-of-text-passed-to-languagemodelgenerator/#post-1021787</guid>
+					<title><![CDATA[How to structure NSArray of text passed to LanguageModelGenerator?]]></title>
+					<link>/forums/topic/how-to-structure-nsarray-of-text-passed-to-languagemodelgenerator/#post-1021787</link>
+					<pubDate>Fri, 27 Jun 2014 15:03:37 +0000</pubDate>
+					<dc:creator>omgbobbyg</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>I am using OpenEars/RapidEars/Rejecto to match speech to text in a speech being displayed on screen. Right now when I create the NSArray of text to pass to the LanguageModelGenerator, I create an NSArray with each element corresponding to a line of text in the speech. However, I am noticing that the quality of the hypothesis being generated seems to degrade as the lengths of the lines in each element of the NSArray get shorter (which happens when the user increases the font size for the speech). Is that expected behavior?</p>
+<p>In terms of structuring the NSArray input to the LanguageModelGenerator, is there any difference in passing a single element NSArray with all text contained in the first element versus dividing it up so that each line of text is its own element?</p>
+<p>Thanks<br />
+Bobby</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-to-structure-nsarray-of-text-passed-to-languagemodelgenerator/#post-1021788</guid>
+					<title><![CDATA[Reply To: How to structure NSArray of text passed to LanguageModelGenerator?]]></title>
+					<link>/forums/topic/how-to-structure-nsarray-of-text-passed-to-languagemodelgenerator/#post-1021788</link>
+					<pubDate>Fri, 27 Jun 2014 15:07:40 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yes, there is a difference in the way probabilities are calculated for individual words versus phrases, as well as how phrases are handled between language models and grammars. You can take a quick look at the docs for LanguageModelGenerator to get the high-level on those options and their effects.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

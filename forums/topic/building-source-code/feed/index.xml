@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Building Source Code &#8211; Politepix</title>
+		<atom:link href="/forums/topic/building-source-code/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/building-source-code/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:46:43 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/building-source-code/#post-1018155</guid>
+					<title><![CDATA[Building Source Code]]></title>
+					<link>/forums/topic/building-source-code/#post-1018155</link>
+					<pubDate>Tue, 27 Aug 2013 19:40:49 +0000</pubDate>
+					<dc:creator>jsteffey@hatci.com</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>So the distribution comes with the OpenEars Xcode project. I opened this project and tried building, but it failed with the following error:</p>
+<p>&#8230;Xcode/DerivedData/OpenEars-gsiuytklgdgbwwfddmbxhipxcbve/Build/Intermediates/OpenEars.build/Debug-iphoneos/OpenEars.build/Script-8C5DEE2914DABF3500EA965D.sh: line 166: /build_openears.sh: No such file or directory</p>
+<p>This is the relevant script source, after it already builds the frameworks:<br />
+echo &#8220;Building documentation&#8221;<br />
+/build_openears.sh &#8220;OpenEars&#8221; ${PROJECT_FILE_PATH} ${BUILT_PRODUCTS_DIR} &#8220;A shared-source framework for speech recognition and text to speech&#8221; &#8220;OpenEars&#8221;<br />
+echo &#8220;Done building documentation&#8221;</p>
+<p>Any ideas why it can&#8217;t find the &#8220;build_openears.sh&#8221;? If I just delete that part of the source script so it doesn&#8217;t build the documentation, that won&#8217;t affect the rest of the product, right?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/building-source-code/#post-1018156</guid>
+					<title><![CDATA[Reply To: Building Source Code]]></title>
+					<link>/forums/topic/building-source-code/#post-1018156</link>
+					<pubDate>Tue, 27 Aug 2013 19:45:42 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>Correct, it&#8217;s building the framework fine but it can only build all the docs in all their formats on my build server. I can take a look at making the documentation build fail more gracefully than that on other machines, but if you want to avoid it altogether you can build the target &#8220;OpenEars No Documentation&#8221; instead.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/building-source-code/#post-1018158</guid>
+					<title><![CDATA[Reply To: Building Source Code]]></title>
+					<link>/forums/topic/building-source-code/#post-1018158</link>
+					<pubDate>Tue, 27 Aug 2013 20:06:36 +0000</pubDate>
+					<dc:creator>jsteffey@hatci.com</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Okay, I see. Thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/building-source-code/#post-1018173</guid>
+					<title><![CDATA[Reply To: Building Source Code]]></title>
+					<link>/forums/topic/building-source-code/#post-1018173</link>
+					<pubDate>Thu, 29 Aug 2013 12:48:01 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, in today&#8217;s release of OpenEars 1.5.1 I put in a check for the documentation script so that it isn&#8217;t attempted to be run on other machines.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/building-source-code/#post-1031269</guid>
+					<title><![CDATA[Reply To: Building Source Code]]></title>
+					<link>/forums/topic/building-source-code/#post-1031269</link>
+					<pubDate>Wed, 09 Nov 2016 06:35:43 +0000</pubDate>
+					<dc:creator>dannychen</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,<br />
+I just met another issue when I tried to build OpenEars.framework.</p>
+<p>When I try to build OpenEarsDistribution/OpenEars (2.503) in XCode Version 8.1 (8B62). There was an error: &#8216;stdio.h&#8217; file not found makeheader.c</p>
+<p>And I also try to run<br />
+$python framework_prep_script.py<br />
+Got error:<br />
+Traceback (most recent call last):<br />
+  File &#8220;framework_prep_script.py&#8221;, line 10, in &lt;module&gt;<br />
+    if &#8220;OpenEarsDistribution/OpenEars&#8221; in os.environ[&#8216;PROJECT_DIR&#8217;]:<br />
+  File &#8220;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/UserDict.py&#8221;, line 23, in __getitem__<br />
+    raise KeyError(key)<br />
+KeyError: &#8216;PROJECT_DIR&#8217;</p>
+<p>$python framework_prep_script.py<br />
+Got error:<br />
+Traceback (most recent call last):<br />
+  File &#8220;framework_script.py&#8221;, line 859, in &lt;module&gt;<br />
+    log_handler.setFormatter(logging.Formatter(&#8220;%(name)s (&#8221; + os.environ[&#8216;PLATFORM_NAME&#8217;] + &#8220;): %(levelname)s: %(message)s&#8221;))<br />
+  File &#8220;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/UserDict.py&#8221;, line 23, in __getitem__<br />
+    raise KeyError(key)<br />
+KeyError: &#8216;PLATFORM_NAME&#8217;</p>
+<p>Is it possible to build OpenEars.framework (2.503)?<br />
+If so, is there any document? I&#8217;ve searched on both website and documents on DownloadOpenEarsDocs.webloc.</p>
+<p>Thank you.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/building-source-code/#post-1031270</guid>
+					<title><![CDATA[Reply To: Building Source Code]]></title>
+					<link>/forums/topic/building-source-code/#post-1031270</link>
+					<pubDate>Wed, 09 Nov 2016 07:09:33 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;ll check it out, thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/building-source-code/#post-1031271</guid>
+					<title><![CDATA[Reply To: Building Source Code]]></title>
+					<link>/forums/topic/building-source-code/#post-1031271</link>
+					<pubDate>Wed, 09 Nov 2016 07:12:20 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Just to double-check – you built via Archive rather than Build, is that correct?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/building-source-code/#post-1031273</guid>
+					<title><![CDATA[Reply To: Building Source Code]]></title>
+					<link>/forums/topic/building-source-code/#post-1031273</link>
+					<pubDate>Wed, 09 Nov 2016 07:22:03 +0000</pubDate>
+					<dc:creator>dannychen</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for reply.</p>
+<p>Yes I built via Archive.</p>
+<p>OS: 10.11.5 El Capitan.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/building-source-code/#post-1031276</guid>
+					<title><![CDATA[Reply To: Building Source Code]]></title>
+					<link>/forums/topic/building-source-code/#post-1031276</link>
+					<pubDate>Wed, 09 Nov 2016 17:44:19 +0000</pubDate>
+					<dc:creator>dannychen</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;ve traced this issue and got some updates.</p>
+<p>In framework_prep_scipt.py:<br />
+1. Add args &#8216;-I&#8217;, &#8216;/usr/include&#8217;, after clang: {subprocess.check_call([&#8216;clang&#8217;, &#8216;-I&#8217;, &#8216;/usr/include&#8217;, &#8230;}.<br />
+/usr/include is where the system placed stdio.h.</p>
+<p>2. change args from &#8220;OS X SDKs:&#8221; to &#8220;macOS SDKs:&#8221; in<br />
+subprocess.Popen([&#8216;xcodebuild -showsdks | awk \&#8217;/^$/{p=0};p; /macOS SDKs:/{p=1}\&#8217; | tail -1 | cut -f3&#8242;], stdout=subprocess.PIPE, shell=True)<br />
+I think it&#8217;s related to the new OS name&#8230;</p>
+<p>After the changes, XCode run framework_prep_scipt.py and compile the source code without error.</p>
+<p>But I got a new error:<br />
+Command &#8216;[&#8216;xcodebuild&#8217;, &#8216;-project&#8217;, &#8230;, &#8216;UFW_MASTER_PLATFORM=iphoneos&#8217;, &#8216;OTHER_CFLAGS=&#8221;-fembed-bitcode&#8221;&#8216;, &#8216;install&#8217;]&#8217; returned non-zero exit status 65<br />
+Command /bin/sh failed with exit code 1`</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/building-source-code/#post-1031278</guid>
+					<title><![CDATA[Reply To: Building Source Code]]></title>
+					<link>/forums/topic/building-source-code/#post-1031278</link>
+					<pubDate>Wed, 09 Nov 2016 17:50:45 +0000</pubDate>
+					<dc:creator>dannychen</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry, update the last part of previous post.</p>
+<p>===<br />
+But I got a new error during run framework_script.py:</p>
+<pre><code>Traceback (most recent call last):
+  File &quot;framework_script.py&quot;, line 874, in &lt;module&gt;
+    run_build
+  File &quot;framework_script.py&quot;, line 818, in run_build
+    run_slave_build
+  File &quot;framework_script.py&quot;, line 753, in run_slave_build
+    print_and_call_slave_build
+  File &quot;framework_script.py&quot;, line 550, in print_and_call_slave_build
+    raise subprocess.CalledProcessError
+
+Command &#039;[&#039;xcodebuild&#039;, &#039;-project&#039;, ..., &#039;UFW_MASTER_PLATFORM=iphoneos&#039;, &#039;OTHER_CFLAGS=&quot;-fembed-bitcode&quot;&#039;, &#039;install&#039;]&#039; returned non-zero exit status 65
+Command /bin/sh failed with exit code 1</code></pre>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

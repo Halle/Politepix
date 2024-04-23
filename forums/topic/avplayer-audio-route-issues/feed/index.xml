@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>AVPlayer / Audio Route issues &#8211; Politepix</title>
+		<atom:link href="/forums/topic/avplayer-audio-route-issues/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/avplayer-audio-route-issues/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:56:24 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/avplayer-audio-route-issues/#post-1017586</guid>
+					<title><![CDATA[AVPlayer / Audio Route issues]]></title>
+					<link>/forums/topic/avplayer-audio-route-issues/#post-1017586</link>
+					<pubDate>Tue, 02 Jul 2013 04:05:33 +0000</pubDate>
+					<dc:creator>foobar8675</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I have a few issues i&#8217;m stumped on. I&#8217;m trying to follow the steps here<br />
+<a href="/forums/topic/openears-avplayer-issue/">/forums/topic/openears-avplayer-issue/</a></p>
+<p>but am getting errors such as</p>
+<p>2013-06-29 09:49:25.855 EarsTest[2240:4e07] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext</p>
+<p>the steps I&#8217;m doing is<br />
+1. in appdelegate, start open ears and when it can listen, suspend recognition. as part of this, initalize audio session<br />
+2. the first view controller runs background music<br />
+3. after 5 seconds music pauses and open ears recognizes calling startAudioSession right before recognition<br />
+4. i say &#8216;cinderella&#8217;<br />
+5. open ears receives the hypothesis<br />
+6. open ears suspends, resetting audio session after 1 second delay</p>
+<p>then I get errors<br />
+2013-06-29 09:49:24.956 EarsTest[2240:907] The previous audio route was SpeakerAndMicrophone<br />
+2013-06-29 09:49:25.206 EarsTest[2240:907] This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is Speaker<br />
+2013-06-29 09:49:25.299 EarsTest[2240:4e07] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext</p>
+<p>i wrote a test app which is on github:<br />
+<a href="https://github.com/captainchung/openearstest/tree/master" rel="nofollow">https://github.com/captainchung/openearstest/tree/master</a></p>
+<p>and any suggestions would be very appreciated!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/avplayer-audio-route-issues/#post-1017589</guid>
+					<title><![CDATA[Reply To: AVPlayer / Audio Route issues]]></title>
+					<link>/forums/topic/avplayer-audio-route-issues/#post-1017589</link>
+					<pubDate>Tue, 02 Jul 2013 08:07:13 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>The error is because AVPlayer&#8217;s audio session is the one active at the time of the error, i.e. OpenEars is not resetting the audio session after one second delay but instead recognition is trying to start while the audio route still has no audio input.</p>
+<p>For simplicity, can you first of all move all of your related code into the root view controller? The app delegate isn&#8217;t a great place for any non-app-delegate code. You can use OpenEarsEventsObserver to get recognition results in other view controllers so that doesn&#8217;t pin you down to have it in the root view controller and it lets us deal with the issue without wondering about any race conditions with view loading or recognition starting.</p>
+<p>And then it would be good to see your code in viewDidLoad (or wherever it all ends up) that just relates to this task.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/avplayer-audio-route-issues/#post-1017604</guid>
+					<title><![CDATA[Reply To: AVPlayer / Audio Route issues]]></title>
+					<link>/forums/topic/avplayer-audio-route-issues/#post-1017604</link>
+					<pubDate>Wed, 03 Jul 2013 15:14:26 +0000</pubDate>
+					<dc:creator>foobar8675</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>first, thanks for responding Halle. i moved the related code (the wrapper at least) to the first root vc per your suggestion and noticed when i comment out the method on line 117 <a href="https://github.com/captainchung/openearstest/blob/master/EarsTest/SISpinxHelper.m" rel="nofollow">https://github.com/captainchung/openearstest/blob/master/EarsTest/SISpinxHelper.m</a></p>
+<p>it seems to work ok. however, when it is not commented , i get the errors listed before and when the avaudioplayer resumes playback, it does so at a higher volume . </p>
+<p>i think i&#8217;m fine with it the way it is &#8211; however i&#8217;m not sure why the audio resumes playback at a louder volume. this is more curiosity, but do you have any thoughts as to why that is?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/avplayer-audio-route-issues/#post-1017605</guid>
+					<title><![CDATA[Reply To: AVPlayer / Audio Route issues]]></title>
+					<link>/forums/topic/avplayer-audio-route-issues/#post-1017605</link>
+					<pubDate>Wed, 03 Jul 2013 15:26:52 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Right, that isn&#8217;t surprising since it&#8217;s the ambient session that is being created in that line which has no input stream (IIRC) so it prevents PocketsphinxController from being able to start its audio unit. </p>
+<p>The loudness thing is less clear. I don&#8217;t know the reason for that, but my best guess is that it is related to the route. Playback can either be routed to the external speaker or the ear speaker and one is much louder than the other. Different audio sessions have different default routes and need to be overridden to get different results. PocketsphinxController does re-route to the louder speaker, but it is possible that something about the session mixing is causing it to not successfully do that and then it is only when the new session is created that the sound is fully routed to the speaker. It could also be due to a side effect of the mixing setting, for instance if it does some kind of active volume reduction on the assumption that there are two output streams that have to be combined without clipping.Lastly it could just be a difference between the two different audio session settings that is more noticeable when the session is returned to ambient.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

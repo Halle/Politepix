@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] How to reject out-of-vocabulary utterances? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/language-recognition-problem/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/language-recognition-problem/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:39:19 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/language-recognition-problem/#post-8198</guid>
+					<title><![CDATA[[Resolved] How to reject out-of-vocabulary utterances?]]></title>
+					<link>/forums/topic/language-recognition-problem/#post-8198</link>
+					<pubDate>Thu, 01 Dec 2011 09:59:37 +0000</pubDate>
+					<dc:creator>jerry</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>e.g in the “.languagemodel”there are [eat, fat, love], when I said [ear], it will return [eat]. but I want to get a null result.<br />
+what should I do？thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/language-recognition-problem/#post-8199</guid>
+					<title><![CDATA[Reply To: language recognition problem]]></title>
+					<link>/forums/topic/language-recognition-problem/#post-8199</link>
+					<pubDate>Thu, 01 Dec 2011 12:00:42 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Jerry,</p>
+<p>This is the OOV utterance problem &#8212; here is the relevant Pocketsphinx FAQ entry:</p>
+<p><a href="http://cmusphinx.sourceforge.net/wiki/faq#qcan_pocketsphinx_reject_out-of-grammar_words_and_noises" rel="nofollow">http://cmusphinx.sourceforge.net/wiki/faq#qcan_pocketsphinx_reject_out-of-grammar_words_and_noises</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/language-recognition-problem/#post-8203</guid>
+					<title><![CDATA[Reply To: How to reject out-of-vocabulary utterances?]]></title>
+					<link>/forums/topic/language-recognition-problem/#post-8203</link>
+					<pubDate>Thu, 01 Dec 2011 12:33:56 +0000</pubDate>
+					<dc:creator>jerry</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thank you!<br />
+I will see that. ^_^</p>
+<p>hi!</p>
+<p>I saw the doc .But It&#8217;s difficult to understood for this: <strong>&#8220;However, since a phone loop should give us better rejection than confidence scores, I propose that we implement a phone loop in the FlatLinguist as a first attempt. It should be fairly easy to expand the unknown word &lt;unk&gt; into an all-phone self-looping network. As a starter, context-independent phones will be used, since context-dependency was shown to not matter in this case. If a result contains the &lt;unk&gt; word, the utterance can possibly be out-of-grammar. We leave it to the application developer to determine that. &#8220;.</strong></p>
+<p>1.what the &#8220;phone loop&#8221; mean?</p>
+<p>2.how to use &#8220;<strong>&lt;unk&gt;</strong>&#8220;? Is there a sampleCode for Implementation Details?</p>
+<p>thx a lot~</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/language-recognition-problem/#post-8209</guid>
+					<title><![CDATA[Reply To: How to reject out-of-vocabulary utterances?]]></title>
+					<link>/forums/topic/language-recognition-problem/#post-8209</link>
+					<pubDate>Fri, 02 Dec 2011 06:50:52 +0000</pubDate>
+					<dc:creator>jerry</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>hi Halle,<br />
+I saw the doc .But It’s difficult to understood for this: “However, since a phone loop should give us better rejection than confidence scores, I propose that we implement a phone loop in the FlatLinguist as a first attempt. It should be fairly easy to expand the unknown word &lt;unk&gt; into an all-phone self-looping network. As a starter, context-independent phones will be used, since context-dependency was shown to not matter in this case. If a result contains the &lt;unk&gt; word, the utterance can possibly be out-of-grammar. We leave it to the application developer to determine that. “.<br />
+1.what the “phone loop” mean?<br />
+2.how to use “&lt;unk&gt;“? Is there a sampleCode for Implementation Details?<br />
+thx a lot~</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/language-recognition-problem/#post-8211</guid>
+					<title><![CDATA[Reply To: How to reject out-of-vocabulary utterances?]]></title>
+					<link>/forums/topic/language-recognition-problem/#post-8211</link>
+					<pubDate>Fri, 02 Dec 2011 08:31:02 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Jerry,</p>
+<p>Since these are questions about the implementation of Pocketsphinx it would be better to ask them at the CMU Sphinx site.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/language-recognition-problem/#post-11115</guid>
+					<title><![CDATA[Reply To: How to reject out-of-vocabulary utterances?]]></title>
+					<link>/forums/topic/language-recognition-problem/#post-11115</link>
+					<pubDate>Fri, 14 Sep 2012 15:03:09 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Updated: you can now handle out of vocabulary rejection using Politepix&#8217;s <a href="/shop/rejectodemo" rel="nofollow">Rejecto</a> plugin for OpenEars.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

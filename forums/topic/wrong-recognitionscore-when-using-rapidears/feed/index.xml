@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Wrong recognitionScore when using RapidEars &#8211; Politepix</title>
+		<atom:link href="/forums/topic/wrong-recognitionscore-when-using-rapidears/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/wrong-recognitionscore-when-using-rapidears/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:43:14 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/wrong-recognitionscore-when-using-rapidears/#post-1018952</guid>
+					<title><![CDATA[Wrong recognitionScore when using RapidEars]]></title>
+					<link>/forums/topic/wrong-recognitionscore-when-using-rapidears/#post-1018952</link>
+					<pubDate>Wed, 20 Nov 2013 04:43:26 +0000</pubDate>
+					<dc:creator>tonylee</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I can get the recognitionScore correctly in OpenEars. But when I use RapidEars (Demo version), the recognitionScore is wrong. It keeps showing number similar to 58486380. And this number does not change in the whole active session of app. It changes once I restart the app but it keeps unchanged then.</p>
+<p>Is it a problem of demo version? Or wrong setting?</p>
+<p>Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wrong-recognitionscore-when-using-rapidears/#post-1018958</guid>
+					<title><![CDATA[Reply To: Wrong recognitionScore when using RapidEars]]></title>
+					<link>/forums/topic/wrong-recognitionscore-when-using-rapidears/#post-1018958</link>
+					<pubDate>Wed, 20 Nov 2013 10:00:07 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Can you show your code in the callback which is getting the score value? </p>
+<p>BTW, just for some background, the score doesn&#8217;t have a huge amount of utility in an application because it is extremely dependent on the recording environment. I have historically made it available because it is part of the returned information with a hypothesis and it seemed unhelpful to omit it from OpenEars when it was available, but I don&#8217;t advise relying on it for anything except relative values within a single app usage session (meaning, you can use score within one session to see if something is well-recognized compared to another utterance within the same session, but shouldn&#8217;t use constants as a universal cutoff that means &#8220;good recognition&#8221; or &#8220;bad recognition&#8221; because you&#8217;ll get surprises when the user interacts with the app from a greater mic distance or in a noisier environment than you tested in.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wrong-recognitionscore-when-using-rapidears/#post-1018959</guid>
+					<title><![CDATA[Reply To: Wrong recognitionScore when using RapidEars]]></title>
+					<link>/forums/topic/wrong-recognitionscore-when-using-rapidears/#post-1018959</link>
+					<pubDate>Wed, 20 Nov 2013 10:08:53 +0000</pubDate>
+					<dc:creator>tonylee</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The code is here:</p>
+<pre><code>
+// somewhere in the .m
+- (void)somewhere
+{
+    _controller = [[PocketsphinxController alloc] init];
+    _controller.nBestNumber = 1;
+    _controller.verbosePocketSphinx = kIsVerbose;
+    [_controller setRapidEarsToVerbose:kIsVerbose];
+    [_controller setRapidEarsAccuracy:10];
+    [_controller setFinalizeHypothesis:TRUE];
+    [_controller setFasterPartials:TRUE];
+    [_controller setFasterFinals:FALSE];
+    [_controller startRealtimeListeningWithLanguageModelAtPath:_pathToDynamicallyGeneratedGrammar
+                                              dictionaryAtPath:_pathToDynamicallyGeneratedDictionary
+                                           acousticModelAtPath:[self acousticModelPath]];
+
+    // ... set up observer in the following
+}
+
+//
+- (void) rapidEarsDidReceiveLiveSpeechHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore {
+    NSLog(@&quot;rapidEarsDidReceiveLiveSpeechHypothesis: %@ (%@)&quot;,hypothesis, recognitionScore);
+    _statusLabel.text = [NSString stringWithFormat:@&quot;%@&quot;, hypothesis];
+}
+
+- (void) rapidEarsDidReceiveFinishedSpeechHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore {
+    NSLog(@&quot;rapidEarsDidReceiveFinishedSpeechHypothesis: %@ (%p)&quot;, hypothesis, recognitionScore);
+    
+    _scoreLabel.text = [NSString stringWithFormat:@&quot;%@&quot;, recognitionScore];
+}
+</code></pre>
+<p>I understand the number is not that reliable. But the problem is that the number is not negative number, which is different from OpenEars.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wrong-recognitionscore-when-using-rapidears/#post-1018960</guid>
+					<title><![CDATA[Reply To: Wrong recognitionScore when using RapidEars]]></title>
+					<link>/forums/topic/wrong-recognitionscore-when-using-rapidears/#post-1018960</link>
+					<pubDate>Wed, 20 Nov 2013 10:17:44 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The different format is correct &#8212; the RapidEars scores are raw Sphinx format scores and haven&#8217;t been converted into a probability. Since you&#8217;ve pointed it out, I think you&#8217;re correct that that should be changed to match the OpenEars style since those raw scores are particularly un-useful. I would call that a bug and I&#8217;ll see if I can fix it in the upcoming 64-bit support release.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wrong-recognitionscore-when-using-rapidears/#post-1019159</guid>
+					<title><![CDATA[Reply To: Wrong recognitionScore when using RapidEars]]></title>
+					<link>/forums/topic/wrong-recognitionscore-when-using-rapidears/#post-1019159</link>
+					<pubDate>Fri, 13 Dec 2013 08:50:43 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This issue is fixed in yesterday&#8217;s release of OpenEars/RapidEars 1.64. You should now have rational probability values in RapidEars scoring in unsegmented mode.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

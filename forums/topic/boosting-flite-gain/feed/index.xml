@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Boosting flite gain &#8211; Politepix</title>
+		<atom:link href="/forums/topic/boosting-flite-gain/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/boosting-flite-gain/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:55:22 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/boosting-flite-gain/#post-1015995</guid>
+					<title><![CDATA[Boosting flite gain]]></title>
+					<link>/forums/topic/boosting-flite-gain/#post-1015995</link>
+					<pubDate>Wed, 20 Mar 2013 20:43:28 +0000</pubDate>
+					<dc:creator>ransomweaver</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>I&#8217;m using flitecontroller to generate wav files; I&#8217;ve modified the openears framework accordingly, saving the file instead of sending it to the AVSoundPlayer to speak.  I play the wavs with an existing (cocos2d-based) sound engine. </p>
+<p>However I would like to increase the volume of the flite output. Relative to music at the same volume setting,  its very hard to hear. </p>
+<p>I found the flit-&gt;gain in rate_conv.c, set to 0.8. I&#8217;ve tried setting this as high as 20 but I think it only goes up to 1.0. In any event, its still too low for me. </p>
+<p>The app I&#8217;m using this in previously used speech files generated on a server using Festival, and to make those loud enough I had passed a -scale parameter of 2 to the text2wave program. I don&#8217;t really see any corresponding volume scaling feature in flite. </p>
+<p>Any thoughts?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/boosting-flite-gain/#post-1015996</guid>
+					<title><![CDATA[Reply To: Boosting flite gain]]></title>
+					<link>/forums/topic/boosting-flite-gain/#post-1015996</link>
+					<pubDate>Wed, 20 Mar 2013 21:24:09 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>I think in this case I&#8217;d just write a little gain-increasing method to loop through buffers of the returned TTS speech right before they are added to the virtual WAV file in FliteController and boost them. I like this StackOverflow thread for a good starting point:</p>
+<p><a href="http://stackoverflow.com/questions/3982723/audio-processing-playing-with-volume-level" rel="nofollow">http://stackoverflow.com/questions/3982723/audio-processing-playing-with-volume-level</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/boosting-flite-gain/#post-1016002</guid>
+					<title><![CDATA[Reply To: Boosting flite gain]]></title>
+					<link>/forums/topic/boosting-flite-gain/#post-1016002</link>
+					<pubDate>Thu, 21 Mar 2013 03:02:52 +0000</pubDate>
+					<dc:creator>ransomweaver</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks!</p>
+<p>That SO question has the goods. I&#8217;m not much for C programming, but I know how to use a C function in an Obj C class, so I used the ScaleAudioFileAmplitude function shown there. </p>
+<p>This probably is a bit wasteful, as my modified flitecontroller writes the data to file then reads/writes it again with the amplification,  but it works very well.  And quicker than me figuring out how to iterate through the data part of the buffer in memory. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/boosting-flite-gain/#post-1016004</guid>
+					<title><![CDATA[Reply To: Boosting flite gain]]></title>
+					<link>/forums/topic/boosting-flite-gain/#post-1016004</link>
+					<pubDate>Thu, 21 Mar 2013 08:12:03 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I think that&#8217;s a sensible solution. There are a lot of places in buffer operations to make little mistakes that can waste a day or more.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

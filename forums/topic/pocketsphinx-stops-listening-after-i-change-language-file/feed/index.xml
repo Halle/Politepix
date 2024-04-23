@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>PocketSphinx stops listening after I change language file. &#8211; Politepix</title>
+		<atom:link href="/forums/topic/pocketsphinx-stops-listening-after-i-change-language-file/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/pocketsphinx-stops-listening-after-i-change-language-file/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:48:12 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/pocketsphinx-stops-listening-after-i-change-language-file/#post-1015496</guid>
+					<title><![CDATA[PocketSphinx stops listening after I change language file.]]></title>
+					<link>/forums/topic/pocketsphinx-stops-listening-after-i-change-language-file/#post-1015496</link>
+					<pubDate>Tue, 29 Jan 2013 09:30:00 +0000</pubDate>
+					<dc:creator>Geri</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi.<br />
+I have a pocketSphinx set up, started listening with&#8230;</p>
+<p><code>[self.pocketsphinxController startListeningWithLanguageModelAtPath:self.languageModel.languageModelPath<br />
+                                                      dictionaryAtPath:self.languageModel.dictionaryPath<br />
+                                                   languageModelIsJSGF:NO];</code></p>
+<p>&#8230;without any problem,<br />
+Then I suspend listening with&#8230;</p>
+<p><code>[self.pocketsphinxController suspendRecognition];</code></p>
+<p>Then I change the model file (it works well, as the OpenEarsEventsObserverDelegate callback method gets called) with&#8230;</p>
+<p><code>[self.pocketsphinxController changeLanguageModelToFile:self.languageModel.languageModelPath<br />
+                                            withDictionary:self.languageModel.dictionaryPath];</code></p>
+<p>&#8230;and after that at a certain point I resume listening with&#8230;</p>
+<p><code>[self.pocketsphinxController resumeRecognition];</code></p>
+<p>&#8230;but no any recognition takes place anymore.</p>
+<p>What am I doing wrong? Should this be working in a way like this?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pocketsphinx-stops-listening-after-i-change-language-file/#post-1015497</guid>
+					<title><![CDATA[Reply To: PocketSphinx stops listening after I change language file.]]></title>
+					<link>/forums/topic/pocketsphinx-stops-listening-after-i-change-language-file/#post-1015497</link>
+					<pubDate>Tue, 29 Jan 2013 09:32:22 +0000</pubDate>
+					<dc:creator>Geri</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Could it be the problem that I use  a common same name for language model files?</p>
+<p>Namely &#8220;Bound vocabulary&#8221; every time I generate a language model.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pocketsphinx-stops-listening-after-i-change-language-file/#post-1015498</guid>
+					<title><![CDATA[Reply To: PocketSphinx stops listening after I change language file.]]></title>
+					<link>/forums/topic/pocketsphinx-stops-listening-after-i-change-language-file/#post-1015498</link>
+					<pubDate>Tue, 29 Jan 2013 09:39:34 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The first step is turning on verbosePocketsphinx so you can see any recognition errors or warnings in the console. Is it an ARPA model or a JSGF grammar? You do need to give your models unique names.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pocketsphinx-stops-listening-after-i-change-language-file/#post-1015502</guid>
+					<title><![CDATA[Reply To: PocketSphinx stops listening after I change language file.]]></title>
+					<link>/forums/topic/pocketsphinx-stops-listening-after-i-change-language-file/#post-1015502</link>
+					<pubDate>Tue, 29 Jan 2013 10:57:20 +0000</pubDate>
+					<dc:creator>Geri</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks, unique naming seems solved this issue.<br />
+Still really love this support, like you were sitting here around.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pocketsphinx-stops-listening-after-i-change-language-file/#post-1015511</guid>
+					<title><![CDATA[Reply To: PocketSphinx stops listening after I change language file.]]></title>
+					<link>/forums/topic/pocketsphinx-stops-listening-after-i-change-language-file/#post-1015511</link>
+					<pubDate>Wed, 30 Jan 2013 06:26:27 +0000</pubDate>
+					<dc:creator>giebler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This same thing happened to me when I updated to version 1.2.5.  I have an app where I need to add words occasionally.  When I generate the new files, it would go through the motions of listening, but not ever recognize anything.  Based on Geri&#8217;s solution, I deleted the old dynamic dictionary and grammar files before creating the new ones and this eliminated the bug.  Now I can use the same file names over and over.  Hope this helps you track down the bug.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pocketsphinx-stops-listening-after-i-change-language-file/#post-1015512</guid>
+					<title><![CDATA[Reply To: PocketSphinx stops listening after I change language file.]]></title>
+					<link>/forums/topic/pocketsphinx-stops-listening-after-i-change-language-file/#post-1015512</link>
+					<pubDate>Wed, 30 Jan 2013 07:50:31 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Giebler,</p>
+<p>It&#8217;s a requirement that language models have unique names, not really a bug, but I&#8217;ll mention it in the docs for clarity.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pocketsphinx-stops-listening-after-i-change-language-file/#post-1015516</guid>
+					<title><![CDATA[Reply To: PocketSphinx stops listening after I change language file.]]></title>
+					<link>/forums/topic/pocketsphinx-stops-listening-after-i-change-language-file/#post-1015516</link>
+					<pubDate>Wed, 30 Jan 2013 15:12:24 +0000</pubDate>
+					<dc:creator>Geri</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Actually, why do we need add names for the model files at all?<br />
+Some kind of reusability considerations?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pocketsphinx-stops-listening-after-i-change-language-file/#post-1015517</guid>
+					<title><![CDATA[Reply To: PocketSphinx stops listening after I change language file.]]></title>
+					<link>/forums/topic/pocketsphinx-stops-listening-after-i-change-language-file/#post-1015517</link>
+					<pubDate>Wed, 30 Jan 2013 15:48:28 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Which name are you referring to? The file name that you pass to LanguageModelGenerator when you are requesting the generated model or something else?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

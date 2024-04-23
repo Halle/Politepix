@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>JSGF code example? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/jsgf-code-example/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/jsgf-code-example/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:07:35 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/jsgf-code-example/#post-1016981</guid>
+					<title><![CDATA[JSGF code example?]]></title>
+					<link>/forums/topic/jsgf-code-example/#post-1016981</link>
+					<pubDate>Wed, 17 Apr 2013 14:03:08 +0000</pubDate>
+					<dc:creator>catdsnny</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Is there any example code on implementing a JSGF grammar?  The documentation only seems to show how to use the ARPA model.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/jsgf-code-example/#post-1016982</guid>
+					<title><![CDATA[Reply To: JSGF code example?]]></title>
+					<link>/forums/topic/jsgf-code-example/#post-1016982</link>
+					<pubDate>Wed, 17 Apr 2013 14:17:52 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>There is a JSGF file shipped with the sample app (OpenEars1.gram) that you can pass into startListening: instead of the starting language model (remembering to set isJSGF to TRUE).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/jsgf-code-example/#post-1016983</guid>
+					<title><![CDATA[Reply To: JSGF code example?]]></title>
+					<link>/forums/topic/jsgf-code-example/#post-1016983</link>
+					<pubDate>Wed, 17 Apr 2013 14:34:35 +0000</pubDate>
+					<dc:creator>catdsnny</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m more looking for what the call is &#8211; I can create a grammar file.  The ARPA examples all refer to creating a LanguageModelGenerator object.  Is the process the same for JSGF?  The docs are very light on how to build a JSGF based app.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/jsgf-code-example/#post-1016984</guid>
+					<title><![CDATA[Reply To: JSGF code example?]]></title>
+					<link>/forums/topic/jsgf-code-example/#post-1016984</link>
+					<pubDate>Wed, 17 Apr 2013 14:45:02 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Is your question about how to dynamically create a JSGF/dictionary pair using LanguageModelGenerator? You can&#8217;t create a JSGF using LanguageModelGenerator, but you can put the words from an existing JSGF into LanguageModelGenerator and use the resulting .dic file along with your pre-existing JSGF. Then you just pass the two files into startListening: (remembering to set isJSGF to TRUE) instead of an ARPA file and a .dic file. </p>
+<p>It isn&#8217;t heavily documented because I can&#8217;t provide much support for the fairly complex subject of the JSGF standard and the Sphinx implementation thereof, so it is more something I make available as an option than actively promote, if that makes sense.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/jsgf-code-example/#post-1016985</guid>
+					<title><![CDATA[Reply To: JSGF code example?]]></title>
+					<link>/forums/topic/jsgf-code-example/#post-1016985</link>
+					<pubDate>Wed, 17 Apr 2013 14:58:54 +0000</pubDate>
+					<dc:creator>catdsnny</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I guess what I&#8217;m suggesting is that it would be helpful to have a short tutorial on using the JSGF grammar.  I&#8217;m not suggesting that JSGF is the focal point of the tutorial.  What seems to be missing is a step by step guide to implementing a JSGF grammar with openears.  Not how to build a JSGF grammar, just how to use JSGF grammars with the library.  I think a few lines of code showing how to do the steps that you just outlined above would be useful for developers.  For example, you refer to &#8220;two files&#8221; &#8211; what two files?  How are they created?  What do they contain?  None of this seems to be covered in the docs &#8211; as opposed to the ARPA model, which seems to be heavily documented in a step by step manner.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/jsgf-code-example/#post-1016995</guid>
+					<title><![CDATA[Reply To: JSGF code example?]]></title>
+					<link>/forums/topic/jsgf-code-example/#post-1016995</link>
+					<pubDate>Thu, 18 Apr 2013 18:12:41 +0000</pubDate>
+					<dc:creator>catdsnny</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Any chance on getting a few lines of code on how to implement the JSGF grammar with open ears?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/jsgf-code-example/#post-1016996</guid>
+					<title><![CDATA[Reply To: JSGF code example?]]></title>
+					<link>/forums/topic/jsgf-code-example/#post-1016996</link>
+					<pubDate>Thu, 18 Apr 2013 18:20:16 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m sorry, I don&#8217;t understand what you require if you already have a JSGF grammar. If you already have a JSGF grammar, there isn&#8217;t anything to describe beyond what I said previously:</p>
+<blockquote><p>you can put the words from an existing JSGF into LanguageModelGenerator and use the resulting .dic file along with your pre-existing JSGF. Then you just pass the two files into startListening: (remembering to set isJSGF to TRUE) instead of an ARPA file and a .dic file.</p></blockquote>
+<p>OpenEars doesn&#8217;t handle any other aspects of JSGF for you (unlike ARPA) so there isn&#8217;t anything else I can give you instructions for.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/jsgf-code-example/#post-1016998</guid>
+					<title><![CDATA[Reply To: JSGF code example?]]></title>
+					<link>/forums/topic/jsgf-code-example/#post-1016998</link>
+					<pubDate>Thu, 18 Apr 2013 18:59:54 +0000</pubDate>
+					<dc:creator>catdsnny</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ok, so to confirm, there is no &#8220;gram&#8221; file?  I just create a text file with my grammar, use that as the input to generateLanguageModelFromTextFile and then pass the lmpath/dicpath that results into the startListeningWithLanguageModelAtPath?</p>
+<p>Being that the only example is ARPA, and openears supports JSGF, I think it would be helpful for users to have a few lines of sample code to show how JSGF is implemented.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/jsgf-code-example/#post-1016999</guid>
+					<title><![CDATA[Reply To: JSGF code example?]]></title>
+					<link>/forums/topic/jsgf-code-example/#post-1016999</link>
+					<pubDate>Thu, 18 Apr 2013 19:13:04 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Nope, you are using your pre-created JSGF file (with whatever ending you like &#8212; the one that ships with the sample app has the ending &#8220;.gram&#8221;) and if you don&#8217;t already have a phonetic dictionary that goes with it you can use LanguageModelGenerator to create one as I described. Then you can pass your JSGF file and the .dic file that you used LanguageModelGenerator to create to startListeningWithLanguageModelAtPath:. </p>
+<p>As I mentioned in your other thread, JSGF is a more difficult approach because you are responsible for your own research on its requirements. There is nothing to document on the OpenEars side of things; you have to already have a JSGF file and phonetic dictionary and know what those files are (the fact that there is a hacky, unsupported way to create a .dic file using LanguageModelGenerator nonwithstanding). </p>
+<p>OpenEars supports JSGF because it&#8217;s a common format that is used by existing speech UI designers, but it isn&#8217;t a goal of the project to introduce users to developing JSGF or its components.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/jsgf-code-example/#post-1020924</guid>
+					<title><![CDATA[Reply To: JSGF code example?]]></title>
+					<link>/forums/topic/jsgf-code-example/#post-1020924</link>
+					<pubDate>Mon, 21 Apr 2014 14:33:22 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Please check out the new dynamic generation language for OpenEars added with version 1.7: <a href="/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/">/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

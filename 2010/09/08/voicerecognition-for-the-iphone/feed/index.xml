@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Voice Recognition / Speech Recognition and speech for the iPhone	</title>
+	<atom:link href="/2010/09/08/voicerecognition-for-the-iphone/feed/" rel="self" type="application/rss+xml" />
+	<link>/2010/09/08/voicerecognition-for-the-iphone/</link>
+	<description>iOS Frameworks for speech recognition, text to speech and more</description>
+	<lastBuildDate>Sat, 02 Mar 2013 08:14:48 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.5.2</generator>
+	<item>
+		<title>
+		By: Halle		</title>
+		<link>/2010/09/08/voicerecognition-for-the-iphone/#comment-306</link>
+
+		<dc:creator><![CDATA[Halle]]></dc:creator>
+		<pubDate>Wed, 06 Oct 2010 21:43:32 +0000</pubDate>
+		<guid isPermaLink="false">/?p=852#comment-306</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2010/09/08/voicerecognition-for-the-iphone/#comment-305&quot;&gt;Brian King&lt;/a&gt;.
+
+Hey Brian,
+
+Cool to hear from you, VocalKit is great.  If you ever get a chance to try OpenEars out I&#039;d love to get your feedback.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2010/09/08/voicerecognition-for-the-iphone/#comment-305">Brian King</a>.</p>
+<p>Hey Brian,</p>
+<p>Cool to hear from you, VocalKit is great.  If you ever get a chance to try OpenEars out I&#8217;d love to get your feedback.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Brian King		</title>
+		<link>/2010/09/08/voicerecognition-for-the-iphone/#comment-305</link>
+
+		<dc:creator><![CDATA[Brian King]]></dc:creator>
+		<pubDate>Wed, 06 Oct 2010 20:39:30 +0000</pubDate>
+		<guid isPermaLink="false">/?p=852#comment-305</guid>
+
+					<description><![CDATA[Hey Halle, 
+     The Library looks great.   I&#039;m the author of VocalKit which is a quick wrapper around pocket sphinx, but it was mostly a slight cleanup of a spike I did and never had much of a reason to work more on it.   A lot of people are using it and I&#039;m going to start pointing them in your direction.   I don&#039;t have much time to work on it and your project looks great.
+
+Brian King]]></description>
+			<content:encoded><![CDATA[<p>Hey Halle,<br />
+     The Library looks great.   I&#8217;m the author of VocalKit which is a quick wrapper around pocket sphinx, but it was mostly a slight cleanup of a spike I did and never had much of a reason to work more on it.   A lot of people are using it and I&#8217;m going to start pointing them in your direction.   I don&#8217;t have much time to work on it and your project looks great.</p>
+<p>Brian King</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Halle		</title>
+		<link>/2010/09/08/voicerecognition-for-the-iphone/#comment-299</link>
+
+		<dc:creator><![CDATA[Halle]]></dc:creator>
+		<pubDate>Tue, 05 Oct 2010 16:12:05 +0000</pubDate>
+		<guid isPermaLink="false">/?p=852#comment-299</guid>
+
+					<description><![CDATA[Hi Jake,
+
+Thanks!  Let me know how it works for you.  
+
+I think it might not be too big of a deal to get OpenEars working with Spanish, with the caveat that I haven&#039;t attempted any acoustic model implementations for other languages.  If you&#039;d like to move the conversation over to the forums at /forums we can take a look at what is involved in that.]]></description>
+			<content:encoded><![CDATA[<p>Hi Jake,</p>
+<p>Thanks!  Let me know how it works for you.  </p>
+<p>I think it might not be too big of a deal to get OpenEars working with Spanish, with the caveat that I haven&#8217;t attempted any acoustic model implementations for other languages.  If you&#8217;d like to move the conversation over to the forums at <a href="/forums" rel="ugc">/forums</a> we can take a look at what is involved in that.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jake		</title>
+		<link>/2010/09/08/voicerecognition-for-the-iphone/#comment-298</link>
+
+		<dc:creator><![CDATA[Jake]]></dc:creator>
+		<pubDate>Tue, 05 Oct 2010 15:51:20 +0000</pubDate>
+		<guid isPermaLink="false">/?p=852#comment-298</guid>
+
+					<description><![CDATA[Halle - this is awesome. Plan to start working with this over the next couple of weeks. Does it work with other languages besides English? Would it be a major undertaking for me to extend it to spanish? thanks!]]></description>
+			<content:encoded><![CDATA[<p>Halle &#8211; this is awesome. Plan to start working with this over the next couple of weeks. Does it work with other languages besides English? Would it be a major undertaking for me to extend it to spanish? thanks!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

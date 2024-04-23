@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] calling suspendRecognition on pocketsphinxRecognitionLoopDidStart &#8211; Politepix</title>
+		<atom:link href="/forums/topic/calling-suspendrecognition-on-pocketsphinxrecognitionloopdidstart/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/calling-suspendrecognition-on-pocketsphinxrecognitionloopdidstart/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:08:01 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/calling-suspendrecognition-on-pocketsphinxrecognitionloopdidstart/#post-1024215</guid>
+					<title><![CDATA[[Resolved] calling suspendRecognition on pocketsphinxRecognitionLoopDidStart]]></title>
+					<link>/forums/topic/calling-suspendrecognition-on-pocketsphinxrecognitionloopdidstart/#post-1024215</link>
+					<pubDate>Tue, 13 Jan 2015 16:10:40 +0000</pubDate>
+					<dc:creator>maxgarmar</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle, </p>
+<p>Another one. When I start my app, I don&#8217;t want the library listening directly, must be intended by the user so I am using this code.</p>
+<pre><code>- (void) pocketsphinxRecognitionLoopDidStart {
+    
+    [[OEPocketsphinxController sharedInstance] suspendRecognition];
+
+    
+    NSLog(@&quot;Local callback: Pocketsphinx started.&quot;); // Log it.
+    
+    
+}</code></pre>
+<p>The thing is that when I am debugging it does suspend but when I am using the app normally it does not (I guess because when is trying to suspend is not started up completely). </p>
+<p>I guessed that this method is called back when everything is up and running, but perhaps I am wrong. Should I use it in other way ? am I wrong?</p>
+<p>Thanks</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/calling-suspendrecognition-on-pocketsphinxrecognitionloopdidstart/#post-1024217</guid>
+					<title><![CDATA[Reply To: [Resolved] calling suspendRecognition on pocketsphinxRecognitionLoopDidStart]]></title>
+					<link>/forums/topic/calling-suspendrecognition-on-pocketsphinxrecognitionloopdidstart/#post-1024217</link>
+					<pubDate>Tue, 13 Jan 2015 16:15:20 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yes, please don&#8217;t start and immediate call suspend. Startup should be fast enough now that there is no more calibration time that it should not be necessary.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/calling-suspendrecognition-on-pocketsphinxrecognitionloopdidstart/#post-1024218</guid>
+					<title><![CDATA[Reply To: [Resolved] calling suspendRecognition on pocketsphinxRecognitionLoopDidStart]]></title>
+					<link>/forums/topic/calling-suspendrecognition-on-pocketsphinxrecognitionloopdidstart/#post-1024218</link>
+					<pubDate>Tue, 13 Jan 2015 16:44:42 +0000</pubDate>
+					<dc:creator>maxgarmar</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>But then, when should I call to suspendRecognition? If I don&#8217;t want my app listening when it starts.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/calling-suspendrecognition-on-pocketsphinxrecognitionloopdidstart/#post-1024219</guid>
+					<title><![CDATA[Reply To: [Resolved] calling suspendRecognition on pocketsphinxRecognitionLoopDidStart]]></title>
+					<link>/forums/topic/calling-suspendrecognition-on-pocketsphinxrecognitionloopdidstart/#post-1024219</link>
+					<pubDate>Tue, 13 Jan 2015 16:48:21 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m saying that there is no reason to start listening until you want to listen. The method is called startListening etc.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/calling-suspendrecognition-on-pocketsphinxrecognitionloopdidstart/#post-1024220</guid>
+					<title><![CDATA[Reply To: [Resolved] calling suspendRecognition on pocketsphinxRecognitionLoopDidStart]]></title>
+					<link>/forums/topic/calling-suspendrecognition-on-pocketsphinxrecognitionloopdidstart/#post-1024220</link>
+					<pubDate>Tue, 13 Jan 2015 16:54:53 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>To be more specific: starting listening and calling suspend is a workaround that developers came up with in order to hide the calibration time from users. It was a bad workaround because it resulted in the calibration being done against a different environment than the speech which arrived at some arbitrary later point, so you can find a few different 1.x threads here in which I recommend that developers not do it. Now there is no longer any reason for the workaround, since there is no calibration time when you start up, so it&#8217;s a good time to let go of the workaround architecture in which startListening is called at a time in which you don&#8217;t want to start listening.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/calling-suspendrecognition-on-pocketsphinxrecognitionloopdidstart/#post-1024221</guid>
+					<title><![CDATA[Reply To: [Resolved] calling suspendRecognition on pocketsphinxRecognitionLoopDidStart]]></title>
+					<link>/forums/topic/calling-suspendrecognition-on-pocketsphinxrecognitionloopdidstart/#post-1024221</link>
+					<pubDate>Tue, 13 Jan 2015 17:00:19 +0000</pubDate>
+					<dc:creator>maxgarmar</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>ok</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

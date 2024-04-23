@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>OpenEars &#8211; RapidEars examples &#8211; Politepix</title>
+		<atom:link href="/forums/topic/openears-rapidears-examples/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/openears-rapidears-examples/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:42:51 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/openears-rapidears-examples/#post-1020721</guid>
+					<title><![CDATA[OpenEars &#8211; RapidEars examples]]></title>
+					<link>/forums/topic/openears-rapidears-examples/#post-1020721</link>
+					<pubDate>Mon, 07 Apr 2014 04:08:40 +0000</pubDate>
+					<dc:creator>esd</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello I have been experimenting with the OpenEars API for a few months now and I have brought my prototype to the point where I need to upgrade the speech recognition, to increase the user efficiency.</p>
+<p>I have tried multiple times to use the demo version except that the time limit is very short and has not provided me with enough time to convert my project and test it successfully, as i&#8217;m using a custom dictionary.</p>
+<p>Before I purchase RapidEars, I need to know the performance is adequate &#8211; and there is very little documentation on projects who are using these plugins.</p>
+<p>Is there any example projects or video footage of apps using these plugins?</p>
+<p>The same can also be said for the Rejecto plugin also,</p>
+<p>thank you,</p>
+<p>-esd</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-rapidears-examples/#post-1020722</guid>
+					<title><![CDATA[Reply To: OpenEars &#8211; RapidEars examples]]></title>
+					<link>/forums/topic/openears-rapidears-examples/#post-1020722</link>
+					<pubDate>Mon, 07 Apr 2014 07:20:30 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>The users of the plugins is private customer information, sorry. </p>
+<p>There shouldn&#8217;t be any significant barrier to testing performance or accuracy with the demos since their timeout has been chosen to be quite a bit longer than the average user app engagement period. Please let me know what your specific test goal is and maybe I can help to find a way to test it. All OpenEars-using apps have a custom language model so that shouldn&#8217;t be an impediment to being able to test, and OpenEars and RapidEars share the same language models, dictionaries and acoustic models.</p>
+<p>Can you clarify this issue further so I can help you get past it:</p>
+<blockquote><p>I have tried multiple times to use the demo version except that the time limit is very short and has not provided me with enough time to convert my project and test it successfully, as i’m using a custom dictionary.</p></blockquote>
+<p>Is it a requirement to convert your project while the app is running? Convert in what respect?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

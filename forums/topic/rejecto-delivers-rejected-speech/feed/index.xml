@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] Rejecto delivers rejected speech &#8211; Politepix</title>
+		<atom:link href="/forums/topic/rejecto-delivers-rejected-speech/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/rejecto-delivers-rejected-speech/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:50:23 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/rejecto-delivers-rejected-speech/#post-1023261</guid>
+					<title><![CDATA[[Resolved] Rejecto delivers rejected speech]]></title>
+					<link>/forums/topic/rejecto-delivers-rejected-speech/#post-1023261</link>
+					<pubDate>Sat, 06 Dec 2014 17:45:00 +0000</pubDate>
+					<dc:creator>noam</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,<br />
+I am running Rejecto using a prebuilt dictionary.<br />
+But [pocketsphinxDidReceiveHypothesis:recognitionScore:utteranceID:] keeps calling for rejected speech.<br />
+Log for example:<br />
+The received hypothesis is ___REJ_A ___REJ_A with a score of 0 and an ID of 1</p>
+<p>Any known reason for that?</p>
+<p>Thanks,<br />
+Noam</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rejecto-delivers-rejected-speech/#post-1023262</guid>
+					<title><![CDATA[Reply To: [Resolved] Rejecto delivers rejected speech]]></title>
+					<link>/forums/topic/rejecto-delivers-rejected-speech/#post-1023262</link>
+					<pubDate>Sat, 06 Dec 2014 19:39:04 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Noam,</p>
+<p>Rejecto doesn&#8217;t operate with prebuilt language models, it is for creating a language model at runtime while running Rejecto.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rejecto-delivers-rejected-speech/#post-1023263</guid>
+					<title><![CDATA[Reply To: [Resolved] Rejecto delivers rejected speech]]></title>
+					<link>/forums/topic/rejecto-delivers-rejected-speech/#post-1023263</link>
+					<pubDate>Sat, 06 Dec 2014 20:22:35 +0000</pubDate>
+					<dc:creator>noam</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks! That fixed it.</p>
+<p>Is there any way to reduce the sensitivity of OEPocketsphinxController?<br />
+Version 2.0 is much more sensitive then 1.65</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rejecto-delivers-rejected-speech/#post-1023264</guid>
+					<title><![CDATA[Reply To: [Resolved] Rejecto delivers rejected speech]]></title>
+					<link>/forums/topic/rejecto-delivers-rejected-speech/#post-1023264</link>
+					<pubDate>Sat, 06 Dec 2014 20:28:57 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Super, glad that helped. You can increase or decrease OEPocketsphinxController&#8217;s property vadThreshold. Higher settings will exclude more noise (but if it&#8217;s too high, it will exclude non-noise speech) and lower settings will allow more noise. I am still searching for the correct default setting for vadThreshold since it is part of the brand-new area of the framework, so your feedback on that is useful. OpenEars&#8217; current default value is 1.5 and CMU Sphinx uses the default value 2.0 (but I thought it was excluding a bit too much real speech).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rejecto-delivers-rejected-speech/#post-1023265</guid>
+					<title><![CDATA[Reply To: [Resolved] Rejecto delivers rejected speech]]></title>
+					<link>/forums/topic/rejecto-delivers-rejected-speech/#post-1023265</link>
+					<pubDate>Sat, 06 Dec 2014 20:32:15 +0000</pubDate>
+					<dc:creator>noam</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks a lot for all your help!<br />
+Great framework!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

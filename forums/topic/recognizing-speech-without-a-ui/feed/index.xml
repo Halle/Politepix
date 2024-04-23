@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Recognizing speech without a UI &#8211; Politepix</title>
+		<atom:link href="/forums/topic/recognizing-speech-without-a-ui/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/recognizing-speech-without-a-ui/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:03:09 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/recognizing-speech-without-a-ui/#post-1022862</guid>
+					<title><![CDATA[Recognizing speech without a UI]]></title>
+					<link>/forums/topic/recognizing-speech-without-a-ui/#post-1022862</link>
+					<pubDate>Sun, 26 Oct 2014 15:00:43 +0000</pubDate>
+					<dc:creator>zch</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;d like to recognize speech as a background task and launch the UI when a certain word is spoken. Is this something that OpenEars and the iOS framework allow for?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recognizing-speech-without-a-ui/#post-1022863</guid>
+					<title><![CDATA[Reply To: Recognizing speech without a UI]]></title>
+					<link>/forums/topic/recognizing-speech-without-a-ui/#post-1022863</link>
+					<pubDate>Sun, 26 Oct 2014 15:48:48 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Meaning that you want the app to be backgrounded, or that you want an app without a visual UI?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recognizing-speech-without-a-ui/#post-1022864</guid>
+					<title><![CDATA[Reply To: Recognizing speech without a UI]]></title>
+					<link>/forums/topic/recognizing-speech-without-a-ui/#post-1022864</link>
+					<pubDate>Sun, 26 Oct 2014 15:52:31 +0000</pubDate>
+					<dc:creator>zch</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Correct Halle. I want my app to be running all the time in the background and listening on the mic. When a particular word is spoken, I&#8217;d like the background task to launch the app&#8217;s UI.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recognizing-speech-without-a-ui/#post-1022865</guid>
+					<title><![CDATA[Reply To: Recognizing speech without a UI]]></title>
+					<link>/forums/topic/recognizing-speech-without-a-ui/#post-1022865</link>
+					<pubDate>Sun, 26 Oct 2014 16:00:00 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, thanks for clarifying. This isn&#8217;t something I actively support (meaning it isn&#8217;t in my testbed and I don&#8217;t provide API for it or present it as a feature, so if it changes between OS versions I can&#8217;t extend a ton of help with that) but some people have gotten it working. Search around these forums for the keyword &#8220;background&#8221; and you should find some information on the details.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recognizing-speech-without-a-ui/#post-1022866</guid>
+					<title><![CDATA[Reply To: Recognizing speech without a UI]]></title>
+					<link>/forums/topic/recognizing-speech-without-a-ui/#post-1022866</link>
+					<pubDate>Sun, 26 Oct 2014 21:21:18 +0000</pubDate>
+					<dc:creator>zch</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Great, thanks for the tip.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>lm/dic files &#8211; Politepix</title>
+		<atom:link href="/forums/topic/lmdic-files/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/lmdic-files/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:08:08 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/lmdic-files/#post-1024051</guid>
+					<title><![CDATA[lm/dic files]]></title>
+					<link>/forums/topic/lmdic-files/#post-1024051</link>
+					<pubDate>Fri, 02 Jan 2015 12:03:25 +0000</pubDate>
+					<dc:creator>MissKitty</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I have tennis.lm and tennis.dic files generated using ….<br />
+<a href="http://www.speech.cs.cmu.edu/tools/lmtool-new.html" rel="nofollow">http://www.speech.cs.cmu.edu/tools/lmtool-new.html</a></p>
+<p>I am at a lost as to where Openears wants these files to be placed.  Below is my ViewController code</p>
+<p>    [OEPocketsphinxController sharedInstance].returnNullHypotheses = TRUE;</p>
+<p>    [[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil];</p>
+<p>    NSString *correctPathToMyLanguageModelFile = [NSString stringWithFormat:@&#8221;%@/tennis%@&#8221;,[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0],@&#8221;gram&#8221;];</p>
+<p>    NSString *lmPath = correctPathToMyLanguageModelFile;<br />
+    NSString *dicPath = correctPathToMyLanguageModelFile;</p>
+<p>    [[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[OEAcousticModel pathToModel:@&#8221;AcousticModelEnglish&#8221;] languageModelIsJSGF:NO];</p>
+<p> Below are messages I get when testing</p>
+<p>startListeningWithLanguageModelAtPath:(NSString *)languageModelPath dictionaryAtPath:(NSString *)dictionaryPath acousticModelAtPath:(NSString *)acousticModelPath languageModelIsJSGF:(BOOL)languageModelIsJSGF</p>
+<p>with a languageModelPath which is nil. If your call to OELanguageModelGenerator did not return an error when you generated this language model, that means the correct path to your language model that you should pass to this method&#8217;s languageModelPath argument is as follows:</p>
+<p>NSString *correctPathToMyLanguageModelFile = [NSString stringWithFormat:@&#8221;%@/TheNameIChoseForMyLanguageModelAndDictionaryFile.%@&#8221;,[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0],@&#8221;DMP&#8221;];</p>
+<p>Feel free to copy and paste this code for your path to your language model, but remember to replace the part that says &#8220;TheNameIChoseForMyLanguageModelAndDictionaryFile&#8221; with the name you actually chose for your language model and dictionary file or you will get this error again.</p>
+<p>Could you point me to example/doc using lm/dic files?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/lmdic-files/#post-1024052</guid>
+					<title><![CDATA[Reply To: lm/dic files]]></title>
+					<link>/forums/topic/lmdic-files/#post-1024052</link>
+					<pubDate>Fri, 02 Jan 2015 12:57:50 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OpenEars does its own language model generation, so take a look at the tutorial to learn how to use language model generation using the OELanguageModelGenerator class:</p>
+<p><a href="/openears/tutorial">/openears/tutorial</a></p>
+<p>There is also a clear example of generating language models using OELanguageModelGenerator in the sample app.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/lmdic-files/#post-1024054</guid>
+					<title><![CDATA[Reply To: lm/dic files]]></title>
+					<link>/forums/topic/lmdic-files/#post-1024054</link>
+					<pubDate>Fri, 02 Jan 2015 14:31:55 +0000</pubDate>
+					<dc:creator>MissKitty</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>My LM consists of 329 sentences, 1289 words. This runs fine using Android – Pocketsphinx. I get excellent recognition. I can write some code to convert this file to your format so that I will only have to maintain one LM file. Do you see any problem with this approach?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/lmdic-files/#post-1024055</guid>
+					<title><![CDATA[Reply To: lm/dic files]]></title>
+					<link>/forums/topic/lmdic-files/#post-1024055</link>
+					<pubDate>Fri, 02 Jan 2015 14:58:14 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;d recommend going ahead and setting it up with the built-in language model generator so it&#8217;s possible for you to use the existing documentation and tutorials. There are many possible approaches that would theoretically work, but unfortunately the resources are not there on my end to create new custom documentation and troubleshooting on demand for porting from Android without domain knowledge of Objective-C or Cocoa.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/lmdic-files/#post-1024057</guid>
+					<title><![CDATA[Reply To: lm/dic files]]></title>
+					<link>/forums/topic/lmdic-files/#post-1024057</link>
+					<pubDate>Fri, 02 Jan 2015 15:05:52 +0000</pubDate>
+					<dc:creator>MissKitty</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The question I am asking is will Openears have any problem with an LM of my size. Android has nothing to do with it except that it works on Android.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/lmdic-files/#post-1024058</guid>
+					<title><![CDATA[Reply To: lm/dic files]]></title>
+					<link>/forums/topic/lmdic-files/#post-1024058</link>
+					<pubDate>Fri, 02 Jan 2015 15:10:48 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Without knowing anything about your app or your language model, I don&#8217;t have any insight into the likely user experience with your model. It will only take ~10 minutes to test it out for yourself using the tutorial tool, so go ahead and give it a try.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/lmdic-files/#post-1024059</guid>
+					<title><![CDATA[Reply To: lm/dic files]]></title>
+					<link>/forums/topic/lmdic-files/#post-1024059</link>
+					<pubDate>Fri, 02 Jan 2015 15:30:06 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>(Keeping in mind that accuracy should only be evaluated on an actual device rather than the Simulator).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/lmdic-files/#post-1024114</guid>
+					<title><![CDATA[Reply To: lm/dic files]]></title>
+					<link>/forums/topic/lmdic-files/#post-1024114</link>
+					<pubDate>Wed, 07 Jan 2015 13:07:48 +0000</pubDate>
+					<dc:creator>MissKitty</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I just bought a new mac. Transferred source and re- downloaded OpenEars. Xcode 6.1.1 both cases. Was working on old mac. I now have a new problem, can not find<br />
+OpenEars/OEEventsObserver.h</p>
+<p>The Framework Search Path is the same as the old mac except for the user name change. Any suggestions? I will not have access to old mac after today.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/lmdic-files/#post-1024115</guid>
+					<title><![CDATA[Reply To: lm/dic files]]></title>
+					<link>/forums/topic/lmdic-files/#post-1024115</link>
+					<pubDate>Wed, 07 Jan 2015 13:18:41 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry, no suggestions if you&#8217;ve verified the correct framework search path. It could help to see your complete copy/pasted error rather than a rephrase.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/lmdic-files/#post-1024143</guid>
+					<title><![CDATA[Reply To: lm/dic files]]></title>
+					<link>/forums/topic/lmdic-files/#post-1024143</link>
+					<pubDate>Thu, 08 Jan 2015 13:31:01 +0000</pubDate>
+					<dc:creator>MissKitty</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I have speech recognition now working with large lm.  My app is designed to start speech recognition when user presses button and stop when hypothesis is retuned. In code below I am doing resumeRecognition and suspendRecognition. I then do multiple speaks via Flite.<br />
+1.  From the log below it appears that every time  Flite has finished speaking &#8211;  Pocketsphinx has resumed recognition. Is there a way to prevent this?<br />
+2.  From the log below I use Flite to say &#8220;error netfor: hand&#8221;. Then &#8220;Love&#8221;. And finally &#8220;Thirty&#8221;. I only hear  &#8220;error netfor: hand&#8221;.  Is there away to wait after each phase to make sure speech is complete as there is using Google TTS?<br />
+3. I am using speech punctuation &#8220;:&#8221; is this any problem with Flite?</p>
+<p>**************************** xcode log *********************************<br />
+2015-01-08 05:54:25.777 MTC[1257:91066] MTC button pressed.<br />
+2015-01-08 05:54:26.026 MTC[1257:91066] MTC button released.<br />
+2015-01-08 05:54:26.026 MTC[1257:91066] Local callback: Pocketsphinx has resumed recognition.<br />
+2015-01-08 05:54:26.890 MTC[1257:91066] Local callback: Pocketsphinx has detected speech.<br />
+2015-01-08 05:54:28.307 MTC[1257:91066] Local callback: Pocketsphinx has detected a second of silence, concluding an utterance.<br />
+2015-01-08 05:54:28.313 MTC[1257:91066] MTC to gotWords<br />
+2015-01-08 05:54:28.314 MTC[1257:91066] error netfor: hand<br />
+2015-01-08 05:54:28.354 MTC[1257:91066] Love<br />
+2015-01-08 05:54:28.377 MTC[1257:91066] Thirty<br />
+2015-01-08 05:54:28.400 MTC[1257:91066] Local callback: Pocketsphinx has suspended recognition.<br />
+2015-01-08 05:54:28.401 MTC[1257:91066] Local callback: Flite has started speaking<br />
+2015-01-08 05:54:28.401 MTC[1257:91066] Local callback: Flite has started speaking<br />
+2015-01-08 05:54:28.401 MTC[1257:91066] Local callback: Flite has started speaking<br />
+2015-01-08 05:54:28.401 MTC[1257:91066] Local callback: Pocketsphinx has suspended recognition.<br />
+2015-01-08 05:54:28.401 MTC[1257:91066] Local callback: Pocketsphinx has suspended recognition.<br />
+2015-01-08 05:54:28.401 MTC[1257:91066] Local callback: Pocketsphinx has suspended recognition.<br />
+2015-01-08 05:54:29.946 MTC[1257:91066] Local callback: Flite has finished speaking<br />
+2015-01-08 05:54:29.946 MTC[1257:91066] Local callback: Flite has finished speaking<br />
+2015-01-08 05:54:29.946 MTC[1257:91066] Local callback: Pocketsphinx has resumed recognition.<br />
+2015-01-08 05:54:29.946 MTC[1257:91066] Local callback: Pocketsphinx has resumed recognition.<br />
+2015-01-08 05:54:30.100 MTC[1257:91066] Local callback: Pocketsphinx has detected speech.<br />
+2015-01-08 05:54:30.758 MTC[1257:91066] Local callback: Flite has finished speaking<br />
+2015-01-08 05:54:30.759 MTC[1257:91066] Local callback: Pocketsphinx has resumed recognition.</p>
+<p>****************** in didViewLoad *************************** </p>
+<p>  // This is how to start the continuous listening loop of an available instance of OEPocketsphinxController.</p>
+<p>    [OEPocketsphinxController sharedInstance].returnNullHypotheses = TRUE;</p>
+<p>    [[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil];</p>
+<p>    if(![OEPocketsphinxController sharedInstance].isListening) {<br />
+        [[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:self.pathToFirstDynamicallyGeneratedLanguageModel dictionaryAtPath:self.pathToFirstDynamicallyGeneratedDictionary acousticModelAtPath:[OEAcousticModel pathToModel:@&#8221;AcousticModelEnglish&#8221;] languageModelIsJSGF:FALSE];</p>
+<p>        // Start speech recognition if we aren&#8217;t already listening.<br />
+    }</p>
+<p>    [self startDisplayingLevels];</p>
+<p>    // This suspends listening without ending the recognition loop</p>
+<p>    [[OEPocketsphinxController sharedInstance] suspendRecognition];</p>
+<p>************************* end didViewLoad</p>
+<p>&#8211; (IBAction)buttonDown:(id)sender {</p>
+<p>    NSLog(@&#8221; MTC button pressed.&#8221;);</p>
+<p>}</p>
+<p>&#8211; (IBAction)buttonUp:(id)sender {</p>
+<p>    NSLog(@&#8221; MTC button released.&#8221;);</p>
+<p>    AudioServicesPlaySystemSound(1005);</p>
+<p>    [OEPocketsphinxController sharedInstance].returnNullHypotheses = TRUE;</p>
+<p>    [[OEPocketsphinxController sharedInstance] resumeRecognition];</p>
+<p>}</p>
+<p>-(void) handleLongPress : (id)sender<br />
+{<br />
+    //Long Press done by the user</p>
+<p>    NSLog(@&#8221; MTC long press&#8221;);</p>
+<p>}</p>
+<p>&#8211; (void)speakWithNSString:(NSString *)text {</p>
+<p>    self.fliteController = [[OEFliteController alloc] init];<br />
+    self.slt = [[Slt alloc] init];</p>
+<p>];</p>
+<p>    NSLog(@&#8221;%@&#8221;,<br />
+          text);</p>
+<p>    [self.fliteController say:[NSString stringWithFormat:@&#8221; %@&#8221;,text] withVoice:self.slt];<br />
+}</p>
+<p>&#8211; (void)myLogWithNSString:(NSString *)text {</p>
+<p>    NSLog(@&#8221;%@&#8221;,<br />
+          text);<br />
+}<br />
+//</p>
+<p>&#8211; (void) pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID {</p>
+<p>    // This suspends listening without ending the recognition loop</p>
+<p>    [[OEPocketsphinxController sharedInstance] suspendRecognition];</p>
+<p>    NSLog(@&#8221; MTC to gotWords&#8221;);</p>
+<p>    MTCccActivity *theInstance = [MTCccActivity getInstance];<br />
+    [theInstance gotWordsWithNSString:hypothesis];}</p>
+<p>@end</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

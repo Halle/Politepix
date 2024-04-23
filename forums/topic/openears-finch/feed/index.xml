@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>OpenEars &amp; Finch &#8211; Politepix</title>
+		<atom:link href="/forums/topic/openears-finch/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/openears-finch/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:56:17 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/openears-finch/#post-1017948</guid>
+					<title><![CDATA[OpenEars &amp; Finch]]></title>
+					<link>/forums/topic/openears-finch/#post-1017948</link>
+					<pubDate>Tue, 13 Aug 2013 00:47:18 +0000</pubDate>
+					<dc:creator>benwirz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>I&#8217;m trying to use Finch with OpenEars.  Finch is an OpenAl Sound Engine.  I&#8217;m able to produce sounds correctly with Finch until I start the pocketsphinxControlle.  After I start the controller, it stops producing any sound even if the pocketsphinxController is suspended.</p>
+<p>I&#8217;m basically just trying to play a short two note sound sequence just prior to capturing a users vocal command similar to the way Siri works.  Another tone is played after the capture completes.  My users have indicated they are expecting an audible indication that voice capture has started and stopped.  I&#8217;m not using NeatSpeach.</p>
+<p>Any advice would be greatly appreciated.</p>
+<p>Thanks,<br />
+Ben</p>
+<p><a href="https://github.com/zoul/Finch" rel="nofollow">https://github.com/zoul/Finch</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-finch/#post-1017950</guid>
+					<title><![CDATA[Reply To: OpenEars &amp; Finch]]></title>
+					<link>/forums/topic/openears-finch/#post-1017950</link>
+					<pubDate>Tue, 13 Aug 2013 01:21:54 +0000</pubDate>
+					<dc:creator>benwirz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Also I should note that I repeated the test using a systemsounds instead of Finch and I get the same result.  Starting pocketsphinxController seems to stop both.  </p>
+<p>-Ben</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-finch/#post-1017952</guid>
+					<title><![CDATA[Reply To: OpenEars &amp; Finch]]></title>
+					<link>/forums/topic/openears-finch/#post-1017952</link>
+					<pubDate>Tue, 13 Aug 2013 06:12:54 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Ben,</p>
+<p>You can use AVAudioPlayer to play sounds without conflict with OpenEars&#8217; audio session settings.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-finch/#post-1017959</guid>
+					<title><![CDATA[Reply To: OpenEars &amp; Finch]]></title>
+					<link>/forums/topic/openears-finch/#post-1017959</link>
+					<pubDate>Tue, 13 Aug 2013 16:11:53 +0000</pubDate>
+					<dc:creator>benwirz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>Thanks for the reply.  Everyone seems to recommend using OpenAL for short sound effects where the starting time latency is important and AVAudioPlayer for background music.  I see this recommendation repeated time and time again online.  Is it the case that it&#8217;s not possible to use OpenAL/Finch with OpenEars or you don&#8217;t feel that it is required for my application?  If there is variable latency between the user pressing the start recording button and the phone playing the start tone, I&#8217;m worried it will create a bad user experience.</p>
+<p>Also, if I start using the FliteController will it conflict with AVAudioPlayer?</p>
+<p>Thanks,<br />
+Ben</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-finch/#post-1017960</guid>
+					<title><![CDATA[Reply To: OpenEars &amp; Finch]]></title>
+					<link>/forums/topic/openears-finch/#post-1017960</link>
+					<pubDate>Tue, 13 Aug 2013 16:46:57 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Ben,</p>
+<p>The issue is that OpenEars requires the playandrecord audio session and an side-effect of this audio session is that it blocks background sounds and system sounds. I think there are a bunch of past threads about this (maybe with possible workarounds IIRC) that would be worth some searching in these forums. But I would never expect OpenAL or a wrapper around it to coexist well with OpenEars because OpenEars needs a great deal of control over audio for its own latency requirements and as a result of that it is nearly an audio framework on its own, with a constant input stream and its own output settings.</p>
+<p>I have heard the advice to use OpenAL for game sound design with the expectation that there will be an entire library of tones that need to be close-to-zero latency (although I might personally do this with a remoteio queue instead), but I&#8217;m not sure most would necessarily recommend using an OpenAL audio engine simultaneous to another very audio-intensive framework for the purpose of playing back two sound files.</p>
+<p>The common approach for lowest latency is remoteio or audio queue services (not available in this case because the input stream is being entirely used by PocketsphinxController), while AVAudioPlayer is preferred for simplicity, and system sounds are good for one-offs (but in this case they are interfered with by playandrecord).</p>
+<p>I think you should be fine with a dedicated AVAudioPlayer that you can keep primed for lower-latency playback like so:</p>
+<p>[myAVAudioPlayer prepareToPlay];<br />
+[myAVAudioPlayer play];<br />
+[myAVAudioPlayer stop];</p>
+<p>And just have a different one instantiated and available for each of your two tones. I&#8217;d recommend making your tones 16k uncompressed mono WAVs.</p>
+<blockquote><p>Also, if I start using the FliteController will it conflict with AVAudioPlayer?</p></blockquote>
+<p>Nope, not if you aren&#8217;t trying to play them simultaneously.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-finch/#post-1017970</guid>
+					<title><![CDATA[Reply To: OpenEars &amp; Finch]]></title>
+					<link>/forums/topic/openears-finch/#post-1017970</link>
+					<pubDate>Tue, 13 Aug 2013 22:48:45 +0000</pubDate>
+					<dc:creator>benwirz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the thoughtful reply Halle.   You do an excellent job supporting your customers.   One suggestion I would offer is that you should add this info to the FAQ.  It would have saved me 2-3 days of time to know that OpenAL and System Sounds are incompatible with OpenEars.  I&#8217;m sure this info is buried in the forums somewhere but I didn&#8217;t find during the search I did prior to starting.  I&#8217;ll give AVAudioPlayer a try.  Thanks again.  -Ben</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-finch/#post-1017973</guid>
+					<title><![CDATA[Reply To: OpenEars &amp; Finch]]></title>
+					<link>/forums/topic/openears-finch/#post-1017973</link>
+					<pubDate>Wed, 14 Aug 2013 02:43:47 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Ben,</p>
+<p>Thank you! I think you&#8217;re correct that it isn&#8217;t self-evident and would be a good addition to the FAQ. I will take a fresh look at the FAQ after the next round of updates is released.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-finch/#post-1018174</guid>
+					<title><![CDATA[Reply To: OpenEars &amp; Finch]]></title>
+					<link>/forums/topic/openears-finch/#post-1018174</link>
+					<pubDate>Thu, 29 Aug 2013 12:48:54 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;ve added this early in the FAQ. Thank you for the suggestion.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-finch/#post-1026457</guid>
+					<title><![CDATA[Reply To: OpenEars &amp; Finch]]></title>
+					<link>/forums/topic/openears-finch/#post-1026457</link>
+					<pubDate>Fri, 31 Jul 2015 17:21:48 +0000</pubDate>
+					<dc:creator>darasan</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>Just a follow up to this, as I had similar issues that I managed to work around and thought the solution might be helpful to others.</p>
+<p>My app uses Open Ears for speech recognition and I also have a requirement to play very short, low-latency sounds for alerts, button click noises etc.</p>
+<p>If I use my own instance of AVAudioPlayer to play these sounds, the latency is still unacceptably high (~ 500ms), even using the [myAVAudioPlayer prepareToPlay] method described by Halle above.</p>
+<p>My solution was to use the [AudioServicesPlaySystemSound ] API to play these short sounds. It works with very low latency. That method is described here: <a href="http://stackoverflow.com/questions/900461/slow-start-for-avaudioplayer-the-first-time-a-sound-is-played?rq=1" rel="nofollow">http://stackoverflow.com/questions/900461/slow-start-for-avaudioplayer-the-first-time-a-sound-is-played?rq=1</a></p>
+<p>If Open Ears has started listening however, the sound produced by [AudioServicesPlaySystemSound ] will not be audible. After reading around the forums, I set [OEPocketsphinxController sharedInstance].audioMode to @&#8221;VoiceChat&#8221;, which makes the sound audible, although at a lower volume. Not quite sure why that is, maybe related to <a href="/forums/topic/openearspocketsphinx-turns-audio-player-volume-down-and-wont-let-go/">/forums/topic/openearspocketsphinx-turns-audio-player-volume-down-and-wont-let-go/</a> ? Halle?</p>
+<p>Anyway if you need very low-latency playback of short sounds in a project using OpenEars, this is what currently works for me. Hope it helps someone!</p>
+<p>D</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-finch/#post-1026459</guid>
+					<title><![CDATA[Reply To: OpenEars &amp; Finch]]></title>
+					<link>/forums/topic/openears-finch/#post-1026459</link>
+					<pubDate>Fri, 31 Jul 2015 19:09:32 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thank you for sharing! The lower volume is because VoiceChat uses a different audio unit which has the characteristic of playing system sounds, but reducing their volume by an undocumented extent (i.e. the volume drop changes from OS version to OS version) because it also does some amount of echo cancellation. </p>
+<p>I don&#8217;t use it as the default because its behavior isn&#8217;t contract behavior (it isn&#8217;t described in the docs so there is no absolute promise about what it is supposed to do) and my experience over the years is that Apple does less testing of it than the Remote IO unit, meaning that occasionally an OS version will come out that breaks it briefly. However, I think it&#8217;s OK for individual projects to use as long as you test it occasionally to make sure big OS updates don&#8217;t affect it.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

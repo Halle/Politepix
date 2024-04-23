@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>OpenEars + Rejecto. Make a precise recognition for words &quot;MEOW&quot;, &quot;MOO&quot; &#8211; Politepix</title>
+		<atom:link href="/forums/topic/openears-rejecto-make-a-precise-recognition-for-words-meow-moo/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/openears-rejecto-make-a-precise-recognition-for-words-meow-moo/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:43:29 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/openears-rejecto-make-a-precise-recognition-for-words-meow-moo/#post-1018993</guid>
+					<title><![CDATA[OpenEars + Rejecto. Make a precise recognition for words &quot;MEOW&quot;, &quot;MOO&quot;]]></title>
+					<link>/forums/topic/openears-rejecto-make-a-precise-recognition-for-words-meow-moo/#post-1018993</link>
+					<pubDate>Tue, 26 Nov 2013 11:53:44 +0000</pubDate>
+					<dc:creator>farid</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am using OpenEears and the Rejecto plugin.<br />
+I need to recognize a small vocabulary may be less than 20 words, all of them are sounds of animals like &#8220;MEOW&#8221; (cat), &#8220;MOO&#8221; (cow), etc&#8230;<br />
+Actually, I have downloaded the sample OpenEarsApp and added the Rejecto plugin. I have created a vocabulary with only two words: &#8220;MEOW&#8221; and &#8220;MOO&#8221;.<br />
+Below how I create my rejecting language model:</p>
+<pre><code>
+    NSError *error = [languageModelGenerator
+                    generateRejectingLanguageModelFromArray:languageArray
+                    withFilesNamed:filesName
+                      withOptionalExclusions:@[@&quot;b&quot;, @&quot;c&quot;, @&quot;d&quot;, @&quot;f&quot;, @&quot;g&quot;, @&quot;k&quot;, @&quot;l&quot;, @&quot;n&quot;, @&quot;p&quot;, @&quot;r&quot;]
+                    usingVowelsOnly:FALSE
+                    withWeight:nil
+                    forAcousticModelAtPath:[AcousticModel
+                                            pathToModel:@&quot;AcousticModelEnglish&quot;]]; // Change &quot;AcousticModelEnglish&quot;
+    
+    [languageModelGenerator deliverRejectedSpeechInHypotheses:YES];
+</code></pre>
+<p>I have never received rejected speech hypotheses.<br />
+I have tried to add optional exclusions but I am not sure I am doing write.<br />
+<strong>My problem is how to make the voice recognition for those words as precise as possible. I mean if user says &#8220;NOO&#8221; instead of &#8220;MOO&#8221;, or &#8220;PEOW&#8221; instead of &#8220;MEOW&#8221;, I want &#8220;NOO&#8221; and &#8220;PEOW&#8221; to be skipped.</strong></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-rejecto-make-a-precise-recognition-for-words-meow-moo/#post-1018994</guid>
+					<title><![CDATA[Reply To: OpenEars + Rejecto. Make a precise recognition for words &quot;MEOW&quot;, &quot;MOO&quot;]]></title>
+					<link>/forums/topic/openears-rejecto-make-a-precise-recognition-for-words-meow-moo/#post-1018994</link>
+					<pubDate>Tue, 26 Nov 2013 12:05:45 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Couple of things that may help. Here is the description of how the optional exclusions work:</p>
+<blockquote><p>
+optionalExclusions can either be set to nil, or given an NSArray of NSStrings which contain phonemes which you do not want to have added to the rejection model. A case in which you might want to do this is when you have over-active rejection such that words that are really in the vocabulary are being rejected. You can first turn on deliverRejectedSpeechInHypotheses: in order to see which phonemes are being detected overzealously and then you can add them to the exclusionArray. Set this parameter to nil if you aren&#8217;t using it.
+</p></blockquote>
+<p>So issue one is that you have to give it phonemes instead of letters, but issue two is that you only use it if you already have a set of phonemes that you&#8217;ve verified are being rejected overzealously via the use of the deliverRejectedSpeechInHypotheses setting. It isn&#8217;t something you want to start out with.</p>
+<p>You haven&#8217;t mentioned whether MEOW and MOO are being recognized when they are being said correctly, so let&#8217;s start there and then see if I can think of some suggestions for refining things.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-rejecto-make-a-precise-recognition-for-words-meow-moo/#post-1019008</guid>
+					<title><![CDATA[Reply To: OpenEars + Rejecto. Make a precise recognition for words &quot;MEOW&quot;, &quot;MOO&quot;]]></title>
+					<link>/forums/topic/openears-rejecto-make-a-precise-recognition-for-words-meow-moo/#post-1019008</link>
+					<pubDate>Tue, 26 Nov 2013 15:16:41 +0000</pubDate>
+					<dc:creator>farid</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p><strong>You haven’t mentioned whether MEOW and MOO are being recognized when they are being said correctly, so let’s start there and then see if I can think of some suggestions for refining things.</strong></p>
+<p>Yes &#8220;MEOW&#8221; and &#8220;MOO&#8221; are being recognized when they are being said correctly.<br />
+But the problem is that if I say &#8220;POO&#8221;, &#8220;TEOW&#8221;, &#8220;TOO&#8221; or &#8220;PEOW&#8221;; they are recognized too. I have set deliverRejectedSpeechInHypotheses to YES. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-rejecto-make-a-precise-recognition-for-words-meow-moo/#post-1019009</guid>
+					<title><![CDATA[Reply To: OpenEars + Rejecto. Make a precise recognition for words &quot;MEOW&quot;, &quot;MOO&quot;]]></title>
+					<link>/forums/topic/openears-rejecto-make-a-precise-recognition-for-words-meow-moo/#post-1019009</link>
+					<pubDate>Tue, 26 Nov 2013 15:26:45 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This is a general issue with speech recognition, unfortunately. Rejecto is designed to reject phonemes other than the keyword which surround the keyword and utterances that are evidently not utterances of the keyword. But a one-syllable word which rhymes with a one-syllable keyword in a language model that only contains very few one-syllable keywords is very unlikely to be recognized as a different word because there is very little information in the model which would allow evaluating whether it is the one word or another. It has a very high probability of being recognized as a less-probable version of the same word.</p>
+<p>To me, it doesn&#8217;t sound a highly-likely usage scenario since your app is probably more designed for users to say &#8220;meow&#8221; to it than to intentionally interact with it by saying &#8220;peow&#8221; with the expectation that &#8220;peow&#8221; isn&#8217;t recognized. But probably the most effective way you have available to prevent recognition of &#8220;peow&#8221; is to add &#8220;peow&#8221; to your main language model and then ignore it when it is recognized. Does that make sense?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>OpenEars intigartion with camera control &#8211; Politepix</title>
+		<atom:link href="/forums/topic/openears-intigartion-with-camera-control/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/openears-intigartion-with-camera-control/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:38:54 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/openears-intigartion-with-camera-control/#post-11361</guid>
+					<title><![CDATA[OpenEars intigartion with camera control]]></title>
+					<link>/forums/topic/openears-intigartion-with-camera-control/#post-11361</link>
+					<pubDate>Thu, 27 Sep 2012 12:06:47 +0000</pubDate>
+					<dc:creator>jay_stepin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,<br />
+I have made a demo of voice recognition with openEars and its working fine. But now i want to integrate it with camera control. For example when user shout START camera will start video recording and stop video recording with STOP.<br />
+My first question is it possible with OpenEars??<br />
+And if yes can you help me to get start.<br />
+Do any one know any such application??</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-intigartion-with-camera-control/#post-11420</guid>
+					<title><![CDATA[Reply To: OpenEars intigartion with camera control]]></title>
+					<link>/forums/topic/openears-intigartion-with-camera-control/#post-11420</link>
+					<pubDate>Sat, 29 Sep 2012 10:33:39 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Jay,</p>
+<p>This question is a little too broad for the forum, sorry. Feel free to ask specific questions about your code.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-intigartion-with-camera-control/#post-11422</guid>
+					<title><![CDATA[Reply To: OpenEars intigartion with camera control]]></title>
+					<link>/forums/topic/openears-intigartion-with-camera-control/#post-11422</link>
+					<pubDate>Sat, 29 Sep 2012 13:44:09 +0000</pubDate>
+					<dc:creator>jay_stepin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Okay.<br />
+So i try to get it work with UIImagePickerController, but when UIImagePickerController comes in play </p>
+<p>LanguageModelGenerator *lmGenerator = [[LanguageModelGenerator alloc] init];</p>
+<p>    NSArray *words = [NSArray arrayWithObjects:@&#8221;START&#8221;, @&#8221;STOP&#8221;, @&#8221;HAVARD&#8221;, nil];<br />
+    NSString *name = @&#8221;Mahadev&#8221;;<br />
+    NSError *err = [lmGenerator generateLanguageModelFromArray:words withFilesNamed:name];<br />
+    NSLog(@&#8221;%@&#8221;,err);<br />
+    NSDictionary *languageGeneratorResults = nil;</p>
+<p>    lmPath = nil;<br />
+    dicPath = nil;</p>
+<p>    if([err code] == noErr) {</p>
+<p>        languageGeneratorResults = [err userInfo];</p>
+<p>        lmPath = [languageGeneratorResults objectForKey:@&#8221;LMPath&#8221;];<br />
+        dicPath = [languageGeneratorResults objectForKey:@&#8221;DictionaryPath&#8221;];</p>
+<p>    } else {<br />
+        NSLog(@&#8221;Error: %@&#8221;,[err localizedDescription]);<br />
+    }</p>
+<p>upto this coding works fine but</p>
+<p>[self.pocketsphinxController startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath languageModelIsJSGF:NO];</p>
+<p>this method doesn&#8217;t trigger, so i do not get </p>
+<p>&#8211; (void) pocketsphinxDidStartListening {<br />
+	NSLog(@&#8221;Pocketsphinx is now listening.&#8221;);<br />
+}</p>
+<p>working&#8230;.</p>
+<p>If you can help me with this it will be awesome.</p>
+<p>I know this is a messy kind of question, so feel free if you need more specifications. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-intigartion-with-camera-control/#post-11423</guid>
+					<title><![CDATA[Reply To: OpenEars intigartion with camera control]]></title>
+					<link>/forums/topic/openears-intigartion-with-camera-control/#post-11423</link>
+					<pubDate>Sat, 29 Sep 2012 13:56:11 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>What is the relationship between the picker code and the code above? Probably it&#8217;s not the case that startListeningWithLanguageModelAtPath: doesn&#8217;t trigger but rather that it gets to a certain point in the loop and has trouble. If you turn on verbosePocketSphinx and OpenEarsLogging the output will probably tell you a lot about the reason that startListeningWithLanguageModelAtPath: isn&#8217;t getting good results. You can search the log output for the words &#8220;error&#8221; or &#8220;warning&#8221; specifically or you can post it here (but please make sure both forms of logging have been turned on first so I can really see everything that is happening).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-intigartion-with-camera-control/#post-11448</guid>
+					<title><![CDATA[Reply To: OpenEars intigartion with camera control]]></title>
+					<link>/forums/topic/openears-intigartion-with-camera-control/#post-11448</link>
+					<pubDate>Mon, 01 Oct 2012 13:17:08 +0000</pubDate>
+					<dc:creator>jay_stepin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello Halle,<br />
+As per your suggestion i turn on OpenEarsLogging and get consol output like</p>
+<p>2012-10-01 18:44:25.956 videoDemo[1085:307] Starting OpenEars logging for OpenEars version {{{{1.2.2}}}} on device: iPhone running iOS version: 4.100000<br />
+2012-10-01 18:44:25.965 videoDemo[1085:307] Normalized array contains the following entries:<br />
+(<br />
+    START,<br />
+    STOP,<br />
+    HAVARD<br />
+)<br />
+2012-10-01 18:44:25.977 videoDemo[1085:307] Starting dynamic language model generation<br />
+2012-10-01 18:44:25.988 videoDemo[1085:307] Able to open /var/mobile/Applications/E7438B2B-52F3-40DD-BE93-F444AD537A32/Documents/Mahadev.corpus for reading<br />
+2012-10-01 18:44:25.991 videoDemo[1085:307] Able to open /var/mobile/Applications/E7438B2B-52F3-40DD-BE93-F444AD537A32/Documents/Mahadev_pipe.txt for writing<br />
+2012-10-01 18:44:25.994 videoDemo[1085:307] Starting text2wfreq_impl<br />
+2012-10-01 18:44:26.032 videoDemo[1085:307] Done with text2wfreq_impl<br />
+2012-10-01 18:44:26.037 videoDemo[1085:307] Able to open /var/mobile/Applications/E7438B2B-52F3-40DD-BE93-F444AD537A32/Documents/Mahadev_pipe.txt for reading.<br />
+2012-10-01 18:44:26.041 videoDemo[1085:307] Able to open /var/mobile/Applications/E7438B2B-52F3-40DD-BE93-F444AD537A32/Documents/Mahadev.vocab for reading.<br />
+2012-10-01 18:44:26.044 videoDemo[1085:307] Starting wfreq2vocab<br />
+2012-10-01 18:44:26.049 videoDemo[1085:307] Done with wfreq2vocab<br />
+2012-10-01 18:44:26.057 videoDemo[1085:307] Starting text2idngram<br />
+2012-10-01 18:44:26.094 videoDemo[1085:307] Done with text2idngram<br />
+2012-10-01 18:44:26.103 videoDemo[1085:307] Starting idngram2lm</p>
+<p>2012-10-01 18:44:26.145 videoDemo[1085:307] Done with idngram2lm<br />
+2012-10-01 18:44:26.149 videoDemo[1085:307] Starting sphinx_lm_convert<br />
+2012-10-01 18:44:26.165 videoDemo[1085:307] Finishing sphinx_lm_convert<br />
+2012-10-01 18:44:26.178 videoDemo[1085:307] Done creating language model with CMUCLMTK in 0.198320 seconds.<br />
+2012-10-01 18:44:26.550 videoDemo[1085:307] I&#8217;m done running performDictionaryLookup and it took 0.309528 seconds<br />
+2012-10-01 18:44:26.563 videoDemo[1085:307] I&#8217;m done running dynamic language model generation and it took 370790066.563663 seconds</p>
+<p>Just this not ant further.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-intigartion-with-camera-control/#post-11449</guid>
+					<title><![CDATA[Reply To: OpenEars intigartion with camera control]]></title>
+					<link>/forums/topic/openears-intigartion-with-camera-control/#post-11449</link>
+					<pubDate>Mon, 01 Oct 2012 22:58:18 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi, </p>
+<p>I don&#8217;t think that logging has verbosePocketSphinx enabled. If it does, that means that your app has an issue that is blocking before [self.pocketsphinxController startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath languageModelIsJSGF:NO];, not during it, since the logging would show it starting but stopping somewhere, but this logging shows nothing that happens after the language model is generated.  I recommended showing the relationship between your picker code and the OpenEars code before &#8212; without that or the output with verbosePocketsphinx there&#8217;s no way to know what is happening since the code above is the code which works in the sample app.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-intigartion-with-camera-control/#post-11452</guid>
+					<title><![CDATA[Reply To: OpenEars intigartion with camera control]]></title>
+					<link>/forums/topic/openears-intigartion-with-camera-control/#post-11452</link>
+					<pubDate>Tue, 02 Oct 2012 05:34:27 +0000</pubDate>
+					<dc:creator>jay_stepin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>I m really sorry for my explanation its really bad.</p>
+<p>So i have create a viewController and put all the method of OpenEars in viewDidload and add this controller as camera overlay.</p>
+<p>Pardon me but i don&#8217;t understand your point by &#8220;I don’t think that logging has verbosePocketSphinx enabled&#8221;, can you explain it more so i can help my self by giving you more info.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-intigartion-with-camera-control/#post-11454</guid>
+					<title><![CDATA[Reply To: OpenEars intigartion with camera control]]></title>
+					<link>/forums/topic/openears-intigartion-with-camera-control/#post-11454</link>
+					<pubDate>Tue, 02 Oct 2012 07:36:18 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Jay,</p>
+<p>No problem, just go to <a href="/openears">/openears</a> and search the page for &#8220;verbosePocketSphinx&#8221; and you&#8217;ll see the property definition. There is also an example of using it in the sample app view controller if you search for that string.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-intigartion-with-camera-control/#post-11488</guid>
+					<title><![CDATA[Reply To: OpenEars intigartion with camera control]]></title>
+					<link>/forums/topic/openears-intigartion-with-camera-control/#post-11488</link>
+					<pubDate>Wed, 03 Oct 2012 06:59:02 +0000</pubDate>
+					<dc:creator>jay_stepin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello Halle,</p>
+<p>As per your suggestion i have start verbosePocketSphinx and got following log in console.</p>
+<p>2012-10-03 12:25:30.609 videoDemo[1871:307] Starting OpenEars logging for OpenEars version {{{{1.2.2}}}} on device: iPhone running iOS version: 4.100000<br />
+2012-10-03 12:25:30.619 videoDemo[1871:307] Normalized array contains the following entries:<br />
+(<br />
+    START,<br />
+    STOP,<br />
+    HAVARD<br />
+)<br />
+2012-10-03 12:25:30.631 videoDemo[1871:307] Starting dynamic language model generation<br />
+2012-10-03 12:25:30.641 videoDemo[1871:307] Able to open /var/mobile/Applications/E7438B2B-52F3-40DD-BE93-F444AD537A32/Documents/Mahadev.corpus for reading<br />
+2012-10-03 12:25:30.645 videoDemo[1871:307] Able to open /var/mobile/Applications/E7438B2B-52F3-40DD-BE93-F444AD537A32/Documents/Mahadev_pipe.txt for writing<br />
+2012-10-03 12:25:30.650 videoDemo[1871:307] Starting text2wfreq_impl<br />
+2012-10-03 12:25:30.692 videoDemo[1871:307] Done with text2wfreq_impl<br />
+2012-10-03 12:25:30.697 videoDemo[1871:307] Able to open /var/mobile/Applications/E7438B2B-52F3-40DD-BE93-F444AD537A32/Documents/Mahadev_pipe.txt for reading.<br />
+2012-10-03 12:25:30.702 videoDemo[1871:307] Able to open /var/mobile/Applications/E7438B2B-52F3-40DD-BE93-F444AD537A32/Documents/Mahadev.vocab for reading.<br />
+2012-10-03 12:25:30.707 videoDemo[1871:307] Starting wfreq2vocab<br />
+2012-10-03 12:25:30.714 videoDemo[1871:307] Done with wfreq2vocab<br />
+2012-10-03 12:25:30.720 videoDemo[1871:307] Starting text2idngram<br />
+2012-10-03 12:25:30.758 videoDemo[1871:307] Done with text2idngram<br />
+2012-10-03 12:25:30.767 videoDemo[1871:307] Starting idngram2lm</p>
+<p>2012-10-03 12:25:30.808 videoDemo[1871:307] Done with idngram2lm<br />
+2012-10-03 12:25:30.811 videoDemo[1871:307] Starting sphinx_lm_convert<br />
+2012-10-03 12:25:30.824 videoDemo[1871:307] Finishing sphinx_lm_convert<br />
+2012-10-03 12:25:30.836 videoDemo[1871:307] Done creating language model with CMUCLMTK in 0.202123 seconds.<br />
+2012-10-03 12:25:31.201 videoDemo[1871:307] I&#8217;m done running performDictionaryLookup and it took 0.300287 seconds<br />
+2012-10-03 12:25:31.213 videoDemo[1871:307] I&#8217;m done running dynamic language model generation and it took 370940131.213007 seconds<br />
+2012-10-03 12:25:31.219 videoDemo[1871:307] JAY TEsting<br />
+2012-10-03 12:25:31.226 videoDemo[1871:307] A sample rate was requested that isn&#8217;t one of the two supported values of 16000 or 8000 so we will use the default of 16000.<br />
+2012-10-03 12:25:31.241 videoDemo[1871:307] The audio session has never been initialized so we will do that now.<br />
+2012-10-03 12:25:31.247 videoDemo[1871:307] Checking and resetting all audio session settings.<br />
+2012-10-03 12:25:31.250 videoDemo[1871:307] audioCategory is incorrect, we will change it.<br />
+2012-10-03 12:25:31.253 videoDemo[1871:307] audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.<br />
+2012-10-03 12:25:31.256 videoDemo[1871:307] bluetoothInput is incorrect, we will change it.<br />
+2012-10-03 12:25:31.258 videoDemo[1871:307] bluetooth input is now on the correct setting of 1.<br />
+2012-10-03 12:25:31.261 videoDemo[1871:307] categoryDefaultToSpeaker is incorrect, we will change it.<br />
+2012-10-03 12:25:31.269 videoDemo[1871:307] CategoryDefaultToSpeaker is now on the correct setting of 1.<br />
+2012-10-03 12:25:31.272 videoDemo[1871:307] preferredBufferSize is incorrect, we will change it.<br />
+2012-10-03 12:25:31.275 videoDemo[1871:307] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2012-10-03 12:25:31.278 videoDemo[1871:307] preferredSampleRateCheck is incorrect, we will change it.<br />
+2012-10-03 12:25:31.280 videoDemo[1871:307] preferred hardware sample rate is now on the correct setting of 16000.000000.<br />
+2012-10-03 12:25:31.422 videoDemo[1871:307] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2012-10-03 12:25:31.427 videoDemo[1871:307] Exiting startAudioSession.<br />
+2012-10-03 12:25:31.434 videoDemo[1871:560f] Recognition loop has started<br />
+2012-10-03 12:25:31.568 videoDemo[1871:307] Using two-stage rotation animation. To use the smoother single-stage animation, this application must remove two-stage method implementations.<br />
+2012-10-03 12:25:31.696 videoDemo[1871:307] Using two-stage rotation animation is not supported when rotating more than one view controller or view controllers not the window delegate<br />
+2012-10-03 12:25:32.457 videoDemo[1871:560f] Starting openAudioDevice on the device.<br />
+2012-10-03 12:25:32.472 videoDemo[1871:560f] Audio unit wrapper successfully created.<br />
+2012-10-03 12:25:32.493 videoDemo[1871:560f] Set audio route to SpeakerAndMicrophone<br />
+2012-10-03 12:25:32.500 videoDemo[1871:560f] Checking and resetting all audio session settings.<br />
+2012-10-03 12:25:32.505 videoDemo[1871:560f] audioCategory is correct, we will leave it as it is.<br />
+2012-10-03 12:25:32.508 videoDemo[1871:560f] bluetoothInput is correct, we will leave it as it is.<br />
+2012-10-03 12:25:32.510 videoDemo[1871:560f] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2012-10-03 12:25:32.517 videoDemo[1871:560f] preferredBufferSize is correct, we will leave it as it is.<br />
+2012-10-03 12:25:32.521 videoDemo[1871:560f] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2012-10-03 12:25:32.524 videoDemo[1871:560f] Setting the variables for the device and starting it.<br />
+2012-10-03 12:25:32.537 videoDemo[1871:560f] Looping through ringbuffer sections and pre-allocating them.<br />
+2012-10-03 12:25:33.356 videoDemo[1871:560f] Started audio output unit.<br />
+2012-10-03 12:25:33.360 videoDemo[1871:560f] Calibration has started<br />
+2012-10-03 12:25:34.764 videoDemo[1871:307] The Audio Session was interrupted.<br />
+2012-10-03 12:25:35.569 videoDemo[1871:560f] Calibration has completed<br />
+2012-10-03 12:25:35.573 videoDemo[1871:560f] Project has these words in its dictionary:<br />
+HAVARD<br />
+START<br />
+STOP<br />
+2012-10-03 12:25:35.576 videoDemo[1871:560f] Listening.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-intigartion-with-camera-control/#post-11489</guid>
+					<title><![CDATA[Reply To: OpenEars intigartion with camera control]]></title>
+					<link>/forums/topic/openears-intigartion-with-camera-control/#post-11489</link>
+					<pubDate>Wed, 03 Oct 2012 07:11:58 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, I think the issue is simply that the audio stream is not provided to PocketsphinxController since it is used by the video picker.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

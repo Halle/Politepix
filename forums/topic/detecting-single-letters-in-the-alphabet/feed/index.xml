@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Detecting single letters in the alphabet &#8211; Politepix</title>
+		<atom:link href="/forums/topic/detecting-single-letters-in-the-alphabet/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/detecting-single-letters-in-the-alphabet/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:39:44 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/detecting-single-letters-in-the-alphabet/#post-3986</guid>
+					<title><![CDATA[Detecting single letters in the alphabet]]></title>
+					<link>/forums/topic/detecting-single-letters-in-the-alphabet/#post-3986</link>
+					<pubDate>Mon, 25 Apr 2011 18:51:14 +0000</pubDate>
+					<dc:creator>jeff-kelley</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I’m trying to implement an app that reads letters and numbers. I’ve had some inaccuracies for certain letter combinations—“AB” is consistently heard as ”8Y,” for instance, and am wondering if there are any configuration options that might help. I’ve had some success replacing letters with equivalents: ‘b’ with “bee,” etc. I have had much more success using the NATO alphabet (alpha, beta, etc.), but we can’t expect our users to be able to use it. So… what’s the best way to approach single letters? Thanks in advance.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/detecting-single-letters-in-the-alphabet/#post-3987</guid>
+					<title><![CDATA[Reply To: Detecting single letters in the alphabet]]></title>
+					<link>/forums/topic/detecting-single-letters-in-the-alphabet/#post-3987</link>
+					<pubDate>Mon, 25 Apr 2011 21:09:06 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Does the app read letters and numbers or recognize them in the user&#8217;s speech?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/detecting-single-letters-in-the-alphabet/#post-3988</guid>
+					<title><![CDATA[Reply To: Detecting single letters in the alphabet]]></title>
+					<link>/forums/topic/detecting-single-letters-in-the-alphabet/#post-3988</link>
+					<pubDate>Tue, 26 Apr 2011 14:09:37 +0000</pubDate>
+					<dc:creator>jeff-kelley</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The goal is for the user to read letters and numbers to be recognized by the app.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/detecting-single-letters-in-the-alphabet/#post-3989</guid>
+					<title><![CDATA[Reply To: Detecting single letters in the alphabet]]></title>
+					<link>/forums/topic/detecting-single-letters-in-the-alphabet/#post-3989</link>
+					<pubDate>Tue, 26 Apr 2011 15:27:25 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Would it be possible for you to show me your language model?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/detecting-single-letters-in-the-alphabet/#post-3990</guid>
+					<title><![CDATA[Reply To: Detecting single letters in the alphabet]]></title>
+					<link>/forums/topic/detecting-single-letters-in-the-alphabet/#post-3990</link>
+					<pubDate>Tue, 26 Apr 2011 15:50:53 +0000</pubDate>
+					<dc:creator>jeff-kelley</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sure. We used the lmtool available on CMU’s website with this corpus:</p>
+<pre><code>A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+Y
+Z
+
+zero
+one
+two
+three
+four
+five
+six
+seven
+eight
+nine
+ten</code></pre>
+<p>We got this language model:</p>
+<pre><code>Language model created by QuickLM on Tue Apr 26 11:48:40 EDT 2011
+Copyright (c) 1996-2010 Carnegie Mellon University and Alexander I. Rudnicky
+
+The model is in standard ARPA format, designed by Doug Paul while he was at MITRE.
+
+The code that was used to produce this language model is available in Open Source.
+Please visit http://www.speech.cs.cmu.edu/tools/ for more information
+
+The (fixed) discount mass is 0.5. The backoffs are computed using the ratio method.
+This model based on a corpus of 37 sentences and 39 words
+
+data
+ngram 1=39
+ngram 2=74
+ngram 3=37
+
+1-grams:
+-0.7782 &lt;/s&gt; -0.3010
+-0.7782 &lt;s&gt; -0.2218
+-2.3464 A -0.2218
+-2.3464 B -0.2218
+-2.3464 C -0.2218
+-2.3464 D -0.2218
+-2.3464 E -0.2218
+-2.3464 EIGHT -0.2218
+-2.3464 F -0.2218
+-2.3464 FIVE -0.2218
+-2.3464 FOUR -0.2218
+-2.3464 G -0.2218
+-2.3464 H -0.2218
+-2.3464 I -0.2218
+-2.3464 J -0.2218
+-2.3464 K -0.2218
+-2.3464 L -0.2218
+-2.3464 M -0.2218
+-2.3464 N -0.2218
+-2.3464 NINE -0.2218
+-2.3464 O -0.2218
+-2.3464 ONE -0.2218
+-2.3464 P -0.2218
+-2.3464 Q -0.2218
+-2.3464 R -0.2218
+-2.3464 S -0.2218
+-2.3464 SEVEN -0.2218
+-2.3464 SIX -0.2218
+-2.3464 T -0.2218
+-2.3464 TEN -0.2218
+-2.3464 THREE -0.2218
+-2.3464 TWO -0.2218
+-2.3464 U -0.2218
+-2.3464 V -0.2218
+-2.3464 W -0.2218
+-2.3464 X -0.2218
+-2.3464 Y -0.2218
+-2.3464 Z -0.2218
+-2.3464 ZERO -0.2218
+
+2-grams:
+-1.8692 &lt;s&gt; A 0.0000
+-1.8692 &lt;s&gt; B 0.0000
+-1.8692 &lt;s&gt; C 0.0000
+-1.8692 &lt;s&gt; D 0.0000
+-1.8692 &lt;s&gt; E 0.0000
+-1.8692 &lt;s&gt; EIGHT 0.0000
+-1.8692 &lt;s&gt; F 0.0000
+-1.8692 &lt;s&gt; FIVE 0.0000
+-1.8692 &lt;s&gt; FOUR 0.0000
+-1.8692 &lt;s&gt; G 0.0000
+-1.8692 &lt;s&gt; H 0.0000
+-1.8692 &lt;s&gt; I 0.0000
+-1.8692 &lt;s&gt; J 0.0000
+-1.8692 &lt;s&gt; K 0.0000
+-1.8692 &lt;s&gt; L 0.0000
+-1.8692 &lt;s&gt; M 0.0000
+-1.8692 &lt;s&gt; N 0.0000
+-1.8692 &lt;s&gt; NINE 0.0000
+-1.8692 &lt;s&gt; O 0.0000
+-1.8692 &lt;s&gt; ONE 0.0000
+-1.8692 &lt;s&gt; P 0.0000
+-1.8692 &lt;s&gt; Q 0.0000
+-1.8692 &lt;s&gt; R 0.0000
+-1.8692 &lt;s&gt; S 0.0000
+-1.8692 &lt;s&gt; SEVEN 0.0000
+-1.8692 &lt;s&gt; SIX 0.0000
+-1.8692 &lt;s&gt; T 0.0000
+-1.8692 &lt;s&gt; TEN 0.0000
+-1.8692 &lt;s&gt; THREE 0.0000
+-1.8692 &lt;s&gt; TWO 0.0000
+-1.8692 &lt;s&gt; U 0.0000
+-1.8692 &lt;s&gt; V 0.0000
+-1.8692 &lt;s&gt; W 0.0000
+-1.8692 &lt;s&gt; X 0.0000
+-1.8692 &lt;s&gt; Y 0.0000
+-1.8692 &lt;s&gt; Z 0.0000
+-1.8692 &lt;s&gt; ZERO 0.0000
+-0.3010 A &lt;/s&gt; -0.3010
+-0.3010 B &lt;/s&gt; -0.3010
+-0.3010 C &lt;/s&gt; -0.3010
+-0.3010 D &lt;/s&gt; -0.3010
+-0.3010 E &lt;/s&gt; -0.3010
+-0.3010 EIGHT &lt;/s&gt; -0.3010
+-0.3010 F &lt;/s&gt; -0.3010
+-0.3010 FIVE &lt;/s&gt; -0.3010
+-0.3010 FOUR &lt;/s&gt; -0.3010
+-0.3010 G &lt;/s&gt; -0.3010
+-0.3010 H &lt;/s&gt; -0.3010
+-0.3010 I &lt;/s&gt; -0.3010
+-0.3010 J &lt;/s&gt; -0.3010
+-0.3010 K &lt;/s&gt; -0.3010
+-0.3010 L &lt;/s&gt; -0.3010
+-0.3010 M &lt;/s&gt; -0.3010
+-0.3010 N &lt;/s&gt; -0.3010
+-0.3010 NINE &lt;/s&gt; -0.3010
+-0.3010 O &lt;/s&gt; -0.3010
+-0.3010 ONE &lt;/s&gt; -0.3010
+-0.3010 P &lt;/s&gt; -0.3010
+-0.3010 Q &lt;/s&gt; -0.3010
+-0.3010 R &lt;/s&gt; -0.3010
+-0.3010 S &lt;/s&gt; -0.3010
+-0.3010 SEVEN &lt;/s&gt; -0.3010
+-0.3010 SIX &lt;/s&gt; -0.3010
+-0.3010 T &lt;/s&gt; -0.3010
+-0.3010 TEN &lt;/s&gt; -0.3010
+-0.3010 THREE &lt;/s&gt; -0.3010
+-0.3010 TWO &lt;/s&gt; -0.3010
+-0.3010 U &lt;/s&gt; -0.3010
+-0.3010 V &lt;/s&gt; -0.3010
+-0.3010 W &lt;/s&gt; -0.3010
+-0.3010 X &lt;/s&gt; -0.3010
+-0.3010 Y &lt;/s&gt; -0.3010
+-0.3010 Z &lt;/s&gt; -0.3010
+-0.3010 ZERO &lt;/s&gt; -0.3010
+
+3-grams:
+-0.3010 &lt;s&gt; A &lt;/s&gt;
+-0.3010 &lt;s&gt; B &lt;/s&gt;
+-0.3010 &lt;s&gt; C &lt;/s&gt;
+-0.3010 &lt;s&gt; D &lt;/s&gt;
+-0.3010 &lt;s&gt; E &lt;/s&gt;
+-0.3010 &lt;s&gt; EIGHT &lt;/s&gt;
+-0.3010 &lt;s&gt; F &lt;/s&gt;
+-0.3010 &lt;s&gt; FIVE &lt;/s&gt;
+-0.3010 &lt;s&gt; FOUR &lt;/s&gt;
+-0.3010 &lt;s&gt; G &lt;/s&gt;
+-0.3010 &lt;s&gt; H &lt;/s&gt;
+-0.3010 &lt;s&gt; I &lt;/s&gt;
+-0.3010 &lt;s&gt; J &lt;/s&gt;
+-0.3010 &lt;s&gt; K &lt;/s&gt;
+-0.3010 &lt;s&gt; L &lt;/s&gt;
+-0.3010 &lt;s&gt; M &lt;/s&gt;
+-0.3010 &lt;s&gt; N &lt;/s&gt;
+-0.3010 &lt;s&gt; NINE &lt;/s&gt;
+-0.3010 &lt;s&gt; O &lt;/s&gt;
+-0.3010 &lt;s&gt; ONE &lt;/s&gt;
+-0.3010 &lt;s&gt; P &lt;/s&gt;
+-0.3010 &lt;s&gt; Q &lt;/s&gt;
+-0.3010 &lt;s&gt; R &lt;/s&gt;
+-0.3010 &lt;s&gt; S &lt;/s&gt;
+-0.3010 &lt;s&gt; SEVEN &lt;/s&gt;
+-0.3010 &lt;s&gt; SIX &lt;/s&gt;
+-0.3010 &lt;s&gt; T &lt;/s&gt;
+-0.3010 &lt;s&gt; TEN &lt;/s&gt;
+-0.3010 &lt;s&gt; THREE &lt;/s&gt;
+-0.3010 &lt;s&gt; TWO &lt;/s&gt;
+-0.3010 &lt;s&gt; U &lt;/s&gt;
+-0.3010 &lt;s&gt; V &lt;/s&gt;
+-0.3010 &lt;s&gt; W &lt;/s&gt;
+-0.3010 &lt;s&gt; X &lt;/s&gt;
+-0.3010 &lt;s&gt; Y &lt;/s&gt;
+-0.3010 &lt;s&gt; Z &lt;/s&gt;
+-0.3010 &lt;s&gt; ZERO &lt;/s&gt;
+
+end</code></pre>
+<p>The trouble is that it’s just not accurate enough distinguishing letters. I’m very new at using OpenEars/PocketSphinx, so really I just don’t know how to approach improving accuracy.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/detecting-single-letters-in-the-alphabet/#post-3991</guid>
+					<title><![CDATA[Reply To: Detecting single letters in the alphabet]]></title>
+					<link>/forums/topic/detecting-single-letters-in-the-alphabet/#post-3991</link>
+					<pubDate>Tue, 26 Apr 2011 16:16:39 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Can I also see the dictionary?  I&#8217;m surprised to hear that it is recognizing EIGHT Y for A B; the EIGHT isn&#8217;t surprising but the Y is. Is EIGHT Y an accurate transcription of what Pocketsphinx heard? What is the hypothesis (verbatim)?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/detecting-single-letters-in-the-alphabet/#post-3992</guid>
+					<title><![CDATA[Reply To: Detecting single letters in the alphabet]]></title>
+					<link>/forums/topic/detecting-single-letters-in-the-alphabet/#post-3992</link>
+					<pubDate>Tue, 26 Apr 2011 17:33:22 +0000</pubDate>
+					<dc:creator>jeff-kelley</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sure, here’s the dictionary:</p>
+<pre><code>A	AH
+A(2)	EY
+B	B IY
+C	S IY
+D	D IY
+E	IY
+EIGHT	EY T
+F	EH F
+FIVE	F AY V
+FOUR	F AO R
+G	JH IY
+H	EY CH
+I	AY
+J	JH EY
+K	K EY
+L	EH L
+M	EH M
+N	EH N
+NINE	N AY N
+O	OW
+ONE	W AH N
+ONE(2)	HH W AH N
+P	P IY
+Q	K Y UW
+R	AA R
+S	EH S
+SEVEN	S EH V AH N
+SIX	S IH K S
+T	T IY
+TEN	T EH N
+THREE	TH R IY
+TWO	T UW
+U	Y UW
+V	V IY
+W	D AH B AH L Y UW
+X	EH K S
+Y	W AY
+Z	Z IY
+ZERO	Z IH R OW
+ZERO(2)	Z IY R OW</code></pre>
+<p>EIGHT Y is accurate, I don’t have the transcription from before, though. I’ll try to get it to go again and post back here.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/detecting-single-letters-in-the-alphabet/#post-3993</guid>
+					<title><![CDATA[Reply To: Detecting single letters in the alphabet]]></title>
+					<link>/forums/topic/detecting-single-letters-in-the-alphabet/#post-3993</link>
+					<pubDate>Tue, 26 Apr 2011 17:37:36 +0000</pubDate>
+					<dc:creator>jeff-kelley</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>With the dictionary/language model here, it’s giving me KB more frequently than AB (I was speaking “A B” each time):</p>
+<pre><code>2011-04-26 13:35:23.315 OpenEarsSampleProject[2328:707] Pocketsphinx calibration has started.
+2011-04-26 13:35:23.368 OpenEarsSampleProject[2328:707] Pocketsphinx calibration is complete.
+2011-04-26 13:35:23.374 OpenEarsSampleProject[2328:707] Pocketsphinx has stopped listening.
+2011-04-26 13:35:23.382 OpenEarsSampleProject[2328:707] Pocketsphinx is starting up.
+2011-04-26 13:35:23.835 OpenEarsSampleProject[2328:707] Pocketsphinx calibration has started.
+2011-04-26 13:35:27.405 OpenEarsSampleProject[2328:707] Pocketsphinx calibration is complete.
+2011-04-26 13:35:27.418 OpenEarsSampleProject[2328:707] Pocketsphinx is now listening.
+2011-04-26 13:35:30.269 OpenEarsSampleProject[2328:707] Pocketsphinx has detected speech.
+2011-04-26 13:35:32.267 OpenEarsSampleProject[2328:707] The received hypothesis is U THREE with a score of -495 and an ID of 000000000
+2011-04-26 13:35:32.328 OpenEarsSampleProject[2328:707] Pocketsphinx is now listening.
+2011-04-26 13:35:38.896 OpenEarsSampleProject[2328:707] Pocketsphinx has detected speech.
+2011-04-26 13:35:40.254 OpenEarsSampleProject[2328:707] The received hypothesis is A B with a score of -13365 and an ID of 000000001
+2011-04-26 13:35:40.344 OpenEarsSampleProject[2328:707] Pocketsphinx is now listening.
+2011-04-26 13:35:42.953 OpenEarsSampleProject[2328:707] Pocketsphinx has detected speech.
+2011-04-26 13:35:45.211 OpenEarsSampleProject[2328:707] The received hypothesis is J V with a score of -16556 and an ID of 000000002
+2011-04-26 13:35:45.284 OpenEarsSampleProject[2328:707] Pocketsphinx is now listening.
+2011-04-26 13:35:47.264 OpenEarsSampleProject[2328:707] Pocketsphinx has detected speech.
+2011-04-26 13:35:49.059 OpenEarsSampleProject[2328:707] The received hypothesis is K P with a score of -15090 and an ID of 000000003
+2011-04-26 13:35:49.115 OpenEarsSampleProject[2328:707] Pocketsphinx is now listening.
+2011-04-26 13:35:52.527 OpenEarsSampleProject[2328:707] Pocketsphinx has detected speech.
+2011-04-26 13:35:54.067 OpenEarsSampleProject[2328:707] The received hypothesis is K B with a score of -14514 and an ID of 000000004
+2011-04-26 13:35:54.136 OpenEarsSampleProject[2328:707] Pocketsphinx is now listening.
+2011-04-26 13:35:55.405 OpenEarsSampleProject[2328:707] Pocketsphinx has detected speech.
+2011-04-26 13:35:57.607 OpenEarsSampleProject[2328:707] The received hypothesis is K V with a score of -25266 and an ID of 000000005
+2011-04-26 13:35:57.661 OpenEarsSampleProject[2328:707] Pocketsphinx is now listening.
+2011-04-26 13:35:59.633 OpenEarsSampleProject[2328:707] Pocketsphinx has detected speech.
+2011-04-26 13:36:01.581 OpenEarsSampleProject[2328:707] The received hypothesis is A B with a score of -12390 and an ID of 000000006
+2011-04-26 13:36:01.654 OpenEarsSampleProject[2328:707] Pocketsphinx is now listening.
+2011-04-26 13:36:03.892 OpenEarsSampleProject[2328:707] Pocketsphinx has detected speech.
+2011-04-26 13:36:05.588 OpenEarsSampleProject[2328:707] The received hypothesis is K B with a score of -6112 and an ID of 000000007
+2011-04-26 13:36:05.978 OpenEarsSampleProject[2328:707] Pocketsphinx is now listening.
+2011-04-26 13:36:08.074 OpenEarsSampleProject[2328:707] Pocketsphinx has detected speech.
+2011-04-26 13:36:09.750 OpenEarsSampleProject[2328:707] The received hypothesis is K B O with a score of -37412 and an ID of 000000008
+2011-04-26 13:36:09.828 OpenEarsSampleProject[2328:707] Pocketsphinx is now listening.
+2011-04-26 13:36:12.141 OpenEarsSampleProject[2328:707] Pocketsphinx has detected speech.
+2011-04-26 13:36:13.764 OpenEarsSampleProject[2328:707] The received hypothesis is A B with a score of -16145 and an ID of 000000009
+2011-04-26 13:36:13.821 OpenEarsSampleProject[2328:707] Pocketsphinx is now listening.
+2011-04-26 13:36:16.829 OpenEarsSampleProject[2328:707] Pocketsphinx has detected speech.
+2011-04-26 13:36:18.718 OpenEarsSampleProject[2328:707] The received hypothesis is K B with a score of -18317 and an ID of 000000010
+2011-04-26 13:36:18.790 OpenEarsSampleProject[2328:707] Pocketsphinx is now listening.</code></pre>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/detecting-single-letters-in-the-alphabet/#post-3994</guid>
+					<title><![CDATA[Reply To: Detecting single letters in the alphabet]]></title>
+					<link>/forums/topic/detecting-single-letters-in-the-alphabet/#post-3994</link>
+					<pubDate>Wed, 27 Apr 2011 12:48:08 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, I think the first easy step is to get rid of the pronunciations that are in the dictionary that you definitely don&#8217;t want to recognize. I realize this isn&#8217;t at all self-evident so I&#8217;ll explain briefly. If you look at this from the dictionary:</p>
+<p>A	AH<br />
+A(2)	EY</p>
+<p>That means that the language model tool gave you back two possible pronunciations for the word A. The first one is the particular NA pronunciation of the article &#8220;a&#8221; as in &#8220;a dog barked&#8221; that rhymes with &#8220;huh&#8221;. Since you don&#8217;t ever want to recognize that pronunciation of &#8220;a&#8221; because the alphabet character is never pronounced that way, you should erase that pronunciation from your dictionary.</p>
+<p>The (2) in parentheses just means that it is the second pronunciation of the word, so the way you would want to replace</p>
+<p>A	AH<br />
+A(2)	EY</p>
+<p>is with the line</p>
+<p>A	EY</p>
+<p>deleting the first pronunciation, and removing the (2) from the second pronunciation since it is now the only pronunciation you are going to accept.</p>
+<p>The next thing that you can do is to make the sentence &#8220;A B&#8221; part of your corpus.  The corpus can have individual words, but it can also contain combinations of words. Combinations of words that you have made part of your corpus will have an automatically higher probability of being detected.</p>
+<p>So, the corpus would say something like this:</p>
+<p>A<br />
+B<br />
+A B<br />
+C<br />
+D<br />
+E<br />
+F<br />
+G<br />
+H<br />
+I<br />
+J<br />
+K<br />
+L<br />
+M<br />
+N<br />
+O<br />
+P<br />
+Q<br />
+R<br />
+S<br />
+T<br />
+U<br />
+V<br />
+W<br />
+X<br />
+Y<br />
+Z<br />
+ONE<br />
+TWO<br />
+THREE<br />
+FOUR<br />
+FIVE<br />
+SIX<br />
+SEVEN<br />
+EIGHT<br />
+NINE<br />
+ZERO</p>
+<p>You can do this for all of the possible combinations if you want to, or just the ones where you want to raise their probability of being detected.  When you look at the language model that is output, you will see that there is a 2-gram entry for A B and that it has a raised probability.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/detecting-single-letters-in-the-alphabet/#post-3995</guid>
+					<title><![CDATA[Reply To: Detecting single letters in the alphabet]]></title>
+					<link>/forums/topic/detecting-single-letters-in-the-alphabet/#post-3995</link>
+					<pubDate>Wed, 27 Apr 2011 14:29:08 +0000</pubDate>
+					<dc:creator>jeff-kelley</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Interesting. I’ll try pruning the dictionary of ambiguous pronunciations where possible. I’d like to do more with combinations like “A B”, but the that the characters being read to this application are random, so there won’t really be a pattern to which ones get combined more.</p>
+<p>Thanks for this help; I’ll report back if it’s more successful.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

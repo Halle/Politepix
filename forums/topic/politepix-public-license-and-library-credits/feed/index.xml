@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Politepix Public License and Library Credits &#8211; Politepix</title>
+		<atom:link href="/forums/topic/politepix-public-license-and-library-credits/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/politepix-public-license-and-library-credits/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:39:58 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/politepix-public-license-and-library-credits/#post-9672</guid>
+					<title><![CDATA[Politepix Public License and Library Credits]]></title>
+					<link>/forums/topic/politepix-public-license-and-library-credits/#post-9672</link>
+					<pubDate>Tue, 15 May 2012 03:52:59 +0000</pubDate>
+					<dc:creator>jdkaire</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I finally finished a very simple app using OpenEars and the only part I have left is the credits screen.  So,<br />
+1. I couldn&#8217;t find the Politepix Public License version 1.0. to read it.  Can you tell me where it is?<br />
+2. Does anybody have a screenshot of how you are crediting the CMU libraries?</p>
+<p>Thanks,</p>
+<p>Joe</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/politepix-public-license-and-library-credits/#post-9674</guid>
+					<title><![CDATA[Reply To: Politepix Public License and Library Credits]]></title>
+					<link>/forums/topic/politepix-public-license-and-library-credits/#post-9674</link>
+					<pubDate>Tue, 15 May 2012 10:26:15 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Congratulations on your app! Feel free to promote it in the sticky topic at the top of the forum once it&#8217;s accepted.</p>
+<p>The license is at the root of the distribution, it&#8217;s called license.txt. It has some credit boilerplate language.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/politepix-public-license-and-library-credits/#post-9675</guid>
+					<title><![CDATA[Reply To: Politepix Public License and Library Credits]]></title>
+					<link>/forums/topic/politepix-public-license-and-library-credits/#post-9675</link>
+					<pubDate>Tue, 15 May 2012 13:40:34 +0000</pubDate>
+					<dc:creator>jdkaire</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Halle,<br />
+Ah! Yes&#8230;I was looking all over the website and didn&#8217;t realize it was in the package.  Thank you so much for your prompt reply.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

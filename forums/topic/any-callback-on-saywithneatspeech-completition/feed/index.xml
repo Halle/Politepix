@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Any callback on sayWithNeatSpeech; completition? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/any-callback-on-saywithneatspeech-completition/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/any-callback-on-saywithneatspeech-completition/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:44:33 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/any-callback-on-saywithneatspeech-completition/#post-1015462</guid>
+					<title><![CDATA[Any callback on sayWithNeatSpeech; completition?]]></title>
+					<link>/forums/topic/any-callback-on-saywithneatspeech-completition/#post-1015462</link>
+					<pubDate>Thu, 24 Jan 2013 17:04:30 +0000</pubDate>
+					<dc:creator>Geri</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Is there some callback method like&#8230;</p>
+<p><code><br />
+-(void)neatSpeechTalkDidFinishOfStatement:(NSString*) statement voice:(NeatSpeechVoice*) voice;<br />
+</code></p>
+<p>&#8230;or so?</p>
+<p>I&#8217;d be happy with it, have no much intention so set up a timer and keep querying speechInProgress constantly without further information on speaking.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/any-callback-on-saywithneatspeech-completition/#post-1015463</guid>
+					<title><![CDATA[Reply To: Any callback on sayWithNeatSpeech; completition?]]></title>
+					<link>/forums/topic/any-callback-on-saywithneatspeech-completition/#post-1015463</link>
+					<pubDate>Thu, 24 Jan 2013 17:10:56 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You should be able to catch the end of a NeatSpeech utterance using the standard OpenEars OpenEarsEventsObserver delegate method &#8211; (void) fliteDidFinishSpeaking, is that not working for you? Receiving the actual string is not available.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/any-callback-on-saywithneatspeech-completition/#post-1015464</guid>
+					<title><![CDATA[Reply To: Any callback on sayWithNeatSpeech; completition?]]></title>
+					<link>/forums/topic/any-callback-on-saywithneatspeech-completition/#post-1015464</link>
+					<pubDate>Thu, 24 Jan 2013 17:19:43 +0000</pubDate>
+					<dc:creator>Geri</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ah, really, gotcha, thanks.<br />
+I was searching for it in FliteController headers, since I was sending messages to a FliteController.</p>
+<p>For the future, it could be awesome to have some info here on the <em>statements</em>, and the <em>whole statement queue</em>, and to give some context information to statements, maybe some lightweight statement object&#8230;</p>
+<p>&#8230;without these features I have to setup many &#8220;annoying&#8221; properties in my controllers.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/any-callback-on-saywithneatspeech-completition/#post-1015465</guid>
+					<title><![CDATA[Reply To: Any callback on sayWithNeatSpeech; completition?]]></title>
+					<link>/forums/topic/any-callback-on-saywithneatspeech-completition/#post-1015465</link>
+					<pubDate>Thu, 24 Jan 2013 17:24:48 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, I will enter it as a feature request.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

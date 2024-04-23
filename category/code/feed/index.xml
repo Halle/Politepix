@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>Code &#8211; Politepix</title>
+	<atom:link href="/category/code/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>iOS Frameworks for speech recognition, text to speech and more</description>
+	<lastBuildDate>Tue, 23 Feb 2016 10:37:10 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.5.2</generator>
+<site xmlns="com-wordpress:feed-additions:1">206848719</site>	<item>
+		<title>OpenEars 2.5 and all plugins out now!</title>
+		<link>/2016/02/22/openears-2-5-and-all-plugins-out-now/</link>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Mon, 22 Feb 2016 16:22:34 +0000</pubDate>
+				<category><![CDATA[Code]]></category>
+		<category><![CDATA[OpenEars]]></category>
+		<guid isPermaLink="false">/?p=1028719</guid>
+
+					<description><![CDATA[¿Qué Hay De Nuevo? After a just-slightly-longer-than-expected incubation period (ahem), it is my pleasure to introduce OpenEars 2.5: Hear All The Languages. Image by Allie Brosh Well, perhaps not all of the languages. Many of the languages! I&#8217;ve developed a language-agnostic grapheme-to-phoneme algorithm which works from a file format fast enough for a phone, and [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p><em>¿Qué Hay De Nuevo?</em> After a just-slightly-longer-than-expected incubation period (ahem), it is my pleasure to introduce <strong>OpenEars 2.5: Hear All The Languages</strong>.</p>
+<p><img decoding="async" src="https://i0.wp.com/www.politepix.com/wp-content/uploads/hear.jpg?ssl=1" alt="" data-recalc-dims="1" /><br />
+<a href="https://hyperboleandahalf.blogspot.com/">Image by Allie Brosh</a></span></p>
+<p>Well, perhaps not all of the languages. Many of the languages! I&#8217;ve developed a language-agnostic grapheme-to-phoneme algorithm which works from a file format fast enough for a phone, and although perfection remains elusive, it is from 5-15x more accurate for generating phonemes than a naive letter-based algorithm. As a result of this, <a href="/openears">OpenEars</a> is now able to support speech recognition with English, Spanish, Mandarin Chinese, French, German, and Dutch. The new languages will now work with all of the speech recognition features of OpenEars, including dynamic language model generation and switching, grammar generation and switching, and of course hypothesis return.</p>
+<p>As a benefit of the flexibility of this format, today Politepix will also release 2.5 versions of every plugin. <a href="/rapidears">RapidEars</a>, <a href="/rejecto">Rejecto</a> and <a href="/ruleorama">RuleORama</a> are now compatible with the languages OpenEars is compatible with. <a href="/neatspeech">NeatSpeech 2.5</a> is a compatibility update, but won&#8217;t be adding TTS output for the new languages. <a href="/savethatwave">SaveThatWave</a> also has a compatibility update.</p>
+<p>By the way, if you are using another language&#8217;s Sphinx-compatible acoustic model and you want to make it compatible with OpenEars, you can <a href="/contact">get in touch</a> to discuss options – it is a pretty flexible approach so I expect to be able to apply it to more languages. </p>
+<p>Speech recognition will vary significantly due to the speed and accuracy level of the acoustic model used, so support for non-English acoustic models is very much on a best-effort basis moving forward. <em>Tut mir leid, Schatz!</em></p>
+<p>The next feature of the OpenEars Platform 2.5 is bitcode. OpenEars will now ship with embedded bitcode, and bitcode is now a configurable option for paid plugin framework purchases (subject to a handling fee). Plugin framework demos will also now have a non-recompilable bitcode segment so that they install easily, but the bitcode attached to the demos can&#8217;t be submitted to the App Store. Demos can&#8217;t be submitted to the App Store in any case, so this shouldn&#8217;t be an issue.</p>
+<p>Bitcode is also supported on a best-effort basis, meaning that no warranty is made for what it does when it is recompiled. This is not because I don&#8217;t care, but because a) no one knows the minutiae of how it will be recompiled, or b) what architectures it will be recompiled with, or c) what the strategic importance of bitcode is to Apple really, and it is a fair assumption that d) there will not be any communication about what is happening if it doesn&#8217;t work, so that is a process that, realistically, Politepix has no control over. What is the advantage of bitcode from the developer perspective? <em>Hoe komt een ezel aan twee lange oren</em>?</p>
+<p>This OpenEars Platform update also fixes all verified bugs to date, which is my very favorite kind of update. Other than the ones which add Chinese speech recognition, 哇!</p>
+<p>OpenEars 2.5 is free as always. The 2.5 paid plugin framework license upgrades are free if your purchase was made after August 17th, 2014. Upgrades for licenses purchased before August 17th, 2014 are 50% off. The bitcode handling fee is an extra fee for all upgrades if you want to add bitcode to your frameworks. The new Licensee site has rolled out (same URL as before), and on it you will find coupons for your upgrades in your download area, either for a free upgrade or a 50%-off upgrade for each of your licensed plugins. <em>Quel délice!</em></p>
+<p>This is a big update with a lot of moving parts, so if you encounter any surprises or frustrations, <em>no te preocupes</em>, just visit the <a href="/forums">forums</a>, let me know what&#8217;s up, and I will be happy to help.</p>
+<p>OpenEars 2.5 can be downloaded <a href="/openears">here</a> and you can browse the compatible language acoustic models <a href="/languages">here</a>. Make sure to check out the license for the language to be sure you&#8217;re able to use it with your project.</p>
+<p>I&#8217;m delighted to be able to bring the real potential of localization to offline speech recognition with OpenEars, and I can&#8217;t wait to see what you do with it. And to the developers who have been waiting for their language to be compatible, a heartfelt welcome/bienvenue/Willkommen/Welkom/Bienvenido/歡迎!</p>
+<p>-Halle</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">1028719</post-id>	</item>
+		<item>
+		<title>OpenEars 2.04 and compatibility versions of all plugins out now, with no more uppercase requirements</title>
+		<link>/2015/05/10/openears-2-04-and-compatibility-versions-of-all-plugins-out-now/</link>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Sun, 10 May 2015 11:17:20 +0000</pubDate>
+				<category><![CDATA[Code]]></category>
+		<category><![CDATA[OpenEars]]></category>
+		<guid isPermaLink="false">/?p=1025719</guid>
+
+					<description><![CDATA[Today I&#8217;m happy to announce that OpenEars 2.04 and all plugins are out now. This is primarily a bugfix release to reduce memory overhead in OEPocketsphinxController and RapidEars while listening, and to prevent a very rare crash that could happen when stopping listening with RapidEars when a lattice search is still working. However there is [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Today I&#8217;m happy to announce that OpenEars 2.04 and all plugins are <a href="/openears">out now</a>. This is primarily a <a href="/openears/changelog">bugfix release</a> to reduce memory overhead in OEPocketsphinxController and RapidEars while listening, and to prevent a very rare crash that could happen when stopping listening with RapidEars when a lattice search is still working. However there is one significant change which should be a nice improvement for many developers and I wanted to quickly point it out and explain so that everyone can start taking advantage of it ASAP. </p>
+<p>When I first designed (OE)LanguageModelGenerator years ago I made the decision to require text input in uppercase letters for best results because it allowed the most optimization for very fast creation of dynamic language models. This didn&#8217;t seem like a big trade-off because at the time the size of a language model needed to be quite small in order to perform well during speech recognition on supported devices such as the 2nd-gen iPhone, which meant that for the most part it was command-and-control applications that were being developed with OpenEars. For a command-and-control vocabulary, word case is not such a big consideration in a UI because the words are out of context. Rather than transforming the developer&#8217;s text input automatically, I made the decision to support both all-caps and mixed-case but explain in the docs and in the logging output that mixed-case text input would have to be sent to the fallback phoneme lookup technique which would result in fewer available pronunciations, which would have an accuracy impact for words with multiple pronunciations. This felt like the least-bad compromise between strongly-competing concerns of speed, minimizing complexity, and not discarding the developer&#8217;s intentional choices.</p>
+<p>Over the last couple of years as the devices and the framework and dependencies have gotten faster, it has become a viable choice with OpenEars to use larger vocabularies, and as a result more app developers have been using it with a broader variety of input sources such as written texts, speeches, etc, which is delightful to see. For that kind of application, the case of the input and output format matters to the developer and the user. The uppercase requirement/advantage no longer supported the goals of the developer or of pleasing UX and needed to be improved, so I revisited this early decision and found a way to do case-insensitive lookup without changing the baseline generation speed, and also improved the generation speed for larger models. That means that you can use normal word and sentence casing in your input text and it will be returned by your speech recognition hypothesis with the same casing intact, and larger text input will generate models faster (this doesn&#8217;t affect recognition speed, just how long dynamic model and grammar generation take).</p>
+<p>There has also been an improvement in handling of punctuation in input, so  in the cases that developers don&#8217;t do their own text cleaning to remove symbols which are too ambiguous to transcribe and probably not intended to be spoken (for instance, symbols like { or ^ or `) OELanguageModelGenerator will clean the input and it will be consistent across all the plugins and different model/grammar types. Symbols that can&#8217;t be transcribed will be removed, symbols which can be transcribed will usually be transcribed by the best-effort fallback grapheme generator (so you should still take a look at your input when you know it in advance and decide whether it would be better for you to transcribe your symbols into words yourself, especially numbers because only you know for sure whether you want 1600 to be transcribed as &#8216;sixteen-hundred&#8217; or &#8216;one thousand six hundred&#8217; or &#8216;a thousand six hundred&#8217; or &#8216;one six oh oh&#8217;), and symbols which aren&#8217;t significant for recognition purposes (such as . or , or ; or ? or !) will be left in place and will become part of your model.</p>
+<p>An example of this last point would be if you used the sentence &#8220;The Sand Snakes are with me.&#8221; as input. OELanguageModelGenerator will successfully find multiple pronunciations for any word in this sentence that has more than one pronunciation – it will leave the case intact and there will be no accuracy decline from that. That period (full stop) symbol at the end will stay attached to the word &#8220;me&#8221; in the model, meaning that when OEPocketsphinxController returns a hypothesis matching an utterance of the sentence, it will still have the period attached to it in the returned text hypothesis. If this isn&#8217;t the desired result and you don&#8217;t want the individual words in this input to have hints about their position in a sentence or statement, you can still give the original text to OELanguageModelGenerator without sentence punctuation, but the assumption now is that if you give sentence punctuation as input, it&#8217;s because you intend for it to be returned in a hypothesis. That also means that if you create a language model rather than a grammar, you can sometimes see a word with a period or comma appear in a different order in the sentence other than the input order, so that is something to think about when using punctuation and evaluating whether to use a language model (statistical model; words can be returned out of order so a word with a period attached can theoretically appear in the middle of a sentence if someone walks by the user and says it) or a grammar (ruleset; the order you choose is the order that will return).</p>
+<p>The decision tree I use for these punctuation transformations and non-transformations is basically a simplified non-interactive version of my interactive text-cleaning tool <a href="https://github.com/Halle/TheKnownUnknowns">TheKnownUnknowns</a>, so please feel free to take a look at TheKnownUnknowns alongside OELanguageModelController for more info about considerations with different symbols. Please also feel free to use TheKnownUnknowns for preparing texts for OpenEars where you&#8217;d like to make your own decisions in advance about how to transcribe difficult cases. It is primarily designed to quickly clean text corpora before creating an acoustic model using long alignment and similar tasks on large texts that have to be prepared for some kind of transcription-related norm, but it is also a good tool for interactively cleaning text you want to use with OpenEars in advance, since they have their design and major assumptions in common.</p>
+<p>Although this is not directly a recognition accuracy change, my sense is that there was a cluster of minor accuracy-related symptoms in some apps related to non-transcribable symbols entering the generator, mixed-case being used without realizing it affected how many pronunciations were found, and the possibility that unknown transcribable or ignorable symbols were being handled differently by the language model/grammar lookup than by the phonetic dictionary lookup, which theoretically could result in never-matching words. Projects that were experiencing any of these issues should see an improvement to accuracy from this change.</p>
+<p>As always, OpenEars can be downloaded <a href="/openears">here</a> and the new plugins can either be downloaded at your demo link or your licensed framework link. I hope this little improvement helps you make great apps!</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">1025719</post-id>	</item>
+		<item>
+		<title>OpenEars 1.3.0 out now with Pocketsphinx and Sphinxbase .8</title>
+		<link>/2013/06/14/openears-1-3-0-out-now-with-pocketsphinx-and-sphinxbase-8/</link>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Fri, 14 Jun 2013 09:13:07 +0000</pubDate>
+				<category><![CDATA[Code]]></category>
+		<category><![CDATA[OpenEars]]></category>
+		<guid isPermaLink="false">/?p=1017496</guid>
+
+					<description><![CDATA[Just a quick note that after months of testing of OpenEars 1.3.0 preview including Pocketsphinx and Sphinxbase .8 and no issues coming up with those new libraries, OpenEars 1.3.0 is now the release version of OpenEars and has been released in a non-preview version with a couple of bugfixes. As always, ask questions and let [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Just a quick note that after months of testing of OpenEars 1.3.0 preview including Pocketsphinx and Sphinxbase .8 and no issues coming up with those new libraries, <a href="/openears">OpenEars 1.3.0 is now the release version of OpenEars</a> and has been released in a non-preview version with <a href="/openears/changelog/">a couple of bugfixes</a>. As always, ask questions and let me know how it&#8217;s working for you in the <a href="https://politepix.com/forums/">forums</a>.</p>
+<p>[politepix-blog-inline-text-ad]</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">1017496</post-id>	</item>
+		<item>
+		<title>OpenEars 1.2.3 and NeatSpeech 1.0!</title>
+		<link>/2012/10/25/openears-1-2-3-and-neatspeech-1-0/</link>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Thu, 25 Oct 2012 13:19:22 +0000</pubDate>
+				<category><![CDATA[Code]]></category>
+		<guid isPermaLink="false">/?p=11714</guid>
+
+					<description><![CDATA[It&#8217;s my pleasure to introduce NeatSpeech, a new plugin for the OpenEars platform which adds better TTS/text-to-speech voices to OpenEars&#8217; voice synthesis. NeatSpeech is a plugin for OpenEars that adds fast, higher-quality speech synthesis (TTS) including multithreaded speech queueing to speak very long phrases without any lag. It uses HTS voices which are ideal for [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>It&#8217;s my pleasure to introduce NeatSpeech, a new plugin for the OpenEars platform which adds better TTS/text-to-speech voices to OpenEars&#8217; voice synthesis.</p>
+<p>NeatSpeech is a plugin for OpenEars that adds fast, higher-quality speech synthesis (TTS) including multithreaded speech queueing to speak very long phrases without any lag. It uses HTS voices which are ideal for mobile applications due to their diminutive file size, great processing speed and improved speech quality over the default Flite voices. All TTS is performed offline so absolutely no network connection is required.</p>
+<p>[politepix-blog-inline-text-ad]</p>
+<p>You can try out a free demo of NeatSpeech (requires new OpenEars version 1.2.3) <a href="/shop/neatspeechdemo">here</a>, purchase NeatSpeech <a href="/shop/neatspeech">here</a> or read more about it <a href="/neatspeech">here</a>. I really hope you enjoy NeatSpeech!</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">11714</post-id>	</item>
+		<item>
+		<title>OpenEars 1.2.1, RapidEars 1.1, Rejecto 1.0</title>
+		<link>/2012/09/20/openears-1-2-1-rapidears-1-1-rejecto-1-0/</link>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Thu, 20 Sep 2012 20:59:22 +0000</pubDate>
+				<category><![CDATA[Code]]></category>
+		<category><![CDATA[frameworks]]></category>
+		<category><![CDATA[openears]]></category>
+		<category><![CDATA[plugins]]></category>
+		<category><![CDATA[rapidears]]></category>
+		<category><![CDATA[rejecto]]></category>
+		<category><![CDATA[xcode]]></category>
+		<guid isPermaLink="false">/?p=11204</guid>
+
+					<description><![CDATA[Another big release day! OpenEars 1.2.1 is out, adding the very-suddenly-required armv7s slice and fixing the bug in which speech from right before a call to suspendRecognition will be processed after recognition is resumed. Downloadable at /openears. Also released today is RapidEars 1.1, which further refines many improvements of the past few versions and is [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Another big release day! <a href="/openears">OpenEars 1.2.1</a> is out, adding the very-suddenly-required armv7s slice and fixing the bug in which speech from right before a call to suspendRecognition will be processed after recognition is resumed. Downloadable at <a href="/openears">/openears</a>. Also released today is <a href="/rapidears">RapidEars 1.1</a>, which further refines many improvements of the past few versions and is stable, fast, resource-frugal and behaves better when changing language models and when suspending/resuming. You can read more about it and try out the demo at <a href="/rapidears">/rapidears</a>. If you&#8217;ve tried an earlier version, <a href="/rapidears">RapidEars 1.1</a> is really worth a second look.</p>
+<p>[politepix-blog-inline-text-ad]</p>
+<p>Politepix has also released a new paid plugin called <a href="/rejecto">Rejecto</a>, which makes your apps more accurate when you use OpenEars and RapidEars by tuning out words that aren&#8217;t in your language model. As usual it&#8217;s easy to get started with but it has a lot of knobs to twiddle if you want to optimize your model as far as possible. Check it out at <a href="/rejecto">/rejecto</a>.</p>
+<p>While you&#8217;re trying these new tools out, why not make it easy on yourself and visit Politepix&#8217;s new <a href="/openears/tutorial">tutorial tool</a>, which will get you up and running with your OpenEars app about 5 minutes. It&#8217;s found at <a href="/openears/tutorial">/openears/tutorial</a> and it includes instructions for all the OpenEars classes and all of the plugins too!</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">11204</post-id>	</item>
+		<item>
+		<title>OpenEars 1.1, plugins, and RapidEars live recognition for iOS!</title>
+		<link>/2012/06/18/openears-1-1-plugins-and-rapidears/</link>
+					<comments>/2012/06/18/openears-1-1-plugins-and-rapidears/#comments</comments>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Mon, 18 Jun 2012 12:36:35 +0000</pubDate>
+				<category><![CDATA[Code]]></category>
+		<category><![CDATA[openears]]></category>
+		<category><![CDATA[plugin]]></category>
+		<category><![CDATA[rapidears]]></category>
+		<category><![CDATA[speech recognition]]></category>
+		<guid isPermaLink="false">/?p=9839</guid>
+
+					<description><![CDATA[OpenEars 1.1, the OpenEars plugin system, and RapidEars 1.0, a plugin for OpenEars for live recognition! Today is a big release day for Politepix: OpenEars 1.1 and the introduction of the OpenEars plugin system! Featuring RapidEars, a plugin for OpenEars that does recognition on live speech. I am very happy to be introducing multiple Cool [&#8230;]]]></description>
+										<content:encoded><![CDATA[<h1>OpenEars 1.1, the OpenEars plugin system, and RapidEars 1.0, a plugin for OpenEars for live recognition!</h1>
+<h3>Today is a big release day for Politepix: OpenEars 1.1 and the introduction of the OpenEars plugin system! Featuring RapidEars, a plugin for OpenEars that does recognition on live speech.</h3>
+<p>I am very happy to be introducing multiple <strong>Cool Things</strong> this Monday. The first is the <a href="/openears">1.1 version of OpenEars</a>, which was a bit behind schedule but I hope was worth waiting for, since it introduces&#8230;n-best! So you can now see the top &#8220;hits&#8221; for word matching and the scores for them, rather than only seeing the best hypothesis. You can just turn on n-best and set the number of best hypotheses you&#8217;d like in PocketsphinxController, and then add the n-best delegate method of OpenEarsEventsObserver to receive them wherever you&#8217;d like. The docs and sample app have been updated to explain how.</p>
+<p>[politepix-blog-inline-text-ad]</p>
+<p>The other big new feature of OpenEars 1.1 is that it now has a method that is entirely designed to make it easier for you to test, which is:</p>
+<p>&#8211; (void) runRecognitionOnWavFileAtPath:(NSString *)wavPath usingLanguageModelAtPath:(NSString *)languageModelPath dictionaryAtPath:(NSString *)dictionaryPath languageModelIsJSGF:(BOOL)languageModelIsJSGF;</p>
+<p>This just runs recognition using your normal settings on a single WAV audio file. You can use this to create a testbed in case, for instance, you are trying to see the effect that changes to a language model or acoustic model or other settings have on recognition. There&#8217;s more about both of these new features in the documentation and as always, feel free to ask your questions on the <a>forums</a>.</p>
+<h3>The OpenEars Platform and Plugins</h3>
+<p><a href="/rapidears"><img decoding="async" src="https://i0.wp.com/www.politepix.com/wp-content/uploads/rapidears_icon2.png?resize=150%2C150&#038;ssl=1" alt="" title="rapidears_icon" width="150" height="150" class="alignnone size-thumbnail wp-image-9852" data-recalc-dims="1" /></a><br />
+The next big new thing is that OpenEars now has plugins. Over the coming months Politepix will be introducing new drop-in plugin frameworks for your OpenEars app that will open up new functionality. OpenEars will remain free and will also continue to be developed, with new features being added that make use of the potential of its dependencies, such as today&#8217;s introduction of n-best. For in-demand functionality that requires major committed development time and brand-new internal and dependency code, those features will be produced as plug-ins sold at the Politepix shop. So OpenEars is now both a free recognition, TTS and language modeling SDK, and also a platform so you can mix and match the exact extended functionality you need without making your app more complex.</p>
+<p>Without further ado, it&#8217;s my pleasure to introduce Politepix&#8217;s first plugin for the OpenEars platform: <strong><a href="/rapidears">RapidEars</a></strong>! RapidEars is a plugin that adds live recognition capabilities to PocketsphinxController, so by trading off some accuracy, you can run recognition on speech as it is recorded into the device instead of waiting for a pause and evaluating afterwards. This uses more CPU than OpenEars so it&#8217;s advisable to use this for apps targeted at the newest devices. It&#8217;s great for games or any app where you want immediate responsiveness. There is nothing like this available using any other speech recognition product because they are all network-based and OpenEars is processed on the device. RapidEars is €999 to license and it has a free demo version for development that can be used for four minutes at a time so you can test it thoroughly before licensing. Installation is as simple as dragging the new plugin into your project and importing its classes in order to use new PocketsphinxController and OpenEarsEventsObserver methods.</p>
+<p>You can read more about RapidEars <a href="/rapidears">here</a> and download a demo version of the plugin <a href="/shop/rapidearsdemo">here</a>. Questions for this OpenEars plugin and future ones can also be asked on the OpenEars forums, just mention that you&#8217;re asking about RapidEars.</p>
+<p>That&#8217;s it, have fun with these new products!</p>
+<p>-Halle</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/2012/06/18/openears-1-1-plugins-and-rapidears/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">9839</post-id>	</item>
+		<item>
+		<title>OpenEars 1.01 is out</title>
+		<link>/2012/04/10/openears101/</link>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Tue, 10 Apr 2012 15:06:32 +0000</pubDate>
+				<category><![CDATA[Code]]></category>
+		<guid isPermaLink="false">/?p=9232</guid>
+
+					<description><![CDATA[I&#8217;ve released OpenEars 1.01 today, a bugfix update for the following three issues: • Leaks in the dynamic language model generation process could crash the device, • When using a very small model, the discounting method used by the language model generation process could occasionally result in certain words having a probability that is so [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;ve released <a href="/openears">OpenEars 1.01</a> today, a bugfix update for the following three issues:</p>
+<p>• Leaks in the dynamic language model generation process could crash the device,<br />
+• When using a very small model, the discounting method used by the language model generation process could occasionally result in certain words having a probability that is so low that it was equivalent to not having them in the model at all,<br />
+• There were 237 warnings during a device build due to unstripped local debug symbols in the framework, which had no effect on functionality but occluded useful warnings.</p>
+<p>These should all be fixed, and these are the only current bugs I am aware of.</p>
+<p>This upgrade is recommended for all users. To upgrade, I recommend removing the previous framework version from your app, moving the previous framework download folder away or to the trash, and then do a fresh install of the new framework as described here: /openears under the heading &#8220;To use OpenEars:&#8221;.</p>
+<p>[politepix-blog-inline-text-ad]</p>
+<p>Then you should select Product-&gt;Clean and, holding down the option key while selecting the Product menu again, select Product-&gt;Clean Build Folder and then rebuild your app with the new framework.</p>
+<p>Please let me know in the forums whether this new version is fixing the issues that you&#8217;ve been experiencing, and of course whether you are experiencing any other issues. For those who have been hit by the two issues with LanguageModelGenerator, thanks for your patience while I added the memory management and fixed the issue with the discounting method.</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">9232</post-id>	</item>
+		<item>
+		<title>SpeexKit: Speex on the iPhone, from Politepix</title>
+		<link>/2012/03/25/speexkit/</link>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Sun, 25 Mar 2012 16:02:18 +0000</pubDate>
+				<category><![CDATA[Code]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[framework]]></category>
+		<category><![CDATA[speex]]></category>
+		<guid isPermaLink="false">/?p=8995</guid>
+
+					<description><![CDATA[SpeexKit: Speex for iPhone It is my pleasure to announce a new Politepix framework product for developers: SpeexKit 1.0. What is Speex? Speex is one of the best codecs for voice audio transmission available, with clear quality and excellent compression characteristics. It is a great match for mobile speech applications given the need for top-notch clarity [&#8230;]]]></description>
+										<content:encoded><![CDATA[<h1>SpeexKit: Speex for iPhone</h1>
+<p>It is my pleasure to announce a new Politepix framework product for developers: <a href="/speexkit">SpeexKit</a> 1.0.</p>
+<h2><strong id="whatisspeex">What is Speex?</strong></h2>
+<p>Speex is one of the best codecs for voice audio transmission available, with clear quality and excellent compression characteristics. It is a great match for mobile speech applications given the need for top-notch clarity and careful use of bandwidth. The Speex project is found <a href="https://www.speex.org/">here</a>.</p>
+<p>[politepix-blog-inline-text-ad]</p>
+<p><strong>What is SpeexKit?</strong></p>
+<p>SpeexKit is an iOS framework from Politepix that makes it easy to use every feature of Speex with your iPhone or iPad app without doing your own C or C++ implementation or having to deal with threading or queueing code. It is not the only way of using Speex on the iPhone, but it is designed to be an easy object-oriented way to implement it quickly in your app, even for the tricky stuff. <a href="/shop/speexkitdemo">You can download the SpeexKit demo framework here</a>. You have to sign up, but downloading the demo is 100% free, just add it to your cart and check out. You will not have to provide any payment information to try it out. It is time-limited and can&#8217;t be submitted to the App Store &#8212; when you&#8217;re ready to license the framework it can be found on the <a href="/shop/speexkit">Politepix shop</a>.</p>
+<p><strong>What can you do with SpeexKit?</strong></p>
+<p>• Convert entire WAV or raw audio files into Speex files<br />
+• Convert entire Speex files into WAV files<br />
+• Convert buffers of Speex frames into buffers of raw audio samples, synchronously or asynchronously. In asychronous mode, threading and queuing (since Speex decoding is not realtime on all devices) are handled for you.<br />
+• Convert buffers of raw PCM audio samples into buffers of Speex frames, synchronously or asynchronously. In asychronous mode, threading and buffer queuing (since Speex encoding is not realtime on all devices) are handled for you.<br />
+• Wrap existing buffers of Speex frames into a written-out Speex file<br />
+• Wrap existing buffers of raw PCM audio samples into a written-out WAV file<br />
+• Use advanced Speex features such as such as Voice Activity Detection (VAD) and echo reduction</p>
+<p>You can read much more about SpeexKit <a href="/speexkit">here</a>. Thanks for checking it out!</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">8995</post-id>	</item>
+		<item>
+		<title>New OpenEars version .912 out now</title>
+		<link>/2011/07/17/new-openears-version-912-out-now/</link>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Sun, 17 Jul 2011 15:20:31 +0000</pubDate>
+				<category><![CDATA[Code]]></category>
+		<guid isPermaLink="false">/?p=7269</guid>
+
+					<description><![CDATA[I&#8217;m happy to announce the release of OpenEars .912, a bugfix release fixing the following issues: • OpenEarsEventsObserver was never receiving a delegate message when a language model was being changed (thanks to Aleksey for finding this bug) • LanguageModelGenerator was not finding alternate pronunciations of a word (thanks to Sarinsukumar for finding this bug) [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m happy to announce the release of OpenEars .912, a bugfix release fixing the following issues:</p>
+<p>• OpenEarsEventsObserver was never receiving a delegate message when a language model was being changed (thanks to Aleksey for finding this bug)<br />
+• LanguageModelGenerator was not finding alternate pronunciations of a word (thanks to Sarinsukumar for finding this bug)<br />
+• AudioSessionManager will now correctly reset audio session settings that a media player object (such as an AVPlayer or MPMusicPlayerController among others) overrides if startAudioSession is run a second time afterwards. If a PocketsphinxController object is already instantiated and its loop has been started at the time that a media player object has overridden its audio session settings, after AudioSessionManager startAudioSession is run the second time, you _may_ also need to restart the listening loop if the media player’s audio session override gave PocketsphinxController an interruption signal that caused it to make a controlled exit from the listening loop.</p>
+<p>[politepix-blog-inline-text-ad]</p>
+<p>I strongly recommend upgrading to this version immediately if you use dynamic language model generation since it will improve recognition across different accents. Enjoy and let me know how it works for you, in the <a href="/forums/openears">forums as usual.</a></p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">7269</post-id>	</item>
+		<item>
+		<title>New OpenEars version .91 is out now</title>
+		<link>/2011/05/23/new-openears-version-91-is-out-now/</link>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Mon, 23 May 2011 14:18:35 +0000</pubDate>
+				<category><![CDATA[Code]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">/?p=1274</guid>
+
+					<description><![CDATA[Hello, I just uploaded the new version of OpenEars, featuring the following new stuff among other things: • All audio functions (Flite speech and Pocketsphinx recognition) handled in-memory • Low-latency Audio Unit audio driver for Pocketsphinx • Switching between all the Flite voices on the fly • Dynamically creating ARPA language models in-app • Switching [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Hello,</p>
+<p>I just uploaded the new version of <a href="/openears">OpenEars</a>, featuring the following new stuff among other things:</p>
+<p>• All audio functions (Flite speech and Pocketsphinx recognition) handled in-memory<br />
+• Low-latency Audio Unit audio driver for Pocketsphinx<br />
+• Switching between all the Flite voices on the fly<br />
+• Dynamically creating ARPA language models in-app<br />
+• Switching between different ARPA language models on the fly<br />
+• Experimental Bluetooth support<br />
+• Improved Pocketsphinx accuracy<br />
+• Re-documented for Xcode 4.</p>
+<p>[politepix-blog-inline-text-ad]</p>
+<p>Since this is such a big refactor under the hood, and there are a couple of APIs that have changed, I am still going to support the previous version 0.9.02 until 0.91 is known to be as stable as that version, so you can still <a href="/wp-content/uploads/0.9.02.zip">download that older version too</a> (previous docs are included in the download). Please <a href="/openears">check out OpenEars 0.91</a> and put it to the test! As always, bring any issues over to the <a href="/forums">forums</a> and I will assist.</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">1274</post-id>	</item>
+	</channel>
+</rss>

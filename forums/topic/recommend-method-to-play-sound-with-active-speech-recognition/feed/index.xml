@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Recommend method to play sound with active speech recognition? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/recommend-method-to-play-sound-with-active-speech-recognition/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/recommend-method-to-play-sound-with-active-speech-recognition/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:56:32 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/recommend-method-to-play-sound-with-active-speech-recognition/#post-1020026</guid>
+					<title><![CDATA[Recommend method to play sound with active speech recognition?]]></title>
+					<link>/forums/topic/recommend-method-to-play-sound-with-active-speech-recognition/#post-1020026</link>
+					<pubDate>Mon, 03 Feb 2014 23:19:20 +0000</pubDate>
+					<dc:creator>wfilleman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>Just wanted to thank you again for getting arm64 supported. I&#8217;m just about to submit my app to the App Store for approval, but I&#8217;m running into a problem.</p>
+<p>I&#8217;ve got a couple of very short sound effects that play in response to user input. Since I&#8217;ve got the speech recognizer running in the background, I&#8217;m having a hard time figuring out how to also play small sound effects.</p>
+<p>Do you have a recommended way or sample code on the acceptable way to play short .wav files?</p>
+<p>Other info: I&#8217;m not using the FliteController at all. Not instantiated or created anywhere. Only using PocketsphinxController with the flags:<br />
+outputAudio = NO;<br />
+audioSessionMixing = YES;</p>
+<p>I&#8217;ve tried setting the audioMode flag to &#8220;VoiceChat&#8221; with no difference.</p>
+<p>Thanks for the help and suggestions.</p>
+<p>Wes</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recommend-method-to-play-sound-with-active-speech-recognition/#post-1020033</guid>
+					<title><![CDATA[Reply To: Recommend method to play sound with active speech recognition?]]></title>
+					<link>/forums/topic/recommend-method-to-play-sound-with-active-speech-recognition/#post-1020033</link>
+					<pubDate>Tue, 04 Feb 2014 16:55:10 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Wes,</p>
+<p>Have you tried playing them with an AVAudioPlayer, for instance, ones that are properties of the view controller that you can load and prepareToPlay in advance so they aren&#8217;t laggy? It&#8217;s the only audio object that has absolutely no issues I&#8217;m aware of being played while the PlayAndRecord audio session is in place. You can also easily suspend and resume before and after playback so it doesn&#8217;t interfere with recognition accuracy. Let me know if that works for you.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recommend-method-to-play-sound-with-active-speech-recognition/#post-1020036</guid>
+					<title><![CDATA[Reply To: Recommend method to play sound with active speech recognition?]]></title>
+					<link>/forums/topic/recommend-method-to-play-sound-with-active-speech-recognition/#post-1020036</link>
+					<pubDate>Tue, 04 Feb 2014 20:15:19 +0000</pubDate>
+					<dc:creator>wfilleman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>Perfect, thanks. I can confirm that using AVAudioPlayer works as well as another method I found where you make a call to:</p>
+<p>OSStatus error = AudioServicesCreateSystemSoundID((CFURLRef)aFileURL, &amp;aSoundID);</p>
+<p>with your sound URL to create a system sound ID that can be played back later using:</p>
+<p>AudioServicesPlaySystemSound(_soundID);</p>
+<p>Just for completeness, while both worked, I found that the AudioServices method worked the best in my scenario. </p>
+<p>Thanks Halle!<br />
+Wes</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recommend-method-to-play-sound-with-active-speech-recognition/#post-1020037</guid>
+					<title><![CDATA[Reply To: Recommend method to play sound with active speech recognition?]]></title>
+					<link>/forums/topic/recommend-method-to-play-sound-with-active-speech-recognition/#post-1020037</link>
+					<pubDate>Tue, 04 Feb 2014 20:23:13 +0000</pubDate>
+					<dc:creator>wfilleman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>UPDATE:</p>
+<p>For clarity, I did have to set the .audioMode flag of the PocketsphinxController object to @&#8221;VoiceChat&#8221; in order to get iOS to play and record from the mic.</p>
+<p>Wes</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recommend-method-to-play-sound-with-active-speech-recognition/#post-1020038</guid>
+					<title><![CDATA[Reply To: Recommend method to play sound with active speech recognition?]]></title>
+					<link>/forums/topic/recommend-method-to-play-sound-with-active-speech-recognition/#post-1020038</link>
+					<pubDate>Tue, 04 Feb 2014 20:23:55 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Good to know &#8212; there was an old bug preventing AudioServicesPlaySystemSound from working with PlayAndRecord, so I&#8217;m happy to hear that it&#8217;s working better now.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recommend-method-to-play-sound-with-active-speech-recognition/#post-1020039</guid>
+					<title><![CDATA[Reply To: Recommend method to play sound with active speech recognition?]]></title>
+					<link>/forums/topic/recommend-method-to-play-sound-with-active-speech-recognition/#post-1020039</link>
+					<pubDate>Tue, 04 Feb 2014 20:25:02 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>For clarity, I did have to set the .audioMode flag of the PocketsphinxController object to @”VoiceChat” in order to get iOS to play and record from the mic.</p></blockquote>
+<p>Aha, maybe having VoiceChat available now is the reason this works.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recommend-method-to-play-sound-with-active-speech-recognition/#post-1020041</guid>
+					<title><![CDATA[Reply To: Recommend method to play sound with active speech recognition?]]></title>
+					<link>/forums/topic/recommend-method-to-play-sound-with-active-speech-recognition/#post-1020041</link>
+					<pubDate>Tue, 04 Feb 2014 20:28:43 +0000</pubDate>
+					<dc:creator>wfilleman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sounds reasonable. I&#8217;m happy to have stumbled into it. :)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recommend-method-to-play-sound-with-active-speech-recognition/#post-1020979</guid>
+					<title><![CDATA[Reply To: Recommend method to play sound with active speech recognition?]]></title>
+					<link>/forums/topic/recommend-method-to-play-sound-with-active-speech-recognition/#post-1020979</link>
+					<pubDate>Wed, 23 Apr 2014 09:15:36 +0000</pubDate>
+					<dc:creator>lory</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>Can you confirm I can&#8217;t use SoundSystem when Openears is started ?<br />
+Before startListening call, I can play my sound with:<br />
+AudioServicesPlaySystemSound(answerSounds[0]);</p>
+<p>Then it&#8217;s doesn&#8217;t work even if I suspend recognition. No error but I can&#8217;t hear the sound. Do you have a trick ? I&#8217;ve to use AVAudioPlayer way ?</p>
+<p>I&#8217;m not using PlayAndRecord, juste simple recognition.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recommend-method-to-play-sound-with-active-speech-recognition/#post-1020980</guid>
+					<title><![CDATA[Reply To: Recommend method to play sound with active speech recognition?]]></title>
+					<link>/forums/topic/recommend-method-to-play-sound-with-active-speech-recognition/#post-1020980</link>
+					<pubDate>Wed, 23 Apr 2014 09:21:02 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>PlayAndRecord is always used with recognition so this system sounds bug is always in effect when performing recognition. I can confirm that if you want to have sound effects it&#8217;s necessary to queue them up in an AVAudioPlayer by instantiating them and calling prepareToPlay.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recommend-method-to-play-sound-with-active-speech-recognition/#post-1027030</guid>
+					<title><![CDATA[Reply To: Recommend method to play sound with active speech recognition?]]></title>
+					<link>/forums/topic/recommend-method-to-play-sound-with-active-speech-recognition/#post-1027030</link>
+					<pubDate>Wed, 14 Oct 2015 00:27:52 +0000</pubDate>
+					<dc:creator>tbrandt78</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Posted in wrong forum &#8211; edited to delete.<br />
+Excuse me.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

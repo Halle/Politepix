@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>OpenEars suspendRecognition not working in ViewDidAppear &#8211; Politepix</title>
+		<atom:link href="/forums/topic/openears-suspendrecognition-not-working-in-viewdidappear/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/openears-suspendrecognition-not-working-in-viewdidappear/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:06:07 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/openears-suspendrecognition-not-working-in-viewdidappear/#post-1020519</guid>
+					<title><![CDATA[OpenEars suspendRecognition not working in ViewDidAppear]]></title>
+					<link>/forums/topic/openears-suspendrecognition-not-working-in-viewdidappear/#post-1020519</link>
+					<pubDate>Fri, 14 Mar 2014 07:20:46 +0000</pubDate>
+					<dc:creator>vinay.chopra@tresbu.com</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am using OpenEars framework for speech recognition.</p>
+<p>In my <code>viewdidload</code> method i am calling </p>
+<p>    [self.pocketsphinxController startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[AcousticModel pathToModel:@&#8221;AcousticModelEnglish&#8221;] languageModelIsJSGF:NO]; // Change &#8220;AcousticModelEnglish&#8221; to &#8220;AcousticModelSpanish&#8221; to perform Spanish recognition instead of English.</p>
+<p>Now i want to suspend it <code>viewdidapper</code> method so i place a method call</p>
+<p>    [self.pocketsphinxController suspendRecognition];</p>
+<p>But still the recognition is not suspended, i placed a button on my VC and in function of that button is only to suspend the recognition and its working there with button but not with view did appear method.</p>
+<p>Can anyone suggest the probable reason ?</p>
+<p>Thanks in advance .</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-suspendrecognition-not-working-in-viewdidappear/#post-1020520</guid>
+					<title><![CDATA[Reply To: OpenEars suspendRecognition not working in ViewDidAppear]]></title>
+					<link>/forums/topic/openears-suspendrecognition-not-working-in-viewdidappear/#post-1020520</link>
+					<pubDate>Fri, 14 Mar 2014 07:35:50 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Calls to suspend are ignored when listening isn&#8217;t in progress (you can probably see this explanation for why your call is being ignored if you turn on OpenEarsLogging). Listening won&#8217;t be in progress there because the call to suspend is coming milliseconds after the call to startListening and the listening startup takes a few seconds. You might have better luck if you put the call to suspend in your OpenEarsEventsObserver callback indicating that listening has begun.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-suspendrecognition-not-working-in-viewdidappear/#post-1020521</guid>
+					<title><![CDATA[Reply To: OpenEars suspendRecognition not working in ViewDidAppear]]></title>
+					<link>/forums/topic/openears-suspendrecognition-not-working-in-viewdidappear/#post-1020521</link>
+					<pubDate>Fri, 14 Mar 2014 07:41:06 +0000</pubDate>
+					<dc:creator>vinay.chopra@tresbu.com</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Basically i was trying to find a way that if the device is speaking then it should stop listening and once the speech of device is complete then it should start listening , Logic i applied in view did appear is:</p>
+<p>    [self.pocketsphinxController suspendRecognition];<br />
+    [self.fliteController say:message withVoice:self.slt];<br />
+    [self.pocketsphinxController resumeRecognition];<br />
+////</p>
+<p>i want my app should say welcome to the user and then ask the user do you want to continue say YES or NO ?</p>
+<p>and then it should resume listening .</p>
+<p>kindly help me with this logic. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-suspendrecognition-not-working-in-viewdidappear/#post-1020522</guid>
+					<title><![CDATA[Reply To: OpenEars suspendRecognition not working in ViewDidAppear]]></title>
+					<link>/forums/topic/openears-suspendrecognition-not-working-in-viewdidappear/#post-1020522</link>
+					<pubDate>Fri, 14 Mar 2014 08:04:17 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That is done automatically by FliteController.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-suspendrecognition-not-working-in-viewdidappear/#post-1020523</guid>
+					<title><![CDATA[Reply To: OpenEars suspendRecognition not working in ViewDidAppear]]></title>
+					<link>/forums/topic/openears-suspendrecognition-not-working-in-viewdidappear/#post-1020523</link>
+					<pubDate>Fri, 14 Mar 2014 08:46:12 +0000</pubDate>
+					<dc:creator>vinay.chopra@tresbu.com</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>In my case i have put a statement in view did appear that will ask a question to user in YES/NO<br />
+at this scenario the listening should be suspended but the logs says that device is listening something and it takes words as input from the text what it is speaking , so i want to separate the device speech and user&#8217;s speech .</p>
+<p>A snippet will be helpful :)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-suspendrecognition-not-working-in-viewdidappear/#post-1020524</guid>
+					<title><![CDATA[Reply To: OpenEars suspendRecognition not working in ViewDidAppear]]></title>
+					<link>/forums/topic/openears-suspendrecognition-not-working-in-viewdidappear/#post-1020524</link>
+					<pubDate>Fri, 14 Mar 2014 08:57:59 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The device speech causes listening for speech to be suspended so you don&#8217;t have to worry about having a secondary UI to manage it. You can see this working in the sample app (also a great source of snippets).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-suspendrecognition-not-working-in-viewdidappear/#post-1020525</guid>
+					<title><![CDATA[Reply To: OpenEars suspendRecognition not working in ViewDidAppear]]></title>
+					<link>/forums/topic/openears-suspendrecognition-not-working-in-viewdidappear/#post-1020525</link>
+					<pubDate>Fri, 14 Mar 2014 09:10:01 +0000</pubDate>
+					<dc:creator>vinay.chopra@tresbu.com</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hey still issue persist i have uploaded my source code which i am trying . </p>
+<p>Check the logs once the view appear it ask the user for YES/NO and this is being processed as a speech text and taken as input.</p>
+<p>Please check the source code on this link:</p>
+<p><a href="https://drive.google.com/file/d/0ByJ28nM_D2OgT25US2RUdE5jNDQ/edit?usp=sharing" rel="nofollow">https://drive.google.com/file/d/0ByJ28nM_D2OgT25US2RUdE5jNDQ/edit?usp=sharing</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-suspendrecognition-not-working-in-viewdidappear/#post-1020526</guid>
+					<title><![CDATA[Reply To: OpenEars suspendRecognition not working in ViewDidAppear]]></title>
+					<link>/forums/topic/openears-suspendrecognition-not-working-in-viewdidappear/#post-1020526</link>
+					<pubDate>Fri, 14 Mar 2014 09:16:13 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry, I can only look at very small source excerpts that can be put in this forum. Just check out the sample app, which performs this precise function of not performing recognition when speaking using FliteController by default. It&#8217;s only necessary to compare your implementation with the implementation there.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-suspendrecognition-not-working-in-viewdidappear/#post-1020527</guid>
+					<title><![CDATA[Reply To: OpenEars suspendRecognition not working in ViewDidAppear]]></title>
+					<link>/forums/topic/openears-suspendrecognition-not-working-in-viewdidappear/#post-1020527</link>
+					<pubDate>Fri, 14 Mar 2014 09:24:21 +0000</pubDate>
+					<dc:creator>vinay.chopra@tresbu.com</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the help ,</p>
+<p>I need to use this function rather place voice data in in view did appear for the welcome speech:</p>
+<p>&#8211; (void) pocketsphinxDidCompleteCalibration {<br />
+	NSLog(@&#8221;Pocketsphinx calibration is complete.&#8221;);<br />
+    [self instructUser:@&#8221;Do you want to read the NEWS , say YES or NO ?&#8221;];</p>
+<p>}</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-suspendrecognition-not-working-in-viewdidappear/#post-1020529</guid>
+					<title><![CDATA[Reply To: OpenEars suspendRecognition not working in ViewDidAppear]]></title>
+					<link>/forums/topic/openears-suspendrecognition-not-working-in-viewdidappear/#post-1020529</link>
+					<pubDate>Fri, 14 Mar 2014 09:28:43 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Try not starting FliteController speech until speech recognition has started (using pocketsphinxDidStartListening instead of pocketsphinxDidCompleteCalibration). </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

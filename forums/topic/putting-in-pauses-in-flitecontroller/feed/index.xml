@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Putting in pauses in flitecontroller &#8211; Politepix</title>
+		<atom:link href="/forums/topic/putting-in-pauses-in-flitecontroller/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/putting-in-pauses-in-flitecontroller/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:55:42 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/putting-in-pauses-in-flitecontroller/#post-10979</guid>
+					<title><![CDATA[Putting in pauses in flitecontroller]]></title>
+					<link>/forums/topic/putting-in-pauses-in-flitecontroller/#post-10979</link>
+					<pubDate>Wed, 05 Sep 2012 20:47:02 +0000</pubDate>
+					<dc:creator>ameetnsharma</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi. I&#8217;m new to OpenEars. I was wondering if there&#8217;s anything I can put in the string that will make flitecontroller pause when it says the text. What I&#8217;d like to do is put in longer pauses between sentences. I&#8217;d rather do this without stopping and restarting flitecontroller&#8230; meaning I&#8217;d like the string itself to make flitecontroller pause.</p>
+<p>Thanks! OpenEars is fantastic.</p>
+<p>-Ameet</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/putting-in-pauses-in-flitecontroller/#post-10980</guid>
+					<title><![CDATA[Reply To: Putting in pauses in flitecontroller]]></title>
+					<link>/forums/topic/putting-in-pauses-in-flitecontroller/#post-10980</link>
+					<pubDate>Wed, 05 Sep 2012 20:56:35 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry, this isn&#8217;t currently possible, but I&#8217;ll take it under advisement as a useful future feature.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/putting-in-pauses-in-flitecontroller/#post-10981</guid>
+					<title><![CDATA[Reply To: Putting in pauses in flitecontroller]]></title>
+					<link>/forums/topic/putting-in-pauses-in-flitecontroller/#post-10981</link>
+					<pubDate>Wed, 05 Sep 2012 20:59:39 +0000</pubDate>
+					<dc:creator>ameetnsharma</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>No problem. Thanks for the prompt reply.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/putting-in-pauses-in-flitecontroller/#post-1017642</guid>
+					<title><![CDATA[Reply To: Putting in pauses in flitecontroller]]></title>
+					<link>/forums/topic/putting-in-pauses-in-flitecontroller/#post-1017642</link>
+					<pubDate>Wed, 10 Jul 2013 21:53:06 +0000</pubDate>
+					<dc:creator>walter</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi I&#8217;m looking for the same functionality described above. I&#8217;d like to include a one second pause within a string passed to the say method. Is that possible currently?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/putting-in-pauses-in-flitecontroller/#post-1017644</guid>
+					<title><![CDATA[Reply To: Putting in pauses in flitecontroller]]></title>
+					<link>/forums/topic/putting-in-pauses-in-flitecontroller/#post-1017644</link>
+					<pubDate>Wed, 10 Jul 2013 22:02:36 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>There is currently no way to insert a pause into a FliteController statement. Is there a reason not to do it as two separate statements?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

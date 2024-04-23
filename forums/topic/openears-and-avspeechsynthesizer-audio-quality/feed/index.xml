@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>OpenEars and AVSpeechSynthesizer audio quality  &#8211; Politepix</title>
+		<atom:link href="/forums/topic/openears-and-avspeechsynthesizer-audio-quality/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/openears-and-avspeechsynthesizer-audio-quality/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:09:27 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/openears-and-avspeechsynthesizer-audio-quality/#post-1022374</guid>
+					<title><![CDATA[OpenEars and AVSpeechSynthesizer audio quality]]></title>
+					<link>/forums/topic/openears-and-avspeechsynthesizer-audio-quality/#post-1022374</link>
+					<pubDate>Mon, 25 Aug 2014 11:52:22 +0000</pubDate>
+					<dc:creator>Branko</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi everyone,<br />
+I am using OpenEars to recognise what&#8217;s user saying and AVSpeechSynthesizer to say different messages to user.<br />
+The thing is that AVSpeechSynthesizer output audio quality is dropping dramatically when OpenEars speech recognition is on. When I turn off speech recognition audio quality is back to normal.<br />
+I can&#8217;t figure out why is that happening. Do you have any ideas?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-and-avspeechsynthesizer-audio-quality/#post-1022375</guid>
+					<title><![CDATA[Reply To: OpenEars and AVSpeechSynthesizer audio quality]]></title>
+					<link>/forums/topic/openears-and-avspeechsynthesizer-audio-quality/#post-1022375</link>
+					<pubDate>Mon, 25 Aug 2014 11:54:17 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>This is a known issue due to PocketsphinxController requiring the PlayAndRecord audio session with a particular sample rate. You can read about it in the FAQ and in other threads on issues of audio coexistence. I&#8217;m currently researching improvements to this but it&#8217;s fairly complex.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-and-avspeechsynthesizer-audio-quality/#post-1022376</guid>
+					<title><![CDATA[Reply To: OpenEars and AVSpeechSynthesizer audio quality]]></title>
+					<link>/forums/topic/openears-and-avspeechsynthesizer-audio-quality/#post-1022376</link>
+					<pubDate>Mon, 25 Aug 2014 12:11:48 +0000</pubDate>
+					<dc:creator>Branko</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for rapid answer!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

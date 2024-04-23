@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>New version Flite issue &#8211; Politepix</title>
+		<atom:link href="/forums/topic/new-version-flite-issue/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/new-version-flite-issue/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:48:24 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/new-version-flite-issue/#post-14925</guid>
+					<title><![CDATA[New version Flite issue]]></title>
+					<link>/forums/topic/new-version-flite-issue/#post-14925</link>
+					<pubDate>Mon, 17 Dec 2012 01:48:49 +0000</pubDate>
+					<dc:creator>Art</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi :)<br />
+Since getting my new iPad on iOS 6, I can&#8217;t get Flite to work since I had to<br />
+also download a new version of Openears with the commands changed.<br />
+I have followed the instructions, and the code compiles.<br />
+When it comes time to speak, there is a pause, but nothing is spoken.</p>
+<p>It looks like the old framework files were not removed from the project properly.<br />
+Maybe this is a problem.<br />
+There is a compiler warning saying it can&#8217;t find Openears in the location that<br />
+the old version used to be, even though those files are deleted.<br />
+Any help appreciated.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/new-version-flite-issue/#post-14927</guid>
+					<title><![CDATA[Reply To: New version Flite issue]]></title>
+					<link>/forums/topic/new-version-flite-issue/#post-14927</link>
+					<pubDate>Mon, 17 Dec 2012 14:34:33 +0000</pubDate>
+					<dc:creator>Art</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Seems I solved my own problem.<br />
+I found out how to remove the references in build settings, but that wasn&#8217;t it.</p>
+<p>I was using this with the older code:<br />
+[code]<br />
+    // [self.fliteController say:[NSString stringWithFormat:@&#8221; &#8220;] withVoice:self.slt];<br />
+    // looks like this flite kickstart is no longer needed<br />
+[/code]</p>
+<p>I found that the sentence I wanted spoken came out sooner, if this was sent shortly beforehand.<br />
+In the new OpenEars, it stops it saying what&#8217;s coming next, and you hear nothing.</p>
+<p>Cheers, Art.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/new-version-flite-issue/#post-14928</guid>
+					<title><![CDATA[Reply To: New version Flite issue]]></title>
+					<link>/forums/topic/new-version-flite-issue/#post-14928</link>
+					<pubDate>Mon, 17 Dec 2012 14:35:55 +0000</pubDate>
+					<dc:creator>Art</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Oh, all working now BTW.<br />
+First time working for me on iPad and iPhone 5 thanks :)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/new-version-flite-issue/#post-14929</guid>
+					<title><![CDATA[Reply To: New version Flite issue]]></title>
+					<link>/forums/topic/new-version-flite-issue/#post-14929</link>
+					<pubDate>Mon, 17 Dec 2012 14:41:30 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Heh, I was just coming in here to see if I could find the old guide to definitively removing the old version somewhere, when you posted that you sorted it out yourself :) . Nice work and thank you for updating me.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

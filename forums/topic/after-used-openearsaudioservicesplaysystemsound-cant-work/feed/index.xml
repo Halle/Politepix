@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] After used OpenEars,AudioServicesPlaySystemSound can&#039;t work &#8211; Politepix</title>
+		<atom:link href="/forums/topic/after-used-openearsaudioservicesplaysystemsound-cant-work/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/after-used-openearsaudioservicesplaysystemsound-cant-work/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:55:22 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/after-used-openearsaudioservicesplaysystemsound-cant-work/#post-9327</guid>
+					<title><![CDATA[[Resolved] After used OpenEars,AudioServicesPlaySystemSound can&#039;t work]]></title>
+					<link>/forums/topic/after-used-openearsaudioservicesplaysystemsound-cant-work/#post-9327</link>
+					<pubDate>Fri, 13 Apr 2012 23:20:33 +0000</pubDate>
+					<dc:creator>archerlu</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OpenEars is great, but I found, if  I used pocketsphinxController to recognize voice, after that, AudioServicesPlaySystemSound() can&#8217;t make any sound&#8230;.<br />
+Can OpenEars  work with AudioToolbox.framework?<br />
+Anyone  figure out that?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/after-used-openearsaudioservicesplaysystemsound-cant-work/#post-9328</guid>
+					<title><![CDATA[Reply To: After used OpenEars,AudioServicesPlaySystemSound can&#039;t work]]></title>
+					<link>/forums/topic/after-used-openearsaudioservicesplaysystemsound-cant-work/#post-9328</link>
+					<pubDate>Sat, 14 Apr 2012 06:51:16 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OpenEars uses the AudioToolbox.framework so it has to be compatible with it. Can you tell me which version of OpenEars you are using? This might have something to do with the new AudioSessionManager behavior in 1.0/1.01.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/after-used-openearsaudioservicesplaysystemsound-cant-work/#post-9330</guid>
+					<title><![CDATA[Reply To: After used OpenEars,AudioServicesPlaySystemSound can&#039;t work]]></title>
+					<link>/forums/topic/after-used-openearsaudioservicesplaysystemsound-cant-work/#post-9330</link>
+					<pubDate>Sun, 15 Apr 2012 01:19:46 +0000</pubDate>
+					<dc:creator>archerlu</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The version is 1.0.<br />
+May I should try 1.01?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/after-used-openearsaudioservicesplaysystemsound-cant-work/#post-9331</guid>
+					<title><![CDATA[Reply To: After used OpenEars,AudioServicesPlaySystemSound can&#039;t work]]></title>
+					<link>/forums/topic/after-used-openearsaudioservicesplaysystemsound-cant-work/#post-9331</link>
+					<pubDate>Sun, 15 Apr 2012 04:19:24 +0000</pubDate>
+					<dc:creator>archerlu</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>After I upgraded, the problem didn&#8217;t happen again.<br />
+Amazing!<br />
+Thank Halle, for your help.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/after-used-openearsaudioservicesplaysystemsound-cant-work/#post-9332</guid>
+					<title><![CDATA[Reply To: After used OpenEars,AudioServicesPlaySystemSound can&#039;t work]]></title>
+					<link>/forums/topic/after-used-openearsaudioservicesplaysystemsound-cant-work/#post-9332</link>
+					<pubDate>Sun, 15 Apr 2012 07:17:44 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Awesome, very glad to hear it.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/after-used-openearsaudioservicesplaysystemsound-cant-work/#post-1015979</guid>
+					<title><![CDATA[Reply To: [Resolved] After used OpenEars,AudioServicesPlaySystemSound can&#039;t work]]></title>
+					<link>/forums/topic/after-used-openearsaudioservicesplaysystemsound-cant-work/#post-1015979</link>
+					<pubDate>Tue, 19 Mar 2013 20:51:44 +0000</pubDate>
+					<dc:creator>lmthekay</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Oh, oh, on March 19, the same problem is happening.  I downloaded and re-installed the &#8220;OpenEars Stable&#8221; just to make sure I was up with the very latest release.  Haven&#8217;t tried 1.3 since it&#8217;s going into a to-be-produced product.<br />
+Thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/after-used-openearsaudioservicesplaysystemsound-cant-work/#post-1015980</guid>
+					<title><![CDATA[Reply To: [Resolved] After used OpenEars,AudioServicesPlaySystemSound can&#039;t work]]></title>
+					<link>/forums/topic/after-used-openearsaudioservicesplaysystemsound-cant-work/#post-1015980</link>
+					<pubDate>Tue, 19 Mar 2013 21:35:39 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>Unfortunately there are some known iOS issues with system sounds and the PlayAndRecord audio session setting &#8212; I think this thread has a bit more information:</p>
+<p><a href="/forums/topic/keep-system-sounds-while-listening/">/forums/topic/keep-system-sounds-while-listening/</a></p>
+<p>And all of the discussions to date can be read here:</p>
+<p><a href="https://www.google.com/search?hl=en&#038;as_q=site%3A%2Fforums+AudioServicesPlaySystemSound" rel="nofollow">https://www.google.com/search?hl=en&#038;as_q=site%3A%2Fforums+AudioServicesPlaySystemSound</a></p>
+<p>The bottom line is that you can always play back with AVAudioPlayer, but you could encounter difficulties using AudioServicesPlaySystemSound, although it might be worth trying the workarounds in the linked threads.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/after-used-openearsaudioservicesplaysystemsound-cant-work/#post-1015992</guid>
+					<title><![CDATA[Reply To: [Resolved] After used OpenEars,AudioServicesPlaySystemSound can&#039;t work]]></title>
+					<link>/forums/topic/after-used-openearsaudioservicesplaysystemsound-cant-work/#post-1015992</link>
+					<pubDate>Wed, 20 Mar 2013 13:58:47 +0000</pubDate>
+					<dc:creator>lmthekay</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for all these threads.  They should be what I need.  And thanks for always being so quick with your answers, I&#8217;m sure I&#8217;m not the only one who appreciates that.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

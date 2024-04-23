@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>RapidEars &#039;PocketsphinxController setRapidEarsToVerbose&#039; error &#8211; Politepix</title>
+		<atom:link href="/forums/topic/rapidears-pocketsphinxcontroller-setrapidearstoverbose-error/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/rapidears-pocketsphinxcontroller-setrapidearstoverbose-error/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:44:42 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/rapidears-pocketsphinxcontroller-setrapidearstoverbose-error/#post-14913</guid>
+					<title><![CDATA[RapidEars &#039;PocketsphinxController setRapidEarsToVerbose&#039; error]]></title>
+					<link>/forums/topic/rapidears-pocketsphinxcontroller-setrapidearstoverbose-error/#post-14913</link>
+					<pubDate>Sat, 15 Dec 2012 16:58:51 +0000</pubDate>
+					<dc:creator>Matt</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Everyone,</p>
+<p>I get the following error when trying to run an app using RapidEars:</p>
+<p>[PocketsphinxController setRapidEarsToVerbose:]: unrecognized selector sent to instance 0x1e54d260&#8242;</p>
+<p>Any ideas how to resolve?</p>
+<p>Regards,</p>
+<p>Matt</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-pocketsphinxcontroller-setrapidearstoverbose-error/#post-14914</guid>
+					<title><![CDATA[Reply To: RapidEars &#039;PocketsphinxController setRapidEarsToVerbose&#039; error]]></title>
+					<link>/forums/topic/rapidears-pocketsphinxcontroller-setrapidearstoverbose-error/#post-14914</link>
+					<pubDate>Sat, 15 Dec 2012 17:04:38 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Matt,</p>
+<p>Which version of RapidEars and which version of OpenEars? Do other methods of RapidEars work? You can find version numbers in the included documentation with both downloads.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-pocketsphinxcontroller-setrapidearstoverbose-error/#post-14915</guid>
+					<title><![CDATA[Reply To: RapidEars &#039;PocketsphinxController setRapidEarsToVerbose&#039; error]]></title>
+					<link>/forums/topic/rapidears-pocketsphinxcontroller-setrapidearstoverbose-error/#post-14915</link>
+					<pubDate>Sat, 15 Dec 2012 18:49:16 +0000</pubDate>
+					<dc:creator>Matt</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Halle,</p>
+<p>Thank you for the quick response.</p>
+<p>From the Info.plist file:</p>
+<p>OpenEars Version 1<br />
+RapidEars Version 1</p>
+<p>I am unsure if other methods work. The debugger doesn&#8217;t show any other methods working.</p>
+<p>Regards,</p>
+<p>Matt</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-pocketsphinxcontroller-setrapidearstoverbose-error/#post-14916</guid>
+					<title><![CDATA[Reply To: RapidEars &#039;PocketsphinxController setRapidEarsToVerbose&#039; error]]></title>
+					<link>/forums/topic/rapidears-pocketsphinxcontroller-setrapidearstoverbose-error/#post-14916</link>
+					<pubDate>Sat, 15 Dec 2012 18:54:03 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, could you tell me what the versions are that are shown on the front page of the pdf of the OpenEars documentation and the pdf of the RapidEars documentation? The Info.plist isn&#8217;t used for frameworks.</p>
+<p>Quick question, didn&#8217;t you have a working install of RapidEars previously? Just checking if something has changed in your setup.</p>
+<p><a href="/forums/topic/problem-switching-between-openears-and-rapidears/">/forums/topic/problem-switching-between-openears-and-rapidears/</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-pocketsphinxcontroller-setrapidearstoverbose-error/#post-14921</guid>
+					<title><![CDATA[Reply To: RapidEars &#039;PocketsphinxController setRapidEarsToVerbose&#039; error]]></title>
+					<link>/forums/topic/rapidears-pocketsphinxcontroller-setrapidearstoverbose-error/#post-14921</link>
+					<pubDate>Sun, 16 Dec 2012 08:34:54 +0000</pubDate>
+					<dc:creator>Matt</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Halle,</p>
+<p>OpenEars version 1.1<br />
+RapidEars demo version 1.2.4</p>
+<p>I am running multiple apps using the above frameworks. Could that be causing the problem? I did purchase a licensed copy of RapidEars, but I am using the demo version in multiple apps while I test different approaches. Once I&#8217;ve decided which approach to go with, I&#8217;ll use the licensed copy of RapidEars.</p>
+<p>Regards,</p>
+<p>Matt</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-pocketsphinxcontroller-setrapidearstoverbose-error/#post-14922</guid>
+					<title><![CDATA[Reply To: RapidEars &#039;PocketsphinxController setRapidEarsToVerbose&#039; error]]></title>
+					<link>/forums/topic/rapidears-pocketsphinxcontroller-setrapidearstoverbose-error/#post-14922</link>
+					<pubDate>Sun, 16 Dec 2012 08:42:33 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, that shouldn&#8217;t cause an issue as long as you are positive that you are linking to the demo framework from the non-licensed apps and not the licensed framework.</p>
+<p>Are you positive that you set the -ObjC &#8220;Other Linker Flag&#8221; in the target of the app that is having the issue? It looks like the RapidEars demo was somehow just not quite successfully installed by the exact steps in the tutorial. That is usually the step that would cause a method that is in the plugin to not work.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

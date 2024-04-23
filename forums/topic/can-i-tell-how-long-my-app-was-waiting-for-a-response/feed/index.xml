@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Can I tell how long my app was waiting for a response? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/can-i-tell-how-long-my-app-was-waiting-for-a-response/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/can-i-tell-how-long-my-app-was-waiting-for-a-response/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:03:23 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/can-i-tell-how-long-my-app-was-waiting-for-a-response/#post-1022218</guid>
+					<title><![CDATA[Can I tell how long my app was waiting for a response?]]></title>
+					<link>/forums/topic/can-i-tell-how-long-my-app-was-waiting-for-a-response/#post-1022218</link>
+					<pubDate>Thu, 14 Aug 2014 15:46:02 +0000</pubDate>
+					<dc:creator>boombatz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,<br />
+I thought I read this somewhere in the doc&#8217;s but now I can&#8217;t find it.  I want to start listening and if I haven&#8217;t heard anything in five seconds then say something like &#8220;I don&#8217;t hear you&#8221;<br />
+Is there an existing method or parameter that will help me do this?<br />
+Thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/can-i-tell-how-long-my-app-was-waiting-for-a-response/#post-1022220</guid>
+					<title><![CDATA[Reply To: Can I tell how long my app was waiting for a response?]]></title>
+					<link>/forums/topic/can-i-tell-how-long-my-app-was-waiting-for-a-response/#post-1022220</link>
+					<pubDate>Thu, 14 Aug 2014 16:02:09 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This is something that you would want to handle in your own app logic, perhaps with an NSTimer.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/can-i-tell-how-long-my-app-was-waiting-for-a-response/#post-1022234</guid>
+					<title><![CDATA[Reply To: Can I tell how long my app was waiting for a response?]]></title>
+					<link>/forums/topic/can-i-tell-how-long-my-app-was-waiting-for-a-response/#post-1022234</link>
+					<pubDate>Thu, 14 Aug 2014 23:35:40 +0000</pubDate>
+					<dc:creator>boombatz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That&#8217;s what I was thinking. Thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/can-i-tell-how-long-my-app-was-waiting-for-a-response/#post-1022235</guid>
+					<title><![CDATA[Reply To: Can I tell how long my app was waiting for a response?]]></title>
+					<link>/forums/topic/can-i-tell-how-long-my-app-was-waiting-for-a-response/#post-1022235</link>
+					<pubDate>Thu, 14 Aug 2014 23:38:15 +0000</pubDate>
+					<dc:creator>boombatz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>HI,<br />
+I can&#8217;t seem to download the extra voices from bitbucket.  I&#8217;m logged in and pretty sure I&#8217;m doing it correctly.  Are they available from another source?</p>
+<p>Here&#8217;s the log.<br />
+18:50:24 git import for: <a href="https://bitbucket.org/Politepix/openearsextras/src/9f15cdb9e746732402e928424a46debb9d79ecc7?at=master" rel="nofollow">https://bitbucket.org/Politepix/openearsextras/src/9f15cdb9e746732402e928424a46debb9d79ecc7?at=master</a><br />
+18:50:24 Cloning <a href="https://bitbucket.org/Politepix/openearsextras/src/9f15cdb9e746732402e928424a46debb9d79ecc7?at=master&#038;#8230" rel="nofollow">https://bitbucket.org/Politepix/openearsextras/src/9f15cdb9e746732402e928424a46debb9d79ecc7?at=master&#038;#8230</a>;<br />
+18:50:24 Cloning into bare repository &#8216;BobbySch/9f15cdb9e746732402e928424a46debb9d79ecc7at-master&#8217;&#8230;<br />
+18:50:24 fatal: <a href="https://bitbucket.org/Politepix/openearsextras/src/9f15cdb9e746732402e928424a46debb9d79ecc7?at=master/info/refs" rel="nofollow">https://bitbucket.org/Politepix/openearsextras/src/9f15cdb9e746732402e928424a46debb9d79ecc7?at=master/info/refs</a> not valid: is this a git repository?<br />
+18:50:25 Remote Git clone failed: &lt;class &#8216;bitbucket.apps.async.tasks.ImportException&#8217;&gt;: Command failed. Return value: 128</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/can-i-tell-how-long-my-app-was-waiting-for-a-response/#post-1022241</guid>
+					<title><![CDATA[Reply To: Can I tell how long my app was waiting for a response?]]></title>
+					<link>/forums/topic/can-i-tell-how-long-my-app-was-waiting-for-a-response/#post-1022241</link>
+					<pubDate>Fri, 15 Aug 2014 07:16:15 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry, that sounds like a git or a bitbucket issue. I think bitbucket support is probably the way to go.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/can-i-tell-how-long-my-app-was-waiting-for-a-response/#post-1022250</guid>
+					<title><![CDATA[Reply To: Can I tell how long my app was waiting for a response?]]></title>
+					<link>/forums/topic/can-i-tell-how-long-my-app-was-waiting-for-a-response/#post-1022250</link>
+					<pubDate>Fri, 15 Aug 2014 16:11:43 +0000</pubDate>
+					<dc:creator>boombatz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>ok i&#8217;ll give them a try</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

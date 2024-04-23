@@ -1,0 +1,927 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Open Ears/Rapid Ears 2.0 + Bluetooth &#8211; Politepix</title>
+		<atom:link href="/forums/topic/open-earsrapid-ears-2-0-bluetooth/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/open-earsrapid-ears-2-0-bluetooth/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:41:21 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/open-earsrapid-ears-2-0-bluetooth/#post-1023318</guid>
+					<title><![CDATA[Open Ears/Rapid Ears 2.0 + Bluetooth]]></title>
+					<link>/forums/topic/open-earsrapid-ears-2-0-bluetooth/#post-1023318</link>
+					<pubDate>Tue, 09 Dec 2014 02:23:32 +0000</pubDate>
+					<dc:creator>morchella</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Unfortunately, 2.0 does not seem to have fixed bluetooth for me. I&#8217;m not seeing an exception (as before), however I don&#8217;t get any audio output nor is audio input recognized. This is true both in my app and in the sample app.</p>
+<p>This headset generally works fine with my iPhone &#8211; for playback, live voice and recording.</p>
+<p>Below are the logs (with both logging and RE verbose logging turned on).</p>
+<p>2014-12-08 18:16:04.528 MyAppName[250:17184] Starting OpenEars logging for OpenEars version 2.0 on 32-bit device (or build): iPhone running iOS version: 8.100000<br />
+2014-12-08 18:16:04.536 MyAppName[250:17184] Starting dynamic language model generation</p>
+<p>2014-12-08 18:16:04.609 MyAppName[250:17184] Done creating language model with CMUCLMTK in 0.072115 seconds.<br />
+2014-12-08 18:16:04.725 MyAppName[250:17184] I&#8217;m done running performDictionaryLookup and it took 0.086781 seconds<br />
+2014-12-08 18:16:04.733 MyAppName[250:17184] I&#8217;m done running dynamic language model generation and it took 0.202271 seconds<br />
+2014-12-08 18:16:04.734 MyAppName[250:17184] suspendListening<br />
+2014-12-08 18:16:04.735 MyAppName[250:17184] Creating shared instance of OEPocketsphinxController<br />
+2014-12-08 18:16:12.282 MyAppName[250:17184] startListening<br />
+2014-12-08 18:16:12.283 MyAppName[250:17184] Attempting to start listening session from startRealtimeListeningWithLanguageModelAtPath:<br />
+2014-12-08 18:16:12.303 MyAppName[250:17184] User gave mic permission for this app.<br />
+2014-12-08 18:16:12.304 MyAppName[250:17184] Valid setSecondsOfSilence value of 1.500000 will be used.<br />
+2014-12-08 18:16:12.305 MyAppName[250:17184] Successfully started listening session from startRealtimeListeningWithLanguageModelAtPath:<br />
+2014-12-08 18:16:12.306 MyAppName[250:17289] Starting listening.<br />
+2014-12-08 18:16:12.307 MyAppName[250:17289] about to set up audio session<br />
+2014-12-08 18:16:13.941 MyAppName[250:17300] Audio route has changed for the following reason:<br />
+2014-12-08 18:16:13.959 MyAppName[250:17300] There was a category change. The new category is AVAudioSessionCategoryPlayAndRecord<br />
+2014-12-08 18:16:13.967 MyAppName[250:17300] This is not a case in which OpenEars notifies of a route change. At the close of this function, the new audio route is &#8212;BluetoothHFPBluetoothHFP&#8212;. The previous route before changing to this route was &lt;AVAudioSessionRouteDescription: 0x1460e990,<br />
+inputs = (<br />
+    &#8220;&lt;AVAudioSessionPortDescription: 0x147014e0, type = BluetoothHFP; name = Powerbeats Wireless; UID = 04:88:E2:37:55:15-tsco; selectedDataSource = (null)&gt;&#8221;<br />
+);<br />
+outputs = (<br />
+    &#8220;&lt;AVAudioSessionPortDescription: 0x1584a310, type = BluetoothHFP; name = Powerbeats Wireless; UID = 04:88:E2:37:55:15-tsco; selectedDataSource = (null)&gt;&#8221;<br />
+)&gt;.<br />
+2014-12-08 18:16:13.978 MyAppName[250:17300] Audio route has changed for the following reason:<br />
+2014-12-08 18:16:13.988 MyAppName[250:17300] There was a category change. The new category is AVAudioSessionCategoryPlayAndRecord<br />
+2014-12-08 18:16:14.002 MyAppName[250:17300] This is not a case in which OpenEars notifies of a route change. At the close of this function, the new audio route is &#8212;BluetoothHFPBluetoothHFP&#8212;. The previous route before changing to this route was &lt;AVAudioSessionRouteDescription: 0x14633e40,<br />
+inputs = (<br />
+    &#8220;&lt;AVAudioSessionPortDescription: 0x15856d20, type = MicrophoneBuiltIn; name = iPhone Microphone; UID = Built-In Microphone; selectedDataSource = Bottom&gt;&#8221;<br />
+);<br />
+outputs = (<br />
+    &#8220;&lt;AVAudioSessionPortDescription: 0x15864b70, type = Receiver; name = Receiver; UID = Built-In Receiver; selectedDataSource = (null)&gt;&#8221;<br />
+)&gt;.<br />
+2014-12-08 18:16:14.005 MyAppName[250:17289] done starting audio unit<br />
+INFO: cmd_ln.c(702): Parsing command line:<br />
+\<br />
+	-lm /var/mobile/Containers/Data/Application/1F371ED4-3393-4462-8C8F-805328AB0229/Library/Caches/KokomotCommands.DMP \<br />
+	-vad_threshold 1.500000 \<br />
+	-remove_noise yes \<br />
+	-remove_silence yes \<br />
+	-bestpath yes \<br />
+	-lw 6.500000 \<br />
+	-dict /var/mobile/Containers/Data/Application/1F371ED4-3393-4462-8C8F-805328AB0229/Library/Caches/KokomotCommands.dic \<br />
+	-hmm /private/var/mobile/Containers/Bundle/Application/36B1D4C2-AB0D-44BC-8059-34B83BB90229/MyAppName.app/AcousticModelEnglish.bundle </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-allphone<br />
+-allphone_ci	no		no<br />
+-alpha		0.97		9.700000e-01<br />
+-argfile<br />
+-ascale		20.0		2.000000e+01<br />
+-aw		1		1<br />
+-backtrace	no		no<br />
+-beam		1e-48		1.000000e-48<br />
+-bestpath	yes		yes<br />
+-bestpathlw	9.5		9.500000e+00<br />
+-bghist		no		no<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		8.0<br />
+-compallsen	no		no<br />
+-debug				0<br />
+-dict				/var/mobile/Containers/Data/Application/1F371ED4-3393-4462-8C8F-805328AB0229/Library/Caches/KokomotCommands.dic<br />
+-dictcase	no		no<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-ds		1		1<br />
+-fdict<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-featparams<br />
+-fillprob	1e-8		1.000000e-08<br />
+-frate		100		100<br />
+-fsg<br />
+-fsgusealtpron	yes		yes<br />
+-fsgusefiller	yes		yes<br />
+-fwdflat	yes		yes<br />
+-fwdflatbeam	1e-64		1.000000e-64<br />
+-fwdflatefwid	4		4<br />
+-fwdflatlw	8.5		8.500000e+00<br />
+-fwdflatsfwin	25		25<br />
+-fwdflatwbeam	7e-29		7.000000e-29<br />
+-fwdtree	yes		yes<br />
+-hmm				/private/var/mobile/Containers/Bundle/Application/36B1D4C2-AB0D-44BC-8059-34B83BB90229/MyAppName.app/AcousticModelEnglish.bundle<br />
+-input_endian	little		little<br />
+-jsgf<br />
+-kdmaxbbi	-1		-1<br />
+-kdmaxdepth	0		0<br />
+-kdtree<br />
+-keyphrase<br />
+-kws<br />
+-kws_plp	1e-1		1.000000e-01<br />
+-kws_threshold	1		1.000000e+00<br />
+-latsize	5000		5000<br />
+-lda<br />
+-ldadim		0		0<br />
+-lextreedump	0		0<br />
+-lifter		0		0<br />
+-lm				/var/mobile/Containers/Data/Application/1F371ED4-3393-4462-8C8F-805328AB0229/Library/Caches/KokomotCommands.DMP<br />
+-lmctl<br />
+-lmname<br />
+-logbase	1.0001		1.000100e+00<br />
+-logfn<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.333333e+02<br />
+-lpbeam		1e-40		1.000000e-40<br />
+-lponlybeam	7e-29		7.000000e-29<br />
+-lw		6.5		6.500000e+00<br />
+-maxhmmpf	10000		10000<br />
+-maxnewoov	20		20<br />
+-maxwpf		-1		-1<br />
+-mdef<br />
+-mean<br />
+-mfclogdir<br />
+-min_endfr	0		0<br />
+-mixw<br />
+-mixwfloor	0.0000001	1.000000e-07<br />
+-mllr<br />
+-mmap		yes		yes<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		40<br />
+-nwpen		1.0		1.000000e+00<br />
+-pbeam		1e-48		1.000000e-48<br />
+-pip		1.0		1.000000e+00<br />
+-pl_beam	1e-10		1.000000e-10<br />
+-pl_pbeam	1e-5		1.000000e-05<br />
+-pl_window	0		0<br />
+-rawlogdir<br />
+-remove_dc	no		no<br />
+-remove_noise	yes		yes<br />
+-remove_silence	yes		yes<br />
+-round_filters	yes		yes<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-sendump<br />
+-senlogdir<br />
+-senmgau<br />
+-silprob	0.005		5.000000e-03<br />
+-smoothspec	no		no<br />
+-svspec<br />
+-tmat<br />
+-tmatfloor	0.0001		1.000000e-04<br />
+-topn		4		4<br />
+-topn_beam	0		0<br />
+-toprule<br />
+-transform	legacy		legacy<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	6.855498e+03<br />
+-usewdphones	no		no<br />
+-uw		1.0		1.000000e+00<br />
+-vad_postspeech	50		50<br />
+-vad_prespeech	10		10<br />
+-vad_threshold	2.0		1.500000e+00<br />
+-var<br />
+-varfloor	0.0001		1.000000e-04<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wbeam		7e-29		7.000000e-29<br />
+-wip		0.65		6.500000e-01<br />
+-wlen		0.025625	2.562500e-02</p>
+<p>INFO: cmd_ln.c(702): Parsing command line:<br />
+\<br />
+	-nfilt 25 \<br />
+	-lowerf 130 \<br />
+	-upperf 6800 \<br />
+	-feat 1s_c_d_dd \<br />
+	-svspec 0-12/13-25/26-38 \<br />
+	-agc none \<br />
+	-cmn current \<br />
+	-varnorm no \<br />
+	-transform dct \<br />
+	-lifter 22 \<br />
+	-cmninit 40 </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-alpha		0.97		9.700000e-01<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		40<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-frate		100		100<br />
+-input_endian	little		little<br />
+-lda<br />
+-ldadim		0		0<br />
+-lifter		0		22<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.300000e+02<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		25<br />
+-remove_dc	no		no<br />
+-remove_noise	yes		yes<br />
+-remove_silence	yes		yes<br />
+-round_filters	yes		yes<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-smoothspec	no		no<br />
+-svspec				0-12/13-25/26-38<br />
+-transform	legacy		dct<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	6.800000e+03<br />
+-vad_postspeech	50		50<br />
+-vad_prespeech	10		10<br />
+-vad_threshold	2.0		1.500000e+00<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wlen		0.025625	2.562500e-02</p>
+<p>INFO: acmod.c(252): Parsed model-specific feature parameters from /private/var/mobile/Containers/Bundle/Application/36B1D4C2-AB0D-44BC-8059-34B83BB90229/MyAppName.app/AcousticModelEnglish.bundle/feat.params<br />
+INFO: feat.c(715): Initializing feature stream to type: &#8216;1s_c_d_dd&#8217;, ceplen=13, CMN=&#8217;current&#8217;, VARNORM=&#8217;no&#8217;, AGC=&#8217;none&#8217;<br />
+INFO: cmn.c(143): mean[0]= 12.00, mean[1..12]= 0.0<br />
+INFO: acmod.c(171): Using subvector specification 0-12/13-25/26-38<br />
+INFO: mdef.c(518): Reading model definition: /private/var/mobile/Containers/Bundle/Application/36B1D4C2-AB0D-44BC-8059-34B83BB90229/MyAppName.app/AcousticModelEnglish.bundle/mdef<br />
+INFO: mdef.c(531): Found byte-order mark BMDF, assuming this is a binary mdef file<br />
+INFO: bin_mdef.c(336): Reading binary model definition: /private/var/mobile/Containers/Bundle/Application/36B1D4C2-AB0D-44BC-8059-34B83BB90229/MyAppName.app/AcousticModelEnglish.bundle/mdef<br />
+INFO: bin_mdef.c(516): 46 CI-phone, 168344 CD-phone, 3 emitstate/phone, 138 CI-sen, 6138 Sen, 32881 Sen-Seq<br />
+INFO: tmat.c(206): Reading HMM transition probability matrices: /private/var/mobile/Containers/Bundle/Application/36B1D4C2-AB0D-44BC-8059-34B83BB90229/MyAppName.app/AcousticModelEnglish.bundle/transition_matrices<br />
+INFO: acmod.c(124): Attempting to use SCHMM computation module<br />
+INFO: ms_gauden.c(198): Reading mixture gaussian parameter: /private/var/mobile/Containers/Bundle/Application/36B1D4C2-AB0D-44BC-8059-34B83BB90229/MyAppName.app/AcousticModelEnglish.bundle/means<br />
+INFO: ms_gauden.c(292): 1 codebook, 3 feature, size:<br />
+INFO: ms_gauden.c(294):  512&#215;13<br />
+INFO: ms_gauden.c(294):  512&#215;13<br />
+INFO: ms_gauden.c(294):  512&#215;13<br />
+INFO: ms_gauden.c(198): Reading mixture gaussian parameter: /private/var/mobile/Containers/Bundle/Application/36B1D4C2-AB0D-44BC-8059-34B83BB90229/MyAppName.app/AcousticModelEnglish.bundle/variances<br />
+INFO: ms_gauden.c(292): 1 codebook, 3 feature, size:<br />
+INFO: ms_gauden.c(294):  512&#215;13<br />
+INFO: ms_gauden.c(294):  512&#215;13<br />
+INFO: ms_gauden.c(294):  512&#215;13<br />
+INFO: ms_gauden.c(354): 0 variance values floored<br />
+INFO: s2_semi_mgau.c(904): Loading senones from dump file /private/var/mobile/Containers/Bundle/Application/36B1D4C2-AB0D-44BC-8059-34B83BB90229/MyAppName.app/AcousticModelEnglish.bundle/sendump<br />
+INFO: s2_semi_mgau.c(928): BEGIN FILE FORMAT DESCRIPTION<br />
+INFO: s2_semi_mgau.c(991): Rows: 512, Columns: 6138<br />
+INFO: s2_semi_mgau.c(1023): Using memory-mapped I/O for senones<br />
+INFO: s2_semi_mgau.c(1294): Maximum top-N: 4 Top-N beams: 0 0 0<br />
+INFO: dict.c(320): Allocating 4125 * 20 bytes (80 KiB) for word entries<br />
+INFO: dict.c(333): Reading main dictionary: /var/mobile/Containers/Data/Application/1F371ED4-3393-4462-8C8F-805328AB0229/Library/Caches/KokomotCommands.dic<br />
+INFO: dict.c(213): Allocated 0 KiB for strings, 0 KiB for phones<br />
+INFO: dict.c(336): 20 words read<br />
+INFO: dict.c(342): Reading filler dictionary: /private/var/mobile/Containers/Bundle/Application/36B1D4C2-AB0D-44BC-8059-34B83BB90229/MyAppName.app/AcousticModelEnglish.bundle/noisedict<br />
+INFO: dict.c(213): Allocated 0 KiB for strings, 0 KiB for phones<br />
+INFO: dict.c(345): 9 words read<br />
+INFO: dict2pid.c(396): Building PID tables for dictionary<br />
+INFO: dict2pid.c(406): Allocating 46^3 * 2 bytes (190 KiB) for word-initial triphones<br />
+INFO: dict2pid.c(132): Allocated 25576 bytes (24 KiB) for word-final triphones<br />
+INFO: dict2pid.c(196): Allocated 25576 bytes (24 KiB) for single-phone word triphones<br />
+INFO: ngram_model_arpa.c(79): No \data\ mark in LM file<br />
+INFO: ngram_model_dmp.c(166): Will use memory-mapped I/O for LM file<br />
+INFO: ngram_model_dmp.c(220): ngrams 1=20, 2=36, 3=18<br />
+INFO: ngram_model_dmp.c(266):       20 = LM.unigrams(+trailer) read<br />
+INFO: ngram_model_dmp.c(312):       36 = LM.bigrams(+trailer) read<br />
+INFO: ngram_model_dmp.c(338):       18 = LM.trigrams read<br />
+INFO: ngram_model_dmp.c(363):        5 = LM.prob2 entries read<br />
+INFO: ngram_model_dmp.c(383):        4 = LM.bo_wt2 entries read<br />
+INFO: ngram_model_dmp.c(403):        3 = LM.prob3 entries read<br />
+INFO: ngram_model_dmp.c(431):        1 = LM.tseg_base entries read<br />
+INFO: ngram_model_dmp.c(487):       20 = ascii word strings read<br />
+INFO: ngram_search_fwdtree.c(99): 19 unique initial diphones<br />
+INFO: ngram_search_fwdtree.c(148): 0 root, 0 non-root channels, 10 single-phone words<br />
+INFO: ngram_search_fwdtree.c(186): Creating search tree<br />
+INFO: ngram_search_fwdtree.c(192): before: 0 root, 0 non-root channels, 10 single-phone words<br />
+INFO: ngram_search_fwdtree.c(326): after: max nonroot chan increased to 148<br />
+INFO: ngram_search_fwdtree.c(339): after: 19 root, 20 non-root channels, 9 single-phone words<br />
+INFO: ngram_search_fwdflat.c(157): fwdflat: min_ef_width = 4, max_sf_win = 25<br />
+2014-12-08 18:16:14.188 MyAppName[250:17289] There was no previous CMN value in the plist so we are using the fresh CMN value 42.000000.<br />
+2014-12-08 18:16:14.188 MyAppName[250:17289] Listening.<br />
+2014-12-08 18:16:14.190 MyAppName[250:17289] Project has these words or phrases in its dictionary:<br />
+BACK<br />
+DONE<br />
+&#8230; [OMITTING REST OF VOCAB] &#8230;<br />
+2014-12-08 18:16:14.191 MyAppName[250:17289] Recognition loop has started<br />
+2014-12-08 18:16:14.476 MyAppName[250:17184] resumeListening<br />
+2014-12-08 18:16:14.782 MyAppName[250:17184] pocketsphinxDidStartListening<br />
+2014-12-08 18:16:15.334 MyAppName[250:17184] resumeListening<br />
+2014-12-08 18:16:15.334 MyAppName[250:17184] Valid setSecondsOfSilence value of 1.500000 will be used.<br />
+2014-12-08 18:16:15.339 MyAppName[250:17184] suspendListening<br />
+2014-12-08 18:16:15.428 MyAppName[250:17184] pocketsphinxDidResumeRecognition<br />
+2014-12-08 18:16:15.429 MyAppName[250:17184] pocketsphinxDidSuspendRecognition<br />
+2014-12-08 18:16:17.068 MyAppName[250:17184] resumeListening<br />
+2014-12-08 18:16:17.068 MyAppName[250:17184] Valid setSecondsOfSilence value of 1.500000 will be used.<br />
+2014-12-08 18:16:17.069 MyAppName[250:17184] pocketsphinxDidResumeRecognition<br />
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 0 words<br />
+2014-12-08 18:16:22.538 MyAppName[250:17184] suspendListening<br />
+2014-12-08 18:16:22.539 MyAppName[250:17184] pocketsphinxDidSuspendRecognition</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/open-earsrapid-ears-2-0-bluetooth/#post-1023320</guid>
+					<title><![CDATA[Reply To: Open Ears/Rapid Ears 2.0 + Bluetooth]]></title>
+					<link>/forums/topic/open-earsrapid-ears-2-0-bluetooth/#post-1023320</link>
+					<pubDate>Tue, 09 Dec 2014 08:57:41 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hmm, this doesn&#8217;t quite look like a simple bluetooth issue (you can see that the bluetooth route is switched to and that the audio unit starts and has no audio render errors). Here is what looks off to me, later in the logging:</p>
+<pre>
+2014-12-08 18:16:14.476 MyAppName[250:17184] resumeListening
+2014-12-08 18:16:14.782 MyAppName[250:17184] pocketsphinxDidStartListening
+2014-12-08 18:16:15.334 MyAppName[250:17184] resumeListening
+2014-12-08 18:16:15.334 MyAppName[250:17184] Valid setSecondsOfSilence value of 1.500000 will be used.
+2014-12-08 18:16:15.339 MyAppName[250:17184] suspendListening
+2014-12-08 18:16:15.428 MyAppName[250:17184] pocketsphinxDidResumeRecognition
+2014-12-08 18:16:15.429 MyAppName[250:17184] pocketsphinxDidSuspendRecognition
+2014-12-08 18:16:17.068 MyAppName[250:17184] resumeListening
+2014-12-08 18:16:17.068 MyAppName[250:17184] Valid setSecondsOfSilence value of 1.500000 will be used.
+2014-12-08 18:16:17.069 MyAppName[250:17184] pocketsphinxDidResumeRecognition
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 0 words
+</pre>
+<p>What is causing the repeated suspend/resume in the timeframe in which you&#8217;re expecting speech?</p>
+<p>Can you use your bluetooth device as input either with a tutorial app or the sample app? You can change the bundle ID of the sample app in its info.plist property &#8220;Bundle identifier&#8221; and the volume output of the sample app should make it clear whether the bluetooth mic has input. </p>
+<p>OpenEars 2.0 works with my bluetooth devices and with this developer&#8217;s:</p>
+<p><a href="/forums/topic/small-bug-when-running-on-ios-8/#post-1023307">/forums/topic/small-bug-when-running-on-ios-8/#post-1023307</a></p>
+<p>So if the headset follows standards and is able to use its mic input outside of calls (not every bluetooth headset can do that), it ought to work. Does it work with other 3rd-party apps which can use bluetooth mic input?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/open-earsrapid-ears-2-0-bluetooth/#post-1023333</guid>
+					<title><![CDATA[Reply To: Open Ears/Rapid Ears 2.0 + Bluetooth]]></title>
+					<link>/forums/topic/open-earsrapid-ears-2-0-bluetooth/#post-1023333</link>
+					<pubDate>Tue, 09 Dec 2014 20:19:36 +0000</pubDate>
+					<dc:creator>morchella</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>What is causing the repeated suspend/resume in the timeframe in which you’re expecting speech?</p></blockquote>
+<p>That&#8217;s expected. My app has a call-and-response UI, so it&#8217;s constantly suspending (when it plays audio) and resuming (when it needs to listen).</p>
+<p>For debugging, I set up a separate view controller in my app that lets me interactively enable Open Ears and play sounds from button presses. In that context as well, I&#8217;m getting neither input nor output from bluetooth. (It works fine with phone or earbuds).</p>
+<blockquote><p>Can you use your bluetooth device as input either with a tutorial app or the sample app? </p></blockquote>
+<p>No. I&#8217;ve got the sample app running (both with and without RapidEars) and it works fine with phone or earbuds, but not with bluetooth.</p>
+<blockquote><p>So if the headset follows standards and is able to use its mic input outside of calls (not every bluetooth headset can do that), it ought to work. Does it work with other 3rd-party apps which can use bluetooth mic input?</p></blockquote>
+<p>This is a well-known, fairly high-end headset. Sound quality is excellent and it works fine with a variety of Apple and 3rd party apps that I&#8217;ve tested it with (both input/output).</p>
+<p>I would love to hear that this is just something stupid I&#8217;m doing :)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/open-earsrapid-ears-2-0-bluetooth/#post-1023335</guid>
+					<title><![CDATA[Reply To: Open Ears/Rapid Ears 2.0 + Bluetooth]]></title>
+					<link>/forums/topic/open-earsrapid-ears-2-0-bluetooth/#post-1023335</link>
+					<pubDate>Tue, 09 Dec 2014 20:39:38 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>I would love to hear that this is just something stupid I’m doing :)</p></blockquote>
+<p>I&#8217;m sure it isn&#8217;t, but the only area in which the framework can really affect bluetooth usage is during initialization since it is a standard that is implemented in the hardware layer by Apple, and initialization is apparently going fine to judge from the OpenEarsLogging output, so I don&#8217;t have a lot of suggestions – there&#8217;s no possibility of testing Bluetooth against all possible devices and it&#8217;s working with all the devices it&#8217;s been tested with.</p>
+<p>Are you absolutely positive that there&#8217;s nothing special about the headset in this interaction (low on battery, far away, muted, being overridden by a different, nearby bluetooth device that you aren&#8217;t interacting with, something else similar)? When the sample app isn&#8217;t working, what does the decibel label read, is it moving or fixed? Can you try a different bluetooth device with the sample app?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/open-earsrapid-ears-2-0-bluetooth/#post-1023338</guid>
+					<title><![CDATA[Reply To: Open Ears/Rapid Ears 2.0 + Bluetooth]]></title>
+					<link>/forums/topic/open-earsrapid-ears-2-0-bluetooth/#post-1023338</link>
+					<pubDate>Tue, 09 Dec 2014 20:44:46 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Also, please concentrate all testing on the sample app with no changes, since the suspend/resume behavior and touch UI are both variables that it will simplify things to remove (and it will be much easier for me to try to replicate things using the sample app).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/open-earsrapid-ears-2-0-bluetooth/#post-1023340</guid>
+					<title><![CDATA[Reply To: Open Ears/Rapid Ears 2.0 + Bluetooth]]></title>
+					<link>/forums/topic/open-earsrapid-ears-2-0-bluetooth/#post-1023340</link>
+					<pubDate>Tue, 09 Dec 2014 21:01:16 +0000</pubDate>
+					<dc:creator>morchella</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>Are you absolutely positive that there’s nothing special about the headset in this interaction (low on battery, far away, muted, being overridden by a different, nearby bluetooth device that you aren’t interacting with, something else similar)? </p></blockquote>
+<p>I don&#8217;t think so, but I will keep looking.</p>
+<blockquote><p>When the sample app isn’t working, what does the decibel label read, is it moving or fixed? Can you try a different bluetooth device with the sample app?</p></blockquote>
+<p>In a separate post, I&#8217;ll give you logs for latest sample run. Short answer &#8211; decibel label doesn&#8217;t move at all.</p>
+<p>It&#8217;s a good suggestion &#8212; I&#8217;ll have to get my hands on some other bluetooth devices.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/open-earsrapid-ears-2-0-bluetooth/#post-1023341</guid>
+					<title><![CDATA[Reply To: Open Ears/Rapid Ears 2.0 + Bluetooth]]></title>
+					<link>/forums/topic/open-earsrapid-ears-2-0-bluetooth/#post-1023341</link>
+					<pubDate>Tue, 09 Dec 2014 21:12:32 +0000</pubDate>
+					<dc:creator>morchella</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I did a fresh install of the sample app. I uncommented the two logging lines, but otherwise ran it as is. Logs are below. (For some reason, in the sample app, the logging of the current route is truncated?? In my app, it prints out full port descriptions, but here shows only <code>---BluetoothHFPBluetoothHFP---</code>)</p>
+<p>2014-12-09 13:05:34.389 OpenEarsSampleApp[451:85137] Starting OpenEars logging for OpenEars version 2.0 on 32-bit device (or build): iPhone running iOS version: 8.100000<br />
+2014-12-09 13:05:34.392 OpenEarsSampleApp[451:85137] Creating shared instance of OEPocketsphinxController<br />
+2014-12-09 13:05:34.431 OpenEarsSampleApp[451:85137] Starting dynamic language model generation</p>
+<p>INFO: cmd_ln.c(702): Parsing command line:<br />
+sphinx_lm_convert \<br />
+	-i /var/mobile/Containers/Data/Application/CFB72ABF-044A-4318-A993-730FB47BF497/Library/Caches/FirstOpenEarsDynamicLanguageModel.arpa \<br />
+	-o /var/mobile/Containers/Data/Application/CFB72ABF-044A-4318-A993-730FB47BF497/Library/Caches/FirstOpenEarsDynamicLanguageModel.DMP </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]	[VALUE]<br />
+-case<br />
+-debug			0<br />
+-help		no	no<br />
+-i			/var/mobile/Containers/Data/Application/CFB72ABF-044A-4318-A993-730FB47BF497/Library/Caches/FirstOpenEarsDynamicLanguageModel.arpa<br />
+-ienc<br />
+-ifmt<br />
+-logbase	1.0001	1.000100e+00<br />
+-mmap		no	no<br />
+-o			/var/mobile/Containers/Data/Application/CFB72ABF-044A-4318-A993-730FB47BF497/Library/Caches/FirstOpenEarsDynamicLanguageModel.DMP<br />
+-oenc		utf8	utf8<br />
+-ofmt			</p>
+<p>INFO: ngram_model_arpa.c(504): ngrams 1=10, 2=16, 3=8<br />
+INFO: ngram_model_arpa.c(137): Reading unigrams<br />
+INFO: ngram_model_arpa.c(543):       10 = #unigrams created<br />
+INFO: ngram_model_arpa.c(197): Reading bigrams<br />
+INFO: ngram_model_arpa.c(561):       16 = #bigrams created<br />
+INFO: ngram_model_arpa.c(562):        3 = #prob2 entries<br />
+INFO: ngram_model_arpa.c(570):        3 = #bo_wt2 entries<br />
+INFO: ngram_model_arpa.c(294): Reading trigrams<br />
+INFO: ngram_model_arpa.c(583):        8 = #trigrams created<br />
+INFO: ngram_model_arpa.c(584):        2 = #prob3 entries<br />
+INFO: ngram_model_dmp.c(518): Building DMP model&#8230;<br />
+INFO: ngram_model_dmp.c(548):       10 = #unigrams created<br />
+INFO: ngram_model_dmp.c(649):       16 = #bigrams created<br />
+INFO: ngram_model_dmp.c(650):        3 = #prob2 entries<br />
+INFO: ngram_model_dmp.c(657):        3 = #bo_wt2 entries<br />
+INFO: ngram_model_dmp.c(661):        8 = #trigrams created<br />
+INFO: ngram_model_dmp.c(662):        2 = #prob3 entries<br />
+2014-12-09 13:05:34.498 OpenEarsSampleApp[451:85137] Done creating language model with CMUCLMTK in 0.066862 seconds.<br />
+2014-12-09 13:05:34.602 OpenEarsSampleApp[451:85137] I&#8217;m done running performDictionaryLookup and it took 0.075391 seconds<br />
+2014-12-09 13:05:34.609 OpenEarsSampleApp[451:85137] I&#8217;m done running dynamic language model generation and it took 0.210020 seconds<br />
+2014-12-09 13:05:34.615 OpenEarsSampleApp[451:85137] Starting dynamic language model generation</p>
+<p>INFO: cmd_ln.c(702): Parsing command line:<br />
+sphinx_lm_convert \<br />
+	-i /var/mobile/Containers/Data/Application/CFB72ABF-044A-4318-A993-730FB47BF497/Library/Caches/SecondOpenEarsDynamicLanguageModel.arpa \<br />
+	-o /var/mobile/Containers/Data/Application/CFB72ABF-044A-4318-A993-730FB47BF497/Library/Caches/SecondOpenEarsDynamicLanguageModel.DMP </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]	[VALUE]<br />
+-case<br />
+-debug			0<br />
+-help		no	no<br />
+-i			/var/mobile/Containers/Data/Application/CFB72ABF-044A-4318-A993-730FB47BF497/Library/Caches/SecondOpenEarsDynamicLanguageModel.arpa<br />
+-ienc<br />
+-ifmt<br />
+-logbase	1.0001	1.000100e+00<br />
+-mmap		no	no<br />
+-o			/var/mobile/Containers/Data/Application/CFB72ABF-044A-4318-A993-730FB47BF497/Library/Caches/SecondOpenEarsDynamicLanguageModel.DMP<br />
+-oenc		utf8	utf8<br />
+-ofmt			</p>
+<p>INFO: ngram_model_arpa.c(504): ngrams 1=12, 2=19, 3=10<br />
+INFO: ngram_model_arpa.c(137): Reading unigrams<br />
+INFO: ngram_model_arpa.c(543):       12 = #unigrams created<br />
+INFO: ngram_model_arpa.c(197): Reading bigrams<br />
+INFO: ngram_model_arpa.c(561):       19 = #bigrams created<br />
+INFO: ngram_model_arpa.c(562):        3 = #prob2 entries<br />
+INFO: ngram_model_arpa.c(570):        3 = #bo_wt2 entries<br />
+INFO: ngram_model_arpa.c(294): Reading trigrams<br />
+INFO: ngram_model_arpa.c(583):       10 = #trigrams created<br />
+INFO: ngram_model_arpa.c(584):        2 = #prob3 entries<br />
+INFO: ngram_model_dmp.c(518): Building DMP model&#8230;<br />
+INFO: ngram_model_dmp.c(548):       12 = #unigrams created<br />
+INFO: ngram_model_dmp.c(649):       19 = #bigrams created<br />
+INFO: ngram_model_dmp.c(650):        3 = #prob2 entries<br />
+INFO: ngram_model_dmp.c(657):        3 = #bo_wt2 entries<br />
+INFO: ngram_model_dmp.c(661):       10 = #trigrams created<br />
+INFO: ngram_model_dmp.c(662):        2 = #prob3 entries<br />
+2014-12-09 13:05:34.682 OpenEarsSampleApp[451:85137] Done creating language model with CMUCLMTK in 0.066150 seconds.<br />
+2014-12-09 13:05:34.764 OpenEarsSampleApp[451:85137] The word QUIDNUNC was not found in the dictionary /private/var/mobile/Containers/Bundle/Application/63660436-E1F7-4E9E-965F-E724ADF24D5A/OpenEarsSampleApp.app/AcousticModelEnglish.bundle/LanguageModelGeneratorLookupList.text/LanguageModelGeneratorLookupList.text.<br />
+2014-12-09 13:05:34.765 OpenEarsSampleApp[451:85137] Now using the fallback method to look up the word QUIDNUNC<br />
+2014-12-09 13:05:34.765 OpenEarsSampleApp[451:85137] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the English phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2014-12-09 13:05:34.766 OpenEarsSampleApp[451:85137] Using convertGraphemes for the word or phrase QUIDNUNC which doesn&#8217;t appear in the dictionary<br />
+2014-12-09 13:05:34.814 OpenEarsSampleApp[451:85137] I&#8217;m done running performDictionaryLookup and it took 0.121312 seconds<br />
+2014-12-09 13:05:34.822 OpenEarsSampleApp[451:85137] I&#8217;m done running dynamic language model generation and it took 0.212430 seconds<br />
+2014-12-09 13:05:34.823 OpenEarsSampleApp[451:85137] </p>
+<p>Welcome to the OpenEars sample project. This project understands the words:<br />
+BACKWARD,<br />
+CHANGE,<br />
+FORWARD,<br />
+GO,<br />
+LEFT,<br />
+MODEL,<br />
+RIGHT,<br />
+TURN,<br />
+and if you say &#8220;CHANGE MODEL&#8221; it will switch to its dynamically-generated model which understands the words:<br />
+CHANGE,<br />
+MODEL,<br />
+MONDAY,<br />
+TUESDAY,<br />
+WEDNESDAY,<br />
+THURSDAY,<br />
+FRIDAY,<br />
+SATURDAY,<br />
+SUNDAY,<br />
+QUIDNUNC<br />
+2014-12-09 13:05:34.824 OpenEarsSampleApp[451:85137] Attempting to start listening session from startListeningWithLanguageModelAtPath:<br />
+2014-12-09 13:05:34.832 OpenEarsSampleApp[451:85137] User gave mic permission for this app.<br />
+2014-12-09 13:05:34.833 OpenEarsSampleApp[451:85137] setSecondsOfSilence wasn&#8217;t set, using default of 0.700000.<br />
+2014-12-09 13:05:34.834 OpenEarsSampleApp[451:85137] Successfully started listening session from startListeningWithLanguageModelAtPath:<br />
+2014-12-09 13:05:34.835 OpenEarsSampleApp[451:85152] Starting listening.<br />
+2014-12-09 13:05:34.835 OpenEarsSampleApp[451:85152] about to set up audio session<br />
+2014-12-09 13:05:34.884 OpenEarsSampleApp[451:85165] Audio route has changed for the following reason:<br />
+2014-12-09 13:05:34.889 OpenEarsSampleApp[451:85165] There was a category change. The new category is AVAudioSessionCategoryPlayAndRecord<br />
+2014-12-09 13:05:36.248 OpenEarsSampleApp[451:85152] done starting audio unit<br />
+INFO: cmd_ln.c(702): Parsing command line:<br />
+\<br />
+	-lm /var/mobile/Containers/Data/Application/CFB72ABF-044A-4318-A993-730FB47BF497/Library/Caches/FirstOpenEarsDynamicLanguageModel.DMP \<br />
+	-vad_threshold 1.500000 \<br />
+	-remove_noise yes \<br />
+	-remove_silence yes \<br />
+	-bestpath yes \<br />
+	-lw 6.500000 \<br />
+	-dict /var/mobile/Containers/Data/Application/CFB72ABF-044A-4318-A993-730FB47BF497/Library/Caches/FirstOpenEarsDynamicLanguageModel.dic \<br />
+	-hmm /private/var/mobile/Containers/Bundle/Application/63660436-E1F7-4E9E-965F-E724ADF24D5A/OpenEarsSampleApp.app/AcousticModelEnglish.bundle </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-allphone<br />
+-allphone_ci	no		no<br />
+-alpha		0.97		9.700000e-01<br />
+-argfile<br />
+-ascale		20.0		2.000000e+01<br />
+-aw		1		1<br />
+-backtrace	no		no<br />
+-beam		1e-48		1.000000e-48<br />
+-bestpath	yes		yes<br />
+-bestpathlw	9.5		9.500000e+00<br />
+-bghist		no		no<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		8.0<br />
+-compallsen	no		no<br />
+-debug				0<br />
+-dict				/var/mobile/Containers/Data/Application/CFB72ABF-044A-4318-A993-730FB47BF497/Library/Caches/FirstOpenEarsDynamicLanguageModel.dic<br />
+-dictcase	no		no<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-ds		1		1<br />
+-fdict<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-featparams<br />
+-fillprob	1e-8		1.000000e-08<br />
+-frate		100		100<br />
+-fsg<br />
+-fsgusealtpron	yes		yes<br />
+-fsgusefiller	yes		yes<br />
+-fwdflat	yes		yes<br />
+-fwdflatbeam	1e-64		1.000000e-64<br />
+-fwdflatefwid	4		4<br />
+-fwdflatlw	8.5		8.500000e+00<br />
+-fwdflatsfwin	25		25<br />
+-fwdflatwbeam	7e-29		7.000000e-29<br />
+-fwdtree	yes		yes<br />
+-hmm				/private/var/mobile/Containers/Bundle/Application/63660436-E1F7-4E9E-965F-E724ADF24D5A/OpenEarsSampleApp.app/AcousticModelEnglish.bundle<br />
+-input_endian	little		little<br />
+-jsgf<br />
+-kdmaxbbi	-1		-1<br />
+-kdmaxdepth	0		0<br />
+-kdtree<br />
+-keyphrase<br />
+-kws<br />
+-kws_plp	1e-1		1.000000e-01<br />
+-kws_threshold	1		1.000000e+00<br />
+-latsize	5000		5000<br />
+-lda<br />
+-ldadim		0		0<br />
+-lextreedump	0		0<br />
+-lifter		0		0<br />
+-lm				/var/mobil2014-12-09 13:05:36.268 OpenEarsSampleApp[451:85165] This is not a case in which OpenEars notifies of a route change. At the close of this function, the new audio route is &#8212;BluetoothHFPBluetoothHFP&#8212;. The previous route before changing to this route was &lt;AVAudioSessionRouteDescription: 0x146a82f0,<br />
+inputs = (null);<br />
+outputs = (<br />
+    &#8220;&lt;AVAudioSessionPortDescription: 0x146a81f0, type = BluetoothA2DPOutput; name = Powerbeats Wireless; UID = 04:88:E2:37:55:15-tacl; selectedDataSource = (null)&gt;&#8221;<br />
+)&gt;.<br />
+e/Containers/Data/Application/CFB72ABF-044A-4318-A993-730FB47BF497/Library/Caches/FirstOpenEarsDynamicLanguageModel.DMP<br />
+-lmctl<br />
+-lmname<br />
+-logbase	1.0001		1.000100e+00<br />
+-logfn<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.333333e+02<br />
+-lpbeam		1e-40		1.000000e-40<br />
+-lponlybeam	7e-29		7.000000e-29<br />
+-lw		6.5		6.500000e+00<br />
+-maxhmmpf	10000		10000<br />
+-maxnewoov	20		20<br />
+-maxwpf		-1		-1<br />
+-mdef<br />
+-mean<br />
+-mfclogdir<br />
+-min_endfr	0		0<br />
+-mixw<br />
+-mixwfloor	0.0000001	1.000000e-07<br />
+-mllr<br />
+-mmap		yes		yes<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		40<br />
+-nwpen		1.0		1.000000e+00<br />
+-pbeam		1e-48		1.000000e-48<br />
+-pip		1.0		1.000000e+00<br />
+-pl_beam	1e-10		1.000000e-10<br />
+-pl_pbeam	1e-5		1.000000e-05<br />
+-pl_window	0		0<br />
+-rawlogdir<br />
+-remove_dc	no		no<br />
+-remove_noise	yes		yes<br />
+-remove_silence	yes		yes<br />
+-round_filters	yes		yes<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-sendump<br />
+-senlogdir<br />
+-senmgau<br />
+-silprob	0.005		5.000000e-03<br />
+-smoothspec	no		no<br />
+-svspec<br />
+-tmat<br />
+-tmatfloor	0.0001		1.000000e-04<br />
+-topn		4		4<br />
+-topn_beam	0		0<br />
+-toprule<br />
+-transform	legacy		legacy<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	6.855498e+03<br />
+-usewdphones	no		no<br />
+-uw		1.0		1.000000e+00<br />
+-vad_postspeech	50		50<br />
+-vad_prespeech	10		10<br />
+-vad_threshold	2.0		1.500000e+00<br />
+-var<br />
+-varfloor	0.0001		1.000000e-04<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wbeam		7e-29		7.000000e-29<br />
+-wip		0.65		6.500000e-01<br />
+-wlen		0.025625	2.562500e-02</p>
+<p>INFO: cmd_ln.c(702): Parsing command line:<br />
+\<br />
+	-nfilt 25 \<br />
+	-lowerf 130 \<br />
+	-upperf 6800 \<br />
+	-feat 1s_c_d_dd \<br />
+	-svspec 0-12/13-25/26-38 \<br />
+	-agc none \<br />
+	-cmn current \<br />
+	-varnorm no \<br />
+	-transform dct \<br />
+	-lifter 22 \<br />
+	-cmninit 40 </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-alpha		0.97		9.700000e-01<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		40<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-frate		100		100<br />
+-input_endian	little		little<br />
+-lda<br />
+-ldadim		0		0<br />
+-lifter		0		22<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.300000e+02<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		25<br />
+-remove_dc	no		no<br />
+-remove_noise	yes		yes<br />
+-remove_silence	yes		yes<br />
+-round_filters	yes		yes<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-smoothspec	no		no<br />
+-svspec				0-12/13-25/26-38<br />
+-transform	legacy		dct<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	6.800000e+03<br />
+-vad_postspeech	50		50<br />
+-vad_prespeech	10		10<br />
+-vad_threshold	2.0		1.500000e+00<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wlen		0.025625	2.562500e-02</p>
+<p>INFO: acmod.c(252): Parsed model-specific feature parameters from /private/var/mobile/Containers/Bundle/Application/63660436-E1F7-4E9E-965F-E724ADF24D5A/OpenEarsSampleApp.app/AcousticModelEnglish.bundle/feat.params<br />
+INFO: feat.c(715): Initializing feature stream to type: &#8216;1s_c_d_dd&#8217;, ceplen=13, CMN=&#8217;current&#8217;, VARNORM=&#8217;no&#8217;, AGC=&#8217;none&#8217;<br />
+INFO: cmn.c(143): mean[0]= 12.00, mean[1..12]= 0.0<br />
+INFO: acmod.c(171): Using subvector specification 0-12/13-25/26-38<br />
+INFO: mdef.c(518): Reading model definition: /private/var/mobile/Containers/Bundle/Application/63660436-E1F7-4E9E-965F-E724ADF24D5A/OpenEarsSampleApp.app/AcousticModelEnglish.bundle/mdef<br />
+INFO: mdef.c(531): Found byte-order mark BMDF, assuming this is a binary mdef file<br />
+INFO: bin_mdef.c(336): Reading binary model definition: /private/var/mobile/Containers/Bundle/Application/63660436-E1F7-4E9E-965F-E724ADF24D5A/OpenEarsSampleApp.app/AcousticModelEnglish.bundle/mdef<br />
+INFO: bin_mdef.c(516): 46 CI-phone, 168344 CD-phone, 3 emitstate/phone, 138 CI-sen, 6138 Sen, 32881 Sen-Seq<br />
+INFO: tmat.c(206): Reading HMM transition probability matrices: /private/var/mobile/Containers/Bundle/Application/63660436-E1F7-4E9E-965F-E724ADF24D5A/OpenEarsSampleApp.app/AcousticModelEnglish.bundle/transition_matrices<br />
+INFO: acmod.c(124): Attempting to use SCHMM computation module<br />
+INFO: ms_gauden.c(198): Reading mixture gaussian parameter: /private/var/mobile/Containers/Bundle/Application/63660436-E1F7-4E9E-965F-E724ADF24D5A/OpenEarsSampleApp.app/AcousticModelEnglish.bundle/means<br />
+INFO: ms_gauden.c(292): 1 codebook, 3 feature, size:<br />
+INFO: ms_gauden.c(294):  512&#215;13<br />
+INFO: ms_gauden.c(294):  512&#215;13<br />
+INFO: ms_gauden.c(294):  512&#215;13<br />
+INFO: ms_gauden.c(198): Reading mixture gaussian parameter: /private/var/mobile/Containers/Bundle/Application/63660436-E1F7-4E9E-965F-E724ADF24D5A/OpenEarsSampleApp.app/AcousticModelEnglish.bundle/variances<br />
+INFO: ms_gauden.c(292): 1 codebook, 3 feature, size:<br />
+INFO: ms_gauden.c(294):  512&#215;13<br />
+INFO: ms_gauden.c(294):  512&#215;13<br />
+INFO: ms_gauden.c(294):  512&#215;13<br />
+INFO: ms_gauden.c(354): 0 variance values floored<br />
+INFO: s2_semi_mgau.c(904): Loading senones from dump file /private/var/mobile/Containers/Bundle/Application/63660436-E1F7-4E9E-965F-E724ADF24D5A/OpenEarsSampleApp.app/AcousticModelEnglish.bundle/sendump<br />
+INFO: s2_semi_mgau.c(928): BEGIN FILE FORMAT DESCRIPTION<br />
+INFO: s2_semi_mgau.c(991): Rows: 512, Columns: 6138<br />
+INFO: s2_semi_mgau.c(1023): Using memory-mapped I/O for senones<br />
+INFO: s2_semi_mgau.c(1294): Maximum top-N: 4 Top-N beams: 0 0 0<br />
+INFO: dict.c(320): Allocating 4113 * 20 bytes (80 KiB) for word entries<br />
+INFO: dict.c(333): Reading main dictionary: /var/mobile/Containers/Data/Application/CFB72ABF-044A-4318-A993-730FB47BF497/Library/Caches/FirstOpenEarsDynamicLanguageModel.dic<br />
+INFO: dict.c(213): Allocated 0 KiB for strings, 0 KiB for phones<br />
+INFO: dict.c(336): 8 words read<br />
+INFO: dict.c(342): Reading filler dictionary: /private/var/mobile/Containers/Bundle/Application/63660436-E1F7-4E9E-965F-E724ADF24D5A/OpenEarsSampleApp.app/AcousticModelEnglish.bundle/noisedict<br />
+INFO: dict.c(213): Allocated 0 KiB for strings, 0 KiB for phones<br />
+INFO: dict.c(345): 9 words read<br />
+INFO: dict2pid.c(396): Building PID tables for dictionary<br />
+INFO: dict2pid.c(406): Allocating 46^3 * 2 bytes (190 KiB) for word-initial triphones<br />
+INFO: dict2pid.c(132): Allocated 25576 bytes (24 KiB) for word-final triphones<br />
+INFO: dict2pid.c(196): Allocated 25576 bytes (24 KiB) for single-phone word triphones<br />
+INFO: ngram_model_arpa.c(79): No \data\ mark in LM file<br />
+INFO: ngram_model_dmp.c(166): Will use memory-mapped I/O for LM file<br />
+INFO: ngram_model_dmp.c(220): ngrams 1=10, 2=16, 3=8<br />
+INFO: ngram_model_dmp.c(266):       10 = LM.unigrams(+trailer) read<br />
+INFO: ngram_model_dmp.c(312):       16 = LM.bigrams(+trailer) read<br />
+INFO: ngram_model_dmp.c(338):        8 = LM.trigrams read<br />
+INFO: ngram_model_dmp.c(363):        3 = LM.prob2 entries read<br />
+INFO: ngram_model_dmp.c(383):        3 = LM.bo_wt2 entries read<br />
+INFO: ngram_model_dmp.c(403):        2 = LM.prob3 entries read<br />
+INFO: ngram_model_dmp.c(431):        1 = LM.tseg_base entries read<br />
+INFO: ngram_model_dmp.c(487):       10 = ascii word strings read<br />
+INFO: ngram_search_fwdtree.c(99): 8 unique initial diphones<br />
+INFO: ngram_search_fwdtree.c(148): 0 root, 0 non-root channels, 10 single-phone words<br />
+INFO: ngram_search_fwdtree.c(186): Creating search tree<br />
+INFO: ngram_search_fwdtree.c(192): before: 0 root, 0 non-root channels, 10 single-phone words<br />
+INFO: ngram_search_fwdtree.c(326): after: max nonroot chan increased to 145<br />
+INFO: ngram_search_fwdtree.c(339): after: 8 root, 17 non-root channels, 9 single-phone words<br />
+INFO: ngram_search_fwdflat.c(157): fwdflat: min_ef_width = 4, max_sf_win = 25<br />
+2014-12-09 13:05:36.431 OpenEarsSampleApp[451:85152] Restoring SmartCMN value of 18.854980<br />
+2014-12-09 13:05:36.433 OpenEarsSampleApp[451:85152] Listening.<br />
+2014-12-09 13:05:36.435 OpenEarsSampleApp[451:85152] Project has these words or phrases in its dictionary:<br />
+BACKWARD<br />
+CHANGE<br />
+FORWARD<br />
+GO<br />
+LEFT<br />
+MODEL<br />
+RIGHT<br />
+TURN<br />
+2014-12-09 13:05:36.435 OpenEarsSampleApp[451:85152] Recognition loop has started<br />
+2014-12-09 13:05:36.465 OpenEarsSampleApp[451:85137] Local callback: Pocketsphinx is now listening.<br />
+2014-12-09 13:05:36.469 OpenEarsSampleApp[451:85137] Local callback: Pocketsphinx started.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/open-earsrapid-ears-2-0-bluetooth/#post-1023349</guid>
+					<title><![CDATA[Reply To: Open Ears/Rapid Ears 2.0 + Bluetooth]]></title>
+					<link>/forums/topic/open-earsrapid-ears-2-0-bluetooth/#post-1023349</link>
+					<pubDate>Wed, 10 Dec 2014 10:12:31 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That log also shows that the framework is successfully setting up the bluetooth route with the device, so I don&#8217;t have too many suggestions left. </p>
+<p>I read up on the device and many users were complaining that it couldn&#8217;t be used for watching video because the audio is very high-latency, so that sounds like it has an idiosyncratic i/o compared to the usual BT headset behavior. That means I can&#8217;t troubleshoot it from afar since I have no insight into the device, the device implementation, or Apple&#8217;s implementation of how it initializes bluetooth for an audio unit. I&#8217;d do the following:</p>
+<p>1. Test with other (known-to-work-with 3rd-party audio input) BT devices to sanity-check. I have a Samsung HM1300 that is not high-end (in fact it cost €10) and it does i/o perfectly with OpenEars 2.0, so that&#8217;s a good test device, or you can ask the developers with working bluetooth what they&#8217;re using.</p>
+<p>2. Check out whether you are running the current version of your headset firmware. They have firmware update instructions in the support section of their site.</p>
+<p>3. See if you get any different results setting different values for OEPocketsphinxController&#8217;s audioMode property.</p>
+<p>4. If you feel up to recompiling the framework, you can try to change things in this line:</p>
+<pre>
+   [sessionInstance setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionMixWithOthers | AVAudioSessionCategoryOptionAllowBluetooth | AVAudioSessionCategoryOptionDefaultToSpeaker error:&#038;error]; 
+</pre>
+<p>For instance, I would see what happens when you remove AVAudioSessionCategoryOptionMixWithOthers and AVAudioSessionCategoryOptionDefaultToSpeaker as options so it looks like this:</p>
+<pre>
+[sessionInstance setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionAllowBluetooth error:&#038;error]; 
+</pre>
+<p>And you could try changing the settings in handleRouteChange: so that either all of them perform the route change operation, or all of them don&#8217;t, in order to see if it is related, by changing this line:</p>
+<pre>
+    if(performChange) {
+</pre>
+<p>To either this:</p>
+<pre>
+performChange = FALSE;
+    if(performChange) {
+</pre>
+<p>or this:</p>
+<pre>
+performChange = TRUE;
+    if(performChange) {
+</pre>
+<p>Remember that the framework now needs to be built by choosing &#8220;Archive&#8221;. Let me know your results.</p>
+<p>5. I&#8217;m not at all pushing this as a solution because the headset is very expensive, but if you are very committed to my being able to test it, I can add it to Politepix&#8217;s Amazon Wish List and you could buy one for Politepix (used is fine). This wouldn&#8217;t be an agreement on my part to make it work/always keep it working (this kind of situation and the expensiveness/diversity/closed-ness of bluetooth devices are the exact reason that bluetooth support is experimental in OpenEars), but my being able to run it would certainly be the most likely path to making it work and I would agree to give it some debugging time and see what&#8217;s possible. Before doing this, I would very strongly recommend that you verify that the input on your device works with another 3rd-party app as a low-latency audio input device on the same device and iOS version, i.e. recording voice memos or similar, keeping in mind that if a 3rd-party app can&#8217;t really use your headset, it is likely to default to the built-in mic and perform some kind of recording anyway, so it&#8217;s important to verify whether the recording is coming from your headset or the built-in mic.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/open-earsrapid-ears-2-0-bluetooth/#post-1023353</guid>
+					<title><![CDATA[Reply To: Open Ears/Rapid Ears 2.0 + Bluetooth]]></title>
+					<link>/forums/topic/open-earsrapid-ears-2-0-bluetooth/#post-1023353</link>
+					<pubDate>Wed, 10 Dec 2014 17:52:48 +0000</pubDate>
+					<dc:creator>morchella</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Halle, thanks for these thoughtful and excellent suggestions! I have to focus on other code for a bit, but will be revisiting the bluetooth issue as time permits. I&#8217;ll keep you posted as I learn more.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/open-earsrapid-ears-2-0-bluetooth/#post-1023354</guid>
+					<title><![CDATA[Reply To: Open Ears/Rapid Ears 2.0 + Bluetooth]]></title>
+					<link>/forums/topic/open-earsrapid-ears-2-0-bluetooth/#post-1023354</link>
+					<pubDate>Wed, 10 Dec 2014 17:57:29 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Super, take your time.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

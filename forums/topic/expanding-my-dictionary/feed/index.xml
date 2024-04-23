@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Expanding my dictionary? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/expanding-my-dictionary/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/expanding-my-dictionary/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:48:00 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/expanding-my-dictionary/#post-1015813</guid>
+					<title><![CDATA[Expanding my dictionary?]]></title>
+					<link>/forums/topic/expanding-my-dictionary/#post-1015813</link>
+					<pubDate>Thu, 07 Mar 2013 20:16:15 +0000</pubDate>
+					<dc:creator>Romines</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello, </p>
+<p>I was wondering if there is any way to allow me to have every number in my dictionary without the daunting task of adding every number manually to my dictionary. It just isn&#8217;t feasible. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/expanding-my-dictionary/#post-1015816</guid>
+					<title><![CDATA[Reply To: Expanding my dictionary?]]></title>
+					<link>/forums/topic/expanding-my-dictionary/#post-1015816</link>
+					<pubDate>Fri, 08 Mar 2013 07:23:01 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You&#8217;d need to find a data source that is already comprised of the information, clean it up, and use the ability to use a text file as input rather than NSStrings.  I can&#8217;t recommend one but I&#8217;d be very surprised if it didn&#8217;t exist. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

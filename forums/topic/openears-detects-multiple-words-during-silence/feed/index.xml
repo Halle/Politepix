@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>OpenEars detects multiple words during silence &#8211; Politepix</title>
+		<atom:link href="/forums/topic/openears-detects-multiple-words-during-silence/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/openears-detects-multiple-words-during-silence/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:04:42 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/openears-detects-multiple-words-during-silence/#post-1019284</guid>
+					<title><![CDATA[OpenEars detects multiple words during silence]]></title>
+					<link>/forums/topic/openears-detects-multiple-words-during-silence/#post-1019284</link>
+					<pubDate>Wed, 01 Jan 2014 19:25:28 +0000</pubDate>
+					<dc:creator>nmpettus</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>First, thanks for your attention to this question. I am very new to OpenEars and xcode programming so I need your understanding. My app uses OpenEars to detect game commands using only four words. I have used your examples in the tutorial for the actual code. What is happening is OpenEars will detect all four of the words but during periods of silence it will report hypothesis of multiple words or even occasionally one of the four words by mistake. Since I use these hypothesis to command the game things get a little crazy. I used the AVSpeechSynthesizer and AVAudioPlayer to play sounds and instructions during the game. I have tried to suspendRecognition and resumeRecognition before and after the sounds are played but still get unwanted recognition and sometimes multiple words up to 10. Any suggestions would be appreciated. Thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-detects-multiple-words-during-silence/#post-1019285</guid>
+					<title><![CDATA[Reply To: OpenEars detects multiple words during silence]]></title>
+					<link>/forums/topic/openears-detects-multiple-words-during-silence/#post-1019285</link>
+					<pubDate>Wed, 01 Jan 2014 19:33:19 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Which device is this with?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-detects-multiple-words-during-silence/#post-1019286</guid>
+					<title><![CDATA[Reply To: OpenEars detects multiple words during silence]]></title>
+					<link>/forums/topic/openears-detects-multiple-words-during-silence/#post-1019286</link>
+					<pubDate>Wed, 01 Jan 2014 21:25:07 +0000</pubDate>
+					<dc:creator>nmpettus</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am writing and testing the app for iphone and ipad. I have observed this behavior on the ipod touch and in the simulator. I am currently testing on the ipad. Thanks for your quick response.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-detects-multiple-words-during-silence/#post-1019287</guid>
+					<title><![CDATA[Reply To: OpenEars detects multiple words during silence]]></title>
+					<link>/forums/topic/openears-detects-multiple-words-during-silence/#post-1019287</link>
+					<pubDate>Wed, 01 Jan 2014 21:35:03 +0000</pubDate>
+					<dc:creator>nmpettus</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I just tried it on the ipad 2 and had the same problem. It gave a hypothesis of 8 words when no speech was occuring Then when I used and it detected a correct word it also detected (gave a hypothesis) of the same word a second and third time when there was no spoken word. Maybe it is getting some feed from the game speech or audio? </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-detects-multiple-words-during-silence/#post-1019288</guid>
+					<title><![CDATA[Reply To: OpenEars detects multiple words during silence]]></title>
+					<link>/forums/topic/openears-detects-multiple-words-during-silence/#post-1019288</link>
+					<pubDate>Wed, 01 Jan 2014 21:59:09 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, it&#8217;s important to only do testing/issue reporting from a device since the Simulator is only simulating low-latency audio, but it looks like you&#8217;re now just testing on a real device. </p>
+<p>It sounds a bit like one of the audio objects you are using could be changing the audio session, which isn&#8217;t compatible with using PocketsphinxController at the same time. Can you show the code where you create the AVSpeechSynthesizer and AVAudioPlayer objects, and also your output from verbosePocketsphinx and OpenEarsLogging?</p>
+<p>Another question I would have is how you are handling the suspend/resume in order to make sure that the TTS isn&#8217;t being heard and analyzed by PocketsphinxController (i.e. what are the events you are using to decide when it&#8217;s safe to suspend and to resume?). Are you 100% sure that recognition isn&#8217;t in progress at the same time that your app is playing sounds through the speaker?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-detects-multiple-words-during-silence/#post-1019300</guid>
+					<title><![CDATA[Reply To: OpenEars detects multiple words during silence]]></title>
+					<link>/forums/topic/openears-detects-multiple-words-during-silence/#post-1019300</link>
+					<pubDate>Thu, 02 Jan 2014 15:27:28 +0000</pubDate>
+					<dc:creator>nmpettus</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry for being slow but I believe your second question about the suspend/resume holds the answer to my problem. I am using this code to determine the event from the hypothesis:</p>
+<pre><code>
+- (void) pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID {
+    NSLog(@&quot;The received hypothesis is %@ with a score of %@ and an ID of %@&quot;, hypothesis, recognitionScore, utteranceID);
+    
+    if ([hypothesis isEqualToString:@&quot;HELP&quot;])  {
+        [self slotHelp:self];
+    }
+    if ([hypothesis isEqualToString:@&quot;BET&quot;]) {
+        [self slotBet:self];
+    }
+    if ([hypothesis isEqualToString:@&quot;SPIN&quot;]) {
+        [self slotSpin:self];
+    }
+    if ([hypothesis isEqualToString:@&quot;BALANCE&quot;]) {
+        [self slotScore:self];
+    }
+}
+</code></pre>
+<p>During each event there is speech from both TTS and audioPlayer. I use this conditional to test when there is no speech at the beginning of each event but am not sure where to suspend and resume:</p>
+<pre><code>if (self.synthesizer.speaking == NO &amp;&amp; ![audioPlayer1 isPlaying] &amp;&amp; ![audioPlayer2 isPlaying] &amp;&amp; ![audioPlayer3 isPlaying] &amp;&amp; ![audioPlayer4 isPlaying]) {
+// no speech currently
+}</code></pre>
+<p>I thought I could suspend recognition after this conditional and let the event take place but I am not sure where or how to resume recognition after the speech is completed.</p>
+<p>Thanks so much for your patience and help. I am hoping to develop several apps using OpenEars for people who are visually challenged. OpenEars is a vital part of my vision. Again thanks for your help.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-detects-multiple-words-during-silence/#post-1019301</guid>
+					<title><![CDATA[Reply To: OpenEars detects multiple words during silence]]></title>
+					<link>/forums/topic/openears-detects-multiple-words-during-silence/#post-1019301</link>
+					<pubDate>Thu, 02 Jan 2014 16:22:48 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ah, OK, I think this shouldn&#8217;t be too hard to solve. I think your suspicion that it is about when to suspend and resume is correct and this is just about finding the right event for triggering both, and that currently your speech and sounds are being picked up by the recognition.</p>
+<p>The way this normally works structurally is that you have control over the moment that you begin the playback of some other sound, so you will suspend right before sending that message. i.e. before you send the message [self.myAudioPlayer play], you will first send the message [self.pocketsphinxController suspendRecognition] so that you know that listening isn&#8217;t happening when you start your audio object playing back. This is pretty straightforward because both of these events are under your active control.</p>
+<p>Resume is only a bit more complex, because unlike the first case where you are actively saying, or more specifically messaging, &#8220;play the audio stuff now/start the speech now&#8221;, you have to wait for a callback of some kind to indicate to you that the audio or speech is complete because you don&#8217;t control the moment of its completion &#8212; the audio or speech object controls that. </p>
+<p>When we talk about callbacks we&#8217;re basically talking about code which we have to passively wait to inform us that something important happened rather than making it happen ourselves with an active message to an object. You can imagine that you made a phone call to the audio player object and left a message saying &#8220;play the audio file, and please call me back once you&#8217;ve finished playing it so I can decide what to do next&#8221; and that is what is going to happen: instead of you making a second phone call to the audio player and saying &#8220;be done with the audio file now&#8221;, you are receiving a phone call that says &#8220;I&#8217;m done with the audio file&#8221;.</p>
+<p>In Objective-C callbacks take the form of delegate methods: <a href="http://stackoverflow.com/questions/1045803/how-does-a-delegate-work-in-objective-c" rel="nofollow">http://stackoverflow.com/questions/1045803/how-does-a-delegate-work-in-objective-c</a> </p>
+<p>Very briefly, a delegate method is a method that is called on behalf of some other object, or in this case, very specifically, it is a method that you can implement in your view controller, by making your view controller a delegate of your audio object, in order to know when the audio object is done playing back. Here is a Stack Overflow question that is specifically about implementing the AVAudioPlayer delegate method &#8211; (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag which tells you when playback is complete:</p>
+<p><a href="http://stackoverflow.com/questions/8343402/avaudioplayer-delegate-wont-get-called-in-a-class-method" rel="nofollow">http://stackoverflow.com/questions/8343402/avaudioplayer-delegate-wont-get-called-in-a-class-method</a></p>
+<p>This will be structurally similar with the TTS methods. Once you have a working callback for knowing when speech or audio is finished, you also have a place to confidently put the resumeRecognition call.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-detects-multiple-words-during-silence/#post-1019326</guid>
+					<title><![CDATA[Reply To: OpenEars detects multiple words during silence]]></title>
+					<link>/forums/topic/openears-detects-multiple-words-during-silence/#post-1019326</link>
+					<pubDate>Mon, 06 Jan 2014 01:38:52 +0000</pubDate>
+					<dc:creator>nmpettus</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks so much for your tutorial. I believe I understand where to place the suspend and to locate the resume in the delegates that are called when audio and speech are completed. I have implemented all of the delegates but I am still having an issue. It seems that my app works but still has an occasional double, triple, or more hypothesis. I am still doing testing to find any places in the code that I may have overlooked. In another day or two I should have it narrowed down. If I continue to have difficulty I will provide the verbose logging info and let you know.</p>
+<p>Again I cannot express my gratitude enough for your patience and explanation. I feel I have learned so much. I want to continue using OpenEars in other apps I hope to develop. Thanks again, I will be back in touch with the results.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-detects-multiple-words-during-silence/#post-1019333</guid>
+					<title><![CDATA[Reply To: OpenEars detects multiple words during silence]]></title>
+					<link>/forums/topic/openears-detects-multiple-words-during-silence/#post-1019333</link>
+					<pubDate>Mon, 06 Jan 2014 20:44:26 +0000</pubDate>
+					<dc:creator>nmpettus</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK I have a few more questions. The first time I call the <code>[self.pocketSphinxController suspendRecognition];</code> is while I am still in the ViewDidLoad right before the speech synthesizer is speaking the introductory remarks. It causes a Thread 1:EXC_BAD_ACCESS (Code=1, address=0x4c). If I comment out the call the program runs through but I encounter a false recognition. Here is the listing of the output:<br />
+2014-01-06 15:37:31.710 spokenSlots[5429:60b] Path = /var/mobile/Applications/C8E52591-83CD-404C-88BB-EC28DE3FF847/Library/Caches/OpenEarsModel.DMP<br />
+2014-01-06 15:37:31.714 spokenSlots[5429:60b] Voice Recognition = YES<br />
+2014-01-06 15:37:31.717 spokenSlots[5429:60b] Starting OpenEars logging for OpenEars version 1.5.2 on device: iPod touch running iOS version: 7.000000<br />
+2014-01-06 15:37:31.721 spokenSlots[5429:60b] A sample rate was requested that isn&#8217;t one of the two supported values of 16000 or 8000 so we will use the default of 16000.<br />
+2014-01-06 15:37:31.725 spokenSlots[5429:60b] The audio session has never been initialized so we will do that now.<br />
+2014-01-06 15:37:31.727 spokenSlots[5429:60b] Checking and resetting all audio session settings.<br />
+2014-01-06 15:37:31.729 spokenSlots[5429:60b] audioCategory is incorrect, we will change it.<br />
+2014-01-06 15:37:31.736 spokenSlots[5429:60b] audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.<br />
+2014-01-06 15:37:31.739 spokenSlots[5429:60b] bluetoothInput is incorrect, we will change it.<br />
+2014-01-06 15:37:31.741 spokenSlots[5429:60b] bluetooth input is now on the correct setting of 1.<br />
+2014-01-06 15:37:31.744 spokenSlots[5429:60b] Output Device: SpeakerAndMicrophone.<br />
+2014-01-06 15:37:31.746 spokenSlots[5429:60b] categoryDefaultToSpeaker is incorrect, we will change it.<br />
+2014-01-06 15:37:31.748 spokenSlots[5429:60b] CategoryDefaultToSpeaker is now on the correct setting of 1.<br />
+2014-01-06 15:37:31.749 spokenSlots[5429:60b] preferredBufferSize is incorrect, we will change it.<br />
+2014-01-06 15:37:31.751 spokenSlots[5429:60b] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2014-01-06 15:37:31.753 spokenSlots[5429:60b] preferredSampleRateCheck is incorrect, we will change it.<br />
+2014-01-06 15:37:31.755 spokenSlots[5429:60b] preferred hardware sample rate is now on the correct setting of 16000.000000.<br />
+2014-01-06 15:37:31.801 spokenSlots[5429:60b] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2014-01-06 15:37:31.804 spokenSlots[5429:60b] Exiting startAudioSession.<br />
+2014-01-06 15:37:31.816 spokenSlots[5429:4807] Recognition loop has started<br />
+2014-01-06 15:37:31.815 spokenSlots[5429:60b] Tilt Spin Gesture = NO<br />
+2014-01-06 15:37:31.820 spokenSlots[5429:60b] Save Game = YES<br />
+2014-01-06 15:37:31.827 spokenSlots[5429:60b] Amount Balance = 323<br />
+2014-01-06 15:37:32.208 spokenSlots[5429:4807] Starting openAudioDevice on the device.<br />
+2014-01-06 15:37:32.210 spokenSlots[5429:4807] Audio unit wrapper successfully created.<br />
+2014-01-06 15:37:32.223 spokenSlots[5429:3a03] Audio route has changed for the following reason:<br />
+2014-01-06 15:37:32.229 spokenSlots[5429:3a03] There has been a change of category<br />
+2014-01-06 15:37:32.248 spokenSlots[5429:4807] Set audio route to SpeakerAndMicrophone<br />
+2014-01-06 15:37:32.260 spokenSlots[5429:4807] Checking and resetting all audio session settings.<br />
+2014-01-06 15:37:32.262 spokenSlots[5429:4807] audioCategory is correct, we will leave it as it is.<br />
+2014-01-06 15:37:32.263 spokenSlots[5429:4807] bluetoothInput is correct, we will leave it as it is.<br />
+2014-01-06 15:37:32.264 spokenSlots[5429:4807] Output Device: SpeakerAndMicrophone.<br />
+2014-01-06 15:37:32.266 spokenSlots[5429:4807] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2014-01-06 15:37:32.267 spokenSlots[5429:4807] preferredBufferSize is correct, we will leave it as it is.<br />
+2014-01-06 15:37:32.270 spokenSlots[5429:4807] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2014-01-06 15:37:32.272 spokenSlots[5429:4807] Setting the variables for the device and starting it.<br />
+2014-01-06 15:37:32.276 spokenSlots[5429:4807] Looping through ringbuffer sections and pre-allocating them.<br />
+2014-01-06 15:37:32.242 spokenSlots[5429:3a03] The previous audio route was Speaker<br />
+2014-01-06 15:37:32.819 spokenSlots[5429:4807] Started audio output unit.<br />
+2014-01-06 15:37:32.822 spokenSlots[5429:4807] Calibration has started<br />
+2014-01-06 15:37:32.823 spokenSlots[5429:60b] Pocketsphinx calibration has started.<br />
+2014-01-06 15:37:32.821 spokenSlots[5429:3a03] This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is SpeakerAndMicrophone<br />
+2014-01-06 15:37:35.027 spokenSlots[5429:4807] Calibration has completed<br />
+2014-01-06 15:37:35.028 spokenSlots[5429:60b] Pocketsphinx calibration is complete.<br />
+2014-01-06 15:37:35.031 spokenSlots[5429:4807] Project has these words in its dictionary:<br />
+BALANCE<br />
+BET<br />
+HELP<br />
+SPIN<br />
+2014-01-06 15:37:35.034 spokenSlots[5429:4807] Listening.<br />
+2014-01-06 15:37:35.036 spokenSlots[5429:60b] Pocketsphinx is now listening.<br />
+2014-01-06 15:37:35.584 spokenSlots[5429:4807] Speech detected&#8230;<br />
+2014-01-06 15:37:35.590 spokenSlots[5429:60b] Pocketsphinx has detected speech.<br />
+2014-01-06 15:37:36.688 spokenSlots[5429:60b] Speech Synthesizer finished speaking utterance<br />
+2014-01-06 15:37:38.732 spokenSlots[5429:60b] Speech Synthesizer finished speaking utterance<br />
+2014-01-06 15:37:40.121 spokenSlots[5429:4807] Stopping audio unit.<br />
+2014-01-06 15:37:40.121 spokenSlots[5429:60b] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2014-01-06 15:37:40.251 spokenSlots[5429:4807] Audio Output Unit stopped, cleaning up variable states.<br />
+2014-01-06 15:37:40.254 spokenSlots[5429:4807] Processing speech, please wait&#8230;<br />
+2014-01-06 15:37:40.541 spokenSlots[5429:4807] Pocketsphinx heard &#8220;&#8221; with a score of (-1) and an utterance ID of 000000000.<br />
+2014-01-06 15:37:40.543 spokenSlots[5429:4807] Hypothesis was null so we aren&#8217;t returning it. If you want null hypotheses to also be returned, set PocketsphinxController&#8217;s property returnNullHypotheses to TRUE before starting PocketsphinxController.<br />
+2014-01-06 15:37:40.545 spokenSlots[5429:4807] Checking and resetting all audio session settings.<br />
+2014-01-06 15:37:40.547 spokenSlots[5429:4807] audioCategory is correct, we will leave it as it is.<br />
+2014-01-06 15:37:40.549 spokenSlots[5429:4807] bluetoothInput is correct, we will leave it as it is.<br />
+2014-01-06 15:37:40.551 spokenSlots[5429:4807] Output Device: SpeakerAndMicrophone.<br />
+2014-01-06 15:37:40.553 spokenSlots[5429:4807] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2014-01-06 15:37:40.555 spokenSlots[5429:4807] preferredBufferSize is correct, we will leave it as it is.<br />
+2014-01-06 15:37:40.558 spokenSlots[5429:4807] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2014-01-06 15:37:40.560 spokenSlots[5429:4807] Setting the variables for the device and starting it.<br />
+2014-01-06 15:37:40.562 spokenSlots[5429:4807] Looping through ringbuffer sections and pre-allocating them.<br />
+2014-01-06 15:37:40.576 spokenSlots[5429:4807] Started audio output unit.<br />
+2014-01-06 15:37:40.578 spokenSlots[5429:4807] Listening.<br />
+2014-01-06 15:37:40.580 spokenSlots[5429:60b] Pocketsphinx is now listening.<br />
+2014-01-06 15:38:03.120 spokenSlots[5429:4807] Speech detected&#8230;<br />
+2014-01-06 15:38:03.122 spokenSlots[5429:60b] Pocketsphinx has detected speech.<br />
+2014-01-06 15:38:08.535 spokenSlots[5429:4807] Stopping audio unit.<br />
+2014-01-06 15:38:08.536 spokenSlots[5429:60b] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2014-01-06 15:38:08.663 spokenSlots[5429:4807] Audio Output Unit stopped, cleaning up variable states.<br />
+2014-01-06 15:38:08.666 spokenSlots[5429:4807] Processing speech, please wait&#8230;<br />
+2014-01-06 15:38:09.028 spokenSlots[5429:4807] Pocketsphinx heard &#8220;BET&#8221; with a score of (0) and an utterance ID of 000000001.<br />
+2014-01-06 15:38:09.030 spokenSlots[5429:60b] The received hypothesis is BET with a score of 0 and an ID of 000000001<br />
+2014-01-06 15:38:09.030 spokenSlots[5429:4807] Checking and resetting all audio session settings.<br />
+2014-01-06 15:38:09.034 spokenSlots[5429:4807] audioCategory is correct, we will leave it as it is.<br />
+2014-01-06 15:38:09.036 spokenSlots[5429:4807] bluetoothInput is correct, we will leave it as it is.<br />
+2014-01-06 15:38:09.038 spokenSlots[5429:4807] Output Device: SpeakerAndMicrophone.<br />
+2014-01-06 15:38:09.039 spokenSlots[5429:60b] Amount of Bet = 1<br />
+2014-01-06 15:38:09.040 spokenSlots[5429:4807] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2014-01-06 15:38:09.048 spokenSlots[5429:4807] preferredBufferSize is correct, we will leave it as it is.<br />
+2014-01-06 15:38:09.052 spokenSlots[5429:4807] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2014-01-06 15:38:09.054 spokenSlots[5429:4807] Setting the variables for the device and starting it.<br />
+2014-01-06 15:38:09.055 spokenSlots[5429:4807] Looping through ringbuffer sections and pre-allocating them.<br />
+2014-01-06 15:38:09.182 spokenSlots[5429:4807] Started audio output unit.<br />
+2014-01-06 15:38:09.301 spokenSlots[5429:60b] Pocketsphinx has suspended recognition.<br />
+2014-01-06 15:38:11.223 spokenSlots[5429:60b] AVAudioPlayer delegate called<br />
+2014-01-06 15:38:11.225 spokenSlots[5429:60b] Pocketsphinx has resumed recognition.<br />
+2014-01-06 15:38:11.787 spokenSlots[5429:4807] Speech detected&#8230;<br />
+2014-01-06 15:38:11.790 spokenSlots[5429:60b] Pocketsphinx has detected speech.<br />
+2014-01-06 15:38:13.910 spokenSlots[5429:4807] Stopping audio unit.<br />
+2014-01-06 15:38:13.910 spokenSlots[5429:60b] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2014-01-06 15:38:14.039 spokenSlots[5429:4807] Audio Output Unit stopped, cleaning up variable states.<br />
+2014-01-06 15:38:14.042 spokenSlots[5429:4807] Processing speech, please wait&#8230;<br />
+2014-01-06 15:38:14.177 spokenSlots[5429:4807] Pocketsphinx heard &#8220;SPIN SPIN&#8221; with a score of (-826) and an utterance ID of 000000002.<br />
+2014-01-06 15:38:14.182 spokenSlots[5429:4807] Checking and resetting all audio session settings.<br />
+2014-01-06 15:38:14.186 spokenSlots[5429:4807] audioCategory is correct, we will leave it as it is.<br />
+2014-01-06 15:38:14.188 spokenSlots[5429:4807] bluetoothInput is correct, we will leave it as it is.<br />
+2014-01-06 15:38:14.184 spokenSlots[5429:60b] The received hypothesis is SPIN SPIN with a score of -826 and an ID of 000000002<br />
+2014-01-06 15:38:14.190 spokenSlots[5429:4807] Output Device: SpeakerAndMicrophone.<br />
+2014-01-06 15:38:14.193 spokenSlots[5429:4807] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2014-01-06 15:38:14.195 spokenSlots[5429:4807] preferredBufferSize is correct, we will leave it as it is.<br />
+2014-01-06 15:38:14.198 spokenSlots[5429:4807] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2014-01-06 15:38:14.202 spokenSlots[5429:4807] Setting the variables for the device and starting it.<br />
+2014-01-06 15:38:14.204 spokenSlots[5429:4807] Looping through ringbuffer sections and pre-allocating them.<br />
+2014-01-06 15:38:14.225 spokenSlots[5429:4807] Started audio output unit.<br />
+2014-01-06 15:38:14.228 spokenSlots[5429:4807] Listening.<br />
+2014-01-06 15:38:14.230 spokenSlots[5429:60b] Pocketsphinx is now listening.<br />
+2014-01-06 15:38:17.327 spokenSlots[5429:4807] Speech detected&#8230;<br />
+2014-01-06 15:38:17.329 spokenSlots[5429:60b] Pocketsphinx has detected speech.<br />
+2014-01-06 15:38:19.159 spokenSlots[5429:4807] Stopping audio unit.<br />
+2014-01-06 15:38:19.159 spokenSlots[5429:60b] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2014-01-06 15:38:19.287 spokenSlots[5429:4807] Audio Output Unit stopped, cleaning up variable states.<br />
+2014-01-06 15:38:19.290 spokenSlots[5429:4807] Processing speech, please wait&#8230;<br />
+2014-01-06 15:38:19.360 spokenSlots[5429:4807] Pocketsphinx heard &#8220;&#8221; with a score of (0) and an utterance ID of 000000003.<br />
+2014-01-06 15:38:19.364 spokenSlots[5429:4807] Hypothesis was null so we aren&#8217;t returning it. If you want null hypotheses to also be returned, set PocketsphinxController&#8217;s property returnNullHypotheses to TRUE before starting PocketsphinxController.<br />
+2014-01-06 15:38:19.365 spokenSlots[5429:4807] Checking and resetting all audio session settings.<br />
+2014-01-06 15:38:19.369 spokenSlots[5429:4807] audioCategory is correct, we will leave it as it is.<br />
+2014-01-06 15:38:19.371 spokenSlots[5429:4807] bluetoothInput is correct, we will leave it as it is.<br />
+2014-01-06 15:38:19.372 spokenSlots[5429:4807] Output Device: SpeakerAndMicrophone.<br />
+2014-01-06 15:38:19.374 spokenSlots[5429:4807] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2014-01-06 15:38:19.377 spokenSlots[5429:4807] preferredBufferSize is correct, we will leave it as it is.<br />
+2014-01-06 15:38:19.382 spokenSlots[5429:4807] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2014-01-06 15:38:19.385 spokenSlots[5429:4807] Setting the variables for the device and starting it.<br />
+2014-01-06 15:38:19.386 spokenSlots[5429:4807] Looping through ringbuffer sections and pre-allocating them.<br />
+2014-01-06 15:38:19.409 spokenSlots[5429:4807] Started audio output unit.<br />
+2014-01-06 15:38:19.415 spokenSlots[5429:4807] Listening.<br />
+2014-01-06 15:38:19.418 spokenSlots[5429:60b] Pocketsphinx is now listening.<br />
+2014-01-06 15:38:26.930 spokenSlots[5429:4807] Speech detected&#8230;<br />
+2014-01-06 15:38:26.931 spokenSlots[5429:60b] Pocketsphinx has detected speech.<br />
+2014-01-06 15:38:28.375 spokenSlots[5429:4807] Stopping audio unit.<br />
+2014-01-06 15:38:28.375 spokenSlots[5429:60b] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2014-01-06 15:38:28.503 spokenSlots[5429:4807] Audio Output Unit stopped, cleaning up variable states.<br />
+2014-01-06 15:38:28.506 spokenSlots[5429:4807] Processing speech, please wait&#8230;<br />
+2014-01-06 15:38:28.573 spokenSlots[5429:4807] Pocketsphinx heard &#8220;BET&#8221; with a score of (-1049) and an utterance ID of 000000004.<br />
+2014-01-06 15:38:28.576 spokenSlots[5429:4807] Checking and resetting all audio session settings.<br />
+2014-01-06 15:38:28.580 spokenSlots[5429:4807] audioCategory is correct, we will leave it as it is.<br />
+2014-01-06 15:38:28.581 spokenSlots[5429:4807] bluetoothInput is correct, we will leave it as it is.<br />
+2014-01-06 15:38:28.577 spokenSlots[5429:60b] The received hypothesis is BET with a score of -1049 and an ID of 000000004<br />
+2014-01-06 15:38:28.583 spokenSlots[5429:4807] Output Device: SpeakerAndMicrophone.<br />
+2014-01-06 15:38:28.585 spokenSlots[5429:4807] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2014-01-06 15:38:28.588 spokenSlots[5429:4807] preferredBufferSize is correct, we will leave it as it is.<br />
+2014-01-06 15:38:28.593 spokenSlots[5429:4807] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2014-01-06 15:38:28.594 spokenSlots[5429:4807] Setting the variables for the device and starting it.<br />
+2014-01-06 15:38:28.595 spokenSlots[5429:4807] Looping through ringbuffer sections and pre-allocating them.<br />
+2014-01-06 15:38:28.589 spokenSlots[5429:60b] Amount of Bet = 2<br />
+2014-01-06 15:38:28.627 spokenSlots[5429:4807] Started audio output unit.<br />
+2014-01-06 15:38:28.636 spokenSlots[5429:4807] Listening.<br />
+2014-01-06 15:38:28.757 spokenSlots[5429:60b] Pocketsphinx is now listening.<br />
+2014-01-06 15:38:28.759 spokenSlots[5429:60b] Pocketsphinx has suspended recognition.<br />
+2014-01-06 15:38:30.807 spokenSlots[5429:60b] AVAudioPlayer delegate called<br />
+2014-01-06 15:38:30.809 spokenSlots[5429:60b] Pocketsphinx has resumed recognition.<br />
+2014-01-06 15:38:31.386 spokenSlots[5429:4807] Speech detected&#8230;<br />
+2014-01-06 15:38:31.388 spokenSlots[5429:60b] Pocketsphinx has detected speech.<br />
+2014-01-06 15:38:32.601 spokenSlots[5429:4807] Stopping audio unit.<br />
+2014-01-06 15:38:32.601 spokenSlots[5429:60b] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2014-01-06 15:38:32.728 spokenSlots[5429:4807] Audio Output Unit stopped, cleaning up variable states.<br />
+2014-01-06 15:38:32.731 spokenSlots[5429:4807] Processing speech, please wait&#8230;<br />
+2014-01-06 15:38:32.763 spokenSlots[5429:4807] Pocketsphinx heard &#8220;&#8221; with a score of (0) and an utterance ID of 000000005.<br />
+2014-01-06 15:38:32.766 spokenSlots[5429:4807] Hypothesis was null so we aren&#8217;t returning it. If you want null hypotheses to also be returned, set PocketsphinxController&#8217;s property returnNullHypotheses to TRUE before starting PocketsphinxController.<br />
+2014-01-06 15:38:32.769 spokenSlots[5429:4807] Checking and resetting all audio session settings.<br />
+2014-01-06 15:38:32.772 spokenSlots[5429:4807] audioCategory is correct, we will leave it as it is.<br />
+2014-01-06 15:38:32.773 spokenSlots[5429:4807] bluetoothInput is correct, we will leave it as it is.<br />
+2014-01-06 15:38:32.775 spokenSlots[5429:4807] Output Device: SpeakerAndMicrophone.<br />
+2014-01-06 15:38:32.779 spokenSlots[5429:4807] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2014-01-06 15:38:32.781 spokenSlots[5429:4807] preferredBufferSize is correct, we will leave it as it is.<br />
+2014-01-06 15:38:32.783 spokenSlots[5429:4807] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2014-01-06 15:38:32.786 spokenSlots[5429:4807] Setting the variables for the device and starting it.<br />
+2014-01-06 15:38:32.788 spokenSlots[5429:4807] Looping through ringbuffer sections and pre-allocating them.<br />
+2014-01-06 15:38:32.812 spokenSlots[5429:4807] Started audio output unit.<br />
+2014-01-06 15:38:32.815 spokenSlots[5429:4807] Listening.<br />
+2014-01-06 15:38:32.818 spokenSlots[5429:60b] Pocketsphinx is now listening.<br />
+2014-01-06 15:38:34.078 spokenSlots[5429:4807] Speech detected&#8230;<br />
+2014-01-06 15:38:34.080 spokenSlots[5429:60b] Pocketsphinx has detected speech.<br />
+2014-01-06 15:38:35.289 spokenSlots[5429:4807] Stopping audio unit.<br />
+2014-01-06 15:38:35.289 spokenSlots[5429:60b] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2014-01-06 15:38:35.415 spokenSlots[5429:4807] Audio Output Unit stopped, cleaning up variable states.<br />
+2014-01-06 15:38:35.419 spokenSlots[5429:4807] Processing speech, please wait&#8230;<br />
+2014-01-06 15:38:35.470 spokenSlots[5429:4807] Pocketsphinx heard &#8220;BET&#8221; with a score of (-813) and an utterance ID of 000000006.<br />
+2014-01-06 15:38:35.473 spokenSlots[5429:4807] Checking and resetting all audio session settings.<br />
+2014-01-06 15:38:35.475 spokenSlots[5429:4807] audioCategory is correct, we will leave it as it is.<br />
+2014-01-06 15:38:35.477 spokenSlots[5429:4807] bluetoothInput is correct, we will leave it as it is.<br />
+2014-01-06 15:38:35.478 spokenSlots[5429:4807] Output Device: SpeakerAndMicrophone.<br />
+2014-01-06 15:38:35.473 spokenSlots[5429:60b] The received hypothesis is BET with a score of -813 and an ID of 000000006<br />
+2014-01-06 15:38:35.479 spokenSlots[5429:4807] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2014-01-06 15:38:35.484 spokenSlots[5429:4807] preferredBufferSize is correct, we will leave it as it is.<br />
+2014-01-06 15:38:35.492 spokenSlots[5429:4807] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2014-01-06 15:38:35.494 spokenSlots[5429:4807] Setting the variables for the device and starting it.<br />
+2014-01-06 15:38:35.484 spokenSlots[5429:60b] Amount of Bet = 3<br />
+2014-01-06 15:38:35.495 spokenSlots[5429:4807] Looping through ringbuffer sections and pre-allocating them.<br />
+2014-01-06 15:38:35.516 spokenSlots[5429:4807] Started audio output unit.<br />
+2014-01-06 15:38:35.524 spokenSlots[5429:4807] Listening.<br />
+2014-01-06 15:38:35.541 spokenSlots[5429:60b] Pocketsphinx is now listening.<br />
+2014-01-06 15:38:35.543 spokenSlots[5429:60b] Pocketsphinx has suspended recognition.<br />
+2014-01-06 15:38:37.720 spokenSlots[5429:60b] AVAudioPlayer delegate called<br />
+2014-01-06 15:38:37.722 spokenSlots[5429:60b] Pocketsphinx has resumed recognition.<br />
+2014-01-06 15:38:38.302 spokenSlots[5429:4807] Speech detected&#8230;<br />
+2014-01-06 15:38:38.304 spokenSlots[5429:60b] Pocketsphinx has detected speech.<br />
+2014-01-06 15:38:39.509 spokenSlots[5429:4807] Stopping audio unit.<br />
+2014-01-06 15:38:39.510 spokenSlots[5429:60b] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2014-01-06 15:38:39.639 spokenSlots[5429:4807] Audio Output Unit stopped, cleaning up variable states.<br />
+2014-01-06 15:38:39.642 spokenSlots[5429:4807] Processing speech, please wait&#8230;<br />
+2014-01-06 15:38:39.676 spokenSlots[5429:4807] Pocketsphinx heard &#8220;&#8221; with a score of (0) and an utterance ID of 000000007.<br />
+2014-01-06 15:38:39.681 spokenSlots[5429:4807] Hypothesis was null so we aren&#8217;t returning it. If you want null hypotheses to also be returned, set PocketsphinxController&#8217;s property returnNullHypotheses to TRUE before starting PocketsphinxController.<br />
+2014-01-06 15:38:39.683 spokenSlots[5429:4807] Checking and resetting all audio session settings.<br />
+2014-01-06 15:38:39.686 spokenSlots[5429:4807] audioCategory is correct, we will leave it as it is.<br />
+2014-01-06 15:38:39.688 spokenSlots[5429:4807] bluetoothInput is correct, we will leave it as it is.<br />
+2014-01-06 15:38:39.690 spokenSlots[5429:4807] Output Device: SpeakerAndMicrophone.<br />
+2014-01-06 15:38:39.692 spokenSlots[5429:4807] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2014-01-06 15:38:39.694 spokenSlots[5429:4807] preferredBufferSize is correct, we will leave it as it is.<br />
+2014-01-06 15:38:39.699 spokenSlots[5429:4807] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2014-01-06 15:38:39.701 spokenSlots[5429:4807] Setting the variables for the device and starting it.<br />
+2014-01-06 15:38:39.703 spokenSlots[5429:4807] Looping through ringbuffer sections and pre-allocating them.<br />
+2014-01-06 15:38:39.726 spokenSlots[5429:4807] Started audio output unit.<br />
+2014-01-06 15:38:39.729 spokenSlots[5429:4807] Listening.<br />
+2014-01-06 15:38:39.730 spokenSlots[5429:60b] Pocketsphinx is now listening.<br />
+2014-01-06 15:38:56.508 spokenSlots[5429:4807] Speech detected&#8230;<br />
+2014-01-06 15:38:56.510 spokenSlots[5429:60b] Pocketsphinx has detected speech.<br />
+2014-01-06 15:38:59.226 spokenSlots[5429:4807] Stopping audio unit.<br />
+2014-01-06 15:38:59.226 spokenSlots[5429:60b] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2014-01-06 15:38:59.353 spokenSlots[5429:4807] Audio Output Unit stopped, cleaning up variable states.<br />
+2014-01-06 15:38:59.356 spokenSlots[5429:4807] Processing speech, please wait&#8230;<br />
+2014-01-06 15:38:59.471 spokenSlots[5429:4807] Pocketsphinx heard &#8220;&#8221; with a score of (0) and an utterance ID of 000000008.<br />
+2014-01-06 15:38:59.479 spokenSlots[5429:4807] Hypothesis was null so we aren&#8217;t returning it. If you want null hypotheses to also be returned, set PocketsphinxController&#8217;s property returnNullHypotheses to TRUE before starting PocketsphinxController.<br />
+2014-01-06 15:38:59.480 spokenSlots[5429:4807] Checking and resetting all audio session settings.<br />
+2014-01-06 15:38:59.483 spokenSlots[5429:4807] audioCategory is correct, we will leave it as it is.<br />
+2014-01-06 15:38:59.486 spokenSlots[5429:4807] bluetoothInput is correct, we will leave it as it is.<br />
+2014-01-06 15:38:59.488 spokenSlots[5429:4807] Output Device: SpeakerAndMicrophone.<br />
+2014-01-06 15:38:59.491 spokenSlots[5429:4807] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2014-01-06 15:38:59.493 spokenSlots[5429:4807] preferredBufferSize is correct, we will leave it as it is.<br />
+2014-01-06 15:38:59.494 spokenSlots[5429:4807] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2014-01-06 15:38:59.496 spokenSlots[5429:4807] Setting the variables for the device and starting it.<br />
+2014-01-06 15:38:59.497 spokenSlots[5429:4807] Looping through ringbuffer sections and pre-allocating them.<br />
+2014-01-06 15:38:59.603 spokenSlots[5429:4807] Started audio output unit.<br />
+2014-01-06 15:38:59.608 spokenSlots[5429:4807] Listening.<br />
+2014-01-06 15:38:59.609 spokenSlots[5429:60b] Pocketsphinx is now listening.<br />
+2014-01-06 15:39:04.820 spokenSlots[5429:4807] Speech detected&#8230;<br />
+2014-01-06 15:39:04.822 spokenSlots[5429:60b] Pocketsphinx has detected speech.<br />
+2014-01-06 15:39:06.393 spokenSlots[5429:4807] Stopping audio unit.<br />
+2014-01-06 15:39:06.393 spokenSlots[5429:60b] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2014-01-06 15:39:06.519 spokenSlots[5429:4807] Audio Output Unit stopped, cleaning up variable states.<br />
+2014-01-06 15:39:06.523 spokenSlots[5429:4807] Processing speech, please wait&#8230;<br />
+2014-01-06 15:39:06.608 spokenSlots[5429:4807] Pocketsphinx heard &#8220;SPIN&#8221; with a score of (-885) and an utterance ID of 000000009.<br />
+2014-01-06 15:39:06.612 spokenSlots[5429:4807] Checking and resetting all audio session settings.<br />
+2014-01-06 15:39:06.615 spokenSlots[5429:4807] audioCategory is correct, we will leave it as it is.<br />
+2014-01-06 15:39:06.616 spokenSlots[5429:4807] bluetoothInput is correct, we will leave it as it is.<br />
+2014-01-06 15:39:06.612 spokenSlots[5429:60b] The received hypothesis is SPIN with a score of -885 and an ID of 000000009<br />
+2014-01-06 15:39:06.617 spokenSlots[5429:4807] Output Device: SpeakerAndMicrophone.<br />
+2014-01-06 15:39:06.655 spokenSlots[5429:4807] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2014-01-06 15:39:06.773 spokenSlots[5429:60b] Blank Blank Orange<br />
+2014-01-06 15:39:06.772 spokenSlots[5429:4807] preferredBufferSize is correct, we will leave it as it is.<br />
+2014-01-06 15:39:06.776 spokenSlots[5429:4807] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2014-01-06 15:39:06.779 spokenSlots[5429:4807] Setting the variables for the device and starting it.<br />
+2014-01-06 15:39:06.782 spokenSlots[5429:4807] Looping through ringbuffer sections and pre-allocating them.<br />
+2014-01-06 15:39:06.791 spokenSlots[5429:4807] Started audio output unit.<br />
+2014-01-06 15:39:07.157 spokenSlots[5429:60b] ChanceBonus = 12<br />
+2014-01-06 15:39:07.159 spokenSlots[5429:60b] Pocketsphinx has suspended recognition.<br />
+2014-01-06 15:39:08.824 spokenSlots[5429:60b] AVAudioPlayer delegate called<br />
+2014-01-06 15:39:08.826 spokenSlots[5429:60b] Pocketsphinx has resumed recognition.<br />
+2014-01-06 15:39:08.952 spokenSlots[5429:60b] AVAudioPlayer delegate called<br />
+2014-01-06 15:39:09.389 spokenSlots[5429:4807] Speech detected&#8230;<br />
+2014-01-06 15:39:09.391 spokenSlots[5429:60b] Pocketsphinx has detected speech.<br />
+2014-01-06 15:39:09.975 spokenSlots[5429:60b] AVAudioPlayer delegate called<br />
+2014-01-06 15:39:10.871 spokenSlots[5429:60b] AVAudioPlayer delegate called<br />
+2014-01-06 15:39:12.536 spokenSlots[5429:4807] Stopping audio unit.<br />
+2014-01-06 15:39:12.536 spokenSlots[5429:60b] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2014-01-06 15:39:12.663 spokenSlots[5429:4807] Audio Output Unit stopped, cleaning up variable states.<br />
+2014-01-06 15:39:12.666 spokenSlots[5429:4807] Processing speech, please wait&#8230;<br />
+2014-01-06 15:39:12.868 spokenSlots[5429:4807] Pocketsphinx heard &#8220;BALANCE&#8221; with a score of (-747) and an utterance ID of 000000010.<br />
+2014-01-06 15:39:12.870 spokenSlots[5429:4807] Checking and resetting all audio session settings.<br />
+2014-01-06 15:39:12.873 spokenSlots[5429:4807] audioCategory is correct, we will leave it as it is.<br />
+2014-01-06 15:39:12.875 spokenSlots[5429:4807] bluetoothInput is correct, we will leave it as it is.<br />
+2014-01-06 15:39:12.876 spokenSlots[5429:4807] Output Device: SpeakerAndMicrophone.<br />
+2014-01-06 15:39:12.871 spokenSlots[5429:60b] The received hypothesis is BALANCE with a score of -747 and an ID of 000000010<br />
+2014-01-06 15:39:12.877 spokenSlots[5429:4807] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2014-01-06 15:39:12.879 spokenSlots[5429:4807] preferredBufferSize is correct, we will leave it as it is.<br />
+2014-01-06 15:39:12.929 spokenSlots[5429:4807] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2014-01-06 15:39:12.930 spokenSlots[5429:4807] Setting the variables for the device and starting it.<br />
+2014-01-06 15:39:12.931 spokenSlots[5429:4807] Looping through ringbuffer sections and pre-allocating them.<br />
+2014-01-06 15:39:12.893 spokenSlots[5429:60b] Pocketsphinx has suspended recognition.<br />
+2014-01-06 15:39:12.966 spokenSlots[5429:4807] Started audio output unit.<br />
+2014-01-06 15:39:15.374 spokenSlots[5429:60b] Speech Synthesizer finished speaking utterance<br />
+2014-01-06 15:39:15.377 spokenSlots[5429:60b] Pocketsphinx has resumed recognition.<br />
+2014-01-06 15:39:16.098 spokenSlots[5429:4807] Speech detected&#8230;<br />
+2014-01-06 15:39:16.099 spokenSlots[5429:60b] Pocketsphinx has detected speech.</p>
+<p>The third BET and the last BALANCE were both recognitions that were not spoken. Any ideas or pointers would be greatly appreciated. Thank you very much.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-detects-multiple-words-during-silence/#post-1019337</guid>
+					<title><![CDATA[Reply To: OpenEars detects multiple words during silence]]></title>
+					<link>/forums/topic/openears-detects-multiple-words-during-silence/#post-1019337</link>
+					<pubDate>Tue, 07 Jan 2014 12:01:51 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, the thing to troubleshoot here is the crash, since we already know that if suspend isn&#8217;t being successfully called, we&#8217;ll see PocketsphinxController try to recognize speech (synthesized or otherwise) that is occurring in the same audio environment in which it is listening. Let&#8217;s focus on why calling suspend results in a crash, since that shouldn&#8217;t happen.</p>
+<p>When you get the crash, while the program is still attached in the debugging console (i.e. you can see the prompt &#8220;lldb&#8221; in blue), can you type &#8220;bt&#8221; into that prompt and show the results?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

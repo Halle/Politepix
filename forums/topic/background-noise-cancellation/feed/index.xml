@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] background noise cancellation &#8211; Politepix</title>
+		<atom:link href="/forums/topic/background-noise-cancellation/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/background-noise-cancellation/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:56:23 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/background-noise-cancellation/#post-1023145</guid>
+					<title><![CDATA[[Resolved] background noise cancellation]]></title>
+					<link>/forums/topic/background-noise-cancellation/#post-1023145</link>
+					<pubDate>Tue, 02 Dec 2014 20:30:54 +0000</pubDate>
+					<dc:creator>foobar8675</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Does one of the plugins doing background noise cancellation? I did some tests of names from my contact list which worked great in a quiet room. In a moving car, I did the same test and the accuracy was not very good.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/background-noise-cancellation/#post-1023153</guid>
+					<title><![CDATA[Reply To: [Resolved] background noise cancellation]]></title>
+					<link>/forums/topic/background-noise-cancellation/#post-1023153</link>
+					<pubDate>Wed, 03 Dec 2014 19:37:14 +0000</pubDate>
+					<dc:creator>foobar8675</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>just checking in to see if you had any thoughts on my last post.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/background-noise-cancellation/#post-1023222</guid>
+					<title><![CDATA[Reply To: [Resolved] background noise cancellation]]></title>
+					<link>/forums/topic/background-noise-cancellation/#post-1023222</link>
+					<pubDate>Fri, 05 Dec 2014 21:42:41 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Take a look at OpenEars 2.0 for improved noise reduction: <a href="/2014/12/05/openears-2-0-and-version-2-0-of-all-plugins-out-now/">/2014/12/05/openears-2-0-and-version-2-0-of-all-plugins-out-now/</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/background-noise-cancellation/#post-1023234</guid>
+					<title><![CDATA[Reply To: [Resolved] background noise cancellation]]></title>
+					<link>/forums/topic/background-noise-cancellation/#post-1023234</link>
+					<pubDate>Fri, 05 Dec 2014 22:50:38 +0000</pubDate>
+					<dc:creator>foobar8675</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This is awesome news! </p>
+<p>I downloaded openears from <a href="/openears/">/openears/</a>  and tried running the OpenEarsSampleApp. </p>
+<p>I ran into some compile errors, which I attempted to fix by changing the framework search paths (which references Users/me/&#8230;) to ../Framework but then got an error saying </p>
+<p>ld: framework not found OpenEars</p>
+<p>which I&#8217;m not sure how to fix.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/background-noise-cancellation/#post-1023236</guid>
+					<title><![CDATA[Reply To: [Resolved] background noise cancellation]]></title>
+					<link>/forums/topic/background-noise-cancellation/#post-1023236</link>
+					<pubDate>Fri, 05 Dec 2014 23:17:59 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry about that – one of Xcode&#8217;s little pranks, I&#8217;ve restored the relative paths. Can you download a new version, give it another try and see if this one builds?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/background-noise-cancellation/#post-1023237</guid>
+					<title><![CDATA[Reply To: [Resolved] background noise cancellation]]></title>
+					<link>/forums/topic/background-noise-cancellation/#post-1023237</link>
+					<pubDate>Fri, 05 Dec 2014 23:22:15 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>BTW, you may need to adjust OEPocketsphinxController&#8217;s new vadThreshold property a bit up or down to get the desired speech/silence threshold with the new noise-robust voice activity detection. The current setting is what my testing showed to be in the right neighborhood, but you can change it to match your use case better if it isn&#8217;t exactly right. If it is too low it can react to too much environmental noise, and if it is too high it can exclude intentional speech.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/background-noise-cancellation/#post-1023243</guid>
+					<title><![CDATA[Reply To: [Resolved] background noise cancellation]]></title>
+					<link>/forums/topic/background-noise-cancellation/#post-1023243</link>
+					<pubDate>Sat, 06 Dec 2014 01:17:37 +0000</pubDate>
+					<dc:creator>foobar8675</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>hmm, I just re-downloaded and still am getting a compile issue (below) .  Not sure why since I see OpenEars is clearly in the Framework search paths. thoughts? out of curiosity, have you updated to xcode 6.1.1? maybe that is why it&#8217;s working for you and not me?</p>
+<p>Ld /Users/matthewchung/Library/Developer/Xcode/DerivedData/OpenEarsSampleApp-ethuwcspbfgfdjbccnjuyixmmfpb/Build/Products/Debug-iphoneos/OpenEarsSampleApp.app/OpenEarsSampleApp normal armv7<br />
+    cd /Users/matthewchung/Downloads/OpenEarsDistribution/OpenEarsSampleApp<br />
+    export IPHONEOS_DEPLOYMENT_TARGET=6.0<br />
+    export PATH=&#8221;/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin&#8221;<br />
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch armv7 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk -L/Users/matthewchung/Library/Developer/Xcode/DerivedData/OpenEarsSampleApp-ethuwcspbfgfdjbccnjuyixmmfpb/Build/Products/Debug-iphoneos -L/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/usr/lib/system -F/Users/matthewchung/Library/Developer/Xcode/DerivedData/OpenEarsSampleApp-ethuwcspbfgfdjbccnjuyixmmfpb/Build/Products/Debug-iphoneos -F../../OpenEarsDistribution/Framework -F../../OpenEarsDistribution/Framework/AcousticModelEnglish.bundle -F../../OpenEarsDistribution/Framework/AcousticModelSpanish.bundle -filelist /Users/matthewchung/Library/Developer/Xcode/DerivedData/OpenEarsSampleApp-ethuwcspbfgfdjbccnjuyixmmfpb/Build/Intermediates/OpenEarsSampleApp.build/Debug-iphoneos/OpenEarsSampleApp.build/Objects-normal/armv7/OpenEarsSampleApp.LinkFileList -fobjc-arc -fobjc-link-runtime -miphoneos-version-min=6.0 -framework AudioToolbox -framework Slt -framework AVFoundation -framework CoreGraphics -framework UIKit -framework Foundation -framework OpenEars -Xlinker -dependency_info -Xlinker /Users/matthewchung/Library/Developer/Xcode/DerivedData/OpenEarsSampleApp-ethuwcspbfgfdjbccnjuyixmmfpb/Build/Intermediates/OpenEarsSampleApp.build/Debug-iphoneos/OpenEarsSampleApp.build/Objects-normal/armv7/OpenEarsSampleApp_dependency_info.dat -o /Users/matthewchung/Library/Developer/Xcode/DerivedData/OpenEarsSampleApp-ethuwcspbfgfdjbccnjuyixmmfpb/Build/Products/Debug-iphoneos/OpenEarsSampleApp.app/OpenEarsSampleApp</p>
+<p>ld: framework not found OpenEars<br />
+clang: error: linker command failed with exit code 1 (use -v to see invocation)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/background-noise-cancellation/#post-1023245</guid>
+					<title><![CDATA[Reply To: [Resolved] background noise cancellation]]></title>
+					<link>/forums/topic/background-noise-cancellation/#post-1023245</link>
+					<pubDate>Sat, 06 Dec 2014 11:36:55 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry, it looks like the needed link in the framework to resources was accidentally added to my .gitignore so the uploaded version was missing an essential file (but could be found on my local filesystem). I&#8217;ve fixed it and created a virtual machine with a user who has none of my local file structure so I can check whether this is an issue in the future.</p>
+<p>The current uploaded version worked fine for my test developer, so I think it should work fine for you. Please re-download and make sure you&#8217;ve deleted the previous two downloads to be sure there&#8217;s no unintentional interaction or caching before running the sample app with the new version. Thanks for hanging in there.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/background-noise-cancellation/#post-1023279</guid>
+					<title><![CDATA[Reply To: [Resolved] background noise cancellation]]></title>
+					<link>/forums/topic/background-noise-cancellation/#post-1023279</link>
+					<pubDate>Sun, 07 Dec 2014 16:38:46 +0000</pubDate>
+					<dc:creator>foobar8675</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>got it working! thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/background-noise-cancellation/#post-1023282</guid>
+					<title><![CDATA[Reply To: [Resolved] background noise cancellation]]></title>
+					<link>/forums/topic/background-noise-cancellation/#post-1023282</link>
+					<pubDate>Sun, 07 Dec 2014 16:44:27 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Glad to hear it!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

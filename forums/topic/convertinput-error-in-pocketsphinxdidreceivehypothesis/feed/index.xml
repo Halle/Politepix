@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>ConvertInput error in pocketsphinxDidReceiveHypothesis &#8211; Politepix</title>
+		<atom:link href="/forums/topic/convertinput-error-in-pocketsphinxdidreceivehypothesis/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/convertinput-error-in-pocketsphinxdidreceivehypothesis/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:48:32 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/convertinput-error-in-pocketsphinxdidreceivehypothesis/#post-11604</guid>
+					<title><![CDATA[ConvertInput error in pocketsphinxDidReceiveHypothesis]]></title>
+					<link>/forums/topic/convertinput-error-in-pocketsphinxdidreceivehypothesis/#post-11604</link>
+					<pubDate>Sat, 13 Oct 2012 04:08:22 +0000</pubDate>
+					<dc:creator>cgunn</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Inside pocketsphinxDidReceiveHypothesis I am seeing the error message<br />
+ aq@0x90ee000: ConvertInput using invalid anchor time</p>
+<p>And if OpenEarsLogging is turned on, it is then followed by<br />
+Error -66681: Unable to start the Audio Queue.</p>
+<p>This error appears when I make the first method call out from within the pocketsphinxDidReceiveHypothesis method.</p>
+<p>For example, I create a simple method, dummy(), which gets called from within pocketsphinxDidReceiveHypothesis. The error appears when this method is called:<br />
+ &#8211; (void) pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID {<br />
+     [self dummy]; /// DEBUG<br />
+&#8230;..<br />
+&#8230;..</p>
+<p>And from that point on, no fliteController output occurs and no more speech recognition occurs.<br />
+My code has previously worked fine, so It seems to be something I have changed, but I have been unable to track down what it is. Any suggestions?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/convertinput-error-in-pocketsphinxdidreceivehypothesis/#post-11605</guid>
+					<title><![CDATA[Reply To: ConvertInput error in pocketsphinxDidReceiveHypothesis]]></title>
+					<link>/forums/topic/convertinput-error-in-pocketsphinxdidreceivehypothesis/#post-11605</link>
+					<pubDate>Sat, 13 Oct 2012 04:33:36 +0000</pubDate>
+					<dc:creator>cgunn</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, I&#8217;ve discovered something more about this. This error seems to occur because the class that this code is in is both an OpenEarsEventsObserverDelegate and an AVAudioPlayerDelegate.</p>
+<p>@interface Speech : NSObject</p>
+<p>This is because it plays some pre-recorded sound clips as well as fliteController output, and I want to know when the clips are started and finished so i can turn off speech recognition during those sounds.<br />
+If I remove the &#8216;AVAudioPlayerDelegate&#8217;, I seem to be able run consistently without the error occurring.</p>
+<p>Is it valid to have the class as a delegate of both? Could there be some conflict that is causing this error and lock-up?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/convertinput-error-in-pocketsphinxdidreceivehypothesis/#post-11607</guid>
+					<title><![CDATA[Reply To: ConvertInput error in pocketsphinxDidReceiveHypothesis]]></title>
+					<link>/forums/topic/convertinput-error-in-pocketsphinxdidreceivehypothesis/#post-11607</link>
+					<pubDate>Sat, 13 Oct 2012 09:12:19 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Interesting. We know that there isn&#8217;t an inherent conflict between a class inheriting the delegate protocols of OpenEarsEventsObserver and AVAudioPlayer because FliteController inherits the delegate protocols of both. But I don&#8217;t think your interpretation is offbase because there is a lot going on there &#8212; the recognition audio unit, FliteController&#8217;s audio and its callbacks, and your audio and its callbacks.</p>
+<p>Do you want to show me some logs featuring OpenEarsLogging and verbosePocketSphinx for the timeframe in which this is occurring? Maybe there are some hints.</p>
+<p>Something to just double-check is that a lot of AVAudioPlayer sample code contains unneeded calls to AVAudioSession and a lot of developers who asked me about similar issues found calls to the audio session in their code that were responsible. It might be worth a quick project-wide search for &#8220;audiosession&#8221; without case matching to make sure that some audio session overrides didn&#8217;t sneak in there.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/convertinput-error-in-pocketsphinxdidreceivehypothesis/#post-11610</guid>
+					<title><![CDATA[Reply To: ConvertInput error in pocketsphinxDidReceiveHypothesis]]></title>
+					<link>/forums/topic/convertinput-error-in-pocketsphinxdidreceivehypothesis/#post-11610</link>
+					<pubDate>Sun, 14 Oct 2012 04:48:48 +0000</pubDate>
+					<dc:creator>cgunn</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, I&#8217;ve done what you suggested, but first, something didn&#8217;t paste correctly in my earlier message, because it got the angle brackets confused with html brackets. The line<br />
+@interface Speech : NSObject<br />
+should have shown as<br />
+<code><br />
+@interface Speech : NSObject {OpenEarsEventsObserverDelegate, AVAudioPlayerDelegate}<br />
+</code><br />
+(except replace the braces with angle brackets).</p>
+<p>A search for AudioSession revealed the two methods: audioSessionInterruptionDidBegin and audioSessionInterruptionDidEnd, but commenting them out didn&#8217;t fix the problem.  Here is the output:</p>
+<p>2012-10-14 15:36:19.525 RR[66801:c07] VC Pocketsphinx calibration is complete.<br />
+2012-10-14 15:36:19.526 RR[66801:c07] Speech: Pocketsphinx calibration is complete.<br />
+2012-10-14 15:36:28.107 RR[66801:1f07] Speech detected&#8230;<br />
+2012-10-14 15:36:29.864 RR[66801:1f07] Processing speech, please wait&#8230;<br />
+2012-10-14 15:36:29.869 RR[66801:1f07] Pocketsphinx heard &#8220;START&#8221; with a score of (-1557) and an utterance ID of 000000000.<br />
+2012-10-14 15:36:29.870 RR[66801:c07] The received hypothesis is START with a score of -1557 and an ID of 000000000</p>
+<p>&#8212; here i make a call to my dummy() function &#8211; (void) dummy { NSLog(@&#8221;dummy&#8221;);} &#8212;</p>
+<p>2012-10-14 15:36:40.707 RR[66801:1f07]   aq@0x9671000: ConvertInput using invalid anchor time<br />
+Error -66681: Unable to start the Audio Queue.<br />
+2012-10-14 15:36:40.708 RR[66801:1f07] Listening.<br />
+2012-10-14 15:36:40.708 RR[66801:c07] dummy</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/convertinput-error-in-pocketsphinxdidreceivehypothesis/#post-11613</guid>
+					<title><![CDATA[Reply To: ConvertInput error in pocketsphinxDidReceiveHypothesis]]></title>
+					<link>/forums/topic/convertinput-error-in-pocketsphinxdidreceivehypothesis/#post-11613</link>
+					<pubDate>Sun, 14 Oct 2012 05:21:39 +0000</pubDate>
+					<dc:creator>cgunn</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Also, the above output is followed by the line </p>
+<p>2012-10-14 16:15:29.380 RR[68064:c07] Flite sending interrupt speech request.</p>
+<p>before returning to the main loop.</p>
+<p>And to complicate it a bit more, i have now removed the inheritance from AVAudioPlayerDelegate, which fixed the problem yesterday, but now i am still getting the error &#8211; so it may not have been the cause. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/convertinput-error-in-pocketsphinxdidreceivehypothesis/#post-11614</guid>
+					<title><![CDATA[Reply To: ConvertInput error in pocketsphinxDidReceiveHypothesis]]></title>
+					<link>/forums/topic/convertinput-error-in-pocketsphinxdidreceivehypothesis/#post-11614</link>
+					<pubDate>Sun, 14 Oct 2012 08:55:39 +0000</pubDate>
+					<dc:creator>cgunn</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;ve now discovered that it seems to be to do with having 2 OpenEarsEventsObserverDelegates in the system. I had my main ViewController as an OpenEarsEventsObserverDelegate so that it can change the user interface when fliteController output starts and stops. i also had another class, Speech, as a second OpenEarsEventsObserverDelegate so that it can process the speech. In my view controller, if i set the delegate to &#8216;this&#8217;, the error occurs, but if i omit that line (leaving only one delegate in the system &#8211; the Speech class), the error does not occur. So i think i can reorganise my code to have only one delegate and have it inform the other class of the OpenEars events when they occur.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/convertinput-error-in-pocketsphinxdidreceivehypothesis/#post-11615</guid>
+					<title><![CDATA[Reply To: ConvertInput error in pocketsphinxDidReceiveHypothesis]]></title>
+					<link>/forums/topic/convertinput-error-in-pocketsphinxdidreceivehypothesis/#post-11615</link>
+					<pubDate>Sun, 14 Oct 2012 09:31:43 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That is a little bit unlikely as the underlying cause since OpenEars itself has at least two OpenEarsEventsObservers instantiated internally, then add your first one and you&#8217;re up to a minimum of three out of the gate.</p>
+<p>Not debating that it is helping the issue you are seeing, just that it is probably ultimately due to something else. I haven&#8217;t seen the full logs and I imagine there are nuances to the code that can&#8217;t be put across via small snippets but it would be great if you could email me a stripped-down test case. Looking at this report of the same issue, it really looks like the audio session category is being overridden somewhere:</p>
+<p><a href="http://stackoverflow.com/questions/5215919/convertinput-using-invalid-anchor-time-error-received-when-recording-on-device" rel="nofollow">http://stackoverflow.com/questions/5215919/convertinput-using-invalid-anchor-time-error-received-when-recording-on-device</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/convertinput-error-in-pocketsphinxdidreceivehypothesis/#post-13605</guid>
+					<title><![CDATA[Reply To: ConvertInput error in pocketsphinxDidReceiveHypothesis]]></title>
+					<link>/forums/topic/convertinput-error-in-pocketsphinxdidreceivehypothesis/#post-13605</link>
+					<pubDate>Tue, 27 Nov 2012 03:25:09 +0000</pubDate>
+					<dc:creator>cgunn</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for this answer &#8211; I&#8217;m sure you are right &#8211; there must have been some memory corruption somewhere that was causing this side effect. I have now completely rewritten my app and have not (yet!) seen the problem. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/convertinput-error-in-pocketsphinxdidreceivehypothesis/#post-13608</guid>
+					<title><![CDATA[Reply To: ConvertInput error in pocketsphinxDidReceiveHypothesis]]></title>
+					<link>/forums/topic/convertinput-error-in-pocketsphinxdidreceivehypothesis/#post-13608</link>
+					<pubDate>Tue, 27 Nov 2012 10:40:37 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Cool, I&#8217;m glad to hear you&#8217;ve seen an improvement and I appreciate your updating the thread.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

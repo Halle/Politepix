@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Scores used in Openears &#8211; Politepix</title>
+		<atom:link href="/forums/topic/scores-used-in-openears/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/scores-used-in-openears/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:39:35 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/scores-used-in-openears/#post-10898</guid>
+					<title><![CDATA[Scores used in Openears]]></title>
+					<link>/forums/topic/scores-used-in-openears/#post-10898</link>
+					<pubDate>Fri, 31 Aug 2012 10:15:22 +0000</pubDate>
+					<dc:creator>kelvin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,<br />
+I&#8217;m using Openears API 1.1. I would like to enquire about the following questions.</p>
+<p>1) recognitionScore in pocketsphinxDidReceiveHypothesis function is it equal to confidence score? Is it the lower the more accurate in pronounciation? Any idea how do we get the formulae?</p>
+<p>2) I understand that in an n-bestlist it always take the 1st hypothesis score(which is the higher ones). Any idea, how do we obtain the results as in formuales used?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/scores-used-in-openears/#post-10899</guid>
+					<title><![CDATA[Reply To: Scores used in Openears]]></title>
+					<link>/forums/topic/scores-used-in-openears/#post-10899</link>
+					<pubDate>Fri, 31 Aug 2012 10:39:18 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>recognitionScore is equivalent to confidence score, but in pocketsphinx that is extraordinarily dependent on size of language model and environment and speaker, meaning that you have to be very conservative about using it for any program logic. I recommend testing a lot under many circumstances before deciding how to use scoring or whether to use it.</p>
+<p>For n-best, are all the scores not being returned?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/scores-used-in-openears/#post-10900</guid>
+					<title><![CDATA[Reply To: Scores used in Openears]]></title>
+					<link>/forums/topic/scores-used-in-openears/#post-10900</link>
+					<pubDate>Fri, 31 Aug 2012 10:59:48 +0000</pubDate>
+					<dc:creator>kelvin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the prompt reply. Any idea how the recognitionScore are being generated as in the formulae in it?</p>
+<p>No problem returning n-best.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/scores-used-in-openears/#post-10901</guid>
+					<title><![CDATA[Reply To: Scores used in Openears]]></title>
+					<link>/forums/topic/scores-used-in-openears/#post-10901</link>
+					<pubDate>Fri, 31 Aug 2012 11:39:04 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I would just recommend looking into the source in the framework project to get the exact formula/e.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/scores-used-in-openears/#post-10902</guid>
+					<title><![CDATA[Reply To: Scores used in Openears]]></title>
+					<link>/forums/topic/scores-used-in-openears/#post-10902</link>
+					<pubDate>Fri, 31 Aug 2012 11:47:59 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry I don&#8217;t have a lot of info on hand about the way that the scoring works &#8212; I made a decision to pass the score along via the API because it was available as data and it seemed like overreaching to decide not to pass it back through the callback, but based on my discussions with the CMU Sphinx folks it doesn&#8217;t provide a lot of viable info for language models of the size that are appropriate for iPhone apps so I haven&#8217;t done a lot of investigation of its intricacies myself.  My general advice is that you should base any logic that makes use of the score on data that emerges from well-organized and diverse tests rather than an interpretation of the scoring method.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/scores-used-in-openears/#post-10903</guid>
+					<title><![CDATA[Reply To: Scores used in Openears]]></title>
+					<link>/forums/topic/scores-used-in-openears/#post-10903</link>
+					<pubDate>Fri, 31 Aug 2012 11:59:47 +0000</pubDate>
+					<dc:creator>kelvin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ok. Thanks for all the advice that you have provided.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

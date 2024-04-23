@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Stop/Start Listening or Speech Recognition Suspended? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/stopstart-listening-or-speech-recognition-suspended/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/stopstart-listening-or-speech-recognition-suspended/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:00:45 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/stopstart-listening-or-speech-recognition-suspended/#post-1021549</guid>
+					<title><![CDATA[Stop/Start Listening or Speech Recognition Suspended?]]></title>
+					<link>/forums/topic/stopstart-listening-or-speech-recognition-suspended/#post-1021549</link>
+					<pubDate>Thu, 05 Jun 2014 20:58:19 +0000</pubDate>
+					<dc:creator>davestrand</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>I was hoping you could nudge me in the right direction. </p>
+<p>I would like to occasionally playback an MP3 in my app that may have voices talking, so I don&#8217;t want OpenEars to listen when the MP3 is playing and get confused. Consequently I&#8217;m calling stopListening when the MP3 starts and stopListening to happen when the MP3 is done playing.  Is this the appropriate approach, or is there a better way you would suggest?</p>
+<p>Because the app starts to sporadically crash after I startListening again. I&#8217;m afraid that maybe I&#8217;m calling multiple pocketSphinxControllers on accident due to this method?</p>
+<p>Thanks for your time.<br />
+-Dave</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/stopstart-listening-or-speech-recognition-suspended/#post-1021550</guid>
+					<title><![CDATA[Reply To: Stop/Start Listening or Speech Recognition Suspended?]]></title>
+					<link>/forums/topic/stopstart-listening-or-speech-recognition-suspended/#post-1021550</link>
+					<pubDate>Thu, 05 Jun 2014 21:02:31 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Dave,</p>
+<p>suspendRecognition/resumeRecognition is what you&#8217;re looking for here. Crashes  shouldn&#8217;t be an issue in either case so there may be another underlying cause there.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/stopstart-listening-or-speech-recognition-suspended/#post-1021551</guid>
+					<title><![CDATA[Reply To: Stop/Start Listening or Speech Recognition Suspended?]]></title>
+					<link>/forums/topic/stopstart-listening-or-speech-recognition-suspended/#post-1021551</link>
+					<pubDate>Thu, 05 Jun 2014 21:03:02 +0000</pubDate>
+					<dc:creator>davestrand</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>*correction &#8216;I’m calling stopListening when the MP3 starts and *startListening to happen when the MP3 is done playing&#8217;</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/stopstart-listening-or-speech-recognition-suspended/#post-1021552</guid>
+					<title><![CDATA[Reply To: Stop/Start Listening or Speech Recognition Suspended?]]></title>
+					<link>/forums/topic/stopstart-listening-or-speech-recognition-suspended/#post-1021552</link>
+					<pubDate>Thu, 05 Jun 2014 21:04:38 +0000</pubDate>
+					<dc:creator>davestrand</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ok.  I tried using the suspendRecognition but it didn&#8217;t seem to work..  I&#8217;ll poke around and try and figure out what is triggering it to resume before I say to.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/stopstart-listening-or-speech-recognition-suspended/#post-1021553</guid>
+					<title><![CDATA[Reply To: Stop/Start Listening or Speech Recognition Suspended?]]></title>
+					<link>/forums/topic/stopstart-listening-or-speech-recognition-suspended/#post-1021553</link>
+					<pubDate>Thu, 05 Jun 2014 21:12:05 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, it sounds a bit like there is something a little unusual about your implementation so it might be helpful to compare with the sample app, which has a suspend/resume implementation.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/stopstart-listening-or-speech-recognition-suspended/#post-1021554</guid>
+					<title><![CDATA[Reply To: Stop/Start Listening or Speech Recognition Suspended?]]></title>
+					<link>/forums/topic/stopstart-listening-or-speech-recognition-suspended/#post-1021554</link>
+					<pubDate>Thu, 05 Jun 2014 21:18:02 +0000</pubDate>
+					<dc:creator>davestrand</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ok.  I&#8217;ll look over that, and see what I find.  Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

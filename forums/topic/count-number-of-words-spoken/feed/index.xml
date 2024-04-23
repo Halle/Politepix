@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Count number of words spoken &#8211; Politepix</title>
+		<atom:link href="/forums/topic/count-number-of-words-spoken/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/count-number-of-words-spoken/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:08:39 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/count-number-of-words-spoken/#post-1021912</guid>
+					<title><![CDATA[Count number of words spoken]]></title>
+					<link>/forums/topic/count-number-of-words-spoken/#post-1021912</link>
+					<pubDate>Wed, 09 Jul 2014 15:54:07 +0000</pubDate>
+					<dc:creator>mbesto</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>We are looking to create an iPhone app that simply counts the number of words spoken from an audio stream. For example, user hits &#8220;start recording&#8221;, says a sentence like &#8220;Hi, I am Mike&#8221; and then hits &#8220;stop recording&#8221;. The output would be 4 words. We don&#8217;t care about what words specifically are spoken, just the number. Is this possible with OpenEars? </p>
+<p>Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/count-number-of-words-spoken/#post-1021915</guid>
+					<title><![CDATA[Reply To: Count number of words spoken]]></title>
+					<link>/forums/topic/count-number-of-words-spoken/#post-1021915</link>
+					<pubDate>Wed, 09 Jul 2014 16:25:11 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>This would be possible to do if the words were identifiable (i.e. you knew them in advance). Without knowing the words which are spoken, you can&#8217;t really count number of words, because you don&#8217;t know what comprises a word versus some arbitrary combination of syllables.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/count-number-of-words-spoken/#post-1021919</guid>
+					<title><![CDATA[Reply To: Count number of words spoken]]></title>
+					<link>/forums/topic/count-number-of-words-spoken/#post-1021919</link>
+					<pubDate>Wed, 09 Jul 2014 20:33:22 +0000</pubDate>
+					<dc:creator>mbesto</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the quick response! </p>
+<p>Two thoughts:</p>
+<p>Is there any functionality to measure syllable nuclei:<br />
+<a href="https://sites.google.com/site/speechrate/Home/how-does-the-script-work" rel="nofollow">https://sites.google.com/site/speechrate/Home/how-does-the-script-work</a></p>
+<p>OR</p>
+<p>Can you simply do a speech-to-text and then just do a total count on all of the words?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/count-number-of-words-spoken/#post-1021920</guid>
+					<title><![CDATA[Reply To: Count number of words spoken]]></title>
+					<link>/forums/topic/count-number-of-words-spoken/#post-1021920</link>
+					<pubDate>Wed, 09 Jul 2014 20:40:51 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>Is there any functionality to measure syllable nuclei:<br />
+<a href="https://sites.google.com/site/speechrate/Home/how-does-the-script-work" rel="nofollow">https://sites.google.com/site/speechrate/Home/how-does-the-script-work</a></p></blockquote>
+<p>No, but this wouldn&#8217;t tell you how many words the user had said, just how many syllables. You can currently get an middling-good attempt at phoneme transcription out of Rejecto, but again, knowing parts of words doesn&#8217;t tell you anything about how many words were said unless you already know the words, in which case you should just create a language model or grammar using those words and then count utterances of them directly.</p>
+<blockquote><p>Can you simply do a speech-to-text and then just do a total count on all of the words?</p></blockquote>
+<p>Yes, I think I would do it this way using a custom language model, but it would require knowing the needed vocabulary in advance.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

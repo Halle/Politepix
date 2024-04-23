@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>OpenEars/Pocketsphinx turns audio player volume down and won&#039;t let go &#8211; Politepix</title>
+		<atom:link href="/forums/topic/openearspocketsphinx-turns-audio-player-volume-down-and-wont-let-go/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/openearspocketsphinx-turns-audio-player-volume-down-and-wont-let-go/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:00:54 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/openearspocketsphinx-turns-audio-player-volume-down-and-wont-let-go/#post-1022258</guid>
+					<title><![CDATA[OpenEars/Pocketsphinx turns audio player volume down and won&#039;t let go]]></title>
+					<link>/forums/topic/openearspocketsphinx-turns-audio-player-volume-down-and-wont-let-go/#post-1022258</link>
+					<pubDate>Sat, 16 Aug 2014 00:33:34 +0000</pubDate>
+					<dc:creator>Darth Flyeater</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>I have a learn to read app that has background sounds as well as my own speech files that get called as avaudioplayer instances.  I incorporated OpenEars into the app and everything works great except for some volume issues.   When Pocketsphinx initializes, it lowers the sound volume on everything and doesn&#8217;t let it come back up.  During the logging, it goes thru and says everything is incorrect and says that it&#8217;s setting it to 1 (my volume on the background sound was already set to 1, unless 1 doesn&#8217;t really equal 1 in OpenEars/Pocketsphinx).</p>
+<p>Is there something I&#8217;m missing?</p>
+<p>Thanks in advance.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openearspocketsphinx-turns-audio-player-volume-down-and-wont-let-go/#post-1022267</guid>
+					<title><![CDATA[Reply To: OpenEars/Pocketsphinx turns audio player volume down and won&#039;t let go]]></title>
+					<link>/forums/topic/openearspocketsphinx-turns-audio-player-volume-down-and-wont-let-go/#post-1022267</link>
+					<pubDate>Sat, 16 Aug 2014 18:20:00 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>This is a known issue, and unfortunately a bug with the PlayAndRecord audio session that OpenEars has to use in order to do low-latency recording. If you search these forums for the keyword PlayAndRecord you&#8217;ll see more discussion about it. I&#8217;m continuing to look into workarounds and in the meantime one option is to use AVAudioPlayer to play back sounds or audio if possible without experiencing the volume drop.</p>
+<blockquote><p>my volume on the background sound was already set to 1, unless 1 doesn’t really equal 1 in OpenEars/Pocketsphinx</p></blockquote>
+<p>This doesn&#8217;t refer to the volume of the system audio or audio objects you own.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openearspocketsphinx-turns-audio-player-volume-down-and-wont-let-go/#post-1022270</guid>
+					<title><![CDATA[Reply To: OpenEars/Pocketsphinx turns audio player volume down and won&#039;t let go]]></title>
+					<link>/forums/topic/openearspocketsphinx-turns-audio-player-volume-down-and-wont-let-go/#post-1022270</link>
+					<pubDate>Sat, 16 Aug 2014 19:26:47 +0000</pubDate>
+					<dc:creator>Darth Flyeater</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the reply, Halle.  I&#8217;ll take a look at the PlayAndRecord posts.  </p>
+<p>I am using AVAudioPlayer for all my sounds/audio and the volume is still getting sacked (unless I&#8217;m doing something wrong).  Below is my code for the background sounds:</p>
+<p>AVAudioPlayer *_backgroundSoundPlayer;  //declared at the top of the implementation</p>
+<p>&#8211; (void)playBackgroundSound:(NSString *)filename<br />
+{<br />
+    NSError *error;<br />
+    NSURL *backgroundSoundURL = [[NSBundle mainBundle] URLForResource:filename withExtension:nil];<br />
+    _backgroundSoundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:backgroundSoundURL error:&amp;error];<br />
+    _backgroundSoundPlayer.numberOfLoops = -1;<br />
+    _backgroundSoundPlayer.volume = vB;<br />
+    [_backgroundSoundPlayer prepareToPlay];<br />
+}</p>
+<p>[_backgroundSoundPlayer play]; //this gets called in another method</p>
+<p>What other workarounds are you looking at, and could I help test them?</p>
+<p>Thanks again.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openearspocketsphinx-turns-audio-player-volume-down-and-wont-let-go/#post-1022271</guid>
+					<title><![CDATA[Reply To: OpenEars/Pocketsphinx turns audio player volume down and won&#039;t let go]]></title>
+					<link>/forums/topic/openearspocketsphinx-turns-audio-player-volume-down-and-wont-let-go/#post-1022271</link>
+					<pubDate>Sat, 16 Aug 2014 19:54:18 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Interesting – OpenEars shouldn&#8217;t do anything to your AVAudioPlayers, that&#8217;s not expected. FliteController and NeatSpeech also use AVAudioPlayer for speech playback so coexistence there gets a fair amount of testing. What happens if you omit volume settings from your player? Can you search your app for the word &#8216;audiosession&#8217; and make sure you don&#8217;t have any calls to AudioSession or AVAudioSession? That is sometimes a factor in unexpected results when PocketsphinxController restores its required audio session settings.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openearspocketsphinx-turns-audio-player-volume-down-and-wont-let-go/#post-1022274</guid>
+					<title><![CDATA[Reply To: OpenEars/Pocketsphinx turns audio player volume down and won&#039;t let go]]></title>
+					<link>/forums/topic/openearspocketsphinx-turns-audio-player-volume-down-and-wont-let-go/#post-1022274</link>
+					<pubDate>Sun, 17 Aug 2014 00:45:13 +0000</pubDate>
+					<dc:creator>Darth Flyeater</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I have AudioSession as part of the standard PocketSphinx methods:</p>
+<p>&#8211; (void) audioSessionInterruptionDidBegin<br />
+{<br />
+	NSLog(@&#8221;AudioSession interruption began.&#8221;);</p>
+<p>	[self.pocketsphinxController stopListening]; // React to it by telling Pocketsphinx to stop listening since it will need to restart its loop after an interruption.<br />
+}</p>
+<p>&#8211; (void) audioSessionInterruptionDidEnd<br />
+{<br />
+	NSLog(@&#8221;AudioSession interruption ended.&#8221;);</p>
+<p>    // We&#8217;re restarting the previously-stopped listening loop.<br />
+    [self startListening];<br />
+}</p>
+<p>But nothing should be calling those methods.</p>
+<p>And I also tried this: pocketsphinxController.audioSessionMixing = TRUE; in the pocket sphinx lazy initiator method to try and fix the problem with the volume after I noticed it.</p>
+<p>I don&#8217;t have any AVAudioSessions. </p>
+<p>I tried killing all the AudioSessions references and my background sound volume control and it still cuts the volume once active listening starts.</p>
+<p>I&#8217;m not using FliteController or NeatSpeech.  Can I get my sound files to be played thru FliteController?</p>
+<p>I&#8217;ll try some of the suggestions on the PlayAndRecord forum posts and see if I can get it to work properly.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openearspocketsphinx-turns-audio-player-volume-down-and-wont-let-go/#post-1022275</guid>
+					<title><![CDATA[Reply To: OpenEars/Pocketsphinx turns audio player volume down and won&#039;t let go]]></title>
+					<link>/forums/topic/openearspocketsphinx-turns-audio-player-volume-down-and-wont-let-go/#post-1022275</link>
+					<pubDate>Sun, 17 Aug 2014 11:47:26 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, are we talking about sound which is occurring simultaneously with listening or sound which is being played at times when listening is not in progress? Sound can&#8217;t be routed out of a speaker at the same time as there is an attempt to recognize speech using the external mic since the recognition will just be performed on the sound. FliteController only plays speech back when listening isn&#8217;t underway (unless headphones are plugged in) since otherwise it would be FliteController&#8217;s speech that would be recognized instead of the user&#8217;s.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openearspocketsphinx-turns-audio-player-volume-down-and-wont-let-go/#post-1022276</guid>
+					<title><![CDATA[Reply To: OpenEars/Pocketsphinx turns audio player volume down and won&#039;t let go]]></title>
+					<link>/forums/topic/openearspocketsphinx-turns-audio-player-volume-down-and-wont-let-go/#post-1022276</link>
+					<pubDate>Sun, 17 Aug 2014 15:42:53 +0000</pubDate>
+					<dc:creator>Darth Flyeater</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I have a background track that starts when the app is launched.  There is a toggle button where the user can turn it on or off.  I then have an instruction audio track that plays before I have the listening begin.  Background sounds and instruction track play at normal volume.   When pocket sphinx is calibrated and starts listening, the background track volume is cut at least in half (but continues to play).  The active listening works perfectly at that point (even with the background track still playing).  I then have kudos audio play if the correct word is recognized.  This also works perfectly and doesn&#8217;t care if listening is active or suspended (I&#8217;ve tried both ways).  However, this volume is also reduced.  The only way to get the volume back to normal is to exit the app completely and restart.  I have an exit button which takes you back to the start scene (which has no listening, just a title and a start button along with the background track still playing), but the volume remains degraded.</p>
+<p>Since other users are reporting that avaudioplayer should work with openears, I think I&#8217;ll make a test app with nothing but my background track and openears to see if I can get it to work.  </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openearspocketsphinx-turns-audio-player-volume-down-and-wont-let-go/#post-1022531</guid>
+					<title><![CDATA[Reply To: OpenEars/Pocketsphinx turns audio player volume down and won&#039;t let go]]></title>
+					<link>/forums/topic/openearspocketsphinx-turns-audio-player-volume-down-and-wont-let-go/#post-1022531</link>
+					<pubDate>Mon, 15 Sep 2014 13:59:04 +0000</pubDate>
+					<dc:creator>rw86347</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>did you ever find a solution?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openearspocketsphinx-turns-audio-player-volume-down-and-wont-let-go/#post-1022556</guid>
+					<title><![CDATA[Reply To: OpenEars/Pocketsphinx turns audio player volume down and won&#039;t let go]]></title>
+					<link>/forums/topic/openearspocketsphinx-turns-audio-player-volume-down-and-wont-let-go/#post-1022556</link>
+					<pubDate>Mon, 15 Sep 2014 20:43:46 +0000</pubDate>
+					<dc:creator>Darth Flyeater</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I did not ever find a perfect solution.  I used Audacity to boost the volume levels of all my sound files.  Then, I put the pocket sphinx calibration as one of the first things to get called in the scene (before the instructions track started), so the sound level drop isn&#8217;t as noticeable.  With the boosted levels of the instructions and other sound tracks, the lowered levels caused by the active listening is overcome.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

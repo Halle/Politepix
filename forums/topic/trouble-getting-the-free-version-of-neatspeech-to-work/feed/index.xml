@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Trouble getting the demo version of NeatSpeech to work &#8211; Politepix</title>
+		<atom:link href="/forums/topic/trouble-getting-the-free-version-of-neatspeech-to-work/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/trouble-getting-the-free-version-of-neatspeech-to-work/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:44:11 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/trouble-getting-the-free-version-of-neatspeech-to-work/#post-1017162</guid>
+					<title><![CDATA[Trouble getting the demo version of NeatSpeech to work]]></title>
+					<link>/forums/topic/trouble-getting-the-free-version-of-neatspeech-to-work/#post-1017162</link>
+					<pubDate>Tue, 07 May 2013 11:18:15 +0000</pubDate>
+					<dc:creator>anujseth</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi</p>
+<p>I normally use flite directly for my apps but thought I&#8217;d give OpenEars and NeatSpeech a try. I wrote a small demo for all the voices to test them out. I have OpenEars working fine but when I tried to integrate NeatSpeech I keep getting an unrecognized selector error. I&#8217;m trying to get Emma&#8217;s voice working to begin with.</p>
+<p>Here&#8217;s the error (with Zombie objects enabled):<br />
+2013-05-07 16:44:46.418 OpenEarsTest[65073:c07] -[FliteController sayWithNeatSpeech:withVoice:]: unrecognized selector sent to instance 0x95a84b0<br />
+2013-05-07 16:44:46.419 OpenEarsTest[65073:c07] *** Terminating app due to uncaught exception &#8216;NSInvalidArgumentException&#8217;, reason: &#8216;-[FliteController sayWithNeatSpeech:withVoice:]: unrecognized selector sent to instance 0x95a84b0&#8217;</p>
+<p>Any suggestions ?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/trouble-getting-the-free-version-of-neatspeech-to-work/#post-1017163</guid>
+					<title><![CDATA[Reply To: Trouble getting the free version of NeatSpeech to work]]></title>
+					<link>/forums/topic/trouble-getting-the-free-version-of-neatspeech-to-work/#post-1017163</link>
+					<pubDate>Tue, 07 May 2013 11:22:53 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>When you&#8217;re following the instructions in the tutorial here:</p>
+<p><a href="/openears/tutorial">/openears/tutorial</a></p>
+<p>Pay extra attention to step 1 from &#8220;Preparing to use Plugins&#8221;:</p>
+<blockquote><p>
+Then open up the Build Settings tab of the target app project and find the entry &#8220;Other Linker Flags&#8221; and add the linker flag &#8220;-ObjC&#8221;
+</p></blockquote>
+<p>If you&#8217;ve done this already, make sure you&#8217;ve done it for the target you&#8217;re compiling to.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/trouble-getting-the-free-version-of-neatspeech-to-work/#post-1017165</guid>
+					<title><![CDATA[Reply To: Trouble getting the free version of NeatSpeech to work]]></title>
+					<link>/forums/topic/trouble-getting-the-free-version-of-neatspeech-to-work/#post-1017165</link>
+					<pubDate>Tue, 07 May 2013 12:14:03 +0000</pubDate>
+					<dc:creator>anujseth</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Oops, that was it, thanks !</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/trouble-getting-the-free-version-of-neatspeech-to-work/#post-1017166</guid>
+					<title><![CDATA[Reply To: Trouble getting the free version of NeatSpeech to work]]></title>
+					<link>/forums/topic/trouble-getting-the-free-version-of-neatspeech-to-work/#post-1017166</link>
+					<pubDate>Tue, 07 May 2013 12:18:12 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>No problem!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

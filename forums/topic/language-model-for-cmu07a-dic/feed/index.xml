@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Language Model for CMU07a.dic &#8211; Politepix</title>
+		<atom:link href="/forums/topic/language-model-for-cmu07a-dic/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/language-model-for-cmu07a-dic/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:00:06 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/language-model-for-cmu07a-dic/#post-1017218</guid>
+					<title><![CDATA[Language Model for CMU07a.dic]]></title>
+					<link>/forums/topic/language-model-for-cmu07a-dic/#post-1017218</link>
+					<pubDate>Wed, 15 May 2013 16:38:28 +0000</pubDate>
+					<dc:creator>anam</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>To use PocketsphinxController, we need a language model and a phonetic dictionary for it. If I want to use default CMU07a.dic, how can i generate language model for that? </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/language-model-for-cmu07a-dic/#post-1017219</guid>
+					<title><![CDATA[Reply To: Language Model for CMU07a.dic]]></title>
+					<link>/forums/topic/language-model-for-cmu07a-dic/#post-1017219</link>
+					<pubDate>Wed, 15 May 2013 16:43:26 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>You can&#8217;t use an 80,000 word language model; it won&#8217;t recognize accurately or in a reasonable timeframe and it will crash. For offline recognition on the iPhone you probably shouldn&#8217;t use more than 200 words in a single language model for best results.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/language-model-for-cmu07a-dic/#post-1017223</guid>
+					<title><![CDATA[Reply To: Language Model for CMU07a.dic]]></title>
+					<link>/forums/topic/language-model-for-cmu07a-dic/#post-1017223</link>
+					<pubDate>Thu, 16 May 2013 04:54:10 +0000</pubDate>
+					<dc:creator>anam</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for your prompt reply. I made my own dict file but i&#8217;m getting this warning on console:</p>
+<p>sih_add WARNING: repeated hashing of &#8216;THING&#8217;, older value will be overridden.<br />
+sih_add WARNING: repeated hashing of &#8216;WELL&#8217;, older value will be overridden.<br />
+sih_add WARNING: repeated hashing of &#8216;WOULD&#8217;, older value will be overridden.</p>
+<p>I thought i put these words twice times in txt file but that is not the case. Can you please tell me what is that?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/language-model-for-cmu07a-dic/#post-1017224</guid>
+					<title><![CDATA[Reply To: Language Model for CMU07a.dic]]></title>
+					<link>/forums/topic/language-model-for-cmu07a-dic/#post-1017224</link>
+					<pubDate>Thu, 16 May 2013 06:43:09 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Why not use LanguageModelGenerator to create your language model?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/language-model-for-cmu07a-dic/#post-1017225</guid>
+					<title><![CDATA[Reply To: Language Model for CMU07a.dic]]></title>
+					<link>/forums/topic/language-model-for-cmu07a-dic/#post-1017225</link>
+					<pubDate>Thu, 16 May 2013 06:49:27 +0000</pubDate>
+					<dc:creator>anam</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yes, I&#8217;m using LanguageModelGenerator, giving txt file as input and getting its dic and languagemodel files. But I&#8217;m receiving &#8220;sih_add WARNING: repeated hashing&#8221; for many words.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/language-model-for-cmu07a-dic/#post-1017226</guid>
+					<title><![CDATA[Reply To: Language Model for CMU07a.dic]]></title>
+					<link>/forums/topic/language-model-for-cmu07a-dic/#post-1017226</link>
+					<pubDate>Thu, 16 May 2013 07:02:48 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, don&#8217;t worry about that warning, it isn&#8217;t critical.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/language-model-for-cmu07a-dic/#post-1017231</guid>
+					<title><![CDATA[Reply To: Language Model for CMU07a.dic]]></title>
+					<link>/forums/topic/language-model-for-cmu07a-dic/#post-1017231</link>
+					<pubDate>Thu, 16 May 2013 09:16:43 +0000</pubDate>
+					<dc:creator>anam</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for your instant support.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

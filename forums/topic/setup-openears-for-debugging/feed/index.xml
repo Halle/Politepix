@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Setup OpenEars for debugging &#8211; Politepix</title>
+		<atom:link href="/forums/topic/setup-openears-for-debugging/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/setup-openears-for-debugging/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:08:45 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/setup-openears-for-debugging/#post-1021819</guid>
+					<title><![CDATA[Setup OpenEars for debugging]]></title>
+					<link>/forums/topic/setup-openears-for-debugging/#post-1021819</link>
+					<pubDate>Wed, 02 Jul 2014 11:58:42 +0000</pubDate>
+					<dc:creator>Daniel Asher</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>I&#8217;m new here and am looking forward to working with OpenEars!</p>
+<p>I&#8217;ve downloaded the OpenEarsDistribution and have successfully stepped into OpenEarsSampleApp, but have not managed to step into OpenEars.</p>
+<p>The steps I took were:</p>
+<p>* Opened OpenEarsSampleApp into Xcode 5.1.1<br />
+* Dragged OpenEars into OpenEarsSampleApp as a subproject<br />
+* Added OpenEars as a OpenEarsSampleApp -&gt; Build Phases -&gt; Target Dependency<br />
+* Placed first breakpoint at ViewController.m:71<br />
+* Placed second breakpoint at PocketsphinxController.m:85<br />
+* Product -&gt; Run</p>
+<p>The first breakpoint is hit, but the second is not.<br />
+I know OpenEars.framework is being built and loaded correctly because inserting an NSAssert(false,&#8230;) before PocketsphinxController.m:85 causes OpenEarsSampleApp to fail with an uncaught exception.</p>
+<p>Any help to enable debugging into OpenEars Objective-C and pocketsphinx C would be much appreciated!</p>
+<p>regards,</p>
+<p>Daniel</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/setup-openears-for-debugging/#post-1021820</guid>
+					<title><![CDATA[Reply To: Setup OpenEars for debugging]]></title>
+					<link>/forums/topic/setup-openears-for-debugging/#post-1021820</link>
+					<pubDate>Wed, 02 Jul 2014 12:03:27 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Daniel,</p>
+<p>A framework is already object code – you can&#8217;t add breakpoints to it. What do you need to debug? Maybe I can help.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/setup-openears-for-debugging/#post-1021824</guid>
+					<title><![CDATA[Reply To: Setup OpenEars for debugging]]></title>
+					<link>/forums/topic/setup-openears-for-debugging/#post-1021824</link>
+					<pubDate>Wed, 02 Jul 2014 14:09:02 +0000</pubDate>
+					<dc:creator>Daniel Asher</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>Many thanks for your quick response! I&#8217;m sure you can help :)</p>
+<p>I wish to step through pocketsphinx code to help me understand how it works. I believe I&#8217;m building the object code in Xcode. Is Xcode able to produce a debug version of the framework?</p>
+<p>Daniel</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/setup-openears-for-debugging/#post-1021825</guid>
+					<title><![CDATA[Reply To: Setup OpenEars for debugging]]></title>
+					<link>/forums/topic/setup-openears-for-debugging/#post-1021825</link>
+					<pubDate>Wed, 02 Jul 2014 14:22:27 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sure, you can definitely build a debug version by setting the target&#8217;s scheme to build/run debug, but when you build it, the target is a framework which is compiled object code that your app then links to, so no breakpoints since there is nothing in the workspace connecting the built framework and your project changes. I think that stepping through OpenEars in a debugger is probably not going to be a good approach for learning how Pocketsphinx works, since OpenEars is really designed for painless continuous-listening app and vocabulary building and that means it ships a drag-and-drop framework to keep things simple.</p>
+<p>I think an elegant way to use your approach for learning Pocketsphinx would be to step into the Pocketsphinx executables for Linux, which are easy to build on (for instance) Ubuntu. I always keep an Ubuntu virtual machine (or several) around for when I need to get quality time with Pocketsphinx directly.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/setup-openears-for-debugging/#post-1021826</guid>
+					<title><![CDATA[Reply To: Setup OpenEars for debugging]]></title>
+					<link>/forums/topic/setup-openears-for-debugging/#post-1021826</link>
+					<pubDate>Wed, 02 Jul 2014 14:50:30 +0000</pubDate>
+					<dc:creator>Daniel Asher</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>I don&#8217;t have Linux or Ubuntu. So I must ask &#8211; is it impossible to step into OpenEars.framework from OpenEarsSampleApp in Xcode?</p>
+<p>I feel there must be a solution to this problem.</p>
+<p>thanks,</p>
+<p>Daniel</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/setup-openears-for-debugging/#post-1021827</guid>
+					<title><![CDATA[Reply To: Setup OpenEars for debugging]]></title>
+					<link>/forums/topic/setup-openears-for-debugging/#post-1021827</link>
+					<pubDate>Wed, 02 Jul 2014 14:56:36 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Daniel,</p>
+<blockquote><p> is it impossible to step into OpenEars.framework from OpenEarsSampleApp in Xcode?</p></blockquote>
+<p>Yes, this is what I have been saying in my answers above. A built framework does not have a mechanism for sharing its breakpoints with an app project. If Apple shipped their iOS frameworks with breakpoints turned on accidentally, they would also not break in your debugger when you linked an app to those frameworks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/setup-openears-for-debugging/#post-1021834</guid>
+					<title><![CDATA[Reply To: Setup OpenEars for debugging]]></title>
+					<link>/forums/topic/setup-openears-for-debugging/#post-1021834</link>
+					<pubDate>Wed, 02 Jul 2014 16:25:49 +0000</pubDate>
+					<dc:creator>Daniel Asher</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>can you share how you use the Xcode debugger with the OpenEars.framework? I would really appreciate any guidance here. Do you compile to a static library &#8211; any tips would help!</p>
+<p>many thanks,</p>
+<p>Daniel</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/setup-openears-for-debugging/#post-1021836</guid>
+					<title><![CDATA[Reply To: Setup OpenEars for debugging]]></title>
+					<link>/forums/topic/setup-openears-for-debugging/#post-1021836</link>
+					<pubDate>Wed, 02 Jul 2014 16:33:09 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Daniel,</p>
+<p>I have a very particular setup here for testing and it&#8217;s unfortunately a bit outside of the scope of the support I can give here. Sorry! This hasn&#8217;t come up before as a developer need, but the use case you&#8217;ve described sounds like a perfect match for doing your debugging directly on Pocketsphinx&#8217;s executables, since Pocketsphinx is your interest in stepping through rather than OpenEars. VirtualBox and Ubuntu are 100% free and they make a great setup for doing exactly the kind of Pocketsphinx research you have described.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/setup-openears-for-debugging/#post-1021837</guid>
+					<title><![CDATA[Reply To: Setup OpenEars for debugging]]></title>
+					<link>/forums/topic/setup-openears-for-debugging/#post-1021837</link>
+					<pubDate>Wed, 02 Jul 2014 17:22:22 +0000</pubDate>
+					<dc:creator>Daniel Asher</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>of course it is disappointing to hear that stepping through and debugging the source code is not currently supported by the OpenEars project. I really hope that this can be changed in the near future.</p>
+<p>I have started to play with the code, modifying it to return ps_seg_frames in getAndReturnHypothesisForDecoder. I need these for my application. I very much hope to work with you and OpenEars in the future, but without debugging support I believe my workflow will be frustrated.</p>
+<p>Any hints, however quick, will be very much appreciated!</p>
+<p>with kindest regards,</p>
+<p>Daniel</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/setup-openears-for-debugging/#post-1021839</guid>
+					<title><![CDATA[Reply To: Setup OpenEars for debugging]]></title>
+					<link>/forums/topic/setup-openears-for-debugging/#post-1021839</link>
+					<pubDate>Wed, 02 Jul 2014 17:34:54 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

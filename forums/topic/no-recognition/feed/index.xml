@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] No recognition &#8211; Politepix</title>
+		<atom:link href="/forums/topic/no-recognition/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/no-recognition/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:00:48 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/no-recognition/#post-1023616</guid>
+					<title><![CDATA[[Resolved] No recognition]]></title>
+					<link>/forums/topic/no-recognition/#post-1023616</link>
+					<pubDate>Thu, 18 Dec 2014 10:13:35 +0000</pubDate>
+					<dc:creator>neshe9</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I integrated my app with the new version of OpenEars framework.<br />
+I see that the recognition after the upgrade is not as good as with the previous version.<br />
+Even though the microphone is on, the received hypothesis is always null.<br />
+I have set the &#8216;setActive&#8217; to &#8216;TRUE&#8217;.<br />
+Have followed all the steps in the upgrade guide and even double checked.<br />
+Cannot seem to pinpoint the problem.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/no-recognition/#post-1023617</guid>
+					<title><![CDATA[Reply To: [Resolved] No recognition]]></title>
+					<link>/forums/topic/no-recognition/#post-1023617</link>
+					<pubDate>Thu, 18 Dec 2014 10:20:45 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>There is no issue with the new version which causes only null hypotheses, so this is liable to be an issue with the upgrade process. Please check out the post <a href="/forums/topic/install-issues-and-their-solutions/">Please read before you post – how to troubleshoot and provide logging info here</a> so you can see how to turn on and share the logging that provides troubleshooting information for this kind of issue.</p>
+<p>Another good first step would be to try out the sample app (on a real device of course) in order to see that it works, or alternately a new app made from the tutorial, and then compare with your app (also on a real device) and see what is different in the setup.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/no-recognition/#post-1023625</guid>
+					<title><![CDATA[Reply To: [Resolved] No recognition]]></title>
+					<link>/forums/topic/no-recognition/#post-1023625</link>
+					<pubDate>Fri, 19 Dec 2014 05:41:19 +0000</pubDate>
+					<dc:creator>neshe9</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Now I see that I was suspending recognition in the &#8216;pocketsphinxDidCompleteCalibration&#8217; method.<br />
+Is there any method similar to that in v2.0?<br />
+I didn&#8217;t find any methods replacing the above mentioned..</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/no-recognition/#post-1023637</guid>
+					<title><![CDATA[Reply To: [Resolved] No recognition]]></title>
+					<link>/forums/topic/no-recognition/#post-1023637</link>
+					<pubDate>Sat, 20 Dec 2014 15:58:02 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Correct, there is no more calibration in 2.0 so there is no more calibration callback. Take a look at the OEEventsObserver header, docs or sample app to see the current delegate methods for OEEventsObserver – there should be one that is suitable. </p>
+<p>Speaking in terms of the new architecture, I wouldn&#8217;t recommend starting the engine and immediately suspending it as a method of &#8220;priming&#8221; the engine so it was (sort of) ready to go whenever the user wanted to speak to the app. This was never a safe approach for recognition quality since it meant that the calibration would be for a different timeframe than when speech was actually allowed to enter the system and it also would probably result in clipped speech, but now it really has no upside since without having to wait for calibration, starting the engine is fast enough to just go ahead and start it when you want to start listening.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/no-recognition/#post-1023785</guid>
+					<title><![CDATA[Reply To: [Resolved] No recognition]]></title>
+					<link>/forums/topic/no-recognition/#post-1023785</link>
+					<pubDate>Wed, 24 Dec 2014 11:08:34 +0000</pubDate>
+					<dc:creator>neshe9</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>In the language array, I have around 20 strings including some phrases and small sentences.<br />
+When I was using the previous version, there was no problems with recognition.<br />
+Is this a limitation of the version 2.0 to recognize only words?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/no-recognition/#post-1023786</guid>
+					<title><![CDATA[Reply To: [Resolved] No recognition]]></title>
+					<link>/forums/topic/no-recognition/#post-1023786</link>
+					<pubDate>Wed, 24 Dec 2014 11:33:08 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>No, there is no limitation of that kind. I&#8217;m not clear on the issue you&#8217;re having. </p>
+<p>The initial report was that there were only null hypotheses, which turned out to be due to a dependency in your app on using the old calibration callbacks, as far as I understand it. Then we discussed where to see the other callbacks. I explained that you can&#8217;t immediately suspend after starting the engine, since it has always been bad for recognition but now it doesn&#8217;t have any point, so that is going to have a negative effect on recognition.</p>
+<p>Is this a new issue or a different issue, or the same issue deriving from starting and immediately suspending? Can you elaborate on it for me so I can understand what we&#8217;re specifically troubleshooting?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/no-recognition/#post-1023787</guid>
+					<title><![CDATA[Reply To: [Resolved] No recognition]]></title>
+					<link>/forums/topic/no-recognition/#post-1023787</link>
+					<pubDate>Wed, 24 Dec 2014 14:15:39 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The only big difference which has the potential to affect overall recognition behavior and potentially provide some surprises between 1.x and 2.x is the new voice activity detection threshold setting, vadThreshold. Most issues with new recognition behavior will be solved by adjusting this threshold until it meets your expectations for what is recognized and what is ignored. Because the voice activity detection is more discerning now, it is also very likely the extremely low secondsOfSilence settings like .1 will cause more interruptions of speech in progress, since this was always a setting which ought to result in interrupted user speech, but now it is going to be more likely to interrupt speech because it is also doing noise suppression of silence periods. </p>
+<p>So, for any recognition issues where behavior seems very different from 1.x, the most important steps are to set a realistic secondsOfSilence (.5 is realistic, .7 is better) and then adjust vadThreshold higher or lower between the range of 1.8 to 3.9 until recognition behavior matches the old behavior (if you really want it to exactly match the old behavior, which should probably be freshly evaluated with the new engine behavior). </p>
+<p>Make sure that any quality-impacting workarounds for now-defunct features, such as suspending immediately after starting, are 100% removed from your app design, since they will definitely harm recognition quality now (although they were subtly harming it previously as well).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/no-recognition/#post-1023998</guid>
+					<title><![CDATA[Reply To: [Resolved] No recognition]]></title>
+					<link>/forums/topic/no-recognition/#post-1023998</link>
+					<pubDate>Sat, 27 Dec 2014 15:00:26 +0000</pubDate>
+					<dc:creator>davestrand</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>So, you are saying that we should no longer use suspend or resume?  I looked in the sample app to see how those situations should be handled and I found [[OEPocketsphinxController sharedInstance] suspendRecognition];	and  [[OEPocketsphinxController sharedInstance] resumeRecognition];</p>
+<p>Still, I have since removed suspend and resume in my app in favor of startListeningWithLanguageModelAtPath and stopListening, however I do find there seemed to be quicker response time with the suspend and resume function.  The start listening seems to take about a second to actually start the listening loop&#8230;  which is pretty fast, but not as fast as it used to be..  </p>
+<p>My app does a lot of switching back and forth between playing audio and expecting voice commands.</p>
+<p>Any suggestions?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/no-recognition/#post-1023999</guid>
+					<title><![CDATA[Reply To: [Resolved] No recognition]]></title>
+					<link>/forums/topic/no-recognition/#post-1023999</link>
+					<pubDate>Sat, 27 Dec 2014 17:08:35 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>
+So, you are saying that we should no longer use suspend or resume?
+</p></blockquote>
+<p>Not at all – please keep using suspend and resume. As far as I know, the recognition issue reported was occurring when using suspend immediately after starting listening as a way of &#8220;priming&#8221; or avoiding calibration time to give the user the impression of an instant start, which is always going to be bad for a voice activity detection system that is either calibrating or using ongoing sampling of noise levels since it is starting and then immediately removing the data that is needed to get the starting speech/silence threshold, then later suddenly performing recognition on speech that is separated from the original input by some time gap. I&#8217;ve always recommended against doing this as far as I can recall, but now it doesn&#8217;t even have the upside of giving the impression of a faster start because the startup time no longer includes a calibration period.</p>
+<p>It&#8217;s 100% fine to use suspend and resume intermittently for its intended purpose of suspending and resuming already-started recognition to prevent recognition being performed when it isn&#8217;t desired, such as during audio playback or TTS output. For a potentially very long period of suspension that isn&#8217;t intermittent (the user is entering some part of the interface where they might be working for a while without any need for a speech UI, for instance) you may see better VAD results with fully stopping and then starting later on demand, and I think the startup timeframe is short enough that that isn&#8217;t onerous as a UX. Whether this is advantageous should become clear with a little bit of testing.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/no-recognition/#post-1024000</guid>
+					<title><![CDATA[Reply To: [Resolved] No recognition]]></title>
+					<link>/forums/topic/no-recognition/#post-1024000</link>
+					<pubDate>Sat, 27 Dec 2014 18:20:56 +0000</pubDate>
+					<dc:creator>davestrand</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ok great.  Thank you.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

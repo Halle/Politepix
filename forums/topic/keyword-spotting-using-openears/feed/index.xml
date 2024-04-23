@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Keyword spotting using OpenEars &#8211; Politepix</title>
+		<atom:link href="/forums/topic/keyword-spotting-using-openears/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/keyword-spotting-using-openears/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:07:32 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/keyword-spotting-using-openears/#post-9715</guid>
+					<title><![CDATA[Keyword spotting using OpenEars]]></title>
+					<link>/forums/topic/keyword-spotting-using-openears/#post-9715</link>
+					<pubDate>Tue, 05 Jun 2012 20:51:44 +0000</pubDate>
+					<dc:creator>mariagrineva</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am trying to use OpenEars as an additional tool to Nuance that would help it with recognizing names from person&#8217;s contact list.</p>
+<p>For example, I would send to Nuance &#8220;Call my friend Maxim&#8221; and usually it hears &#8220;mexican&#8221; instead. And I would have a separate OpenEars thread that would specifically listen to friend&#8217;s names only. And if this thread could catch &#8220;Maxim&#8221; in my phrase, that would be fantastically helpful to me!</p>
+<p>Now, I have tried to create a custom dictionary made of friends&#8217; names and run OpenEars sample. And it recognized the whole phrase &#8220;Call my friend Maxim&#8221; into words of this custom dictionary. It has caught &#8216;Maxim&#8217; correctly, but also it has drew up other words to my friends&#8217; names.  Is it possible to have a separate recognitionScore for each recognized word in the input?</p>
+<p>Thanks</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/keyword-spotting-using-openears/#post-9716</guid>
+					<title><![CDATA[Reply To: Keyword spotting using OpenEars]]></title>
+					<link>/forums/topic/keyword-spotting-using-openears/#post-9716</link>
+					<pubDate>Tue, 05 Jun 2012 21:05:36 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, to clarify my own understanding of the issue, is what is happening that the actual phrase is &#8220;call my friend Maxim&#8221; and what is being reported is &#8220;Molly Glen Maxim&#8221; or something along those lines with the non-name words being replaced by similar-sounding names? Or is the issue that the rest of the sentence is being recognized correctly but you want to disregard non-name words which are in your language model?</p>
+<p>The end goal is just to be informed that &#8220;Maxim&#8221; was detected in the sentence without needing to know the specifics about the other words, is that correct?  I don&#8217;t think there is a way to get per-word scores for a multiple word sentence, but n-best scoring will be coming up in the next version of OpenEars.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/keyword-spotting-using-openears/#post-9717</guid>
+					<title><![CDATA[Reply To: Keyword spotting using OpenEars]]></title>
+					<link>/forums/topic/keyword-spotting-using-openears/#post-9717</link>
+					<pubDate>Tue, 05 Jun 2012 22:32:03 +0000</pubDate>
+					<dc:creator>mariagrineva</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>&#8220;the actual phrase is “call my friend Maxim” and what is being reported is “Molly Glen Maxim” or something along those lines with the non-name words being replaced by similar-sounding names?&#8221; yes, exactly.<br />
+Similarly, if I say &#8216;Call restaurant&#8217; it would recognize &#8216;Molly Cris Ann&#8217;<br />
+I am looking for a way to know that &#8216;Maxim&#8217; In the first case was recognized with a higher probability</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/keyword-spotting-using-openears/#post-9718</guid>
+					<title><![CDATA[Reply To: Keyword spotting using OpenEars]]></title>
+					<link>/forums/topic/keyword-spotting-using-openears/#post-9718</link>
+					<pubDate>Wed, 06 Jun 2012 15:20:26 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, I think that the upcoming n-best feature should handle this for you but there isn&#8217;t anything in the current version which I can think of which will help. I&#8217;m hoping to release the next version around next Monday.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/keyword-spotting-using-openears/#post-9719</guid>
+					<title><![CDATA[Reply To: Keyword spotting using OpenEars]]></title>
+					<link>/forums/topic/keyword-spotting-using-openears/#post-9719</link>
+					<pubDate>Wed, 06 Jun 2012 15:28:59 +0000</pubDate>
+					<dc:creator>mariagrineva</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Halle, next Monday would be great! Looking forward to try out the idea. Please let me know if I can get the next cersionearlier to play with it, even if it&#8217;s still buggy</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/keyword-spotting-using-openears/#post-9781</guid>
+					<title><![CDATA[Reply To: Keyword spotting using OpenEars]]></title>
+					<link>/forums/topic/keyword-spotting-using-openears/#post-9781</link>
+					<pubDate>Sat, 16 Jun 2012 19:10:36 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Maria,</p>
+<p>The new version is up (I haven&#8217;t had time to update the detailed documentation so I haven&#8217;t announced it yet but you can see it at <a href="/openears">/openears</a>) so you can give it a try. There is a preprocessor define that turns on n-best in the new sample app so you can uncomment it to experiment with n-best and scoring.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/keyword-spotting-using-openears/#post-10538</guid>
+					<title><![CDATA[Reply To: Keyword spotting using OpenEars]]></title>
+					<link>/forums/topic/keyword-spotting-using-openears/#post-10538</link>
+					<pubDate>Thu, 12 Jul 2012 22:57:10 +0000</pubDate>
+					<dc:creator>mariagrineva</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>Thanks for the update! What should I uncomment to try the new feature?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/keyword-spotting-using-openears/#post-10539</guid>
+					<title><![CDATA[Reply To: Keyword spotting using OpenEars]]></title>
+					<link>/forums/topic/keyword-spotting-using-openears/#post-10539</link>
+					<pubDate>Fri, 13 Jul 2012 09:25:52 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Maria,</p>
+<p>Take a look at the sample app and search for &#8220;nbest&#8221;.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/keyword-spotting-using-openears/#post-10540</guid>
+					<title><![CDATA[Reply To: Keyword spotting using OpenEars]]></title>
+					<link>/forums/topic/keyword-spotting-using-openears/#post-10540</link>
+					<pubDate>Fri, 13 Jul 2012 20:00:45 +0000</pubDate>
+					<dc:creator>mariagrineva</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>Thanks, I figured it out and ran the sample. Yeah, n-best is not exactly what I need (I need rather per-word score), but will try to play with it and see. </p>
+<p>Another question: how big the grammar can be? I have a vocabulary of around 2000 words, is it OK?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/keyword-spotting-using-openears/#post-10541</guid>
+					<title><![CDATA[Reply To: Keyword spotting using OpenEars]]></title>
+					<link>/forums/topic/keyword-spotting-using-openears/#post-10541</link>
+					<pubDate>Fri, 13 Jul 2012 20:16:30 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sounds a little big for local recognition (I think 500-1000 words is probably better) but the only way to know for sure is to test.</p>
+<p>Try setting n-best to return the 1 best hyp with a score and I think you should receive the score per word.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

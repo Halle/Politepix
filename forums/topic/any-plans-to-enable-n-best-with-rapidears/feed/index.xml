@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] Any plans to enable N-best with RapidEars? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/any-plans-to-enable-n-best-with-rapidears/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/any-plans-to-enable-n-best-with-rapidears/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:49:01 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/any-plans-to-enable-n-best-with-rapidears/#post-1022698</guid>
+					<title><![CDATA[[Resolved] Any plans to enable N-best with RapidEars?]]></title>
+					<link>/forums/topic/any-plans-to-enable-n-best-with-rapidears/#post-1022698</link>
+					<pubDate>Wed, 08 Oct 2014 16:41:51 +0000</pubDate>
+					<dc:creator>dashersw</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello, n-best would be a perfect solution for many applications that require live recognition. Is it possible to support it and do you plan to add the feature?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/any-plans-to-enable-n-best-with-rapidears/#post-1022704</guid>
+					<title><![CDATA[Reply To: [Resolved] Any plans to enable N-best with RapidEars?]]></title>
+					<link>/forums/topic/any-plans-to-enable-n-best-with-rapidears/#post-1022704</link>
+					<pubDate>Thu, 09 Oct 2014 07:11:26 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Thanks for the suggestion – I&#8217;ll give it some consideration.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/any-plans-to-enable-n-best-with-rapidears/#post-1022766</guid>
+					<title><![CDATA[Reply To: [Resolved] Any plans to enable N-best with RapidEars?]]></title>
+					<link>/forums/topic/any-plans-to-enable-n-best-with-rapidears/#post-1022766</link>
+					<pubDate>Wed, 15 Oct 2014 04:22:53 +0000</pubDate>
+					<dc:creator>pizigi</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>+1 on N-Best with RapidEars. I gave up on purchasing RapidEars because N-Best is such a crucial element for the quality of my live numbers recognition application. No N-Best is a deal breaker for me.<br />
+Come on Halle, you can do it, mobiles devices are so powerful these days ;)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/any-plans-to-enable-n-best-with-rapidears/#post-1023361</guid>
+					<title><![CDATA[Reply To: [Resolved] Any plans to enable N-best with RapidEars?]]></title>
+					<link>/forums/topic/any-plans-to-enable-n-best-with-rapidears/#post-1023361</link>
+					<pubDate>Wed, 10 Dec 2014 19:21:52 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>All right, you all might want to check out the RapidEars 2.0 header file ;) .</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

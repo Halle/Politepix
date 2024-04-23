@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Handling Unknown Words in JGSF &#8211; Politepix</title>
+		<atom:link href="/forums/topic/handling-unknown-words-in-jgsf/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/handling-unknown-words-in-jgsf/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:03:32 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/handling-unknown-words-in-jgsf/#post-1021192</guid>
+					<title><![CDATA[Handling Unknown Words in JGSF]]></title>
+					<link>/forums/topic/handling-unknown-words-in-jgsf/#post-1021192</link>
+					<pubDate>Mon, 12 May 2014 14:39:50 +0000</pubDate>
+					<dc:creator>pbtura</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello again. I&#8217;m still experimenting with using open ears to add voice control to an app. I think I&#8217;ve finally found a mix of solutions that meets my needs using OpenEars with JGSF for the navigation and a cloud based matcher like Dragon for dictation. The problem I&#8217;m running into now is that the JGSF grammar is not responding quite the way I expected. My dictionary looks like this:</p>
+<pre><code>@{
+                               ThisWillBeSaidOnce : @[
+                                      
+                                       @{ OneOfTheseWillBeSaidOnce : @[@&quot;NEW ORDER&quot;, @&quot;BEGIN ORDER&quot;]},
+                                       @{ OneOfTheseCanBeSaidOnce: @[@&quot;WITH&quot;, @&quot;INPUT&quot;, @&quot;ADD&quot;]},
+                                       @{ OneOfTheseWillBeSaidOnce : @[@&quot;MODEL&quot;, @&quot;COLOR&quot;]}
+                                       ]
+                               };</code></pre>
+<p>As long as all the words in the phrase match a word in the dictionary everything is great. However, if the phrase includes an unknown word, the listener tries to &#8220;guess&#8221; which command it was instead of rejecting it. Is there some way to change this behaviour? If I have to manually parse the command string every time it defeats the whole purpose of using JGSF in the first place.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/handling-unknown-words-in-jgsf/#post-1021204</guid>
+					<title><![CDATA[Reply To: Handling Unknown Words in JGSF]]></title>
+					<link>/forums/topic/handling-unknown-words-in-jgsf/#post-1021204</link>
+					<pubDate>Tue, 13 May 2014 11:40:31 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, can you turn on OpenEarsLogging and verbosePocketsphinx and show the unredacted output from a session with a couple of examples of the out-of-vocabulary results you&#8217;re seeing, with an explanation of what the actual utterances were and the full grammar NSDictionary if it&#8217;s different from the one above? I might have recommendations but it&#8217;s a bit dependent on the nature of the OOV false positives.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Listening during audio playback &#8211; Politepix</title>
+		<atom:link href="/forums/topic/listening-during-audio-playback/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/listening-during-audio-playback/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:56:02 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/listening-during-audio-playback/#post-8234</guid>
+					<title><![CDATA[Listening during audio playback]]></title>
+					<link>/forums/topic/listening-during-audio-playback/#post-8234</link>
+					<pubDate>Fri, 09 Dec 2011 21:10:20 +0000</pubDate>
+					<dc:creator>Isaac Squires</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>So, I&#8217;ve been playing recorded audio (rather than using flite for speech), and I&#8217;d really like for open ears to be able to listen to the user at the same time.   This way the user could interrupt my app with a command like &#8220;Stop&#8221; or &#8220;Pause&#8221;.</p>
+<p>However, if I listen while playing audio from AVAudioPLayer, open ears will trigger off of the output from the speakers &#8211; even if the user isn&#8217;t saying anything.</p>
+<p>Is there any way to ignore / cancel out audio that comes from the device?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/listening-during-audio-playback/#post-8235</guid>
+					<title><![CDATA[Reply To: Listening during audio playback]]></title>
+					<link>/forums/topic/listening-during-audio-playback/#post-8235</link>
+					<pubDate>Fri, 09 Dec 2011 21:33:11 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>Is there a reason you can&#8217;t suspend listening before playing audio and resume afterwards? Suspend and resume are near-instant.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/listening-during-audio-playback/#post-8236</guid>
+					<title><![CDATA[Reply To: Listening during audio playback]]></title>
+					<link>/forums/topic/listening-during-audio-playback/#post-8236</link>
+					<pubDate>Fri, 09 Dec 2011 21:34:49 +0000</pubDate>
+					<dc:creator>Isaac Squires</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That&#8217;s what I currently do.  What I&#8217;d like to add, is the ability to listen during audio playback, so that the user could interrupt the audio (in some cases, I might be playing 2 minutes worth of audio, and would like a voice input for cancelling).  Is this possible?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/listening-during-audio-playback/#post-8238</guid>
+					<title><![CDATA[Reply To: Listening during audio playback]]></title>
+					<link>/forums/topic/listening-during-audio-playback/#post-8238</link>
+					<pubDate>Fri, 09 Dec 2011 23:05:37 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, that isn&#8217;t yet implemented.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/listening-during-audio-playback/#post-8239</guid>
+					<title><![CDATA[Reply To: Listening during audio playback]]></title>
+					<link>/forums/topic/listening-during-audio-playback/#post-8239</link>
+					<pubDate>Fri, 09 Dec 2011 23:52:13 +0000</pubDate>
+					<dc:creator>Isaac Squires</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ok thanks &#8211; I didn&#8217;t think it was possible, but wanted to check just in case.  I appreciate your quick response, and all the work you&#8217;ve put into documenting and supporting OpenEars.  So far it is working very well for our application.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/listening-during-audio-playback/#post-8240</guid>
+					<title><![CDATA[Reply To: Listening during audio playback]]></title>
+					<link>/forums/topic/listening-during-audio-playback/#post-8240</link>
+					<pubDate>Sat, 10 Dec 2011 00:10:09 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Glad to hear it! </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/listening-during-audio-playback/#post-1018223</guid>
+					<title><![CDATA[Reply To: Listening during audio playback]]></title>
+					<link>/forums/topic/listening-during-audio-playback/#post-1018223</link>
+					<pubDate>Tue, 03 Sep 2013 08:59:57 +0000</pubDate>
+					<dc:creator>amccann</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi:</p>
+<p>Has there been any progress on the ability to listen while playing other audio?</p>
+<p>Thanks<br />
+Alan</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/listening-during-audio-playback/#post-1018248</guid>
+					<title><![CDATA[Reply To: Listening during audio playback]]></title>
+					<link>/forums/topic/listening-during-audio-playback/#post-1018248</link>
+					<pubDate>Fri, 06 Sep 2013 15:00:56 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Alan,</p>
+<p>I&#8217;m starting to get around to investigating this feature although I&#8217;m not sure that echo cancellation on diverse kinds of input and/or media objects is going to be trivial. How are you playing back your audio, and where does the requirement come from that the speech needs to be recognized parallel to the playback (versus suspending recognition until the playback is complete and then resuming)? </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/listening-during-audio-playback/#post-1018249</guid>
+					<title><![CDATA[Reply To: Listening during audio playback]]></title>
+					<link>/forums/topic/listening-during-audio-playback/#post-1018249</link>
+					<pubDate>Fri, 06 Sep 2013 15:38:14 +0000</pubDate>
+					<dc:creator>amccann</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle:</p>
+<p>First of all, thank you for all of your work on OpenEars, etc. I am working on the prototype application now and anticipate buying it within a month (not sure which pieces yet). It must feel good to get the latest version out.</p>
+<p>The basic idea I am going for is an ability to interrupt the playback of the audio by voice and issue a command to the application.</p>
+<p>Imagine playing back music in Itunes on my phone. Manually, I can stop playback, switch to another song, or otherwise control iTunes at any point. If I want *only* voice control, I have to wait for the current song to finish and then prompt the user for a voice command. I can always manually interrupt the application somehow and then prompt the user but I&#8217;m aiming for complete audio control except starting the app. The need for this comes in for times where manual operation is less desirable &#8211; walking, running, driving, coding with my hands on my keyboard, etc.</p>
+<p>I haven&#8217;t finished testing the exactly how I will be playing the audio but the audio will be retrieved in a  file from a url (perhaps cached locally). At this time, I will likely only be playing on file at a time, in sequence, however I might have a need for some mixing of audio streams prior to playback.</p>
+<p>I can move ahead with my application without this feature but it would be a great improvement in usability at some point.</p>
+<p>I hope that helps clarify.</p>
+<p>Thanks</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/listening-during-audio-playback/#post-1018251</guid>
+					<title><![CDATA[Reply To: Listening during audio playback]]></title>
+					<link>/forums/topic/listening-during-audio-playback/#post-1018251</link>
+					<pubDate>Fri, 06 Sep 2013 15:57:34 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thank you, it has been great getting this big release out. Your explanation is very helpful. Something I&#8217;m currently unsure about is whether echo cancellation needs to be different for different media playback code (e.g. MPMusicPlayerController versus AVAudioPlayer) because I&#8217;m unsure if latency is a factor or whether I can always get the buffers of audio slated to play back at the same moment in a global output stream. I&#8217;m very early in the process of investigating this, but it&#8217;s good timing for this kind of feature request because I&#8217;m thinking that the next version should probably be oriented towards polish on areas like interactions with other media objects.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

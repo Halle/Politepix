@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Question about letters &#8211; Politepix</title>
+		<atom:link href="/forums/topic/question-about-letters/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/question-about-letters/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:55:10 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/question-about-letters/#post-1016780</guid>
+					<title><![CDATA[Question about letters]]></title>
+					<link>/forums/topic/question-about-letters/#post-1016780</link>
+					<pubDate>Wed, 27 Mar 2013 15:45:55 +0000</pubDate>
+					<dc:creator>andrewjrangel</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am trying to create an app that uses single letters rather than words. Has anyone ever worked with just letters or single digits? I am having a really hard time getting it to recognize single letters, and it also attempts to string them together into a word. Is there anyway to limit what it tries to suggest to just one char or one string instance? I have tried putting words in the dictionary like &#8220;que&#8221; for Q, but some letters are still unwieldy.  I am new to OpenEars, so I apologize if this question is redundant. Thanks for your help!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/question-about-letters/#post-1016781</guid>
+					<title><![CDATA[Reply To: Question about letters]]></title>
+					<link>/forums/topic/question-about-letters/#post-1016781</link>
+					<pubDate>Wed, 27 Mar 2013 15:50:29 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Andrew,</p>
+<p>Yes, this is unfortunately a known limitation of speech recognition in general. Here are a few discussions about it:</p>
+<p><a href="http://www.google.com/search?hl=en&#038;as_q=site%3Apolitepix.com%2Fforums+letters" rel="nofollow">http://www.google.com/search?hl=en&#038;as_q=site%3Apolitepix.com%2Fforums+letters</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/question-about-letters/#post-1016782</guid>
+					<title><![CDATA[Reply To: Question about letters]]></title>
+					<link>/forums/topic/question-about-letters/#post-1016782</link>
+					<pubDate>Wed, 27 Mar 2013 16:26:26 +0000</pubDate>
+					<dc:creator>andrewjrangel</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for that, I guess my searching didn&#8217;t go far back enough to see that entry. I am interested in if you can literally limit the result to one entry from the dictionary? So that it doesn&#8217;t try to string letters together for the words it hears. I feel like if I could force it to that I could get more success on the single letters. I am essentially trying to match their answers based on questions that come up, and then see if they are correct or not via OpenEars speech rather than the norm for selecting an answer via touch. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/question-about-letters/#post-1016784</guid>
+					<title><![CDATA[Reply To: Question about letters]]></title>
+					<link>/forums/topic/question-about-letters/#post-1016784</link>
+					<pubDate>Wed, 27 Mar 2013 16:32:58 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Not quite sure I&#8217;m following &#8212; can you elaborate on how only having a single letter in the dictionary would let you recognize spelling?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/question-about-letters/#post-1016785</guid>
+					<title><![CDATA[Reply To: Question about letters]]></title>
+					<link>/forums/topic/question-about-letters/#post-1016785</link>
+					<pubDate>Wed, 27 Mar 2013 16:37:05 +0000</pubDate>
+					<dc:creator>andrewjrangel</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>So I want someone to read a question and answer &#8220;A&#8221; or &#8220;B&#8221; or &#8220;C&#8221; etc. So I was hoping to set it up so they press a button and say the letter and then press it again to stop OpenEars from processing their voice. </p>
+<p>The issue is if I say B and then there is a noise in the background or I say something after that. It will try and list the output as &#8220;B A B A C B&#8230;&#8221;</p>
+<p>So I want to force the output to only be limited to one entry. I say entry rather than letter because I may have &#8220;Que&#8221; for Q. Right now OpenEars tries to keep going as the person talks.  Is there anyway to stop it from processing more than one &#8220;word&#8221; or &#8220;letter&#8221; or &#8220;voice entry&#8221;?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/question-about-letters/#post-1016786</guid>
+					<title><![CDATA[Reply To: Question about letters]]></title>
+					<link>/forums/topic/question-about-letters/#post-1016786</link>
+					<pubDate>Wed, 27 Mar 2013 16:49:47 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Well, the biggest issue you&#8217;re going to encounter is the one I linked to earlier &#8212; A and B and C all rhyme or nearly rhyme and have only one or two phonemes, and they have no surrounding context, so most speech recognition engines will get the utterance wrong much of the time.</p>
+<p>OpenEars does continuous recognition, so it isn&#8217;t really designed for an approach like pressing a button to start recognition and pressing a button to stop it. This is kind of a tricky user experience in general because in order for the user to use touch to select the answer they would be tapping once, and in order for them to answer with the interaction you&#8217;ve described, they are tapping twice and speaking. I think this is a workaround that results from the problem recognizing letters, so I&#8217;d recommend not trying to recognize alphabet letters with speech recognition since it leads to generally difficult UX.</p>
+<p>To answer your question, with stock OpenEars you can&#8217;t limit recognition in that way because it has to listen for a half-second of silence before it processes the speech, meaning that it will try to recognize speech that it perceives that slips in before that half-second of silence has been heard. The half-second is how it knows it isn&#8217;t interrupting the user in the middle of speech.</p>
+<p>You can try Rejecto to reject speech that isn&#8217;t in your vocabulary if the primary issue is about extraneous sounds provoking recognition, or you could try RapidEars which can return a recognition hypothesis immediately instead of waiting a half-second (and then you stop your listening behavior immediately when the answer has been perceived). Alternately, you can just isolate the first speech out of the whole string and only respond to that (so in your example &#8220;B A B A C B&#8221; you&#8217;d just ignore everything after the first B).</p>
+<p>But it&#8217;s all going to work a lot better if you pick something as the target speech besides alphabet letters.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

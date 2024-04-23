@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>problems using generateGrammarFromDictionary &#8211; Politepix</title>
+		<atom:link href="/forums/topic/problems-using-generategrammarfromdictionary/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/problems-using-generategrammarfromdictionary/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:59:09 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/problems-using-generategrammarfromdictionary/#post-1022081</guid>
+					<title><![CDATA[problems using generateGrammarFromDictionary]]></title>
+					<link>/forums/topic/problems-using-generategrammarfromdictionary/#post-1022081</link>
+					<pubDate>Mon, 28 Jul 2014 16:00:28 +0000</pubDate>
+					<dc:creator>geofftowell</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am trying to use the new generateGrammarFromDictionary command on v1.71.  The problem I am having is that the app seems to simply hang during pocketSphinx startup.</p>
+<p>To get started, I just modified the sample code, touching only the viewDidLoad method, as follows:</p>
+<p>&#8211; (void)viewDidLoad {<br />
+    [super viewDidLoad];<br />
+	[OpenEarsLogging startOpenEarsLogging];<br />
+    self.restartAttemptsDueToPermissionRequests = 0;<br />
+    self.startupFailedDueToLackOfPermissions = FALSE;</p>
+<p>    //[OpenEarsLogging startOpenEarsLogging]; // Uncomment me for OpenEarsLogging</p>
+<p>	[self.openEarsEventsObserver setDelegate:self]; // Make this class the delegate of OpenEarsObserver so we can get all of the messages about what OpenEars is doing.</p>
+<p>    // This is the language model we&#8217;re going to start up with. The only reason I&#8217;m making it a class property is that I reuse it a bunch of times in this example,<br />
+	// but you can pass the string contents directly to PocketsphinxController:startListeningWithLanguageModelAtPath:dictionaryAtPath:languageModelIsJSGF:</p>
+<p>    NSArray *firstLanguageArray = [[NSArray alloc] initWithArray:[NSArray arrayWithObjects: // All capital letters.<br />
+                                                             @&#8221;ONE&#8221;, @&#8221;TWO&#8221;, @&#8221;TWENTY&#8221;, @&#8221;10&#8243;, @&#8221;30&#8243;, @&#8221;24&#8243;,<br />
+                                                                  @&#8221;HELLO&#8221;, @&#8221;COMPUTER&#8221;, @&#8221;GREETINGS&#8221;, @&#8221;ROBOT&#8221;<br />
+                                                                  @&#8221;TWENTY FIVE&#8221;,<br />
+                                                                  @&#8221;BACKWARD&#8221;,<br />
+                                                              @&#8221;CHANGE&#8221;,<br />
+                                                              @&#8221;FORWARD&#8221;,<br />
+                                                              @&#8221;GO&#8221;,<br />
+                                                                  @&#8221;MOVE&#8221;, @&#8221;EXECUTE&#8221;, @&#8221;DO&#8221;, @&#8221;IT&#8221;, @&#8221;THANK&#8221;, @&#8221;YOU&#8221;,<br />
+                                                              @&#8221;LEFT&#8221;,<br />
+                                                              @&#8221;RIGHT&#8221;,<br />
+                                                              nil]];</p>
+<p>	LanguageModelGenerator *languageModelGenerator = [[LanguageModelGenerator alloc] init]; </p>
+<p>	NSError *error = [languageModelGenerator generateLanguageModelFromArray:firstLanguageArray withFilesNamed:@&#8221;FirstOpenEarsDynamicLanguageModel&#8221; forAcousticModelAtPath:[AcousticModel pathToModel:@&#8221;AcousticModelEnglish&#8221;]]; // Change &#8220;AcousticModelEnglish&#8221; to &#8220;AcousticModelSpanish&#8221; in order to create a language model for Spanish recognition instead of English.</p>
+<p>    NSDictionary *dd = @{<br />
+                         ThisWillBeSaidOnce : @[<br />
+                                 @{ OneOfTheseCanBeSaidOnce : @[@&#8221;HELLO COMPUTER&#8221;, @&#8221;GREETINGS ROBOT&#8221;]},<br />
+                                 @{ OneOfTheseWillBeSaidOnce : @[@&#8221;DO THE FOLLOWING&#8221;, @&#8221;INSTRUCTION&#8221;]},<br />
+                                 @{ OneOfTheseWillBeSaidOnce : @[@&#8221;GO&#8221;, @&#8221;MOVE&#8221;]},<br />
+                                 @{ThisWillBeSaidWithOptionalRepetitions : @[<br />
+                                           @{ OneOfTheseWillBeSaidOnce : @[@&#8221;10&#8243;, @&#8221;20&#8243;,@&#8221;30&#8243;]},<br />
+                                           @{ OneOfTheseWillBeSaidOnce : @[@&#8221;LEFT&#8221;, @&#8221;RIGHT&#8221;, @&#8221;FORWARD&#8221;]}<br />
+                                           ]},<br />
+                                 @{ OneOfTheseWillBeSaidOnce : @[@&#8221;EXECUTE&#8221;, @&#8221;DO IT&#8221;]},<br />
+                                 @{ ThisCanBeSaidOnce : @[@&#8221;THANK YOU&#8221;]}<br />
+                                 ]<br />
+                         };<br />
+    NSError *error2 = [languageModelGenerator generateGrammarFromDictionary:dd withFilesNamed:@&#8221;FirstOpenEarsDynamicLanguageModelG&#8221; forAcousticModelAtPath:[AcousticModel pathToModel:@&#8221;AcousticModelEnglish&#8221;]];</p>
+<p>// no changes past this point</p>
+<p>As I understand it, this grammar should accept statements like<br />
+&#8220;hello computer do the following move 10 left execute&#8221;</p>
+<p>it should not accept statements like:<br />
+10 10 10 left left left</p>
+<p>In all my testing, I have been unable to get the grammar to be actually used.  I have the feeling that I am missing something pretty trivial, but cannot figure what that is.</p>
+<p>Here is a log taken from a run on the simulator.  The behavior on an iPad is essentially identical.<br />
+2014-07-28 11:55:50.943 OpenEarsSampleApp[3012:60b] Starting OpenEars logging for OpenEars version 1.7 on 32-bit device: iPad Simulator running iOS version: 7.100000<br />
+2014-07-28 11:55:50.944 OpenEarsSampleApp[3012:60b] acousticModelPath is /Users/geoffreytowell/Library/Application Support/iPhone Simulator/7.1/Applications/68EBCAC9-1619-4C79-8674-07DCCD64B76E/OpenEarsSampleApp.app/AcousticModelEnglish.bundle<br />
+2014-07-28 11:55:50.946 OpenEarsSampleApp[3012:60b] Starting dynamic language model generation<br />
+2014-07-28 11:55:50.947 OpenEarsSampleApp[3012:60b] Able to open /Users/geoffreytowell/Library/Application Support/iPhone Simulator/7.1/Applications/68EBCAC9-1619-4C79-8674-07DCCD64B76E/Library/Caches/FirstOpenEarsDynamicLanguageModel.corpus for reading<br />
+2014-07-28 11:55:50.947 OpenEarsSampleApp[3012:60b] Able to open /Users/geoffreytowell/Library/Application Support/iPhone Simulator/7.1/Applications/68EBCAC9-1619-4C79-8674-07DCCD64B76E/Library/Caches/FirstOpenEarsDynamicLanguageModel_pipe.txt for writing<br />
+2014-07-28 11:55:50.948 OpenEarsSampleApp[3012:60b] Starting text2wfreq_impl<br />
+2014-07-28 11:55:50.951 OpenEarsSampleApp[3012:60b] Done with text2wfreq_impl<br />
+2014-07-28 11:55:50.952 OpenEarsSampleApp[3012:60b] Able to open /Users/geoffreytowell/Library/Application Support/iPhone Simulator/7.1/Applications/68EBCAC9-1619-4C79-8674-07DCCD64B76E/Library/Caches/FirstOpenEarsDynamicLanguageModel_pipe.txt for reading.<br />
+2014-07-28 11:55:50.952 OpenEarsSampleApp[3012:60b] Able to open /Users/geoffreytowell/Library/Application Support/iPhone Simulator/7.1/Applications/68EBCAC9-1619-4C79-8674-07DCCD64B76E/Library/Caches/FirstOpenEarsDynamicLanguageModel.vocab for reading.<br />
+2014-07-28 11:55:50.952 OpenEarsSampleApp[3012:60b] Starting wfreq2vocab<br />
+2014-07-28 11:55:50.953 OpenEarsSampleApp[3012:60b] Done with wfreq2vocab<br />
+2014-07-28 11:55:50.953 OpenEarsSampleApp[3012:60b] Starting text2idngram<br />
+2014-07-28 11:55:50.956 OpenEarsSampleApp[3012:60b] Done with text2idngram<br />
+2014-07-28 11:55:50.956 OpenEarsSampleApp[3012:60b] Starting idngram2lm</p>
+<p>2014-07-28 11:55:50.958 OpenEarsSampleApp[3012:60b] Done with idngram2lm<br />
+2014-07-28 11:55:50.958 OpenEarsSampleApp[3012:60b] Starting sphinx_lm_convert<br />
+2014-07-28 11:55:50.960 OpenEarsSampleApp[3012:60b] Finishing sphinx_lm_convert<br />
+2014-07-28 11:55:50.961 OpenEarsSampleApp[3012:60b] Done creating language model with CMUCLMTK in 0.014744 seconds.<br />
+2014-07-28 11:55:50.982 OpenEarsSampleApp[3012:60b] The word 10 was not found in the dictionary /Users/geoffreytowell/Library/Application Support/iPhone Simulator/7.1/Applications/68EBCAC9-1619-4C79-8674-07DCCD64B76E/OpenEarsSampleApp.app/AcousticModelEnglish.bundle/LanguageModelGeneratorLookupList.text/LanguageModelGeneratorLookupList.text.<br />
+2014-07-28 11:55:50.982 OpenEarsSampleApp[3012:60b] Now using the fallback method to look up the word 10<br />
+2014-07-28 11:55:50.983 OpenEarsSampleApp[3012:60b] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the English phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2014-07-28 11:55:50.983 OpenEarsSampleApp[3012:60b] Using convertGraphemes for the word or phrase 10 which doesn&#8217;t appear in the dictionary<br />
+2014-07-28 11:55:51.003 OpenEarsSampleApp[3012:60b] The word 24 was not found in the dictionary /Users/geoffreytowell/Library/Application Support/iPhone Simulator/7.1/Applications/68EBCAC9-1619-4C79-8674-07DCCD64B76E/OpenEarsSampleApp.app/AcousticModelEnglish.bundle/LanguageModelGeneratorLookupList.text/LanguageModelGeneratorLookupList.text.<br />
+2014-07-28 11:55:51.003 OpenEarsSampleApp[3012:60b] Now using the fallback method to look up the word 24<br />
+2014-07-28 11:55:51.003 OpenEarsSampleApp[3012:60b] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the English phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2014-07-28 11:55:51.004 OpenEarsSampleApp[3012:60b] Using convertGraphemes for the word or phrase 24 which doesn&#8217;t appear in the dictionary<br />
+2014-07-28 11:55:51.025 OpenEarsSampleApp[3012:60b] The word 30 was not found in the dictionary /Users/geoffreytowell/Library/Application Support/iPhone Simulator/7.1/Applications/68EBCAC9-1619-4C79-8674-07DCCD64B76E/OpenEarsSampleApp.app/AcousticModelEnglish.bundle/LanguageModelGeneratorLookupList.text/LanguageModelGeneratorLookupList.text.<br />
+2014-07-28 11:55:51.025 OpenEarsSampleApp[3012:60b] Now using the fallback method to look up the word 30<br />
+2014-07-28 11:55:51.026 OpenEarsSampleApp[3012:60b] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the English phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2014-07-28 11:55:51.026 OpenEarsSampleApp[3012:60b] Using convertGraphemes for the word or phrase 30 which doesn&#8217;t appear in the dictionary<br />
+2014-07-28 11:55:51.046 OpenEarsSampleApp[3012:60b] The word ROBOTTWENTY was not found in the dictionary /Users/geoffreytowell/Library/Application Support/iPhone Simulator/7.1/Applications/68EBCAC9-1619-4C79-8674-07DCCD64B76E/OpenEarsSampleApp.app/AcousticModelEnglish.bundle/LanguageModelGeneratorLookupList.text/LanguageModelGeneratorLookupList.text.<br />
+2014-07-28 11:55:51.047 OpenEarsSampleApp[3012:60b] Now using the fallback method to look up the word ROBOTTWENTY<br />
+2014-07-28 11:55:51.047 OpenEarsSampleApp[3012:60b] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the English phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2014-07-28 11:55:51.047 OpenEarsSampleApp[3012:60b] Using convertGraphemes for the word or phrase ROBOTTWENTY which doesn&#8217;t appear in the dictionary<br />
+2014-07-28 11:55:51.053 OpenEarsSampleApp[3012:60b] I&#8217;m done running performDictionaryLookup and it took 0.088563 seconds<br />
+2014-07-28 11:55:51.054 OpenEarsSampleApp[3012:60b] I&#8217;m done running dynamic language model generation and it took 0.109420 seconds<br />
+2014-07-28 11:55:51.080 OpenEarsSampleApp[3012:60b] The word 10 was not found in the dictionary /Users/geoffreytowell/Library/Application Support/iPhone Simulator/7.1/Applications/68EBCAC9-1619-4C79-8674-07DCCD64B76E/OpenEarsSampleApp.app/AcousticModelEnglish.bundle/LanguageModelGeneratorLookupList.text/LanguageModelGeneratorLookupList.text.<br />
+2014-07-28 11:55:51.081 OpenEarsSampleApp[3012:60b] Now using the fallback method to look up the word 10<br />
+2014-07-28 11:55:51.081 OpenEarsSampleApp[3012:60b] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the English phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2014-07-28 11:55:51.081 OpenEarsSampleApp[3012:60b] Using convertGraphemes for the word or phrase 10 which doesn&#8217;t appear in the dictionary<br />
+2014-07-28 11:55:51.100 OpenEarsSampleApp[3012:60b] The word 20 was not found in the dictionary /Users/geoffreytowell/Library/Application Support/iPhone Simulator/7.1/Applications/68EBCAC9-1619-4C79-8674-07DCCD64B76E/OpenEarsSampleApp.app/AcousticModelEnglish.bundle/LanguageModelGeneratorLookupList.text/LanguageModelGeneratorLookupList.text.<br />
+2014-07-28 11:55:51.100 OpenEarsSampleApp[3012:60b] Now using the fallback method to look up the word 20<br />
+2014-07-28 11:55:51.101 OpenEarsSampleApp[3012:60b] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the English phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2014-07-28 11:55:51.101 OpenEarsSampleApp[3012:60b] Using convertGraphemes for the word or phrase 20 which doesn&#8217;t appear in the dictionary<br />
+2014-07-28 11:55:51.120 OpenEarsSampleApp[3012:60b] The word 30 was not found in the dictionary /Users/geoffreytowell/Library/Application Support/iPhone Simulator/7.1/Applications/68EBCAC9-1619-4C79-8674-07DCCD64B76E/OpenEarsSampleApp.app/AcousticModelEnglish.bundle/LanguageModelGeneratorLookupList.text/LanguageModelGeneratorLookupList.text.<br />
+2014-07-28 11:55:51.120 OpenEarsSampleApp[3012:60b] Now using the fallback method to look up the word 30<br />
+2014-07-28 11:55:51.120 OpenEarsSampleApp[3012:60b] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the English phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2014-07-28 11:55:51.121 OpenEarsSampleApp[3012:60b] Using convertGraphemes for the word or phrase 30 which doesn&#8217;t appear in the dictionary<br />
+2014-07-28 11:55:51.140 OpenEarsSampleApp[3012:60b] I&#8217;m done running performDictionaryLookup and it took 0.077583 seconds<br />
+2014-07-28 11:55:51.142 OpenEarsSampleApp[3012:60b] Dynamic language generator completed successfully, you can find your new files FirstOpenEarsDynamicLanguageModel.DMP<br />
+ and<br />
+FirstOpenEarsDynamicLanguageModel.dic<br />
+ at the paths<br />
+/Users/geoffreytowell/Library/Application Support/iPhone Simulator/7.1/Applications/68EBCAC9-1619-4C79-8674-07DCCD64B76E/Library/Caches/FirstOpenEarsDynamicLanguageModel.DMP<br />
+and<br />
+/Users/geoffreytowell/Library/Application Support/iPhone Simulator/7.1/Applications/68EBCAC9-1619-4C79-8674-07DCCD64B76E/Library/Caches/FirstOpenEarsDynamicLanguageModel.dic<br />
+2014-07-28 11:55:51.142 OpenEarsSampleApp[3012:60b] acousticModelPath is /Users/geoffreytowell/Library/Application Support/iPhone Simulator/7.1/Applications/68EBCAC9-1619-4C79-8674-07DCCD64B76E/OpenEarsSampleApp.app/AcousticModelEnglish.bundle<br />
+2014-07-28 11:55:51.143 OpenEarsSampleApp[3012:60b] Starting dynamic language model generation<br />
+2014-07-28 11:55:51.144 OpenEarsSampleApp[3012:60b] Able to open /Users/geoffreytowell/Library/Application Support/iPhone Simulator/7.1/Applications/68EBCAC9-1619-4C79-8674-07DCCD64B76E/Library/Caches/SecondOpenEarsDynamicLanguageModel.corpus for reading<br />
+2014-07-28 11:55:51.152 OpenEarsSampleApp[3012:60b] Able to open /Users/geoffreytowell/Library/Application Support/iPhone Simulator/7.1/Applications/68EBCAC9-1619-4C79-8674-07DCCD64B76E/Library/Caches/SecondOpenEarsDynamicLanguageModel_pipe.txt for writing<br />
+2014-07-28 11:55:51.153 OpenEarsSampleApp[3012:60b] Starting text2wfreq_impl<br />
+2014-07-28 11:55:51.156 OpenEarsSampleApp[3012:60b] Done with text2wfreq_impl<br />
+2014-07-28 11:55:51.156 OpenEarsSampleApp[3012:60b] Able to open /Users/geoffreytowell/Library/Application Support/iPhone Simulator/7.1/Applications/68EBCAC9-1619-4C79-8674-07DCCD64B76E/Library/Caches/SecondOpenEarsDynamicLanguageModel_pipe.txt for reading.<br />
+2014-07-28 11:55:51.157 OpenEarsSampleApp[3012:60b] Able to open /Users/geoffreytowell/Library/Application Support/iPhone Simulator/7.1/Applications/68EBCAC9-1619-4C79-8674-07DCCD64B76E/Library/Caches/SecondOpenEarsDynamicLanguageModel.vocab for reading.<br />
+2014-07-28 11:55:51.157 OpenEarsSampleApp[3012:60b] Starting wfreq2vocab<br />
+2014-07-28 11:55:51.158 OpenEarsSampleApp[3012:60b] Done with wfreq2vocab<br />
+2014-07-28 11:55:51.177 OpenEarsSampleApp[3012:60b] Starting text2idngram<br />
+2014-07-28 11:55:51.180 OpenEarsSampleApp[3012:60b] Done with text2idngram<br />
+2014-07-28 11:55:51.181 OpenEarsSampleApp[3012:60b] Starting idngram2lm</p>
+<p>2014-07-28 11:55:51.183 OpenEarsSampleApp[3012:60b] Done with idngram2lm<br />
+2014-07-28 11:55:51.183 OpenEarsSampleApp[3012:60b] Starting sphinx_lm_convert<br />
+2014-07-28 11:55:51.184 OpenEarsSampleApp[3012:60b] Finishing sphinx_lm_convert<br />
+2014-07-28 11:55:51.185 OpenEarsSampleApp[3012:60b] Done creating language model with CMUCLMTK in 0.041909 seconds.<br />
+2014-07-28 11:55:51.204 OpenEarsSampleApp[3012:60b] The word QUIDNUNC was not found in the dictionary /Users/geoffreytowell/Library/Application Support/iPhone Simulator/7.1/Applications/68EBCAC9-1619-4C79-8674-07DCCD64B76E/OpenEarsSampleApp.app/AcousticModelEnglish.bundle/LanguageModelGeneratorLookupList.text/LanguageModelGeneratorLookupList.text.<br />
+2014-07-28 11:55:51.205 OpenEarsSampleApp[3012:60b] Now using the fallback method to look up the word QUIDNUNC<br />
+2014-07-28 11:55:51.205 OpenEarsSampleApp[3012:60b] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the English phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2014-07-28 11:55:51.206 OpenEarsSampleApp[3012:60b] Using convertGraphemes for the word or phrase QUIDNUNC which doesn&#8217;t appear in the dictionary<br />
+2014-07-28 11:55:51.214 OpenEarsSampleApp[3012:60b] I&#8217;m done running performDictionaryLookup and it took 0.026839 seconds<br />
+2014-07-28 11:55:51.215 OpenEarsSampleApp[3012:60b] I&#8217;m done running dynamic language model generation and it took 0.072077 seconds<br />
+2014-07-28 11:55:51.215 OpenEarsSampleApp[3012:60b] Dynamic language generator completed successfully, you can find your new files SecondOpenEarsDynamicLanguageModel.DMP<br />
+ and<br />
+SecondOpenEarsDynamicLanguageModel.dic<br />
+ at the paths<br />
+/Users/geoffreytowell/Library/Application Support/iPhone Simulator/7.1/Applications/68EBCAC9-1619-4C79-8674-07DCCD64B76E/Library/Caches/SecondOpenEarsDynamicLanguageModel.DMP<br />
+and<br />
+/Users/geoffreytowell/Library/Application Support/iPhone Simulator/7.1/Applications/68EBCAC9-1619-4C79-8674-07DCCD64B76E/Library/Caches/SecondOpenEarsDynamicLanguageModel.dic<br />
+2014-07-28 11:55:51.218 OpenEarsSampleApp[3012:60b] </p>
+<p>Welcome to the OpenEars sample project. This project understands the words:<br />
+BACKWARD,<br />
+CHANGE,<br />
+FORWARD,<br />
+GO,<br />
+LEFT,<br />
+MODEL,<br />
+RIGHT,<br />
+TURN,<br />
+and if you say &#8220;CHANGE MODEL&#8221; it will switch to its dynamically-generated model which understands the words:<br />
+CHANGE,<br />
+MODEL,<br />
+MONDAY,<br />
+TUESDAY,<br />
+WEDNESDAY,<br />
+THURSDAY,<br />
+FRIDAY,<br />
+SATURDAY,<br />
+SUNDAY,<br />
+QUIDNUNC<br />
+2014-07-28 11:55:51.220 OpenEarsSampleApp[3012:60b] User gave mic permission for this app.<br />
+2014-07-28 11:55:51.221 OpenEarsSampleApp[3012:60b] Leaving sample rate at the default of 16000.<br />
+2014-07-28 11:55:51.221 OpenEarsSampleApp[3012:60b] The audio session has already been initialized but we will override its properties.<br />
+2014-07-28 11:55:51.222 OpenEarsSampleApp[3012:60b] Checking and resetting all audio session settings.<br />
+2014-07-28 11:55:51.222 OpenEarsSampleApp[3012:60b] audioCategory is incorrect, we will change it.<br />
+2014-07-28 11:55:51.222 OpenEarsSampleApp[3012:60b] audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.<br />
+2014-07-28 11:55:51.223 OpenEarsSampleApp[3012:60b] bluetoothInput is incorrect, we will change it.<br />
+2014-07-28 11:55:51.223 OpenEarsSampleApp[3012:60b] bluetooth input is now on the correct setting of 1.<br />
+2014-07-28 11:55:51.223 OpenEarsSampleApp[3012:60b] Output Device: Speaker.<br />
+2014-07-28 11:55:51.224 OpenEarsSampleApp[3012:60b] categoryDefaultToSpeaker is incorrect, we will change it.<br />
+2014-07-28 11:55:51.224 OpenEarsSampleApp[3012:60b] CategoryDefaultToSpeaker is now on the correct setting of 1.<br />
+2014-07-28 11:55:51.224 OpenEarsSampleApp[3012:60b] preferredBufferSize is incorrect, we will change it.<br />
+2014-07-28 11:55:51.224 OpenEarsSampleApp[3012:60b] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2014-07-28 11:55:51.225 OpenEarsSampleApp[3012:60b] preferredSampleRateCheck is incorrect, we will change it.<br />
+2014-07-28 11:55:51.225 OpenEarsSampleApp[3012:60b] preferred hardware sample rate is now on the correct setting of 16000.000000.<br />
+2014-07-28 11:55:51.225 OpenEarsSampleApp[3012:60b] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2014-07-28 11:55:51.226 OpenEarsSampleApp[3012:60b] Exiting startAudioSession.<br />
+2014-07-28 11:55:51.226 OpenEarsSampleApp[3012:3903] setSecondsOfSilence value of 0.000000 was too large or too small or was NULL, using default of 0.700000.<br />
+2014-07-28 11:55:51.226 OpenEarsSampleApp[3012:3903] Project has these words or phrases in its dictionary:<br />
+10<br />
+24<br />
+30<br />
+BACKWARD<br />
+CHANGE<br />
+COMPUTER<br />
+DO<br />
+EXECUTE<br />
+FIVE<br />
+FORWARD<br />
+GO<br />
+GREETINGS<br />
+HELLO<br />
+HELLO(2)<br />
+IT<br />
+LEFT<br />
+MOVE<br />
+ONE<br />
+ONE(2)<br />
+RIGHT<br />
+ROBOTTWENTY<br />
+THANK<br />
+TWENTY<br />
+TWENTY(2)<br />
+TWO<br />
+YOU<br />
+2014-07-28 11:55:51.227 OpenEarsSampleApp[3012:3903] Recognition loop has started<br />
+2014-07-28 11:55:51.235 OpenEarsSampleApp[3012:60b] Pocketsphinx is starting up.<br />
+2014-07-28 11:55:51.256 OpenEarsSampleApp[3012:3903] Starting openAudioDevice on the simulator. This Simulator-compatible audio driver is only provided to you as a convenience so you can use the Simulator to test recognition logic, however, its audio driver is not supported and bug reports for it will be circular-filed.<br />
+2014-07-28 11:55:51.257 OpenEarsSampleApp[3012:3903] Restoring SmartCMN value of 43.064590<br />
+2014-07-28 11:55:51.303 OpenEarsSampleApp[3012:3903] Calibration has started<br />
+2014-07-28 11:55:51.303 OpenEarsSampleApp[3012:60b] Pocketsphinx calibration has started.<br />
+2014-07-28 11:55:53.505 OpenEarsSampleApp[3012:3903] Calibration has completed<br />
+2014-07-28 11:55:53.505 OpenEarsSampleApp[3012:60b] Pocketsphinx calibration is complete.<br />
+2014-07-28 11:55:53.506 OpenEarsSampleApp[3012:3903] Listening.<br />
+2014-07-28 11:55:53.506 OpenEarsSampleApp[3012:60b] I&#8217;m running flite<br />
+2014-07-28 11:55:53.507 OpenEarsSampleApp[3012:60b] Checking and resetting all audio session settings.<br />
+2014-07-28 11:55:53.507 OpenEarsSampleApp[3012:60b] audioCategory is correct, we will leave it as it is.<br />
+2014-07-28 11:55:53.508 OpenEarsSampleApp[3012:60b] bluetoothInput is correct, we will leave it as it is.<br />
+2014-07-28 11:55:53.509 OpenEarsSampleApp[3012:60b] Output Device: Speaker.<br />
+2014-07-28 11:55:53.509 OpenEarsSampleApp[3012:60b] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2014-07-28 11:55:53.510 OpenEarsSampleApp[3012:60b] preferredBufferSize is correct, we will leave it as it is.<br />
+2014-07-28 11:55:53.510 OpenEarsSampleApp[3012:60b] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2014-07-28 11:55:53.587 OpenEarsSampleApp[3012:60b] I&#8217;m done running flite and it took 0.079781 seconds<br />
+2014-07-28 11:55:53.587 OpenEarsSampleApp[3012:60b] Flite audio player was nil when referenced so attempting to allocate a new audio player.<br />
+2014-07-28 11:55:53.587 OpenEarsSampleApp[3012:60b] Loading speech data for Flite concluded successfully.<br />
+2014-07-28 11:55:53.601 OpenEarsSampleApp[3012:60b] Pocketsphinx is now listening.<br />
+2014-07-28 11:55:53.602 OpenEarsSampleApp[3012:60b] Flite sending suspend recognition notification.<br />
+2014-07-28 11:55:53.603 OpenEarsSampleApp[3012:60b] Flite has started speaking<br />
+2014-07-28 11:55:53.604 OpenEarsSampleApp[3012:60b] Pocketsphinx has suspended recognition.<br />
+2014-07-28 11:55:55.227 OpenEarsSampleApp[3012:60b] AVAudioPlayer did finish playing with success flag of 1<br />
+2014-07-28 11:55:55.379 OpenEarsSampleApp[3012:60b] Flite sending resume recognition notification.<br />
+2014-07-28 11:55:55.880 OpenEarsSampleApp[3012:60b] Flite has finished speaking<br />
+2014-07-28 11:55:55.881 OpenEarsSampleApp[3012:60b] setSecondsOfSilence value of 0.000000 was too large or too small or was NULL, using default of 0.700000.<br />
+2014-07-28 11:55:55.882 OpenEarsSampleApp[3012:60b] Pocketsphinx has resumed recognition.<br />
+2014-07-28 11:55:57.457 OpenEarsSampleApp[3012:3903] Speech detected&#8230;<br />
+2014-07-28 11:55:57.457 OpenEarsSampleApp[3012:60b] Pocketsphinx has detected speech.<br />
+2014-07-28 11:56:00.488 OpenEarsSampleApp[3012:60b] Pocketsphinx has detected a second of silence, concluding an utterance.<br />
+2014-07-28 11:56:00.488 OpenEarsSampleApp[3012:3903] Processing speech, please wait&#8230;<br />
+2014-07-28 11:56:00.527 OpenEarsSampleApp[3012:3903] Pocketsphinx heard &#8220;10 10 10 HELLO IT LEFT&#8221; with a score of (-4394) and an utterance ID of 000000000.<br />
+2014-07-28 11:56:00.527 OpenEarsSampleApp[3012:60b] The received hypothesis is 10 10 10 HELLO IT LEFT with a score of -4394 and an ID of 000000000<br />
+2014-07-28 11:56:00.528 OpenEarsSampleApp[3012:60b] Heard 10 10 10 HELLO IT LEFT<br />
+2014-07-28 11:56:00.528 OpenEarsSampleApp[3012:60b] I&#8217;m running flite<br />
+2014-07-28 11:56:00.528 OpenEarsSampleApp[3012:60b] Checking and resetting all audio session settings.<br />
+2014-07-28 11:56:00.529 OpenEarsSampleApp[3012:60b] audioCategory is correct, we will leave it as it is.<br />
+2014-07-28 11:56:00.529 OpenEarsSampleApp[3012:60b] bluetoothInput is correct, we will leave it as it is.<br />
+2014-07-28 11:56:00.529 OpenEarsSampleApp[3012:60b] Output Device: Speaker.<br />
+2014-07-28 11:56:00.530 OpenEarsSampleApp[3012:60b] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2014-07-28 11:56:00.530 OpenEarsSampleApp[3012:60b] preferredBufferSize is correct, we will leave it as it is.<br />
+2014-07-28 11:56:00.530 OpenEarsSampleApp[3012:60b] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2014-07-28 11:56:00.532 OpenEarsSampleApp[3012:3903] Listening.<br />
+2014-07-28 11:56:00.650 OpenEarsSampleApp[3012:60b] I&#8217;m done running flite and it took 0.121160 seconds<br />
+2014-07-28 11:56:00.650 OpenEarsSampleApp[3012:60b] Flite audio player was nil when referenced so attempting to allocate a new audio player.<br />
+2014-07-28 11:56:00.651 OpenEarsSampleApp[3012:60b] Loading speech data for Flite concluded successfully.<br />
+2014-07-28 11:56:00.660 OpenEarsSampleApp[3012:60b] Flite sending interrupt speech request.<br />
+2014-07-28 11:56:00.661 OpenEarsSampleApp[3012:60b] Pocketsphinx is now listening.<br />
+2014-07-28 11:56:00.662 OpenEarsSampleApp[3012:60b] Flite sending suspend recognition notification.<br />
+2014-07-28 11:56:00.663 OpenEarsSampleApp[3012:60b] Flite has started speaking<br />
+2014-07-28 11:56:00.663 OpenEarsSampleApp[3012:60b] Pocketsphinx has suspended recognition.<br />
+2014-07-28 11:56:03.249 OpenEarsSampleApp[3012:60b] AVAudioPlayer did finish playing with success flag of 1<br />
+2014-07-28 11:56:03.401 OpenEarsSampleApp[3012:60b] Flite sending resume recognition notification.<br />
+2014-07-28 11:56:03.902 OpenEarsSampleApp[3012:60b] Flite has finished speaking<br />
+2014-07-28 11:56:03.903 OpenEarsSampleApp[3012:60b] setSecondsOfSilence value of 0.000000 was too large or too small or was NULL, using default of 0.700000.<br />
+2014-07-28 11:56:03.905 OpenEarsSampleApp[3012:60b] Pocketsphinx has resumed recognition.<br />
+2014-07-28 11:56:04.526 OpenEarsSampleApp[3012:3903] No longer listening.<br />
+2014-07-28 11:56:04.527 OpenEarsSampleApp[3012:60b] Pocketsphinx has stopped listening.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problems-using-generategrammarfromdictionary/#post-1022082</guid>
+					<title><![CDATA[Reply To: problems using generateGrammarFromDictionary]]></title>
+					<link>/forums/topic/problems-using-generategrammarfromdictionary/#post-1022082</link>
+					<pubDate>Mon, 28 Jul 2014 16:37:05 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Couple things:</p>
+<p>1. If you set PocketsphinxController&#8217;s verbosePocketsphinx property to TRUE you can see what happens in the recognition loop when it doesn&#8217;t work. This is probably the most important debugging step after turning on OpenEarsLogging (which I see you did).</p>
+<p>2. I see the code where you create a language model and create a grammar, but without seeing the code where you start listening I can&#8217;t say why it may or may not be working because I don&#8217;t know which of those two items you are starting the loop with and how you invoked the method.</p>
+<p>3. Let&#8217;s create smaller test cases in order to share code here, since it&#8217;s a bit too much to scan through.</p>
+<p>4. This array is malformed (don&#8217;t know why it compiles) due to a lack of a comma and it ends up with a malformed word &#8220;ROBOTTWENTY&#8221; in your language model which will reduce recognition quality:</p>
+<pre>
+NSArray *firstLanguageArray = [[NSArray alloc] initWithArray:[NSArray arrayWithObjects: // All capital letters.
+@"ONE", @"TWO", @"TWENTY", @"10", @"30", @"24",
+@"HELLO", @"COMPUTER", @"GREETINGS", @"ROBOT"
+@"TWENTY FIVE",
+@"BACKWARD",
+@"CHANGE",
+@"FORWARD",
+@"GO",
+@"MOVE", @"EXECUTE", @"DO", @"IT", @"THANK", @"YOU",
+@"LEFT",
+@"RIGHT",
+nil]];
+</pre>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problems-using-generategrammarfromdictionary/#post-1022085</guid>
+					<title><![CDATA[Reply To: problems using generateGrammarFromDictionary]]></title>
+					<link>/forums/topic/problems-using-generategrammarfromdictionary/#post-1022085</link>
+					<pubDate>Tue, 29 Jul 2014 11:21:17 +0000</pubDate>
+					<dc:creator>geofftowell</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Overnight I got to thinking and read through the documentation several more times. With some more experimentation, I got recognition with grammars working in the sample code by modifying the viewDidLoad and startListening methods as shown below.  (I removed a bunch of comments to make things shorter.)</p>
+<p>The central thing I had missed was changing languageModelIsJSGF to TRUE in the startListeningWithLanguageModelAtPath method</p>
+<p>Thanks for your help.</p>
+<p>&#8211; (void) startListening {</p>
+<p>   self.pocketsphinxController.returnNullHypotheses=YES;<br />
+    self.pocketsphinxController.verbosePocketSphinx=YES;<br />
+    [self.pocketsphinxController startListeningWithLanguageModelAtPath:self.pathToFirstDynamicallyGeneratedLanguageModel dictionaryAtPath:self.pathToFirstDynamicallyGeneratedDictionary acousticModelAtPath:[AcousticModel pathToModel:@&#8221;AcousticModelEnglish&#8221;] languageModelIsJSGF:TRUE]; // Change &#8220;AcousticModelEnglish&#8221; to &#8220;AcousticModelSpanish&#8221; in order to perform Spanish recognition instead of English.<br />
+    self.pocketsphinxController.verbosePocketSphinx=YES;</p>
+<p>}</p>
+<p>&#8211; (void)viewDidLoad {<br />
+    [super viewDidLoad];<br />
+	[OpenEarsLogging startOpenEarsLogging];<br />
+    self.restartAttemptsDueToPermissionRequests = 0;<br />
+    self.startupFailedDueToLackOfPermissions = FALSE;</p>
+<p>	[self.openEarsEventsObserver setDelegate:self];<br />
+	LanguageModelGenerator *languageModelGenerator = [[LanguageModelGenerator alloc] init];<br />
+    NSDictionary *dd = @{<br />
+                         ThisWillBeSaidOnce : @[<br />
+                                 @{ OneOfTheseCanBeSaidOnce : @[@&#8221;HELLO COMPUTER&#8221;, @&#8221;GREETINGS ROBOT&#8221;]},<br />
+                                 @{ OneOfTheseWillBeSaidOnce : @[@&#8221;GO&#8221;, @&#8221;MOVE&#8221;]},<br />
+                                 @{ OneOfTheseWillBeSaidOnce : @[@&#8221;EXECUTE&#8221;, @&#8221;DO IT&#8221;]},<br />
+                                 ]<br />
+                         };<br />
+    NSError *error2 = [languageModelGenerator generateGrammarFromDictionary:dd withFilesNamed:@&#8221;FirstOpenEarsDynamicLanguageModelG&#8221; forAcousticModelAtPath:[AcousticModel pathToModel:@&#8221;AcousticModelEnglish&#8221;]];</p>
+<p>	NSDictionary *firstDynamicLanguageGenerationResultsDictionary = nil;<br />
+	if([error2 code] != noErr) {<br />
+		NSLog(@&#8221;Dynamic language generator reported error %@&#8221;, [error2 description]);<br />
+	} else {<br />
+		firstDynamicLanguageGenerationResultsDictionary = [error2 userInfo];</p>
+<p>		NSString *lmFile = [firstDynamicLanguageGenerationResultsDictionary objectForKey:@&#8221;LMFile&#8221;];<br />
+		NSString *dictionaryFile = [firstDynamicLanguageGenerationResultsDictionary objectForKey:@&#8221;DictionaryFile&#8221;];<br />
+		NSString *lmPath = [firstDynamicLanguageGenerationResultsDictionary objectForKey:@&#8221;LMPath&#8221;];<br />
+		NSString *dictionaryPath = [firstDynamicLanguageGenerationResultsDictionary objectForKey:@&#8221;DictionaryPath&#8221;];</p>
+<p>		NSLog(@&#8221;Dynamic language generator completed successfully, you can find your new files %@\n and \n%@\n at the paths \n%@ \nand \n%@&#8221;, lmFile,dictionaryFile,lmPath,dictionaryPath);	</p>
+<p>		self.pathToFirstDynamicallyGeneratedLanguageModel = lmPath;<br />
+		self.pathToFirstDynamicallyGeneratedDictionary = dictionaryPath;<br />
+	}</p>
+<p>	self.usingStartLanguageModel = TRUE;<br />
+    [self startListening];<br />
+	[self startDisplayingLevels];<br />
+	self.startButton.hidden = TRUE;<br />
+	self.stopButton.hidden = TRUE;<br />
+	self.suspendListeningButton.hidden = TRUE;<br />
+	self.resumeListeningButton.hidden = TRUE;<br />
+}</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

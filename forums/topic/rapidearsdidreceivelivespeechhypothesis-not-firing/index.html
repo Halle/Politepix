@@ -1,0 +1,2225 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+<meta charset="UTF-8">
+
+<title>Topic: rapidEarsDidReceiveLiveSpeechHypothesis not firing | Politepix</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="/wp-content/uploads/omgf/omgf-stylesheet-56/omgf-stylesheet-56.css?ver=1668781124" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" type="text/css" href="/wp-content/themes/politepix-pixelpress-child-theme/style.css" media="screen">
+
+<link rel="pingback" href="/xmlrpc.php">
+<meta name="robots" content="max-image-preview:large">
+<script>window._wca = window._wca || [];</script>
+<link rel="dns-prefetch" href="//stats.wp.com">
+<link rel="dns-prefetch" href="//i0.wp.com">
+<link rel="dns-prefetch" href="//c0.wp.com">
+<link rel="alternate" type="application/rss+xml" title="Politepix &raquo; Feed" href="http://feeds.feedburner.com/politepixblog">
+<link rel="alternate" type="application/rss+xml" title="Politepix &raquo; Comments Feed" href="/comments/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.5.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🐦‍⬛","🐦​⬛")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<link rel="stylesheet" id="woo-layout-css" href="/wp-content/themes/pixelpress/css/layout.css?ver=6.5.2" type="text/css" media="all">
+<link rel="stylesheet" id="woocommerce-css" href="/wp-content/themes/pixelpress/css/woocommerce.css?ver=6.5.2" type="text/css" media="all">
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="https://c0.wp.com/c/6.5.2/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<style id="wp-block-library-inline-css" type="text/css">.has-text-align-justify{text-align:justify;}</style>
+<link rel="stylesheet" id="mediaelement-css" href="https://c0.wp.com/c/6.5.2/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="https://c0.wp.com/c/6.5.2/wp-includes/js/mediaelement/wp-mediaelement.min.css" type="text/css" media="all">
+<style id="jetpack-sharing-buttons-style-inline-css" type="text/css">.jetpack-sharing-buttons__services-list{display:flex;flex-direction:row;flex-wrap:wrap;gap:0;list-style-type:none;margin:5px;padding:0}.jetpack-sharing-buttons__services-list.has-small-icon-size{font-size:12px}.jetpack-sharing-buttons__services-list.has-normal-icon-size{font-size:16px}.jetpack-sharing-buttons__services-list.has-large-icon-size{font-size:24px}.jetpack-sharing-buttons__services-list.has-huge-icon-size{font-size:36px}@media print{.jetpack-sharing-buttons__services-list{display:none!important}}.editor-styles-wrapper .wp-block-jetpack-sharing-buttons{gap:0;padding-inline-start:0}ul.jetpack-sharing-buttons__services-list.has-background{padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="bbp-default-css" href="/wp-content/plugins/bbpress/templates/default/css/bbpress.min.css?ver=2.6.9" type="text/css" media="all">
+<link rel="stylesheet" id="currency_converter_styles-css" href="/wp-content/plugins/woocommerce-currency-converter-widget/assets/css/converter.css?ver=2.2.2" type="text/css" media="all">
+<style id="woocommerce-inline-inline-css" type="text/css">.woocommerce form .form-row .required { visibility: visible; }</style>
+<link rel="stylesheet" id="cmplz-general-css" href="/wp-content/plugins/complianz-gdpr/assets/css/cookieblocker.min.css?ver=1710283454" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="https://c0.wp.com/p/jetpack/13.3.1/css/jetpack.css" type="text/css" media="all">
+<link rel="stylesheet" id="prettyPhoto-css" href="/wp-content/themes/pixelpress/includes/css/prettyPhoto.css?ver=6.5.2" type="text/css" media="all">
+<script type="text/template" id="tmpl-variation-template">
+	<div class="woocommerce-variation-description">{{{ data.variation.variation_description }}}<\/div>
+	<div class="woocommerce-variation-price">{{{ data.variation.price_html }}}<\/div>
+	<div class="woocommerce-variation-availability">{{{ data.variation.availability_html }}}<\/div>
+</script>
+<script type="text/template" id="tmpl-unavailable-variation-template">
+	<p>Sorry, this product is unavailable. Please choose a different combination.<\/p>
+</script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js" id="wp-polyfill-inert-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/dist/vendor/regenerator-runtime.min.js" id="regenerator-runtime-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/dist/vendor/wp-polyfill.min.js" id="wp-polyfill-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/dist/hooks.min.js" id="wp-hooks-js"></script>
+<script data-service="jetpack-statistics" data-category="statistics" type="text/plain" data-cmplz-src="https://stats.wp.com/w.js?ver=202417" id="woo-tracks-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/jquery/jquery.min.js" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/jquery/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/underscore.min.js" id="underscore-js"></script>
+<script type="text/javascript" id="wp-util-js-extra">
+/* <![CDATA[ */
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/wp-util.min.js" id="wp-util-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/jquery-blockui/jquery.blockUI.min.js" id="jquery-blockui-js" defer data-wp-strategy="defer"></script>
+<script type="text/javascript" id="wc-add-to-cart-variation-js-extra">
+/* <![CDATA[ */
+var wc_add_to_cart_variation_params = {"wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_no_matching_variations_text":"Sorry, no products matched your selection. Please choose a different combination.","i18n_make_a_selection_text":"Please select some product options before adding this product to your cart.","i18n_unavailable_text":"Sorry, this product is unavailable. Please choose a different combination."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/frontend/add-to-cart-variation.min.js" id="wc-add-to-cart-variation-js" defer data-wp-strategy="defer"></script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/jquery-cookie/jquery.cookie.min.js" id="jquery-cookie-js" defer data-wp-strategy="defer"></script>
+<script data-service="jetpack-statistics" data-category="statistics" type="text/plain" data-cmplz-src="https://stats.wp.com/s-202417.js" id="woocommerce-analytics-js" defer data-wp-strategy="defer"></script>
+<script type="text/javascript" src="/wp-content/themes/pixelpress/includes/js/third-party.js?ver=6.5.2" id="third party-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/prettyPhoto/jquery.prettyPhoto.min.js" id="prettyPhoto-js" data-wp-strategy="defer"></script>
+<script type="text/javascript" src="/wp-content/themes/pixelpress/includes/js/general.js?ver=6.5.2" id="general-js"></script>
+<script type="text/javascript" src="/wp-content/themes/pixelpress/includes/js/uniform.js?ver=6.5.2" id="uniform-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.5.2">
+<meta name="generator" content="WooCommerce 8.8.2">
+<link rel="shortlink" href="/?p=1032217">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Fforums%2Ftopic%2Frapidearsdidreceivelivespeechhypothesis-not-firing%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Fforums%2Ftopic%2Frapidearsdidreceivelivespeechhypothesis-not-firing%2F#038;format=xml">
+	<style>img#wpstats{display:none}</style>
+					<style>.cmplz-hidden {
+					display: none !important;
+				}</style>		<script>( function() {
+				window.onpageshow = function( event ) {
+					// Defined window.wpforms means that a form exists on a page.
+					// If so and back/forward button has been clicked,
+					// force reload a page to prevent the submit button state stuck.
+					if ( typeof window.wpforms !== 'undefined' && event.persisted ) {
+						window.location.reload();
+					}
+				};
+			}() );</script>
+		
+<!-- Theme version -->
+<meta name="generator" content="PixelPress Politepix 1.0">
+<meta name="generator" content="PixelPress 1.5.4">
+<meta name="generator" content="WooFramework 6.2.9">
+
+<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<!--  Mobile viewport scale | Disable user zooming as the layout is optimised -->
+<meta content="initial-scale=1.0; maximum-scale=1.0; user-scalable=no" name="viewport">
+		<!--[if lt IE 9]>
+			<script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+			<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	
+<!-- Google Webfonts -->
+<link href="/wp-content/uploads/omgf/omgf-stylesheet-165/omgf-stylesheet-165.css?ver=1668781124" rel="stylesheet" type="text/css">
+
+<!-- Alt Stylesheet -->
+<link href="/wp-content/themes/pixelpress/styles/default.css" rel="stylesheet" type="text/css">
+
+<!-- Custom Favicon -->
+<link rel="shortcut icon" href="/wp-content/uploads/favicon.png">
+
+<!-- Woo Shortcodes CSS -->
+<link href="/wp-content/themes/pixelpress/functions/css/shortcodes.css" rel="stylesheet" type="text/css">
+
+<!-- Custom Stylesheet -->
+<link href="/wp-content/themes/pixelpress/custom.css" rel="stylesheet" type="text/css">
+
+<!-- Custom Stylesheet In Child Theme -->
+<link href="/wp-content/themes/politepix-pixelpress-child-theme/custom.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body data-cmplz="1" class="topic bbpress no-js topic-template-default single single-topic postid-1032217 theme-pixelpress woocommerce-no-js unknown alt-style-default has-lightbox layout-left-content">
+
+<div id="wrapper">
+
+	    
+        
+    <div id="header-wrap">
+
+		<header id="header" class="col-full">
+		
+			<div id="logo" class="fl">
+												    <a id="logo" href="/" title="iOS Frameworks for speech recognition, text to speech and more">
+				    	<img src="/wp-content/uploads/logo1.png" alt="Politepix">
+				    </a>
+			    			    
+			    <hgroup>
+			        
+					<h1 class="site-title"><a href="/">Politepix</a></h1>
+					<h2 class="site-description">iOS Frameworks for speech recognition, text to speech and more</h2>
+					<h3 class="nav-toggle"><a href="#navigation">Navigation</a></h3>
+				      	
+				</hgroup>
+			</div>
+<!-- /#logo -->		
+	        
+	        	
+	        <div id="header-right" class="fr">
+
+				<nav id="navigation" role="navigation">
+					
+					<ul id="main-nav" class="nav fl">
+<li id="menu-item-1175" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1175">
+<a href="/openears/">OpenEars</a>
+<ul class="sub-menu">
+	<li id="menu-item-11108" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11108"><a href="/openears/tutorial/">OpenEars Tutorials</a></li>
+	<li id="menu-item-1171" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1171"><a href="/openears/support/">OpenEars FAQ/Support</a></li>
+	<li id="menu-item-1189" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1189"><a href="/forums/forum/openearsforum/">OpenEars Support Forum</a></li>
+	<li id="menu-item-14947" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14947"><a href="/openearsplatform/">About the OpenEars Platform</a></li>
+</ul>
+</li>
+<li id="menu-item-11706" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-11706">
+<a href="/neatspeech">NeatSpeech</a>
+<ul class="sub-menu">
+	<li id="menu-item-11707" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11707"><a href="/forums/forum/openears-plugins/">NeatSpeech support forum</a></li>
+</ul>
+</li>
+<li id="menu-item-9871" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-9871">
+<a href="/rapidears/">RapidEars</a>
+<ul class="sub-menu">
+	<li id="menu-item-10389" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10389"><a href="/forums/forum/openears-plugins">RapidEars Support Forum</a></li>
+</ul>
+</li>
+<li id="menu-item-11030" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-11030">
+<a href="/rejecto/">Rejecto</a>
+<ul class="sub-menu">
+	<li id="menu-item-11031" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11031"><a href="/forums/forum/openears-plugins/">Rejecto Support Forum</a></li>
+</ul>
+</li>
+<li id="menu-item-13071" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13071"><a href="/savethatwave/">SaveThatWave</a></li>
+<li id="menu-item-1021000" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1021000">
+<a href="/ruleorama/">RuleORama</a>
+<ul class="sub-menu">
+	<li id="menu-item-9002" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9002"><a href="/forums/forum/openears-plugins/">RuleORama Free Support Forum</a></li>
+</ul>
+</li>
+<li id="menu-item-1178" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-1178"><a title="Blog" href="/blog/">Blog</a></li>
+<li id="menu-item-1015870" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1015870">
+<a href="/shop">Shop</a>
+<ul class="sub-menu">
+	<li id="menu-item-8499" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8499"><a href="/shop">View all products</a></li>
+	<li id="menu-item-8486" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8486"><a href="/cart/">Cart</a></li>
+	<li id="menu-item-8498" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8498"><a href="/order-tracking/">Track your order</a></li>
+	<li id="menu-item-8539" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8539"><a href="/termsandconditions/">AGB/Terms and Conditions</a></li>
+</ul>
+</li>
+</ul>			        
+			        			        <ul class="mini-cart">
+						<li>
+							<a href="/cart/" title="View your shopping cart" class="cart-parent">
+								<span> 
+							<span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&euro;</span>0.00</bdi></span><mark>0</mark>							</span>
+							</a>
+							<ul class="cart_list"><li class="empty">No products in the cart.</li></ul>						</li>
+					</ul>
+			      				      	
+				</nav><!-- /#navigation -->
+
+				
+<div id="header-social" class="social fr">
+				<a href="http://feeds.feedburner.com/politepixblog" class="subscribe" title="RSS"></a>
+
+				<a href="http://www.twitter.com/politepix" class="twitter" title="Follow me on Twitter"></a>
+
+		</div>
+<!-- /.social -->
+				
+
+			</div>
+<!-- /#header-right -->
+			
+					
+		</header><!-- /#header -->
+	
+	</div>
+<!-- /#header-wrap -->
+	
+	
+	       
+    <div id="content" class="page col-full">
+    
+    	    	
+		<section id="main" class="col-left"> 			
+
+                                                                   
+            <article class="post-1032217 topic type-topic status-closed hentry topic-tag-delegate-methods topic-tag-rapidears topic-tag-recognition">
+				
+				<header>
+			    	<h1>rapidEarsDidReceiveLiveSpeechHypothesis not firing</h1>
+				</header>
+				
+                <section class="entry">
+                	
+<div id="bbpress-forums" class="bbpress-wrapper">
+
+	<div class="bbp-breadcrumb"><p><a href="/" class="bbp-breadcrumb-home">Home</a> <span class="bbp-breadcrumb-sep">&rsaquo;</span> <a href="/forums/" class="bbp-breadcrumb-root">Forums</a> <span class="bbp-breadcrumb-sep">&rsaquo;</span> <a href="/forums/forum/openears-plugins/" class="bbp-breadcrumb-forum">OpenEars plugins</a> <span class="bbp-breadcrumb-sep">&rsaquo;</span> <span class="bbp-breadcrumb-current">rapidEarsDidReceiveLiveSpeechHypothesis not firing</span></p></div>
+	
+	
+	
+	
+		<div class="bbp-topic-tags"><p>Tagged:&nbsp;<a href="/forums/tags/delegate-methods/" rel="tag">delegate methods</a>, <a href="/forums/tags/rapidears/" rel="tag">rapidears</a>, <a href="/forums/tags/recognition/" rel="tag">recognition</a></p></div>
+		<div class="bbp-template-notice info"><ul><li class="bbp-topic-description">This topic has 18 replies, 3 voices, and was last updated <a href="/forums/topic/rapidearsdidreceivelivespeechhypothesis-not-firing/#post-1032509" title="Reply To: rapidEarsDidReceiveLiveSpeechHypothesis not firing">5 years, 8 months ago</a> by <a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a>.</li></ul></div>
+		
+		
+			
+<div class="bbp-pagination">
+	<div class="bbp-pagination-count">Viewing 19 posts - 1 through 19 (of 19 total)</div>
+	<div class="bbp-pagination-links"></div>
+</div>
+
+
+			<div class="burma">Advertisement: <a href="/rapidears">&ldquo;Don't want to wait for pauses before receiving speech recognition results? try RapidEars!&rdquo;</a>
+</div>
+<p>
+</p>
+<ul id="topic-1032217-replies" class="forums bbp-replies">
+
+	<li class="bbp-header">
+		<div class="bbp-reply-author">Author</div>
+<!-- .bbp-reply-author -->
+		<div class="bbp-reply-content">Posts</div>
+<!-- .bbp-reply-content -->
+	</li>
+<!-- .bbp-header -->
+
+	<li class="bbp-body">
+
+		
+			
+				
+<div id="post-1032217" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">January 30, 2018 at 6:32 am</span>
+
+		
+		<a href="/forums/topic/rapidearsdidreceivelivespeechhypothesis-not-firing/#post-1032217" class="bbp-reply-permalink">#1032217</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1032217 -->
+
+<div class="loop-item-0 user-id-2474 bbp-parent-forum-9992 bbp-parent-topic-9992 bbp-reply-position-1 odd  post-1032217 topic type-topic status-closed hentry topic-tag-delegate-methods topic-tag-rapidears topic-tag-recognition">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/skatehumor/" title="View skatehumor&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">skatehumor</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Hello,</p>
+<p>I am trying out the RapidEarsDemo, and after successfully setting it up and configuring correctly, the recognition callbacks don&#8217;t seem to be firing.<br>
+In particular, I just need <em>rapidEarsDidReceiveLiveSpeechHypothesis</em>.<br>
+I have set OEEventsObserver as a property of the view controller, initialized the OEPocketsphinxController.sharedInstance() as per the documentation (setActive() is called before setting any properties) and replaced <em>startListeningWithLanguageModel</em> to <em>startRealtimeListeningWithLanguageModel</em>, but none of the words from my vocabulary get recognized. If I switch back to the old start listening call, it works fine.</p>
+<p>Thanks in advance.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1032218" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">January 30, 2018 at 9:57 am</span>
+
+		
+		<a href="/forums/topic/rapidearsdidreceivelivespeechhypothesis-not-firing/#post-1032218" class="bbp-reply-permalink">#1032218</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1032218 -->
+
+<div class="loop-item-1 user-id-4 bbp-parent-forum-9992 bbp-parent-topic-1032217 bbp-reply-position-2 even  post-1032218 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Welcome,</p>
+<p>Sure, please check out the post <a href="/forums/topic/install-issues-and-their-solutions/">Please read before you post – how to troubleshoot and provide logging info here</a> so you can see how to turn on and share the logging that provides troubleshooting information for this kind of issue.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1032219" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">January 30, 2018 at 3:03 pm</span>
+
+		
+		<a href="/forums/topic/rapidearsdidreceivelivespeechhypothesis-not-firing/#post-1032219" class="bbp-reply-permalink">#1032219</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1032219 -->
+
+<div class="loop-item-2 user-id-2474 bbp-parent-forum-9992 bbp-parent-topic-1032217 bbp-reply-position-3 odd topic-author  post-1032219 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/skatehumor/" title="View skatehumor&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">skatehumor</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Hi Halle,</p>
+<p>Here is a portion of the logs. Places marked with ellipses are just sections of extraneous output included by our project. The engine seems to be working correctly as it is computing and returning probabilities, but for some reason I get no hypothesis results using the new <em>startRealtimeListeningWithLanguageModel</em>.</p>
+<pre><code>
+...
+Local callback: mic check completed.
+
+INFO: ngram_model_arpa_legacy.c(504): ngrams 1=45, 2=86, 3=43
+INFO: ngram_model_arpa_legacy.c(136): Reading unigrams
+INFO: ngram_model_arpa_legacy.c(543):       45 = #unigrams created
+INFO: ngram_model_arpa_legacy.c(196): Reading bigrams
+INFO: ngram_model_arpa_legacy.c(561):       86 = #bigrams created
+INFO: ngram_model_arpa_legacy.c(562):        3 = #prob2 entries
+INFO: ngram_model_arpa_legacy.c(570):        3 = #bo_wt2 entries
+INFO: ngram_model_arpa_legacy.c(293): Reading trigrams
+INFO: ngram_model_arpa_legacy.c(583):       43 = #trigrams created
+INFO: ngram_model_arpa_legacy.c(584):        2 = #prob3 entries
+INFO: ngram_model_dmp_legacy.c(521): Building DMP model...
+INFO: ngram_model_dmp_legacy.c(551):       45 = #unigrams created
+INFO: ngram_model_dmp_legacy.c(652):       86 = #bigrams created
+INFO: ngram_model_dmp_legacy.c(653):        3 = #prob2 entries
+INFO: ngram_model_dmp_legacy.c(660):        3 = #bo_wt2 entries
+INFO: ngram_model_dmp_legacy.c(664):       43 = #trigrams created
+INFO: ngram_model_dmp_legacy.c(665):        2 = #prob3 entries
+INFO: ngram_model_arpa_legacy.c(504): ngrams 1=45, 2=86, 3=43
+INFO: ngram_model_arpa_legacy.c(136): Reading unigrams
+INFO: ngram_model_arpa_legacy.c(543):       45 = #unigrams created
+INFO: ngram_model_arpa_legacy.c(196): Reading bigrams
+INFO: ngram_model_arpa_legacy.c(561):       86 = #bigrams created
+INFO: ngram_model_arpa_legacy.c(562):        5 = #prob2 entries
+INFO: ngram_model_arpa_legacy.c(570):        3 = #bo_wt2 entries
+INFO: ngram_model_arpa_legacy.c(293): Reading trigrams
+INFO: ngram_model_arpa_legacy.c(583):       43 = #trigrams created
+INFO: ngram_model_arpa_legacy.c(584):        3 = #prob3 entries
+INFO: ngram_model_dmp_legacy.c(521): Building DMP model...
+INFO: ngram_model_dmp_legacy.c(551):       45 = #unigrams created
+INFO: ngram_model_dmp_legacy.c(652):       86 = #bigrams created
+INFO: ngram_model_dmp_legacy.c(653):        5 = #prob2 entries
+INFO: ngram_model_dmp_legacy.c(660):        3 = #bo_wt2 entries
+INFO: ngram_model_dmp_legacy.c(664):       43 = #trigrams created
+INFO: ngram_model_dmp_legacy.c(665):        3 = #prob3 entries
+INFO: pocketsphinx.c(145): Parsed model-specific feature parameters from /Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Bundle/Application/B84F96FF-66F1-4D41-AA00-2719B19DF06A/SoundBite.app/AcousticModelEnglish.bundle/feat.params
+Current configuration:
+[NAME]			[DEFLT]		[VALUE]
+-agc			none		none
+-agcthresh		2.0		2.000000e+00
+-allphone				
+-allphone_ci		no		no
+-alpha			0.97		9.700000e-01
+-ascale			20.0		2.000000e+01
+-aw			1		1
+-backtrace		no		no
+-beam			1e-48		1.000000e-48
+-bestpath		yes		yes
+-bestpathlw		9.5		9.500000e+00
+-ceplen			13		13
+-cmn			current		current
+-cmninit		8.0		40
+-compallsen		no		no
+-debug					0
+-dict					/Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Data/Application/31A5A629-5B58-4D0A-A0BA-F3E9DA2FB5F4/Library/Caches/D50A276C-B2AA-4F96-BBE6-80690B99BF97.dic
+-dictcase		no		no
+-dither			no		no
+-doublebw		no		no
+-ds			1		1
+-fdict					/Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Bundle/Application/B84F96FF-66F1-4D41-AA00-2719B19DF06A/SoundBite.app/AcousticModelEnglish.bundle/noisedict
+-feat			1s_c_d_dd	1s_c_d_dd
+-featparams				/Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Bundle/Application/B84F96FF-66F1-4D41-AA00-2719B19DF06A/SoundBite.app/AcousticModelEnglish.bundle/feat.params
+-fillprob		1e-8		1.000000e-08
+-frate			100		100
+-fsg					
+-fsgusealtpron		yes		yes
+-fsgusefiller		yes		yes
+-fwdflat		yes		yes
+-fwdflatbeam		1e-64		1.000000e-64
+-fwdflatefwid		4		4
+-fwdflatlw		8.5		8.500000e+00
+-fwdflatsfwin		25		25
+-fwdflatwbeam		7e-29		7.000000e-29
+-fwdtree		yes		yes
+-hmm					/Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Bundle/Application/B84F96FF-66F1-4D41-AA00-2719B19DF06A/SoundBite.app/AcousticModelEnglish.bundle
+-input_endian		little		little
+-jsgf					
+-keyphrase				
+-kws					
+-kws_delay		10		10
+-kws_plp		1e-1		1.000000e-01
+-kws_threshold		1		1.000000e+00
+-latsize		5000		5000
+-lda					
+-ldadim			0		0
+-lifter			0		22
+-lm					/Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Data/Application/31A5A629-5B58-4D0A-A0BA-F3E9DA2FB5F4/Library/Caches/D50A276C-B2AA-4F96-BBE6-80690B99BF97.DMP
+-lmctl					
+-lmname					
+-logbase		1.0001		1.000100e+00
+-logfn					
+-logspec		no		no
+-lowerf			133.33334	1.300000e+02
+-lpbeam			1e-40		1.000000e-40
+-lponlybeam		7e-29		7.000000e-29
+-lw			6.5		6.500000e+00
+-maxhmmpf		30000		30000
+-maxwpf			-1		-1
+-mdef					/Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Bundle/Application/B84F96FF-66F1-4D41-AA00-2719B19DF06A/SoundBite.app/AcousticModelEnglish.bundle/mdef
+-mean					/Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Bundle/Application/B84F96FF-66F1-4D41-AA00-2719B19DF06A/SoundBite.app/AcousticModelEnglish.bundle/means
+-mfclogdir				
+-min_endfr		0		0
+-mixw					
+-mixwfloor		0.0000001	1.000000e-07
+-mllr					
+-mmap			yes		yes
+-ncep			13		13
+-nfft			512		512
+-nfilt			40		25
+-nwpen			1.0		1.000000e+00
+-pbeam			1e-48		1.000000e-48
+-pip			1.0		1.000000e+00
+-pl_beam		1e-10		1.000000e-10
+-pl_pbeam		1e-10		1.000000e-10
+-pl_pip			1.0		1.000000e+00
+-pl_weight		3.0		3.000000e+00
+-pl_window		5		5
+-rawlogdir				
+-remove_dc		no		no
+-remove_noise		yes		yes
+-remove_silence		yes		yes
+-round_filters		yes		yes
+-samprate		16000		1.600000e+04
+-seed			-1		-1
+-sendump				/Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Bundle/Application/B84F96FF-66F1-4D41-AA00-2719B19DF06A/SoundBite.app/AcousticModelEnglish.bundle/sendump
+-senlogdir				
+-senmgau				
+-silprob		0.005		5.000000e-03
+-smoothspec		no		no
+-svspec					0-12/13-25/26-38
+-tmat					/Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Bundle/Application/B84F96FF-66F1-4D41-AA00-2719B19DF06A/SoundBite.app/AcousticModelEnglish.bundle/transition_matrices
+-tmatfloor		0.0001		1.000000e-04
+-topn			4		4
+-topn_beam		0		0
+-toprule				
+-transform		legacy		dct
+-unit_area		yes		yes
+-upperf			6855.4976	6.800000e+03
+-uw			1.0		1.000000e+00
+-vad_postspeech		50		150
+-vad_prespeech		20		10
+-vad_startspeech	10		10
+-vad_threshold		2.0		2.800000e+00
+-var					/Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Bundle/Application/B84F96FF-66F1-4D41-AA00-2719B19DF06A/SoundBite.app/AcousticModelEnglish.bundle/variances
+-varfloor		0.0001		1.000000e-04
+-varnorm		no		no
+-verbose		no		no
+-warp_params				
+-warp_type		inverse_linear	inverse_linear
+-wbeam			7e-29		7.000000e-29
+-wip			0.65		6.500000e-01
+-wlen			0.025625	2.562500e-02
+
+INFO: feat.c(715): Initializing feature stream to type: &#039;1s_c_d_dd&#039;, ceplen=13, CMN=&#039;current&#039;, VARNORM=&#039;no&#039;, AGC=&#039;none&#039;
+INFO: cmn.c(143): mean[0]= 12.00, mean[1..12]= 0.0
+INFO: acmod.c(164): Using subvector specification 0-12/13-25/26-38
+INFO: mdef.c(518): Reading model definition: /Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Bundle/Application/B84F96FF-66F1-4D41-AA00-2719B19DF06A/SoundBite.app/AcousticModelEnglish.bundle/mdef
+INFO: mdef.c(531): Found byte-order mark BMDF, assuming this is a binary mdef file
+INFO: bin_mdef.c(336): Reading binary model definition: /Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Bundle/Application/B84F96FF-66F1-4D41-AA00-2719B19DF06A/SoundBite.app/AcousticModelEnglish.bundle/mdef
+INFO: bin_mdef.c(516): 46 CI-phone, 168344 CD-phone, 3 emitstate/phone, 138 CI-sen, 6138 Sen, 32881 Sen-Seq
+INFO: tmat.c(206): Reading HMM transition probability matrices: /Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Bundle/Application/B84F96FF-66F1-4D41-AA00-2719B19DF06A/SoundBite.app/AcousticModelEnglish.bundle/transition_matrices
+INFO: acmod.c(117): Attempting to use PTM computation module
+INFO: ms_gauden.c(198): Reading mixture gaussian parameter: /Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Bundle/Application/B84F96FF-66F1-4D41-AA00-2719B19DF06A/SoundBite.app/AcousticModelEnglish.bundle/means
+INFO: ms_gauden.c(292): 1 codebook, 3 feature, size: 
+INFO: ms_gauden.c(294):  512x13
+INFO: ms_gauden.c(294):  512x13
+INFO: ms_gauden.c(294):  512x13
+INFO: ms_gauden.c(198): Reading mixture gaussian parameter: /Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Bundle/Application/B84F96FF-66F1-4D41-AA00-2719B19DF06A/SoundBite.app/AcousticModelEnglish.bundle/variances
+INFO: ms_gauden.c(292): 1 codebook, 3 feature, size: 
+INFO: ms_gauden.c(294):  512x13
+INFO: ms_gauden.c(294):  512x13
+INFO: ms_gauden.c(294):  512x13
+INFO: ms_gauden.c(354): 0 variance values floored
+INFO: ptm_mgau.c(805): Number of codebooks doesn&#039;t match number of ciphones, doesn&#039;t look like PTM: 1 != 46
+INFO: acmod.c(119): Attempting to use semi-continuous computation module
+INFO: ms_gauden.c(198): Reading mixture gaussian parameter: /Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Bundle/Application/B84F96FF-66F1-4D41-AA00-2719B19DF06A/SoundBite.app/AcousticModelEnglish.bundle/means
+INFO: ms_gauden.c(292): 1 codebook, 3 feature, size: 
+INFO: ms_gauden.c(294):  512x13
+INFO: ms_gauden.c(294):  512x13
+INFO: ms_gauden.c(294):  512x13
+INFO: ms_gauden.c(198): Reading mixture gaussian parameter: /Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Bundle/Application/B84F96FF-66F1-4D41-AA00-2719B19DF06A/SoundBite.app/AcousticModelEnglish.bundle/variances
+INFO: ms_gauden.c(292): 1 codebook, 3 feature, size: 
+INFO: ms_gauden.c(294):  512x13
+INFO: ms_gauden.c(294):  512x13
+INFO: ms_gauden.c(294):  512x13
+INFO: ms_gauden.c(354): 0 variance values floored
+INFO: s2_semi_mgau.c(904): Loading senones from dump file /Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Bundle/Application/B84F96FF-66F1-4D41-AA00-2719B19DF06A/SoundBite.app/AcousticModelEnglish.bundle/sendump
+INFO: s2_semi_mgau.c(928): BEGIN FILE FORMAT DESCRIPTION
+INFO: s2_semi_mgau.c(991): Rows: 512, Columns: 6138
+INFO: s2_semi_mgau.c(1023): Using memory-mapped I/O for senones
+INFO: s2_semi_mgau.c(1294): Maximum top-N: 4 Top-N beams: 0 0 0
+INFO: phone_loop_search.c(114): State beam -225 Phone exit beam -225 Insertion penalty 0
+INFO: dict.c(320): Allocating 4150 * 32 bytes (129 KiB) for word entries
+INFO: dict.c(333): Reading main dictionary: /Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Data/Application/31A5A629-5B58-4D0A-A0BA-F3E9DA2FB5F4/Library/Caches/D50A276C-B2AA-4F96-BBE6-80690B99BF97.dic
+INFO: dict.c(213): Allocated 0 KiB for strings, 0 KiB for phones
+INFO: dict.c(336): 45 words read
+INFO: dict.c(358): Reading filler dictionary: /Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Bundle/Application/B84F96FF-66F1-4D41-AA00-2719B19DF06A/SoundBite.app/AcousticModelEnglish.bundle/noisedict
+INFO: dict.c(213): Allocated 0 KiB for strings, 0 KiB for phones
+INFO: dict.c(361): 9 words read
+INFO: dict2pid.c(396): Building PID tables for dictionary
+INFO: dict2pid.c(406): Allocating 46^3 * 2 bytes (190 KiB) for word-initial triphones
+INFO: dict2pid.c(132): Allocated 51152 bytes (49 KiB) for word-final triphones
+INFO: dict2pid.c(196): Allocated 51152 bytes (49 KiB) for single-phone word triphones
+INFO: ngram_model_trie.c(424): Trying to read LM in bin format
+INFO: ngram_model_trie.c(457): Header doesn&#039;t match
+INFO: ngram_model_trie.c(180): Trying to read LM in arpa format
+INFO: ngram_model_trie.c(71): No \data\ mark in LM file
+INFO: ngram_model_trie.c(537): Trying to read LM in DMP format
+INFO: ngram_model_trie.c(632): ngrams 1=45, 2=86, 3=43
+INFO: lm_trie.c(317): Training quantizer
+INFO: lm_trie.c(323): Building LM trie
+INFO: ngram_search_fwdtree.c(99): 5 unique initial diphones
+INFO: ngram_search_fwdtree.c(148): 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(186): Creating search tree
+INFO: ngram_search_fwdtree.c(192): before: 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(326): after: max nonroot chan increased to 147
+INFO: ngram_search_fwdtree.c(339): after: 5 root, 19 non-root channels, 48 single-phone words
+INFO: ngram_search_fwdflat.c(157): fwdflat: min_ef_width = 4, max_sf_win = 25
+Local callback: mic check completed.
+
+INFO: ngram_model_arpa_legacy.c(504): ngrams 1=45, 2=86, 3=43
+INFO: ngram_model_arpa_legacy.c(136): Reading unigrams
+INFO: ngram_model_arpa_legacy.c(543):       45 = #unigrams created
+INFO: ngram_model_arpa_legacy.c(196): Reading bigrams
+INFO: ngram_model_arpa_legacy.c(561):       86 = #bigrams created
+INFO: ngram_model_arpa_legacy.c(562):        3 = #prob2 entries
+INFO: ngram_model_arpa_legacy.c(570):        3 = #bo_wt2 entries
+INFO: ngram_model_arpa_legacy.c(293): Reading trigrams
+INFO: ngram_model_arpa_legacy.c(583):       43 = #trigrams created
+INFO: ngram_model_arpa_legacy.c(584):        2 = #prob3 entries
+INFO: ngram_model_dmp_legacy.c(521): Building DMP model...
+INFO: ngram_model_dmp_legacy.c(551):       45 = #unigrams created
+INFO: ngram_model_dmp_legacy.c(652):       86 = #bigrams created
+INFO: ngram_model_dmp_legacy.c(653):        3 = #prob2 entries
+INFO: ngram_model_dmp_legacy.c(660):        3 = #bo_wt2 entries
+INFO: ngram_model_dmp_legacy.c(664):       43 = #trigrams created
+INFO: ngram_model_dmp_legacy.c(665):        2 = #prob3 entries
+INFO: ngram_model_arpa_legacy.c(504): ngrams 1=45, 2=86, 3=43
+INFO: ngram_model_arpa_legacy.c(136): Reading unigrams
+INFO: ngram_model_arpa_legacy.c(543):       45 = #unigrams created
+INFO: ngram_model_arpa_legacy.c(196): Reading bigrams
+INFO: ngram_model_arpa_legacy.c(561):       86 = #bigrams created
+INFO: ngram_model_arpa_legacy.c(562):        5 = #prob2 entries
+INFO: ngram_model_arpa_legacy.c(570):        3 = #bo_wt2 entries
+INFO: ngram_model_arpa_legacy.c(293): Reading trigrams
+INFO: ngram_model_arpa_legacy.c(583):       43 = #trigrams created
+INFO: ngram_model_arpa_legacy.c(584):        3 = #prob3 entries
+INFO: ngram_model_dmp_legacy.c(521): Building DMP model...
+INFO: ngram_model_dmp_legacy.c(551):       45 = #unigrams created
+INFO: ngram_model_dmp_legacy.c(652):       86 = #bigrams created
+INFO: ngram_model_dmp_legacy.c(653):        5 = #prob2 entries
+INFO: ngram_model_dmp_legacy.c(660):        3 = #bo_wt2 entries
+INFO: ngram_model_dmp_legacy.c(664):       43 = #trigrams created
+INFO: ngram_model_dmp_legacy.c(665):        3 = #prob3 entries
+Local callback: Pocketsphinx is now listening.
+Local callback: Pocketsphinx started.
+
+......
+
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 0 words
+INFO: dict.c(320): Allocating 4150 * 32 bytes (129 KiB) for word entries
+INFO: dict.c(333): Reading main dictionary: /Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Data/Application/31A5A629-5B58-4D0A-A0BA-F3E9DA2FB5F4/Library/Caches/F7C010DA-BF0C-4BA5-8AFF-A096F9D91900.dic
+INFO: dict.c(213): Allocated 0 KiB for strings, 0 KiB for phones
+INFO: dict.c(336): 45 words read
+INFO: dict.c(358): Reading filler dictionary: /Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Bundle/Application/B84F96FF-66F1-4D41-AA00-2719B19DF06A/SoundBite.app/AcousticModelEnglish.bundle/noisedict
+INFO: dict.c(213): Allocated 0 KiB for strings, 0 KiB for phones
+INFO: dict.c(361): 9 words read
+INFO: dict2pid.c(396): Building PID tables for dictionary
+INFO: dict2pid.c(406): Allocating 46^3 * 2 bytes (190 KiB) for word-initial triphones
+INFO: dict2pid.c(132): Allocated 51152 bytes (49 KiB) for word-final triphones
+INFO: dict2pid.c(196): Allocated 51152 bytes (49 KiB) for single-phone word triphones
+INFO: ngram_search_fwdtree.c(99): 5 unique initial diphones
+INFO: ngram_search_fwdtree.c(148): 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(186): Creating search tree
+INFO: ngram_search_fwdtree.c(192): before: 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(339): after: 5 root, 19 non-root channels, 48 single-phone words
+INFO: phone_loop_search.c(114): State beam -225 Phone exit beam -225 Insertion penalty 0
+INFO: ngram_model_trie.c(424): Trying to read LM in bin format
+INFO: ngram_model_trie.c(457): Header doesn&#039;t match
+INFO: ngram_model_trie.c(180): Trying to read LM in arpa format
+INFO: ngram_model_trie.c(71): No \data\ mark in LM file
+INFO: ngram_model_trie.c(537): Trying to read LM in DMP format
+INFO: ngram_model_trie.c(632): ngrams 1=45, 2=86, 3=43
+INFO: lm_trie.c(317): Training quantizer
+INFO: lm_trie.c(323): Building LM trie
+INFO: ngram_search_fwdtree.c(99): 5 unique initial diphones
+INFO: ngram_search_fwdtree.c(148): 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(186): Creating search tree
+INFO: ngram_search_fwdtree.c(192): before: 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(326): after: max nonroot chan increased to 147
+INFO: ngram_search_fwdtree.c(339): after: 5 root, 19 non-root channels, 48 single-phone words
+INFO: ngram_search_fwdflat.c(157): fwdflat: min_ef_width = 4, max_sf_win = 25
+
+.....
+
+INFO: ngram_model_arpa_legacy.c(504): ngrams 1=46, 2=88, 3=44
+INFO: ngram_model_arpa_legacy.c(136): Reading unigrams
+INFO: ngram_model_arpa_legacy.c(543):       46 = #unigrams created
+INFO: ngram_model_arpa_legacy.c(196): Reading bigrams
+INFO: ngram_model_arpa_legacy.c(561):       88 = #bigrams created
+INFO: ngram_model_arpa_legacy.c(562):        3 = #prob2 entries
+INFO: ngram_model_arpa_legacy.c(570):        3 = #bo_wt2 entries
+INFO: ngram_model_arpa_legacy.c(293): Reading trigrams
+INFO: ngram_model_arpa_legacy.c(583):       44 = #trigrams created
+INFO: ngram_model_arpa_legacy.c(584):        2 = #prob3 entries
+INFO: ngram_model_dmp_legacy.c(521): Building DMP model...
+INFO: ngram_model_dmp_legacy.c(551):       46 = #unigrams created
+INFO: ngram_model_dmp_legacy.c(652):       88 = #bigrams created
+INFO: ngram_model_dmp_legacy.c(653):        3 = #prob2 entries
+INFO: ngram_model_dmp_legacy.c(660):        3 = #bo_wt2 entries
+INFO: ngram_model_dmp_legacy.c(664):       44 = #trigrams created
+INFO: ngram_model_dmp_legacy.c(665):        2 = #prob3 entries
+INFO: ngram_model_arpa_legacy.c(504): ngrams 1=46, 2=88, 3=44
+INFO: ngram_model_arpa_legacy.c(136): Reading unigrams
+INFO: ngram_model_arpa_legacy.c(543):       46 = #unigrams created
+INFO: ngram_model_arpa_legacy.c(196): Reading bigrams
+INFO: ngram_model_arpa_legacy.c(561):       88 = #bigrams created
+INFO: ngram_model_arpa_legacy.c(562):        5 = #prob2 entries
+INFO: ngram_model_arpa_legacy.c(570):        3 = #bo_wt2 entries
+INFO: ngram_model_arpa_legacy.c(293): Reading trigrams
+INFO: ngram_model_arpa_legacy.c(583):       44 = #trigrams created
+INFO: ngram_model_arpa_legacy.c(584):        3 = #prob3 entries
+INFO: ngram_model_dmp_legacy.c(521): Building DMP model...
+INFO: ngram_model_dmp_legacy.c(551):       46 = #unigrams created
+INFO: ngram_model_dmp_legacy.c(652):       88 = #bigrams created
+INFO: ngram_model_dmp_legacy.c(653):        5 = #prob2 entries
+INFO: ngram_model_dmp_legacy.c(660):        3 = #bo_wt2 entries
+INFO: ngram_model_dmp_legacy.c(664):       44 = #trigrams created
+INFO: ngram_model_dmp_legacy.c(665):        3 = #prob3 entries
+
+....
+
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 0 words
+INFO: dict.c(320): Allocating 4151 * 32 bytes (129 KiB) for word entries
+INFO: dict.c(333): Reading main dictionary: /Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Data/Application/31A5A629-5B58-4D0A-A0BA-F3E9DA2FB5F4/Library/Caches/DA0E7C00-6228-4E05-9514-AAA093FD292B.dic
+INFO: dict.c(213): Allocated 0 KiB for strings, 0 KiB for phones
+INFO: dict.c(336): 46 words read
+INFO: dict.c(358): Reading filler dictionary: /Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Bundle/Application/B84F96FF-66F1-4D41-AA00-2719B19DF06A/SoundBite.app/AcousticModelEnglish.bundle/noisedict
+INFO: dict.c(213): Allocated 0 KiB for strings, 0 KiB for phones
+INFO: dict.c(361): 9 words read
+INFO: dict2pid.c(396): Building PID tables for dictionary
+INFO: dict2pid.c(406): Allocating 46^3 * 2 bytes (190 KiB) for word-initial triphones
+
+INFO: ngram_model_arpa_legacy.c(504): ngrams 1=47, 2=90, 3=45
+INFO: ngram_model_arpa_legacy.c(136): Reading unigrams
+INFO: ngram_model_arpa_legacy.c(543):       47 = #unigrams created
+INFO: ngram_model_arpa_legacy.c(196): Reading bigrams
+INFO: ngram_model_arpa_legacy.c(561):       90 = #bigrams created
+INFO: ngram_model_arpa_legacy.c(562):        3 = #prob2 entries
+INFO: ngram_model_arpa_legacy.c(570):        3 = #bo_wt2 entries
+INFO: ngram_model_arpa_legacy.c(293): Reading trigrams
+INFO: ngram_model_arpa_legacy.c(583):       45 = #trigrams created
+INFO: ngram_model_arpa_legacy.c(584):        2 = #prob3 entries
+INFO: ngram_model_dmp_legacy.c(521): Building DMP model...
+INFO: ngram_model_dmp_legacy.c(551):       47 = #unigrams created
+INFO: ngram_model_dmp_legacy.c(652):       90 = #bigrams created
+INFO: ngram_model_dmp_legacy.c(653):        3 = #prob2 entries
+INFO: ngram_model_dmp_legacy.c(660):        3 = #bo_wt2 entries
+INFO: ngram_model_dmp_legacy.c(664):       45 = #trigrams created
+INFO: ngram_model_dmp_legacy.c(665):        2 = #prob3 entries
+INFO: dict2pid.c(132): Allocated 51152 bytes (49 KiB) for word-final triphones
+INFO: ngram_model_arpa_legacy.c(504): ngrams 1=47, 2=90, 3=45
+INFO: ngram_model_arpa_legacy.c(136): Reading unigrams
+INFO: ngram_model_arpa_legacy.c(543):       47 = #unigrams created
+INFO: ngram_model_arpa_legacy.c(196): Reading bigrams
+INFO: ngram_model_arpa_legacy.c(561):       90 = #bigrams created
+INFO: ngram_model_arpa_legacy.c(562):        5 = #prob2 entries
+INFO: ngram_model_arpa_legacy.c(570):        3 = #bo_wt2 entries
+INFO: ngram_model_arpa_legacy.c(293): Reading trigrams
+INFO: ngram_model_arpa_legacy.c(583):       45 = #trigrams created
+INFO: ngram_model_arpa_legacy.c(584):        3 = #prob3 entries
+INFO: ngram_model_dmp_legacy.c(521): Building DMP model...
+INFO: ngram_model_dmp_legacy.c(551):       47 = #unigrams created
+INFO: ngram_model_dmp_legacy.c(652):       90 = #bigrams created
+INFO: ngram_model_dmp_legacy.c(653):        5 = #prob2 entries
+INFO: ngram_model_dmp_legacy.c(660):        3 = #bo_wt2 entries
+INFO: ngram_model_dmp_legacy.c(664):       45 = #trigrams created
+INFO: ngram_model_dmp_legacy.c(665):        3 = #prob3 entries
+INFO: dict2pid.c(196): Allocated 51152 bytes (49 KiB) for single-phone word triphones
+INFO: ngram_search_fwdtree.c(99): 6 unique initial diphones
+INFO: ngram_search_fwdtree.c(148): 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(186): Creating search tree
+INFO: ngram_search_fwdtree.c(192): before: 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(339): after: 5 root, 19 non-root channels, 48 single-phone words
+INFO: ngram_search_fwdtree.c(99): 6 unique initial diphones
+INFO: ngram_search_fwdtree.c(148): 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(186): Creating search tree
+INFO: ngram_search_fwdtree.c(192): before: 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(339): after: 5 root, 19 non-root channels, 48 single-phone words
+removing bite notifier
+INFO: phone_loop_search.c(114): State beam -225 Phone exit beam -225 Insertion penalty 0
+INFO: ngram_model_trie.c(424): Trying to read LM in bin format
+removing bite notifier
+INFO: ngram_model_trie.c(457): Header doesn&#039;t match
+INFO: ngram_model_trie.c(180): Trying to read LM in arpa format
+INFO: ngram_model_trie.c(71): No \data\ mark in LM file
+INFO: ngram_model_trie.c(537): Trying to read LM in DMP format
+INFO: ngram_model_trie.c(632): ngrams 1=47, 2=90, 3=45
+INFO: lm_trie.c(317): Training quantizer
+INFO: lm_trie.c(323): Building LM trie
+INFO: ngram_search_fwdtree.c(99): 6 unique initial diphones
+INFO: ngram_search_fwdtree.c(148): 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(186): Creating search tree
+INFO: ngram_search_fwdtree.c(192): before: 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(326): after: max nonroot chan increased to 150
+INFO: ngram_search_fwdtree.c(339): after: 6 root, 22 non-root channels, 48 single-phone words
+INFO: ngram_search_fwdflat.c(157): fwdflat: min_ef_width = 4, max_sf_win = 25
+INFO: ngram_search_fwdtree.c(432): TOTAL fwdtree 0.11 CPU inf xRT
+INFO: ngram_search_fwdtree.c(435): TOTAL fwdtree 0.12 wall inf xRT
+INFO: ngram_search_fwdflat.c(176): TOTAL fwdflat 0.00 CPU inf xRT
+INFO: ngram_search_fwdflat.c(179): TOTAL fwdflat 0.00 wall inf xRT
+INFO: ngram_search.c(308): TOTAL bestpath 0.00 CPU nan xRT
+INFO: ngram_search.c(311): TOTAL bestpath 0.00 wall nan xRT
+
+.....
+
+INFO: ngram_model_arpa_legacy.c(504): ngrams 1=48, 2=92, 3=46
+INFO: ngram_model_arpa_legacy.c(136): Reading unigrams
+INFO: ngram_model_arpa_legacy.c(543):       48 = #unigrams created
+INFO: ngram_model_arpa_legacy.c(196): Reading bigrams
+INFO: ngram_model_arpa_legacy.c(561):       92 = #bigrams created
+INFO: ngram_model_arpa_legacy.c(562):        3 = #prob2 entries
+INFO: ngram_model_arpa_legacy.c(570):        3 = #bo_wt2 entries
+INFO: ngram_model_arpa_legacy.c(293): Reading trigrams
+INFO: ngram_model_arpa_legacy.c(583):       46 = #trigrams created
+INFO: ngram_model_arpa_legacy.c(584):        2 = #prob3 entries
+INFO: ngram_model_dmp_legacy.c(521): Building DMP model...
+INFO: ngram_model_dmp_legacy.c(551):       48 = #unigrams created
+INFO: ngram_model_dmp_legacy.c(652):       92 = #bigrams created
+INFO: ngram_model_dmp_legacy.c(653):        3 = #prob2 entries
+INFO: ngram_model_dmp_legacy.c(660):        3 = #bo_wt2 entries
+INFO: ngram_model_dmp_legacy.c(664):       46 = #trigrams created
+INFO: ngram_model_dmp_legacy.c(665):        2 = #prob3 entries
+INFO: ngram_model_arpa_legacy.c(504): ngrams 1=48, 2=92, 3=46
+INFO: ngram_model_arpa_legacy.c(136): Reading unigrams
+INFO: ngram_model_arpa_legacy.c(543):       48 = #unigrams created
+INFO: ngram_model_arpa_legacy.c(196): Reading bigrams
+INFO: ngram_model_arpa_legacy.c(561):       92 = #bigrams created
+INFO: ngram_model_arpa_legacy.c(562):        5 = #prob2 entries
+INFO: ngram_model_arpa_legacy.c(570):        3 = #bo_wt2 entries
+INFO: ngram_model_arpa_legacy.c(293): Reading trigrams
+INFO: ngram_model_arpa_legacy.c(583):       46 = #trigrams created
+INFO: ngram_model_arpa_legacy.c(584):        3 = #prob3 entries
+INFO: ngram_model_dmp_legacy.c(521): Building DMP model...
+INFO: ngram_model_dmp_legacy.c(551):       48 = #unigrams created
+INFO: ngram_model_dmp_legacy.c(652):       92 = #bigrams created
+INFO: ngram_model_dmp_legacy.c(653):        5 = #prob2 entries
+INFO: ngram_model_dmp_legacy.c(660):        3 = #bo_wt2 entries
+INFO: ngram_model_dmp_legacy.c(664):       46 = #trigrams created
+INFO: ngram_model_dmp_legacy.c(665):        3 = #prob3 entries
+
+.....
+
+INFO: ngram_model_arpa_legacy.c(504): ngrams 1=49, 2=94, 3=47
+INFO: ngram_model_arpa_legacy.c(136): Reading unigrams
+INFO: ngram_model_arpa_legacy.c(543):       49 = #unigrams created
+INFO: ngram_model_arpa_legacy.c(196): Reading bigrams
+INFO: ngram_model_arpa_legacy.c(561):       94 = #bigrams created
+INFO: ngram_model_arpa_legacy.c(562):        3 = #prob2 entries
+INFO: ngram_model_arpa_legacy.c(570):        3 = #bo_wt2 entries
+INFO: ngram_model_arpa_legacy.c(293): Reading trigrams
+INFO: ngram_model_arpa_legacy.c(583):       47 = #trigrams created
+INFO: ngram_model_arpa_legacy.c(584):        2 = #prob3 entries
+INFO: ngram_model_dmp_legacy.c(521): Building DMP model...
+INFO: ngram_model_dmp_legacy.c(551):       49 = #unigrams created
+INFO: ngram_model_dmp_legacy.c(652):       94 = #bigrams created
+INFO: ngram_model_dmp_legacy.c(653):        3 = #prob2 entries
+INFO: ngram_model_dmp_legacy.c(660):        3 = #bo_wt2 entries
+INFO: ngram_model_dmp_legacy.c(664):       47 = #trigrams created
+INFO: ngram_model_dmp_legacy.c(665):        2 = #prob3 entries
+INFO: ngram_model_arpa_legacy.c(504): ngrams 1=49, 2=94, 3=47
+INFO: ngram_model_arpa_legacy.c(136): Reading unigrams
+INFO: ngram_model_arpa_legacy.c(543):       49 = #unigrams created
+INFO: ngram_model_arpa_legacy.c(196): Reading bigrams
+INFO: ngram_model_arpa_legacy.c(561):       94 = #bigrams created
+INFO: ngram_model_arpa_legacy.c(562):        5 = #prob2 entries
+INFO: ngram_model_arpa_legacy.c(570):        3 = #bo_wt2 entries
+INFO: ngram_model_arpa_legacy.c(293): Reading trigrams
+INFO: ngram_model_arpa_legacy.c(583):       47 = #trigrams created
+INFO: ngram_model_arpa_legacy.c(584):        3 = #prob3 entries
+INFO: ngram_model_dmp_legacy.c(521): Building DMP model...
+INFO: ngram_model_dmp_legacy.c(551):       49 = #unigrams created
+INFO: ngram_model_dmp_legacy.c(652):       94 = #bigrams created
+INFO: ngram_model_dmp_legacy.c(653):        5 = #prob2 entries
+INFO: ngram_model_dmp_legacy.c(660):        3 = #bo_wt2 entries
+INFO: ngram_model_dmp_legacy.c(664):       47 = #trigrams created
+INFO: ngram_model_dmp_legacy.c(665):        3 = #prob3 entries
+
+.....
+
+INFO: ngram_model_arpa_legacy.c(504): ngrams 1=50, 2=96, 3=48
+INFO: ngram_model_arpa_legacy.c(136): Reading unigrams
+INFO: ngram_model_arpa_legacy.c(543):       50 = #unigrams created
+INFO: ngram_model_arpa_legacy.c(196): Reading bigrams
+INFO: ngram_model_arpa_legacy.c(561):       96 = #bigrams created
+INFO: ngram_model_arpa_legacy.c(562):        3 = #prob2 entries
+INFO: ngram_model_arpa_legacy.c(570):        3 = #bo_wt2 entries
+INFO: ngram_model_arpa_legacy.c(293): Reading trigrams
+INFO: ngram_model_arpa_legacy.c(583):       48 = #trigrams created
+INFO: ngram_model_arpa_legacy.c(584):        2 = #prob3 entries
+INFO: ngram_model_dmp_legacy.c(521): Building DMP model...
+INFO: ngram_model_dmp_legacy.c(551):       50 = #unigrams created
+INFO: ngram_model_dmp_legacy.c(652):       96 = #bigrams created
+INFO: ngram_model_dmp_legacy.c(653):        3 = #prob2 entries
+INFO: ngram_model_dmp_legacy.c(660):        3 = #bo_wt2 entries
+INFO: ngram_model_dmp_legacy.c(664):       48 = #trigrams created
+INFO: ngram_model_dmp_legacy.c(665):        2 = #prob3 entries
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 0 words
+INFO: dict.c(320): Allocating 4156 * 32 bytes (129 KiB) for word entries
+INFO: dict.c(333): Reading main dictionary: /Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Data/Application/31A5A629-5B58-4D0A-A0BA-F3E9DA2FB5F4/Library/Caches/DD367062-40C4-4834-AED0-08E38847D76C.dic
+INFO: dict.c(213): Allocated 0 KiB for strings, 0 KiB for phones
+INFO: dict.c(336): 51 words read
+INFO: dict.c(358): Reading filler dictionary: /Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Bundle/Application/B84F96FF-66F1-4D41-AA00-2719B19DF06A/SoundBite.app/AcousticModelEnglish.bundle/noisedict
+INFO: dict.c(213): Allocated 0 KiB for strings, 0 KiB for phones
+INFO: dict.c(361): 9 words read
+INFO: dict2pid.c(396): Building PID tables for dictionary
+INFO: dict2pid.c(406): Allocating 46^3 * 2 bytes (190 KiB) for word-initial triphones
+INFO: ngram_model_arpa_legacy.c(504): ngrams 1=50, 2=96, 3=48
+INFO: ngram_model_arpa_legacy.c(136): Reading unigrams
+INFO: ngram_model_arpa_legacy.c(543):       50 = #unigrams created
+INFO: ngram_model_arpa_legacy.c(196): Reading bigrams
+INFO: ngram_model_arpa_legacy.c(561):       96 = #bigrams created
+INFO: ngram_model_arpa_legacy.c(562):        5 = #prob2 entries
+INFO: ngram_model_arpa_legacy.c(570):        3 = #bo_wt2 entries
+INFO: ngram_model_arpa_legacy.c(293): Reading trigrams
+INFO: ngram_model_arpa_legacy.c(583):       48 = #trigrams created
+INFO: ngram_model_arpa_legacy.c(584):        3 = #prob3 entries
+INFO: ngram_model_dmp_legacy.c(521): Building DMP model...
+INFO: ngram_model_dmp_legacy.c(551):       50 = #unigrams created
+INFO: ngram_model_dmp_legacy.c(652):       96 = #bigrams created
+INFO: ngram_model_dmp_legacy.c(653):        5 = #prob2 entries
+INFO: ngram_model_dmp_legacy.c(660):        3 = #bo_wt2 entries
+INFO: ngram_model_dmp_legacy.c(664):       48 = #trigrams created
+INFO: ngram_model_dmp_legacy.c(665):        3 = #prob3 entries
+
+.....
+
+INFO: dict2pid.c(132): Allocated 51152 bytes (49 KiB) for word-final triphones
+INFO: dict2pid.c(196): Allocated 51152 bytes (49 KiB) for single-phone word triphones
+INFO: ngram_search_fwdtree.c(99): 10 unique initial diphones
+INFO: ngram_search_fwdtree.c(148): 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(186): Creating search tree
+INFO: ngram_search_fwdtree.c(192): before: 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(339): after: 5 root, 19 non-root channels, 48 single-phone words
+INFO: ngram_search_fwdtree.c(99): 10 unique initial diphones
+INFO: ngram_search_fwdtree.c(148): 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(186): Creating search tree
+INFO: ngram_search_fwdtree.c(192): before: 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(339): after: 8 root, 30 non-root channels, 48 single-phone words
+INFO: phone_loop_search.c(114): State beam -225 Phone exit beam -225 Insertion penalty 0
+INFO: ngram_model_trie.c(424): Trying to read LM in bin format
+INFO: ngram_model_trie.c(457): Header doesn&#039;t match
+INFO: ngram_model_trie.c(180): Trying to read LM in arpa format
+INFO: ngram_model_trie.c(71): No \data\ mark in LM file
+INFO: ngram_model_trie.c(537): Trying to read LM in DMP format
+INFO: ngram_model_trie.c(632): ngrams 1=50, 2=96, 3=48
+INFO: lm_trie.c(317): Training quantizer
+INFO: lm_trie.c(323): Building LM trie
+INFO: ngram_search_fwdtree.c(99): 10 unique initial diphones
+INFO: ngram_search_fwdtree.c(148): 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(186): Creating search tree
+INFO: ngram_search_fwdtree.c(192): before: 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(326): after: max nonroot chan increased to 168
+INFO: ngram_search_fwdtree.c(339): after: 10 root, 40 non-root channels, 48 single-phone words
+INFO: ngram_search_fwdflat.c(157): fwdflat: min_ef_width = 4, max_sf_win = 25
+INFO: ngram_search_fwdtree.c(432): TOTAL fwdtree 0.10 CPU inf xRT
+INFO: ngram_search_fwdtree.c(435): TOTAL fwdtree 0.11 wall inf xRT
+INFO: ngram_search_fwdflat.c(176): TOTAL fwdflat 0.00 CPU inf xRT
+INFO: ngram_search_fwdflat.c(179): TOTAL fwdflat 0.00 wall inf xRT
+INFO: ngram_search.c(308): TOTAL bestpath 0.00 CPU nan xRT
+INFO: ngram_search.c(311): TOTAL bestpath 0.00 wall nan xRT
+
+.....
+
+INFO: ngram_model_arpa_legacy.c(504): ngrams 1=51, 2=98, 3=49
+INFO: ngram_model_arpa_legacy.c(136): Reading unigrams
+INFO: ngram_model_arpa_legacy.c(543):       51 = #unigrams created
+INFO: ngram_model_arpa_legacy.c(196): Reading bigrams
+INFO: ngram_model_arpa_legacy.c(561):       98 = #bigrams created
+INFO: ngram_model_arpa_legacy.c(562):        3 = #prob2 entries
+INFO: ngram_model_arpa_legacy.c(570):        3 = #bo_wt2 entries
+INFO: ngram_model_arpa_legacy.c(293): Reading trigrams
+INFO: ngram_model_arpa_legacy.c(583):       49 = #trigrams created
+INFO: ngram_model_arpa_legacy.c(584):        2 = #prob3 entries
+INFO: ngram_model_dmp_legacy.c(521): Building DMP model...
+INFO: ngram_model_dmp_legacy.c(551):       51 = #unigrams created
+INFO: ngram_model_dmp_legacy.c(652):       98 = #bigrams created
+INFO: ngram_model_dmp_legacy.c(653):        3 = #prob2 entries
+INFO: ngram_model_dmp_legacy.c(660):        3 = #bo_wt2 entries
+INFO: ngram_model_dmp_legacy.c(664):       49 = #trigrams created
+INFO: ngram_model_dmp_legacy.c(665):        2 = #prob3 entries
+INFO: ngram_model_arpa_legacy.c(504): ngrams 1=51, 2=98, 3=49
+INFO: ngram_model_arpa_legacy.c(136): Reading unigrams
+INFO: ngram_model_arpa_legacy.c(543):       51 = #unigrams created
+INFO: ngram_model_arpa_legacy.c(196): Reading bigrams
+INFO: ngram_model_arpa_legacy.c(561):       98 = #bigrams created
+INFO: ngram_model_arpa_legacy.c(562):        5 = #prob2 entries
+INFO: ngram_model_arpa_legacy.c(570):        3 = #bo_wt2 entries
+INFO: ngram_model_arpa_legacy.c(293): Reading trigrams
+INFO: ngram_model_arpa_legacy.c(583):       49 = #trigrams created
+INFO: ngram_model_arpa_legacy.c(584):        3 = #prob3 entries
+INFO: ngram_model_dmp_legacy.c(521): Building DMP model...
+INFO: ngram_model_dmp_legacy.c(551):       51 = #unigrams created
+INFO: ngram_model_dmp_legacy.c(652):       98 = #bigrams created
+INFO: ngram_model_dmp_legacy.c(653):        5 = #prob2 entries
+INFO: ngram_model_dmp_legacy.c(660):        3 = #bo_wt2 entries
+INFO: ngram_model_dmp_legacy.c(664):       49 = #trigrams created
+INFO: ngram_model_dmp_legacy.c(665):        3 = #prob3 entries
+
+......
+
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 0 words
+INFO: dict.c(320): Allocating 4158 * 32 bytes (129 KiB) for word entries
+INFO: dict.c(333): Reading main dictionary: /Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Data/Application/31A5A629-5B58-4D0A-A0BA-F3E9DA2FB5F4/Library/Caches/477D6819-93DA-4014-81AB-D632F8C51A85.dic
+INFO: dict.c(213): Allocated 0 KiB for strings, 0 KiB for phones
+INFO: dict.c(336): 53 words read
+INFO: dict.c(358): Reading filler dictionary: /Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Bundle/Application/B84F96FF-66F1-4D41-AA00-2719B19DF06A/SoundBite.app/AcousticModelEnglish.bundle/noisedict
+INFO: dict.c(213): Allocated 0 KiB for strings, 0 KiB for phones
+INFO: dict.c(361): 9 words read
+INFO: dict2pid.c(396): Building PID tables for dictionary
+INFO: dict2pid.c(406): Allocating 46^3 * 2 bytes (190 KiB) for word-initial triphones
+
+....
+
+INFO: dict2pid.c(132): Allocated 51152 bytes (49 KiB) for word-final triphones
+INFO: dict2pid.c(196): Allocated 51152 bytes (49 KiB) for single-phone word triphones
+INFO: ngram_search_fwdtree.c(99): 11 unique initial diphones
+INFO: ngram_search_fwdtree.c(148): 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(186): Creating search tree
+INFO: ngram_search_fwdtree.c(192): before: 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(339): after: 5 root, 19 non-root channels, 48 single-phone words
+INFO: ngram_search_fwdtree.c(99): 11 unique initial diphones
+INFO: ngram_search_fwdtree.c(148): 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(186): Creating search tree
+INFO: ngram_search_fwdtree.c(192): before: 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(339): after: 10 root, 44 non-root channels, 48 single-phone words
+INFO: phone_loop_search.c(114): State beam -225 Phone exit beam -225 Insertion penalty 0
+INFO: ngram_model_trie.c(424): Trying to read LM in bin format
+INFO: ngram_model_trie.c(457): Header doesn&#039;t match
+INFO: ngram_model_trie.c(180): Trying to read LM in arpa format
+INFO: ngram_model_trie.c(71): No \data\ mark in LM file
+INFO: ngram_model_trie.c(537): Trying to read LM in DMP format
+INFO: ngram_model_trie.c(632): ngrams 1=51, 2=98, 3=49
+INFO: lm_trie.c(317): Training quantizer
+INFO: lm_trie.c(323): Building LM trie
+INFO: ngram_search_fwdtree.c(99): 11 unique initial diphones
+INFO: ngram_search_fwdtree.c(148): 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(186): Creating search tree
+INFO: ngram_search_fwdtree.c(192): before: 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(326): after: max nonroot chan increased to 177
+INFO: ngram_search_fwdtree.c(339): after: 11 root, 49 non-root channels, 48 single-phone words
+INFO: ngram_search_fwdflat.c(157): fwdflat: min_ef_width = 4, max_sf_win = 25
+INFO: ngram_search_fwdtree.c(432): TOTAL fwdtree 0.09 CPU inf xRT
+INFO: ngram_search_fwdtree.c(435): TOTAL fwdtree 0.12 wall inf xRT
+INFO: ngram_search_fwdflat.c(176): TOTAL fwdflat 0.00 CPU inf xRT
+INFO: ngram_search_fwdflat.c(179): TOTAL fwdflat 0.00 wall inf xRT
+INFO: ngram_search.c(308): TOTAL bestpath 0.00 CPU nan xRT
+INFO: ngram_search.c(311): TOTAL bestpath 0.00 wall nan xRT
+
+INFO: ngram_model_arpa_legacy.c(504): ngrams 1=52, 2=100, 3=50
+INFO: ngram_model_arpa_legacy.c(136): Reading unigrams
+INFO: ngram_model_arpa_legacy.c(543):       52 = #unigrams created
+INFO: ngram_model_arpa_legacy.c(196): Reading bigrams
+INFO: ngram_model_arpa_legacy.c(561):      100 = #bigrams created
+INFO: ngram_model_arpa_legacy.c(562):        3 = #prob2 entries
+INFO: ngram_model_arpa_legacy.c(570):        3 = #bo_wt2 entries
+INFO: ngram_model_arpa_legacy.c(293): Reading trigrams
+INFO: ngram_model_arpa_legacy.c(583):       50 = #trigrams created
+INFO: ngram_model_arpa_legacy.c(584):        2 = #prob3 entries
+INFO: ngram_model_dmp_legacy.c(521): Building DMP model...
+INFO: ngram_model_dmp_legacy.c(551):       52 = #unigrams created
+INFO: ngram_model_dmp_legacy.c(652):      100 = #bigrams created
+INFO: ngram_model_dmp_legacy.c(653):        3 = #prob2 entries
+INFO: ngram_model_dmp_legacy.c(660):        3 = #bo_wt2 entries
+INFO: ngram_model_dmp_legacy.c(664):       50 = #trigrams created
+INFO: ngram_model_dmp_legacy.c(665):        2 = #prob3 entries
+INFO: ngram_model_arpa_legacy.c(504): ngrams 1=52, 2=100, 3=50
+INFO: ngram_model_arpa_legacy.c(136): Reading unigrams
+INFO: ngram_model_arpa_legacy.c(543):       52 = #unigrams created
+INFO: ngram_model_arpa_legacy.c(196): Reading bigrams
+INFO: ngram_model_arpa_legacy.c(561):      100 = #bigrams created
+INFO: ngram_model_arpa_legacy.c(562):        5 = #prob2 entries
+INFO: ngram_model_arpa_legacy.c(570):        3 = #bo_wt2 entries
+INFO: ngram_model_arpa_legacy.c(293): Reading trigrams
+INFO: ngram_model_arpa_legacy.c(583):       50 = #trigrams created
+INFO: ngram_model_arpa_legacy.c(584):        3 = #prob3 entries
+INFO: ngram_model_dmp_legacy.c(521): Building DMP model...
+INFO: ngram_model_dmp_legacy.c(551):       52 = #unigrams created
+INFO: ngram_model_dmp_legacy.c(652):      100 = #bigrams created
+INFO: ngram_model_dmp_legacy.c(653):        5 = #prob2 entries
+INFO: ngram_model_dmp_legacy.c(660):        3 = #bo_wt2 entries
+INFO: ngram_model_dmp_legacy.c(664):       50 = #trigrams created
+INFO: ngram_model_dmp_legacy.c(665):        3 = #prob3 entries
+
+.....
+
+Local callback: Pocketsphinx is now using the following language model
+/Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Data/Application/31A5A629-5B58-4D0A-A0BA-F3E9DA2FB5F4/Library/Caches/F7C010DA-BF0C-4BA5-8AFF-A096F9D91900.DMP and the following dictionary:
+/Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Data/Application/31A5A629-5B58-4D0A-A0BA-F3E9DA2FB5F4/Library/Caches/F7C010DA-BF0C-4BA5-8AFF-A096F9D91900.dic
+Local callback: Pocketsphinx is now using the following language model
+/Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Data/Application/31A5A629-5B58-4D0A-A0BA-F3E9DA2FB5F4/Library/Caches/2E457021-882B-40AD-A06E-0365374DF1CE.DMP and the following dictionary:
+/Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Data/Application/31A5A629-5B58-4D0A-A0BA-F3E9DA2FB5F4/Library/Caches/2E457021-882B-40AD-A06E-0365374DF1CE.dic
+Local callback: Pocketsphinx is now using the following language model
+/Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Data/Application/31A5A629-5B58-4D0A-A0BA-F3E9DA2FB5F4/Library/Caches/E4FE6EC2-CDA1-4845-ACF1-BF84484D0C72.DMP and the following dictionary:
+/Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Data/Application/31A5A629-5B58-4D0A-A0BA-F3E9DA2FB5F4/Library/Caches/E4FE6EC2-CDA1-4845-ACF1-BF84484D0C72.dic
+Local callback: Pocketsphinx is now using the following language model
+/Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Data/Application/31A5A629-5B58-4D0A-A0BA-F3E9DA2FB5F4/Library/Caches/477D6819-93DA-4014-81AB-D632F8C51A85.DMP and the following dictionary:
+/Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Data/Application/31A5A629-5B58-4D0A-A0BA-F3E9DA2FB5F4/Library/Caches/477D6819-93DA-4014-81AB-D632F8C51A85.dic
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 0 words
+INFO: dict.c(320): Allocating 4159 * 32 bytes (129 KiB) for word entries
+INFO: dict.c(333): Reading main dictionary: /Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Data/Application/31A5A629-5B58-4D0A-A0BA-F3E9DA2FB5F4/Library/Caches/C323244E-4155-4E2E-935C-9B919705151F.dic
+INFO: dict.c(213): Allocated 0 KiB for strings, 0 KiB for phones
+INFO: dict.c(336): 54 words read
+INFO: dict.c(358): Reading filler dictionary: /Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Bundle/Application/B84F96FF-66F1-4D41-AA00-2719B19DF06A/SoundBite.app/AcousticModelEnglish.bundle/noisedict
+INFO: dict.c(213): Allocated 0 KiB for strings, 0 KiB for phones
+INFO: dict.c(361): 9 words read
+INFO: dict2pid.c(396): Building PID tables for dictionary
+INFO: dict2pid.c(406): Allocating 46^3 * 2 bytes (190 KiB) for word-initial triphones
+INFO: dict2pid.c(132): Allocated 51152 bytes (49 KiB) for word-final triphones
+INFO: dict2pid.c(196): Allocated 51152 bytes (49 KiB) for single-phone word triphones
+INFO: ngram_search_fwdtree.c(99): 12 unique initial diphones
+INFO: ngram_search_fwdtree.c(148): 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(186): Creating search tree
+INFO: ngram_search_fwdtree.c(192): before: 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(339): after: 5 root, 19 non-root channels, 48 single-phone words
+INFO: ngram_search_fwdtree.c(99): 12 unique initial diphones
+INFO: ngram_search_fwdtree.c(148): 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(186): Creating search tree
+INFO: ngram_search_fwdtree.c(192): before: 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(339): after: 11 root, 49 non-root channels, 48 single-phone words
+INFO: phone_loop_search.c(114): State beam -225 Phone exit beam -225 Insertion penalty 0
+INFO: ngram_model_trie.c(424): Trying to read LM in bin format
+INFO: ngram_model_trie.c(457): Header doesn&#039;t match
+INFO: ngram_model_trie.c(180): Trying to read LM in arpa format
+INFO: ngram_model_trie.c(71): No \data\ mark in LM file
+INFO: ngram_model_trie.c(537): Trying to read LM in DMP format
+INFO: ngram_model_trie.c(632): ngrams 1=52, 2=100, 3=50
+INFO: lm_trie.c(317): Training quantizer
+INFO: lm_trie.c(323): Building LM trie
+INFO: ngram_search_fwdtree.c(99): 12 unique initial diphones
+INFO: ngram_search_fwdtree.c(148): 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(186): Creating search tree
+INFO: ngram_search_fwdtree.c(192): before: 0 root, 0 non-root channels, 49 single-phone words
+INFO: ngram_search_fwdtree.c(326): after: max nonroot chan increased to 181
+INFO: ngram_search_fwdtree.c(339): after: 12 root, 53 non-root channels, 48 single-phone words
+INFO: ngram_search_fwdflat.c(157): fwdflat: min_ef_width = 4, max_sf_win = 25
+INFO: ngram_search_fwdtree.c(432): TOTAL fwdtree 0.05 CPU inf xRT
+INFO: ngram_search_fwdtree.c(435): TOTAL fwdtree 0.12 wall inf xRT
+INFO: ngram_search_fwdflat.c(176): TOTAL fwdflat 0.00 CPU inf xRT
+INFO: ngram_search_fwdflat.c(179): TOTAL fwdflat 0.00 wall inf xRT
+INFO: ngram_search.c(308): TOTAL bestpath 0.00 CPU nan xRT
+INFO: ngram_search.c(311): TOTAL bestpath 0.00 wall nan xRT
+Local callback: Pocketsphinx is now using the following language model
+/Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Data/Application/31A5A629-5B58-4D0A-A0BA-F3E9DA2FB5F4/Library/Caches/C323244E-4155-4E2E-935C-9B919705151F.DMP and the following dictionary:
+/Users/adr7000/Library/Developer/CoreSimulator/Devices/98D92EDD-6F57-439D-8653-A37E54B09EA2/data/Containers/Data/Application/31A5A629-5B58-4D0A-A0BA-F3E9DA2FB5F4/Library/Caches/C323244E-4155-4E2E-935C-9B919705151F.dic
+Local callback: Pocketsphinx has detected speech.
+INFO: cmn_prior.c(131): cmn_prior_update: from &lt; 19.87  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00 Local callback: Pocketsphinx has detected a second of silence, concluding an utterance. 0.00  0.00 
+ 0.00 &gt;
+INFO: cmn_prior.c(149): cmn_prior_update: to   &lt; 27.05  5.63 -6.02  9.62  0.49 13.50  8.44  4.39 -6.62 -2.98  1.82 -2.55 -1.77 &gt;
+INFO: ngram_search_fwdtree.c(1553):     1943 words recognized (11/fr)
+INFO: ngram_search_fwdtree.c(1555):    33020 senones evaluated (181/fr)
+INFO: ngram_search_fwdtree.c(1559):    12436 channels searched (68/fr), 2136 1st, 6353 last
+INFO: ngram_search_fwdtree.c(1562):     5075 words for which last channels evaluated (27/fr)
+INFO: ngram_search_fwdtree.c(1564):       45 candidate words for entering last phone (0/fr)
+INFO: ngram_search_fwdtree.c(1567): fwdtree 0.11 CPU 0.058 xRT
+INFO: ngram_search_fwdtree.c(1570): fwdtree 3.04 wall 1.669 xRT
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 24 words
+INFO: ngram_search_fwdflat.c(948):     1707 words recognized (9/fr)
+INFO: ngram_search_fwdflat.c(950):    17467 senones evaluated (96/fr)
+INFO: ngram_search_fwdflat.c(952):     7203 channels searched (39/fr)
+INFO: ngram_search_fwdflat.c(954):     3133 words searched (17/fr)
+INFO: ngram_search_fwdflat.c(957):     1044 word transitions (5/fr)
+INFO: ngram_search_fwdflat.c(960): fwdflat 0.02 CPU 0.010 xRT
+INFO: ngram_search_fwdflat.c(963): fwdflat 0.01 wall 0.005 xRT
+INFO: ngram_search.c(1290): lattice start node &lt;s&gt;.0 end node &lt;/s&gt;.169
+INFO: ngram_search.c(1320): Eliminated 2 nodes before end node
+INFO: ngram_search.c(1445): Lattice has 516 nodes, 3377 links
+INFO: ps_lattice.c(1380): Bestpath score: -23959
+INFO: ps_lattice.c(1384): Normalizer P(O) = alpha(&lt;/s&gt;:169:180) = -1215776
+INFO: ps_lattice.c(1441): Joint P(O,S) = -1348794 P(S|O) = -133018
+INFO: ngram_search.c(901): bestpath 0.01 CPU 0.003 xRT
+INFO: ngram_search.c(904): bestpath 0.01 wall 0.003 xRT
+Local callback: Pocketsphinx has detected speech.
+INFO: cmn_prior.c(131): cmn_prior_update: from &lt; 27.05  5.63 -6.02 Local callback: Pocketsphinx has detected a second of silence, concluding an utterance. 9.62  0.49 
+13.50  8.44  4.39 -6.62 -2.98  1.82 -2.55 -1.77 &gt;
+INFO: cmn_prior.c(149): cmn_prior_update: to   &lt; 27.94  3.73 -8.56  9.97  0.63 14.10  8.12  4.60 -4.75 -4.16  0.29 -4.73 -3.43 &gt;
+INFO: ngram_search_fwdtree.c(1553):     1500 words recognized (8/fr)
+INFO: ngram_search_fwdtree.c(1555):    28480 senones evaluated (147/fr)
+INFO: ngram_search_fwdtree.c(1559):    10407 channels searched (53/fr), 1970 1st, 6044 last
+INFO: ngram_search_fwdtree.c(1562):     4887 words for which last channels evaluated (25/fr)
+INFO: ngram_search_fwdtree.c(1564):       20 candidate words for entering last phone (0/fr)
+INFO: ngram_search_fwdtree.c(1567): fwdtree 0.21 CPU 0.108 xRT
+INFO: ngram_search_fwdtree.c(1570): fwdtree 12.65 wall 6.523 xRT
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 13 words
+INFO: ngram_search_fwdflat.c(948):     1419 words recognized (7/fr)
+INFO: ngram_search_fwdflat.c(950):    10354 senones evaluated (53/fr)
+INFO: ngram_search_fwdflat.c(952):     4452 channels searched (22/fr)
+INFO: ngram_search_fwdflat.c(954):     2104 words searched (10/fr)
+INFO: ngram_search_fwdflat.c(957):      439 word transitions (2/fr)
+INFO: ngram_search_fwdflat.c(960): fwdflat 0.01 CPU 0.003 xRT
+INFO: ngram_search_fwdflat.c(963): fwdflat 0.01 wall 0.003 xRT
+INFO: ngram_search.c(1290): lattice start node &lt;s&gt;.0 end node &lt;/s&gt;.96
+INFO: ngram_search.c(1320): Eliminated 5 nodes before end node
+INFO: ngram_search.c(1445): Lattice has 690 nodes, 1548 links
+INFO: ps_lattice.c(1380): Bestpath score: -13492
+INFO: ps_lattice.c(1384): Normalizer P(O) = alpha(&lt;/s&gt;:96:192) = -1190192
+INFO: ps_lattice.c(1441): Joint P(O,S) = -1220948 P(S|O) = -30756
+INFO: ngram_search.c(901): bestpath 0.00 CPU 0.001 xRT
+INFO: ngram_search.c(904): bestpath 0.00 wall 0.001 xRT
+Local callback: Pocketsphinx has detected speech.
+INFO: cmn_prior.c(131): cmn_prior_update: from &lt; 27.94 Local callback: Pocketsphinx has detected a second of silence, concluding an utterance. 3.73 -8.56 
+ 9.97  0.63 14.10  8.12  4.60 -4.75 -4.16  0.29 -4.73 -3.43 &gt;
+INFO: cmn_prior.c(149): cmn_prior_update: to   &lt; 25.80  8.30 -0.33  9.48 -1.99 10.72  8.25  5.43 -4.66 -2.38 -0.16 -5.21 -2.04 &gt;
+INFO: ngram_search_fwdtree.c(1553):     2350 words recognized (9/fr)
+INFO: ngram_search_fwdtree.c(1555):    43427 senones evaluated (170/fr)
+INFO: ngram_search_fwdtree.c(1559):    15030 channels searched (58/fr), 3012 1st, 7685 last
+INFO: ngram_search_fwdtree.c(1562):     7685 words for which last channels evaluated (30/fr)
+INFO: ngram_search_fwdtree.c(1564):        0 candidate words for entering last phone (0/fr)
+INFO: ngram_search_fwdtree.c(1567): fwdtree 0.10 CPU 0.037 xRT
+INFO: ngram_search_fwdtree.c(1570): fwdtree 5.11 wall 2.003 xRT
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 17 words
+INFO: ngram_search_fwdflat.c(948):     2116 words recognized (8/fr)
+INFO: ngram_search_fwdflat.c(950):    14125 senones evaluated (55/fr)
+INFO: ngram_search_fwdflat.c(952):     3754 channels searched (14/fr)
+INFO: ngram_search_fwdflat.c(954):     3754 words searched (14/fr)
+INFO: ngram_search_fwdflat.c(957):      997 word transitions (3/fr)
+INFO: ngram_search_fwdflat.c(960): fwdflat 0.01 CPU 0.004 xRT
+INFO: ngram_search_fwdflat.c(963): fwdflat 0.01 wall 0.004 xRT
+INFO: ngram_search.c(1290): lattice start node &lt;s&gt;.0 end node &lt;/s&gt;.178
+INFO: ngram_search.c(1320): Eliminated 6 nodes before end node
+INFO: ngram_search.c(1445): Lattice has 701 nodes, 1111 links
+INFO: ps_lattice.c(1380): Bestpath score: -23904
+INFO: ps_lattice.c(1384): Normalizer P(O) = alpha(&lt;/s&gt;:178:253) = -1675497
+INFO: ps_lattice.c(1441): Joint P(O,S) = -1763361 P(S|O) = -87864
+INFO: ngram_search.c(901): bestpath 0.00 CPU 0.001 xRT
+INFO: ngram_search.c(904): bestpath 0.00 wall 0.001 xRT
+Local callback: Pocketsphinx has detected speech.
+INFO: cmn_prior.c(99): cmn_prior_update: from &lt; 25.80  8.30 -0.33  9.48 -1.99 10.72  8.25  5.43 -4.66 -2.38 -0.16 -5.21 -2.04 &gt;
+INFO: cmn_prior.c(116): cmn_prior_update: to   &lt; 27.98  7.84 -3.28 13.74 -0.93  9.88  7.62  5.66 -3.64 -3.06 -0.76 -4.76 -1.63 &gt;
+INFO: cmn_prior.c(99): cmn_prior_update: from &lt; 27.98  7.84 -3.28 13.74 -0.93  9.88  7.62  5.66 -3.64 -3.06 -0.76 -4.76 -1.63 &gt;
+INFO: cmn_prior.c(116): cmn_prior_update: to   &lt; 28.35  7.07 -6.03 17.26  0.89 10.09  7.12  5.64 -2.51 -3.05 -1.69 -4.37 -2.05 &gt;
+INFO: ngram_search.c(465): Resized backpointer table to 10000 entries
+INFO: cmn_prior.c(131): cmn_prior_update: from &lt; Local callback: Pocketsphinx has detected a second of silence, concluding an utterance.
+28.35  7.07 -6.03 17.26  0.89 10.09  7.12  5.64 -2.51 -3.05 -1.69 -4.37 -2.05 &gt;
+INFO: cmn_prior.c(149): cmn_prior_update: to   &lt; 26.65  4.91 -7.33 16.55  1.51 11.34  7.59  5.85 -3.21 -2.18 -2.30 -3.99 -2.89 &gt;
+INFO: ngram_search_fwdtree.c(1553):     5769 words recognized (9/fr)
+INFO: ngram_search_fwdtree.c(1555):    98452 senones evaluated (159/fr)
+INFO: ngram_search_fwdtree.c(1559):    34349 channels searched (55/fr), 7202 1st, 18006 last
+INFO: ngram_search_fwdtree.c(1562):    15648 words for which last channels evaluated (25/fr)
+INFO: ngram_search_fwdtree.c(1564):       98 candidate words for entering last phone (0/fr)
+INFO: ngram_search_fwdtree.c(1567): fwdtree 0.17 CPU 0.027 xRT
+INFO: ngram_search_fwdtree.c(1570): fwdtree 7.80 wall 1.260 xRT
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 28 words
+INFO: ngram_search_fwdflat.c(948):     5161 words recognized (8/fr)
+INFO: ngram_search_fwdflat.c(950):    41822 senones evaluated (68/fr)
+INFO: ngram_search_fwdflat.c(952):    15256 channels searched (24/fr)
+INFO: ngram_search_fwdflat.c(954):     9895 words searched (15/fr)
+INFO: ngram_search_fwdflat.c(957):     3815 word transitions (6/fr)
+INFO: ngram_search_fwdflat.c(960): fwdflat 0.02 CPU 0.004 xRT
+INFO: ngram_search_fwdflat.c(963): fwdflat 0.02 wall 0.004 xRT
+INFO: ngram_search.c(1290): lattice start node &lt;s&gt;.0 end node &lt;/s&gt;.533
+INFO: ngram_search.c(1320): Eliminated 5 nodes before end node
+INFO: ngram_search.c(1445): Lattice has 2470 nodes, 13727 links
+INFO: ps_lattice.c(1380): Bestpath score: -65645
+INFO: ps_lattice.c(1384): Normalizer P(O) = alpha(&lt;/s&gt;:533:617) = -3667166
+INFO: ps_lattice.c(1441): Joint P(O,S) = -3856853 P(S|O) = -189687
+INFO: ngram_search.c(901): bestpath 0.03 CPU 0.004 xRT
+INFO: ngram_search.c(904): bestpath 0.03 wall 0.004 xRT
+</code></pre>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1032220" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">January 30, 2018 at 3:07 pm</span>
+
+		
+		<a href="/forums/topic/rapidearsdidreceivelivespeechhypothesis-not-firing/#post-1032220" class="bbp-reply-permalink">#1032220</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1032220 -->
+
+<div class="loop-item-3 user-id-4 bbp-parent-forum-9992 bbp-parent-topic-1032217 bbp-reply-position-4 even  post-1032220 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Thanks – was this done by adding it to the sample app or from the tutorial? Can you also show me the OpenEarsLogging output? I think this is just the verbosePocketsphinx output.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1032221" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">January 30, 2018 at 3:17 pm</span>
+
+		
+		<a href="/forums/topic/rapidearsdidreceivelivespeechhypothesis-not-firing/#post-1032221" class="bbp-reply-permalink">#1032221</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1032221 -->
+
+<div class="loop-item-4 user-id-2474 bbp-parent-forum-9992 bbp-parent-topic-1032217 bbp-reply-position-5 odd topic-author  post-1032221 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/skatehumor/" title="View skatehumor&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">skatehumor</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>I have the call<br>
+<code>OELogging.startOpenEarsLogging()</code><br>
+within my initialization code but this is all the output I get.<br>
+I am currently trying to test the RapidEars demo on my project, not the sample app, so I have used the tutorial to implement.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1032222" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">January 30, 2018 at 3:20 pm</span>
+
+		
+		<a href="/forums/topic/rapidearsdidreceivelivespeechhypothesis-not-firing/#post-1032222" class="bbp-reply-permalink">#1032222</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1032222 -->
+
+<div class="loop-item-5 user-id-4 bbp-parent-forum-9992 bbp-parent-topic-1032217 bbp-reply-position-6 even  post-1032222 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>OK, I will take a look, thanks.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1032224" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">January 30, 2018 at 4:41 pm</span>
+
+		
+		<a href="/forums/topic/rapidearsdidreceivelivespeechhypothesis-not-firing/#post-1032224" class="bbp-reply-permalink">#1032224</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1032224 -->
+
+<div class="loop-item-6 user-id-4 bbp-parent-forum-9992 bbp-parent-topic-1032217 bbp-reply-position-7 odd  post-1032224 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Do you get this result on a real device?</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1032225" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">January 30, 2018 at 5:00 pm</span>
+
+		
+		<a href="/forums/topic/rapidearsdidreceivelivespeechhypothesis-not-firing/#post-1032225" class="bbp-reply-permalink">#1032225</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1032225 -->
+
+<div class="loop-item-7 user-id-2474 bbp-parent-forum-9992 bbp-parent-topic-1032217 bbp-reply-position-8 even topic-author  post-1032225 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/skatehumor/" title="View skatehumor&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">skatehumor</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Yes I&#8217;ve been testing on a device and a sim. The performance is very similar.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1032226" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">January 30, 2018 at 5:12 pm</span>
+
+		
+		<a href="/forums/topic/rapidearsdidreceivelivespeechhypothesis-not-firing/#post-1032226" class="bbp-reply-permalink">#1032226</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1032226 -->
+
+<div class="loop-item-8 user-id-4 bbp-parent-forum-9992 bbp-parent-topic-1032217 bbp-reply-position-9 odd  post-1032226 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Thanks. I&#8217;ve checked and the function signature is definitely correct for Swift 4 as well as 3, so I&#8217;ll need to do some more investigation to see if there is anything new going on with this kind of extension in recent Xcodes. Thanks for your patience.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1032227" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">January 30, 2018 at 5:13 pm</span>
+
+		
+		<a href="/forums/topic/rapidearsdidreceivelivespeechhypothesis-not-firing/#post-1032227" class="bbp-reply-permalink">#1032227</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1032227 -->
+
+<div class="loop-item-9 user-id-4 bbp-parent-forum-9992 bbp-parent-topic-1032217 bbp-reply-position-10 even  post-1032227 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Which Xcode and iOS version are you seeing this with, BTW?</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1032228" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">January 30, 2018 at 5:30 pm</span>
+
+		
+		<a href="/forums/topic/rapidearsdidreceivelivespeechhypothesis-not-firing/#post-1032228" class="bbp-reply-permalink">#1032228</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1032228 -->
+
+<div class="loop-item-10 user-id-2474 bbp-parent-forum-9992 bbp-parent-topic-1032217 bbp-reply-position-11 odd topic-author  post-1032228 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/skatehumor/" title="View skatehumor&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">skatehumor</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Ok I was also skeptical about the function signatures as I am using Swift 4.0 but it seems to check out. Xcode version is 9.2.<br>
+Let me know about your findings. We are looking to buy RapidEars for use in our project but want to test and make sure it is working first.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1032229" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">February 2, 2018 at 5:03 pm</span>
+
+		
+		<a href="/forums/topic/rapidearsdidreceivelivespeechhypothesis-not-firing/#post-1032229" class="bbp-reply-permalink">#1032229</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1032229 -->
+
+<div class="loop-item-11 user-id-4 bbp-parent-forum-9992 bbp-parent-topic-1032217 bbp-reply-position-12 even  post-1032229 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Hi,</p>
+<p>Can you test the following potential fix for this:</p>
+<p>1. In the RapidEars framework&#8217;s header file OEEventsObserver+RapidEars.h, can you look for the line:</p>
+<p><code>@interface OEEventsObserver (RapidEars) &lt;OEEventsObserverDelegate&gt;</code></p>
+<p>And right after it, paste in the following lines:</p>
+<pre><code>@end
+
+@protocol OEEventsObserverRapidEarsDelegate &lt;OEEventsObserverDelegate&gt;</code></pre>
+<p>And then in your Swift class, where you have implemented this line importing the OEEventsObserverDelegate protocol (this may not be a view controller in your app; the class name and inheritance is unimportant but the importing of the delegate protocol OEEventsObserverDelegate  is important):</p>
+<p><code>class ViewController: UIViewController, OEEventsObserverDelegate {</code></p>
+<p>Change the imported delegate protocols to this:</p>
+<p><code>class ViewController: UIViewController, OEEventsObserverDelegate, OEEventsObserverRapidEarsDelegate {</code></p>
+<p>and let me know if you are now receiving the results of the RapidEars delegate callbacks?</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1032230" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">February 2, 2018 at 6:33 pm</span>
+
+		
+		<a href="/forums/topic/rapidearsdidreceivelivespeechhypothesis-not-firing/#post-1032230" class="bbp-reply-permalink">#1032230</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1032230 -->
+
+<div class="loop-item-12 user-id-2474 bbp-parent-forum-9992 bbp-parent-topic-1032217 bbp-reply-position-13 odd topic-author  post-1032230 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/skatehumor/" title="View skatehumor&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">skatehumor</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Awesome, that seemed to do the trick!</p>
+<p>Thanks for the quick replies! I believe we will be purchasing RapidEars shortly.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1032231" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">February 2, 2018 at 6:39 pm</span>
+
+		
+		<a href="/forums/topic/rapidearsdidreceivelivespeechhypothesis-not-firing/#post-1032231" class="bbp-reply-permalink">#1032231</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1032231 -->
+
+<div class="loop-item-13 user-id-4 bbp-parent-forum-9992 bbp-parent-topic-1032217 bbp-reply-position-14 even  post-1032231 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Glad to hear it. That fix should be part of the standard distributions of the plugins shortly, I just have to take some time to verify that it doesn&#8217;t affect pure Objective-C implementations negatively.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1032484" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">July 17, 2018 at 3:53 pm</span>
+
+		
+		<a href="/forums/topic/rapidearsdidreceivelivespeechhypothesis-not-firing/#post-1032484" class="bbp-reply-permalink">#1032484</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1032484 -->
+
+<div class="loop-item-14 user-id-1726 bbp-parent-forum-9992 bbp-parent-topic-1032217 bbp-reply-position-15 odd  post-1032484 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/jepjep7/" title="View jepjep7&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">jepjep7</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>After I pasted your fix, I received the error: &#8220;Type &#8216;ViewController&#8217; does not conform to protocol &#8216;OEEventsObserverRapidEarsDelegate&#8217; Do you want to add the protocol stubs?&#8221;</p>
+<p>I pressed &#8220;fix&#8221;, and xcode added 6 more functions. I was then able to compile.</p>
+<p>Next, I tried the line: “OEPocketsphinxController.sharedInstance().startRealtimeListeningWithLanguageModel(atPath: lmPath, dictionaryAtPath: dicPath, acousticModelAtPath: OEAcousticModel.path(toModel: &#8220;AcousticModelEnglish&#8221;))”</p>
+<p>When I run this, I receive the error message “XPC connection interrupted”, and my project quits.</p>
+<p>Do you have any idea how to fix this?</p>
+<p>Thanks,<br>
+Joe</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1032486" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">July 17, 2018 at 4:05 pm</span>
+
+		
+		<a href="/forums/topic/rapidearsdidreceivelivespeechhypothesis-not-firing/#post-1032486" class="bbp-reply-permalink">#1032486</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1032486 -->
+
+<div class="loop-item-15 user-id-1726 bbp-parent-forum-9992 bbp-parent-topic-1032217 bbp-reply-position-16 even  post-1032486 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/jepjep7/" title="View jepjep7&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">jepjep7</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>PS. I just tried the demo version, and that is working for me.  The only think two lines I changed were in the bridge header file:</p>
+<p>#import &lt;RapidEars/OEPocketsphinxController+RapidEars.h&gt;<br>
+to<br>
+#import &lt;RapidEarsDemo/OEPocketsphinxController+RapidEars.h&gt;</p>
+<p>and<br>
+#import &lt;RapidEars/OEEventsObserver+RapidEars.h&gt;<br>
+to<br>
+#import &lt;RapidEarsDemo/OEEventsObserver+RapidEars.h&gt;</p>
+<p>Do you think the error is caused by my framework?<br>
+Thanks</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1032487" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">July 17, 2018 at 9:08 pm</span>
+
+		
+		<a href="/forums/topic/rapidearsdidreceivelivespeechhypothesis-not-firing/#post-1032487" class="bbp-reply-permalink">#1032487</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1032487 -->
+
+<div class="loop-item-16 user-id-4 bbp-parent-forum-9992 bbp-parent-topic-1032217 bbp-reply-position-17 odd  post-1032487 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Hi,</p>
+<p>This sounds like it might be a different issue – if this is about a licensed framework, are you sure that the app you have linked to has the same bundle ID as the one you registered when purchasing? Showing the logs before the XPC issue may help.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1032508" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">August 11, 2018 at 6:25 pm</span>
+
+		
+		<a href="/forums/topic/rapidearsdidreceivelivespeechhypothesis-not-firing/#post-1032508" class="bbp-reply-permalink">#1032508</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1032508 -->
+
+<div class="loop-item-17 user-id-1726 bbp-parent-forum-9992 bbp-parent-topic-1032217 bbp-reply-position-18 even  post-1032508 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/jepjep7/" title="View jepjep7&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">jepjep7</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Yes!  As soon as I changed the bundle ID to match the licensed framework, it worked. Thank you!</p>
+<p>I read the RapidEars manual several times. For Swift, I am not sure it was clear that one has to add both of these lines to the OpenEarsHeader.h file:</p>
+<p>#import &lt;RapidEars/OEEventsObserver+RapidEars.h&gt;<br>
+#import &lt;RapidEars/OEPocketsphinxController+RapidEars.h&gt;</p>
+<p>And then after that, you have to follow your patch directions above for everything to work.</p>
+<p>Thanks again!</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1032509" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">August 11, 2018 at 6:27 pm</span>
+
+		
+		<a href="/forums/topic/rapidearsdidreceivelivespeechhypothesis-not-firing/#post-1032509" class="bbp-reply-permalink">#1032509</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1032509 -->
+
+<div class="loop-item-18 user-id-4 bbp-parent-forum-9992 bbp-parent-topic-1032217 bbp-reply-position-19 odd  post-1032509 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Glad it worked for you! Thanks for the feedback on the instructions.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+		
+	</li>
+<!-- .bbp-body -->
+
+	<li class="bbp-footer">
+		<div class="bbp-reply-author">Author</div>
+		<div class="bbp-reply-content">Posts</div>
+<!-- .bbp-reply-content -->
+	</li>
+<!-- .bbp-footer -->
+</ul>
+<!-- #topic-1032217-replies -->
+
+
+			
+<div class="bbp-pagination">
+	<div class="bbp-pagination-count">Viewing 19 posts - 1 through 19 (of 19 total)</div>
+	<div class="bbp-pagination-links"></div>
+</div>
+
+
+		
+		
+
+	<div id="no-reply-1032217" class="bbp-no-reply">
+		<div class="bbp-template-notice">
+			<ul>
+				<li>The topic &#8216;rapidEarsDidReceiveLiveSpeechHypothesis not firing&#8217; is closed to new replies.</li>
+			</ul>
+		</div>
+	</div>
+
+
+
+	
+	
+
+	
+</div>
+
+					               	</section><!-- /.entry -->
+
+				                
+            </article><!-- /.post -->
+            
+              
+        
+		</section><!-- /#main -->
+		
+		
+        	
+<aside id="sidebar" class="col-right">
+
+	
+	    <div class="primary">
+		<div id="bbp_forums_widget-5" class="widget widget_display_forums">
+<h3>Forums</h3>
+		<ul class="bbp-forums-widget">
+
+			
+				<li class="bbp-forum-widget-current-forum">
+					<a class="bbp-forum-title" href="/forums/forum/openears-plugins/">
+						OpenEars plugins					</a>
+				</li>
+
+			
+				<li>
+					<a class="bbp-forum-title" href="/forums/forum/openearsforum/">
+						OpenEars					</a>
+				</li>
+
+			
+		</ul>
+
+		</div>		           
+	</div>        
+	   
+	
+	 
+	
+</aside><!-- /#sidebar -->
+
+    </div>
+<!-- /#content -->
+		
+		<footer id="footer" class="col-full">
+	
+			<div id="copyright" class="col-left">
+							<p>Politepix &copy; 2024. All Rights Reserved.</p>
+						</div>
+	
+			<div id="credit" class="col-right">
+	        <div style="text-align:right;line-height:1.3em">OpenEars® is a registered trademark of Politepix<br>AllHours® is a registered trademark of Politepix<br>The Politepix site uses cookies in order to understand how the website is used by visitors and in order to enable some required functionality. You can learn all about which cookies we use on the <a href="/about/">About</a> page, as well as everything about our privacy policy.<br>
+<a href="https://twitter.com/Politepix" rel="me">TWITTER</a> | <a href="/contact" id="impressumlink">CONTACT POLITEPIX</a><a href="/about" id="impressumlink"> | IMPRESSUM | ABOUT | LEGAL | IMPRINT</a>
+</div>			</div>
+	<a rel="me" href="https://mastodon.social/@Halle">M</a>
+		</footer><!-- /#footer  -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Consent Management powered by Complianz | GDPR/CCPA Cookie Consent https://wordpress.org/plugins/complianz-gdpr -->
+<div id="cmplz-cookiebanner-container">
+<div class="cmplz-cookiebanner cmplz-hidden banner-1 bottom-right-view-preferences optin cmplz-bottom-right cmplz-categories-type-view-preferences" aria-modal="true" data-nosnippet="true" role="dialog" aria-live="polite" aria-labelledby="cmplz-header-1-optin" aria-describedby="cmplz-message-1-optin">
+	<div class="cmplz-header">
+		<div class="cmplz-logo"></div>
+		<div class="cmplz-title" id="cmplz-header-1-optin">Manage Cookie Consent</div>
+		<div class="cmplz-close" tabindex="0" role="button" aria-label="Close dialog">
+			<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
+		</div>
+	</div>
+
+	<div class="cmplz-divider cmplz-divider-header"></div>
+	<div class="cmplz-body">
+		<div class="cmplz-message" id="cmplz-message-1-optin">To provide the best experiences, we use technologies like cookies to store and/or access device information. Consenting to these technologies will allow us to process data such as browsing behavior or unique IDs on this site. Not consenting or withdrawing consent, may adversely affect certain features and functions.</div>
+		<!-- categories start -->
+		<div class="cmplz-categories">
+			<details class="cmplz-category cmplz-functional">
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Functional</span>
+							<span class="cmplz-always-active">
+								<span class="cmplz-banner-checkbox">
+									<input type="checkbox" id="cmplz-functional-optin" data-category="cmplz_functional" class="cmplz-consent-checkbox cmplz-functional" size="40" value="1">
+									<label class="cmplz-label" for="cmplz-functional-optin" tabindex="0"><span class="screen-reader-text">Functional</span></label>
+								</span>
+								Always active							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" height="18"><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"></path></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-functional">The technical storage or access is strictly necessary for the legitimate purpose of enabling the use of a specific service explicitly requested by the subscriber or user, or for the sole purpose of carrying out the transmission of a communication over an electronic communications network.</span>
+				</div>
+			</details>
+
+			<details class="cmplz-category cmplz-preferences">
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Preferences</span>
+							<span class="cmplz-banner-checkbox">
+								<input type="checkbox" id="cmplz-preferences-optin" data-category="cmplz_preferences" class="cmplz-consent-checkbox cmplz-preferences" size="40" value="1">
+								<label class="cmplz-label" for="cmplz-preferences-optin" tabindex="0"><span class="screen-reader-text">Preferences</span></label>
+							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" height="18"><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"></path></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-preferences">The technical storage or access is necessary for the legitimate purpose of storing preferences that are not requested by the subscriber or user.</span>
+				</div>
+			</details>
+
+			<details class="cmplz-category cmplz-statistics">
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Statistics</span>
+							<span class="cmplz-banner-checkbox">
+								<input type="checkbox" id="cmplz-statistics-optin" data-category="cmplz_statistics" class="cmplz-consent-checkbox cmplz-statistics" size="40" value="1">
+								<label class="cmplz-label" for="cmplz-statistics-optin" tabindex="0"><span class="screen-reader-text">Statistics</span></label>
+							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" height="18"><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"></path></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-statistics">The technical storage or access that is used exclusively for statistical purposes.</span>
+					<span class="cmplz-description-statistics-anonymous">The technical storage or access that is used exclusively for anonymous statistical purposes. Without a subpoena, voluntary compliance on the part of your Internet Service Provider, or additional records from a third party, information stored or retrieved for this purpose alone cannot usually be used to identify you.</span>
+				</div>
+			</details>
+			<details class="cmplz-category cmplz-marketing">
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Marketing</span>
+							<span class="cmplz-banner-checkbox">
+								<input type="checkbox" id="cmplz-marketing-optin" data-category="cmplz_marketing" class="cmplz-consent-checkbox cmplz-marketing" size="40" value="1">
+								<label class="cmplz-label" for="cmplz-marketing-optin" tabindex="0"><span class="screen-reader-text">Marketing</span></label>
+							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" height="18"><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"></path></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-marketing">The technical storage or access is required to create user profiles to send advertising, or to track the user on a website or across several websites for similar marketing purposes.</span>
+				</div>
+			</details>
+		</div>
+<!-- categories end -->
+			</div>
+
+	<div class="cmplz-links cmplz-information">
+		<a class="cmplz-link cmplz-manage-options cookie-statement" href="#" data-relative_url="#cmplz-manage-consent-container">Manage options</a>
+		<a class="cmplz-link cmplz-manage-third-parties cookie-statement" href="#" data-relative_url="#cmplz-cookies-overview">Manage services</a>
+		<a class="cmplz-link cmplz-manage-vendors tcf cookie-statement" href="#" data-relative_url="#cmplz-tcf-wrapper">Manage {vendor_count} vendors</a>
+		<a class="cmplz-link cmplz-external cmplz-read-more-purposes tcf" target="_blank" rel="noopener noreferrer nofollow" href="https://cookiedatabase.org/tcf/purposes/">Read more about these purposes</a>
+			</div>
+
+	<div class="cmplz-divider cmplz-footer"></div>
+
+	<div class="cmplz-buttons">
+		<button class="cmplz-btn cmplz-accept">Accept</button>
+		<button class="cmplz-btn cmplz-deny">Deny</button>
+		<button class="cmplz-btn cmplz-view-preferences">View preferences</button>
+		<button class="cmplz-btn cmplz-save-preferences">Save preferences</button>
+		<a class="cmplz-btn cmplz-manage-options tcf cookie-statement" href="#" data-relative_url="#cmplz-manage-consent-container">View preferences</a>
+			</div>
+
+	<div class="cmplz-links cmplz-documents">
+		<a class="cmplz-link cookie-statement" href="#" data-relative_url="">{title}</a>
+		<a class="cmplz-link privacy-statement" href="#" data-relative_url="">{title}</a>
+		<a class="cmplz-link impressum" href="#" data-relative_url="">{title}</a>
+			</div>
+
+</div>
+</div>
+					<div id="cmplz-manage-consent" data-nosnippet="true">
+<button class="cmplz-btn cmplz-hidden cmplz-manage-consent manage-consent-1">Manage consent</button>
+
+</div>
+<!--[if lt IE 9]>
+<script src="https://www.politepix.com/wp-content/themes/pixelpress/includes/js/respond-IE.js"></script>
+<![endif]-->
+			<script>jQuery(document).ready(function(){
+					jQuery('.images a').attr('rel', 'prettyPhoto[product-gallery]');
+				});</script>
+			<script type="text/javascript">(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();</script>
+	<link rel="stylesheet" id="wc-blocks-style-css" href="https://c0.wp.com/p/woocommerce/8.8.2/assets/client/blocks/wc-blocks.css" type="text/css" media="all">
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/accounting/accounting.min.js" id="accounting-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/jquery/ui/core.min.js" id="jquery-ui-core-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/jquery/ui/datepicker.min.js" id="jquery-ui-datepicker-js"></script>
+<script type="text/javascript" id="jquery-ui-datepicker-js-after">
+/* <![CDATA[ */
+jQuery(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+/* ]]> */
+</script>
+<script type="text/javascript" id="woocommerce-addons-js-extra">
+/* <![CDATA[ */
+var woocommerce_addons_params = {"price_display_suffix":"","tax_enabled":"1","price_include_tax":"","display_include_tax":"","ajax_url":"\/wp-admin\/admin-ajax.php","i18n_validation_required_select":"Please choose an option.","i18n_validation_required_input":"Please enter some text in this field.","i18n_validation_required_number":"Please enter a number in this field.","i18n_validation_required_file":"Please upload a file.","i18n_validation_letters_only":"Please enter letters only.","i18n_validation_numbers_only":"Please enter numbers only.","i18n_validation_letters_and_numbers_only":"Please enter letters and numbers only.","i18n_validation_email_only":"Please enter a valid email address.","i18n_validation_min_characters":"Please enter at least %c characters.","i18n_validation_max_characters":"Please enter up to %c characters.","i18n_validation_min_number":"Please enter %c or more.","i18n_validation_max_number":"Please enter %c or less.","i18n_sub_total":"Subtotal","i18n_remaining":"<span><\/span> characters remaining","currency_format_num_decimals":"2","currency_format_symbol":"€","currency_format_decimal_sep":".","currency_format_thousand_sep":",","trim_trailing_zeros":"","is_bookings":"","trim_user_input_characters":"1000","quantity_symbol":"x ","datepicker_class":"wc_pao_datepicker","datepicker_date_format":"MM d, yy","gmt_offset":"-2","date_input_timezone_reference":"default","currency_format":"%s%v"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/wp-content/plugins/woocommerce-product-addons/assets/js/frontend/addons.min.js?ver=6.8.2" id="woocommerce-addons-js" defer data-wp-strategy="defer"></script>
+<script type="text/javascript" src="/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-image-cdn/dist/image-cdn.js?minify=false&amp;ver=132249e245926ae3e188" id="jetpack-photon-js"></script>
+<script type="text/javascript" src="/wp-content/plugins/bbpress/templates/default/js/editor.min.js?ver=2.6.9" id="bbpress-editor-js"></script>
+<script type="text/javascript" id="bbpress-engagements-js-extra">
+/* <![CDATA[ */
+var bbpEngagementJS = {"object_id":"1032217","bbp_ajaxurl":"\/forums\/topic\/rapidearsdidreceivelivespeechhypothesis-not-firing\/?bbp-ajax=true","generic_ajax_error":"Something went wrong. Refresh your browser and try again."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/wp-content/plugins/bbpress/templates/default/js/engagements.min.js?ver=2.6.9" id="bbpress-engagements-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/sourcebuster/sourcebuster.min.js" id="sourcebuster-js-js"></script>
+<script type="text/javascript" id="wc-order-attribution-js-extra">
+/* <![CDATA[ */
+var wc_order_attribution = {"params":{"lifetime":1.0e-5,"session":30,"ajaxurl":"\/wp-admin\/admin-ajax.php","prefix":"wc_order_attribution_","allowTracking":true},"fields":{"source_type":"current.typ","referrer":"current_add.rf","utm_campaign":"current.cmp","utm_source":"current.src","utm_medium":"current.mdm","utm_content":"current.cnt","utm_id":"current.id","utm_term":"current.trm","session_entry":"current_add.ep","session_start_time":"current_add.fd","session_pages":"session.pgs","session_count":"udata.vst","user_agent":"udata.uag"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/frontend/order-attribution.min.js" id="wc-order-attribution-js"></script>
+<script data-service="jetpack-statistics" data-category="statistics" type="text/plain" data-cmplz-src="https://stats.wp.com/e-202417.js" id="jetpack-stats-js" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="jetpack-stats-js-after">
+/* <![CDATA[ */
+_stq = window._stq || [];
+_stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"206848719\",\"post\":\"1032217\",\"tz\":\"2\",\"srv\":\"www.politepix.com\",\"j\":\"1:13.3.1\"}") ]);
+_stq.push([ "clickTrackerInit", "206848719", "1032217" ]);
+/* ]]> */
+</script>
+<script type="text/javascript" id="cmplz-cookiebanner-js-extra">
+/* <![CDATA[ */
+var complianz = {"prefix":"cmplz_","user_banner_id":"1","set_cookies":[],"block_ajax_content":"","banner_version":"18","version":"7.0.4","store_consent":"","do_not_track_enabled":"1","consenttype":"optin","region":"eu","geoip":"","dismiss_timeout":"","disable_cookiebanner":"","soft_cookiewall":"","dismiss_on_scroll":"","cookie_expiry":"365","url":"\/wp-json\/complianz\/v1\/","locale":"lang=en&locale=en_US","set_cookies_on_root":"","cookie_domain":"","current_policy_id":"16","cookie_path":"\/","categories":{"statistics":"statistics","marketing":"marketing"},"tcf_active":"","placeholdertext":"Click to accept {category} cookies and enable this content","css_file":"\/wp-content\/uploads\/complianz\/css\/banner-{banner_id}-{type}.css?v=18","page_links":{"eu":{"cookie-statement":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"},"privacy-statement":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"},"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"us":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"uk":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"ca":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"au":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"za":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"br":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}}},"tm_categories":"","forceEnableStats":"","preview":"","clean_cookies":"","aria_label":"Click to accept {category} cookies and enable this content"};
+/* ]]> */
+</script>
+<script defer type="text/javascript" src="/wp-content/plugins/complianz-gdpr/cookiebanner/js/complianz.min.js?ver=1710283454" id="cmplz-cookiebanner-js"></script>
+</body>
+</html>

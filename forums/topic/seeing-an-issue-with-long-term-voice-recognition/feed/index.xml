@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] Seeing an issue with long-term voice recognition &#8211; Politepix</title>
+		<atom:link href="/forums/topic/seeing-an-issue-with-long-term-voice-recognition/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/seeing-an-issue-with-long-term-voice-recognition/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:02:10 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/seeing-an-issue-with-long-term-voice-recognition/#post-1020382</guid>
+					<title><![CDATA[[Resolved] Seeing an issue with long-term voice recognition]]></title>
+					<link>/forums/topic/seeing-an-issue-with-long-term-voice-recognition/#post-1020382</link>
+					<pubDate>Fri, 28 Feb 2014 14:04:51 +0000</pubDate>
+					<dc:creator>wfilleman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>Got another issue to pick your brain on.</p>
+<p>I&#8217;ve got several users who are using the voice recognition feature long-term in the background of their iOS device. Although it happens when the app is in the foreground as well. What they report and I&#8217;ve confirmed, is that after a long period of time (I was able to see it about about 3 hours) the OpenEars no longer responds to voice commands.</p>
+<p>When I ran the debugger on my iPad, what&#8217;s happening after a long period of time is the following:</p>
+<p>OpenEars appears to be listening ok and actually does pick up the audio right before it appears to be unresponsive, but in the debug prints I see this:</p>
+<p>2014-02-27 22:08:49.110 MobiLincHD[491:d46f] Processing speech, please wait&#8230;<br />
+INFO: file_omitted(0): cmn_prior_update: from &lt; 38.99 -7.17 -4.31 -3.34 -2.30 -1.41 -0.54 -1.32 -0.06 -0.11 -0.10  0.34  0.39 &gt;<br />
+INFO: file_omitted(0): cmn_prior_update: to   &lt; 38.43 -7.16 -4.34 -3.22 -2.40 -1.42 -0.56 -1.35 -0.10 -0.10 -0.13  0.34  0.40 &gt;<br />
+INFO: file_omitted(0):    20536 words recognized (42/fr)<br />
+INFO: file_omitted(0):   172257 senones evaluated (352/fr)<br />
+INFO: file_omitted(0):    80936 channels searched (165/fr), 7776 1st, 56095 last<br />
+INFO: file_omitted(0):    25358 words for which last channels evaluated (51/fr)<br />
+INFO: file_omitted(0):     5056 candidate words for entering last phone (10/fr)<br />
+INFO: file_omitted(0): fwdtree 0.72 CPU 0.147 xRT<br />
+INFO: file_omitted(0): fwdtree 5.33 wall 1.088 xRT<br />
+INFO: file_omitted(0): Utterance vocabulary contains 49 words<br />
+INFO: file_omitted(0):    10036 words recognized (20/fr)<br />
+INFO: file_omitted(0):   154390 senones evaluated (315/fr)<br />
+INFO: file_omitted(0):    94457 channels searched (192/fr)<br />
+INFO: file_omitted(0):    20010 words searched (40/fr)<br />
+INFO: file_omitted(0):    14609 word transitions (29/fr)<br />
+INFO: file_omitted(0): fwdflat 0.24 CPU 0.049 xRT<br />
+INFO: file_omitted(0): fwdflat 0.24 wall 0.049 xRT<br />
+INFO: file_omitted(0): &lt;/s&gt; not found in last frame, using ___REJ_K.488 instead<br />
+INFO: file_omitted(0): lattice start node &lt;s&gt;.0 end node ___REJ_K.274<br />
+INFO: file_omitted(0): Eliminated 1108 nodes before end node<br />
+INFO: file_omitted(0): Lattice has 2561 nodes, 24194 links</p>
+<p>and then nothing else gets printed. In a normal scenario I would usually see the following, but this never appears (I let it run for another 12 hours before killing it):</p>
+<p>INFO: file_omitted(0): Normalizer P(O) = alpha(&lt;sil&gt;:94:97) = -780488<br />
+INFO: file_omitted(0): Joint P(O,S) = -788376 P(S|O) = -7888<br />
+INFO: file_omitted(0): bestpath 0.22 CPU 0.229 xRT<br />
+INFO: file_omitted(0): bestpath 0.23 wall 0.234 xRT<br />
+2014-02-27 22:08:35.843 MobiLincHD[491:d46f] Pocketsphinx heard &#8221; &#8221; with a score of (-7888) and an utterance ID of 000000039.</p>
+<p>Any ideas why the framework isn&#8217;t able to progress past the ngram_search_lattice() call? I&#8217;m assuming that this is returning a NULL which is why I&#8217;m not seeing the call into ngram_search_bestpath(). But why would that cause a complete breakdown of mic sound recognition?</p>
+<p>I haven&#8217;t seen it on short time frame durations. This is definitely something that pops up under long term OpenEars use. (3+ hours).</p>
+<p>I tried this using both the VoiceChat and Default modes. Both exhibited the exact same behavior.</p>
+<p>Any ideas would be greatly appreciated!</p>
+<p>Thanks Halle!<br />
+Wes</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/seeing-an-issue-with-long-term-voice-recognition/#post-1020383</guid>
+					<title><![CDATA[Reply To: [Resolved] Seeing an issue with long-term voice recognition]]></title>
+					<link>/forums/topic/seeing-an-issue-with-long-term-voice-recognition/#post-1020383</link>
+					<pubDate>Fri, 28 Feb 2014 14:18:29 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ha, OK, first of all I will take it as a sign of generally good behavior both on the part of OpenEars and Pocketsphinx that it is even possible to discuss what it does after over three hours has elapsed! :) . </p>
+<p>But, yes, I am tracking a bug regarding very long searches. It isn&#8217;t technically that they don&#8217;t return, but that the return is so delayed that it feels like a hang (from a UX perspective the same problem IMO).</p>
+<p>It is happening because the search space on these searches is too big for some reason (my early impression is that the reason is a very long utterance due to some persistent noises being taken for an extended speech utterance, combined with something about language model weight values) and it is my current top priority to figure out and fix, but also a challenging issue to pin down. Here are the current correlations for this bug, I&#8217;m very interested in any new info you can give me about yours:</p>
+<p>1. It appears consistently when a weight above 1.2 is applied to Rejecto when there is a particularly long utterance. This is verified.<br />
+2. It has been reported without Rejecto when background volume increases suddenly, although my own tests with the most recent version of the OpenEars beta do not replicate this.</p>
+<p>Here is the most recent beta link: </p>
+<p><a href="https://politepix.com/wp-content/uploads/OpenEarsDistributionBeta.tar.bz2" rel="nofollow">https://politepix.com/wp-content/uploads/OpenEarsDistributionBeta.tar.bz2</a></p>
+<p>I can&#8217;t take any test cases that occur over periods of hours, but if you can provide me with a test case that occurs in fewer than 10 minutes, based on the sample app plus an audio recording added to pathToTestFile, I will be very happy to add it to the data on this bug and it will help to get a faster fix.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/seeing-an-issue-with-long-term-voice-recognition/#post-1020384</guid>
+					<title><![CDATA[Reply To: [Resolved] Seeing an issue with long-term voice recognition]]></title>
+					<link>/forums/topic/seeing-an-issue-with-long-term-voice-recognition/#post-1020384</link>
+					<pubDate>Fri, 28 Feb 2014 14:30:32 +0000</pubDate>
+					<dc:creator>wfilleman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hehe, I&#8217;ll expect the same from OpenEars as my customers do from me. Total 100% reliable operation. :)</p>
+<p>Actually, from the debug logs, it looks quite clean and is working well, but yes, there is a weird bug here at play. Sounds like you might be on to it.</p>
+<p>To answer your points, I&#8217;m using Rejecto, but only in the default mode. Meaning, I&#8217;m not changing the weighting. I left it as the default (presumably 1.0).</p>
+<p>I have no data points without Rejecto, as Rejecto was critical in my application.</p>
+<blockquote><p>It is happening because the search space on these searches is too big for some reason (my early impression is that the reason is a very long utterance due to some persistent noises being taken for an extended speech utterance</p></blockquote>
+<p>This *sounds* right to me. I could see this happening over long periods of listening where OpenEars is exposed to the environment sound for too long and extended speech is triggered.</p>
+<p>I&#8217;ll try out the beta release and let it run for hours and see if it behaves any differently and let you know later today.</p>
+<p>Thanks!<br />
+Wes</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/seeing-an-issue-with-long-term-voice-recognition/#post-1020385</guid>
+					<title><![CDATA[Reply To: [Resolved] Seeing an issue with long-term voice recognition]]></title>
+					<link>/forums/topic/seeing-an-issue-with-long-term-voice-recognition/#post-1020385</link>
+					<pubDate>Fri, 28 Feb 2014 14:44:44 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, let me know what happens with the beta (it has a correction for a case in which a probability for a vocabulary word or Rejecto phoneme can be calculated wrongly, which I think may be a co-traveler with this bug even though I no longer think it&#8217;s the only cause for it). It&#8217;s helpful to know that you aren&#8217;t using Rejecto weighting, because that takes some suspicion away from Rejecto and focuses it more onto the main OpenEars/Pocketsphinx implementation, which at least narrows the field.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/seeing-an-issue-with-long-term-voice-recognition/#post-1020386</guid>
+					<title><![CDATA[Reply To: [Resolved] Seeing an issue with long-term voice recognition]]></title>
+					<link>/forums/topic/seeing-an-issue-with-long-term-voice-recognition/#post-1020386</link>
+					<pubDate>Fri, 28 Feb 2014 16:20:28 +0000</pubDate>
+					<dc:creator>wfilleman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>Early report: Been running for about an hour and observing sound in the room and how OpenEars is handling it.</p>
+<p>I&#8217;m seeing cases where long sustained background noise does cause OpenEars to take a long time to process where the CPU shoots to 100%. I&#8217;ve seen take as long as 60-90 seconds before it eventually returns to listening and all is normal again (0% CPU and listening normally).</p>
+<p>This is slightly different than what I was seeing on 1.65 where OpenEars wasn&#8217;t returning in my test case but the CPU was 0% (never saw it peak at 100%)</p>
+<p>Is this consistent with what you see on your end?<br />
+Is this considered &#8220;normal&#8221;?<br />
+Obviously having the CPU shoot to 100% for long periods of time isn&#8217;t desirable, but wanted your comments on this.</p>
+<p>Leaving my test case running. Will check back in later.</p>
+<p>Wes</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/seeing-an-issue-with-long-term-voice-recognition/#post-1020387</guid>
+					<title><![CDATA[Reply To: [Resolved] Seeing an issue with long-term voice recognition]]></title>
+					<link>/forums/topic/seeing-an-issue-with-long-term-voice-recognition/#post-1020387</link>
+					<pubDate>Fri, 28 Feb 2014 16:33:10 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>No, the two reports I got were about 1.65 and they were about the symptom of taking 20+ seconds to return with high CPU use. I haven&#8217;t gotten reports of never returning with 0% CPU*. I believe that that isn&#8217;t technically possible if you&#8217;re in ngram_search_lattice() because that is a search (i.e. the one thing that takes a lot of CPU in OpenEars). If you were simultaneously seeing 0% CPU and stuck-ness in ngram_search_lattice() I would expect that something about that was a mismatch between what Xcode was telling you and what was actually happening.</p>
+<p>* I have received one report of non-returning that turned out to be very delayed returning.</p>
+<p>I would be very surprised if the change in the beta could have the effect of increasing a bug symptom. It only changes occasional inaccurate probabilities to be normal ones so it can&#8217;t really be implicated in a negative behavioral change to the best of my knowledge.</p>
+<p>What I have seen about this bug, and the reason it is very challenging, is that it is very intermittent and very nondeterministic so what might seem like a new/different behavior might be a behavior that was there previously that hadn&#8217;t yet manifested in front of you, meaning that a new thing is not necessarily related to the beta.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/seeing-an-issue-with-long-term-voice-recognition/#post-1020388</guid>
+					<title><![CDATA[Reply To: [Resolved] Seeing an issue with long-term voice recognition]]></title>
+					<link>/forums/topic/seeing-an-issue-with-long-term-voice-recognition/#post-1020388</link>
+					<pubDate>Fri, 28 Feb 2014 16:42:23 +0000</pubDate>
+					<dc:creator>wfilleman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks Halle,</p>
+<p>I can see about capturing the background noise that&#8217;s causing the high CPU if you are interested. I seem to have a way of reproducing it.</p>
+<p>I agree, this is a different behavior than what I saw on 1.65. I&#8217;m not sure it was &#8220;stuck&#8221; in ngram_search_lattice(), but it definitely didn&#8217;t proceed to ngram_search_bestpath(). </p>
+<p>XCODE could have been misleading on the CPU usage, but the iPad wasn&#8217;t hot like it had been running at 100% for hours on end.</p>
+<p>So far, so good, minus the high CPU on occasion. Let me know if you&#8217;d like me to capture the reproducible noise that causes the CPU to peg.</p>
+<p>Wes</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/seeing-an-issue-with-long-term-voice-recognition/#post-1020389</guid>
+					<title><![CDATA[Reply To: [Resolved] Seeing an issue with long-term voice recognition]]></title>
+					<link>/forums/topic/seeing-an-issue-with-long-term-voice-recognition/#post-1020389</link>
+					<pubDate>Fri, 28 Feb 2014 17:08:21 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, so my understanding is that the beta represents an improvement for you because it means you aren&#8217;t permanently losing the reactivity of the UI, or at least you are not seeing any new manifestations of that behavior, but it is also (obviously) not optimal yet because of the remaining issue with the long searches, is that correct? So it is possible that the language model fix in the beta is at least addressing the issue with the 0% CPU stuck search, which sounds like a real thing based on your description of the cool device.</p>
+<p>Thank you, it would be very helpful to have the test case for the long searches in the beta. BTW, I don&#8217;t know if you saw this but SaveThatWave 1.65 has a feature now to capture an entire recognition session from startListening: to stopListening and the demo will run for 3 minutes, so you could use the demo to do a direct capture of a session that gets weird if you can get it to happen in fewer than 3 minutes by using the new SaveThatWaveController method startSessionDebugRecord. </p>
+<p>Then you can drop that WAV right into pathToTestFile in your sample app and I should (more or less – none of this is perfectly deterministic) be able to see what you saw.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/seeing-an-issue-with-long-term-voice-recognition/#post-1020390</guid>
+					<title><![CDATA[Reply To: [Resolved] Seeing an issue with long-term voice recognition]]></title>
+					<link>/forums/topic/seeing-an-issue-with-long-term-voice-recognition/#post-1020390</link>
+					<pubDate>Fri, 28 Feb 2014 17:34:40 +0000</pubDate>
+					<dc:creator>wfilleman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>OK, so my understanding is that the beta represents an improvement for you because it means you aren’t permanently losing the reactivity of the UI, or at least you are not seeing any new manifestations of that behavior, but it is also (obviously) not optimal yet because of the remaining issue with the long searches, is that correct?</p></blockquote>
+<p>Yes, so far. I&#8217;ve been running for 3+ hours and OpenEars is still going strong. I couldn&#8217;t get this far before, so, yes, at least in my single test case the beta appears to have addressed what I saw earlier in 1.65 as noted at the top of this post.</p>
+<p>Ah, great! I didn&#8217;t know about SaveThatWave. I was thinking about how I&#8217;d accomplish that. Ok, let me experiment around with it and see if I can capture the session that pegs the CPU to 100%.</p>
+<p>What&#8217;s the best way to send you the sample project with the wav file?</p>
+<p>Wes</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/seeing-an-issue-with-long-term-voice-recognition/#post-1020393</guid>
+					<title><![CDATA[Reply To: [Resolved] Seeing an issue with long-term voice recognition]]></title>
+					<link>/forums/topic/seeing-an-issue-with-long-term-voice-recognition/#post-1020393</link>
+					<pubDate>Fri, 28 Feb 2014 17:50:28 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>Yes, so far. I’ve been running for 3+ hours and OpenEars is still going strong. I couldn’t get this far before, so, yes, at least in my single test case the beta appears to have addressed what I saw earlier in 1.65 as noted at the top of this post.</p></blockquote>
+<p>OK, that&#8217;s good news – this is the first feedback I&#8217;ve gotten from reporters of this issue about the effect of the improvements in the beta, so we&#8217;ll keep fingers crossed that we&#8217;ll continue to only see the current symptom with the increasing background noise. A little more background: a delay due to suddenly-increasing background noise is expected behavior, because that means that the voice activity detection doesn&#8217;t have a way of distinguishing the speech/silence transition anymore, since the calibration values became irrelevant inside of a single utterance. Under these conditions, it should notice that this happened and sort itself out in about 14 seconds (this can be made a bit shorter but there are other tradeoffs to doing so, so if it is an uncommon occurrence this timeframe is probably about right). </p>
+<p>So we&#8217;re only seeing the high CPU and inaccurate speech/silence threshhold as dysfunctional if it takes notably longer than 14 seconds to self-correct, or if this long CPU usage occurs in the absence of a swift increase in background noise. Sometimes completely normal searches can take 1-2 seconds and use 99% CPU, so just seeing a strenuous search isn&#8217;t a bug on its own.</p>
+<blockquote><p>What’s the best way to send you the sample project with the wav file?</p></blockquote>
+<p>Ideally, put it up somewhere I can download it and send me the link via the email we&#8217;ve talked over previously.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

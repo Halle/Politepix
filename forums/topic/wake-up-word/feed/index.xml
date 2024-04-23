@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Wake-up word &#8211; Politepix</title>
+		<atom:link href="/forums/topic/wake-up-word/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/wake-up-word/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:00:52 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/wake-up-word/#post-1019807</guid>
+					<title><![CDATA[Wake-up word]]></title>
+					<link>/forums/topic/wake-up-word/#post-1019807</link>
+					<pubDate>Mon, 20 Jan 2014 14:24:46 +0000</pubDate>
+					<dc:creator>fdim</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am surprised that I haven&#8217;t found any similar topics. I want to create a wake-up word scenario in which I need openears to be continuously monitoring for the wake-up keyword &#8220;OK OPENEARS&#8221;. I use a language model that contains only the wake up keyword for that. When the wake-up keyword is spotted I change the Language Model to one that contains a variety of commands. And then I change back to the &#8220;wake-up&#8221; language model after command recognition success. Questions:</p>
+<p>1) Should I use Rejecto or JSGF grammar for the wake-up language model?<br />
+2) In addition to the above I assume that wake-up keyword monitoring happens during music playback (from the device).  When the keyword is spotted I change the language model as I previously said but I also turn the music down waiting for a command to be spoken. That means that the background noise level changes dramatically and OpenEars needs to recalibrate. Is there a fast way to force a predefined level of calibration?<br />
+3) Is this the best practice for my scenario?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wake-up-word/#post-1019810</guid>
+					<title><![CDATA[Reply To: Wake-up word]]></title>
+					<link>/forums/topic/wake-up-word/#post-1019810</link>
+					<pubDate>Mon, 20 Jan 2014 17:13:43 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<blockquote><p>I am surprised that I haven’t found any similar topics.</p></blockquote>
+<p>I think it&#8217;s only that this is a specific version of a general implementation question that gets asked, i.e. how to spot a keyword. I&#8217;ll be happy to try to help you with it.</p>
+<blockquote><p>1) Should I use Rejecto or JSGF grammar for the wake-up language model?</p></blockquote>
+<p>You can&#8217;t use JSGF with a single keyword match, I think. JSGF rules as implemented in Pocketsphinx have to have more than one potential match or they crash, to the best of my knowledge.</p>
+<blockquote><p> Is there a fast way to force a predefined level of calibration?</p></blockquote>
+<p>You won&#8217;t get good results from a predefined level since it depends on the environment and mic characteristics being similar to your predefined case, which is unlikely. Have you already tested and discovered that the ongoing recalibration isn&#8217;t doing the job?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wake-up-word/#post-1019811</guid>
+					<title><![CDATA[Reply To: Wake-up word]]></title>
+					<link>/forums/topic/wake-up-word/#post-1019811</link>
+					<pubDate>Mon, 20 Jan 2014 19:22:24 +0000</pubDate>
+					<dc:creator>fdim</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Actually here is what happens:<br />
+1) When I turn the music up OpenEars&#8217; status is &#8220;Pocketsphinx has detected speech.&#8221; It never passes that phase as it thinks there is someone speaking instead of background music. Eventually it crashes. I need somehow to set a timeout for that and/or force a recalibration at this point.<br />
+2) When I start OpenEars with loud music (not insanely loud) from the beginning and before turning the music down I have this output:<br />
+2014-01-20 21:15:35.464 openEarsTest[6366:60b] Calibration time: 0<br />
+2014-01-20 21:15:36.163 openEarsTest[6366:60b] Pocketsphinx calibration has started.<br />
+2014-01-20 21:15:38.367 openEarsTest[6366:60b] Pocketsphinx calibration is complete.<br />
+2014-01-20 21:15:38.369 openEarsTest[6366:60b] Pocketsphinx is now listening.<br />
+2014-01-20 21:15:38.883 openEarsTest[6366:60b] Pocketsphinx has detected speech.<br />
+2014-01-20 21:15:47.429 openEarsTest[6366:60b] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2014-01-20 21:15:47.743 openEarsTest[6366:60b] The received hypothesis is OK OK with a score of -998 and an ID of 000000000<br />
+2014-01-20 21:15:47.811 openEarsTest[6366:60b] Pocketsphinx is now listening.</p>
+<p>Then if I turn the music down it seems to get my first sentences wrong. However after a few seconds it starts getting them right again.</p>
+<p>Any suggestions?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wake-up-word/#post-1019812</guid>
+					<title><![CDATA[Reply To: Wake-up word]]></title>
+					<link>/forums/topic/wake-up-word/#post-1019812</link>
+					<pubDate>Mon, 20 Jan 2014 19:30:14 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>When I turn the music up OpenEars’ status is “Pocketsphinx has detected speech.” It never passes that phase as it thinks there is someone speaking instead of background music. Eventually it crashes. I need somehow to set a timeout for that and/or force a recalibration at this point.</p></blockquote>
+<p>Good to know &#8212; could you test against this beta that is designed to fix the issue where there is occasionally an endless recognition plus a crash when there is a sudden increase in volume in the background: </p>
+<p><a href="/wp-content/uploads/OpenEarsDistributionBeta.tar.bz2">/wp-content/uploads/OpenEarsDistributionBeta.tar.bz2</a></p>
+<p>The beta is primarily designed for fixing this problem and so far I haven&#8217;t gotten any feedback on the beta from the other developers reporting the problem, so I&#8217;d appreciate hearing whether it alleviates the issue for you.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wake-up-word/#post-1019813</guid>
+					<title><![CDATA[Reply To: Wake-up word]]></title>
+					<link>/forums/topic/wake-up-word/#post-1019813</link>
+					<pubDate>Mon, 20 Jan 2014 19:44:11 +0000</pubDate>
+					<dc:creator>fdim</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I managed to crash it again with the beta. I am now trying to identify the exact steps that reproduce the problem.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wake-up-word/#post-1019815</guid>
+					<title><![CDATA[Reply To: Wake-up word]]></title>
+					<link>/forums/topic/wake-up-word/#post-1019815</link>
+					<pubDate>Mon, 20 Jan 2014 19:49:00 +0000</pubDate>
+					<dc:creator>fdim</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK this is it:</p>
+<p>2014-01-20 21:44:45.804 openEarsTest[6425:60b] Calibration time: 0<br />
+2014-01-20 21:44:46.482 openEarsTest[6425:60b] Pocketsphinx calibration has started.<br />
+2014-01-20 21:44:48.685 openEarsTest[6425:60b] Pocketsphinx calibration is complete.<br />
+2014-01-20 21:44:48.687 openEarsTest[6425:60b] Pocketsphinx is now listening.<br />
+2014-01-20 21:44:49.201 openEarsTest[6425:60b] Pocketsphinx has detected speech.<br />
+2014-01-20 21:44:52.374 openEarsTest[6425:60b] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2014-01-20 21:44:52.558 openEarsTest[6425:60b] The received hypothesis is OK with a score of 0 and an ID of 000000000<br />
+2014-01-20 21:44:52.625 openEarsTest[6425:60b] Pocketsphinx is now listening.<br />
+2014-01-20 21:44:53.172 openEarsTest[6425:60b] Pocketsphinx has detected speech.</p>
+<p>After that there is a crash. I have turned up the music right before the last log message.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wake-up-word/#post-1019816</guid>
+					<title><![CDATA[Reply To: Wake-up word]]></title>
+					<link>/forums/topic/wake-up-word/#post-1019816</link>
+					<pubDate>Mon, 20 Jan 2014 19:55:16 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>That&#8217;s the logging from your app &#8212; could you show me the output with verbosePocketsphinx and OpenEarsLogging turned on so I can get some info about what is happening with the framework?</p>
+<p>Make sure you clean your project and rebuild with the new framework installed to make sure you&#8217;re linking to the new version.</p>
+<p>Quick question: why does your log say that your calibration time is zero?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wake-up-word/#post-1019817</guid>
+					<title><![CDATA[Reply To: Wake-up word]]></title>
+					<link>/forums/topic/wake-up-word/#post-1019817</link>
+					<pubDate>Mon, 20 Jan 2014 20:05:41 +0000</pubDate>
+					<dc:creator>fdim</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Nevermind that. That was a little line I added but I was printing before starting listening. If I print after beginning listening it returns 1.</p>
+<p>Here is the detailed log. It kept listening about 3 minutes of Daft Punk before crashing. :)<br />
+2014-01-20 22:01:59.379 openEarsTest[6472:60b] Starting OpenEars logging for OpenEars version 1.64 on 32-bit device: iPad running iOS version: 7.000000<br />
+2014-01-20 22:01:59.387 openEarsTest[6472:60b] Normalized array contains the following entries:<br />
+(<br />
+    &#8220;OK DEAR&#8221;<br />
+)<br />
+2014-01-20 22:01:59.433 openEarsTest[6472:60b] Starting dynamic language model generation<br />
+2014-01-20 22:01:59.438 openEarsTest[6472:60b] Able to open /var/mobile/Applications/79A5CC24-FD52-45CF-BFA2-FDF965D64F65/Library/Caches/NameIWantForMyLanguageModelFiles.corpus for reading<br />
+2014-01-20 22:01:59.440 openEarsTest[6472:60b] Able to open /var/mobile/Applications/79A5CC24-FD52-45CF-BFA2-FDF965D64F65/Library/Caches/NameIWantForMyLanguageModelFiles_pipe.txt for writing<br />
+2014-01-20 22:01:59.440 openEarsTest[6472:60b] Starting text2wfreq_impl<br />
+2014-01-20 22:01:59.456 openEarsTest[6472:60b] Done with text2wfreq_impl<br />
+2014-01-20 22:01:59.458 openEarsTest[6472:60b] Able to open /var/mobile/Applications/79A5CC24-FD52-45CF-BFA2-FDF965D64F65/Library/Caches/NameIWantForMyLanguageModelFiles_pipe.txt for reading.<br />
+2014-01-20 22:01:59.460 openEarsTest[6472:60b] Able to open /var/mobile/Applications/79A5CC24-FD52-45CF-BFA2-FDF965D64F65/Library/Caches/NameIWantForMyLanguageModelFiles.vocab for reading.<br />
+2014-01-20 22:01:59.461 openEarsTest[6472:60b] Starting wfreq2vocab<br />
+2014-01-20 22:01:59.464 openEarsTest[6472:60b] Done with wfreq2vocab<br />
+2014-01-20 22:01:59.466 openEarsTest[6472:60b] Starting text2idngram<br />
+2014-01-20 22:01:59.482 openEarsTest[6472:60b] Done with text2idngram<br />
+2014-01-20 22:01:59.486 openEarsTest[6472:60b] Starting idngram2lm</p>
+<p>2014-01-20 22:01:59.496 openEarsTest[6472:60b] Done with idngram2lm<br />
+2014-01-20 22:01:59.497 openEarsTest[6472:60b] Starting sphinx_lm_convert<br />
+2014-01-20 22:01:59.509 openEarsTest[6472:60b] Finishing sphinx_lm_convert<br />
+2014-01-20 22:01:59.514 openEarsTest[6472:60b] Done creating language model with CMUCLMTK in 0.079652 seconds.<br />
+2014-01-20 22:01:59.592 openEarsTest[6472:60b] I&#8217;m done running performDictionaryLookup and it took 0.048693 seconds<br />
+2014-01-20 22:01:59.598 openEarsTest[6472:60b] I&#8217;m done running dynamic language model generation and it took 411940919.598826 seconds<br />
+2014-01-20 22:01:59.601 openEarsTest[6472:60b] Leaving sample rate at the default of 16000.<br />
+2014-01-20 22:01:59.606 openEarsTest[6472:60b] The audio session has never been initialized so we will do that now.<br />
+2014-01-20 22:01:59.607 openEarsTest[6472:60b] Checking and resetting all audio session settings.<br />
+2014-01-20 22:01:59.609 openEarsTest[6472:60b] audioCategory is incorrect, we will change it.<br />
+2014-01-20 22:01:59.612 openEarsTest[6472:60b] audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.<br />
+2014-01-20 22:01:59.614 openEarsTest[6472:60b] bluetoothInput is incorrect, we will change it.<br />
+2014-01-20 22:01:59.615 openEarsTest[6472:60b] bluetooth input is now on the correct setting of 1.<br />
+2014-01-20 22:01:59.617 openEarsTest[6472:60b] Output Device: SpeakerAndMicrophone.<br />
+2014-01-20 22:01:59.619 openEarsTest[6472:60b] categoryDefaultToSpeaker is incorrect, we will change it.<br />
+2014-01-20 22:01:59.620 openEarsTest[6472:60b] CategoryDefaultToSpeaker is now on the correct setting of 1.<br />
+2014-01-20 22:01:59.622 openEarsTest[6472:60b] preferredBufferSize is incorrect, we will change it.<br />
+2014-01-20 22:01:59.623 openEarsTest[6472:60b] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2014-01-20 22:01:59.624 openEarsTest[6472:60b] preferredSampleRateCheck is incorrect, we will change it.<br />
+2014-01-20 22:01:59.626 openEarsTest[6472:60b] preferred hardware sample rate is now on the correct setting of 16000.000000.<br />
+2014-01-20 22:01:59.659 openEarsTest[6472:60b] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2014-01-20 22:01:59.660 openEarsTest[6472:60b] Exiting startAudioSession.<br />
+2014-01-20 22:01:59.663 openEarsTest[6472:3f07] Recognition loop has started<br />
+2014-01-20 22:01:59.834 openEarsTest[6472:3f07] Starting openAudioDevice on the device.<br />
+2014-01-20 22:01:59.835 openEarsTest[6472:3f07] Audio unit wrapper successfully created.<br />
+2014-01-20 22:01:59.844 openEarsTest[6472:3f07] Set audio route to SpeakerAndMicrophone<br />
+2014-01-20 22:01:59.846 openEarsTest[6472:3f07] Checking and resetting all audio session settings.<br />
+2014-01-20 22:01:59.848 openEarsTest[6472:3f07] audioCategory is correct, we will leave it as it is.<br />
+2014-01-20 22:01:59.849 openEarsTest[6472:3f07] bluetoothInput is correct, we will leave it as it is.<br />
+2014-01-20 22:01:59.851 openEarsTest[6472:3f07] Output Device: SpeakerAndMicrophone.<br />
+2014-01-20 22:01:59.852 openEarsTest[6472:3f07] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2014-01-20 22:01:59.854 openEarsTest[6472:3f07] preferredBufferSize is correct, we will leave it as it is.<br />
+2014-01-20 22:01:59.856 openEarsTest[6472:3f07] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2014-01-20 22:01:59.858 openEarsTest[6472:3f07] Setting the variables for the device and starting it.<br />
+2014-01-20 22:01:59.860 openEarsTest[6472:3f07] Looping through ringbuffer sections and pre-allocating them.<br />
+2014-01-20 22:02:00.330 openEarsTest[6472:3f07] Started audio output unit.<br />
+2014-01-20 22:02:00.333 openEarsTest[6472:3f07] Calibration has started<br />
+2014-01-20 22:02:00.334 openEarsTest[6472:60b] Pocketsphinx calibration has started.<br />
+2014-01-20 22:02:02.536 openEarsTest[6472:3f07] Calibration has completed<br />
+2014-01-20 22:02:02.537 openEarsTest[6472:60b] Pocketsphinx calibration is complete.<br />
+2014-01-20 22:02:02.538 openEarsTest[6472:3f07] Project has these words or phrases in its dictionary:<br />
+DEAR<br />
+OK<br />
+2014-01-20 22:02:02.540 openEarsTest[6472:3f07] Listening.<br />
+2014-01-20 22:02:02.541 openEarsTest[6472:60b] Pocketsphinx is now listening.<br />
+2014-01-20 22:02:03.711 openEarsTest[6472:3f07] Speech detected&#8230;<br />
+2014-01-20 22:02:03.712 openEarsTest[6472:60b] Pocketsphinx has detected speech.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wake-up-word/#post-1019818</guid>
+					<title><![CDATA[Reply To: Wake-up word]]></title>
+					<link>/forums/topic/wake-up-word/#post-1019818</link>
+					<pubDate>Mon, 20 Jan 2014 20:29:38 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, can you also turn on verbosePocketsphinx? I have to see the logging from the recognition as well.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wake-up-word/#post-1019819</guid>
+					<title><![CDATA[Reply To: Wake-up word]]></title>
+					<link>/forums/topic/wake-up-word/#post-1019819</link>
+					<pubDate>Mon, 20 Jan 2014 20:31:45 +0000</pubDate>
+					<dc:creator>fdim</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I thought I did. This is the line I added:<br />
+pocketsphinxController.verbosePocketSphinx = YES;<br />
+in the begging of &#8211; (void)viewDidLoad</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

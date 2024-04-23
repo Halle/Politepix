@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Changing voice level of flitecontroller &#8211; Politepix</title>
+		<atom:link href="/forums/topic/changing-voice-level-of-flitecontroller/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/changing-voice-level-of-flitecontroller/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:39:02 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/changing-voice-level-of-flitecontroller/#post-11445</guid>
+					<title><![CDATA[Changing voice level of flitecontroller]]></title>
+					<link>/forums/topic/changing-voice-level-of-flitecontroller/#post-11445</link>
+					<pubDate>Sun, 30 Sep 2012 15:00:39 +0000</pubDate>
+					<dc:creator>kelvin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>I would like to change the volume. So i have created a UISlider call volumeSlider and i have add a line of code to</p>
+<p>&#8211; (void) updateLevelsUI { // And here is how we obtain the levels.  This method includes the actual OpenEars methods and uses their results to update the UI of this view controller.<br />
+     [fliteController.audioPlayer setVolume:volumeSlider.value];<br />
+	self.pocketsphinxDbLabel.text = [NSString stringWithFormat:@&#8221;Pocketsphinx Input level:%f&#8221;,[self.pocketsphinxController pocketsphinxInputLevel]];  //pocketsphinxInputLevel is an OpenEars method of the class PocketsphinxController.</p>
+<p>	if(self.fliteController.speechInProgress == TRUE) {<br />
+		self.fliteDbLabel.text = [NSString stringWithFormat:@&#8221;Flite Output level: %f&#8221;,[self.fliteController fliteOutputLevel]]; // fliteOutputLevel is an OpenEars method of the class FliteController.<br />
+	}<br />
+}</p>
+<p>The volume did change accordiongly to the slider but instead of pronouncing the 1st hypothesis, it repeats the &#8220;Welcome to OpenEars&#8221; statement. After that it did pronounce the 2nd hypothesis. What could be wrong?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/changing-voice-level-of-flitecontroller/#post-11450</guid>
+					<title><![CDATA[Reply To: Changing voice level of flitecontroller]]></title>
+					<link>/forums/topic/changing-voice-level-of-flitecontroller/#post-11450</link>
+					<pubDate>Mon, 01 Oct 2012 23:08:50 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>There are a lot of things here that are an issue. updateLevelsUI in the sample app is just intended to be a way to show how you can read the read-only levels property on a separate thread so it doesn&#8217;t block. It is called many times a second. That means that your slider/volume code is being continuously hit whether it is being interacted with or not as the method just tries to read the read-only flite level property and display it in the UI, and it also means that your volume is being changed from the thread that the AVAudioPlayer it addresses is definitely not on. I would first totally uncouple your volume changing/volume slider code from the UI updating example that is in the sample app. You should be able to change the volume and update your UI whose purpose is changing the volume on mainThread in a normal method which returns IBAction and which only is concerned with letting the user change the volume. The updateUI method can continue to just handle reading the level and displaying it in the UI.</p>
+<p>If the &#8220;Welcome to OpenEars&#8221; statement continues to be played at unexpected times after that, that probably means that something in the code is causing an interruption that causes the entire listening loop to be reset, resulting in pocketsphinxDidCompleteCalibration being called, which in the sample app results in &#8220;Welcome to OpenEars&#8221; being spoken.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/changing-voice-level-of-flitecontroller/#post-11456</guid>
+					<title><![CDATA[Reply To: Changing voice level of flitecontroller]]></title>
+					<link>/forums/topic/changing-voice-level-of-flitecontroller/#post-11456</link>
+					<pubDate>Tue, 02 Oct 2012 07:48:12 +0000</pubDate>
+					<dc:creator>kelvin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the advice. Got it to work in the IBAction with [self.fliteController.audioPlayer setVolume:volumeSlider.value];</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/changing-voice-level-of-flitecontroller/#post-11457</guid>
+					<title><![CDATA[Reply To: Changing voice level of flitecontroller]]></title>
+					<link>/forums/topic/changing-voice-level-of-flitecontroller/#post-11457</link>
+					<pubDate>Tue, 02 Oct 2012 07:53:11 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Super, glad it&#8217;s working for you.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

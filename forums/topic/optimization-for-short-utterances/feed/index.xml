@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Optimization for short utterances &#8211; Politepix</title>
+		<atom:link href="/forums/topic/optimization-for-short-utterances/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/optimization-for-short-utterances/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:39:02 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/optimization-for-short-utterances/#post-10724</guid>
+					<title><![CDATA[Optimization for short utterances]]></title>
+					<link>/forums/topic/optimization-for-short-utterances/#post-10724</link>
+					<pubDate>Thu, 02 Aug 2012 09:21:48 +0000</pubDate>
+					<dc:creator>Elsa</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,<br />
+I&#8217;m using Open Ears to recognize essentially words one by one and no complete sentences. Thus, I regularly have short utterances (less than 1-2 seconds) and sometimes pocketsphinx isn&#8217;t going into the decoding process or it&#8217;s not very responsive (starts decoding a bit late).<br />
+I&#8217;m aware that my use case is not the optimal one for pocketsphinx, but I was wondering if it was possible to optimize it for this type of utterances ?<br />
+I know that in earlier version of Open Ears it was possible to set kSecondsOfSilenceToDetect so that pocketsphinx would get into decoding faster, but I can&#8217;t find it in the last version.<br />
+Thank you for your help!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/optimization-for-short-utterances/#post-10725</guid>
+					<title><![CDATA[Reply To: Optimization for short utterances]]></title>
+					<link>/forums/topic/optimization-for-short-utterances/#post-10725</link>
+					<pubDate>Thu, 02 Aug 2012 15:56:12 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sure, check out the float property of PocketsphinxController &#8220;secondsOfSilenceToDetect&#8221;. I just moved it into the class so you could set it programmatically.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/optimization-for-short-utterances/#post-10775</guid>
+					<title><![CDATA[Reply To: Optimization for short utterances]]></title>
+					<link>/forums/topic/optimization-for-short-utterances/#post-10775</link>
+					<pubDate>Mon, 06 Aug 2012 08:55:52 +0000</pubDate>
+					<dc:creator>Elsa</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Cool thank you ! It is definitely faster now.<br />
+Do you have any other advices to optimize for short utterances ? Sometimes it&#8217;s hard to get Sphinx into the decoding process, I have to repeat several times the same word or to speak very close to the microphone. Maybe it&#8217;s a microphone configuration issue ?<br />
+My app runs on iPad.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/optimization-for-short-utterances/#post-10776</guid>
+					<title><![CDATA[Reply To: Optimization for short utterances]]></title>
+					<link>/forums/topic/optimization-for-short-utterances/#post-10776</link>
+					<pubDate>Mon, 06 Aug 2012 11:15:08 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You could try <a href="/rapidears" rel="nofollow">RapidEars</a> and see if it helps if you&#8217;re open to non-free solutions. If I recall correctly, your implementation isn&#8217;t a supported method, so you might have audio session problems.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/optimization-for-short-utterances/#post-10778</guid>
+					<title><![CDATA[Reply To: Optimization for short utterances]]></title>
+					<link>/forums/topic/optimization-for-short-utterances/#post-10778</link>
+					<pubDate>Mon, 06 Aug 2012 12:35:13 +0000</pubDate>
+					<dc:creator>Elsa</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ok thank you, I&#8217;ll give it a try !</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/optimization-for-short-utterances/#post-10884</guid>
+					<title><![CDATA[Reply To: Optimization for short utterances]]></title>
+					<link>/forums/topic/optimization-for-short-utterances/#post-10884</link>
+					<pubDate>Sun, 26 Aug 2012 21:30:15 +0000</pubDate>
+					<dc:creator>woodyard</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m doing something similar &#8211; what value would you recommend and what values are acceptable?  The default is one correct?  Can you use something like .5?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/optimization-for-short-utterances/#post-10887</guid>
+					<title><![CDATA[Reply To: Optimization for short utterances]]></title>
+					<link>/forums/topic/optimization-for-short-utterances/#post-10887</link>
+					<pubDate>Mon, 27 Aug 2012 05:43:58 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I would recommend reducing it and doing some user testing to see what the minimum is for your application before you have an issue with utterances being cut off.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/optimization-for-short-utterances/#post-11362</guid>
+					<title><![CDATA[Reply To: Optimization for short utterances]]></title>
+					<link>/forums/topic/optimization-for-short-utterances/#post-11362</link>
+					<pubDate>Thu, 27 Sep 2012 21:50:52 +0000</pubDate>
+					<dc:creator>tarantoga</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Was trying to lower secondsOfSilenceToDetect to very low values but it doesnt seem to work at all.<br />
+In log there is always:<br />
+2012-09-27 23:47:18.423 TestOpenEars[1650:907] Pocketsphinx has detected a second of silence, concluding an utterance.<br />
+And I would really like to have only half second delay or maybe even 0.33<br />
+Is it possible? Or to get it paid plugin is needed?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/optimization-for-short-utterances/#post-11367</guid>
+					<title><![CDATA[Reply To: Optimization for short utterances]]></title>
+					<link>/forums/topic/optimization-for-short-utterances/#post-11367</link>
+					<pubDate>Fri, 28 Sep 2012 05:41:20 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The log always says &#8220;a second of silence&#8221; because that&#8217;s just what an NSLog statement says in the sample app. It isn&#8217;t related to the functionality of the property secondsOfSilenceToDetect and the log statement doesn&#8217;t come from the framework. </p>
+<p>secondsOfSilenceToDetect defaults to .7 seconds currently and if you change it it will be shorter or longer, but the difference between .7 seconds and for instance .33 isn&#8217;t going to be a big perceptual difference (although the very short delay can cause issues since any intermittent noise followed by a pause can trigger recognition) because you will still have the following sequence of events which all use time: the speech continuing until to completion, the silence after the complete speech, and then the time to process the complete speech.</p>
+<p>RapidEars doesn&#8217;t use a period of silence at all because it recognizes speech while the speech is in-progress rather than performing recognition on a completed statement (for instance, if you say &#8220;go right&#8221; it will first return the live hypotheses &#8220;go&#8221; and then &#8220;go right&#8221; as you are in the process of speaking the phrase &#8212; RapidEars doesn&#8217;t wait for a silence period to recognize). For your goal of using OpenEars-style speech recognition that only happens after a silence but with a shorter silence period it isn&#8217;t necessary for you to use RapidEars. But, since OpenEars defaults to a short period of silence out of the box, the differences from shortening it more than the default aren&#8217;t going to be dramatic; expect it to be a smaller change in the user experience.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/optimization-for-short-utterances/#post-11371</guid>
+					<title><![CDATA[Reply To: Optimization for short utterances]]></title>
+					<link>/forums/topic/optimization-for-short-utterances/#post-11371</link>
+					<pubDate>Fri, 28 Sep 2012 12:17:36 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;ve fixed the NSLog statement for the next version so the sample app doesn&#8217;t create confusion about the framework behavior and updated the online documentation and tutorial.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

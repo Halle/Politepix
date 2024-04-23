@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Cancelling speech synthesis in progress. &#8211; Politepix</title>
+		<atom:link href="/forums/topic/cancelling-speech-synthesis-in-progress/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/cancelling-speech-synthesis-in-progress/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:38:20 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/cancelling-speech-synthesis-in-progress/#post-13114</guid>
+					<title><![CDATA[Cancelling speech synthesis in progress.]]></title>
+					<link>/forums/topic/cancelling-speech-synthesis-in-progress/#post-13114</link>
+					<pubDate>Tue, 20 Nov 2012 00:51:33 +0000</pubDate>
+					<dc:creator>MB</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>Is there some way to to cancel speech synthesis in progress and replace it with synthesis for a new text. Currently it looks like if speech synthesis is in progress all calls to &#8216;say:withVoice:&#8217; are ignored.</p>
+<p>I&#8217;ve looked at FliteController.h and there is no API that exposes this functionality. I am looking for a way to flush the current synthesis queue and start synthesis for new text.</p>
+<p>Thanks,</p>
+<p>&#8211;MB.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/cancelling-speech-synthesis-in-progress/#post-13115</guid>
+					<title><![CDATA[Reply To: Cancelling speech synthesis in progress.]]></title>
+					<link>/forums/topic/cancelling-speech-synthesis-in-progress/#post-13115</link>
+					<pubDate>Tue, 20 Nov 2012 01:58:03 +0000</pubDate>
+					<dc:creator>MB</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>There is a method interrupTalking in FliteController. However there is a comment in the header file before this method.</p>
+<p>// Handling not doing voice recognition on Flite speech, do not directly call</p>
+<p>It looks like its just calling [AvAudioPlayer stop] and setting it to nil. So it should be safe to call.</p>
+<p>Thanks,</p>
+<p>&#8211;MB</p>
+<p>PS: Is there some way to look at the source code of FliteController.m? I just want to look at the implementation to find out what the methods in the header file do. I don&#8217;t want to modify anything. For e.g. I want to find out how AVAudioPlayerDelegate is implemented etc.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/cancelling-speech-synthesis-in-progress/#post-13117</guid>
+					<title><![CDATA[Reply To: Reply To: Reply To: Cancelling speech synthesis in progress.]]></title>
+					<link>/forums/topic/cancelling-speech-synthesis-in-progress/#post-13117</link>
+					<pubDate>Tue, 20 Nov 2012 03:00:10 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You can look at all of the source for OpenEars and modify it for your app. It&#8217;s compiled into a framework for your convenience, but it is all shipped with the distribution as source. Here is another discussion of this question that might be helpful to you: <a href="/forums/topic/interrupting-speech/">/forums/topic/interrupting-speech/</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

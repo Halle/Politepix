@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] decrease in speech recognition accuracy after updating to OpenEars 2.0 &#8211; Politepix</title>
+		<atom:link href="/forums/topic/decrease-in-speech-recognition-accuracy-after-updating-to-openears-2-0/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/decrease-in-speech-recognition-accuracy-after-updating-to-openears-2-0/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:54:10 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/decrease-in-speech-recognition-accuracy-after-updating-to-openears-2-0/#post-1023653</guid>
+					<title><![CDATA[[Resolved] decrease in speech recognition accuracy after updating to OpenEars 2.0]]></title>
+					<link>/forums/topic/decrease-in-speech-recognition-accuracy-after-updating-to-openears-2-0/#post-1023653</link>
+					<pubDate>Sun, 21 Dec 2014 21:41:59 +0000</pubDate>
+					<dc:creator>jepjep7</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I have noticed a decrease in speech recognition accuracy as well as an increase in interference by noise after updating to OpenEars 2.0.</p>
+<p>My app uses two dynamically generated ARPA Grammars. One has 19 words, and one has 14 words.  Is it possible to &#8220;calibrate&#8221; in OpenEars 2.0?  Are there other ways to increase speech recognition accuracy and decrease sensitivity to noise?  If not, my thought was to downgrade back to OpenEars 1.71 to get the calibration back.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/decrease-in-speech-recognition-accuracy-after-updating-to-openears-2-0/#post-1023654</guid>
+					<title><![CDATA[Reply To: [Resolved] decrease in speech recognition accuracy after updating to OpenEars 2.0]]></title>
+					<link>/forums/topic/decrease-in-speech-recognition-accuracy-after-updating-to-openears-2-0/#post-1023654</link>
+					<pubDate>Sun, 21 Dec 2014 21:51:23 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Did you see the note about the property vadThreshold in the upgrade guide?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/decrease-in-speech-recognition-accuracy-after-updating-to-openears-2-0/#post-1023655</guid>
+					<title><![CDATA[Reply To: [Resolved] decrease in speech recognition accuracy after updating to OpenEars 2.0]]></title>
+					<link>/forums/topic/decrease-in-speech-recognition-accuracy-after-updating-to-openears-2-0/#post-1023655</link>
+					<pubDate>Mon, 22 Dec 2014 00:07:44 +0000</pubDate>
+					<dc:creator>jepjep7</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yes. I tried a few variations of this:<br />
+[[OEPocketsphinxController sharedInstance] setSecondsOfSilenceToDetect:0.1];<br />
+[[OEPocketsphinxController sharedInstance] setVadThreshold:2.9];</p>
+<p>But I could not get the same accuracy as I was getting with version 1.71 where I was using this:<br />
+pocketsphinxController.secondsOfSilenceToDetect = 0.1;<br />
+pocketsphinxController.calibrationTime = 1;</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/decrease-in-speech-recognition-accuracy-after-updating-to-openears-2-0/#post-1023656</guid>
+					<title><![CDATA[Reply To: [Resolved] decrease in speech recognition accuracy after updating to OpenEars 2.0]]></title>
+					<link>/forums/topic/decrease-in-speech-recognition-accuracy-after-updating-to-openears-2-0/#post-1023656</link>
+					<pubDate>Mon, 22 Dec 2014 08:11:30 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hmm, that is a pretty low secondsOfSilenceToDetect – in real-world use it is going to cut off intentional user speech. Are you 100% positive that when you went through the upgrade process you threw out your old acoustic model and dragged in the new acoustic model? Accidentally keeping the old 8k model is the most likely reason to have worse recognition after the upgrade.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/decrease-in-speech-recognition-accuracy-after-updating-to-openears-2-0/#post-1023776</guid>
+					<title><![CDATA[Reply To: [Resolved] decrease in speech recognition accuracy after updating to OpenEars 2.0]]></title>
+					<link>/forums/topic/decrease-in-speech-recognition-accuracy-after-updating-to-openears-2-0/#post-1023776</link>
+					<pubDate>Wed, 24 Dec 2014 04:21:08 +0000</pubDate>
+					<dc:creator>jepjep7</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks, Halle. I am pretty sure I followed the guidelines correctly.  I deleted the old acoustic model and dragged it in again. The resulting speech recognition was terrible. Then I tried running the Openears sample app.  The recognition is also bad.  When I say the word &#8220;turn,&#8221; it says &#8220;you said turn, you said turn, you said turn&#8230;&#8221; over and over again.  My deployment target is OS 6.0 and I am testing this on the iphone 6 device. Any ideas?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/decrease-in-speech-recognition-accuracy-after-updating-to-openears-2-0/#post-1023777</guid>
+					<title><![CDATA[Reply To: [Resolved] decrease in speech recognition accuracy after updating to OpenEars 2.0]]></title>
+					<link>/forums/topic/decrease-in-speech-recognition-accuracy-after-updating-to-openears-2-0/#post-1023777</link>
+					<pubDate>Wed, 24 Dec 2014 05:12:27 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That&#8217;s very strange, I haven&#8217;t seen that or received any other reports of it with the sample app. This is without changing any lines of code in the sample app? Do you see it with any other devices or with different deployment targets with the sample app? BTW, the lowest possible deployment target should be 6.1, not 6.0 which OpenEars is not intended to be compatible with (I see that the sample app has accidentally gotten a deployment target of 6.0 which will be fixed in the next version).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/decrease-in-speech-recognition-accuracy-after-updating-to-openears-2-0/#post-1023778</guid>
+					<title><![CDATA[Reply To: [Resolved] decrease in speech recognition accuracy after updating to OpenEars 2.0]]></title>
+					<link>/forums/topic/decrease-in-speech-recognition-accuracy-after-updating-to-openears-2-0/#post-1023778</link>
+					<pubDate>Wed, 24 Dec 2014 05:13:37 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Please also let me know what input and output device this is with – headphone, bluetooth, etc.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/decrease-in-speech-recognition-accuracy-after-updating-to-openears-2-0/#post-1023779</guid>
+					<title><![CDATA[Reply To: [Resolved] decrease in speech recognition accuracy after updating to OpenEars 2.0]]></title>
+					<link>/forums/topic/decrease-in-speech-recognition-accuracy-after-updating-to-openears-2-0/#post-1023779</link>
+					<pubDate>Wed, 24 Dec 2014 06:00:44 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry, just noticed this in your post above:</p>
+<blockquote><p>My deployment target is OS 6.0 and I am testing this on the iphone 6 device.</p></blockquote>
+<p>This is a bit confusing to me – can you elaborate on what the significance of the deployment target is in your issue report? Your iPhone 6 runs iOS 8.x, correct?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/decrease-in-speech-recognition-accuracy-after-updating-to-openears-2-0/#post-1023788</guid>
+					<title><![CDATA[Reply To: [Resolved] decrease in speech recognition accuracy after updating to OpenEars 2.0]]></title>
+					<link>/forums/topic/decrease-in-speech-recognition-accuracy-after-updating-to-openears-2-0/#post-1023788</link>
+					<pubDate>Wed, 24 Dec 2014 16:41:59 +0000</pubDate>
+					<dc:creator>jepjep7</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I changed the deployment target to 6.1 and I am running the sample app on an iPhone 6 with iOS 8.1.2 and apple corded headphones.  The apple headphones helped reduce the noise.</p>
+<p>I did some more tests between OpenEars 2.0 and 1.71, and I am still getting a bit more noise with 2.0.  I have found these settings to work best for me so far:<br />
+[[OEPocketsphinxController sharedInstance] setSecondsOfSilenceToDetect:0.2];<br />
+[[OEPocketsphinxController sharedInstance] setVadThreshold:3.0];</p>
+<p>I was hoping for better recognition accuracy and better noise reduction in 2.0 because I wanted to add more words to my vocabulary and more functionality to my app. I will continue testing, but I will consider this case closed. Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/decrease-in-speech-recognition-accuracy-after-updating-to-openears-2-0/#post-1024089</guid>
+					<title><![CDATA[Reply To: [Resolved] decrease in speech recognition accuracy after updating to OpenEars 2.0]]></title>
+					<link>/forums/topic/decrease-in-speech-recognition-accuracy-after-updating-to-openears-2-0/#post-1024089</link>
+					<pubDate>Tue, 06 Jan 2015 18:07:01 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>You might want to take a look at OpenEars 2.01 out today, which has a fix which should improve accuracy and detection in some cases.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

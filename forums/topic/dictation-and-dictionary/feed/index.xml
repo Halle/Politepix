@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Dictation and dictionary &#8211; Politepix</title>
+		<atom:link href="/forums/topic/dictation-and-dictionary/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/dictation-and-dictionary/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:05:58 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/dictation-and-dictionary/#post-1020717</guid>
+					<title><![CDATA[Dictation and dictionary]]></title>
+					<link>/forums/topic/dictation-and-dictionary/#post-1020717</link>
+					<pubDate>Sun, 06 Apr 2014 18:47:41 +0000</pubDate>
+					<dc:creator>carydean7</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am developing a dictation app with the follow use case: use presses record button and speaks into ipad.  Each word spoken is dictated/displayed on the screen. </p>
+<p>My question is I need clarification on how openears works.  In reading the doc it references being able to have your own dictionary of words up to 200 in size but what about all the other words.  It appears that the use case for this implementation is if you want the user to say a given word which is associated function or action.  I don&#8217;t want that just want the user to dictate any number of or combination of words.  My question is what frameworks do I need for this type of dictation use case.  Would this be online or could it be done offline.  We are talking about a very large vocab.  </p>
+<p>Can anyone direct me to an example for this type of implementation.</p>
+<p>Thanks,</p>
+<p>Dean</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/dictation-and-dictionary/#post-1020718</guid>
+					<title><![CDATA[Reply To: Dictation and dictionary]]></title>
+					<link>/forums/topic/dictation-and-dictionary/#post-1020718</link>
+					<pubDate>Sun, 06 Apr 2014 19:00:02 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>To do large vocabulary dictation of any words the user might say you would need to use a cloud-based service such as Nuance Dragon SDK or AT&#038;T Watson, or you could use a UITextView and in that way allow your users to dictate into the online speech engine that is also used by Siri. I don&#8217;t give support for those approaches here but there are many places where you can get information on SDKs for large vocabulary dictation tasks. </p>
+<p>OpenEars and its plugins are for performing offline recognition without requiring a data connection, so they are not designed for large vocabulary dictation tasks involving any word a user might say, but are optimized for fast offline recognition of smaller vocabularies for language models or grammars that can be configured in advance.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

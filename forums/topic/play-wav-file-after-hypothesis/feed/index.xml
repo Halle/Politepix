@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Play wav file after hypothesis &#8211; Politepix</title>
+		<atom:link href="/forums/topic/play-wav-file-after-hypothesis/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/play-wav-file-after-hypothesis/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:09:10 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/play-wav-file-after-hypothesis/#post-1022600</guid>
+					<title><![CDATA[Play wav file after hypothesis]]></title>
+					<link>/forums/topic/play-wav-file-after-hypothesis/#post-1022600</link>
+					<pubDate>Mon, 22 Sep 2014 15:36:18 +0000</pubDate>
+					<dc:creator>kelvinKW</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello!</p>
+<p>Is there any method that can allow OpenEars, after recognition<br />
+, playing a wav/mp3 file after hypothesis?</p>
+<p>Thank you!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/play-wav-file-after-hypothesis/#post-1022601</guid>
+					<title><![CDATA[Reply To: Play wav file after hypothesis]]></title>
+					<link>/forums/topic/play-wav-file-after-hypothesis/#post-1022601</link>
+					<pubDate>Mon, 22 Sep 2014 15:38:55 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>This is outside of OpenEars&#8217; API since it isn&#8217;t intended to be a general-purpose audio toolkit, but you can just play back a WAV using AVAudioPlayer after receiving a hypothesis. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/play-wav-file-after-hypothesis/#post-1022606</guid>
+					<title><![CDATA[Reply To: Play wav file after hypothesis]]></title>
+					<link>/forums/topic/play-wav-file-after-hypothesis/#post-1022606</link>
+					<pubDate>Tue, 23 Sep 2014 01:09:29 +0000</pubDate>
+					<dc:creator>kelvinKW</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for your answer!</p>
+<p>But how can I modify the source code ?<br />
+Is it modify at self.heardtextview.text?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/play-wav-file-after-hypothesis/#post-1022607</guid>
+					<title><![CDATA[Reply To: Play wav file after hypothesis]]></title>
+					<link>/forums/topic/play-wav-file-after-hypothesis/#post-1022607</link>
+					<pubDate>Tue, 23 Sep 2014 06:59:14 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You can put AVAudioPlayer playback in &#8211; (void) pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/play-wav-file-after-hypothesis/#post-1022703</guid>
+					<title><![CDATA[Reply To: Play wav file after hypothesis]]></title>
+					<link>/forums/topic/play-wav-file-after-hypothesis/#post-1022703</link>
+					<pubDate>Thu, 09 Oct 2014 05:47:37 +0000</pubDate>
+					<dc:creator>kelvinKW</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry, I need another help.</p>
+<p>The situation is that, I want to produce different mp3 sound for each recognition.</p>
+<p>Example is that:</p>
+<p>When pocketsplinx receive hypothesis A, after recognition, it will play<br />
+A.mp3</p>
+<p>When pocketsplinx receive hypothesis B, after recognition, it will play<br />
+B.mp3</p>
+<p>How can I modify the source code to let such happen?</p>
+<p>thank you!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/play-wav-file-after-hypothesis/#post-1022706</guid>
+					<title><![CDATA[Reply To: Play wav file after hypothesis]]></title>
+					<link>/forums/topic/play-wav-file-after-hypothesis/#post-1022706</link>
+					<pubDate>Thu, 09 Oct 2014 07:21:59 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>It&#8217;s the same answer as my first answer above. OpenEars doesn&#8217;t play audio files, so you don&#8217;t have to modify OpenEars&#8217; source code in order to do that. You will put the logic for playing audio files in your own app code, and you can use OpenEars&#8217; API to decide when to trigger that code in your app.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/play-wav-file-after-hypothesis/#post-1022739</guid>
+					<title><![CDATA[Reply To: Play wav file after hypothesis]]></title>
+					<link>/forums/topic/play-wav-file-after-hypothesis/#post-1022739</link>
+					<pubDate>Mon, 13 Oct 2014 12:58:55 +0000</pubDate>
+					<dc:creator>kelvinKW</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>&#8220;You will put the logic for playing audio files in your own app code, and you can use OpenEars’ API to decide when to trigger that code in your app.&#8221;</p>
+<p>Can you explain this with more detail?<br />
+Since I am quite confusing about this.</p>
+<p>thank you</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/play-wav-file-after-hypothesis/#post-1022740</guid>
+					<title><![CDATA[Reply To: Play wav file after hypothesis]]></title>
+					<link>/forums/topic/play-wav-file-after-hypothesis/#post-1022740</link>
+					<pubDate>Mon, 13 Oct 2014 13:05:24 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>Sorry, that is getting into more general questions about how to use Objective-C to develop apps. As much as I wish I could assist with those more general questions, I only have the resources to offer help with OpenEars here.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

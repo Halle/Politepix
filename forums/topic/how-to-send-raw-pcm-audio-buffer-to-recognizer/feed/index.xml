@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>How to send raw PCM audio buffer to recognizer? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/how-to-send-raw-pcm-audio-buffer-to-recognizer/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/how-to-send-raw-pcm-audio-buffer-to-recognizer/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:54:32 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/how-to-send-raw-pcm-audio-buffer-to-recognizer/#post-1017108</guid>
+					<title><![CDATA[How to send raw PCM audio buffer to recognizer?]]></title>
+					<link>/forums/topic/how-to-send-raw-pcm-audio-buffer-to-recognizer/#post-1017108</link>
+					<pubDate>Thu, 02 May 2013 00:08:48 +0000</pubDate>
+					<dc:creator>lparker</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>What is the best way to interface with OpenEars if I handle the audio capture on my own and thus already have a ringbuffer of linear PCM samples?</p>
+<p>Any help appreciated.</p>
+<p>Thanks,</p>
+<p>Linda</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-to-send-raw-pcm-audio-buffer-to-recognizer/#post-1017114</guid>
+					<title><![CDATA[Reply To: How to send raw PCM audio buffer to recognizer?]]></title>
+					<link>/forums/topic/how-to-send-raw-pcm-audio-buffer-to-recognizer/#post-1017114</link>
+					<pubDate>Thu, 02 May 2013 06:53:43 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Linda,</p>
+<p>The only way to do this in the API is to write them out as a WAV and submit them to runRecognitionOnWavFileAtPath:(NSString *)wavPath usingLanguageModelAtPath:(NSString *)languageModelPath dictionaryAtPath:(NSString *)dictionaryPath languageModelIsJSGF:(BOOL)languageModelIsJSGF;</p>
+<p>However, it should be pretty quick since it doesn&#8217;t need to calibrate.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

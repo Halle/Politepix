@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>recognition is suspended &#8211; Politepix</title>
+		<atom:link href="/forums/topic/recognition-is-suspended/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/recognition-is-suspended/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:49:19 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/recognition-is-suspended/#post-1019166</guid>
+					<title><![CDATA[recognition is suspended]]></title>
+					<link>/forums/topic/recognition-is-suspended/#post-1019166</link>
+					<pubDate>Sat, 14 Dec 2013 18:29:01 +0000</pubDate>
+					<dc:creator>misterwolf</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>hello to all! :)<br />
+i have this question:<br />
+is there a way to check if the controller is suspended?<br />
+like:<br />
+pocketsphinxController.recognitionIsSuspended;<br />
+?</p>
+<p>thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recognition-is-suspended/#post-1019167</guid>
+					<title><![CDATA[Reply To: recognition is suspended]]></title>
+					<link>/forums/topic/recognition-is-suspended/#post-1019167</link>
+					<pubDate>Sun, 15 Dec 2013 10:13:03 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Sorry, there is no isSuspended property. Suspension can only happen under the circumstances that you invoke it or you have sent speech while recognition is in progress, so in the first case you originated the state and will also originate its end, and in the second case it can be tracked with the TTS callbacks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recognition-is-suspended/#post-1019168</guid>
+					<title><![CDATA[Reply To: recognition is suspended]]></title>
+					<link>/forums/topic/recognition-is-suspended/#post-1019168</link>
+					<pubDate>Sun, 15 Dec 2013 16:40:40 +0000</pubDate>
+					<dc:creator>misterwolf</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>hello halle,<br />
+thanks for your response!</p>
+<p>i write here another question without open another topic, if it is possible&#8230; :</p>
+<p>there is a way to call pocketsphinxDidReceiveHypothesis method or only eventobserver can do it?  </p>
+<p>thanks again!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recognition-is-suspended/#post-1019169</guid>
+					<title><![CDATA[Reply To: recognition is suspended]]></title>
+					<link>/forums/topic/recognition-is-suspended/#post-1019169</link>
+					<pubDate>Sun, 15 Dec 2013 19:53:34 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You&#8217;re welcome &#8212; the method is called by an event occurring (a hypothesis being available after recognition has been completed by the engine) so even if you could call it yourself, there wouldn&#8217;t be any information provided by it that you could use to drive an action.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

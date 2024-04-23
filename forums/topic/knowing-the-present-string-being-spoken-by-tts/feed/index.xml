@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Knowing the present string being spoken by TTS &#8211; Politepix</title>
+		<atom:link href="/forums/topic/knowing-the-present-string-being-spoken-by-tts/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/knowing-the-present-string-being-spoken-by-tts/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:48:21 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/knowing-the-present-string-being-spoken-by-tts/#post-15130</guid>
+					<title><![CDATA[Knowing the present string being spoken by TTS]]></title>
+					<link>/forums/topic/knowing-the-present-string-being-spoken-by-tts/#post-15130</link>
+					<pubDate>Wed, 26 Dec 2012 13:53:04 +0000</pubDate>
+					<dc:creator>Arpit Raniwala</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello<br />
+I am using the openEars text to speech feature in my app. but somewhere i want my app to know which string is currently being spoken by the TTS. is it possible for me to know this using some methods of openEar framework?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/knowing-the-present-string-being-spoken-by-tts/#post-15131</guid>
+					<title><![CDATA[Reply To: Knowing the present string being spoken by TTS]]></title>
+					<link>/forums/topic/knowing-the-present-string-being-spoken-by-tts/#post-15131</link>
+					<pubDate>Wed, 26 Dec 2012 13:58:33 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Isn&#8217;t it just the string that you have entered into FliteController&#8217;s say:withVoice: method? Maybe I&#8217;m not understanding your question 100%, can you elaborate on why you can&#8217;t use your own string that you entered into say:withVoice:?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/knowing-the-present-string-being-spoken-by-tts/#post-15132</guid>
+					<title><![CDATA[Reply To: Knowing the present string being spoken by TTS]]></title>
+					<link>/forums/topic/knowing-the-present-string-being-spoken-by-tts/#post-15132</link>
+					<pubDate>Wed, 26 Dec 2012 14:04:44 +0000</pubDate>
+					<dc:creator>Arpit Raniwala</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Actually its like i have a very long string and while TTS is reading the string, i also want to highlight the string that is presently being read. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/knowing-the-present-string-being-spoken-by-tts/#post-15133</guid>
+					<title><![CDATA[Reply To: Knowing the present string being spoken by TTS]]></title>
+					<link>/forums/topic/knowing-the-present-string-being-spoken-by-tts/#post-15133</link>
+					<pubDate>Wed, 26 Dec 2012 14:15:57 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, that makes sense, but there is no callback which identifies the word that is being spoken because the entire phase is synthesized at once when you use FliteController. The best workaround would be to send a series of very short statements, highlighting the statement as you send it.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/knowing-the-present-string-being-spoken-by-tts/#post-15134</guid>
+					<title><![CDATA[Reply To: Knowing the present string being spoken by TTS]]></title>
+					<link>/forums/topic/knowing-the-present-string-being-spoken-by-tts/#post-15134</link>
+					<pubDate>Wed, 26 Dec 2012 14:34:17 +0000</pubDate>
+					<dc:creator>Arpit Raniwala</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Pronunciation Scoring algorithm comparison &#8211; Politepix</title>
+		<atom:link href="/forums/topic/pronunciation-scoring-algorithm-comparison/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/pronunciation-scoring-algorithm-comparison/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:48:02 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/pronunciation-scoring-algorithm-comparison/#post-1015785</guid>
+					<title><![CDATA[Pronunciation Scoring algorithm comparison]]></title>
+					<link>/forums/topic/pronunciation-scoring-algorithm-comparison/#post-1015785</link>
+					<pubDate>Sun, 03 Mar 2013 17:07:18 +0000</pubDate>
+					<dc:creator>tmtariq</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello, I am just curios to know if the Pronunciation Scoring algorithm used in OpenEar is same as the following python project.</p>
+<p><a href="http://cmusphinx.sourceforge.net/2012/08/gsoc-2012-pronunciation-evaluation-using-cmusphinx-%E2%80%93-project-conclusions/" rel="nofollow">http://cmusphinx.sourceforge.net/2012/08/gsoc-2012-pronunciation-evaluation-using-cmusphinx-%E2%80%93-project-conclusions/</a><br />
+<a href="http://cmusphinx.svn.sourceforge.net/viewvc/cmusphinx/branches/speecheval/ronanki/" rel="nofollow">http://cmusphinx.svn.sourceforge.net/viewvc/cmusphinx/branches/speecheval/ronanki/</a></p>
+<p>But the Scoring results from the python project seems more accurate and correct. Can I use this python project with OpenEar in iOS application.</p>
+<p>Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pronunciation-scoring-algorithm-comparison/#post-1015799</guid>
+					<title><![CDATA[Reply To: Pronunciation Scoring algorithm comparison]]></title>
+					<link>/forums/topic/pronunciation-scoring-algorithm-comparison/#post-1015799</link>
+					<pubDate>Tue, 05 Mar 2013 09:22:01 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome, </p>
+<p>Sorry, I don&#8217;t know which algorithm they used and whether it&#8217;s the same (or, without a direct comparison of identical data and information on what the actual results are to compare it with, if there is a difference in scoring accuracy). There is no Python support in iOS, so I think your option would only be to port it to C/C++/Objective-C if you discover that it is a better algorithm.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pronunciation-scoring-algorithm-comparison/#post-1015800</guid>
+					<title><![CDATA[Reply To: Pronunciation Scoring algorithm comparison]]></title>
+					<link>/forums/topic/pronunciation-scoring-algorithm-comparison/#post-1015800</link>
+					<pubDate>Tue, 05 Mar 2013 10:36:27 +0000</pubDate>
+					<dc:creator>tmtariq</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thank you,</p>
+<p>Python code works as below for pronunciation score. I just want to know your scoring routines works like below (no need to be exactly the same). This way I will not required to port all python code (or even a single line). It will save a lot of my time.</p>
+<p>Python Scoring Routines Text Dependent:<br />
+This method is based on exemplars for each phrase. Initially, mean acoustic score, mean duration along with deviations are calculated for each of the phone in the phrase based on exemplar recordings (acoustic scores for each phoneme from audio file can be calculated using pocketsphinx). Now, given the test recording, each phone in the phrase is then compared with exemplar statistics. After that, z-scores are calculated and then normalized scores are calculated based on maximum and minimum of z-scores from exemplar recordings. All phone scores are aggregated to get word score and then all word scores are aggregated with POS weight to get complete phrase score.</p>
+<p>You can find more details here:<br />
+<a href="http://goo.gl/cvaAH" rel="nofollow">http://goo.gl/cvaAH</a></p>
+<p>Regards,</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pronunciation-scoring-algorithm-comparison/#post-1015801</guid>
+					<title><![CDATA[Reply To: Pronunciation Scoring algorithm comparison]]></title>
+					<link>/forums/topic/pronunciation-scoring-algorithm-comparison/#post-1015801</link>
+					<pubDate>Tue, 05 Mar 2013 14:11:25 +0000</pubDate>
+					<dc:creator>tmtariq</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Also, Please let me know if the OpenEar do word based recognition or phonics based recognition?</p>
+<p>Regards,</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pronunciation-scoring-algorithm-comparison/#post-1015802</guid>
+					<title><![CDATA[Reply To: Pronunciation Scoring algorithm comparison]]></title>
+					<link>/forums/topic/pronunciation-scoring-algorithm-comparison/#post-1015802</link>
+					<pubDate>Tue, 05 Mar 2013 18:42:42 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I don&#8217;t have time right now to read the full project notes, but that project refers to new ground for the engine &#8212; pronunciation scoring is a different task than word scoring. I don&#8217;t know of any recognition engines that do recognition of phonemes with pronunciation scoring as a default function rather than word recognition that can be repurposed for pronunciation scoring. My understanding is that Sphinx 3 has the most functionality for delivering recognition as phonemes rather than words.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

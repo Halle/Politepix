@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Pause and re-play in Synthesized speech? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/pause-and-re-play-in-synthesized-speech/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/pause-and-re-play-in-synthesized-speech/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:02:57 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/pause-and-re-play-in-synthesized-speech/#post-1017924</guid>
+					<title><![CDATA[Pause and re-play in Synthesized speech?]]></title>
+					<link>/forums/topic/pause-and-re-play-in-synthesized-speech/#post-1017924</link>
+					<pubDate>Fri, 09 Aug 2013 03:50:37 +0000</pubDate>
+					<dc:creator>karate362</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello, I have tried the TTS engine in openers, it works well. But I am wondering that Is it possible to pause a Synthesized speech and then restart it from the same place? Additionally, after I called [FliteController say:], could I access the progress state when it is speaking?(e.g. what sentence it is speaking)</p>
+<p>Many thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pause-and-re-play-in-synthesized-speech/#post-1017926</guid>
+					<title><![CDATA[Reply To: Pause and re-play in Synthesized speech?]]></title>
+					<link>/forums/topic/pause-and-re-play-in-synthesized-speech/#post-1017926</link>
+					<pubDate>Fri, 09 Aug 2013 07:47:13 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Sorry, you can&#8217;t pause and restart FliteController speech. The progress state is a new feature of NeatSpeech 1.5 that is about to be released.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

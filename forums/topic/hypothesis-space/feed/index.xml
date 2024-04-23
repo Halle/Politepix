@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Hypothesis space &#8211; Politepix</title>
+		<atom:link href="/forums/topic/hypothesis-space/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/hypothesis-space/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:55:18 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/hypothesis-space/#post-4079</guid>
+					<title><![CDATA[Hypothesis space]]></title>
+					<link>/forums/topic/hypothesis-space/#post-4079</link>
+					<pubDate>Sun, 05 Jun 2011 10:35:38 +0000</pubDate>
+					<dc:creator>akaniklaus</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Dear Halle,</p>
+<p>For the current project that I am working now. I need to get the set of all hypothesis for each recognized word, together with their confidence (I think this should be calculated using prior probabilities) values.</p>
+<p>Do you think that this is possible? If it is, can you please help me out? I am also starting to try out but I wanted to ask you in advance as you were very helpful on my previous question.</p>
+<p>I will also write here if I have a problem or successful attempt in order to help other users of OpenEars having similar questions.</p>
+<p>Thank you very much&#8230;</p>
+<p>Sincerely,</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/hypothesis-space/#post-4080</guid>
+					<title><![CDATA[Reply To: Hypothesis space]]></title>
+					<link>/forums/topic/hypothesis-space/#post-4080</link>
+					<pubDate>Sun, 05 Jun 2011 10:57:52 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi akaniklaus,</p>
+<p>Can you describe more specifically which aspect of that task you are having difficulty with and in what area of the implementation? If I were doing this I guess I would put the utterances in an NSMutableDictionary as they come in, or possible write them out to a plist or some combination of the above depending on the eventual use of the data.  I presume that you know the expected recognition, and the utterance id (a good key for the dictionary entry), the hypothesis, and the confidence score are all delivered by the OpenEarsEventsObserver method.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/hypothesis-space/#post-4081</guid>
+					<title><![CDATA[Reply To: Hypothesis space]]></title>
+					<link>/forums/topic/hypothesis-space/#post-4081</link>
+					<pubDate>Sun, 05 Jun 2011 11:51:00 +0000</pubDate>
+					<dc:creator>akaniklaus</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Dear Halle,</p>
+<p>Sorry, i just had a baby yesterday; so, I did not have time to check it in detail.</p>
+<p>I do not think that I will have difficulties on how to use the data once I get it.</p>
+<p>pocketsphinxDidReceiveHypothesis callback function of the OpenEarsEventsObserver, seems to deliver only the hypothesis with the highest prior probability (for each utterance)</p>
+<p>However, I want to learn all of hypotheses together with their confidence values to reduce the effect of the word recognition error rate in my research.</p>
+<p>Is there any function of OpenEars that I can do that? Maybe not all of them, but N-best hypothesis for each recognized word would also be appreciated.</p>
+<p>In other words, I need to get the alternatives for each recognized word (similar to a confusion set).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/hypothesis-space/#post-4082</guid>
+					<title><![CDATA[Reply To: Hypothesis space]]></title>
+					<link>/forums/topic/hypothesis-space/#post-4082</link>
+					<pubDate>Sun, 05 Jun 2011 12:24:16 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Congratulations! </p>
+<p>OK, this is actually pretty far outside of the OpenEars purview since it isn&#8217;t really designed as a research tool that propagates every available Pocketsphinx function through to an Objective-C interface, but it should be no problem getting it answered as a Pocketsphinx question over in the Sphinx forums as long as you are very precise:</p>
+<p><a href="http://sourceforge.net/p/cmusphinx/discussion/help/" rel="nofollow">http://sourceforge.net/p/cmusphinx/discussion/help/</a></p>
+<p>I answer these ones occasionally when it&#8217;s fairly self-evident in the Pocketsphinx codebase, but this one is not to me (and if I&#8217;m not mistaken, it also looks like it might be different for LMs versus FSGs) so it&#8217;s probably a better call to go to the source.  Once you know the C implementation details, I can help you with the details of returning the data through OpenEars if needed.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/hypothesis-space/#post-4083</guid>
+					<title><![CDATA[Reply To: Hypothesis space]]></title>
+					<link>/forums/topic/hypothesis-space/#post-4083</link>
+					<pubDate>Sun, 05 Jun 2011 14:05:04 +0000</pubDate>
+					<dc:creator>akaniklaus</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thank you very much.</p>
+<p>Then, I guess that I will try it with the python wrapper of Pocketsphinx first, to understand which functions are useful because it is not very clear in its codebase as you also said.</p>
+<p>I understood how to return the data through OpenEars thanks to your very well commented code, I do not think that it will be problem. Just need to solve C implementation details.</p>
+<p>Have a nice day. Sincerely,</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/hypothesis-space/#post-4084</guid>
+					<title><![CDATA[Reply To: Hypothesis space]]></title>
+					<link>/forums/topic/hypothesis-space/#post-4084</link>
+					<pubDate>Wed, 08 Jun 2011 13:31:45 +0000</pubDate>
+					<dc:creator>edgecase</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi akaniklaus &amp; Halle, I just wanted to say I&#8217;d also like to use the multiple hypotheses returned by sphinx, through OpenEars if possible, so if you do get this figured out please post a follow-up &#8211; even if it&#8217;s not in the official release I&#8217;d be interested to help test :)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/hypothesis-space/#post-4085</guid>
+					<title><![CDATA[Reply To: Hypothesis space]]></title>
+					<link>/forums/topic/hypothesis-space/#post-4085</link>
+					<pubDate>Wed, 08 Jun 2011 13:44:52 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, I&#8217;m still up for taking a look and maybe posting sample code for returning it through OpenEars if akaniklaus has some known-working C code for this later. This is unlikely to become a feature of OpenEars because it&#8217;s (IMO) esoteric, but it is probably easy to patch in a new OpenEarsEventsObserver delegate method.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/hypothesis-space/#post-8705</guid>
+					<title><![CDATA[Reply To: Hypothesis space]]></title>
+					<link>/forums/topic/hypothesis-space/#post-8705</link>
+					<pubDate>Sun, 04 Mar 2012 15:12:32 +0000</pubDate>
+					<dc:creator>rem1974</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi all,<br />
+Would be great to know if you managed to get the n-best list and scores, and not only one hypothesys and score.</p>
+<p>Please update if you did.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/hypothesis-space/#post-1016414</guid>
+					<title><![CDATA[Reply To: Hypothesis space]]></title>
+					<link>/forums/topic/hypothesis-space/#post-1016414</link>
+					<pubDate>Mon, 25 Mar 2013 16:34:39 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Just following up here that OpenEars has had N-Best hypotheses and scoring since version 1.1.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

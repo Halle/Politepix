@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Avoid noises &#8211; Politepix</title>
+		<atom:link href="/forums/topic/avoid-noises/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/avoid-noises/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:50:31 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/avoid-noises/#post-1022575</guid>
+					<title><![CDATA[Avoid noises]]></title>
+					<link>/forums/topic/avoid-noises/#post-1022575</link>
+					<pubDate>Wed, 17 Sep 2014 12:41:58 +0000</pubDate>
+					<dc:creator>Siddharth</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>When I blow air or make some noises near my phone then also some random words from my text file is being printed.<br />
+How can I avoid such noises or utterances? Is it possible with Rejecto?<br />
+One more thing while using Rejecto we have to replace:</p>
+<p>NSError *err = [lmGenerator generateLanguageModelFromArray:words withFilesNamed:name forAcousticModelAtPath:[AcousticModel pathToModel:@&#8221;AcousticModelEnglish&#8221;]];</p>
+<p>by:</p>
+<p>NSError *err = [lmGenerator generateRejectingLanguageModelFromArray:words<br />
+ withFilesNamed:name<br />
+ withOptionalExclusions:nil<br />
+ usingVowelsOnly:FALSE<br />
+ withWeight:nil<br />
+ forAcousticModelAtPath:[AcousticModel pathToModel:@&#8221;AcousticModelEnglish&#8221;]]; // Change &#8220;AcousticModelEnglish&#8221; to &#8220;AcousticModelSpanish&#8221; to create a Spanish Rejecto model.</p>
+<p>But I have used a &#8220;someName.txt&#8221; file in which I have declared my words. So how is it possible to reject the words which I want to? Please I am not getting this Rejecto thing . Please explain me .</p>
+<p>Thank you in advance.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/avoid-noises/#post-1022576</guid>
+					<title><![CDATA[Reply To: Avoid noises]]></title>
+					<link>/forums/topic/avoid-noises/#post-1022576</link>
+					<pubDate>Wed, 17 Sep 2014 12:44:26 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You can&#8217;t load your words in from an external text file with Rejecto.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

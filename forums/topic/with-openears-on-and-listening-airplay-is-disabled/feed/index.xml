@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>With OpenEars on and listening, Airplay is disabled &#8211; Politepix</title>
+		<atom:link href="/forums/topic/with-openears-on-and-listening-airplay-is-disabled/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/with-openears-on-and-listening-airplay-is-disabled/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:02:11 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/with-openears-on-and-listening-airplay-is-disabled/#post-1020308</guid>
+					<title><![CDATA[With OpenEars on and listening, Airplay is disabled]]></title>
+					<link>/forums/topic/with-openears-on-and-listening-airplay-is-disabled/#post-1020308</link>
+					<pubDate>Mon, 24 Feb 2014 21:15:39 +0000</pubDate>
+					<dc:creator>wfilleman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>I&#8217;ve got my app(s) updated and submitted to Apple for approval (finger&#8217;s crossed) and I&#8217;m starting in on generating a couple of video how-to guides on the app.</p>
+<p>I&#8217;m using the MAC OS software called AirServer to Airplay the screen from my iOS device to my MAC to record. The problem I&#8217;m running into is whenever I have an active Airplay connection and I turn the mic on (activate OpenEars), the AirPlay connection is dropped until I turn off the mic (tell OpenEars to stop listening).</p>
+<p>Any ideas about what I can do to keep the Airplay connection active while using OpenEars?</p>
+<p>Thanks Halle!<br />
+Wes</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/with-openears-on-and-listening-airplay-is-disabled/#post-1020309</guid>
+					<title><![CDATA[Reply To: With OpenEars on and listening, Airplay is disabled]]></title>
+					<link>/forums/topic/with-openears-on-and-listening-airplay-is-disabled/#post-1020309</link>
+					<pubDate>Mon, 24 Feb 2014 21:39:37 +0000</pubDate>
+					<dc:creator>wfilleman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>Ok, found a partial workaround from: <a href="https://developer.apple.com/library/ios/qa/qa1803/_index.html" rel="nofollow">https://developer.apple.com/library/ios/qa/qa1803/_index.html</a></p>
+<p>Looks like iOS doesn&#8217;t let us do Airplay if we&#8217;re using the &#8220;VoiceChat&#8221; OpenEars option. Any of the other 4 options will allow Airplay, but then I lose the ability to play sounds from the app using the AudioServicesCreateSystemSoundID method. Specifically, iOS disables Airplay when using the AudioSession property: AVAudioSessionModeVoiceChat</p>
+<p>For now this will work for my demo video. The sound from the app isn&#8217;t necessary.</p>
+<p>If you happen to know of a combination of settings the .audioMode property that allows for speech recognition + sound playback + Airplay, I&#8217;m all ears, so to speak. My guess is that I&#8217;d need to change how I&#8217;m playing sounds and move away from the AudioServicesCreateSystemSoundID method.</p>
+<p>Thanks Halle,<br />
+Wes</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/with-openears-on-and-listening-airplay-is-disabled/#post-1020317</guid>
+					<title><![CDATA[Reply To: With OpenEars on and listening, Airplay is disabled]]></title>
+					<link>/forums/topic/with-openears-on-and-listening-airplay-is-disabled/#post-1020317</link>
+					<pubDate>Tue, 25 Feb 2014 09:43:06 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Wes,</p>
+<p>Sorry, I really don&#8217;t know the answer to that one – the audio modes are offered on an as-is basis since trying to find all their quirks with different configurations would be prohibitive in terms of time, especially since they can also change in iOS releases.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/with-openears-on-and-listening-airplay-is-disabled/#post-1020318</guid>
+					<title><![CDATA[Reply To: With OpenEars on and listening, Airplay is disabled]]></title>
+					<link>/forums/topic/with-openears-on-and-listening-airplay-is-disabled/#post-1020318</link>
+					<pubDate>Tue, 25 Feb 2014 09:45:22 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>My standard piece of advice for doing repeated short sounds is always to put them in an AVAudioPlayer that has been prepared to play or played silently once, since it doesn&#8217;t raise the same compatibility issues as AudioServicesCreateSystemSoundID (which compatibility issue is one of those quirks I mentioned).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/with-openears-on-and-listening-airplay-is-disabled/#post-1020340</guid>
+					<title><![CDATA[Reply To: With OpenEars on and listening, Airplay is disabled]]></title>
+					<link>/forums/topic/with-openears-on-and-listening-airplay-is-disabled/#post-1020340</link>
+					<pubDate>Tue, 25 Feb 2014 17:24:44 +0000</pubDate>
+					<dc:creator>wfilleman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks Halle,</p>
+<p>I did a little experimenting, and AVAudioPlayer works on the local iPad device and when Airplaying to another source, however, AVAudioPlayer has a bit of a delay (maybe 0.2 seconds) in playing the audio even after calling prepareToPlay. Seems like that&#8217;s the nature of this mechanism.</p>
+<p>In my case that wasn&#8217;t acceptable to convert over 100%, so I&#8217;ve gone back to using AudioServicesCreateSystemSoundID which give a nice immediate sound effect when only on the iOS device (no airplay).</p>
+<p>The workaround for anyone else reading is I look at the number of screens connected to the iOS device by calling [UIScreen screens]. If more than one (Airplay) then I configure PocketSphinx as the &#8220;Default&#8221; audioMode and use AVAudioPlayer to play my sounds. If there is only one screen then I configure PocketSphinx as the &#8220;VoiceChat&#8221; audioMode and use the AudioServicesCreateSystemSoundID method to create and play sounds.</p>
+<p>Not a perfect solution, but I figure that a little delay on the rarely used AirPlay mirroring is acceptable. 99% of the time the users would never run into this case and they get the optimal sound performance.</p>
+<p>Wes</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/with-openears-on-and-listening-airplay-is-disabled/#post-1020341</guid>
+					<title><![CDATA[Reply To: With OpenEars on and listening, Airplay is disabled]]></title>
+					<link>/forums/topic/with-openears-on-and-listening-airplay-is-disabled/#post-1020341</link>
+					<pubDate>Tue, 25 Feb 2014 17:47:49 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Wes,</p>
+<p>Sounds good, and thanks for documenting it for other readers.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

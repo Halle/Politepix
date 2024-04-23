@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>NeatSpeech ducking issue &#8211; Politepix</title>
+		<atom:link href="/forums/topic/neatspeech-ducking-issue/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/neatspeech-ducking-issue/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:43:20 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/neatspeech-ducking-issue/#post-1019058</guid>
+					<title><![CDATA[NeatSpeech ducking issue]]></title>
+					<link>/forums/topic/neatspeech-ducking-issue/#post-1019058</link>
+					<pubDate>Mon, 02 Dec 2013 16:23:34 +0000</pubDate>
+					<dc:creator>pdetagyos</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi there,</p>
+<p>I have set up my Audio Session to enable ducking of music while FliteController is playing its text-to-speech. This leads to some strange behavior when using NeatSpeech to say several sentences of text. Basically, the music will unduck and then duck again in between each sentence of text, which leads to a bad user experience.</p>
+<p>I have worked around this for the free TTS voices by modifying the FliteController source code to generate and save a WAV file of the TTS in the say:withVoice: method. The music will duck for the duration of the WAV file, which works great. I would like to use a similar solution for NeatSpeech, but since I don&#8217;t have the source code to the method sayWithNeatSpeech:withVoice: I am unable to do this.</p>
+<p>Do you have any suggestions? Is there a way to save the output of sayWithNeatSpeech:withVoice: to a WAV file? If not, what do you suggest?</p>
+<p>Thanks in advance.</p>
+<p>Peter</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-ducking-issue/#post-1019060</guid>
+					<title><![CDATA[Reply To: NeatSpeech ducking issue]]></title>
+					<link>/forums/topic/neatspeech-ducking-issue/#post-1019060</link>
+					<pubDate>Mon, 02 Dec 2013 16:55:58 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Have you tried setting fliteController&#8217;s noAudioSessionOverrides property to TRUE at the time that you initialize it? This will result in your having no participation from FliteController (which is also used by NeatSpeech) in your audio session settings at all, which might help.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-ducking-issue/#post-1019061</guid>
+					<title><![CDATA[Reply To: NeatSpeech ducking issue]]></title>
+					<link>/forums/topic/neatspeech-ducking-issue/#post-1019061</link>
+					<pubDate>Mon, 02 Dec 2013 17:53:58 +0000</pubDate>
+					<dc:creator>pdetagyos</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the quick response, Halle. That trick appears to work.</p>
+<p>However, the volume level for the TTS output is very low. Is there any way to &#8220;juice&#8221; the volume of the spoken text? When I was generating the WAV file, I ran the file through an amplification algorithm, but I cannot do that in this case.</p>
+<p>Any ideas?</p>
+<p>Thanks.</p>
+<p>Peter</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-ducking-issue/#post-1019062</guid>
+					<title><![CDATA[Reply To: NeatSpeech ducking issue]]></title>
+					<link>/forums/topic/neatspeech-ducking-issue/#post-1019062</link>
+					<pubDate>Mon, 02 Dec 2013 17:59:41 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Glad that worked. NeatSpeech is already amplified as loud as it can be without clipping, so amplifying more would result in distortion. But it might be that you are using an audio session setting in the rest of your app that reduces the playback volume level (for instance using the VoiceProcessing audio unit and type can do this) &#8212; have you checked out whether any other audio session settings you&#8217;re using in your app have side effects of reducing playback volume?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-ducking-issue/#post-1019063</guid>
+					<title><![CDATA[Reply To: NeatSpeech ducking issue]]></title>
+					<link>/forums/topic/neatspeech-ducking-issue/#post-1019063</link>
+					<pubDate>Mon, 02 Dec 2013 18:43:12 +0000</pubDate>
+					<dc:creator>pdetagyos</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The only audio session settings that I am messing with are the ones that involve ducking. I will double-check everything. </p>
+<p>Is there anything that you could suggest to increase the volume of the TTS?</p>
+<p>Thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-ducking-issue/#post-1019064</guid>
+					<title><![CDATA[Reply To: NeatSpeech ducking issue]]></title>
+					<link>/forums/topic/neatspeech-ducking-issue/#post-1019064</link>
+					<pubDate>Mon, 02 Dec 2013 19:16:23 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry, that&#8217;s my only theory &#8212; volume suppression can be a common side effect of audio session settings, but if it is just about the normal default volume, it&#8217;s as loud as it can be without distorting the voices. In my experience it&#8217;s about the same as the Google Maps and Siri speech levels so it might be worth checking those out to see if it&#8217;s just the general issue that TTS is sometimes a bit on the quiet side in order to play back without additional distortion, or if it is something related to the app settings.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

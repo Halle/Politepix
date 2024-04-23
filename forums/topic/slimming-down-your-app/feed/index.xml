@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Slimming down your app &#8211; Politepix</title>
+		<atom:link href="/forums/topic/slimming-down-your-app/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/slimming-down-your-app/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:02:51 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/slimming-down-your-app/#post-1018150</guid>
+					<title><![CDATA[Slimming down your app]]></title>
+					<link>/forums/topic/slimming-down-your-app/#post-1018150</link>
+					<pubDate>Tue, 27 Aug 2013 12:22:51 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>In order to make OpenEars as easy to integrate as possible, the tutorial has you import all of the voices and acoustic models into your app, but it isn&#8217;t necessary to ship with them all and these instructions are to help you keep your app lean and mean so it&#8217;s an easy download for your customers.</p>
+<p>These are the steps to take once you have your app working as designed:</p>
+<p>1. Turn on &#8220;Deployment Postprocessing&#8221; in Build Settings for your target.<br />
+2. If you are only using FliteController, remove any acoustic model bundles you imported (they begin with AcousticModel and end with the suffix .bundle).<br />
+3. If you are only using PocketsphinxController, remove any voice frameworks you&#8217;ve added such as Slt.framework.<br />
+4. If you are only doing speech recognition in English, remove AcousticModelSpanish.bundle, and if you are only doing speech recognition in Spanish, remove AcousticModelEnglish.bundle<br />
+5. If you are using NeatSpeech, remove any voice frameworks you aren&#8217;t using. If you aren&#8217;t using Spanish voices, you can remove RequiredSpanishData.bundle. If you aren&#8217;t using UK voices, you can remove RequiredUKEnglishData.bundle. If you aren&#8217;t using US voices you can remove RequiredUSEnglishData.bundle.<br />
+6. One last step is if you originally integrated OpenEars using a pre-1.5 version, but you are now using 1.5 or newer, you may have some extra files in your mainBundle from your previous installation. These files can be safely removed from your project (unless they reside within AcousticModelEnglish.bundle or AcousticModelSpanish.bundle within your project, in which case they are part of your 1.5 install and must be left alone):</p>
+<p>cmu07a.dic<br />
+feat.params<br />
+mdef<br />
+means<br />
+noisedict<br />
+sendump<br />
+transition_matrices<br />
+variances</p>
+<p>If you have any questions about this or if following these steps led to any unexpected outcomes, just come on by the <a href="/forums/openears">forums</a> and say hi and I will try to help.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

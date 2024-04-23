@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Way to see phonemes OpenEars heard &#8211; Politepix</title>
+		<atom:link href="/forums/topic/way-to-see-phonemes-openears-heard/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/way-to-see-phonemes-openears-heard/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:40:25 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/way-to-see-phonemes-openears-heard/#post-7598</guid>
+					<title><![CDATA[Way to see phonemes OpenEars heard]]></title>
+					<link>/forums/topic/way-to-see-phonemes-openears-heard/#post-7598</link>
+					<pubDate>Mon, 12 Sep 2011 14:54:22 +0000</pubDate>
+					<dc:creator>matth</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am using OpenEars in an iOS app to recognize individual numbers (ONE, TWO, THREE, etc.) spoken by children, but I&#8217;m getting pretty poor recognition (using OpenEars 0.912, mostly on an iPad).  About my only hope of getting this to work better is to put in additional entries in my .dic file for alternate pronunciations of the words (which I&#8217;ve done a little) in hopes of &#8220;teaching&#8221; it how a kid would say those words.  However, I really don&#8217;t know what to put for the alternate pronunciations.</p>
+<p>Is there any way to see what set of phonemes OpenEars thought it heard?  Then I could just show that somewhere as the app is being used and I could see what pronunciations I should add for each of the numbers.</p>
+<p>Thanks in advance for any insights.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/way-to-see-phonemes-openears-heard/#post-7599</guid>
+					<title><![CDATA[Reply To: Way to see phonemes OpenEars heard]]></title>
+					<link>/forums/topic/way-to-see-phonemes-openears-heard/#post-7599</link>
+					<pubDate>Mon, 12 Sep 2011 15:37:03 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Raw phonemes is something that I think only Sphinx 3 does, and IIRC with several caveats. I believe that the task you are doing is known to be very difficult to get good results for. There is an acoustic model called tidgits in [OPENEARS]/CMULibraries/pocketsphinx-0.6.1/model/hmm/en/tidigits with an accompanying language model in [OPENEARS]/CMULibraries/pocketsphinx-0.6.1/model/lm/en that I think is specifically oriented towards recognizing numbers that you might want to try instead of hub4wsj_sc_8k and your custom LM, although I&#8217;ve never used it myself so I can&#8217;t make any promises.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/way-to-see-phonemes-openears-heard/#post-7604</guid>
+					<title><![CDATA[Reply To: Way to see phonemes OpenEars heard]]></title>
+					<link>/forums/topic/way-to-see-phonemes-openears-heard/#post-7604</link>
+					<pubDate>Tue, 13 Sep 2011 14:18:00 +0000</pubDate>
+					<dc:creator>Joseph S. Wisniewski</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I do this as a diagnostic technique.</p>
+<p>* Build a dictionary with 40 words, each word being just one of the CMU phonemes<br />
+* Build a language model or FSG where each of the words can follow any other word</p>
+<p>Fair warning, the results will be very strange.</p>
+<p>tidigits is a very &#8220;clean&#8221; grammar, it works well with fluent speech. And, like most 8k models, it&#8217;s most effective on adult males. Kids work best with 16k models (so do women). I&#8217;d suggest switching over to VoxForge 0.4, from the CMU site. To make this work well, though, you really need models built from kid speech.</p>
+<p>You could try model adaptation.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/way-to-see-phonemes-openears-heard/#post-7606</guid>
+					<title><![CDATA[Reply To: Way to see phonemes OpenEars heard]]></title>
+					<link>/forums/topic/way-to-see-phonemes-openears-heard/#post-7606</link>
+					<pubDate>Tue, 13 Sep 2011 15:04:13 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The issue with the Voxforge models is that they aren&#8217;t license-compatible with App Store distribution.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

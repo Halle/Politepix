@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Open Ears is Unable to listen if music is turned on in the application. &#8211; Politepix</title>
+		<atom:link href="/forums/topic/open-ears-is-unable-to-listen-if-music-is-turned-on-in-the-application/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/open-ears-is-unable-to-listen-if-music-is-turned-on-in-the-application/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:07:42 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/open-ears-is-unable-to-listen-if-music-is-turned-on-in-the-application/#post-1020983</guid>
+					<title><![CDATA[Open Ears is Unable to listen if music is turned on in the application.]]></title>
+					<link>/forums/topic/open-ears-is-unable-to-listen-if-music-is-turned-on-in-the-application/#post-1020983</link>
+					<pubDate>Wed, 23 Apr 2014 13:06:19 +0000</pubDate>
+					<dc:creator>ravoorivaran</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,<br />
+Am so impressed by the way the open ears is working and the integration part has been made so easy than before.<br />
+Currently am working on a iOS application which has music and navigation modules in it.<br />
+When music is turned on and immediately turned off, and then i make PocketSphinx to listen, but it is unable to recognise the speech because of this(even though AVaudiosession is paused).<br />
+Please let me know what i have to do to make it work in this kind of scenarios.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/open-ears-is-unable-to-listen-if-music-is-turned-on-in-the-application/#post-1020986</guid>
+					<title><![CDATA[Reply To: Open Ears is Unable to listen if music is turned on in the application.]]></title>
+					<link>/forums/topic/open-ears-is-unable-to-listen-if-music-is-turned-on-in-the-application/#post-1020986</link>
+					<pubDate>Wed, 23 Apr 2014 13:27:23 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Sure, please check out the post <a href="/forums/topic/install-issues-and-their-solutions/">Please read before you post – how to troubleshoot and provide logging info here</a> so you can see how to turn on and share the logging that provides troubleshooting information for this kind of issue.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

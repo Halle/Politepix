@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Problems with Audio Session &#8211; Politepix</title>
+		<atom:link href="/forums/topic/problems-with-audio-session/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/problems-with-audio-session/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:39:50 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/problems-with-audio-session/#post-10009</guid>
+					<title><![CDATA[Problems with Audio Session]]></title>
+					<link>/forums/topic/problems-with-audio-session/#post-10009</link>
+					<pubDate>Fri, 29 Jun 2012 15:53:47 +0000</pubDate>
+					<dc:creator>Elsa</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m using Open Ears as a static library as I&#8217;m creating an iPad app with the AIR framework.<br />
+It was working fine until I tried to update Open Ears from 0.9 to 1.01. With that version I have problems with, I guess, the AudioSessionManager: when open ears is starting, all sounds from my main application are muted. I tried the soundMixing option, but it didn&#8217;t change anything (the recognition loop is always active through the app)<br />
+Do you know what could be the reason of such a difference between these two versions ? Do you have an idea on how to solve it ?<br />
+Thank you for your help,</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problems-with-audio-session/#post-10010</guid>
+					<title><![CDATA[Reply To: Problems with Audio Session]]></title>
+					<link>/forums/topic/problems-with-audio-session/#post-10010</link>
+					<pubDate>Fri, 29 Jun 2012 16:43:11 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Have you read the instructions on safely upgrading? <a href="/forums/topic/uninstalling-your-pre-1-0-openears-library-install-before-installing-1-x/">/forums/topic/uninstalling-your-pre-1-0-openears-library-install-before-installing-1-x/</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problems-with-audio-session/#post-10011</guid>
+					<title><![CDATA[Reply To: Problems with Audio Session]]></title>
+					<link>/forums/topic/problems-with-audio-session/#post-10011</link>
+					<pubDate>Fri, 29 Jun 2012 16:56:17 +0000</pubDate>
+					<dc:creator>Elsa</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yes I strictly followed these instructions. Open Ears is working perfectly well in both situations, it&#8217;s just on the AIR app side that sounds are muted with the 1.01 version.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problems-with-audio-session/#post-10012</guid>
+					<title><![CDATA[Reply To: Problems with Audio Session]]></title>
+					<link>/forums/topic/problems-with-audio-session/#post-10012</link>
+					<pubDate>Fri, 29 Jun 2012 18:09:17 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hmm, just to rule out any of the early bugs, can you upgrade to 1.1? I don&#8217;t really think that is your issue but it would be a good first step to set the level. Also it has nice new features, one of which is easier logging which might show us if there are any errors in the audio session manager.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problems-with-audio-session/#post-10014</guid>
+					<title><![CDATA[Reply To: Problems with Audio Session]]></title>
+					<link>/forums/topic/problems-with-audio-session/#post-10014</link>
+					<pubDate>Sat, 30 Jun 2012 11:50:55 +0000</pubDate>
+					<dc:creator>Elsa</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ok, I just upgraded to 1.1. Still the same issue. Here is the log : <a href="http://dl.dropbox.com/u/14292529/log.txt" rel="nofollow">http://dl.dropbox.com/u/14292529/log.txt</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problems-with-audio-session/#post-10018</guid>
+					<title><![CDATA[Reply To: Problems with Audio Session]]></title>
+					<link>/forums/topic/problems-with-audio-session/#post-10018</link>
+					<pubDate>Sun, 01 Jul 2012 09:24:17 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>What kind of sounds are these, sounds you are actively playing or system sounds?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problems-with-audio-session/#post-10019</guid>
+					<title><![CDATA[Reply To: Problems with Audio Session]]></title>
+					<link>/forums/topic/problems-with-audio-session/#post-10019</link>
+					<pubDate>Sun, 01 Jul 2012 09:26:35 +0000</pubDate>
+					<dc:creator>Elsa</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sounds I am actively playing in my main (AIR) app. They are working fine until open ears launches.<br />
+And if it may help, I&#8217;m not using Flite, so I don&#8217;t need Opean Ears to access to speakers</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problems-with-audio-session/#post-10021</guid>
+					<title><![CDATA[Reply To: Problems with Audio Session]]></title>
+					<link>/forums/topic/problems-with-audio-session/#post-10021</link>
+					<pubDate>Sun, 01 Jul 2012 09:47:35 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m a bit confused by the description &#8220;main app&#8221;, are there multiple apps in some sense?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problems-with-audio-session/#post-10022</guid>
+					<title><![CDATA[Reply To: Problems with Audio Session]]></title>
+					<link>/forums/topic/problems-with-audio-session/#post-10022</link>
+					<pubDate>Sun, 01 Jul 2012 10:23:50 +0000</pubDate>
+					<dc:creator>Elsa</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yes, sorry, I may be not very clear. I have an AIR app that launches a native process, in this case, Open Ears.<br />
+After some investigation, I commented every AudioSessionSetProperty in AudioSessionManager, and it&#8217;s working fine again (on iOS 5.1)&#8230; except on iPad 1 (iOS 4.3.5) : after Open Ears&#8217; launch, sounds continue playing, but Open Ears doesn&#8217;t seem to &#8220;hear&#8221; anything, as when I&#8217;m talking, nothing happens.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problems-with-audio-session/#post-10023</guid>
+					<title><![CDATA[Reply To: Problems with Audio Session]]></title>
+					<link>/forums/topic/problems-with-audio-session/#post-10023</link>
+					<pubDate>Sun, 01 Jul 2012 10:36:57 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, so that means that the issue is that it used to work because your AIR app was overriding the audio session in some way that it requires after OpenEars first established it, and it had the random luck to not break recognition (or if it had a negative effect on recognition, which is possible, we aren&#8217;t directly aware of it) but now that OpenEars does a sanity check for the required settings at every recognition round, the AIR app doesn&#8217;t control the audio session setting so it can&#8217;t do its audio playback in whatever the form is that it requires. </p>
+<p>You have a fix ,which is to break AudioSessionManager, but this will also probably have negative effects on OpenEars&#8217; performance. However, the previous AIR overriding that was working with the versions before 1.0 most likely also had the same effects so it might not seem like a problem. My random guess about the iPad is that of all your 4.x compatible devices, it may be the only one with only a single mic and whatever the AIR audio session settings are, they may force recognition to occur on a second mic.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

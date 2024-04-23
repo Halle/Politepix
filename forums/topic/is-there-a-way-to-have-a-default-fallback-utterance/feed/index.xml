@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Is there a way to have a default fallback utterance? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/is-there-a-way-to-have-a-default-fallback-utterance/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/is-there-a-way-to-have-a-default-fallback-utterance/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:54:01 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/is-there-a-way-to-have-a-default-fallback-utterance/#post-1022867</guid>
+					<title><![CDATA[Is there a way to have a default fallback utterance?]]></title>
+					<link>/forums/topic/is-there-a-way-to-have-a-default-fallback-utterance/#post-1022867</link>
+					<pubDate>Mon, 27 Oct 2014 03:34:00 +0000</pubDate>
+					<dc:creator>seanxiaoxiao</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi there,</p>
+<p>I would like to ask how to configure in the way such that open ear would support selected few commands. If none of the commands are spoken, open ear would report a empty utterance. My experience now is that it will randomly give me a one defined in the command line list if I failed to speak any of them. Sometimes the score is even 0.</p>
+<p>Thanks,<br />
+Sean</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/is-there-a-way-to-have-a-default-fallback-utterance/#post-1022869</guid>
+					<title><![CDATA[Reply To: Is there a way to have a default fallback utterance?]]></title>
+					<link>/forums/topic/is-there-a-way-to-have-a-default-fallback-utterance/#post-1022869</link>
+					<pubDate>Mon, 27 Oct 2014 07:51:26 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>There are many discussions about this in these forums – take a look through for similar topics.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

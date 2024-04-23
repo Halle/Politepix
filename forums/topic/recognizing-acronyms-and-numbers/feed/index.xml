@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Recognizing acronyms and numbers &#8211; Politepix</title>
+		<atom:link href="/forums/topic/recognizing-acronyms-and-numbers/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/recognizing-acronyms-and-numbers/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:38:52 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/recognizing-acronyms-and-numbers/#post-11533</guid>
+					<title><![CDATA[Recognizing acronyms and numbers]]></title>
+					<link>/forums/topic/recognizing-acronyms-and-numbers/#post-11533</link>
+					<pubDate>Thu, 04 Oct 2012 22:15:13 +0000</pubDate>
+					<dc:creator>gregquinn</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I need to recognize spoken numbers (one through ten) and acronyms (e.g. BBC, NBC, CBS and many many others). Does anyone have any pointers as to how I would generate the dictionary for this? I&#8217;ve played around with dynamic generation using languageModelGenerator&#8217;s generateLanguageModelFromArray but not with success.<br />
+Thanks<br />
+Greg</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recognizing-acronyms-and-numbers/#post-11534</guid>
+					<title><![CDATA[Reply To: Recognizing acronyms and numbers]]></title>
+					<link>/forums/topic/recognizing-acronyms-and-numbers/#post-11534</link>
+					<pubDate>Fri, 05 Oct 2012 08:55:22 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This is unfortunately something that doesn&#8217;t work that wonderfully with speech recognition &#8212; accuracy for this application of the functionality is never great. But it shouldn&#8217;t be any problem using the dynamic generation to create a language model that recognizes letters and numbers. In what sense is there no success, do you have low accuracy (that is unfortunately to be expected for the specified requirement) or do the language models lack entries for your letters and numbers?</p>
+<p>One thing you can try if you are dealing with entire acronyms that are known at the time of language model creation (versus arbitrary combinations of letters) is to use the whole acronym as the corpus or array entry and then edit the phonetic dictionary.</p>
+<p>So, instead of having these in the array: @&#8221;A&#8221;, @&#8221;B&#8221;, @&#8221;C&#8221;</p>
+<p>You would have this in the array: @&#8221;ABC&#8221;</p>
+<p>And then you would need to edit the phonetic dictionary which is created so that the pronunciation associated with the word &#8220;ABC&#8221; is the correct phoneme sounds for &#8220;A&#8221;, &#8220;B&#8221; and &#8220;C&#8221; in sequence.</p>
+<p>To work with already-created language model and dictionary files instead of making new ones at runtime you can follow these instructions from the docs:</p>
+<p>If you need to create a fixed language model ahead of time instead of creating it dynamically in your app, just use this method (or generateLanguageModelFromTextFile:withFilesNamed:) to submit your full language model using the Simulator and then use the <a href="/2011/05/13/open-the-simulator-sandbox-folder-of-the-app-you-just-built-and-ran/" rel="nofollow">Simulator documents folder script</a> to get the language model and dictionary file out of the documents folder and add it to your app bundle, referencing it from there.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recognizing-acronyms-and-numbers/#post-11537</guid>
+					<title><![CDATA[Reply To: Recognizing acronyms and numbers]]></title>
+					<link>/forums/topic/recognizing-acronyms-and-numbers/#post-11537</link>
+					<pubDate>Fri, 05 Oct 2012 12:41:06 +0000</pubDate>
+					<dc:creator>gregquinn</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks Halle, I&#8217;ll try your suggestions out.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

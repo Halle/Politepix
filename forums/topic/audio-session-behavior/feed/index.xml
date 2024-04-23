@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Audio Session Behavior &#8211; Politepix</title>
+		<atom:link href="/forums/topic/audio-session-behavior/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/audio-session-behavior/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:52:12 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/audio-session-behavior/#post-1017261</guid>
+					<title><![CDATA[Audio Session Behavior]]></title>
+					<link>/forums/topic/audio-session-behavior/#post-1017261</link>
+					<pubDate>Mon, 20 May 2013 11:49:32 +0000</pubDate>
+					<dc:creator>anujseth</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hey</p>
+<p>There is an older thread on this but just wanted to be sure if this is still the way to go, <a href="/forums/topic/flitecontroller-pauses-music/">/forums/topic/flitecontroller-pauses-music/</a></p>
+<p>I have an app (<a href="https://itunes.apple.com/us/app/hiit-stopwatch-for-iphone/id585542275?mt=8" rel="nofollow">https://itunes.apple.com/us/app/hiit-stopwatch-for-iphone/id585542275?mt=8</a>) that uses a lot of audio stuff and I&#8217;m trying to remove flite (which I was using directly) and add open ears but I&#8217;m getting horribly confused with the audio session behavior.</p>
+<p>I have double and triple checked my audio session initialization but the problems are consistent. Also the strange bit is that open ears will silence music after saying something but other sounds which are separate AVAudioPlayers will continue to work.</p>
+<p>Any suggestions on how I can control the open ears audio session setup ?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/audio-session-behavior/#post-1017262</guid>
+					<title><![CDATA[Reply To: Audio Session Behavior]]></title>
+					<link>/forums/topic/audio-session-behavior/#post-1017262</link>
+					<pubDate>Mon, 20 May 2013 12:00:13 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>Correct, there is no issue with AVAudioPlayer because it can make use of the playandrecord audio session setting, but background sounds and music use other categories that conflict with playandrecord due to what seems like an audiosession services bug. The suggestion in the other thread sounds like it would work fine for your requirements, what specifically about it is confusing? Maybe I can help.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/audio-session-behavior/#post-1017263</guid>
+					<title><![CDATA[Reply To: Audio Session Behavior]]></title>
+					<link>/forums/topic/audio-session-behavior/#post-1017263</link>
+					<pubDate>Mon, 20 May 2013 12:08:25 +0000</pubDate>
+					<dc:creator>anujseth</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Alright I&#8217;ll try the suggestions from the thread and get back. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/audio-session-behavior/#post-1017264</guid>
+					<title><![CDATA[Reply To: Audio Session Behavior]]></title>
+					<link>/forums/topic/audio-session-behavior/#post-1017264</link>
+					<pubDate>Mon, 20 May 2013 12:18:51 +0000</pubDate>
+					<dc:creator>anujseth</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yup this works,</p>
+<pre><code>
+// keep music playing
+        AudioSessionManager *oeAudioSessionManager = (AudioSessionManager *) [AudioSessionManager sharedAudioSessionManager];
+        oeAudioSessionManager.soundMixing = YES;
+        
+        // setup flite only after setting audio mixing
+        self.fliteController = [[FliteController alloc] init];
+        self.sltVoice = [[Slt alloc] init];
+        self.rmsVoice = [[Rms alloc] init];   
+</code></pre>
+<p>I also have my own audio session category code that takes care of ducking etc. as needed. </p>
+<p>Thanks. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/audio-session-behavior/#post-1017265</guid>
+					<title><![CDATA[Reply To: Audio Session Behavior]]></title>
+					<link>/forums/topic/audio-session-behavior/#post-1017265</link>
+					<pubDate>Mon, 20 May 2013 12:29:55 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Super!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/audio-session-behavior/#post-1017321</guid>
+					<title><![CDATA[Reply To: Audio Session Behavior]]></title>
+					<link>/forums/topic/audio-session-behavior/#post-1017321</link>
+					<pubDate>Tue, 28 May 2013 22:01:09 +0000</pubDate>
+					<dc:creator>adamastern</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>anujseth, could you please point me in the right direction for enabling ducking?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/audio-session-behavior/#post-1017322</guid>
+					<title><![CDATA[Reply To: Audio Session Behavior]]></title>
+					<link>/forums/topic/audio-session-behavior/#post-1017322</link>
+					<pubDate>Tue, 28 May 2013 22:17:31 +0000</pubDate>
+					<dc:creator>anujseth</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This example shows how its done, <a href="http://developer.apple.com/library/ios/#samplecode/Breadcrumb/Introduction/Intro.html" rel="nofollow">http://developer.apple.com/library/ios/#samplecode/Breadcrumb/Introduction/Intro.html</a>.</p>
+<p>Be sure to kill the audio session in the audioPlayerDidFinishPlaying:successfully: delegate call back else it will duck once and not restart.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

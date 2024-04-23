@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>JSGF Performance &#8211; Politepix</title>
+		<atom:link href="/forums/topic/jsgf-performance/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/jsgf-performance/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:57:11 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/jsgf-performance/#post-1021723</guid>
+					<title><![CDATA[JSGF Performance]]></title>
+					<link>/forums/topic/jsgf-performance/#post-1021723</link>
+					<pubDate>Sat, 21 Jun 2014 06:15:24 +0000</pubDate>
+					<dc:creator>cheapdevotion</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>In my project, I need the user to be able to give some pretty complex commands based on a number of things. For this reason, I chose to go with a JSGF file. Accuracy with this method is fantastic, but most phrases take around 8-10 seconds for the hypothesis to come back. Are there any tips that could help me improved the performance when using this method? Is there a different approach that I should be using?</p>
+<p>Here is a link to my JSGF file so you can see the kind of phrases that I am trying to create.</p>
+<p><a href="http://pastebin.com/K28M3XdE" rel="nofollow">http://pastebin.com/K28M3XdE</a></p>
+<p><a href="http://pastebin.com/K28M3XdE" title="http://pastebin.com/K28M3XdE" target="_blank" rel="nofollow"></a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/jsgf-performance/#post-1021732</guid>
+					<title><![CDATA[Reply To: JSGF Performance]]></title>
+					<link>/forums/topic/jsgf-performance/#post-1021732</link>
+					<pubDate>Sat, 21 Jun 2014 10:17:34 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Your JSGF looks good, but the decrease in speed is part and parcel of JSGF/FSG on the device. I also think grammars are a good idea for many projects so in order to help with that, I&#8217;ve added a couple of major features and a plugin in recent versions, which might get you to the performance you&#8217;d like to see.</p>
+<p>To start out, I developed a new standard grammar language for stock OpenEars that allows you to create dynamically generated grammars at runtime. You can read about it here:</p>
+<p><a href="/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/">/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/</a></p>
+<p>And here is more about it from CMU speech:</p>
+<p><a href="https://cmusphinx.sourceforge.net/2014/05/openears-introduces-easy-grammars-for-pocketsphinx/" rel="nofollow">https://cmusphinx.sourceforge.net/2014/05/openears-introduces-easy-grammars-for-pocketsphinx/</a></p>
+<p>Using this format instead of a single pre-written JSGF file can help you get that speed back by letting you work with multiple smaller grammars that are situationally appropriate depending on the UI branch the user is in. The grammars can be quickly switched between while the recognition loop is running, and generated very quickly from arbitrary input, so you can be very efficient creating the smallest possible grammars (and this will also help recognition). It will also, naturally, make it much faster and simpler to create and edit grammars.</p>
+<p>If that approach doesn&#8217;t help, the next option is to check out RuleORama:</p>
+<p><a href="/ruleorama">/ruleorama</a></p>
+<p>RuleORama is a paid plugin that uses the same grammar language as stock OpenEars described above, but it creates a sort of pseudogrammar which is much faster to return results, as fast as just using a language model. Even with RuleORama you would probably want to reduce your one large grammar into a few smaller ones that are separated by the phase of the decision tree that the user is in, just because RuleORama currently has some hard limits on complexity.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/jsgf-performance/#post-1021734</guid>
+					<title><![CDATA[Reply To: JSGF Performance]]></title>
+					<link>/forums/topic/jsgf-performance/#post-1021734</link>
+					<pubDate>Sat, 21 Jun 2014 20:50:43 +0000</pubDate>
+					<dc:creator>cheapdevotion</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Halle &#8211; thanks for getting back to me. Because my app is cordova based, I have written plugins for iOS (and pocketsphinx for Android), so I need a way to define my rules in a separate file that both systems can use.</p>
+<p>Splitting up the rules a bit has helped, and my idea is to use the Sphinx knowledge base generator to create language model and dictionary files for each type of crew member, and swap them on the fly. I tested this method this morning, and I am getting the following error when trying to swap the files:</p>
+<blockquote><p>Error: couldn&#8217;t get attributes of language model file.</p></blockquote>
+<p>If I use the file when I initially call startListeningWithLanguageModelAtPath, it works fine, it just fails with the changeLanguageModelToFile method.</p>
+<p>Thanks again!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/jsgf-performance/#post-1021735</guid>
+					<title><![CDATA[Reply To: JSGF Performance]]></title>
+					<link>/forums/topic/jsgf-performance/#post-1021735</link>
+					<pubDate>Sat, 21 Jun 2014 20:59:06 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Understood – for the most part I can really only help troubleshoot the grammar and language model output from OpenEars&#8217; generation methods, though. But, if you check out this post it will tell you about turning on OpenEarsLogging and verbosePocketsphinx, which is always a great first step to trying to locate the cause of an error:</p>
+<p><a href="/forums/topic/install-issues-and-their-solutions/">/forums/topic/install-issues-and-their-solutions/</a></p>
+<p>If you share the complete logging output here I can take a look and see if there is a straightforward reason for the error.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

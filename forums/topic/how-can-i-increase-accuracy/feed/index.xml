@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>How can I increase accuracy? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/how-can-i-increase-accuracy/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/how-can-i-increase-accuracy/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:08:48 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/how-can-i-increase-accuracy/#post-9637</guid>
+					<title><![CDATA[How can I increase accuracy?]]></title>
+					<link>/forums/topic/how-can-i-increase-accuracy/#post-9637</link>
+					<pubDate>Wed, 09 May 2012 11:06:23 +0000</pubDate>
+					<dc:creator>oganix</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m new to OpenEars and trying to the get numbers 1-100 recognized very well. To be clear, these numbers make up my whole vocabulary. So I have created a language model with the web tool and getting ok results. How can I go about improving the accuracy? Are any of the following can help me with that:</p>
+<p>1) Trying to create a better language model by using a different toolkit such as SRILM MITLM or IRSLM<br />
+2) Build a acoustic model model with just the numbers 1-10<br />
+3) Using LanguageModelGenerator<br />
+4) Using JSGF instead ARPA</p>
+<p>or is there any other thing I can try?</p>
+<p>Thanks in advance</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-can-i-increase-accuracy/#post-9638</guid>
+					<title><![CDATA[Reply To: How can I increase accuracy?]]></title>
+					<link>/forums/topic/how-can-i-increase-accuracy/#post-9638</link>
+					<pubDate>Wed, 09 May 2012 11:53:09 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi, </p>
+<p>Yes, recognizing numbers in isolation seems to be a difficult task for speech recognition engines.</p>
+<blockquote><p>1) Trying to create a better language model by using a different toolkit such as SRILM MITLM or IRSLM</p>
+<p>3) Using LanguageModelGenerator</p>
+</blockquote>
+<p>Most language modeling software uses a set or subset of a few existing algorithms, so I don&#8217;t think you need to do a lot of experimentation there. The LanguageModelGenerator uses another good package so you could probably just try out whether its output is preferable and then call it a day.</p>
+<blockquote><p>Build a acoustic model model with just the numbers 1-10</p></blockquote>
+<p>Don&#8217;t you need 1-100?  But you might want to investigate this approach and/or adapting the existing model with your new data: <a href="http://cmusphinx.sourceforge.net/wiki/tutorialadapt" rel="nofollow">http://cmusphinx.sourceforge.net/wiki/tutorialadapt</a></p>
+<p>It seems like the task of creating an acoustic model that just recognizes 1-100 with a number of different voice contributors and accents is constrained enough to be feasible for an app project.</p>
+<blockquote><p>Using JSGF instead ARPA</p></blockquote>
+<p>In my opinion after some recent experimentation, JSGF is too slow for a good UX. Other developers do use it so as I said this is a matter of opinion. You can use the garbage loop approach for out of vocabulary rejection as well with ARPA as with JSGF: <a href="http://sourceforge.net/p/cmusphinx/discussion/help/thread/cefe4df3" rel="nofollow">http://sourceforge.net/p/cmusphinx/discussion/help/thread/cefe4df3</a> which could be something that improves your results if the issue is too many false positives rather than too many false negatives or transposed recognitions.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-can-i-increase-accuracy/#post-9643</guid>
+					<title><![CDATA[Reply To: How can I increase accuracy?]]></title>
+					<link>/forums/topic/how-can-i-increase-accuracy/#post-9643</link>
+					<pubDate>Wed, 09 May 2012 11:58:20 +0000</pubDate>
+					<dc:creator>oganix</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks a lot for the quick response. Yes above I meant 1-100 not 1-10</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-can-i-increase-accuracy/#post-9644</guid>
+					<title><![CDATA[Reply To: How can I increase accuracy?]]></title>
+					<link>/forums/topic/how-can-i-increase-accuracy/#post-9644</link>
+					<pubDate>Wed, 09 May 2012 12:19:28 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>No problem. There is another potential complication that isn&#8217;t immediately obvious but that I&#8217;ve been trying to make a point of mentioning more frequently here, which is that a lot of developers specify apps with the idea that the device can be pretty far away from the user, but this actually gives the device speech recognition task an additional disadvantage that a desktop speech recognition application would be unlikely to have: a big mismatch between the design of the available microphone and the use that is being made of it. You can even see this with Siri if you open Notes and do dictation from a distance; return time from the server will get slower and accuracy will decrease because the iPhone mic is designed to be spoken directly into and to reject &#8220;background noise&#8221; which might be your user if they are far enough away and there are competitive sounds.</p>
+<p>This isn&#8217;t as big a deal with command and control language models/grammars, but as soon as you&#8217;re past 20 words or so you can start to see an impact. So another approach is to see if you can educate your users to not put too much distance between themselves and the device during app use.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-can-i-increase-accuracy/#post-9645</guid>
+					<title><![CDATA[Reply To: How can I increase accuracy?]]></title>
+					<link>/forums/topic/how-can-i-increase-accuracy/#post-9645</link>
+					<pubDate>Wed, 09 May 2012 12:25:21 +0000</pubDate>
+					<dc:creator>oganix</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Good point. Thanks again.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-can-i-increase-accuracy/#post-1021813</guid>
+					<title><![CDATA[Reply To: How can I increase accuracy?]]></title>
+					<link>/forums/topic/how-can-i-increase-accuracy/#post-1021813</link>
+					<pubDate>Wed, 02 Jul 2014 08:15:51 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Just wanted to follow up here that there is now a great method for doing dynamic JSGF grammars built into OpenEars: <a href="/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/">/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

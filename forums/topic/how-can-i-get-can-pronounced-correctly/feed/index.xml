@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>How can I get &#039;can&#039; pronounced correctly &#8211; Politepix</title>
+		<atom:link href="/forums/topic/how-can-i-get-can-pronounced-correctly/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/how-can-i-get-can-pronounced-correctly/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:55:26 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/how-can-i-get-can-pronounced-correctly/#post-1015940</guid>
+					<title><![CDATA[How can I get &#039;can&#039; pronounced correctly]]></title>
+					<link>/forums/topic/how-can-i-get-can-pronounced-correctly/#post-1015940</link>
+					<pubDate>Mon, 18 Mar 2013 02:39:47 +0000</pubDate>
+					<dc:creator>cgunn</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,<br />
+My app includes cooking recipes. They often have the word &#8220;can&#8221; in them, e.g. &#8220;a can of beans&#8221;. However, FliteController is pronouncing it as the common word &#8220;can&#8221; as in &#8220;How can I get&#8230;&#8221;, which turns out surprisingly different &#8211; more like &#8220;kn&#8221;. I have tried searching the recipes and substituting &#8220;can&#8221; with combinations like &#8220;caan&#8221;, caaan&#8221;, &#8220;kana&#8221;, &#8220;karn&#8221;, &#8220;kahn&#8221;, but none of those produce a satisfactory pronunciation.<br />
+I have been able to fix other issues like this, for example, I replace &#8220;cornflour&#8221; with &#8220;cornflower&#8221;<br />
+Any advice on how I might do this for &#8220;can&#8221;?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-can-i-get-can-pronounced-correctly/#post-1015946</guid>
+					<title><![CDATA[Reply To: How can I get &#039;can&#039; pronounced correctly]]></title>
+					<link>/forums/topic/how-can-i-get-can-pronounced-correctly/#post-1015946</link>
+					<pubDate>Mon, 18 Mar 2013 08:30:41 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hmm, have you tried two words? &#8220;CAH ANN&#8221; or something along those lines? Alternately, have you tried another voice? That&#8217;s actually a bit odd and sounds moderately buggy.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-can-i-get-can-pronounced-correctly/#post-1015953</guid>
+					<title><![CDATA[Reply To: How can I get &#039;can&#039; pronounced correctly]]></title>
+					<link>/forums/topic/how-can-i-get-can-pronounced-correctly/#post-1015953</link>
+					<pubDate>Tue, 19 Mar 2013 09:14:57 +0000</pubDate>
+					<dc:creator>cgunn</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Its not that odd. If you think about it, when you say the phrase &#8220;i can really do that&#8221; you pronounce the &#8216;can&#8217; in a very short &#8216;cn&#8217; way (regardless of your accent, I think), and its different with &#8220;can of beans&#8221;. So I wouldn&#8217;t really call it a bug &#8211; there is no way to differentiate the two unless you go into the complexity of analysing the context. Anyway, your suggestion of &#8220;CAH ANN&#8217; works a treat! And in my app, i am more likely to come across the &#8216;tin&#8217; can that the other one, so i am happy to go with that pronunciation. Thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-can-i-get-can-pronounced-correctly/#post-1015954</guid>
+					<title><![CDATA[Reply To: How can I get &#039;can&#039; pronounced correctly]]></title>
+					<link>/forums/topic/how-can-i-get-can-pronounced-correctly/#post-1015954</link>
+					<pubDate>Tue, 19 Mar 2013 09:27:56 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Happy it works!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

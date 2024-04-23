@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>suspend/resume question &#8211; Politepix</title>
+		<atom:link href="/forums/topic/suspendresume-question/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/suspendresume-question/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:47:56 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/suspendresume-question/#post-1015857</guid>
+					<title><![CDATA[suspend/resume question]]></title>
+					<link>/forums/topic/suspendresume-question/#post-1015857</link>
+					<pubDate>Mon, 11 Mar 2013 22:52:50 +0000</pubDate>
+					<dc:creator>bluemoonj</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am implementing a button with suspend/resume support,<br />
+when user holds the button, (touch down), voice recognition work, as soon as release the button (touch up inside), voice recognition suspend. </p>
+<p>but during the practical usage, very often, user release the button as soon as they finish the recording, this happens before OpenEars returns hypothesis, thus even user thinks he has finished the sentence, but the program got nothing since no hypothesis being returned. </p>
+<p>my question is, is there a way to force OpenEars finish current detection loop (and return hpyothesis if found any)  before suspending?</p>
+<p>thanks for any help in advance.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/suspendresume-question/#post-1015860</guid>
+					<title><![CDATA[Reply To: suspend/resume question]]></title>
+					<link>/forums/topic/suspendresume-question/#post-1015860</link>
+					<pubDate>Tue, 12 Mar 2013 07:54:49 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>There is no way in the API to submit speech for recognition arbitrarily instead of continuously (other than submitting a WAV file for recognition). Since this is more of an issue with the app state being unclear to the user while they are using a touch UI, one fix for it might be enhancing the visual UI so that it is clearer to the user that the recognition is still working. Another alternative would be to search for the one or two forum entries here in which someone hacked in forcing recognition at arbitrary intervals.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

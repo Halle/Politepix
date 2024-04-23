@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Detect if NeatSpeech is speaking &#8211; Politepix</title>
+		<atom:link href="/forums/topic/detect-if-neatspeech-is-speaking/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/detect-if-neatspeech-is-speaking/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:51:08 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/detect-if-neatspeech-is-speaking/#post-1020720</guid>
+					<title><![CDATA[Detect if NeatSpeech is speaking]]></title>
+					<link>/forums/topic/detect-if-neatspeech-is-speaking/#post-1020720</link>
+					<pubDate>Mon, 07 Apr 2014 01:57:31 +0000</pubDate>
+					<dc:creator>AlexMindSpace</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m trying to prevent a word from being added to the speech queue while the current word is being spoken. I know there is speechInProgress but unless I&#8217;m using it wrong then this works only with flitevoice(?) not NeatSpeech</p>
+<p>Is there another way to do this that I&#8217;m missing?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/detect-if-neatspeech-is-speaking/#post-1020723</guid>
+					<title><![CDATA[Reply To: Detect if NeatSpeech is speaking]]></title>
+					<link>/forums/topic/detect-if-neatspeech-is-speaking/#post-1020723</link>
+					<pubDate>Mon, 07 Apr 2014 07:28:41 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Speech is in progress is you have initiated speech and there hasn&#8217;t been a callback yet to fliteDidFinishSpeaking, so you could track it by keeping track of that state.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/detect-if-neatspeech-is-speaking/#post-1020779</guid>
+					<title><![CDATA[Reply To: Detect if NeatSpeech is speaking]]></title>
+					<link>/forums/topic/detect-if-neatspeech-is-speaking/#post-1020779</link>
+					<pubDate>Thu, 10 Apr 2014 03:24:33 +0000</pubDate>
+					<dc:creator>AlexMindSpace</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for getting back to me. </p>
+<p>I&#8217;m relatively new to Obj-C. How do you mean for me to keep track of whether or not there has been a callback to fliteDidFinishSpeaking. I mean the fliteDidFinishSpeaking method returns void and I&#8217;m not sure how you trak whether or not the method has been called.</p>
+<p>If you could clarify that&#8217;d be great</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/detect-if-neatspeech-is-speaking/#post-1020780</guid>
+					<title><![CDATA[Reply To: Detect if NeatSpeech is speaking]]></title>
+					<link>/forums/topic/detect-if-neatspeech-is-speaking/#post-1020780</link>
+					<pubDate>Thu, 10 Apr 2014 06:28:51 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Alex,</p>
+<p>fliteDidFinishSpeaking and all of the methods of OpenEarsEventsObserver are delegate methods, so take a look at the search results for &#8220;delegate methods in Objective-C&#8221; to learn about how they work (there are also examples of implementing OpenEars&#8217; delegate methods specifically in the sample app, but the use of delegates is an important tool in Objective-C programming so it will be really helpful to your adjustment to the new language to check in to the underlying principle). In Objective-C, delegates are basically how callbacks work in an object-oriented way, as well as serving some other functions that allow good object-oriented principles to be followed in software design. The initial learning curve is a little tricky but they are one of the most useful tools for design in our language and are an important part of all of the asynchronous APIs from Apple, not just OpenEars.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/detect-if-neatspeech-is-speaking/#post-1020847</guid>
+					<title><![CDATA[Reply To: Detect if NeatSpeech is speaking]]></title>
+					<link>/forums/topic/detect-if-neatspeech-is-speaking/#post-1020847</link>
+					<pubDate>Thu, 10 Apr 2014 22:58:47 +0000</pubDate>
+					<dc:creator>AlexMindSpace</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That worked great, thanks</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

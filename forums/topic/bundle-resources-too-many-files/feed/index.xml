@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Bundle Resources: Too many files? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/bundle-resources-too-many-files/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/bundle-resources-too-many-files/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:54:38 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/bundle-resources-too-many-files/#post-1017083</guid>
+					<title><![CDATA[Bundle Resources: Too many files?]]></title>
+					<link>/forums/topic/bundle-resources-too-many-files/#post-1017083</link>
+					<pubDate>Mon, 29 Apr 2013 18:04:58 +0000</pubDate>
+					<dc:creator>lmthekay</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>Our universal app is about to use NeatSpeech 1.01, RapidEars 1.1, and OpenEars 1.2.5.  I&#8217;ve used the demos and just plain OpenEars before deciding on this config.</p>
+<p>I&#8217;m wondering if we need all these files in Bundle Resources.  With all the fooling around I&#8217;ve been doing, maybe there are some unnecessary ones.  It may be obvious that some like the README file can be deleted, but I don&#8217;t want to take any chances without asking you.  Thanks so much for your help.  You&#8217;ve been very helpful so far, either directly, or reading this forum.</p>
+<p>in Framework/hub4wsj_sc_8k: feat.params, mdef, means, noisedict, sendump, transition_matrices, &amp; variances</p>
+<p>In Framework (this looks like it should all be preserved): OpenEars1.dic, OpenEars1.gram, OpenEars1.languagemodel.  OpenEars2.gram. OpenEarsCorpus.txt</p>
+<p>in Voices/VoiceData/NeatSpeechUSDataset1: All PDF and INF files, &#8230;COPYING, &#8230;INSTALL, neatspeech_us1_lf0.win[1-3], neatspeech_us1_lpf.win1, neatspeech_us1_mgc.win[1-3], neatspeech_us1_README</p>
+<p>Once again, thanks, and I&#8217;m hoping I&#8217;m not the one that disproves the saying that there are no stupid questions.</p>
+<p>Have a good day,<br />
+Larry</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/bundle-resources-too-many-files/#post-1017086</guid>
+					<title><![CDATA[Reply To: Bundle Resources: Too many files?]]></title>
+					<link>/forums/topic/bundle-resources-too-many-files/#post-1017086</link>
+					<pubDate>Tue, 30 Apr 2013 06:12:05 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Larry,</p>
+<p>Good question. All the ones you listed are required except for this set, which can be removed if you have generated your own language models:</p>
+<blockquote><p>OpenEars1.dic, OpenEars1.gram, OpenEars1.languagemodel.  OpenEars2.gram. OpenEarsCorpus.txt</p></blockquote>
+<p>You can also remove COPYING, INSTALL and neatspeech_us1_README without affecting the app behavior, but I wouldn&#8217;t, since they contain important licensing information and are very small in size, and the user will never see the items inside the bundle.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/bundle-resources-too-many-files/#post-1017099</guid>
+					<title><![CDATA[Reply To: Bundle Resources: Too many files?]]></title>
+					<link>/forums/topic/bundle-resources-too-many-files/#post-1017099</link>
+					<pubDate>Tue, 30 Apr 2013 22:18:51 +0000</pubDate>
+					<dc:creator>lmthekay</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks, Halle.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

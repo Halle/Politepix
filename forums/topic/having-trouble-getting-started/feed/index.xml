@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Having trouble getting started &#8211; Politepix</title>
+		<atom:link href="/forums/topic/having-trouble-getting-started/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/having-trouble-getting-started/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:54:30 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/having-trouble-getting-started/#post-1017152</guid>
+					<title><![CDATA[Having trouble getting started]]></title>
+					<link>/forums/topic/having-trouble-getting-started/#post-1017152</link>
+					<pubDate>Mon, 06 May 2013 15:16:38 +0000</pubDate>
+					<dc:creator>andynov123</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;ve been reviewing the tutorial for synthesized speech/tts and I&#8217;ve placed the code snippets in my xcode project and added the framework folder. I have no idea where this from the tutorial is located &#8220;Make absolutely sure that in the add dialog &#8220;Create groups for any added folders&#8221; is selected and NOT &#8220;Create folder references for any added folders&#8221; because the wrong setting here will prevent your app from working.&#8221;</p>
+<p>I&#8217;m also confused on how to get this part working</p>
+<p>&#8220;In the method where you want to call speech (to test this out, add it to your viewDidLoad method), add the following method call:<br />
+[self.fliteController say:@&#8221;A short statement&#8221; withVoice:self.slt];&#8221;</p>
+<p>If someone could show me how to properly set this up I would greatly appreciate it. I&#8217;ve been struggling with it for a few days. </p>
+<p>AppDelegate.h</p>
+<p>#import &lt;UIKit/UIKit.h&gt;<br />
+#import &lt;OpenEars/FliteController.h&gt;<br />
+#import &lt;Slt/Slt.h&gt;</p>
+<p>FliteController *fliteController;<br />
+Slt *slt;</p>
+<p>@interface AppDelegate : UIResponder &lt;UIApplicationDelegate&gt;</p>
+<p>@property (strong, nonatomic) UIWindow *window;<br />
+@property (strong, nonatomic) FliteController *fliteController;<br />
+@property (strong, nonatomic) Slt *slt;</p>
+<p>@end</p>
+<p>AppDelegate.m</p>
+<p>#import &#8220;AppDelegate.h&#8221;</p>
+<p>@implementation AppDelegate<br />
+@synthesize fliteController;<br />
+@synthesize slt;</p>
+<p>&#8211; (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions<br />
+{<br />
+    // Override point for customization after application launch.<br />
+    return YES;<br />
+}</p>
+<p>&#8211; (void)applicationWillResignActive:(UIApplication *)application<br />
+{<br />
+    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.<br />
+    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.<br />
+}</p>
+<p>&#8211; (void)applicationDidEnterBackground:(UIApplication *)application<br />
+{<br />
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.<br />
+    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.<br />
+}</p>
+<p>&#8211; (void)applicationWillEnterForeground:(UIApplication *)application<br />
+{<br />
+    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.<br />
+}</p>
+<p>&#8211; (void)applicationDidBecomeActive:(UIApplication *)application<br />
+{<br />
+    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.<br />
+}</p>
+<p>&#8211; (void)applicationWillTerminate:(UIApplication *)application<br />
+{<br />
+    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.<br />
+}<br />
+&#8211; (FliteController *)fliteController {<br />
+	if (fliteController == nil) {<br />
+		fliteController = [[FliteController alloc] init];<br />
+	}<br />
+	return fliteController;<br />
+}</p>
+<p>&#8211; (Slt *)slt {<br />
+	if (slt == nil) {<br />
+		slt = [[Slt alloc] init];<br />
+	}<br />
+	return slt;<br />
+}<br />
+@end</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/having-trouble-getting-started/#post-1017158</guid>
+					<title><![CDATA[Reply To: Having trouble getting started]]></title>
+					<link>/forums/topic/having-trouble-getting-started/#post-1017158</link>
+					<pubDate>Mon, 06 May 2013 15:35:14 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>OK, the amount of help I can give with this is a bit limited, because it isn&#8217;t so much about OpenEars as it is about more general getting started issues. For general iOS development questions it&#8217;s important to find a group and connections where you can get those kinds of answers as you progress. But I have a couple of recommendations which might help.</p>
+<p>To start with, you are adding the tutorial code to the application delegate. That&#8217;s the origin of the confusion about the viewDidLoad method &#8212; the app delegate is not a view controller so it doesn&#8217;t have a viewDidLoad or similar view loading method. Generally, you shouldn&#8217;t ever be adding code to the app delegate unless you have a very specific rationale for putting it there. Cocoa Touch enforces the MVC pattern, which means that you are creating view controllers which have views, and the tutorial is written for the code to be added to a view controller. Any app type that Xcode creates will have a view controller in it as well, so look for that and you&#8217;ll find viewDidLoad.</p>
+<p>The instruction that is causing confusion is as follows:</p>
+<blockquote><p>
+Inside your downloaded OpenEars distribution there is a folder called &#8220;Frameworks&#8221;. Drag that folder into your app project in Xcode. Make absolutely sure that in the add dialog &#8220;Create groups for any added folders&#8221; is selected and NOT &#8220;Create folder references for any added folders&#8221; because the wrong setting here will prevent your app from working.
+</p></blockquote>
+<p>So, it says to find the folder called &#8220;Frameworks&#8221; and drag that entire folder from the Finder into your app project. When you&#8217;ve done that, you will see the add dialog that is referred to in the instruction, and the settings in the add dialog that are described in the instruction. This dialog appears any time any file or folder is added to an Xcode project.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/having-trouble-getting-started/#post-1017159</guid>
+					<title><![CDATA[Reply To: Having trouble getting started]]></title>
+					<link>/forums/topic/having-trouble-getting-started/#post-1017159</link>
+					<pubDate>Mon, 06 May 2013 17:08:08 +0000</pubDate>
+					<dc:creator>andynov123</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the advice. I got it working!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/having-trouble-getting-started/#post-1017160</guid>
+					<title><![CDATA[Reply To: Having trouble getting started]]></title>
+					<link>/forums/topic/having-trouble-getting-started/#post-1017160</link>
+					<pubDate>Mon, 06 May 2013 17:09:32 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That&#8217;s great! Glad it helped.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

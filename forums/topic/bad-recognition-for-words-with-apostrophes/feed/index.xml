@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] Bad recognition for words with apostrophes &#8211; Politepix</title>
+		<atom:link href="/forums/topic/bad-recognition-for-words-with-apostrophes/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/bad-recognition-for-words-with-apostrophes/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:44:03 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/bad-recognition-for-words-with-apostrophes/#post-1016972</guid>
+					<title><![CDATA[[Resolved] Bad recognition for words with apostrophes]]></title>
+					<link>/forums/topic/bad-recognition-for-words-with-apostrophes/#post-1016972</link>
+					<pubDate>Tue, 16 Apr 2013 06:37:16 +0000</pubDate>
+					<dc:creator>OT</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am using RapidEars and Rejecto demo plugins in OpenEars demo app. If I use phrases that have word with apostrophes (e.g. contractions), it appears as if those words are not &#8220;recognizable&#8221; when I run the app. For example:<code></code></p>
+<pre><code>
+languageArray = [[NSArray alloc] initWithArray:[NSArray arrayWithObjects:
+@&quot;HE&#039;S OVER THERE&quot;,
+@&quot;IT&#039;S OVER THERE&quot;,
+@&quot;HE&#039;S IN THE CHAIR&quot;,
+@&quot;HE&#039;S IN A CHAIR&quot;,
+nil]];</code></pre>
+<p>I can&#8217;t get He&#8217;s or It&#8217;s to be recognized at all. If I use &#8220;He is&#8221; or &#8220;It is&#8221; instead, then it works reasonably well.</p>
+<p>I looked at the dynamic dictionary that&#8217;s created by Rejecto and the words in the dictionary are entered without apostrophe (e..g HES and ITS).</p>
+<p>Not sure what&#8217;s the best way to convert DMP file to text file and check what&#8217;s going on with the grammar.</p>
+<p>Do you have any idea why this may be happening and if there is a special way words with apostrophes should be specified (I tried escaping apostrophe, but that didn&#8217;t help).</p>
+<p>Thanks,</p>
+<p>Ogi</p>
+<p>&nbsp;</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/bad-recognition-for-words-with-apostrophes/#post-1017011</guid>
+					<title><![CDATA[Reply To: Bad recognition for words with apostrophes]]></title>
+					<link>/forums/topic/bad-recognition-for-words-with-apostrophes/#post-1017011</link>
+					<pubDate>Sat, 20 Apr 2013 16:09:23 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This might be an issue with excessive string sanitization on my part. I&#8217;ve entered a issue to check out on this and hope to get a chance to investigate in the next couple of weeks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/bad-recognition-for-words-with-apostrophes/#post-1017193</guid>
+					<title><![CDATA[Reply To: Bad recognition for words with apostrophes]]></title>
+					<link>/forums/topic/bad-recognition-for-words-with-apostrophes/#post-1017193</link>
+					<pubDate>Fri, 10 May 2013 10:48:00 +0000</pubDate>
+					<dc:creator>lookbadgers</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I can also confirm I have experienced this.  When would you estimate you could get a fix released?</p>
+<p>Thanks</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/bad-recognition-for-words-with-apostrophes/#post-1017194</guid>
+					<title><![CDATA[Reply To: Bad recognition for words with apostrophes]]></title>
+					<link>/forums/topic/bad-recognition-for-words-with-apostrophes/#post-1017194</link>
+					<pubDate>Fri, 10 May 2013 11:43:45 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;ve sent you both a version to test with a fix for this, let me know if it works for you.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

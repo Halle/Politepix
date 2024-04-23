@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>JSGF .gram and .dic files in openears 1.7 &#8211; Politepix</title>
+		<atom:link href="/forums/topic/jsgf-gram-and-dic-files-in-openears-1-7/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/jsgf-gram-and-dic-files-in-openears-1-7/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:57:08 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/jsgf-gram-and-dic-files-in-openears-1-7/#post-1022221</guid>
+					<title><![CDATA[JSGF .gram and .dic files in openears 1.7]]></title>
+					<link>/forums/topic/jsgf-gram-and-dic-files-in-openears-1-7/#post-1022221</link>
+					<pubDate>Thu, 14 Aug 2014 22:02:26 +0000</pubDate>
+					<dc:creator>hg111</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>You mentioned that OpenEarsSampleApp already has a .gram and .dic files but I&#8217;m unable to find them. Can you direct me to these files and if you have any example of how they are used that will be great,</p>
+<p>Thank you in advance,</p>
+<p>Kind regards </p>
+<p>Hg</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/jsgf-gram-and-dic-files-in-openears-1-7/#post-1022222</guid>
+					<title><![CDATA[Reply To: JSGF .gram and .dic files in openears 1.7]]></title>
+					<link>/forums/topic/jsgf-gram-and-dic-files-in-openears-1-7/#post-1022222</link>
+					<pubDate>Thu, 14 Aug 2014 22:16:59 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Check out this blog post to learn how to use OpenEars&#8217; grammar tools:</p>
+<p><a href="/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/">/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/</a></p>
+<p>There is also a grammar example in the tutorial now.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/jsgf-gram-and-dic-files-in-openears-1-7/#post-1022233</guid>
+					<title><![CDATA[Reply To: JSGF .gram and .dic files in openears 1.7]]></title>
+					<link>/forums/topic/jsgf-gram-and-dic-files-in-openears-1-7/#post-1022233</link>
+					<pubDate>Thu, 14 Aug 2014 23:33:54 +0000</pubDate>
+					<dc:creator>hg111</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yes, nice post.</p>
+<p>After turning the flag LanguageModelIsJSGF:TRUE<br />
+I get:</p>
+<p>&#8220;The file you have sent to the decoder appears to be an ARPA-style language model, but you have set LanguageModelIsJSGF to true&#8230;&#8221;</p>
+<p>So what am I doing wrong?</p>
+<p>Hv</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/jsgf-gram-and-dic-files-in-openears-1-7/#post-1022242</guid>
+					<title><![CDATA[Reply To: JSGF .gram and .dic files in openears 1.7]]></title>
+					<link>/forums/topic/jsgf-gram-and-dic-files-in-openears-1-7/#post-1022242</link>
+					<pubDate>Fri, 15 Aug 2014 07:19:27 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Did you successfully create your grammar?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/jsgf-gram-and-dic-files-in-openears-1-7/#post-1022256</guid>
+					<title><![CDATA[Reply To: JSGF .gram and .dic files in openears 1.7]]></title>
+					<link>/forums/topic/jsgf-gram-and-dic-files-in-openears-1-7/#post-1022256</link>
+					<pubDate>Fri, 15 Aug 2014 21:23:01 +0000</pubDate>
+					<dc:creator>hg111</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>not yet. I was hoping to first try the grammar that comes with the example. I was hoping to see it in action before I add or modify anything.</p>
+<p>Should I not expect to be able and distinguish between background noise and the example (English) model by simply running the example?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/jsgf-gram-and-dic-files-in-openears-1-7/#post-1022265</guid>
+					<title><![CDATA[Reply To: JSGF .gram and .dic files in openears 1.7]]></title>
+					<link>/forums/topic/jsgf-gram-and-dic-files-in-openears-1-7/#post-1022265</link>
+					<pubDate>Sat, 16 Aug 2014 17:54:18 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>not yet. I was hoping to first try the grammar that comes with the example.</p></blockquote>
+<p>Which grammar are you referring to? The issue is that you set LanguageModelIsJSGF to TRUE but it is still an ARPA language model being sent to the PocketsphinxController instance, so we just have to figure out why it isn&#8217;t a grammar being submitted.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/jsgf-gram-and-dic-files-in-openears-1-7/#post-1022278</guid>
+					<title><![CDATA[Reply To: JSGF .gram and .dic files in openears 1.7]]></title>
+					<link>/forums/topic/jsgf-gram-and-dic-files-in-openears-1-7/#post-1022278</link>
+					<pubDate>Sun, 17 Aug 2014 21:40:59 +0000</pubDate>
+					<dc:creator>hg111</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry for the late reply&#8230; </p>
+<p>The grammar I was trying to use is the first default English model, so using words like Go, left, right, backward, forward&#8230;</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/jsgf-gram-and-dic-files-in-openears-1-7/#post-1022279</guid>
+					<title><![CDATA[Reply To: JSGF .gram and .dic files in openears 1.7]]></title>
+					<link>/forums/topic/jsgf-gram-and-dic-files-in-openears-1-7/#post-1022279</link>
+					<pubDate>Mon, 18 Aug 2014 07:14:31 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, the error is because that isn&#8217;t a grammar, it&#8217;s an ARPA language model. If you read through the blog post it explains how to make your own grammar and use it with PocketsphinxController.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/jsgf-gram-and-dic-files-in-openears-1-7/#post-1022301</guid>
+					<title><![CDATA[Reply To: JSGF .gram and .dic files in openears 1.7]]></title>
+					<link>/forums/topic/jsgf-gram-and-dic-files-in-openears-1-7/#post-1022301</link>
+					<pubDate>Tue, 19 Aug 2014 22:24:31 +0000</pubDate>
+					<dc:creator>hg111</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Okay thx,  let me try and create new grammar&#8230;</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/jsgf-gram-and-dic-files-in-openears-1-7/#post-1022390</guid>
+					<title><![CDATA[Reply To: JSGF .gram and .dic files in openears 1.7]]></title>
+					<link>/forums/topic/jsgf-gram-and-dic-files-in-openears-1-7/#post-1022390</link>
+					<pubDate>Thu, 28 Aug 2014 06:24:12 +0000</pubDate>
+					<dc:creator>hg111</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>It appears that I am now able to generate the grammar (as below) but if I turn LanguageModelIsJSGF to TRUE, it won&#8217;t start speech recognition. Also, the content of the generated grammar in the .dic file looks like the array and not the dictionary file I created (based on your blog example) It seems to always generate the file based on the Array and not the dictionary. Not sure what I&#8217;m doing wrong? Can you tell? </p>
+<p>Thank you </p>
+<p>hg</p>
+<p>2014-08-27 23:09:18.165 OpenEarsTest[2296:793421] Dynamic language generator completed successfully, you can find your new files FirstOpenEarsDynamicLanguageModel.DMP<br />
+ and<br />
+FirstOpenEarsDynamicLanguageModel.dic<br />
+ at the paths<br />
+/var/mobile/Containers/Data/Application/20681198-FA77-4878-9109-57CBC02524C6/Library/Caches/FirstOpenEarsDynamicLanguageModel.DMP<br />
+and<br />
+/var/mobile/Containers/Data/Application/20681198-FA77-4878-9109-57CBC02524C6/Library/Caches/FirstOpenEarsDynamicLanguageModel.dic</p>
+<p>content of .dic file:</p>
+<p>BACKWARD        B AE K W ER D<br />
+CENTER  S EH N T ER<br />
+CENTER(2)       S EH N ER<br />
+CHANGE  CH EY N JH<br />
+FORWARD F AO R W ER D<br />
+GO      G OW<br />
+LEFT    L EH F T<br />
+MODEL   M AA D AH L<br />
+RIGHT   R AY T<br />
+TURN    T ER N</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

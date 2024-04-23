@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Match Complete Phrase &#8211; Politepix</title>
+		<atom:link href="/forums/topic/match-complete-phrase/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/match-complete-phrase/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:08:04 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/match-complete-phrase/#post-1024158</guid>
+					<title><![CDATA[Match Complete Phrase]]></title>
+					<link>/forums/topic/match-complete-phrase/#post-1024158</link>
+					<pubDate>Fri, 09 Jan 2015 13:40:28 +0000</pubDate>
+					<dc:creator>amz4u2nv</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,<br />
+I was hoping you could help with an issue &#8211;<br />
+I would like to match the entire phrase &#8211; i.e.<br />
+&#8220;BEDROOM LIGHT ON&#8221;<br />
+&#8220;BEDROOM LIGHT OFF&#8221;<br />
+However when saying bedroom light on it recognises this as bedroom light on off.</p>
+<p>So it looks like its matching individual words within the phrase. hope this make sense &#8211; </p>
+<p>    NSArray *words = [NSArray arrayWithObjects:<br />
+                      @&#8221;COMPUTER&#8221;,<br />
+                      @&#8221;BEDROOM&#8221;,<br />
+                      @&#8221;BED&#8221;,<br />
+                      @&#8221;HALL&#8221;,<br />
+                      @&#8221;TEMPLE&#8221;,<br />
+                      @&#8221;ARCH&#8221;,<br />
+                      @&#8221;SITTING ROOM&#8221;,<br />
+                      @&#8221;HEATING&#8221;,<br />
+                      @&#8221;PLAY MUSIC&#8221;,<br />
+                      @&#8221;PLAY BOLLYWOOD MUSIC&#8221;,<br />
+                      @&#8221;PLAY ENGLISH MUSIC&#8221;,<br />
+                      @&#8221;STOP MUSIC&#8221;,<br />
+                      @&#8221;TRAIN&#8221;,<br />
+                      @&#8221;BUS&#8221;,<br />
+                      @&#8221;STATUS&#8221;,<br />
+                      @&#8221;WEATHER&#8221;,<br />
+                      @&#8221;RAIN&#8221;,<br />
+                      @&#8221;ENERGY&#8221;,<br />
+                      @&#8221;EVENTS&#8221;,<br />
+                      @&#8221;ON&#8221;,<br />
+                      @&#8221;OFF&#8221;<br />
+                      @&#8221;LIGHT&#8221;,<br />
+                      @&#8221;DUSTBIN&#8221;,<br />
+                      @&#8221;THANKS&#8221;,nil<br />
+                     ];</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/match-complete-phrase/#post-1024159</guid>
+					<title><![CDATA[Reply To: Match Complete Phrase]]></title>
+					<link>/forums/topic/match-complete-phrase/#post-1024159</link>
+					<pubDate>Fri, 09 Jan 2015 13:44:23 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Sure, check out OpenEars&#8217; rule-based grammar tools (in contrast to the probabilistic language models it uses by default as in your example above). There is some info about it in the OELanguageModelGenerator docs and here is the blog post I made when I introduced the feature, which goes into more depth about how to use it:</p>
+<p><a href="/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/">/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

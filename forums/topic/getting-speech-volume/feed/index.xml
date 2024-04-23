@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>getting speech volume ? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/getting-speech-volume/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/getting-speech-volume/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:52:23 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/getting-speech-volume/#post-1015734</guid>
+					<title><![CDATA[getting speech volume ?]]></title>
+					<link>/forums/topic/getting-speech-volume/#post-1015734</link>
+					<pubDate>Mon, 25 Feb 2013 13:58:12 +0000</pubDate>
+					<dc:creator>developer82</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>I was wondering if there&#8217;s a way to get the speech volume. What I mean is a measurement of how loud the user spoke (was he speaking, speaking louder, or shouting?).</p>
+<p>Is this possible?</p>
+<p>Thanks</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/getting-speech-volume/#post-1015735</guid>
+					<title><![CDATA[Reply To: getting speech volume ?]]></title>
+					<link>/forums/topic/getting-speech-volume/#post-1015735</link>
+					<pubDate>Mon, 25 Feb 2013 14:02:09 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>You can get the incoming speech power using the result of the method pocketsphinxInputLevel (you have to listen to this value on a background thread since it will block the main thread if you don&#8217;t &#8212; there is an example of doing this in the sample app). Knowing what this power level means in terms of speaking/loud speaking/shouting is a subjective interpretation, so deciding what different power levels mean in those terms is an implementation detail for your app.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/getting-speech-volume/#post-1015736</guid>
+					<title><![CDATA[Reply To: getting speech volume ?]]></title>
+					<link>/forums/topic/getting-speech-volume/#post-1015736</link>
+					<pubDate>Mon, 25 Feb 2013 14:12:37 +0000</pubDate>
+					<dc:creator>developer82</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks :-)<br />
+Will definitely check it out.<br />
+is there a mix-max values to this parameter?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/getting-speech-volume/#post-1015737</guid>
+					<title><![CDATA[Reply To: getting speech volume ?]]></title>
+					<link>/forums/topic/getting-speech-volume/#post-1015737</link>
+					<pubDate>Mon, 25 Feb 2013 14:20:54 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Not as such &#8212; it attempts to approximate the negative decibel offset range that an AudioQueue can return, but it doesn&#8217;t guarantee it. The range should be a float that goes from some negative value (something like -74) up to zero, where zero is the maximum.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/getting-speech-volume/#post-1027098</guid>
+					<title><![CDATA[Reply To: getting speech volume ?]]></title>
+					<link>/forums/topic/getting-speech-volume/#post-1027098</link>
+					<pubDate>Fri, 23 Oct 2015 14:06:53 +0000</pubDate>
+					<dc:creator>evilliam</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>@Halle &#8211; in the example it&#8217;s running from an NSTimer &#8211; doesn&#8217;t this mean it&#8217;s running on the main runloop?<br />
+If not &#8211; does running this check on a background thread mean I might not have a very accurate impression of how loudly a particular word is being said?</p>
+<p>I was hoping to be able to use a high-pass filter to figure out if someone was speaking loudly on a certain word.</p>
+<p>Thanks for making this library, I&#8217;m really enjoying playing with it.<br />
+Cheers<br />
+Liam</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/getting-speech-volume/#post-1027099</guid>
+					<title><![CDATA[Reply To: getting speech volume ?]]></title>
+					<link>/forums/topic/getting-speech-volume/#post-1027099</link>
+					<pubDate>Fri, 23 Oct 2015 14:13:49 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Liam,</p>
+<p>The example shown should give an accurate impression of the current volume within the normal latency offset.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/getting-speech-volume/#post-1027100</guid>
+					<title><![CDATA[Reply To: getting speech volume ?]]></title>
+					<link>/forums/topic/getting-speech-volume/#post-1027100</link>
+					<pubDate>Fri, 23 Oct 2015 14:16:07 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>IMO the example as well as the volume API internals are both overdue for an update, but that aspect of the library is pretty road-tested at this point so I think that you can use it. But keep in mind that it isn&#8217;t an objective volume reading, it is relative to the constant used and not intended to give an exact decibel reading since it was designed for UI design.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/getting-speech-volume/#post-1027101</guid>
+					<title><![CDATA[Reply To: getting speech volume ?]]></title>
+					<link>/forums/topic/getting-speech-volume/#post-1027101</link>
+					<pubDate>Fri, 23 Oct 2015 14:24:53 +0000</pubDate>
+					<dc:creator>evilliam</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Understood, thanks Halle.</p>
+<p>I think that if I check for volume each time a word is detected (regardless of a match), and use a high-pass filter I can detect for fluctuations in volume on a per-word basis. (I think)</p>
+<p>Thanks again</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

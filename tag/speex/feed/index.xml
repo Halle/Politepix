@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>speex &#8211; Politepix</title>
+	<atom:link href="/tag/speex/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>iOS Frameworks for speech recognition, text to speech and more</description>
+	<lastBuildDate>Sat, 07 Jul 2012 14:55:46 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.5.2</generator>
+<site xmlns="com-wordpress:feed-additions:1">206848719</site>	<item>
+		<title>SpeexKit: Speex on the iPhone, from Politepix</title>
+		<link>/2012/03/25/speexkit/</link>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Sun, 25 Mar 2012 16:02:18 +0000</pubDate>
+				<category><![CDATA[Code]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[framework]]></category>
+		<category><![CDATA[speex]]></category>
+		<guid isPermaLink="false">/?p=8995</guid>
+
+					<description><![CDATA[SpeexKit: Speex for iPhone It is my pleasure to announce a new Politepix framework product for developers: SpeexKit 1.0. What is Speex? Speex is one of the best codecs for voice audio transmission available, with clear quality and excellent compression characteristics. It is a great match for mobile speech applications given the need for top-notch clarity [&#8230;]]]></description>
+										<content:encoded><![CDATA[<h1>SpeexKit: Speex for iPhone</h1>
+<p>It is my pleasure to announce a new Politepix framework product for developers: <a href="/speexkit">SpeexKit</a> 1.0.</p>
+<h2><strong id="whatisspeex">What is Speex?</strong></h2>
+<p>Speex is one of the best codecs for voice audio transmission available, with clear quality and excellent compression characteristics. It is a great match for mobile speech applications given the need for top-notch clarity and careful use of bandwidth. The Speex project is found <a href="https://www.speex.org/">here</a>.</p>
+<p>[politepix-blog-inline-text-ad]</p>
+<p><strong>What is SpeexKit?</strong></p>
+<p>SpeexKit is an iOS framework from Politepix that makes it easy to use every feature of Speex with your iPhone or iPad app without doing your own C or C++ implementation or having to deal with threading or queueing code. It is not the only way of using Speex on the iPhone, but it is designed to be an easy object-oriented way to implement it quickly in your app, even for the tricky stuff. <a href="/shop/speexkitdemo">You can download the SpeexKit demo framework here</a>. You have to sign up, but downloading the demo is 100% free, just add it to your cart and check out. You will not have to provide any payment information to try it out. It is time-limited and can&#8217;t be submitted to the App Store &#8212; when you&#8217;re ready to license the framework it can be found on the <a href="/shop/speexkit">Politepix shop</a>.</p>
+<p><strong>What can you do with SpeexKit?</strong></p>
+<p>• Convert entire WAV or raw audio files into Speex files<br />
+• Convert entire Speex files into WAV files<br />
+• Convert buffers of Speex frames into buffers of raw audio samples, synchronously or asynchronously. In asychronous mode, threading and queuing (since Speex decoding is not realtime on all devices) are handled for you.<br />
+• Convert buffers of raw PCM audio samples into buffers of Speex frames, synchronously or asynchronously. In asychronous mode, threading and buffer queuing (since Speex encoding is not realtime on all devices) are handled for you.<br />
+• Wrap existing buffers of Speex frames into a written-out Speex file<br />
+• Wrap existing buffers of raw PCM audio samples into a written-out WAV file<br />
+• Use advanced Speex features such as such as Voice Activity Detection (VAD) and echo reduction</p>
+<p>You can read much more about SpeexKit <a href="/speexkit">here</a>. Thanks for checking it out!</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">8995</post-id>	</item>
+	</channel>
+</rss>

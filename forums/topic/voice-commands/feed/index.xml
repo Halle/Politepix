@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Voice Commands &#8211; Politepix</title>
+		<atom:link href="/forums/topic/voice-commands/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/voice-commands/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:55:41 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/voice-commands/#post-1019327</guid>
+					<title><![CDATA[Voice Commands]]></title>
+					<link>/forums/topic/voice-commands/#post-1019327</link>
+					<pubDate>Mon, 06 Jan 2014 02:46:25 +0000</pubDate>
+					<dc:creator>ramshad</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Dear Openears team,</p>
+<p>Thank you very much for the excellent iOS library. </p>
+<p>I would like to use Openears with my application for only activating voice commands instead of tapping buttons that using most of the time. </p>
+<p>There are 6 voice commands that going to activate in my application via voice commands such as Cancel, Reply, Reply All, Send, Block, Delete.</p>
+<p>I have created a dictionary and language model using only these 6 words and also I have added Rejecto plugin.</p>
+<p>Here is the problem. If I speak &#8220;Bad&#8221;, it recognizes as &#8220;Block&#8221; or If I speak something else than the dictionary items, it recognizes as my one of the voice commands/dictionary item. I would like to recognize only the list of items when I speak. So what is the best approach to do this? Can I use something like confident value (however it will not work out if I&#8217;m getting this value for the entire detected sentence instead of a word)?</p>
+<p>Here are the approaches that I&#8217;m planning to implement.</p>
+<p>1. Provide a huge language-model file to process and skip the words which are not a command.</p>
+<p>2. Use the recognitionScore as confident value ( however I don&#8217;t know more details about recognitionScore such as its max value, min value etc).</p>
+<p>Please let me know which would be the best approach. I would appreciate if you have any great suggestions.</p>
+<p>Thank you.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/voice-commands/#post-1019330</guid>
+					<title><![CDATA[Reply To: Voice Commands]]></title>
+					<link>/forums/topic/voice-commands/#post-1019330</link>
+					<pubDate>Mon, 06 Jan 2014 14:03:12 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Ramshad,</p>
+<p>I don&#8217;t recommend ever using the scores for any kind of objective confidence cutoff since they are so dependent on the speaker and the session. Have you tried all of the tuning elements available in Rejecto such as weight, exclusions and vowels-only? That would be the first place I&#8217;d experiment, making use of the new pathToTestFile tool so that you can retest the same audio input and compare.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

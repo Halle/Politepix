@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>OpenEars and the main thread &#8211; Politepix</title>
+		<atom:link href="/forums/topic/openears-and-the-main-thread/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/openears-and-the-main-thread/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:38:16 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/openears-and-the-main-thread/#post-12045</guid>
+					<title><![CDATA[OpenEars and the main thread]]></title>
+					<link>/forums/topic/openears-and-the-main-thread/#post-12045</link>
+					<pubDate>Fri, 09 Nov 2012 17:00:38 +0000</pubDate>
+					<dc:creator>hohl</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Does OpenEars (or especially the language model creator) needs to be launched on the main thread? Or does the language model creator automatically use the main thread on the line he need it?</p>
+<p>I am debugging an application which tries to run the language model creation in the background, but sometimes while running the language model creation the main thread get blocked (but the language model creator is launched in a background thread). I am not yet sure if there is some failure in my implementation or if it&#8217;s something internally in OpenEars?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-and-the-main-thread/#post-12046</guid>
+					<title><![CDATA[Reply To: OpenEars and the main thread]]></title>
+					<link>/forums/topic/openears-and-the-main-thread/#post-12046</link>
+					<pubDate>Fri, 09 Nov 2012 17:13:42 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OpenEars expects to be launched on mainThread and to handle its own multithreading, but I wouldn&#8217;t automatically expect a problem with launching it on a secondary thread. Certain operations will always be returned to mainThread (notifications sent to OpenEarsEventsObserver and delegate callbacks of OpenEarsEventsObserver will always go to mainThread, I think that audio playing in FliteController must be initiated mainThread IIRC, maybe there are some other examples of things which expect to initiate from or return to mainThread). But, if all you are doing is running LanguageModelGenerator and you are running it on a background thread, my guess is that the issue is in the actual threading, because LanguageModelGenerator works as a series of single-threaded activities so it should be possible to background. Are you using blocks, NSTimer or NSThread?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-and-the-main-thread/#post-12181</guid>
+					<title><![CDATA[Reply To: OpenEars and the main thread]]></title>
+					<link>/forums/topic/openears-and-the-main-thread/#post-12181</link>
+					<pubDate>Sat, 10 Nov 2012 16:52:02 +0000</pubDate>
+					<dc:creator>hohl</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for your response.</p>
+<p>While debugging the application without finding something special blocking I&#8217;ve started thinking that the blocking is produced by the I/O to the devices flash memory. Does OpenEars take heavy usage of the disk, which may blocking other resources (SQLite database) to load? What would be a good approach to throttle the disk I/O usage of OpenEars?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-and-the-main-thread/#post-12183</guid>
+					<title><![CDATA[Reply To: OpenEars and the main thread]]></title>
+					<link>/forums/topic/openears-and-the-main-thread/#post-12183</link>
+					<pubDate>Sat, 10 Nov 2012 18:35:28 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Nope, it doesn&#8217;t make any notable continuous use of the disk. Have you completely ruled out something going on in your app? If you move the operations in the sample app to another thread, do you see the same results? I would try to simplify the test case as much as possible until you can replicate the issue with only one code addition.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-and-the-main-thread/#post-12659</guid>
+					<title><![CDATA[Reply To: OpenEars and the main thread]]></title>
+					<link>/forums/topic/openears-and-the-main-thread/#post-12659</link>
+					<pubDate>Wed, 14 Nov 2012 17:06:07 +0000</pubDate>
+					<dc:creator>hohl</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;ll let you know, if I can find what the lags causes. But at least there aren&#8217;t any exceptions or unexpected results when using on background. Just in the case of my application (with arround 3x~100 entries in background) it takes some time which will also block the main thread (noticeable as non-reacting UI).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-and-the-main-thread/#post-12660</guid>
+					<title><![CDATA[Reply To: OpenEars and the main thread]]></title>
+					<link>/forums/topic/openears-and-the-main-thread/#post-12660</link>
+					<pubDate>Wed, 14 Nov 2012 19:05:05 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yup, I would expect that to take a bit of time. Is there a requirement that they be dynamic, or would this blog post help: <a href="/2012/11/02/openears-tips-1-create-a-language-model-before-runtime-from-a-text-file/">/2012/11/02/openears-tips-1-create-a-language-model-before-runtime-from-a-text-file/</a></p>
+<p>My other question is about the kind of multithreading. Have you experimented with doing it with a block (or even a timer) if you&#8217;ve been using NSThread? I do a lot of multithreaded coding and I used to use NSThread and I&#8217;ve entirely switched over to blocks/GCD because it&#8217;s so much cleaner.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-and-the-main-thread/#post-13103</guid>
+					<title><![CDATA[Reply To: Reply To: OpenEars and the main thread]]></title>
+					<link>/forums/topic/openears-and-the-main-thread/#post-13103</link>
+					<pubDate>Mon, 19 Nov 2012 16:09:50 +0000</pubDate>
+					<dc:creator>hohl</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am only using GCD since it is much cleaner. It must be dyamic since I am creating a language map of the artist and album names on the users device. The problem is, there isn&#8217;t any nice kind of notification when the user added new music to the library so I need to update the language model in the background based on a schedule plan. And while this is happening the user shouldn&#8217;t be blocked using other parts of the app or even other parts of the iOS system.</p>
+<p>Maybe it is because the artist names aren&#8217;t classic english words? When using OpenEarsLogging I get log entries of using gall back methods for nearly all the words in the created language model. ( <a href="https://www.sourcedrop.net/4Loa58d7ba3b3" rel="nofollow">https://www.sourcedrop.net/4Loa58d7ba3b3</a> )</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-and-the-main-thread/#post-13104</guid>
+					<title><![CDATA[Reply To: Reply To: OpenEars and the main thread]]></title>
+					<link>/forums/topic/openears-and-the-main-thread/#post-13104</link>
+					<pubDate>Mon, 19 Nov 2012 16:12:49 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Have you taken the advice from OpenEarsLogging to convert everything to uppercase first? You can do this easily by taking your NSString and messaging [myString uppercaseString]</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-and-the-main-thread/#post-13105</guid>
+					<title><![CDATA[Reply To: OpenEars and the main thread]]></title>
+					<link>/forums/topic/openears-and-the-main-thread/#post-13105</link>
+					<pubDate>Mon, 19 Nov 2012 16:27:03 +0000</pubDate>
+					<dc:creator>hohl</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Just looked up what &#8216;convertGraphemes&#8217; does and it looks like a very heavy task (looks like creating stuff with Text-To-Speech). And yes, everything is upper case. The problem is the language map only contains names! And having ~100 names like &#8216;KONTRUST&#8217;, &#8216;SKRILLEX&#8217; or &#8216;DEICHKIND&#8217; which all aren&#8217;t english words.</p>
+<p>How much work is it to create such a phonetic dictionary? Would it help to create such a dictionary for artist names?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-and-the-main-thread/#post-13106</guid>
+					<title><![CDATA[Reply To: OpenEars and the main thread]]></title>
+					<link>/forums/topic/openears-and-the-main-thread/#post-13106</link>
+					<pubDate>Mon, 19 Nov 2012 16:41:48 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That is my suggestion. Since 1.2 LanguageModelGenerator has been able to take a custom or customized master phonetic dictionary in place of cmu07a.dic, and for this task I think the best approach is to add to cmu07a.dic and keep using it. In order to get the pronunciations to add I would do the following steps (this involves a little hacking to OpenEars and I&#8217;m leaving implementation up to you):</p>
+<p>1. Source some kind of comprehensive list of the most popular tracks with whatever cutoff for popularity and timeframe makes sense for you. Feed the whole thing into LanguageModelGenerator using the simulator and save everything that triggers the fallback method.</p>
+<p>2. Attempt to pick all the low-hanging fruit by trying to identify any compound nouns which consist of words which are actually in the master phonetic dictionary, just not with each other.</p>
+<p>3. Do the tedious step with the remaining words of transcribing their phonemes using the same phoneme system found in cmu07a.dic.</p>
+<p>4. Add them all to cmu07a.dic.</p>
+<p>5. Sort cmu07a.dic alphabetically (very important), use.</p>
+<p>With some good choices about your source data you could make a big impact on the processing time. The rest of it might have to be handled via UX methods such as further restricting the number of songs parsed or only using songs which are popular with the user, and informing the user in cases where this could lead to confusion. </p>
+<p>Remember that for Deichkind and similar, you aren&#8217;t just dealing with a unknown word but also a word that will be pronounced with phonemes which aren&#8217;t present in the default acoustic model since it is made from North American speech. There&#8217;s nothing like that &#8220;ch&#8221; sound in English, at least as it is pronounced in Hochdeutsch. If your target market is German-speaking and you expect some German-named bands in there it might be worthwhile to think about doing some acoustic model adaptation to German-accented speech. I just did a blog post about it.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

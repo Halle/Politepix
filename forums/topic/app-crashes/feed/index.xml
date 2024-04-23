@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Acoustic model issue in app &#8211; Politepix</title>
+		<atom:link href="/forums/topic/app-crashes/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/app-crashes/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:38:32 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/app-crashes/#post-11699</guid>
+					<title><![CDATA[Acoustic model issue in app]]></title>
+					<link>/forums/topic/app-crashes/#post-11699</link>
+					<pubDate>Thu, 25 Oct 2012 12:01:34 +0000</pubDate>
+					<dc:creator>Deepu</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Team,<br />
+I&#8217;m using the latest version of the Openears in my app,As i&#8217;ve good memories n using the earlier versions,But now my problem is that my app crashes after waiting for some time.I&#8217;m successfully able to execute the statement     [self.fliteController say:@&#8221;I already started with OpenEars&#8221; withVoice:self.slt];<br />
+After this when the app tries to listen to the user&#8217;s response it fails.Please guide me if I&#8217;m left with including any additional files.I&#8217;m referencing the sample app attached with OpenEar&#8217;s.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/app-crashes/#post-11704</guid>
+					<title><![CDATA[Reply To: App Crashes]]></title>
+					<link>/forums/topic/app-crashes/#post-11704</link>
+					<pubDate>Thu, 25 Oct 2012 12:07:50 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>Which version of Xcode are you using?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/app-crashes/#post-11708</guid>
+					<title><![CDATA[Reply To: App Crashes]]></title>
+					<link>/forums/topic/app-crashes/#post-11708</link>
+					<pubDate>Thu, 25 Oct 2012 12:55:07 +0000</pubDate>
+					<dc:creator>Deepu</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the quick response.I&#8217;m using the Xcode 4.3.2</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/app-crashes/#post-11709</guid>
+					<title><![CDATA[Reply To: App Crashes]]></title>
+					<link>/forums/topic/app-crashes/#post-11709</link>
+					<pubDate>Thu, 25 Oct 2012 12:56:24 +0000</pubDate>
+					<dc:creator>Deepu</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Also the sample app provided along with the package is working fine for me,that is confusing me,I checked all the files and methods to know if I&#8217;m missing any elements but It is not.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/app-crashes/#post-11710</guid>
+					<title><![CDATA[Reply To: App Crashes]]></title>
+					<link>/forums/topic/app-crashes/#post-11710</link>
+					<pubDate>Thu, 25 Oct 2012 13:00:27 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thank you for confirming with me that the issue is not with the sample app, that would have started a huge round of re-testing.</p>
+<p>OK, there are a couple of possibilities. The first possibility is that your version of Xcode is too old or you are compiling with GCC rather than LLVM. The only fix for this is to use a recent Xcode and to use LLVM. The other possibility is that there is a problem with your integration into your app (I think this is more likely) so please just do the regular steps of turning on OpenEarsLogging and turning on verbosePocketSphinx and posting the output here. It&#8217;s very likely that your acoustic model simply wasn&#8217;t moved into your app and you are getting a crash when speech is attempted to be detected and there is no acoustic model, but this will be shown as an error in OpenEarsLogging so please turn it on.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/app-crashes/#post-11712</guid>
+					<title><![CDATA[Reply To: App Crashes]]></title>
+					<link>/forums/topic/app-crashes/#post-11712</link>
+					<pubDate>Thu, 25 Oct 2012 13:09:39 +0000</pubDate>
+					<dc:creator>Deepu</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the insight.I will check and get back to you.But mean while it will be helpful if you can tell how to enable the OpenEarLogging.<br />
+Kind Regards,<br />
+Deepu</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/app-crashes/#post-11713</guid>
+					<title><![CDATA[Reply To: App Crashes]]></title>
+					<link>/forums/topic/app-crashes/#post-11713</link>
+					<pubDate>Thu, 25 Oct 2012 13:12:58 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Right here: <a href="/forums/topic/install-issues-and-their-solutions/">/forums/topic/install-issues-and-their-solutions/</a></p>
+<p>It is also in the documentation and the FAQ if you need more info.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/app-crashes/#post-11730</guid>
+					<title><![CDATA[Reply To: Acoustic model issue in app]]></title>
+					<link>/forums/topic/app-crashes/#post-11730</link>
+					<pubDate>Thu, 25 Oct 2012 14:42:28 +0000</pubDate>
+					<dc:creator>Deepu</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I turned on OpenEar Logging &amp; verbosePocketSphinx but still it crashes.Hereby attaching the log details.Hope this will help you in resolving the issue.</p>
+<p>2012-10-25 20:10:19.956 SaskPower[85011:10703] Starting dynamic language model generation<br />
+2012-10-25 20:10:19.957 SaskPower[85011:10703] Able to open /Users/c5163090/Library/Application Support/iPhone Simulator/5.1/Applications/45AFBC47-26D1-4BA0-A26A-F9722E4BC34C/Documents/OpenEarsDynamicGrammar.corpus for reading<br />
+2012-10-25 20:10:19.958 SaskPower[85011:10703] Able to open /Users/c5163090/Library/Application Support/iPhone Simulator/5.1/Applications/45AFBC47-26D1-4BA0-A26A-F9722E4BC34C/Documents/OpenEarsDynamicGrammar_pipe.txt for writing<br />
+2012-10-25 20:10:19.958 SaskPower[85011:10703] Starting text2wfreq_impl<br />
+2012-10-25 20:10:19.962 SaskPower[85011:10703] Done with text2wfreq_impl<br />
+2012-10-25 20:10:19.963 SaskPower[85011:10703] Able to open /Users/c5163090/Library/Application Support/iPhone Simulator/5.1/Applications/45AFBC47-26D1-4BA0-A26A-F9722E4BC34C/Documents/OpenEarsDynamicGrammar_pipe.txt for reading.<br />
+2012-10-25 20:10:19.964 SaskPower[85011:10703] Able to open /Users/c5163090/Library/Application Support/iPhone Simulator/5.1/Applications/45AFBC47-26D1-4BA0-A26A-F9722E4BC34C/Documents/OpenEarsDynamicGrammar.vocab for reading.<br />
+2012-10-25 20:10:19.964 SaskPower[85011:10703] Starting wfreq2vocab<br />
+2012-10-25 20:10:19.965 SaskPower[85011:10703] Done with wfreq2vocab<br />
+2012-10-25 20:10:19.965 SaskPower[85011:10703] Starting text2idngram<br />
+2012-10-25 20:10:19.970 SaskPower[85011:10703] Done with text2idngram<br />
+2012-10-25 20:10:19.972 SaskPower[85011:10703] Starting idngram2lm<br />
+sih_add WARNING: repeated hashing of &#8216;MAINTENANCE(2)&#8217;, older value will be overridden.<br />
+sih_add WARNING: repeated hashing of &#8216;N&#8217;, older value will be overridden.<br />
+sih_add WARNING: repeated hashing of &#8216;UH&#8217;, older value will be overridden.</p>
+<p>2012-10-25 20:10:19.976 SaskPower[85011:10703] Done with idngram2lm<br />
+2012-10-25 20:10:19.977 SaskPower[85011:10703] Starting sphinx_lm_convert<br />
+2012-10-25 20:10:19.980 SaskPower[85011:10703] Finishing sphinx_lm_convert<br />
+2012-10-25 20:10:19.982 SaskPower[85011:10703] Done creating language model with CMUCLMTK in 0.025842 seconds.<br />
+2012-10-25 20:10:20.015 SaskPower[85011:10703] The word A2 was not found in the dictionary /Users/c5163090/Library/Application Support/iPhone Simulator/5.1/Applications/45AFBC47-26D1-4BA0-A26A-F9722E4BC34C/SaskPower.app/cmu07a.dic.<br />
+2012-10-25 20:10:20.015 SaskPower[85011:10703] Now using the fallback method to look up the word A2<br />
+2012-10-25 20:10:20.016 SaskPower[85011:10703] Using convertGraphemes for the word or phrase A2 which doesn&#8217;t appear in the dictionary<br />
+2012-10-25 20:10:20.018 SaskPower[85011:10703] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the default phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2012-10-25 20:10:20.050 SaskPower[85011:10703] The word AA was not found in the dictionary /Users/c5163090/Library/Application Support/iPhone Simulator/5.1/Applications/45AFBC47-26D1-4BA0-A26A-F9722E4BC34C/SaskPower.app/cmu07a.dic.<br />
+2012-10-25 20:10:20.051 SaskPower[85011:10703] Now using the fallback method to look up the word AA<br />
+2012-10-25 20:10:20.051 SaskPower[85011:10703] Using convertGraphemes for the word or phrase AA which doesn&#8217;t appear in the dictionary<br />
+2012-10-25 20:10:20.052 SaskPower[85011:10703] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the default phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2012-10-25 20:10:20.081 SaskPower[85011:10703] The word ABX was not found in the dictionary /Users/c5163090/Library/Application Support/iPhone Simulator/5.1/Applications/45AFBC47-26D1-4BA0-A26A-F9722E4BC34C/SaskPower.app/cmu07a.dic.<br />
+2012-10-25 20:10:20.082 SaskPower[85011:10703] Now using the fallback method to look up the word ABX<br />
+2012-10-25 20:10:20.083 SaskPower[85011:10703] Using convertGraphemes for the word or phrase ABX which doesn&#8217;t appear in the dictionary<br />
+2012-10-25 20:10:20.084 SaskPower[85011:10703] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the default phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2012-10-25 20:10:20.113 SaskPower[85011:10703] The word AO was not found in the dictionary /Users/c5163090/Library/Application Support/iPhone Simulator/5.1/Applications/45AFBC47-26D1-4BA0-A26A-F9722E4BC34C/SaskPower.app/cmu07a.dic.<br />
+2012-10-25 20:10:20.114 SaskPower[85011:10703] Now using the fallback method to look up the word AO<br />
+2012-10-25 20:10:20.115 SaskPower[85011:10703] Using convertGraphemes for the word or phrase AO which doesn&#8217;t appear in the dictionary<br />
+2012-10-25 20:10:20.116 SaskPower[85011:10703] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the default phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2012-10-25 20:10:20.144 SaskPower[85011:10703] The word DH was not found in the dictionary /Users/c5163090/Library/Application Support/iPhone Simulator/5.1/Applications/45AFBC47-26D1-4BA0-A26A-F9722E4BC34C/SaskPower.app/cmu07a.dic.<br />
+2012-10-25 20:10:20.145 SaskPower[85011:10703] Now using the fallback method to look up the word DH<br />
+2012-10-25 20:10:20.147 SaskPower[85011:10703] Using convertGraphemes for the word or phrase DH which doesn&#8217;t appear in the dictionary<br />
+2012-10-25 20:10:20.148 SaskPower[85011:10703] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the default phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2012-10-25 20:10:20.171 SaskPower[85011:10703] The word EY was not found in the dictionary /Users/c5163090/Library/Application Support/iPhone Simulator/5.1/Applications/45AFBC47-26D1-4BA0-A26A-F9722E4BC34C/SaskPower.app/cmu07a.dic.<br />
+2012-10-25 20:10:20.172 SaskPower[85011:10703] Now using the fallback method to look up the word EY<br />
+2012-10-25 20:10:20.172 SaskPower[85011:10703] Using convertGraphemes for the word or phrase EY which doesn&#8217;t appear in the dictionary<br />
+2012-10-25 20:10:20.173 SaskPower[85011:10703] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the default phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2012-10-25 20:10:20.193 SaskPower[85011:10703] The word FOR2 was not found in the dictionary /Users/c5163090/Library/Application Support/iPhone Simulator/5.1/Applications/45AFBC47-26D1-4BA0-A26A-F9722E4BC34C/SaskPower.app/cmu07a.dic.<br />
+2012-10-25 20:10:20.194 SaskPower[85011:10703] Now using the fallback method to look up the word FOR2<br />
+2012-10-25 20:10:20.195 SaskPower[85011:10703] Using convertGraphemes for the word or phrase FOR2 which doesn&#8217;t appear in the dictionary<br />
+2012-10-25 20:10:20.196 SaskPower[85011:10703] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the default phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2012-10-25 20:10:20.215 SaskPower[85011:10703] The word FOR3 was not found in the dictionary /Users/c5163090/Library/Application Support/iPhone Simulator/5.1/Applications/45AFBC47-26D1-4BA0-A26A-F9722E4BC34C/SaskPower.app/cmu07a.dic.<br />
+2012-10-25 20:10:20.216 SaskPower[85011:10703] Now using the fallback method to look up the word FOR3<br />
+2012-10-25 20:10:20.217 SaskPower[85011:10703] Using convertGraphemes for the word or phrase FOR3 which doesn&#8217;t appear in the dictionary<br />
+2012-10-25 20:10:20.218 SaskPower[85011:10703] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the default phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2012-10-25 20:10:20.237 SaskPower[85011:10703] The word HH was not found in the dictionary /Users/c5163090/Library/Application Support/iPhone Simulator/5.1/Applications/45AFBC47-26D1-4BA0-A26A-F9722E4BC34C/SaskPower.app/cmu07a.dic.<br />
+2012-10-25 20:10:20.238 SaskPower[85011:10703] Now using the fallback method to look up the word HH<br />
+2012-10-25 20:10:20.239 SaskPower[85011:10703] Using convertGraphemes for the word or phrase HH which doesn&#8217;t appear in the dictionary<br />
+2012-10-25 20:10:20.240 SaskPower[85011:10703] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the default phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2012-10-25 20:10:20.257 SaskPower[85011:10703] The word IH was not found in the dictionary /Users/c5163090/Library/Application Support/iPhone Simulator/5.1/Applications/45AFBC47-26D1-4BA0-A26A-F9722E4BC34C/SaskPower.app/cmu07a.dic.<br />
+2012-10-25 20:10:20.258 SaskPower[85011:10703] Now using the fallback method to look up the word IH<br />
+2012-10-25 20:10:20.262 SaskPower[85011:10703] Using convertGraphemes for the word or phrase IH which doesn&#8217;t appear in the dictionary<br />
+2012-10-25 20:10:20.264 SaskPower[85011:10703] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the default phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2012-10-25 20:10:20.283 SaskPower[85011:10703] The word IY was not found in the dictionary /Users/c5163090/Library/Application Support/iPhone Simulator/5.1/Applications/45AFBC47-26D1-4BA0-A26A-F9722E4BC34C/SaskPower.app/cmu07a.dic.<br />
+2012-10-25 20:10:20.284 SaskPower[85011:10703] Now using the fallback method to look up the word IY<br />
+2012-10-25 20:10:20.285 SaskPower[85011:10703] Using convertGraphemes for the word or phrase IY which doesn&#8217;t appear in the dictionary<br />
+2012-10-25 20:10:20.286 SaskPower[85011:10703] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the default phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2012-10-25 20:10:20.302 SaskPower[85011:10703] The word MAINTENANCE2 was not found in the dictionary /Users/c5163090/Library/Application Support/iPhone Simulator/5.1/Applications/45AFBC47-26D1-4BA0-A26A-F9722E4BC34C/SaskPower.app/cmu07a.dic.<br />
+2012-10-25 20:10:20.303 SaskPower[85011:10703] Now using the fallback method to look up the word MAINTENANCE2<br />
+2012-10-25 20:10:20.304 SaskPower[85011:10703] Using convertGraphemes for the word or phrase MAINTENANCE2 which doesn&#8217;t appear in the dictionary<br />
+2012-10-25 20:10:20.305 SaskPower[85011:10703] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the default phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2012-10-25 20:10:20.319 SaskPower[85011:10703] The word NDH was not found in the dictionary /Users/c5163090/Library/Application Support/iPhone Simulator/5.1/Applications/45AFBC47-26D1-4BA0-A26A-F9722E4BC34C/SaskPower.app/cmu07a.dic.<br />
+2012-10-25 20:10:20.320 SaskPower[85011:10703] Now using the fallback method to look up the word NDH<br />
+2012-10-25 20:10:20.320 SaskPower[85011:10703] Using convertGraphemes for the word or phrase NDH which doesn&#8217;t appear in the dictionary<br />
+2012-10-25 20:10:20.322 SaskPower[85011:10703] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the default phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2012-10-25 20:10:20.334 SaskPower[85011:10703] The word RENEWALI was not found in the dictionary /Users/c5163090/Library/Application Support/iPhone Simulator/5.1/Applications/45AFBC47-26D1-4BA0-A26A-F9722E4BC34C/SaskPower.app/cmu07a.dic.<br />
+2012-10-25 20:10:20.335 SaskPower[85011:10703] Now using the fallback method to look up the word RENEWALI<br />
+2012-10-25 20:10:20.335 SaskPower[85011:10703] Using convertGraphemes for the word or phrase RENEWALI which doesn&#8217;t appear in the dictionary<br />
+2012-10-25 20:10:20.337 SaskPower[85011:10703] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the default phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2012-10-25 20:10:20.344 SaskPower[85011:10703] The word UW was not found in the dictionary /Users/c5163090/Library/Application Support/iPhone Simulator/5.1/Applications/45AFBC47-26D1-4BA0-A26A-F9722E4BC34C/SaskPower.app/cmu07a.dic.<br />
+2012-10-25 20:10:20.345 SaskPower[85011:10703] Now using the fallback method to look up the word UW<br />
+2012-10-25 20:10:20.346 SaskPower[85011:10703] Using convertGraphemes for the word or phrase UW which doesn&#8217;t appear in the dictionary<br />
+2012-10-25 20:10:20.347 SaskPower[85011:10703] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the default phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2012-10-25 20:10:20.349 SaskPower[85011:10703] I&#8217;m done running performDictionaryLookup and it took 0.361957 seconds<br />
+2012-10-25 20:10:20.351 SaskPower[85011:10703] I&#8217;m done running dynamic language model generation and it took 372868820.351070 seconds<br />
+2012-10-25 20:10:20.351 SaskPower[85011:10703] Dynamic language generator completed successfully, you can find your new files OpenEarsDynamicGrammar.DMP<br />
+ and<br />
+OpenEarsDynamicGrammar.dic<br />
+ at the paths<br />
+/Users/c5163090/Library/Application Support/iPhone Simulator/5.1/Applications/45AFBC47-26D1-4BA0-A26A-F9722E4BC34C/Documents/OpenEarsDynamicGrammar.DMP<br />
+and<br />
+/Users/c5163090/Library/Application Support/iPhone Simulator/5.1/Applications/45AFBC47-26D1-4BA0-A26A-F9722E4BC34C/Documents/OpenEarsDynamicGrammar.dic<br />
+2012-10-25 20:10:20.352 SaskPower[85011:10703] A sample rate was requested that isn&#8217;t one of the two supported values of 16000 or 8000 so we will use the default of 16000.<br />
+2012-10-25 20:10:20.352 SaskPower[85011:10703] The audio session has never been initialized so we will do that now.<br />
+2012-10-25 20:10:20.353 SaskPower[85011:10703] Checking and resetting all audio session settings.<br />
+2012-10-25 20:10:20.354 SaskPower[85011:10703] audioCategory is incorrect, we will change it.<br />
+2012-10-25 20:10:20.354 SaskPower[85011:10703] audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.<br />
+2012-10-25 20:10:20.354 SaskPower[85011:10703] bluetoothInput is incorrect, we will change it.<br />
+2012-10-25 20:10:20.355 SaskPower[85011:10703] bluetooth input is now on the correct setting of 1.<br />
+2012-10-25 20:10:20.355 SaskPower[85011:10703] categoryDefaultToSpeaker is incorrect, we will change it.<br />
+2012-10-25 20:10:20.356 SaskPower[85011:10703] CategoryDefaultToSpeaker is now on the correct setting of 1.<br />
+2012-10-25 20:10:20.356 SaskPower[85011:10703] preferredBufferSize is incorrect, we will change it.<br />
+2012-10-25 20:10:20.357 SaskPower[85011:10703] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2012-10-25 20:10:20.357 SaskPower[85011:10703] preferredSampleRateCheck is incorrect, we will change it.<br />
+2012-10-25 20:10:20.358 SaskPower[85011:10703] preferred hardware sample rate is now on the correct setting of 16000.000000.<br />
+2012-10-25 20:10:20.358 SaskPower[85011:10703] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2012-10-25 20:10:20.359 SaskPower[85011:10703] Exiting startAudioSession.<br />
+2012-10-25 20:10:20.359 SaskPower[85011:10703] The audio session has already been initialized but we will override its properties.<br />
+2012-10-25 20:10:20.359 SaskPower[85011:13d03] Recognition loop has started<br />
+INFO: cmd_ln.c(706): Parsing command line:<br />
+\<br />
+	-lm /Users/c5163090/Library/Application Support/iPhone Simulator/5.1/Applications/45AFBC47-26D1-4BA0-A26A-F9722E4BC34C/SaskPower.app/OpenEars1.languagemodel \<br />
+	-dict /Users/c5163090/Library/Application Support/iPhone Simulator/5.1/Applications/45AFBC47-26D1-4BA0-A26A-F9722E4BC34C/SaskPower.app/OpenEars1.dic \<br />
+	-hmm /Users/c5163090/Library/Application Support/iPhone Simulator/5.1/Applications/45AFBC47-26D1-4BA0-A26A-F9722E4BC34C/SaskPower.app \<br />
+	-lw 6.500000 \<br />
+	-maxhmmpf 3000 \<br />
+	-samprate 16000 </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-alpha		0.97		9.700000e-01<br />
+-argfile<br />
+-ascale		20.0		2.000000e+012012-10-25 20:10:20.360 SaskPower[85011:10703] Checking and resetting all audio session settings.</p>
+<p>-aw		1		1<br />
+-backtrace	no		no<br />
+-beam		1e-48		1.000000e-48<br />
+-bestpath	yes		yes<br />
+-bestpathlw	9.5		9.500000e+00<br />
+-bghist		no		no<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		8.0<br />
+-compallsen	no		no<br />
+-debug				0<br />
+-dict				/Users/c5163090/Library/Application Support/iPhone Simulator/5.1/Applications/45AFBC47-26D1-4BA0-A26A-F9722E4BC34C/SaskPower.app/OpenEars1.dic<br />
+-dictcase	no		no<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-ds		1		1<br />
+-fdict<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-featparams<br />
+-fillprob	1e-8		1.000000e-08<br />
+-frate		100		100<br />
+-fsg<br />
+-fsgusealtpron	yes		yes<br />
+-fsgusefiller	yes		yes<br />
+-fwdflat	yes		yes<br />
+-fwdflatbeam	1e-64		1.000000e-64<br />
+-fwdflatefwid	4		4<br />
+-fwdflatlw	8.5		8.500000e+00<br />
+-fwdflatsfwin	25		25<br />
+-fwdflatwbeam	7e-29		7.000000e-29<br />
+-fwdtree	yes		yes<br />
+-hmm				/Users/c5163090/Library/Application Support/iPhone Simulator/5.1/Applications/45AFBC47-26D1-4BA0-A26A-F9722E4BC34C/SaskPower.app<br />
+-input_endian	little		little<br />
+-jsgf<br />
+-kdmaxbbi	-1		-1<br />
+-kdmaxdepth	0		0<br />
+-kdtree<br />
+-latsize	5000		5000<br />
+-lda<br />
+-ldadim		0		0<br />
+-lextreedump	0		0<br />
+-lifter		0		0<br />
+-lm				/Users/c5163090/Library/Application Support/iPhone Simulator/5.1/Applications/45AFBC47-26D1-4BA0-A26A-F9722E4BC34C/SaskPower.app/OpenEars1.languagemodel<br />
+-lmctl<br />
+-lmname		default		default<br />
+-logbase	1.0001		1.000100e+00<br />
+-logfn<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.333333e+02<br />
+-lpbeam		1e-40		1.000000e-40<br />
+-lponlybeam	7e-29		2012-10-25 20:10:20.389 SaskPower[85011:10703] audioCategory is correct, we will leave it as it is.<br />
+7.000000e-29<br />
+-lw		6.5		6.500000e+00<br />
+-maxhmmpf	-1		3000<br />
+-maxnewoov	20		20<br />
+-maxwpf		-1		-1<br />
+-mdef<br />
+-mean<br />
+-mfclogdir<br />
+-min_endfr	0		0<br />
+-mixw<br />
+-mixwfloor	0.0000001	1.000000e-07<br />
+-mllr<br />
+-mmap		yes		yes<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		40<br />
+-nwpen		1.0		1.000000e+00<br />
+-pbeam		1e-48		1.000000e-48<br />
+-pip		1.0		1.000000e+00<br />
+-pl_beam	1e-10		1.000000e-10<br />
+-pl_pbeam	1e-5		1.000000e-05<br />
+-pl_window	0		0<br />
+-rawlogdir<br />
+-remove_dc	no		no<br />
+-round_filters	yes		yes<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-sendump<br />
+-senlogdir<br />
+-senmgau<br />
+-silprob	0.005		5.000000e-03<br />
+-smoothspec	no		no<br />
+-svspec<br />
+-tmat<br />
+-tmatfloor	0.0001		1.000000e-04<br />
+-topn		4		4<br />
+-topn_beam	0		0<br />
+-toprule<br />
+-transform	legacy		legacy<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	6.855498e+03<br />
+-usewdphones	no		no<br />
+-uw		1.0		1.000000e+00<br />
+-var<br />
+-varfloor	0.0001		1.000000e-04<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wbeam		7e-29		7.000000e-29<br />
+-wip		0.65		6.500000e-01<br />
+-wlen		0.025625	2.562500e-02</p>
+<p>2012-10-25 20:10:20.390 SaskPower[85011:10703] bluetoothInput is correct, we will leave it as it is.<br />
+2012-10-25 20:10:20.391 SaskPower[85011:10703] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2012-10-25 20:10:20.391 SaskPower[85011:10703] preferredBufferSize is correct, we will leave it as it is.<br />
+2012-10-25 20:10:20.392 SaskPower[85011:10703] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2012-10-25 20:10:20.392 SaskPower[85011:10703] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2012-10-25 20:10:20.393 SaskPower[85011:10703] Exiting startAudioSession.<br />
+2012-10-25 20:10:20.394 SaskPower[85011:10703] I&#8217;m running flite<br />
+2012-10-25 20:10:20.394 SaskPower[85011:10703] Checking and resetting all audio session settings.<br />
+2012-10-25 20:10:20.395 SaskPower[85011:10703] audioCategory is correct, we will leave it as it is.<br />
+2012-10-25 20:10:20.395 SaskPower[85011:10703] bluetoothInput is correct, we will leave it as it is.<br />
+2012-10-25 20:10:20.396 SaskPower[85011:10703] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+INFO: feat.c(713): Initializing feature stream to type: &#8216;1s_c_d_dd&#8217;, ceplen=13, CMN=&#8217;current&#8217;, VARNORM=&#8217;no&#8217;, AGC=&#8217;none&#8217;<br />
+INFO: cmn.c(142): mean[0]= 12.00, mean[1..12]= 0.0<br />
+ERROR: &#8220;acmod.c&#8221;, line 91: Folder &#8216;/Users/c5163090/Library/Application Support/iPhone Simulator/5.1/Applications/45AFBC47-26D1-4BA0-A26A-F9722E4BC34C/SaskPower.app&#8217; does not contain acoustic model definition &#8216;mdef&#8217;<br />
+2012-10-25 20:10:20.396 SaskPower[85011:10703] preferredBufferSize is correct, we will leave it as it is.<br />
+2012-10-25 20:10:20.397 SaskPower[85011:10703] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2012-10-25 20:10:20.396 SaskPower[85011:13d03] Starting openAudioDevice on the simulator. This Simulator-compatible audio driver is only provided to you as a convenience so you can use the Simulator to test recognition logic, however, its audio driver is not supported and bug reports for it will be circular-filed.<br />
+2012-10-25 20:10:20.481 SaskPower[85011:13d03] Error loading /System/Library/Extensions/AudioIPCDriver.kext/Contents/Resources/AudioIPCPlugIn.bundle/Contents/MacOS/AudioIPCPlugIn:  dlopen(/System/Library/Extensions/AudioIPCDriver.kext/Contents/Resources/AudioIPCPlugIn.bundle/Contents/MacOS/AudioIPCPlugIn, 262): Symbol not found: ___CFObjCIsCollectable<br />
+  Referenced from: /System/Library/Frameworks/Security.framework/Versions/A/Security<br />
+  Expected in: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation<br />
+ in /System/Library/Frameworks/Security.framework/Versions/A/Security<br />
+2012-10-25 20:10:20.488 SaskPower[85011:13d03] Error loading /System/Library/Extensions/AudioIPCDriver.kext/Contents/Resources/AudioIPCPlugIn.bundle/Contents/MacOS/AudioIPCPlugIn:  dlopen(/System/Library/Extensions/AudioIPCDriver.kext/Contents/Resources/AudioIPCPlugIn.bundle/Contents/MacOS/AudioIPCPlugIn, 262): Symbol not found: ___CFObjCIsCollectable<br />
+  Referenced from: /System/Library/Frameworks/Security.framework/Versions/A/Security<br />
+  Expected in: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation<br />
+ in /System/Library/Frameworks/Security.framework/Versions/A/Security<br />
+2012-10-25 20:10:20.500 SaskPower[85011:10703] I&#8217;m done running flite and it took 0.106042 seconds<br />
+2012-10-25 20:10:20.518 SaskPower[85011:13d03] Error loading /System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/AppleHDAHALPlugIn.bundle/Contents/MacOS/AppleHDAHALPlugIn:  dlopen(/System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/AppleHDAHALPlugIn.bundle/Contents/MacOS/AppleHDAHALPlugIn, 262): Symbol not found: ___CFObjCIsCollectable<br />
+  Referenced from: /System/Library/Frameworks/Security.framework/Versions/A/Security<br />
+  Expected in: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation<br />
+ in /System/Library/Frameworks/Security.framework/Versions/A/Security<br />
+2012-10-25 20:10:20.519 SaskPower[85011:10703] Flite audio player was nil when referenced so attempting to allocate a new audio player.<br />
+2012-10-25 20:10:20.523 SaskPower[85011:10703] Loading speech data for Flite concluded successfully.<br />
+2012-10-25 20:10:20.525 SaskPower[85011:13d03] Error loading /System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/AppleHDAHALPlugIn.bundle/Contents/MacOS/AppleHDAHALPlugIn:  dlopen(/System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/AppleHDAHALPlugIn.bundle/Contents/MacOS/AppleHDAHALPlugIn, 262): Symbol not found: ___CFObjCIsCollectable<br />
+  Referenced from: /System/Library/Frameworks/Security.framework/Versions/A/Security<br />
+  Expected in: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation<br />
+ in /System/Library/Frameworks/Security.framework/Versions/A/Security<br />
+2012-10-25 20:10:20.538 SaskPower[85011:13d03] Error loading /System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/AppleHDAHALPlugIn.bundle/Contents/MacOS/AppleHDAHALPlugIn:  dlopen(/System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/AppleHDAHALPlugIn.bundle/Contents/MacOS/AppleHDAHALPlugIn, 262): Symbol not found: ___CFObjCIsCollectable<br />
+  Referenced from: /System/Library/Frameworks/Security.framework/Versions/A/Security<br />
+  Expected in: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation<br />
+ in /System/Library/Frameworks/Security.framework/Versions/A/Security<br />
+2012-10-25 20:10:20.545 SaskPower[85011:13d03] Error loading /System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/AppleHDAHALPlugIn.bundle/Contents/MacOS/AppleHDAHALPlugIn:  dlopen(/System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/AppleHDAHALPlugIn.bundle/Contents/MacOS/AppleHDAHALPlugIn, 262): Symbol not found: ___CFObjCIsCollectable<br />
+  Referenced from: /System/Library/Frameworks/Security.framework/Versions/A/Security<br />
+  Expected in: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation<br />
+ in /System/Library/Frameworks/Security.framework/Versions/A/Security<br />
+2012-10-25 20:10:20.558 SaskPower[85011:13d03] Error loading /System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/AppleHDAHALPlugIn.bundle/Contents/MacOS/AppleHDAHALPlugIn:  dlopen(/System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/AppleHDAHALPlugIn.bundle/Contents/MacOS/AppleHDAHALPlugIn, 262): Symbol not found: ___CFObjCIsCollectable<br />
+  Referenced from: /System/Library/Frameworks/Security.framework/Versions/A/Security<br />
+  Expected in: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation<br />
+ in /System/Library/Frameworks/Security.framework/Versions/A/Security<br />
+2012-10-25 20:10:20.565 SaskPower[85011:13d03] Error loading /System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/AppleHDAHALPlugIn.bundle/Contents/MacOS/AppleHDAHALPlugIn:  dlopen(/System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/AppleHDAHALPlugIn.bundle/Contents/MacOS/AppleHDAHALPlugIn, 262): Symbol not found: ___CFObjCIsCollectable<br />
+  Referenced from: /System/Library/Frameworks/Security.framework/Versions/A/Security<br />
+  Expected in: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation<br />
+ in /System/Library/Frameworks/Security.framework/Versions/A/Security<br />
+2012-10-25 20:10:22.142 SaskPower[85011:13d03] Calibration has started<br />
+2012-10-25 20:10:22.154 SaskPower[85011:10703] Pocketsphinx is starting up.<br />
+2012-10-25 20:10:22.155 SaskPower[85011:10703] Flite sending suspend recognition notification.<br />
+2012-10-25 20:10:22.156 SaskPower[85011:10703] Pocketsphinx calibration has started.<br />
+2012-10-25 20:10:22.156 SaskPower[85011:10703] Flite has started speaking<br />
+2012-10-25 20:10:24.344 SaskPower[85011:13d03] Calibration has completed<br />
+2012-10-25 20:10:24.344 SaskPower[85011:10703] Pocketsphinx calibration is complete.<br />
+2012-10-25 20:10:24.345 SaskPower[85011:13d03] Project has these words in its dictionary:<br />
+BACKWARD<br />
+CHANGE<br />
+FORWARD<br />
+GO<br />
+LEFT<br />
+MODEL<br />
+RIGHT<br />
+TURN<br />
+2012-10-25 20:10:24.345 SaskPower[85011:10703] I&#8217;m running flite<br />
+2012-10-25 20:10:24.346 SaskPower[85011:10703] Checking and resetting all audio session settings.<br />
+2012-10-25 20:10:24.346 SaskPower[85011:13d03] Listening.<br />
+2012-10-25 20:10:24.346 SaskPower[85011:10703] audioCategory is correct, we will leave it as it is.<br />
+2012-10-25 20:10:24.347 SaskPower[85011:10703] bluetoothInput is correct, we will leave it as it is.<br />
+2012-10-25 20:10:24.347 SaskPower[85011:10703] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2012-10-25 20:10:24.347 SaskPower[85011:10703] preferredBufferSize is correct, we will leave it as it is.<br />
+2012-10-25 20:10:24.348 SaskPower[85011:10703] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2012-10-25 20:10:24.394 SaskPower[85011:10703] I&#8217;m done running flite and it took 0.048268 seconds<br />
+2012-10-25 20:10:24.395 SaskPower[85011:10703] Pocketsphinx is now listening.<br />
+2012-10-25 20:10:24.395 SaskPower[85011:10703] Flite sending suspend recognition notification.<br />
+2012-10-25 20:10:24.396 SaskPower[85011:10703] Flite has started speaking<br />
+2012-10-25 20:10:24.489 SaskPower[85011:10703] AVAudioPlayer did finish playing with success flag of 1<br />
+2012-10-25 20:10:24.642 SaskPower[85011:10703] Flite sending resume recognition notification.<br />
+2012-10-25 20:10:25.144 SaskPower[85011:10703] Flite has finished speaking</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/app-crashes/#post-11731</guid>
+					<title><![CDATA[Reply To: Acoustic model issue in app]]></title>
+					<link>/forums/topic/app-crashes/#post-11731</link>
+					<pubDate>Thu, 25 Oct 2012 14:44:42 +0000</pubDate>
+					<dc:creator>Deepu</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>One more thing is I checked my compiler it is LLVM 3.1 &amp; My Xcode version is 4.3.2</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/app-crashes/#post-11732</guid>
+					<title><![CDATA[Reply To: Acoustic model issue in app]]></title>
+					<link>/forums/topic/app-crashes/#post-11732</link>
+					<pubDate>Thu, 25 Oct 2012 14:48:25 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Your acoustic model isn&#8217;t in your app:</p>
+<p>ERROR: “acmod.c”, line 91: Folder ‘/Users/c5163090/Library/Application Support/iPhone Simulator/5.1/Applications/45AFBC47-26D1-4BA0-A26A-F9722E4BC34C/SaskPower.app’ does not contain acoustic model definition ‘mdef’</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

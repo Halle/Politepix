@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Cocoapod support?? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/cocoapod-support/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/cocoapod-support/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:59:57 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/cocoapod-support/#post-1017382</guid>
+					<title><![CDATA[Cocoapod support??]]></title>
+					<link>/forums/topic/cocoapod-support/#post-1017382</link>
+					<pubDate>Wed, 05 Jun 2013 06:32:41 +0000</pubDate>
+					<dc:creator>fushunpoon</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>OpenEars could be much more easily be used as a part of a large project if only it were supported on Cocoapods.</p>
+<p>I&#8217;ve tried to make a Cocoa podspec for it, including all OpenEar sources and its dependencies&#8217; sources into the project. However, I ran into into 37 linker errors that look like this:</p>
+<p>Undefined symbols for architecture i386:<br />
+  &#8220;_delete_features&#8221;, referenced from:<br />
+      -[GraphemeGenerator init] in libPods-VoiceArmApp.a(GraphemeGenerator.o)<br />
+  &#8220;_delete_utterance&#8221;, referenced from:<br />
+      -[GraphemeGenerator convertGraphemes:] in libPods-VoiceArmApp.a(GraphemeGenerator.o)<br />
+  &#8220;_delete_wave&#8221;, referenced from:<br />
+      -[FliteController say:withVoice:] in libPods-VoiceArmApp.a(FliteController.o)<br />
+  &#8220;_feat_copy_into&#8221;, referenced from:<br />
+      -[GraphemeGenerator init] in libPods-VoiceArmApp.a(GraphemeGenerator.o)</p>
+<p>I&#8217;m not sure how to resolve it. Any ideas?</p>
+<p>Hok</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/cocoapod-support/#post-1017394</guid>
+					<title><![CDATA[Reply To: Cocoapod support??]]></title>
+					<link>/forums/topic/cocoapod-support/#post-1017394</link>
+					<pubDate>Wed, 05 Jun 2013 09:38:28 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Hok,</p>
+<p>I am going to look into what is involved in creating a Cocoapod spec once the next round of releases are out since Orta let me know there was interest and I also think it&#8217;s a good idea if there is compatibility between the Cocoapod system and how OpenEars is developed and released. Unfortunately I can&#8217;t troubleshoot it with you in advance of getting time to look things over myself and figure out what will be involved in that task, but I wanted to let you know that I also think it would be a useful development and it is on my own task list.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/cocoapod-support/#post-1017400</guid>
+					<title><![CDATA[Reply To: Cocoapod support??]]></title>
+					<link>/forums/topic/cocoapod-support/#post-1017400</link>
+					<pubDate>Wed, 05 Jun 2013 14:46:47 +0000</pubDate>
+					<dc:creator>fushunpoon</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>I&#8217;m glad that it&#8217;s on the roadmap somewhere. It would make development with OpenEars much more manageable for everybody.</p>
+<p>Cocoapods works by sticking all  Objective-C sources of a Framework into its own fake Framework directory, and then generates you a workspace that would tie your project&#8217;s various targets up with the frameworks they depend on. The main challenge is to have OpenEars&#8217; dependencies compiled and linking correctly with the rest of the sources. It doesn&#8217;t seem like a trivial task.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/cocoapod-support/#post-1017401</guid>
+					<title><![CDATA[Reply To: Cocoapod support??]]></title>
+					<link>/forums/topic/cocoapod-support/#post-1017401</link>
+					<pubDate>Wed, 05 Jun 2013 15:11:21 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Well, development with OpenEars is 1. dragging a folder into your project and 2. starting to code, so I&#8217;m not sure the win is that big in terms of manageability, but Cocoapods is a very cool project and I&#8217;m happy to look into participating. There are no library dependencies in the sense you&#8217;re describing since they are all shipped as part of OpenEars&#8217; distribution (using other versions of its library dependencies are probably why you have errors above), but a Cocoapods spec has to work with OpenEars&#8217; license which is not OSI.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

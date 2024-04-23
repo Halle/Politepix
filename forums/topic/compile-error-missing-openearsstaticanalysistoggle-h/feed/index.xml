@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Compile Error missing OpenEarsStaticAnalysisToggle.h &#8211; Politepix</title>
+		<atom:link href="/forums/topic/compile-error-missing-openearsstaticanalysistoggle-h/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/compile-error-missing-openearsstaticanalysistoggle-h/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:05:05 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/compile-error-missing-openearsstaticanalysistoggle-h/#post-1020511</guid>
+					<title><![CDATA[Compile Error missing OpenEarsStaticAnalysisToggle.h]]></title>
+					<link>/forums/topic/compile-error-missing-openearsstaticanalysistoggle-h/#post-1020511</link>
+					<pubDate>Wed, 12 Mar 2014 20:50:24 +0000</pubDate>
+					<dc:creator>abshih</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>I recently upgraded to xCode 5.1 and it gave some compilation errors on a older build of OpenEars. I downloaded the new framework from this website and deleted the old one, but I am getting the error</p>
+<p>&#8220;OpenEars/OpenEarsStaticAnalysisToggle.h file not found.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/compile-error-missing-openearsstaticanalysistoggle-h/#post-1020512</guid>
+					<title><![CDATA[Reply To: Compile Error missing OpenEarsStaticAnalysisToggle.h]]></title>
+					<link>/forums/topic/compile-error-missing-openearsstaticanalysistoggle-h/#post-1020512</link>
+					<pubDate>Wed, 12 Mar 2014 20:58:18 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Take a look at what is shown inside the build setting &#8220;Framework Search Paths&#8221; and see if it makes sense for your system.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/compile-error-missing-openearsstaticanalysistoggle-h/#post-1020513</guid>
+					<title><![CDATA[Reply To: Compile Error missing OpenEarsStaticAnalysisToggle.h]]></title>
+					<link>/forums/topic/compile-error-missing-openearsstaticanalysistoggle-h/#post-1020513</link>
+					<pubDate>Wed, 12 Mar 2014 21:12:08 +0000</pubDate>
+					<dc:creator>abshih</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello Halle,</p>
+<p>Thank you! The files were all messed up.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/compile-error-missing-openearsstaticanalysistoggle-h/#post-1020514</guid>
+					<title><![CDATA[Reply To: Compile Error missing OpenEarsStaticAnalysisToggle.h]]></title>
+					<link>/forums/topic/compile-error-missing-openearsstaticanalysistoggle-h/#post-1020514</link>
+					<pubDate>Wed, 12 Mar 2014 21:15:56 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You&#8217;re welcome – glad that worked! This is an Xcode bug which I guess continues to be unfixed.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

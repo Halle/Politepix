@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Test WAV files from music library &#8211; Politepix</title>
+		<atom:link href="/forums/topic/test-wav-files-from-music-library/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/test-wav-files-from-music-library/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:51:47 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/test-wav-files-from-music-library/#post-1022472</guid>
+					<title><![CDATA[Test WAV files from music library]]></title>
+					<link>/forums/topic/test-wav-files-from-music-library/#post-1022472</link>
+					<pubDate>Tue, 09 Sep 2014 16:33:57 +0000</pubDate>
+					<dc:creator>VM</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi!</p>
+<p>I&#8217;m trying to test OpenEars speech recognition using previously recorded WAV-files. I created a few 16-bit WAV-file and upload them to the music library. But now I can&#8217;t take such path to the file, that it is good for <strong>runRecognitionOnWavFileAtPath</strong> method. Is it possible to use that method for the files from music library? Did anybody try to do the same?</p>
+<p>here is my code:<br />
+<em>&#8211; (IBAction) searchAction<br />
+{<br />
+    MPMediaPickerController *mediaPicker = [[MPMediaPickerController alloc] initWithMediaTypes:MPMediaTypeMusic];<br />
+    mediaPicker.delegate = self;<br />
+    mediaPicker.allowsPickingMultipleItems = NO;<br />
+    [self presentViewController:mediaPicker animated:YES completion:nil];<br />
+}</p>
+<p>&#8211; (void)mediaPicker: (MPMediaPickerController *)mediaPicker didPickMediaItems:(MPMediaItemCollection *)mediaItemCollection<br />
+{<br />
+    [self dismissModalViewControllerAnimated:YES];</p>
+<p>    MPMediaItem *anItem = (MPMediaItem *)[mediaItemCollection.items objectAtIndex: 0];<br />
+    NSURL *assetURL = [anItem valueForProperty: MPMediaItemPropertyAssetURL];</p>
+<p>    NSString* filePath = [assetURL absoluteString];</p>
+<p>    [self.pocketsphinxController runRecognitionOnWavFileAtPath:filePath usingLanguageModelAtPath:self.pathToFirstDynamicallyGeneratedLanguageModel dictionaryAtPath:self.pathToFirstDynamicallyGeneratedDictionary acousticModelAtPath:[AcousticModel pathToModel:@&#8221;AcousticModelEnglish&#8221;] languageModelIsJSGF:FALSE];<br />
+}</em></p>
+<p>Thanks</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/test-wav-files-from-music-library/#post-1022473</guid>
+					<title><![CDATA[Reply To: Test WAV files from music library]]></title>
+					<link>/forums/topic/test-wav-files-from-music-library/#post-1022473</link>
+					<pubDate>Tue, 09 Sep 2014 16:47:50 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I have no idea – let me know what you find out about this!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

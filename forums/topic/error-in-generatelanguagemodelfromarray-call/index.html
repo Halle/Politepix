@@ -1,0 +1,2133 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+<meta charset="UTF-8">
+
+<title>Topic: Error in generateLanguageModelFromArray call | Politepix</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="/wp-content/uploads/omgf/omgf-stylesheet-56/omgf-stylesheet-56.css?ver=1668781124" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" type="text/css" href="/wp-content/themes/politepix-pixelpress-child-theme/style.css" media="screen">
+
+<link rel="pingback" href="/xmlrpc.php">
+<meta name="robots" content="max-image-preview:large">
+<script>window._wca = window._wca || [];</script>
+<link rel="dns-prefetch" href="//stats.wp.com">
+<link rel="dns-prefetch" href="//i0.wp.com">
+<link rel="dns-prefetch" href="//c0.wp.com">
+<link rel="alternate" type="application/rss+xml" title="Politepix &raquo; Feed" href="http://feeds.feedburner.com/politepixblog">
+<link rel="alternate" type="application/rss+xml" title="Politepix &raquo; Comments Feed" href="/comments/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.5.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🐦‍⬛","🐦​⬛")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<link rel="stylesheet" id="woo-layout-css" href="/wp-content/themes/pixelpress/css/layout.css?ver=6.5.2" type="text/css" media="all">
+<link rel="stylesheet" id="woocommerce-css" href="/wp-content/themes/pixelpress/css/woocommerce.css?ver=6.5.2" type="text/css" media="all">
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="https://c0.wp.com/c/6.5.2/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<style id="wp-block-library-inline-css" type="text/css">.has-text-align-justify{text-align:justify;}</style>
+<link rel="stylesheet" id="mediaelement-css" href="https://c0.wp.com/c/6.5.2/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="https://c0.wp.com/c/6.5.2/wp-includes/js/mediaelement/wp-mediaelement.min.css" type="text/css" media="all">
+<style id="jetpack-sharing-buttons-style-inline-css" type="text/css">.jetpack-sharing-buttons__services-list{display:flex;flex-direction:row;flex-wrap:wrap;gap:0;list-style-type:none;margin:5px;padding:0}.jetpack-sharing-buttons__services-list.has-small-icon-size{font-size:12px}.jetpack-sharing-buttons__services-list.has-normal-icon-size{font-size:16px}.jetpack-sharing-buttons__services-list.has-large-icon-size{font-size:24px}.jetpack-sharing-buttons__services-list.has-huge-icon-size{font-size:36px}@media print{.jetpack-sharing-buttons__services-list{display:none!important}}.editor-styles-wrapper .wp-block-jetpack-sharing-buttons{gap:0;padding-inline-start:0}ul.jetpack-sharing-buttons__services-list.has-background{padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="bbp-default-css" href="/wp-content/plugins/bbpress/templates/default/css/bbpress.min.css?ver=2.6.9" type="text/css" media="all">
+<link rel="stylesheet" id="currency_converter_styles-css" href="/wp-content/plugins/woocommerce-currency-converter-widget/assets/css/converter.css?ver=2.2.2" type="text/css" media="all">
+<style id="woocommerce-inline-inline-css" type="text/css">.woocommerce form .form-row .required { visibility: visible; }</style>
+<link rel="stylesheet" id="cmplz-general-css" href="/wp-content/plugins/complianz-gdpr/assets/css/cookieblocker.min.css?ver=1710283454" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="https://c0.wp.com/p/jetpack/13.3.1/css/jetpack.css" type="text/css" media="all">
+<link rel="stylesheet" id="prettyPhoto-css" href="/wp-content/themes/pixelpress/includes/css/prettyPhoto.css?ver=6.5.2" type="text/css" media="all">
+<script type="text/template" id="tmpl-variation-template">
+	<div class="woocommerce-variation-description">{{{ data.variation.variation_description }}}<\/div>
+	<div class="woocommerce-variation-price">{{{ data.variation.price_html }}}<\/div>
+	<div class="woocommerce-variation-availability">{{{ data.variation.availability_html }}}<\/div>
+</script>
+<script type="text/template" id="tmpl-unavailable-variation-template">
+	<p>Sorry, this product is unavailable. Please choose a different combination.<\/p>
+</script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js" id="wp-polyfill-inert-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/dist/vendor/regenerator-runtime.min.js" id="regenerator-runtime-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/dist/vendor/wp-polyfill.min.js" id="wp-polyfill-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/dist/hooks.min.js" id="wp-hooks-js"></script>
+<script data-service="jetpack-statistics" data-category="statistics" type="text/plain" data-cmplz-src="https://stats.wp.com/w.js?ver=202417" id="woo-tracks-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/jquery/jquery.min.js" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/jquery/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/underscore.min.js" id="underscore-js"></script>
+<script type="text/javascript" id="wp-util-js-extra">
+/* <![CDATA[ */
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/wp-util.min.js" id="wp-util-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/jquery-blockui/jquery.blockUI.min.js" id="jquery-blockui-js" defer data-wp-strategy="defer"></script>
+<script type="text/javascript" id="wc-add-to-cart-variation-js-extra">
+/* <![CDATA[ */
+var wc_add_to_cart_variation_params = {"wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_no_matching_variations_text":"Sorry, no products matched your selection. Please choose a different combination.","i18n_make_a_selection_text":"Please select some product options before adding this product to your cart.","i18n_unavailable_text":"Sorry, this product is unavailable. Please choose a different combination."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/frontend/add-to-cart-variation.min.js" id="wc-add-to-cart-variation-js" defer data-wp-strategy="defer"></script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/jquery-cookie/jquery.cookie.min.js" id="jquery-cookie-js" defer data-wp-strategy="defer"></script>
+<script data-service="jetpack-statistics" data-category="statistics" type="text/plain" data-cmplz-src="https://stats.wp.com/s-202417.js" id="woocommerce-analytics-js" defer data-wp-strategy="defer"></script>
+<script type="text/javascript" src="/wp-content/themes/pixelpress/includes/js/third-party.js?ver=6.5.2" id="third party-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/prettyPhoto/jquery.prettyPhoto.min.js" id="prettyPhoto-js" data-wp-strategy="defer"></script>
+<script type="text/javascript" src="/wp-content/themes/pixelpress/includes/js/general.js?ver=6.5.2" id="general-js"></script>
+<script type="text/javascript" src="/wp-content/themes/pixelpress/includes/js/uniform.js?ver=6.5.2" id="uniform-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.5.2">
+<meta name="generator" content="WooCommerce 8.8.2">
+<link rel="shortlink" href="/?p=1029954">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Fforums%2Ftopic%2Ferror-in-generatelanguagemodelfromarray-call%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Fforums%2Ftopic%2Ferror-in-generatelanguagemodelfromarray-call%2F#038;format=xml">
+	<style>img#wpstats{display:none}</style>
+					<style>.cmplz-hidden {
+					display: none !important;
+				}</style>		<script>( function() {
+				window.onpageshow = function( event ) {
+					// Defined window.wpforms means that a form exists on a page.
+					// If so and back/forward button has been clicked,
+					// force reload a page to prevent the submit button state stuck.
+					if ( typeof window.wpforms !== 'undefined' && event.persisted ) {
+						window.location.reload();
+					}
+				};
+			}() );</script>
+		
+<!-- Theme version -->
+<meta name="generator" content="PixelPress Politepix 1.0">
+<meta name="generator" content="PixelPress 1.5.4">
+<meta name="generator" content="WooFramework 6.2.9">
+
+<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<!--  Mobile viewport scale | Disable user zooming as the layout is optimised -->
+<meta content="initial-scale=1.0; maximum-scale=1.0; user-scalable=no" name="viewport">
+		<!--[if lt IE 9]>
+			<script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+			<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	
+<!-- Google Webfonts -->
+<link href="/wp-content/uploads/omgf/omgf-stylesheet-165/omgf-stylesheet-165.css?ver=1668781124" rel="stylesheet" type="text/css">
+
+<!-- Alt Stylesheet -->
+<link href="/wp-content/themes/pixelpress/styles/default.css" rel="stylesheet" type="text/css">
+
+<!-- Custom Favicon -->
+<link rel="shortcut icon" href="/wp-content/uploads/favicon.png">
+
+<!-- Woo Shortcodes CSS -->
+<link href="/wp-content/themes/pixelpress/functions/css/shortcodes.css" rel="stylesheet" type="text/css">
+
+<!-- Custom Stylesheet -->
+<link href="/wp-content/themes/pixelpress/custom.css" rel="stylesheet" type="text/css">
+
+<!-- Custom Stylesheet In Child Theme -->
+<link href="/wp-content/themes/politepix-pixelpress-child-theme/custom.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body data-cmplz="1" class="topic bbpress no-js topic-template-default single single-topic postid-1029954 theme-pixelpress woocommerce-no-js unknown alt-style-default has-lightbox layout-left-content">
+
+<div id="wrapper">
+
+	    
+        
+    <div id="header-wrap">
+
+		<header id="header" class="col-full">
+		
+			<div id="logo" class="fl">
+												    <a id="logo" href="/" title="iOS Frameworks for speech recognition, text to speech and more">
+				    	<img src="/wp-content/uploads/logo1.png" alt="Politepix">
+				    </a>
+			    			    
+			    <hgroup>
+			        
+					<h1 class="site-title"><a href="/">Politepix</a></h1>
+					<h2 class="site-description">iOS Frameworks for speech recognition, text to speech and more</h2>
+					<h3 class="nav-toggle"><a href="#navigation">Navigation</a></h3>
+				      	
+				</hgroup>
+			</div>
+<!-- /#logo -->		
+	        
+	        	
+	        <div id="header-right" class="fr">
+
+				<nav id="navigation" role="navigation">
+					
+					<ul id="main-nav" class="nav fl">
+<li id="menu-item-1175" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1175">
+<a href="/openears/">OpenEars</a>
+<ul class="sub-menu">
+	<li id="menu-item-11108" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11108"><a href="/openears/tutorial/">OpenEars Tutorials</a></li>
+	<li id="menu-item-1171" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1171"><a href="/openears/support/">OpenEars FAQ/Support</a></li>
+	<li id="menu-item-1189" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1189"><a href="/forums/forum/openearsforum/">OpenEars Support Forum</a></li>
+	<li id="menu-item-14947" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14947"><a href="/openearsplatform/">About the OpenEars Platform</a></li>
+</ul>
+</li>
+<li id="menu-item-11706" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-11706">
+<a href="/neatspeech">NeatSpeech</a>
+<ul class="sub-menu">
+	<li id="menu-item-11707" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11707"><a href="/forums/forum/openears-plugins/">NeatSpeech support forum</a></li>
+</ul>
+</li>
+<li id="menu-item-9871" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-9871">
+<a href="/rapidears/">RapidEars</a>
+<ul class="sub-menu">
+	<li id="menu-item-10389" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10389"><a href="/forums/forum/openears-plugins">RapidEars Support Forum</a></li>
+</ul>
+</li>
+<li id="menu-item-11030" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-11030">
+<a href="/rejecto/">Rejecto</a>
+<ul class="sub-menu">
+	<li id="menu-item-11031" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11031"><a href="/forums/forum/openears-plugins/">Rejecto Support Forum</a></li>
+</ul>
+</li>
+<li id="menu-item-13071" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13071"><a href="/savethatwave/">SaveThatWave</a></li>
+<li id="menu-item-1021000" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1021000">
+<a href="/ruleorama/">RuleORama</a>
+<ul class="sub-menu">
+	<li id="menu-item-9002" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9002"><a href="/forums/forum/openears-plugins/">RuleORama Free Support Forum</a></li>
+</ul>
+</li>
+<li id="menu-item-1178" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-1178"><a title="Blog" href="/blog/">Blog</a></li>
+<li id="menu-item-1015870" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1015870">
+<a href="/shop">Shop</a>
+<ul class="sub-menu">
+	<li id="menu-item-8499" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8499"><a href="/shop">View all products</a></li>
+	<li id="menu-item-8486" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8486"><a href="/cart/">Cart</a></li>
+	<li id="menu-item-8498" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8498"><a href="/order-tracking/">Track your order</a></li>
+	<li id="menu-item-8539" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8539"><a href="/termsandconditions/">AGB/Terms and Conditions</a></li>
+</ul>
+</li>
+</ul>			        
+			        			        <ul class="mini-cart">
+						<li>
+							<a href="/cart/" title="View your shopping cart" class="cart-parent">
+								<span> 
+							<span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&euro;</span>0.00</bdi></span><mark>0</mark>							</span>
+							</a>
+							<ul class="cart_list"><li class="empty">No products in the cart.</li></ul>						</li>
+					</ul>
+			      				      	
+				</nav><!-- /#navigation -->
+
+				
+<div id="header-social" class="social fr">
+				<a href="http://feeds.feedburner.com/politepixblog" class="subscribe" title="RSS"></a>
+
+				<a href="http://www.twitter.com/politepix" class="twitter" title="Follow me on Twitter"></a>
+
+		</div>
+<!-- /.social -->
+				
+
+			</div>
+<!-- /#header-right -->
+			
+					
+		</header><!-- /#header -->
+	
+	</div>
+<!-- /#header-wrap -->
+	
+	
+	       
+    <div id="content" class="page col-full">
+    
+    	    	
+		<section id="main" class="col-left"> 			
+
+                                                                   
+            <article class="post-1029954 topic type-topic status-closed hentry topic-tag-openears-languagemodel">
+				
+				<header>
+			    	<h1>Error in generateLanguageModelFromArray call</h1>
+				</header>
+				
+                <section class="entry">
+                	
+<div id="bbpress-forums" class="bbpress-wrapper">
+
+	<div class="bbp-breadcrumb"><p><a href="/" class="bbp-breadcrumb-home">Home</a> <span class="bbp-breadcrumb-sep">&rsaquo;</span> <a href="/forums/" class="bbp-breadcrumb-root">Forums</a> <span class="bbp-breadcrumb-sep">&rsaquo;</span> <a href="/forums/forum/openearsforum/" class="bbp-breadcrumb-forum">OpenEars</a> <span class="bbp-breadcrumb-sep">&rsaquo;</span> <span class="bbp-breadcrumb-current">Error in generateLanguageModelFromArray call</span></p></div>
+	
+	
+	
+	
+		<div class="bbp-topic-tags"><p>Tagged:&nbsp;<a href="/forums/tags/openears-languagemodel/" rel="tag">openears languageModel</a></p></div>
+		<div class="bbp-template-notice info"><ul><li class="bbp-topic-description">This topic has 20 replies, 3 voices, and was last updated <a href="/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1033206" title="Reply To: Error in generateLanguageModelFromArray call">2 years, 8 months ago</a> by <a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a>.</li></ul></div>
+		
+		
+			
+<div class="bbp-pagination">
+	<div class="bbp-pagination-count">Viewing 21 posts - 1 through 21 (of 21 total)</div>
+	<div class="bbp-pagination-links"></div>
+</div>
+
+
+			<div class="burma">Advertisement: <a href="/rejecto">&ldquo;Don't want OpenEars&#8482; to guess one of your vocabulary words when it hears an unknown word? Rejecto can help!&rdquo;</a>
+</div>
+<p>
+</p>
+<ul id="topic-1029954-replies" class="forums bbp-replies">
+
+	<li class="bbp-header">
+		<div class="bbp-reply-author">Author</div>
+<!-- .bbp-reply-author -->
+		<div class="bbp-reply-content">Posts</div>
+<!-- .bbp-reply-content -->
+	</li>
+<!-- .bbp-header -->
+
+	<li class="bbp-body">
+
+		
+			
+				
+<div id="post-1029954" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">April 6, 2016 at 10:42 pm</span>
+
+		
+		<a href="/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1029954" class="bbp-reply-permalink">#1029954</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1029954 -->
+
+<div class="loop-item-0 user-id-1735 bbp-parent-forum-3654 bbp-parent-topic-3654 bbp-reply-position-1 odd  post-1029954 topic type-topic status-closed hentry topic-tag-openears-languagemodel">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/maxgarmar/" title="View maxgarmar&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">maxgarmar</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Hi Halle,</p>
+<p>I hope you are doing well.<br>
+I downloaded the openears&#8217;s newest version and for changes needed for my app, now the initialization is created in a viewController which is recreated every time I call a button from other viewController (could be the reason of the problem maybe?).<br>
+So here is my problem:</p>
+<p>when I create the viewController in viewDidLoad I initialize all the parameters needed like used to be in my old version.<br>
+For my iPhone 6 device there is no problem recreating and initializing openears overtime I create the viewController but when I run it on iPad 2 simulator the second time I call the viewController and it initializes all the variables for openears I got an exception here and the app crashes:</p>
+<pre>
+err = [lmGenerator generateLanguageModelFromArray:words withFilesNamed:name forAcousticModelAtPath:[OEAcousticModel pathToModel:voiceLanguage]];
+</pre>
+<p>The log from openears is:</p>
+<p>[spoiler]<br>
+2016-04-06 21:19:51.855 QuickCart[8766:185061] Starting OpenEars logging for OpenEars version 2.501 on 32-bit device (or build): iPad Simulator running iOS version: 8.100000<br>
+2016-04-06 21:19:51.859 QuickCart[8766:185061] Starting dynamic language model generation</p>
+<p>2016-04-06 21:19:51.877 QuickCart[8766:185061] Done creating language model with CMUCLMTK in 0.017872 seconds.<br>
+2016-04-06 21:19:51.877 QuickCart[8766:185061] Since there is no cached version, loading the language model lookup list for the acoustic model called AcousticModelEnglish<br>
+2016-04-06 21:19:51.924 QuickCart[8766:185061] The word CEMENTO was not found in the dictionary of the acoustic model /Users/maxgarmar/Library/Developer/CoreSimulator/Devices/7C36E2E2-8FDD-4649-898C-61EC41D5C49E/data/Containers/Bundle/Application/4B29B1AE-C310-4E79-B6ED-6EE230383647/QuickCart.app/AcousticModelEnglish.bundle. Now using the fallback method to look it up. If this is happening more frequently than you would expect, likely causes can be that you are entering words in another language from the one you are recognizing, or that there are symbols (including numbers) that need to be spelled out or cleaned up, or you are using your own acoustic model and there is an issue with either its phonetic dictionary or it lacks a g2p file. Please get in touch at the forums for assistance with the last two possible issues.<br>
+2016-04-06 21:19:51.925 QuickCart[8766:185061] Using convertGraphemes for the word or phrase cemento which doesn&#8217;t appear in the dictionary<br>
+VAL: tried to access cart in -1 type val<br>
+[/spoiler]</p>
+<p>The last line is the one I see differences when the app runs well.<br>
+Perhaps as I told you if I initialize the openears variable everytime I call the viewController is messing around something? but then should happen on my iPhone 6 also, right?</p>
+<p>Thanks I hope my explanation can help</p>
+<p>Maxi</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1029957" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">April 6, 2016 at 11:14 pm</span>
+
+		
+		<a href="/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1029957" class="bbp-reply-permalink">#1029957</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1029957 -->
+
+<div class="loop-item-1 user-id-4 bbp-parent-forum-3654 bbp-parent-topic-1029954 bbp-reply-position-2 even  post-1029957 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Hi,</p>
+<p>I&#8217;ve never heard of it, but I&#8217;d be looking for situations where you have two view controllers up simultaneously that both have access to the OELanguageModelGenerator objects for English-language unknown pronunciation generation and some kind of reference cycle where an unused view controller can&#8217;t release its objects, or specifically its OELanguageModelGenerator. It seems like a race condition to make use of a flite voice to do g2p that probably needs to be singular.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1029958" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">April 7, 2016 at 12:03 am</span>
+
+		
+		<a href="/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1029958" class="bbp-reply-permalink">#1029958</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1029958 -->
+
+<div class="loop-item-2 user-id-1735 bbp-parent-forum-3654 bbp-parent-topic-1029954 bbp-reply-position-3 odd topic-author  post-1029958 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/maxgarmar/" title="View maxgarmar&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">maxgarmar</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Hi Halle,</p>
+<p>That&#8217;s not what I meant, I meant I have just one viewController which overtime is created is calling the viewDidLoad so then is calling the openears&#8217;s initialization. So there aren&#8217;t two viewControllers using it, it&#8217;s just one dismissing and then creating again when I needed. Perhaps this explanation helps.<br>
+Another point is:<br>
+The device has iOS 9 and the simulator is iOS 8 although I tried the same simulator iPad 2 with iOS 9.3 and also fails.</p>
+<p>Thank you  </p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1029959" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">April 7, 2016 at 12:14 am</span>
+
+		
+		<a href="/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1029959" class="bbp-reply-permalink">#1029959</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1029959 -->
+
+<div class="loop-item-3 user-id-4 bbp-parent-forum-3654 bbp-parent-topic-1029954 bbp-reply-position-4 even  post-1029959 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Sorry, I don&#8217;t know the cause of that. You can troubleshoot it more by testing with the default English acoustic model that ships with OpenEars 2.5 rather than a custom one, by testing using real devices only, and by testing against other unknown words.</p>
+<p>What OpenEars initialization are you referring to specifically? The issue you have seems to only relate to OELanguageModelGenerator, but OEPocketsphinxController no longer is really initialized per se, since it just has a shared object. I would take a look at the way things are set up in the sample app and compare it to your app to make sure there isn&#8217;t any unnecessary or out-of-date code as another troubleshooting step.</p>
+<blockquote><p>it’s just one dismissing and then creating again when I needed</p></blockquote>
+<p>It might be a good idea to look at the logging for this behavior when you stop the engine before the view controller is dismissed to see if it is able to shut down cleanly.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1029960" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">April 7, 2016 at 12:22 am</span>
+
+		
+		<a href="/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1029960" class="bbp-reply-permalink">#1029960</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1029960 -->
+
+<div class="loop-item-4 user-id-1735 bbp-parent-forum-3654 bbp-parent-topic-1029954 bbp-reply-position-5 odd topic-author  post-1029960 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/maxgarmar/" title="View maxgarmar&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">maxgarmar</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>I should add: The error happens with all the simulators.<br>
+You can reproduce it:</p>
+<p>Creating a viewController which is loaded from other one.<br>
+Initialize openEars every time the view is created in viewDidLoad like this:</p>
+<pre><code> //Arreglar
+        lmGenerator = [[OELanguageModelGenerator alloc] init];
+        
+        fliteController = [[OEFliteController alloc] init];
+        
+        [[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil];
+        
+        
+         //[OEPocketsphinxController sharedInstance].verbosePocketSphinx = TRUE;
+         
+         [OELogging startOpenEarsLogging];
+         
+         //lmGenerator.verboseLanguageModelGenerator = TRUE;
+        
+        
+        
+        
+        
+        
+        [[OEPocketsphinxController sharedInstance] setSecondsOfSilenceToDetect:0.7];
+        
+        if([voiceLanguage isEqualToString:@&quot;AcousticModelSpanish&quot;]){
+            
+            //supresion de sonido en español
+            
+            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+            {
+                [[OEPocketsphinxController sharedInstance] setVadThreshold:2.0];
+            }
+            else
+            {
+                [[OEPocketsphinxController sharedInstance] setVadThreshold:3.5];
+            }
+            
+            
+        }else{
+            
+            //supresion de sonido en ingles
+            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+            {
+                [[OEPocketsphinxController sharedInstance] setVadThreshold:2.0];
+            }
+            else
+            {
+                [[OEPocketsphinxController sharedInstance] setVadThreshold:3.5];
+            }
+            
+            
+            
+        }
+        
+        //NSError* err=[self reloadAcousticModel];
+        
+        NSMutableArray *words = [[NSMutableArray alloc]init];
+        NSMutableDictionary *listProduct = [[NSMutableDictionary alloc]init];
+        
+        [listProduct setObject:@&quot;AGUA&quot; forKey:@&quot;1&quot;];
+        [listProduct setObject:@&quot;SAL&quot; forKey:@&quot;2&quot;];
+        [listProduct setObject:@&quot;COCACOLA&quot; forKey:@&quot;3&quot;];
+        [listProduct setObject:@&quot;DETERGENTE&quot; forKey:@&quot;4&quot;];
+        [listProduct setObject:@&quot;PEGAMENTO&quot; forKey:@&quot;5&quot;];
+        [listProduct setObject:@&quot;ZUMO NARANJA&quot; forKey:@&quot;6&quot;];
+        [listProduct setObject:@&quot;PAPEL HIGIENICO&quot; forKey:@&quot;7&quot;];
+        [listProduct setObject:@&quot;ZUMO PIÑA&quot; forKey:@&quot;8&quot;];
+        [listProduct setObject:@&quot;ZUMO MELOCOTON&quot; forKey:@&quot;9&quot;];
+        [listProduct setObject:@&quot;ZUMO PERA&quot; forKey:@&quot;10&quot;];
+        [listProduct setObject:@&quot;CEMENTO&quot; forKey:@&quot;11&quot;];
+        
+        for (NSString* key in listProduct) {
+            NSString* value =[listProduct objectForKey:key];
+            NSError *error = nil;
+            NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@&quot;[-*/_;.()&#039;,+]&quot; options:NSRegularExpressionCaseInsensitive error:&amp;error];
+            NSString *modifiedString = [regex stringByReplacingMatchesInString:value options:0 range:NSMakeRange(0, [value length]) withTemplate:@&quot; &quot;];
+            [words addObject: [modifiedString uppercaseString]];
+        }
+        //    NSArray* palabras = [[NSArray alloc]initWithArray:words];
+        
+        NSString *name = @&quot;NameIWantForMyLanguageModelFiles&quot;;
+        NSError *err;
+        
+        if([words count]&gt;0){
+            err = [lmGenerator generateLanguageModelFromArray:words withFilesNamed:name forAcousticModelAtPath:[OEAcousticModel pathToModel:voiceLanguage]]; // Change &quot;AcousticModelEnglish&quot; to &quot;AcousticModelSpanish&quot; to create a Spanish language model instead of an English one.
+        }else{
+            
+            [words addObject:@&quot;VACIO&quot;];
+            
+            err = [lmGenerator generateLanguageModelFromArray:words withFilesNamed:name forAcousticModelAtPath:[OEAcousticModel pathToModel:voiceLanguage]]; // Change &quot;AcousticModelEnglish&quot; to &quot;AcousticModelSpanish&quot; to create a Spanish language model instead of an English one.
+            
+            
+        }
+        
+        // Call this once before setting properties of the OEPocketsphinxController instance.
+        
+        if([err code] == noErr) {
+            
+            self.pathToFirstDynamicallyGeneratedLanguageModel = [lmGenerator pathToSuccessfullyGeneratedLanguageModelWithRequestedName:@&quot;NameIWantForMyLanguageModelFiles&quot;];
+            self.pathToFirstDynamicallyGeneratedDictionary =  [lmGenerator pathToSuccessfullyGeneratedDictionaryWithRequestedName:@&quot;NameIWantForMyLanguageModelFiles&quot;];
+            
+            
+        } else {
+            NSLog(@&quot;Error: %@&quot;,[err localizedDescription]);
+        }
+        
+        ///FIN openEars
+        
+        [self.openEarsEventsObserver setDelegate:self];
+        
+        //********arrancando el OpenEars********
+</code></pre>
+<p>Xcode Version 7.3 (7D175)</p>
+<p>I hope it helps</p>
+<p>Maxi</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1029961" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">April 7, 2016 at 1:37 am</span>
+
+		
+		<a href="/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1029961" class="bbp-reply-permalink">#1029961</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1029961 -->
+
+<div class="loop-item-5 user-id-1735 bbp-parent-forum-3654 bbp-parent-topic-1029954 bbp-reply-position-6 even topic-author  post-1029961 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/maxgarmar/" title="View maxgarmar&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">maxgarmar</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<blockquote><p>Sorry, I don’t know the cause of that. You can troubleshoot it more by testing with the default English acoustic model that ships with OpenEars 2.5 rather than a custom one, by testing using real devices only, and by testing against other unknown words.</p></blockquote>
+<p>I am using the English acoustic model shipped with Openears 2.5 is just a variable <strong>voiceVariable</strong> that I initialize depending on the device language.</p>
+<blockquote><p>What OpenEars initialization are you referring to specifically? The issue you have seems to only relate to OELanguageModelGenerator, but OEPocketsphinxController no longer is really initialized per se, since it just has a shared object. I would take a look at the way things are set up in the sample app and compare it to your app to make sure there isn’t any unnecessary or out-of-date code as another troubleshooting step.</p></blockquote>
+<p>I compared with the example and are the same steps.</p>
+<blockquote><p>It might be a good idea to look at the logging for this behavior when you stop the engine before the view controller is dismissed to see if it is able to shut down cleanly.</p></blockquote>
+<p>I am stopping the engine with <strong>stopListening</strong> method. But I don&#8217;t think it is releasing OELanguageModelGenerator variable.<br>
+Is there any way to release or clean the OELanguageModelGenerator before dismissing the viewController?<br>
+By the way, I just saw something strange:</p>
+<p>When the problem was happening I was loading Spanish words to AcousticModelEnglish (just because I am testing the app, in the future the dictionary should only contains English words) but still if I change the Spanish words to 3 English words, I can reload the viewController as many time as I want without crashing&#8230;.<br>
+Interesting enough is if I load english words to AcousticModelSpanish the crash is not happening. Does it help you to narrow the problem?</p>
+<p>As I told you the dictionary will be with English or Spanish words depending the country and it will match with the AcousticModel accordingly. But what I am afraid of is if the dictionary contains any strange English word because the user types it incorrectly if the error will happen also and the app will not run ever because crashes every time the viewController is loaded.</p>
+<p>Thank you</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1029964" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">April 7, 2016 at 8:30 am</span>
+
+		
+		<a href="/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1029964" class="bbp-reply-permalink">#1029964</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1029964 -->
+
+<div class="loop-item-6 user-id-4 bbp-parent-forum-3654 bbp-parent-topic-1029954 bbp-reply-position-7 odd  post-1029964 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Hi,</p>
+<blockquote><p>testing using real devices only</p></blockquote>
+<blockquote><p>It might be a good idea to look at the logging for this behavior when you stop the engine before the view controller is dismissed to see if it is able to shut down cleanly.</p></blockquote>
+<p>Please verify that this isn&#8217;t a Simulator-only issue with stopping listening. Generally, no Simulator-only bugs are taken as reports here, from the post <a href="/forums/topic/install-issues-and-their-solutions/">Please read before you post – how to troubleshoot and provide logging info here</a>:</p>
+<blockquote><p>The Simulator can’t be used for testing or evaluation with OpenEars (there is more about this in the documentation and the source) so please do not submit any questions or bug reports relating to Simulator results.</p></blockquote>
+<p>If this can either be replicated on a real device or disproven that it relates to Simulator environment differences from the device, I can help further.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1029985" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">April 7, 2016 at 8:35 pm</span>
+
+		
+		<a href="/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1029985" class="bbp-reply-permalink">#1029985</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1029985 -->
+
+<div class="loop-item-7 user-id-1735 bbp-parent-forum-3654 bbp-parent-topic-1029954 bbp-reply-position-8 even topic-author  post-1029985 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/maxgarmar/" title="View maxgarmar&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">maxgarmar</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Hi Halle,</p>
+<p>As you told me, next step was to try on my devices. Same happened:</p>
+<p>&#8211; I change my iPad language to English then my app uses the AcousticModelEnglish.<br>
+&#8211; Then I load 10 Spanish words on it.<br>
+&#8211; I start the viewController, first time ok.<br>
+&#8211; I start viewController again second time, app crashes. The same line like the simulator:</p>
+<p><code>err = [lmGenerator generateLanguageModelFromArray:words withFilesNamed:@&quot;AcousticModelEnglish&quot; forAcousticModelAtPath:[OEAcousticModel pathToModel:voiceLanguage]];</code></p>
+<p>If I use the AcosticModelSpanish and I load English words on it. No problem recreating the viewController as many times as I want.</p>
+<p>Device: iPad mini 3 with iOS 9.2.1<br>
+Let me know if you need something from me to help you out and find the error.</p>
+<p>Thanks</p>
+<p>Maxi</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1029986" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">April 7, 2016 at 10:17 pm</span>
+
+		
+		<a href="/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1029986" class="bbp-reply-permalink">#1029986</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1029986 -->
+
+<div class="loop-item-8 user-id-4 bbp-parent-forum-3654 bbp-parent-topic-1029954 bbp-reply-position-9 odd  post-1029986 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>If you can create a code-only replacement for the main viewcontroller in the sample app that demonstrates it, it can be recreated and fixed faster.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1030055" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">April 14, 2016 at 6:42 pm</span>
+
+		
+		<a href="/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1030055" class="bbp-reply-permalink">#1030055</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1030055 -->
+
+<div class="loop-item-9 user-id-1735 bbp-parent-forum-3654 bbp-parent-topic-1029954 bbp-reply-position-10 even topic-author  post-1030055 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/maxgarmar/" title="View maxgarmar&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">maxgarmar</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Hi Halle,</p>
+<p>Here you go: </p>
+<p>Just you would substitute the code below for the ViewController of the sampleApp and the sampleapp will crash like on my app</p>
+<p>Thanks</p>
+<pre><code>//  ViewController.m
+//  OpenEarsSampleApp
+//
+//  ViewController.m demonstrates the use of the OpenEars framework. 
+//
+//  Copyright Politepix UG (haftungsbeschränkt) 2014. All rights reserved.
+//  https://www.politepix.com
+//  Contact at https://www.politepix.com/contact
+//
+//  This file is licensed under the Politepix Shared Source license found in the root of the source distribution.
+
+// **************************************************************************************************************************************************************
+// **************************************************************************************************************************************************************
+// **************************************************************************************************************************************************************
+// IMPORTANT NOTE: Audio driver and hardware behavior is completely different between the Simulator and a real device. It is not informative to test OpenEars&#039; accuracy on the Simulator, and please do not report Simulator-only bugs since I only actively support 
+// the device driver. Please only do testing/bug reporting based on results on a real device such as an iPhone or iPod Touch. Thanks!
+// **************************************************************************************************************************************************************
+// **************************************************************************************************************************************************************
+// **************************************************************************************************************************************************************
+
+#import &quot;ViewController.h&quot;
+#import &lt;OpenEars/OEPocketsphinxController.h&gt;
+#import &lt;OpenEars/OEFliteController.h&gt;
+#import &lt;OpenEars/OELanguageModelGenerator.h&gt;
+#import &lt;OpenEars/OELogging.h&gt;
+#import &lt;OpenEars/OEAcousticModel.h&gt;
+#import &lt;Slt/Slt.h&gt;
+
+@interface ViewController()
+
+// UI actions, not specifically related to OpenEars other than the fact that they invoke OpenEars methods.
+- (IBAction) stopButtonAction;
+- (IBAction) startButtonAction;
+- (IBAction) suspendListeningButtonAction;
+- (IBAction) resumeListeningButtonAction;
+
+// Example for reading out the input audio levels without locking the UI using an NSTimer
+
+- (void) startDisplayingLevels;
+- (void) stopDisplayingLevels;
+
+// These three are the important OpenEars objects that this class demonstrates the use of.
+@property (nonatomic, strong) Slt *slt;
+
+@property (nonatomic, strong) OEEventsObserver *openEarsEventsObserver;
+@property (nonatomic, strong) OEPocketsphinxController *pocketsphinxController;
+@property (nonatomic, strong) OEFliteController *fliteController;
+
+// Some UI, not specifically related to OpenEars.
+@property (nonatomic, strong) IBOutlet UIButton *stopButton;
+@property (nonatomic, strong) IBOutlet UIButton *startButton;
+@property (nonatomic, strong) IBOutlet UIButton *suspendListeningButton;	
+@property (nonatomic, strong) IBOutlet UIButton *resumeListeningButton;	
+@property (nonatomic, strong) IBOutlet UITextView *statusTextView;
+@property (nonatomic, strong) IBOutlet UITextView *heardTextView;
+@property (nonatomic, strong) IBOutlet UILabel *pocketsphinxDbLabel;
+@property (nonatomic, strong) IBOutlet UILabel *fliteDbLabel;
+@property (nonatomic, assign) BOOL usingStartingLanguageModel;
+@property (nonatomic, assign) int restartAttemptsDueToPermissionRequests;
+@property (nonatomic, assign) BOOL startupFailedDueToLackOfPermissions;
+
+// Things which help us show off the dynamic language features.
+@property (nonatomic, copy) NSString *pathToFirstDynamicallyGeneratedLanguageModel;
+@property (nonatomic, copy) NSString *pathToFirstDynamicallyGeneratedDictionary;
+@property (nonatomic, copy) NSString *pathToSecondDynamicallyGeneratedLanguageModel;
+@property (nonatomic, copy) NSString *pathToSecondDynamicallyGeneratedDictionary;
+
+// Our NSTimer that will help us read and display the input and output levels without locking the UI
+@property (nonatomic, strong) 	NSTimer *uiUpdateTimer;
+
+@end
+
+@implementation ViewController
+
+#define kLevelUpdatesPerSecond 18 // We&#039;ll have the ui update 18 times a second to show some fluidity without hitting the CPU too hard.
+
+//#define kGetNbest // Uncomment this if you want to try out nbest
+#pragma mark - 
+#pragma mark Memory Management
+
+- (void)dealloc {
+    [self stopDisplayingLevels];
+}
+
+#pragma mark -
+#pragma mark View Lifecycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.fliteController = [[OEFliteController alloc] init];
+    self.openEarsEventsObserver = [[OEEventsObserver alloc] init];
+    self.openEarsEventsObserver.delegate = self;
+    self.slt = [[Slt alloc] init];
+    
+    self.restartAttemptsDueToPermissionRequests = 0;
+    self.startupFailedDueToLackOfPermissions = FALSE;
+    
+     [OELogging startOpenEarsLogging]; // Uncomment me for OELogging, which is verbose logging about internal OpenEars operations such as audio settings. If you have issues, show this logging in the forums.
+    [OEPocketsphinxController sharedInstance].verbosePocketSphinx = TRUE; // Uncomment this for much more verbose speech recognition engine output. If you have issues, show this logging in the forums.
+    
+    [self.openEarsEventsObserver setDelegate:self]; // Make this class the delegate of OpenEarsObserver so we can get all of the messages about what OpenEars is doing.
+    
+    [[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil]; // Call this before setting any OEPocketsphinxController characteristics
+    
+    // This is the language model we&#039;re going to start up with. The only reason I&#039;m making it a class property is that I reuse it a bunch of times in this example, 
+    // but you can pass the string contents directly to OEPocketsphinxController:startListeningWithLanguageModelAtPath:dictionaryAtPath:languageModelIsJSGF:
+    
+    //spanish words on AcousticModelEnglish
+    NSArray *firstLanguageArray = @[@&quot;AGUA&quot;,
+                                    @&quot;COCACOLA&quot;,
+                                    @&quot;DETERGENTE&quot;,
+                                    @&quot;PEGAMENTO&quot;,
+                                    @&quot;ZUMO NARANJA&quot;,
+                                    @&quot;PAPEL HIGIENICO&quot;,
+                                    @&quot;ZUMO PIÑA&quot;,
+                                    @&quot;ZUMO MELOCOTON&quot;];
+    
+    OELanguageModelGenerator *languageModelGenerator = [[OELanguageModelGenerator alloc] init]; 
+    
+    // languageModelGenerator.verboseLanguageModelGenerator = TRUE; // Uncomment me for verbose language model generator debug output.
+    
+    NSError *error = [languageModelGenerator generateLanguageModelFromArray:firstLanguageArray withFilesNamed:@&quot;FirstOpenEarsDynamicLanguageModel&quot; forAcousticModelAtPath:[OEAcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;]]; // Change &quot;AcousticModelEnglish&quot; to &quot;AcousticModelSpanish&quot; in order to create a language model for Spanish recognition instead of English.
+    
+    //Second time I allocate this variable simulating that the viewController was closed and recreated again
+    languageModelGenerator = [[OELanguageModelGenerator alloc] init];
+
+    //then I generate the languageModel again and here the app crashes like it does on my app
+    NSError *error2 = [languageModelGenerator generateLanguageModelFromArray:firstLanguageArray withFilesNamed:@&quot;FirstOpenEarsDynamicLanguageModel&quot; forAcousticModelAtPath:[OEAcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;]]; // Change &quot;AcousticModelEnglish&quot; to &quot;AcousticModelSpanish&quot; in order to create a language model for Spanish recognition instead of English.
+
+    
+    if(error) {
+        NSLog(@&quot;Dynamic language generator reported error %@&quot;, [error description]);	
+    } else {
+        self.pathToFirstDynamicallyGeneratedLanguageModel = [languageModelGenerator pathToSuccessfullyGeneratedLanguageModelWithRequestedName:@&quot;FirstOpenEarsDynamicLanguageModel&quot;];
+        self.pathToFirstDynamicallyGeneratedDictionary = [languageModelGenerator pathToSuccessfullyGeneratedDictionaryWithRequestedName:@&quot;FirstOpenEarsDynamicLanguageModel&quot;];
+    }
+    
+    self.usingStartingLanguageModel = TRUE; // This is not an OpenEars thing, this is just so I can switch back and forth between the two models in this sample app.
+    
+    // Here is an example of dynamically creating an in-app grammar.
+    
+    // We want it to be able to response to the speech &quot;CHANGE MODEL&quot; and a few other things.  Items we want to have recognized as a whole phrase (like &quot;CHANGE MODEL&quot;) 
+    // we put into the array as one string (e.g. &quot;CHANGE MODEL&quot; instead of &quot;CHANGE&quot; and &quot;MODEL&quot;). This increases the probability that they will be recognized as a phrase. This works even better starting with version 1.0 of OpenEars.
+    
+    NSArray *secondLanguageArray = @[@&quot;SUNDAY&quot;,
+                                     @&quot;MONDAY&quot;,
+                                     @&quot;TUESDAY&quot;,
+                                     @&quot;WEDNESDAY&quot;,
+                                     @&quot;THURSDAY&quot;,
+                                     @&quot;FRIDAY&quot;,
+                                     @&quot;SATURDAY&quot;,
+                                     @&quot;QUIDNUNC&quot;,
+                                     @&quot;CHANGE MODEL&quot;];
+    
+    // The last entry, quidnunc, is an example of a word which will not be found in the lookup dictionary and will be passed to the fallback method. The fallback method is slower,
+    // so, for instance, creating a new language model from dictionary words will be pretty fast, but a model that has a lot of unusual names in it or invented/rare/recent-slang
+    // words will be slower to generate. You can use this information to give your users good UI feedback about what the expectations for wait times should be.
+    
+    // I don&#039;t think it&#039;s beneficial to lazily instantiate OELanguageModelGenerator because you only need to give it a single message and then release it.
+    // If you need to create a very large model or any size of model that has many unusual words that have to make use of the fallback generation method,
+    // you will want to run this on a background thread so you can give the user some UI feedback that the task is in progress.
+    
+    // generateLanguageModelFromArray:withFilesNamed returns an NSError which will either have a value of noErr if everything went fine or a specific error if it didn&#039;t.
+    error = [languageModelGenerator generateLanguageModelFromArray:secondLanguageArray withFilesNamed:@&quot;SecondOpenEarsDynamicLanguageModel&quot; forAcousticModelAtPath:[OEAcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;]]; // Change &quot;AcousticModelEnglish&quot; to &quot;AcousticModelSpanish&quot; in order to create a language model for Spanish recognition instead of English.
+    
+    //    NSError *error = [languageModelGenerator generateLanguageModelFromTextFile:[NSString stringWithFormat:@&quot;%@/%@&quot;,[[NSBundle mainBundle] resourcePath], @&quot;OpenEarsCorpus.txt&quot;] withFilesNamed:@&quot;SecondOpenEarsDynamicLanguageModel&quot; forAcousticModelAtPath:[OEAcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;]]; // Try this out to see how generating a language model from a corpus works.
+    
+    
+    if(error) {
+        NSLog(@&quot;Dynamic language generator reported error %@&quot;, [error description]);	
+    }	else {
+        
+        self.pathToSecondDynamicallyGeneratedLanguageModel = [languageModelGenerator pathToSuccessfullyGeneratedLanguageModelWithRequestedName:@&quot;SecondOpenEarsDynamicLanguageModel&quot;]; // We&#039;ll set our new .languagemodel file to be the one to get switched to when the words &quot;CHANGE MODEL&quot; are recognized.
+        self.pathToSecondDynamicallyGeneratedDictionary = [languageModelGenerator pathToSuccessfullyGeneratedDictionaryWithRequestedName:@&quot;SecondOpenEarsDynamicLanguageModel&quot;];; // We&#039;ll set our new dictionary to be the one to get switched to when the words &quot;CHANGE MODEL&quot; are recognized.
+        
+        // Next, an informative message.
+        
+        NSLog(@&quot;\n\nWelcome to the OpenEars sample project. This project understands the words:\nBACKWARD,\nCHANGE,\nFORWARD,\nGO,\nLEFT,\nMODEL,\nRIGHT,\nTURN,\nand if you say \&quot;CHANGE MODEL\&quot; it will switch to its dynamically-generated model which understands the words:\nCHANGE,\nMODEL,\nMONDAY,\nTUESDAY,\nWEDNESDAY,\nTHURSDAY,\nFRIDAY,\nSATURDAY,\nSUNDAY,\nQUIDNUNC&quot;);
+        
+        // This is how to start the continuous listening loop of an available instance of OEPocketsphinxController. We won&#039;t do this if the language generation failed since it will be listening for a command to change over to the generated language.
+        
+        [[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil]; // Call this once before setting properties of the OEPocketsphinxController instance.
+        
+        //   [OEPocketsphinxController sharedInstance].pathToTestFile = [[NSBundle mainBundle] pathForResource:@&quot;change_model_short&quot; ofType:@&quot;wav&quot;];  // This is how you could use a test WAV (mono/16-bit/16k) rather than live recognition. Don&#039;t forget to add your WAV to your app bundle.
+        
+        if(![OEPocketsphinxController sharedInstance].isListening) {
+            [[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:self.pathToFirstDynamicallyGeneratedLanguageModel dictionaryAtPath:self.pathToFirstDynamicallyGeneratedDictionary acousticModelAtPath:[OEAcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;] languageModelIsJSGF:FALSE]; // Start speech recognition if we aren&#039;t already listening.
+        }
+        // [self startDisplayingLevels] is not an OpenEars method, just a very simple approach for level reading
+        // that I&#039;ve included with this sample app. My example implementation does make use of two OpenEars
+        // methods:	the pocketsphinxInputLevel method of OEPocketsphinxController and the fliteOutputLevel
+        // method of fliteController. 
+        //
+        // The example is meant to show one way that you can read those levels continuously without locking the UI, 
+        // by using an NSTimer, but the OpenEars level-reading methods 
+        // themselves do not include multithreading code since I believe that you will want to design your own 
+        // code approaches for level display that are tightly-integrated with your interaction design and the  
+        // graphics API you choose. 
+        
+        [self startDisplayingLevels];
+        
+        // Here is some UI stuff that has nothing specifically to do with OpenEars implementation
+        self.startButton.hidden = TRUE;
+        self.stopButton.hidden = TRUE;
+        self.suspendListeningButton.hidden = TRUE;
+        self.resumeListeningButton.hidden = TRUE;
+    }
+}
+
+#pragma mark -
+#pragma mark OEEventsObserver delegate methods
+
+// What follows are all of the delegate methods you can optionally use once you&#039;ve instantiated an OEEventsObserver and set its delegate to self. 
+// I&#039;ve provided some pretty granular information about the exact phase of the Pocketsphinx listening loop, the Audio Session, and Flite, but I&#039;d expect 
+// that the ones that will really be needed by most projects are the following:
+//
+//- (void) pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID;
+//- (void) audioSessionInterruptionDidBegin;
+//- (void) audioSessionInterruptionDidEnd;
+//- (void) audioRouteDidChangeToRoute:(NSString *)newRoute;
+//- (void) pocketsphinxDidStartListening;
+//- (void) pocketsphinxDidStopListening;
+//
+// It isn&#039;t necessary to have a OEPocketsphinxController or a OEFliteController instantiated in order to use these methods.  If there isn&#039;t anything instantiated that will
+// send messages to an OEEventsObserver, all that will happen is that these methods will never fire.  You also do not have to create a OEEventsObserver in
+// the same class or view controller in which you are doing things with a OEPocketsphinxController or OEFliteController; you can receive updates from those objects in
+// any class in which you instantiate an OEEventsObserver and set its delegate to self.
+
+// This is an optional delegate method of OEEventsObserver which delivers the text of speech that Pocketsphinx heard and analyzed, along with its accuracy score and utterance ID.
+- (void) pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID {
+    
+    NSLog(@&quot;Local callback: The received hypothesis is %@ with a score of %@ and an ID of %@&quot;, hypothesis, recognitionScore, utteranceID); // Log it.
+    if([hypothesis isEqualToString:@&quot;CHANGE MODEL&quot;]) { // If the user says &quot;CHANGE MODEL&quot;, we will switch to the alternate model (which happens to be the dynamically generated model).
+        
+        // Here is an example of language model switching in OpenEars. Deciding on what logical basis to switch models is your responsibility.
+        // For instance, when you call a customer service line and get a response tree that takes you through different options depending on what you say to it,
+        // the models are being switched as you progress through it so that only relevant choices can be understood. The construction of that logical branching and 
+        // how to react to it is your job; OpenEars just lets you send the signal to switch the language model when you&#039;ve decided it&#039;s the right time to do so.
+        
+        if(self.usingStartingLanguageModel) { // If we&#039;re on the starting model, switch to the dynamically generated one.
+            
+            [[OEPocketsphinxController sharedInstance] changeLanguageModelToFile:self.pathToSecondDynamicallyGeneratedLanguageModel withDictionary:self.pathToSecondDynamicallyGeneratedDictionary]; 
+            self.usingStartingLanguageModel = FALSE;
+            
+        } else { // If we&#039;re on the dynamically generated model, switch to the start model (this is an example of a trigger and method for switching models).
+            
+            [[OEPocketsphinxController sharedInstance] changeLanguageModelToFile:self.pathToFirstDynamicallyGeneratedLanguageModel withDictionary:self.pathToFirstDynamicallyGeneratedDictionary];
+            self.usingStartingLanguageModel = TRUE;
+        }
+    }
+    
+    self.heardTextView.text = [NSString stringWithFormat:@&quot;Heard: \&quot;%@\&quot;&quot;, hypothesis]; // Show it in the status box.
+    
+    // This is how to use an available instance of OEFliteController. We&#039;re going to repeat back the command that we heard with the voice we&#039;ve chosen.
+    [self.fliteController say:[NSString stringWithFormat:@&quot;You said %@&quot;,hypothesis] withVoice:self.slt];
+}
+
+#ifdef kGetNbest   
+- (void) pocketsphinxDidReceiveNBestHypothesisArray:(NSArray *)hypothesisArray { // Pocketsphinx has an n-best hypothesis dictionary.
+    NSLog(@&quot;Local callback:  hypothesisArray is %@&quot;,hypothesisArray);   
+}
+#endif
+// An optional delegate method of OEEventsObserver which informs that there was an interruption to the audio session (e.g. an incoming phone call).
+- (void) audioSessionInterruptionDidBegin {
+    NSLog(@&quot;Local callback:  AudioSession interruption began.&quot;); // Log it.
+    self.statusTextView.text = @&quot;Status: AudioSession interruption began.&quot;; // Show it in the status box.
+    NSError *error = nil;
+    if([OEPocketsphinxController sharedInstance].isListening) {
+        error = [[OEPocketsphinxController sharedInstance] stopListening]; // React to it by telling Pocketsphinx to stop listening (if it is listening) since it will need to restart its loop after an interruption.
+        if(error) NSLog(@&quot;Error while stopping listening in audioSessionInterruptionDidBegin: %@&quot;, error);
+    }
+}
+
+// An optional delegate method of OEEventsObserver which informs that the interruption to the audio session ended.
+- (void) audioSessionInterruptionDidEnd {
+    NSLog(@&quot;Local callback:  AudioSession interruption ended.&quot;); // Log it.
+    self.statusTextView.text = @&quot;Status: AudioSession interruption ended.&quot;; // Show it in the status box.
+    // We&#039;re restarting the previously-stopped listening loop.
+    if(![OEPocketsphinxController sharedInstance].isListening){
+        [[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:self.pathToFirstDynamicallyGeneratedLanguageModel dictionaryAtPath:self.pathToFirstDynamicallyGeneratedDictionary acousticModelAtPath:[OEAcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;] languageModelIsJSGF:FALSE]; // Start speech recognition if we aren&#039;t currently listening.    
+    }
+}
+
+// An optional delegate method of OEEventsObserver which informs that the audio input became unavailable.
+- (void) audioInputDidBecomeUnavailable {
+    NSLog(@&quot;Local callback:  The audio input has become unavailable&quot;); // Log it.
+    self.statusTextView.text = @&quot;Status: The audio input has become unavailable&quot;; // Show it in the status box.
+    NSError *error = nil;
+    if([OEPocketsphinxController sharedInstance].isListening){
+        error = [[OEPocketsphinxController sharedInstance] stopListening]; // React to it by telling Pocketsphinx to stop listening since there is no available input (but only if we are listening).
+        if(error) NSLog(@&quot;Error while stopping listening in audioInputDidBecomeUnavailable: %@&quot;, error);
+    }
+}
+
+// An optional delegate method of OEEventsObserver which informs that the unavailable audio input became available again.
+- (void) audioInputDidBecomeAvailable {
+    NSLog(@&quot;Local callback: The audio input is available&quot;); // Log it.
+    self.statusTextView.text = @&quot;Status: The audio input is available&quot;; // Show it in the status box.
+    if(![OEPocketsphinxController sharedInstance].isListening) {
+        [[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:self.pathToFirstDynamicallyGeneratedLanguageModel dictionaryAtPath:self.pathToFirstDynamicallyGeneratedDictionary acousticModelAtPath:[OEAcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;] languageModelIsJSGF:FALSE]; // Start speech recognition, but only if we aren&#039;t already listening.
+    }
+}
+// An optional delegate method of OEEventsObserver which informs that there was a change to the audio route (e.g. headphones were plugged in or unplugged).
+- (void) audioRouteDidChangeToRoute:(NSString *)newRoute {
+    NSLog(@&quot;Local callback: Audio route change. The new audio route is %@&quot;, newRoute); // Log it.
+    self.statusTextView.text = [NSString stringWithFormat:@&quot;Status: Audio route change. The new audio route is %@&quot;,newRoute]; // Show it in the status box.
+    
+    NSError *error = [[OEPocketsphinxController sharedInstance] stopListening]; // React to it by telling the Pocketsphinx loop to shut down and then start listening again on the new route
+    
+    if(error)NSLog(@&quot;Local callback: error while stopping listening in audioRouteDidChangeToRoute: %@&quot;,error);
+    
+    if(![OEPocketsphinxController sharedInstance].isListening) {
+        [[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:self.pathToFirstDynamicallyGeneratedLanguageModel dictionaryAtPath:self.pathToFirstDynamicallyGeneratedDictionary acousticModelAtPath:[OEAcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;] languageModelIsJSGF:FALSE]; // Start speech recognition if we aren&#039;t already listening.
+    }
+}
+
+// An optional delegate method of OEEventsObserver which informs that the Pocketsphinx recognition loop has entered its actual loop.
+// This might be useful in debugging a conflict between another sound class and Pocketsphinx.
+- (void) pocketsphinxRecognitionLoopDidStart {
+    
+    NSLog(@&quot;Local callback: Pocketsphinx started.&quot;); // Log it.
+    self.statusTextView.text = @&quot;Status: Pocketsphinx started.&quot;; // Show it in the status box.
+}
+
+// An optional delegate method of OEEventsObserver which informs that Pocketsphinx is now listening for speech.
+- (void) pocketsphinxDidStartListening {
+    
+    NSLog(@&quot;Local callback: Pocketsphinx is now listening.&quot;); // Log it.
+    self.statusTextView.text = @&quot;Status: Pocketsphinx is now listening.&quot;; // Show it in the status box.
+    
+    self.startButton.hidden = TRUE; // React to it with some UI changes.
+    self.stopButton.hidden = FALSE;
+    self.suspendListeningButton.hidden = FALSE;
+    self.resumeListeningButton.hidden = TRUE;
+}
+
+// An optional delegate method of OEEventsObserver which informs that Pocketsphinx detected speech and is starting to process it.
+- (void) pocketsphinxDidDetectSpeech {
+    NSLog(@&quot;Local callback: Pocketsphinx has detected speech.&quot;); // Log it.
+    self.statusTextView.text = @&quot;Status: Pocketsphinx has detected speech.&quot;; // Show it in the status box.
+}
+
+// An optional delegate method of OEEventsObserver which informs that Pocketsphinx detected a second of silence, indicating the end of an utterance. 
+// This was added because developers requested being able to time the recognition speed without the speech time. The processing time is the time between 
+// this method being called and the hypothesis being returned.
+- (void) pocketsphinxDidDetectFinishedSpeech {
+    NSLog(@&quot;Local callback: Pocketsphinx has detected a second of silence, concluding an utterance.&quot;); // Log it.
+    self.statusTextView.text = @&quot;Status: Pocketsphinx has detected finished speech.&quot;; // Show it in the status box.
+}
+
+// An optional delegate method of OEEventsObserver which informs that Pocketsphinx has exited its recognition loop, most 
+// likely in response to the OEPocketsphinxController being told to stop listening via the stopListening method.
+- (void) pocketsphinxDidStopListening {
+    NSLog(@&quot;Local callback: Pocketsphinx has stopped listening.&quot;); // Log it.
+    self.statusTextView.text = @&quot;Status: Pocketsphinx has stopped listening.&quot;; // Show it in the status box.
+}
+
+// An optional delegate method of OEEventsObserver which informs that Pocketsphinx is still in its listening loop but it is not
+// Going to react to speech until listening is resumed.  This can happen as a result of Flite speech being
+// in progress on an audio route that doesn&#039;t support simultaneous Flite speech and Pocketsphinx recognition,
+// or as a result of the OEPocketsphinxController being told to suspend recognition via the suspendRecognition method.
+- (void) pocketsphinxDidSuspendRecognition {
+    NSLog(@&quot;Local callback: Pocketsphinx has suspended recognition.&quot;); // Log it.
+    self.statusTextView.text = @&quot;Status: Pocketsphinx has suspended recognition.&quot;; // Show it in the status box.
+}
+
+// An optional delegate method of OEEventsObserver which informs that Pocketsphinx is still in its listening loop and after recognition
+// having been suspended it is now resuming.  This can happen as a result of Flite speech completing
+// on an audio route that doesn&#039;t support simultaneous Flite speech and Pocketsphinx recognition,
+// or as a result of the OEPocketsphinxController being told to resume recognition via the resumeRecognition method.
+- (void) pocketsphinxDidResumeRecognition {
+    NSLog(@&quot;Local callback: Pocketsphinx has resumed recognition.&quot;); // Log it.
+    self.statusTextView.text = @&quot;Status: Pocketsphinx has resumed recognition.&quot;; // Show it in the status box.
+}
+
+// An optional delegate method which informs that Pocketsphinx switched over to a new language model at the given URL in the course of
+// recognition. This does not imply that it is a valid file or that recognition will be successful using the file.
+- (void) pocketsphinxDidChangeLanguageModelToFile:(NSString *)newLanguageModelPathAsString andDictionary:(NSString *)newDictionaryPathAsString {
+    NSLog(@&quot;Local callback: Pocketsphinx is now using the following language model: \n%@ and the following dictionary: %@&quot;,newLanguageModelPathAsString,newDictionaryPathAsString);
+}
+
+// An optional delegate method of OEEventsObserver which informs that Flite is speaking, most likely to be useful if debugging a
+// complex interaction between sound classes. You don&#039;t have to do anything yourself in order to prevent Pocketsphinx from listening to Flite talk and trying to recognize the speech.
+- (void) fliteDidStartSpeaking {
+    NSLog(@&quot;Local callback: Flite has started speaking&quot;); // Log it.
+    self.statusTextView.text = @&quot;Status: Flite has started speaking.&quot;; // Show it in the status box.
+}
+
+// An optional delegate method of OEEventsObserver which informs that Flite is finished speaking, most likely to be useful if debugging a
+// complex interaction between sound classes.
+- (void) fliteDidFinishSpeaking {
+    NSLog(@&quot;Local callback: Flite has finished speaking&quot;); // Log it.
+    self.statusTextView.text = @&quot;Status: Flite has finished speaking.&quot;; // Show it in the status box.
+}
+
+- (void) pocketSphinxContinuousSetupDidFailWithReason:(NSString *)reasonForFailure { // This can let you know that something went wrong with the recognition loop startup. Turn on [OELogging startOpenEarsLogging] to learn why.
+    NSLog(@&quot;Local callback: Setting up the continuous recognition loop has failed for the reason %@, please turn on [OELogging startOpenEarsLogging] to learn more.&quot;, reasonForFailure); // Log it.
+    self.statusTextView.text = @&quot;Status: Not possible to start recognition loop.&quot;; // Show it in the status box.	
+}
+
+- (void) pocketSphinxContinuousTeardownDidFailWithReason:(NSString *)reasonForFailure { // This can let you know that something went wrong with the recognition loop startup. Turn on [OELogging startOpenEarsLogging] to learn why.
+    NSLog(@&quot;Local callback: Tearing down the continuous recognition loop has failed for the reason %@, please turn on [OELogging startOpenEarsLogging] to learn more.&quot;, reasonForFailure); // Log it.
+    self.statusTextView.text = @&quot;Status: Not possible to cleanly end recognition loop.&quot;; // Show it in the status box.	
+}
+
+- (void) testRecognitionCompleted { // A test file which was submitted for direct recognition via the audio driver is done.
+    NSLog(@&quot;Local callback: A test file which was submitted for direct recognition via the audio driver is done.&quot;); // Log it.
+    NSError *error = nil;
+    if([OEPocketsphinxController sharedInstance].isListening) { // If we&#039;re listening, stop listening.
+        error = [[OEPocketsphinxController sharedInstance] stopListening];
+        if(error) NSLog(@&quot;Error while stopping listening in testRecognitionCompleted: %@&quot;, error);
+    }
+    
+}
+/** Pocketsphinx couldn&#039;t start because it has no mic permissions (will only be returned on iOS7 or later).*/
+- (void) pocketsphinxFailedNoMicPermissions {
+    NSLog(@&quot;Local callback: The user has never set mic permissions or denied permission to this app&#039;s mic, so listening will not start.&quot;);
+    self.startupFailedDueToLackOfPermissions = TRUE;
+    if([OEPocketsphinxController sharedInstance].isListening){
+        NSError *error = [[OEPocketsphinxController sharedInstance] stopListening]; // Stop listening if we are listening.
+        if(error) NSLog(@&quot;Error while stopping listening in micPermissionCheckCompleted: %@&quot;, error);
+    }
+}
+
+/** The user prompt to get mic permissions, or a check of the mic permissions, has completed with a TRUE or a FALSE result  (will only be returned on iOS7 or later).*/
+- (void) micPermissionCheckCompleted:(BOOL)result {
+    if(result) {
+        self.restartAttemptsDueToPermissionRequests++;
+        if(self.restartAttemptsDueToPermissionRequests == 1 &amp;&amp; self.startupFailedDueToLackOfPermissions) { // If we get here because there was an attempt to start which failed due to lack of permissions, and now permissions have been requested and they returned true, we restart exactly once with the new permissions.
+
+            if(![OEPocketsphinxController sharedInstance].isListening) { // If there was no error and we aren&#039;t listening, start listening.
+                [[OEPocketsphinxController sharedInstance] 
+                 startListeningWithLanguageModelAtPath:self.pathToFirstDynamicallyGeneratedLanguageModel 
+                 dictionaryAtPath:self.pathToFirstDynamicallyGeneratedDictionary 
+                 acousticModelAtPath:[OEAcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;] 
+                 languageModelIsJSGF:FALSE]; // Start speech recognition.
+                
+                self.startupFailedDueToLackOfPermissions = FALSE;
+            }
+        }
+    }
+}
+
+#pragma mark -
+#pragma mark UI
+
+// This is not OpenEars-specific stuff, just some UI behavior
+
+- (IBAction) suspendListeningButtonAction { // This is the action for the button which suspends listening without ending the recognition loop
+    [[OEPocketsphinxController sharedInstance] suspendRecognition];	
+    
+    self.startButton.hidden = TRUE;
+    self.stopButton.hidden = FALSE;
+    self.suspendListeningButton.hidden = TRUE;
+    self.resumeListeningButton.hidden = FALSE;
+}
+
+- (IBAction) resumeListeningButtonAction { // This is the action for the button which resumes listening if it has been suspended
+    [[OEPocketsphinxController sharedInstance] resumeRecognition];
+    
+    self.startButton.hidden = TRUE;
+    self.stopButton.hidden = FALSE;
+    self.suspendListeningButton.hidden = FALSE;
+    self.resumeListeningButton.hidden = TRUE;	
+}
+
+- (IBAction) stopButtonAction { // This is the action for the button which shuts down the recognition loop.
+    NSError *error = nil;
+    if([OEPocketsphinxController sharedInstance].isListening) { // Stop if we are currently listening.
+        error = [[OEPocketsphinxController sharedInstance] stopListening];
+        if(error)NSLog(@&quot;Error stopping listening in stopButtonAction: %@&quot;, error);
+    }
+    self.startButton.hidden = FALSE;
+    self.stopButton.hidden = TRUE;
+    self.suspendListeningButton.hidden = TRUE;
+    self.resumeListeningButton.hidden = TRUE;
+}
+
+- (IBAction) startButtonAction { // This is the action for the button which starts up the recognition loop again if it has been shut down.
+    if(![OEPocketsphinxController sharedInstance].isListening) {
+        [[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:self.pathToFirstDynamicallyGeneratedLanguageModel dictionaryAtPath:self.pathToFirstDynamicallyGeneratedDictionary acousticModelAtPath:[OEAcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;] languageModelIsJSGF:FALSE]; // Start speech recognition if we aren&#039;t already listening.
+    }
+    self.startButton.hidden = TRUE;
+    self.stopButton.hidden = FALSE;
+    self.suspendListeningButton.hidden = FALSE;
+    self.resumeListeningButton.hidden = TRUE;
+}
+
+#pragma mark -
+#pragma mark Example for reading out Pocketsphinx and Flite audio levels without locking the UI by using an NSTimer
+
+// What follows are not OpenEars methods, just an approach for level reading
+// that I&#039;ve included with this sample app. My example implementation does make use of two OpenEars
+// methods:	the pocketsphinxInputLevel method of OEPocketsphinxController and the fliteOutputLevel
+// method of OEFliteController. 
+//
+// The example is meant to show one way that you can read those levels continuously without locking the UI, 
+// by using an NSTimer, but the OpenEars level-reading methods 
+// themselves do not include multithreading code since I believe that you will want to design your own 
+// code approaches for level display that are tightly-integrated with your interaction design and the  
+// graphics API you choose. 
+// 
+// Please note that if you use my sample approach, you should pay attention to the way that the timer is always stopped in
+// dealloc. This should prevent you from having any difficulties with deallocating a class due to a running NSTimer process.
+
+- (void) startDisplayingLevels { // Start displaying the levels using a timer
+    [self stopDisplayingLevels]; // We never want more than one timer valid so we&#039;ll stop any running timers first.
+    self.uiUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/kLevelUpdatesPerSecond target:self selector:@selector(updateLevelsUI) userInfo:nil repeats:YES];
+}
+
+- (void) stopDisplayingLevels { // Stop displaying the levels by stopping the timer if it&#039;s running.
+    if(self.uiUpdateTimer &amp;&amp; [self.uiUpdateTimer isValid]) { // If there is a running timer, we&#039;ll stop it here.
+        [self.uiUpdateTimer invalidate];
+        self.uiUpdateTimer = nil;
+    }
+}
+
+- (void) updateLevelsUI { // And here is how we obtain the levels.  This method includes the actual OpenEars methods and uses their results to update the UI of this view controller.
+    
+    self.pocketsphinxDbLabel.text = [NSString stringWithFormat:@&quot;Pocketsphinx Input level:%f&quot;,[[OEPocketsphinxController sharedInstance] pocketsphinxInputLevel]];  //pocketsphinxInputLevel is an OpenEars method of the class OEPocketsphinxController.
+    
+    if(self.fliteController.speechInProgress) {
+        self.fliteDbLabel.text = [NSString stringWithFormat:@&quot;Flite Output level: %f&quot;,[self.fliteController fliteOutputLevel]]; // fliteOutputLevel is an OpenEars method of the class OEFliteController.
+    }
+}
+
+@end
+</code></pre>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1030056" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">April 14, 2016 at 6:53 pm</span>
+
+		
+		<a href="/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1030056" class="bbp-reply-permalink">#1030056</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1030056 -->
+
+<div class="loop-item-10 user-id-4 bbp-parent-forum-3654 bbp-parent-topic-1029954 bbp-reply-position-11 odd  post-1030056 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Super, I&#8217;ll add a test case and see if I can fix it for the next update (or let you know what code needs to be changed if it&#8217;s a code issue).</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1030103" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">April 19, 2016 at 8:22 pm</span>
+
+		
+		<a href="/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1030103" class="bbp-reply-permalink">#1030103</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1030103 -->
+
+<div class="loop-item-11 user-id-4 bbp-parent-forum-3654 bbp-parent-topic-1029954 bbp-reply-position-12 even  post-1030103 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>OK, I have replicated this and I have a pretty good sense of what the issue is. Thank you for the good test case and the report. It isn&#8217;t going to be an easy fix, so I can&#8217;t guarantee it will be in the next update, although that is a goal. In the meantime, I believe you can work around this by passing the same instance of your OELanguageModelGenerator to your subviews rather than re-instantiating it.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1030104" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">April 20, 2016 at 3:26 pm</span>
+
+		
+		<a href="/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1030104" class="bbp-reply-permalink">#1030104</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1030104 -->
+
+<div class="loop-item-12 user-id-4 bbp-parent-forum-3654 bbp-parent-topic-1029954 bbp-reply-position-13 odd  post-1030104 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>OK, I think I have a fix for this and subject to more testing it will be in the next update. I don&#8217;t have an ETA for that update but there is only one other high-priority bug on the list so it shouldn&#8217;t be too long.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1030110" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">April 20, 2016 at 7:47 pm</span>
+
+		
+		<a href="/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1030110" class="bbp-reply-permalink">#1030110</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1030110 -->
+
+<div class="loop-item-13 user-id-1735 bbp-parent-forum-3654 bbp-parent-topic-1029954 bbp-reply-position-14 even topic-author  post-1030110 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/maxgarmar/" title="View maxgarmar&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">maxgarmar</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Hi Halle,</p>
+<p>Ok. Looking forward</p>
+<p>Thank you</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1030518" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">June 7, 2016 at 9:03 am</span>
+
+		
+		<a href="/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1030518" class="bbp-reply-permalink">#1030518</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1030518 -->
+
+<div class="loop-item-14 user-id-4 bbp-parent-forum-3654 bbp-parent-topic-1029954 bbp-reply-position-15 odd  post-1030518 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Hi Max,</p>
+<p>Yesterday&#8217;s OpenEars 2.502 update (<a href="http://changelogs.politepix.com/" rel="nofollow">http://changelogs.politepix.com</a>) should fix this.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1033198" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">June 28, 2021 at 8:20 am</span>
+
+		
+		<a href="/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1033198" class="bbp-reply-permalink">#1033198</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1033198 -->
+
+<div class="loop-item-15 user-id-2573 bbp-parent-forum-3654 bbp-parent-topic-1029954 bbp-reply-position-16 even  post-1033198 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/minilv/" title="View minilv&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">minilv</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>I am using<br>
+<a href="/openears/">https://www.politepix.com/openears/</a> The latest code</p>
+<p>But I still encountered the bug of <code>generateLanguageModelFromArray</code> crash.</p>
+<p>Crash detailed stack:</p>
+<pre><code>
+10  myApp                   0x00000001060b208c -[OECMUCLMTKModel runCMUCLMTKOnCorpusFile:withBin:binarySuffix:] + 21012620 (OECMUCLMTKModel.m:278)
+11  myApp                   0x00000001061110b8 -[OELanguageModelGenerator createLanguageModelFromFilename:] + 21401784 (OELanguageModelGenerator.m:488)
+12  myApp                   0x0000000106111ba8 -[OELanguageModelGenerator generateLanguageModelFromArray:withFilesNamed:forAcousticModelAtPath:] + 21404584 (OELanguageModelGenerator.m:601) &lt;code&gt;&lt;/code&gt;</code></pre>
+<pre><code>
+
+Code is:
+
+</code></pre>
+<p>let languageModelGenerator = OELanguageModelGenerator()</p>
+<p>let keywordList = [&#8220;hey&#8221;, &#8220;test&#8221;, &#8220;start&#8221;]</p>
+<p>let firstLanguageArray = keywordList</p>
+<p>let firstVocabularyName = &#8220;FirstVocabulary&#8221;</p>
+<p>// AcousticModelEnglish from bundle.<br>
+let firstLanguageModelGenerationError: Error! = languageModelGenerator.generateLanguageModel(from: firstLanguageArray, withFilesNamed: firstVocabularyName, forAcousticModelAtPath: OEAcousticModel.path(toModel: &#8220;AcousticModelEnglish&#8221;))<br>
+`</p>
+
+
+<ul id="bbp-reply-revision-log-1033198" class="bbp-reply-revision-log">
+
+	<li id="bbp-reply-revision-log-1033198-item-1033199" class="bbp-reply-revision-log-item">
+		This reply was modified 2 years, 10 months ago by <a href="/forums/profile/minilv/" title="View minilv&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">minilv</span></a>.
+	</li>
+	<li id="bbp-reply-revision-log-1033198-item-1033200" class="bbp-reply-revision-log-item">
+		This reply was modified 2 years, 10 months ago by <a href="/forums/profile/minilv/" title="View minilv&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">minilv</span></a>.
+	</li>
+	<li id="bbp-reply-revision-log-1033198-item-1033201" class="bbp-reply-revision-log-item">
+		This reply was modified 2 years, 10 months ago by <a href="/forums/profile/minilv/" title="View minilv&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">minilv</span></a>.
+	</li>
+
+</ul>
+
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1033202" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">June 28, 2021 at 8:55 am</span>
+
+		
+		<a href="/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1033202" class="bbp-reply-permalink">#1033202</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1033202 -->
+
+<div class="loop-item-16 user-id-4 bbp-parent-forum-3654 bbp-parent-topic-1029954 bbp-reply-position-17 odd  post-1033202 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Please check out the post <a href="/forums/topic/install-issues-and-their-solutions/">Please read before you post – how to troubleshoot and provide logging info here</a> so you can see how to turn on and share the logging that provides troubleshooting information for this kind of issue.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1033203" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">June 29, 2021 at 4:07 am</span>
+
+		
+		<a href="/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1033203" class="bbp-reply-permalink">#1033203</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1033203 -->
+
+<div class="loop-item-17 user-id-2573 bbp-parent-forum-3654 bbp-parent-topic-1029954 bbp-reply-position-18 even  post-1033203 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/minilv/" title="View minilv&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">minilv</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>I only meet once this issue. And this is my release build. When I turn on the full log mode, this bug cannot reproduce again.</p>
+<p>But this OELanguageModelGenerator.m is private, and I can&#8217;t see the internal implementation.</p>
+<p>Can you help me check if this function can cause a crash? It is possible at line 601. </p>
+<p><code>OELanguageModelGenerator.m:601</code></p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1033204" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">June 29, 2021 at 8:01 am</span>
+
+		
+		<a href="/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1033204" class="bbp-reply-permalink">#1033204</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1033204 -->
+
+<div class="loop-item-18 user-id-4 bbp-parent-forum-3654 bbp-parent-topic-1029954 bbp-reply-position-19 odd  post-1033204 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Sorry, I can&#8217;t help you without all the information from the debugging post I linked to.</p>
+<p>> But this OELanguageModelGenerator.m is private, and I can’t see the internal implementation.</p>
+<p>I see – where did you obtain a version of OpenEars with a OELanguageModelGenerator.m that you can&#8217;t see the implementation for?</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1033205" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">August 24, 2021 at 11:18 am</span>
+
+		
+		<a href="/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1033205" class="bbp-reply-permalink">#1033205</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1033205 -->
+
+<div class="loop-item-19 user-id-2573 bbp-parent-forum-3654 bbp-parent-topic-1029954 bbp-reply-position-20 even  post-1033205 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/minilv/" title="View minilv&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">minilv</span></a><div class="bbp-author-role">Participant</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>I clicked on this website(<a href="/openears/">https://www.politepix.com/openears/</a>) and clicked on <code>Go to the quickstart tutorial (Swift)</code> to download.</p>
+<p>The <code>OELanguageModelGenerator</code> class is packaged as a static library. </p>
+<p>It is not public, or can you open source the code of this class to me for a look, Thanks a lot！</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+				
+<div id="post-1033206" class="bbp-reply-header">
+	<div class="bbp-meta">
+		<span class="bbp-reply-post-date">August 24, 2021 at 11:54 am</span>
+
+		
+		<a href="/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1033206" class="bbp-reply-permalink">#1033206</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div>
+<!-- .bbp-meta -->
+</div>
+<!-- #post-1033206 -->
+
+<div class="loop-item-20 user-id-4 bbp-parent-forum-3654 bbp-parent-topic-1029954 bbp-reply-position-21 odd  post-1033206 reply type-reply status-publish hentry">
+	<div class="bbp-reply-author">
+
+		
+		<a href="/forums/profile/halle-2/" title="View Halle Winkler&#039;s profile" class="bbp-author-link"><span class="bbp-author-avatar"></span><span class="bbp-author-name">Halle Winkler</span></a><div class="bbp-author-role">Politepix</div>
+		
+		
+	</div>
+<!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>If you downloaded OpenEars from this site, all of the source is in /OpenEarsDistribution/OpenEars/.</p>
+
+		
+	</div>
+<!-- .bbp-reply-content -->
+</div>
+<!-- .reply -->
+
+			
+		
+	</li>
+<!-- .bbp-body -->
+
+	<li class="bbp-footer">
+		<div class="bbp-reply-author">Author</div>
+		<div class="bbp-reply-content">Posts</div>
+<!-- .bbp-reply-content -->
+	</li>
+<!-- .bbp-footer -->
+</ul>
+<!-- #topic-1029954-replies -->
+
+
+			
+<div class="bbp-pagination">
+	<div class="bbp-pagination-count">Viewing 21 posts - 1 through 21 (of 21 total)</div>
+	<div class="bbp-pagination-links"></div>
+</div>
+
+
+		
+		
+
+	<div id="no-reply-1029954" class="bbp-no-reply">
+		<div class="bbp-template-notice">
+			<ul>
+				<li>The topic &#8216;Error in generateLanguageModelFromArray call&#8217; is closed to new replies.</li>
+			</ul>
+		</div>
+	</div>
+
+
+
+	
+	
+
+	
+</div>
+
+					               	</section><!-- /.entry -->
+
+				                
+            </article><!-- /.post -->
+            
+              
+        
+		</section><!-- /#main -->
+		
+		
+        	
+<aside id="sidebar" class="col-right">
+
+	
+	    <div class="primary">
+		<div id="bbp_forums_widget-5" class="widget widget_display_forums">
+<h3>Forums</h3>
+		<ul class="bbp-forums-widget">
+
+			
+				<li>
+					<a class="bbp-forum-title" href="/forums/forum/openears-plugins/">
+						OpenEars plugins					</a>
+				</li>
+
+			
+				<li class="bbp-forum-widget-current-forum">
+					<a class="bbp-forum-title" href="/forums/forum/openearsforum/">
+						OpenEars					</a>
+				</li>
+
+			
+		</ul>
+
+		</div>		           
+	</div>        
+	   
+	
+	 
+	
+</aside><!-- /#sidebar -->
+
+    </div>
+<!-- /#content -->
+		
+		<footer id="footer" class="col-full">
+	
+			<div id="copyright" class="col-left">
+							<p>Politepix &copy; 2024. All Rights Reserved.</p>
+						</div>
+	
+			<div id="credit" class="col-right">
+	        <div style="text-align:right;line-height:1.3em">OpenEars® is a registered trademark of Politepix<br>AllHours® is a registered trademark of Politepix<br>The Politepix site uses cookies in order to understand how the website is used by visitors and in order to enable some required functionality. You can learn all about which cookies we use on the <a href="/about/">About</a> page, as well as everything about our privacy policy.<br>
+<a href="https://twitter.com/Politepix" rel="me">TWITTER</a> | <a href="/contact" id="impressumlink">CONTACT POLITEPIX</a><a href="/about" id="impressumlink"> | IMPRESSUM | ABOUT | LEGAL | IMPRINT</a>
+</div>			</div>
+	<a rel="me" href="https://mastodon.social/@Halle">M</a>
+		</footer><!-- /#footer  -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Consent Management powered by Complianz | GDPR/CCPA Cookie Consent https://wordpress.org/plugins/complianz-gdpr -->
+<div id="cmplz-cookiebanner-container">
+<div class="cmplz-cookiebanner cmplz-hidden banner-1 bottom-right-view-preferences optin cmplz-bottom-right cmplz-categories-type-view-preferences" aria-modal="true" data-nosnippet="true" role="dialog" aria-live="polite" aria-labelledby="cmplz-header-1-optin" aria-describedby="cmplz-message-1-optin">
+	<div class="cmplz-header">
+		<div class="cmplz-logo"></div>
+		<div class="cmplz-title" id="cmplz-header-1-optin">Manage Cookie Consent</div>
+		<div class="cmplz-close" tabindex="0" role="button" aria-label="Close dialog">
+			<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
+		</div>
+	</div>
+
+	<div class="cmplz-divider cmplz-divider-header"></div>
+	<div class="cmplz-body">
+		<div class="cmplz-message" id="cmplz-message-1-optin">To provide the best experiences, we use technologies like cookies to store and/or access device information. Consenting to these technologies will allow us to process data such as browsing behavior or unique IDs on this site. Not consenting or withdrawing consent, may adversely affect certain features and functions.</div>
+		<!-- categories start -->
+		<div class="cmplz-categories">
+			<details class="cmplz-category cmplz-functional">
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Functional</span>
+							<span class="cmplz-always-active">
+								<span class="cmplz-banner-checkbox">
+									<input type="checkbox" id="cmplz-functional-optin" data-category="cmplz_functional" class="cmplz-consent-checkbox cmplz-functional" size="40" value="1">
+									<label class="cmplz-label" for="cmplz-functional-optin" tabindex="0"><span class="screen-reader-text">Functional</span></label>
+								</span>
+								Always active							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" height="18"><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"></path></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-functional">The technical storage or access is strictly necessary for the legitimate purpose of enabling the use of a specific service explicitly requested by the subscriber or user, or for the sole purpose of carrying out the transmission of a communication over an electronic communications network.</span>
+				</div>
+			</details>
+
+			<details class="cmplz-category cmplz-preferences">
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Preferences</span>
+							<span class="cmplz-banner-checkbox">
+								<input type="checkbox" id="cmplz-preferences-optin" data-category="cmplz_preferences" class="cmplz-consent-checkbox cmplz-preferences" size="40" value="1">
+								<label class="cmplz-label" for="cmplz-preferences-optin" tabindex="0"><span class="screen-reader-text">Preferences</span></label>
+							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" height="18"><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"></path></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-preferences">The technical storage or access is necessary for the legitimate purpose of storing preferences that are not requested by the subscriber or user.</span>
+				</div>
+			</details>
+
+			<details class="cmplz-category cmplz-statistics">
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Statistics</span>
+							<span class="cmplz-banner-checkbox">
+								<input type="checkbox" id="cmplz-statistics-optin" data-category="cmplz_statistics" class="cmplz-consent-checkbox cmplz-statistics" size="40" value="1">
+								<label class="cmplz-label" for="cmplz-statistics-optin" tabindex="0"><span class="screen-reader-text">Statistics</span></label>
+							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" height="18"><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"></path></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-statistics">The technical storage or access that is used exclusively for statistical purposes.</span>
+					<span class="cmplz-description-statistics-anonymous">The technical storage or access that is used exclusively for anonymous statistical purposes. Without a subpoena, voluntary compliance on the part of your Internet Service Provider, or additional records from a third party, information stored or retrieved for this purpose alone cannot usually be used to identify you.</span>
+				</div>
+			</details>
+			<details class="cmplz-category cmplz-marketing">
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Marketing</span>
+							<span class="cmplz-banner-checkbox">
+								<input type="checkbox" id="cmplz-marketing-optin" data-category="cmplz_marketing" class="cmplz-consent-checkbox cmplz-marketing" size="40" value="1">
+								<label class="cmplz-label" for="cmplz-marketing-optin" tabindex="0"><span class="screen-reader-text">Marketing</span></label>
+							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" height="18"><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"></path></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-marketing">The technical storage or access is required to create user profiles to send advertising, or to track the user on a website or across several websites for similar marketing purposes.</span>
+				</div>
+			</details>
+		</div>
+<!-- categories end -->
+			</div>
+
+	<div class="cmplz-links cmplz-information">
+		<a class="cmplz-link cmplz-manage-options cookie-statement" href="#" data-relative_url="#cmplz-manage-consent-container">Manage options</a>
+		<a class="cmplz-link cmplz-manage-third-parties cookie-statement" href="#" data-relative_url="#cmplz-cookies-overview">Manage services</a>
+		<a class="cmplz-link cmplz-manage-vendors tcf cookie-statement" href="#" data-relative_url="#cmplz-tcf-wrapper">Manage {vendor_count} vendors</a>
+		<a class="cmplz-link cmplz-external cmplz-read-more-purposes tcf" target="_blank" rel="noopener noreferrer nofollow" href="https://cookiedatabase.org/tcf/purposes/">Read more about these purposes</a>
+			</div>
+
+	<div class="cmplz-divider cmplz-footer"></div>
+
+	<div class="cmplz-buttons">
+		<button class="cmplz-btn cmplz-accept">Accept</button>
+		<button class="cmplz-btn cmplz-deny">Deny</button>
+		<button class="cmplz-btn cmplz-view-preferences">View preferences</button>
+		<button class="cmplz-btn cmplz-save-preferences">Save preferences</button>
+		<a class="cmplz-btn cmplz-manage-options tcf cookie-statement" href="#" data-relative_url="#cmplz-manage-consent-container">View preferences</a>
+			</div>
+
+	<div class="cmplz-links cmplz-documents">
+		<a class="cmplz-link cookie-statement" href="#" data-relative_url="">{title}</a>
+		<a class="cmplz-link privacy-statement" href="#" data-relative_url="">{title}</a>
+		<a class="cmplz-link impressum" href="#" data-relative_url="">{title}</a>
+			</div>
+
+</div>
+</div>
+					<div id="cmplz-manage-consent" data-nosnippet="true">
+<button class="cmplz-btn cmplz-hidden cmplz-manage-consent manage-consent-1">Manage consent</button>
+
+</div>
+<!--[if lt IE 9]>
+<script src="https://www.politepix.com/wp-content/themes/pixelpress/includes/js/respond-IE.js"></script>
+<![endif]-->
+			<script>jQuery(document).ready(function(){
+					jQuery('.images a').attr('rel', 'prettyPhoto[product-gallery]');
+				});</script>
+			<script type="text/javascript">(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();</script>
+	<link rel="stylesheet" id="wc-blocks-style-css" href="https://c0.wp.com/p/woocommerce/8.8.2/assets/client/blocks/wc-blocks.css" type="text/css" media="all">
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/accounting/accounting.min.js" id="accounting-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/jquery/ui/core.min.js" id="jquery-ui-core-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.5.2/wp-includes/js/jquery/ui/datepicker.min.js" id="jquery-ui-datepicker-js"></script>
+<script type="text/javascript" id="jquery-ui-datepicker-js-after">
+/* <![CDATA[ */
+jQuery(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+/* ]]> */
+</script>
+<script type="text/javascript" id="woocommerce-addons-js-extra">
+/* <![CDATA[ */
+var woocommerce_addons_params = {"price_display_suffix":"","tax_enabled":"1","price_include_tax":"","display_include_tax":"","ajax_url":"\/wp-admin\/admin-ajax.php","i18n_validation_required_select":"Please choose an option.","i18n_validation_required_input":"Please enter some text in this field.","i18n_validation_required_number":"Please enter a number in this field.","i18n_validation_required_file":"Please upload a file.","i18n_validation_letters_only":"Please enter letters only.","i18n_validation_numbers_only":"Please enter numbers only.","i18n_validation_letters_and_numbers_only":"Please enter letters and numbers only.","i18n_validation_email_only":"Please enter a valid email address.","i18n_validation_min_characters":"Please enter at least %c characters.","i18n_validation_max_characters":"Please enter up to %c characters.","i18n_validation_min_number":"Please enter %c or more.","i18n_validation_max_number":"Please enter %c or less.","i18n_sub_total":"Subtotal","i18n_remaining":"<span><\/span> characters remaining","currency_format_num_decimals":"2","currency_format_symbol":"€","currency_format_decimal_sep":".","currency_format_thousand_sep":",","trim_trailing_zeros":"","is_bookings":"","trim_user_input_characters":"1000","quantity_symbol":"x ","datepicker_class":"wc_pao_datepicker","datepicker_date_format":"MM d, yy","gmt_offset":"-2","date_input_timezone_reference":"default","currency_format":"%s%v"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/wp-content/plugins/woocommerce-product-addons/assets/js/frontend/addons.min.js?ver=6.8.2" id="woocommerce-addons-js" defer data-wp-strategy="defer"></script>
+<script type="text/javascript" src="/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-image-cdn/dist/image-cdn.js?minify=false&amp;ver=132249e245926ae3e188" id="jetpack-photon-js"></script>
+<script type="text/javascript" src="/wp-content/plugins/bbpress/templates/default/js/editor.min.js?ver=2.6.9" id="bbpress-editor-js"></script>
+<script type="text/javascript" id="bbpress-engagements-js-extra">
+/* <![CDATA[ */
+var bbpEngagementJS = {"object_id":"1029954","bbp_ajaxurl":"\/forums\/topic\/error-in-generatelanguagemodelfromarray-call\/?bbp-ajax=true","generic_ajax_error":"Something went wrong. Refresh your browser and try again."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/wp-content/plugins/bbpress/templates/default/js/engagements.min.js?ver=2.6.9" id="bbpress-engagements-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/sourcebuster/sourcebuster.min.js" id="sourcebuster-js-js"></script>
+<script type="text/javascript" id="wc-order-attribution-js-extra">
+/* <![CDATA[ */
+var wc_order_attribution = {"params":{"lifetime":1.0e-5,"session":30,"ajaxurl":"\/wp-admin\/admin-ajax.php","prefix":"wc_order_attribution_","allowTracking":true},"fields":{"source_type":"current.typ","referrer":"current_add.rf","utm_campaign":"current.cmp","utm_source":"current.src","utm_medium":"current.mdm","utm_content":"current.cnt","utm_id":"current.id","utm_term":"current.trm","session_entry":"current_add.ep","session_start_time":"current_add.fd","session_pages":"session.pgs","session_count":"udata.vst","user_agent":"udata.uag"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://c0.wp.com/p/woocommerce/8.8.2/assets/js/frontend/order-attribution.min.js" id="wc-order-attribution-js"></script>
+<script data-service="jetpack-statistics" data-category="statistics" type="text/plain" data-cmplz-src="https://stats.wp.com/e-202417.js" id="jetpack-stats-js" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="jetpack-stats-js-after">
+/* <![CDATA[ */
+_stq = window._stq || [];
+_stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"206848719\",\"post\":\"1029954\",\"tz\":\"2\",\"srv\":\"www.politepix.com\",\"j\":\"1:13.3.1\"}") ]);
+_stq.push([ "clickTrackerInit", "206848719", "1029954" ]);
+/* ]]> */
+</script>
+<script type="text/javascript" id="cmplz-cookiebanner-js-extra">
+/* <![CDATA[ */
+var complianz = {"prefix":"cmplz_","user_banner_id":"1","set_cookies":[],"block_ajax_content":"","banner_version":"18","version":"7.0.4","store_consent":"","do_not_track_enabled":"1","consenttype":"optin","region":"eu","geoip":"","dismiss_timeout":"","disable_cookiebanner":"","soft_cookiewall":"","dismiss_on_scroll":"","cookie_expiry":"365","url":"\/wp-json\/complianz\/v1\/","locale":"lang=en&locale=en_US","set_cookies_on_root":"","cookie_domain":"","current_policy_id":"16","cookie_path":"\/","categories":{"statistics":"statistics","marketing":"marketing"},"tcf_active":"","placeholdertext":"Click to accept {category} cookies and enable this content","css_file":"\/wp-content\/uploads\/complianz\/css\/banner-{banner_id}-{type}.css?v=18","page_links":{"eu":{"cookie-statement":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"},"privacy-statement":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"},"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"us":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"uk":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"ca":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"au":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"za":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}},"br":{"impressum":{"title":"About &#038; Impressum &#038; Privacy Policy","url":"\/about\/"}}},"tm_categories":"","forceEnableStats":"","preview":"","clean_cookies":"","aria_label":"Click to accept {category} cookies and enable this content"};
+/* ]]> */
+</script>
+<script defer type="text/javascript" src="/wp-content/plugins/complianz-gdpr/cookiebanner/js/complianz.min.js?ver=1710283454" id="cmplz-cookiebanner-js"></script>
+</body>
+</html>

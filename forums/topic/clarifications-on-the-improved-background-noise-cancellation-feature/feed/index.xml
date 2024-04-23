@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] Clarifications on the improved background noise cancellation feature &#8211; Politepix</title>
+		<atom:link href="/forums/topic/clarifications-on-the-improved-background-noise-cancellation-feature/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/clarifications-on-the-improved-background-noise-cancellation-feature/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:57:37 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/clarifications-on-the-improved-background-noise-cancellation-feature/#post-1023310</guid>
+					<title><![CDATA[[Resolved] Clarifications on the improved background noise cancellation feature]]></title>
+					<link>/forums/topic/clarifications-on-the-improved-background-noise-cancellation-feature/#post-1023310</link>
+					<pubDate>Mon, 08 Dec 2014 20:47:45 +0000</pubDate>
+					<dc:creator>wfilleman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>Overall this update is a nice big step forward for voice recognition. I thought the 1.x series was good, this is just that much better. Great work.</p>
+<p>Something I&#8217;m now running into is the .vadThreshold setting. In my testing if this is left as the default or even 2.0, my 6 Plus is constantly entering the speech detect loop with the slightest noise. That&#8217;s not really a problem as I&#8217;m seemly getting MUCH better recognition across the room in a quiet environment which is going to be excellent for some of my customers.</p>
+<p>If I use the low end of 1.5-2.0 for vadThreshold then where there is noise in the room the recognition engine seems to get pretty unreliable and flooded with the noise and has a really hard time detecting speech. If I bump this up to the max of 3.9 (looks like the framework has an upper limit of 4.0) then I can have lots of noise in the room without OE entering into it&#8217;s speech detecting loop until I say something directly into the mic. Again, this is pretty good behavior consider all the noise/music I&#8217;ve got playing and seeing it actually work.</p>
+<p>The problem comes in when the environment has variable noise levels. Quiet at some parts of the day and noisy during other parts. (My customers use my app in a wall mounted scenario). Maybe I&#8217;m wrong on this, but I thought that the OE 1.x series did an auto-tune (calibration) for background noise and would make continual internal adjustments based on noise/recognition. Do I have that right? If so, is that something that can be turned on in 2.0 or is this behavior now up to us to implement by fine tuning the .vadThreshold in real time?</p>
+<p>Thanks Halle!<br />
+Wes</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/clarifications-on-the-improved-background-noise-cancellation-feature/#post-1023313</guid>
+					<title><![CDATA[Reply To: [Resolved] Clarifications on the improved background noise cancellation feature]]></title>
+					<link>/forums/topic/clarifications-on-the-improved-background-noise-cancellation-feature/#post-1023313</link>
+					<pubDate>Mon, 08 Dec 2014 21:08:47 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Wes,</p>
+<p>Thank you for your kind words. It should still be reacting to the environment and updating itself – the vadThreshold isn&#8217;t an absolute volume level, but a s/n ratio setting, so it should continue to make sense as those values change. But you might not be able to use a value which is as aggressive as 3.9, since it will tend to reject real speech under normal circumstances. </p>
+<p>What is your experience under changing circumstances using a value like 3.0? Your feedback is appreciated on this, since even though I have a lot of different audio in my tests, there&#8217;s no substitute for real-world feedback and this is part of the new Pocketsphinx code.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/clarifications-on-the-improved-background-noise-cancellation-feature/#post-1023315</guid>
+					<title><![CDATA[Reply To: [Resolved] Clarifications on the improved background noise cancellation feature]]></title>
+					<link>/forums/topic/clarifications-on-the-improved-background-noise-cancellation-feature/#post-1023315</link>
+					<pubDate>Mon, 08 Dec 2014 21:43:22 +0000</pubDate>
+					<dc:creator>wfilleman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks Halle,</p>
+<p>I was digging into the framework when I saw that vadThreshold was how you describe is as a relative speech/silence threshold. That&#8217;s good to know.</p>
+<p>I&#8217;ve set the vadTheshold to 3.0 and ran a couple of tests with background music from the radio at different volume levels. Overall it seems to be a little better. Now that I know what I&#8217;m looking for I can see that it is indeed adjusting to the various sound levels. When the music levels are above what I would say is just background music, it&#8217;s really tough to get OE to process the speech, but again, I&#8217;m asking a lot of the engine to throw out louder than background music and pull out my speech. </p>
+<p>You are right, it&#8217;s a fine balance between upping the threshold and keeping it within speech detecting tolerance. </p>
+<p>I may offer my users an option to say if they are installing this in a noisy room. If YES then I can set the vadThreshold to 3.0. If no, leave it as the default. What do you think?</p>
+<p>Wes</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/clarifications-on-the-improved-background-noise-cancellation-feature/#post-1023316</guid>
+					<title><![CDATA[Reply To: [Resolved] Clarifications on the improved background noise cancellation feature]]></title>
+					<link>/forums/topic/clarifications-on-the-improved-background-noise-cancellation-feature/#post-1023316</link>
+					<pubDate>Mon, 08 Dec 2014 22:10:35 +0000</pubDate>
+					<dc:creator>wfilleman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m looking at this a little deeper and I *think* what I&#8217;m actually seeing is the OE framework adjusting to the different volume levels quite rapidly. For example, if I have a steady tone as background noise, OE pretty quickly sees this as noise and ignores it. I can then issue speech and it does pretty well.</p>
+<p>If I&#8217;m playing music with various beat levels, I see OE struggle a little bit trying to determine what to ignore as noise since it&#8217;s seeing the threshold cross all over the place with the beat of the music.</p>
+<p>I&#8217;m wondering if there&#8217;s a way to level this auto-adjustment out by increasing the number of frames OE considers for the &#8220;noise level&#8221; if that makes sense. For example, if OE only looks at a few frames, then the &#8220;noise&#8221; level would be rapidly changing from low to high and back. If OE looks at a larger group of frames as a moving average, then these intermediate spikes of noise could be leveled out and ignored. </p>
+<p>Just my guess, but I think that&#8217;s what I&#8217;m actually seeing. Adjusting the vadThreshold is a way to work around this issue by forcing a larger discrepancy, but if (what I suspect) is a single frame of louder noise, it punches through the vadThreshold since the low/high detection appears to be pretty tight in terms of a low number of frames to analyze.</p>
+<p>There&#8217;s no easy answer here as what I&#8217;m suggesting would have other tradeoffs as well if I&#8217;m even close to the issue.</p>
+<p>Wes</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/clarifications-on-the-improved-background-noise-cancellation-feature/#post-1023319</guid>
+					<title><![CDATA[Reply To: [Resolved] Clarifications on the improved background noise cancellation feature]]></title>
+					<link>/forums/topic/clarifications-on-the-improved-background-noise-cancellation-feature/#post-1023319</link>
+					<pubDate>Tue, 09 Dec 2014 08:38:13 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I checked in with the CMU project and verified that this is correct (I&#8217;ll probably post the response later if I get permission to quote) – recalibration is definitely happening as you&#8217;ve seen, and 3.0 is probably the highest value that is correct to use. It is designed to be adaptive to changing environments but expects stationary noise, i.e. no dramatic oscillations that need to be reacted to in very short timeframes (this was also the case that would get the old VAD stuck, so we have an improvement if there&#8217;s no stuckness but recognition is sub-optimal).</p>
+<p>It might be possible to change the VAD timeslice although it&#8217;s probably dangerous or possibly pointless to optimize in that area at the same time it continues to be developed by the Sphinx project. </p>
+<p>If you feel like recompiling the framework, there are some config settings you can look at in OEPocketsphinxRunConfig.h related to VAD activity:</p>
+<p>// #define kVAD_PRESPEECH //&#8221;-vad_prespeech&#8221;, int, default ARG_STRINGIFY(DEFAULT_PRESPCH_STATE_LEN), Num of speech frames to trigger vad from silence to speech.<br />
+// #define kVAD_POSTSPEECH //&#8221;-vad_postspeech&#8221;, int, default ARG_STRINGIFY(DEFAULT_POSTSPCH_STATE_LEN), Num of speech frames to trigger vad from speech to silence.</p>
+<p>Or if the issue is that recognition is getting stuck, you can also reduce this check for a stuck utterance in OEContinuousModel.m to something lower than 25:</p>
+<p> if(([NSDate timeIntervalSinceReferenceDate] &#8211; self.stuckUtterance) > 25.0) </p>
+<p>Remember that the framework project has to be archived rather than just built or it won&#8217;t build a universal framework and you&#8217;ll get object errors with either a device or a simulator, depending.</p>
+<p>Question, does your app play back audio or does it just take in mic audio?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/clarifications-on-the-improved-background-noise-cancellation-feature/#post-1023326</guid>
+					<title><![CDATA[Reply To: [Resolved] Clarifications on the improved background noise cancellation feature]]></title>
+					<link>/forums/topic/clarifications-on-the-improved-background-noise-cancellation-feature/#post-1023326</link>
+					<pubDate>Tue, 09 Dec 2014 14:23:13 +0000</pubDate>
+					<dc:creator>wfilleman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks Halle,</p>
+<p>Ok, that&#8217;s good. That all makes sense with what I&#8217;m seeing. No problem with the framework rebuild. I already rebuilt it yesterday to add back in a custom feature I need in my app to be able to disable the bluetooth input option with OE via a BOOL variable on the PocketSphinxController.</p>
+<p>I&#8217;ll play around with these settings and post back with what I find. The 25 seconds needs to come down for my use cases. Thanks for pointing me in the right direction there.</p>
+<p>Yes, my app plays audio as well. One of the features is an IP Camera streaming option that can play video/audio from IP Cameras. While not in use 100% of the time, it&#8217;s possible a user could have voice recognition ON while watching their camera. I did look at this yesterday and it appeared to work like the 1.x framework. So, no concerns from me on that front.</p>
+<p>Wes</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/clarifications-on-the-improved-background-noise-cancellation-feature/#post-1023327</guid>
+					<title><![CDATA[Reply To: [Resolved] Clarifications on the improved background noise cancellation feature]]></title>
+					<link>/forums/topic/clarifications-on-the-improved-background-noise-cancellation-feature/#post-1023327</link>
+					<pubDate>Tue, 09 Dec 2014 14:28:10 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Great, I will be happy to hear about what you discover. This is a .0 version so as more info comes in from real-world usage there can be adjustments where it makes sense.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/clarifications-on-the-improved-background-noise-cancellation-feature/#post-1023328</guid>
+					<title><![CDATA[Reply To: [Resolved] Clarifications on the improved background noise cancellation feature]]></title>
+					<link>/forums/topic/clarifications-on-the-improved-background-noise-cancellation-feature/#post-1023328</link>
+					<pubDate>Tue, 09 Dec 2014 17:48:51 +0000</pubDate>
+					<dc:creator>OT</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>To add to this thread: in my (somewhat limited) testing with both my app and the sample app, the threshold between 2.5 and 3 works well. Default value of 1.5 seems to be too low. </p>
+<p>(my testing was with Apple&#8217;s headset; with default levels &#8216;speech&#8217; gets detected even with minor noise that&#8217;s far from the mic) </p>
+<p>The main issue with the lower values is the end-pointing, which can affect the flow of the application. In other words, even if there is a false speech detection trigger (e.g. noise, bgnd speech, etc.), decoder will typically deal without any problems with that. But, those noise levels that triggered vad and started recognition will also prevent it to end, after user said what they were supposed to say. </p>
+<p>This may not be an issue with RapidEars where decoding is done in the real time (so decoder is effectively doing VAD).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/clarifications-on-the-improved-background-noise-cancellation-feature/#post-1023329</guid>
+					<title><![CDATA[Reply To: [Resolved] Clarifications on the improved background noise cancellation feature]]></title>
+					<link>/forums/topic/clarifications-on-the-improved-background-noise-cancellation-feature/#post-1023329</link>
+					<pubDate>Tue, 09 Dec 2014 18:57:21 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yup, I&#8217;ve raised vadThreshold to 2.0 for the current version and we&#8217;ll see what the feedback on that is. Here is the CMU commentary on the VAD:</p>
+<blockquote><p>Our VAD does track the noise level continuously, it updates noise estimation every frame with sliding average of about 5 seconds.[&#8230;.] it tracks the noise level and raises speech signal when the signal in some frequency band is higher than threshold * noise.</p>
+<p>On the other hand, the VAD is designed to work with slowly changing colored (different levels in different bands) noise. It is not supposed to deal with non-stationary noise. The recommended threshold is about current value (2.0) or it could be 3.0 if you expect slightly more noise variation. Values over 3 are not very reasonable. The value of threshold describes how the noise changes (in what boundaries you consider the change as noise), not how the speech change so it should not be tuned.</p></blockquote>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/clarifications-on-the-improved-background-noise-cancellation-feature/#post-1023330</guid>
+					<title><![CDATA[Reply To: [Resolved] Clarifications on the improved background noise cancellation feature]]></title>
+					<link>/forums/topic/clarifications-on-the-improved-background-noise-cancellation-feature/#post-1023330</link>
+					<pubDate>Tue, 09 Dec 2014 19:09:39 +0000</pubDate>
+					<dc:creator>wfilleman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks Halle,</p>
+<p>Based on their response, how would you expect the pre and post speech values to change and their impacts to overall speech detection? I&#8217;m not sure I&#8217;m following the link between the code change suggestion and the CMU response. It sounds to me that their sliding 5 sec average is fixed?</p>
+<p>Wes</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

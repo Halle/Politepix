@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Pause playback &#8211; Politepix</title>
+		<atom:link href="/forums/topic/pause-playback/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/pause-playback/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:57:28 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/pause-playback/#post-1015418</guid>
+					<title><![CDATA[Pause playback]]></title>
+					<link>/forums/topic/pause-playback/#post-1015418</link>
+					<pubDate>Sat, 19 Jan 2013 14:04:42 +0000</pubDate>
+					<dc:creator>leskil</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>Is it possible to pause the playback when reading a string with the FliteController?</p>
+<p>&#8211; Lasse</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pause-playback/#post-1015419</guid>
+					<title><![CDATA[Reply To: Pause playback]]></title>
+					<link>/forums/topic/pause-playback/#post-1015419</link>
+					<pubDate>Sat, 19 Jan 2013 14:12:23 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>This isn&#8217;t a feature of FliteController, but it could be added to stock OpenEars pretty easily by adding a new method to pause/unpause FliteController&#8217;s AVAudioPlayer if it is playing. In NeatSpeech your option is to send a request to stop, but this will stop at the earliest opportunity to finish an utterance rather than pausing immediately.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pause-playback/#post-1015420</guid>
+					<title><![CDATA[Reply To: Pause playback]]></title>
+					<link>/forums/topic/pause-playback/#post-1015420</link>
+					<pubDate>Sat, 19 Jan 2013 15:57:46 +0000</pubDate>
+					<dc:creator>leskil</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Great, it works!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pause-playback/#post-1015421</guid>
+					<title><![CDATA[Reply To: Pause playback]]></title>
+					<link>/forums/topic/pause-playback/#post-1015421</link>
+					<pubDate>Sat, 19 Jan 2013 16:01:22 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Cool, glad to hear it.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pause-playback/#post-1019123</guid>
+					<title><![CDATA[Reply To: Pause playback]]></title>
+					<link>/forums/topic/pause-playback/#post-1019123</link>
+					<pubDate>Tue, 10 Dec 2013 22:53:07 +0000</pubDate>
+					<dc:creator>Claude</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle!</p>
+<p>It seemed more appropriate to reply here than start a new thread. I have a need to Pause and Resume NeatSpeech output. It looks like I can pause AVAudioPlayer&#8217;s output, but I&#8217;d really like to be able to do this on a word (or even better, sentence) boundary.</p>
+<p>I didn&#8217;t see this capability in the Class reference. Did I miss it? If it isn&#8217;t there, is it something you&#8217;ve considered adding? AVSpeechSynthesizer lets me do it, but your voices sound better&#8230; :- )</p>
+<p>Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pause-playback/#post-1019129</guid>
+					<title><![CDATA[Reply To: Pause playback]]></title>
+					<link>/forums/topic/pause-playback/#post-1019129</link>
+					<pubDate>Wed, 11 Dec 2013 12:56:08 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Claude,</p>
+<p>Well, that&#8217;s a very nice compliment :) . The thought has definitely crossed my mind and I appreciate the feedback on expanding the NeatSpeech API. In the short term there is a lot of other stuff on my plate, but once everything that is pre-shipping and in-progress has shipped, I plan to take another look at the NeatSpeech interface and see how challenging those developments would be.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>PocketSphinx VAD &amp; Noise Robust Processing &#8211; Politepix</title>
+		<atom:link href="/forums/topic/pocketsphinx-vad-noise-robust-processing/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/pocketsphinx-vad-noise-robust-processing/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:56:32 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/pocketsphinx-vad-noise-robust-processing/#post-1020481</guid>
+					<title><![CDATA[PocketSphinx VAD &amp; Noise Robust Processing]]></title>
+					<link>/forums/topic/pocketsphinx-vad-noise-robust-processing/#post-1020481</link>
+					<pubDate>Mon, 10 Mar 2014 06:55:20 +0000</pubDate>
+					<dc:creator>andrew</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>Does the latest version of OpenEars (as well as the plugins) already include the latest VAD and noise processing improvements that were added to PocketSphinx?</p>
+<p>If not, do you have a plan for when those will be added?<br />
+If so, do I need to do anything in order to enable them?</p>
+<p>The reason I ask, is I&#8217;m using OpenEars in my app, but it doesn&#8217;t work well at all if there is background noise. In a quiet room, the recognition accuracy is very good though.</p>
+<p>Thanks!<br />
+Andrew</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pocketsphinx-vad-noise-robust-processing/#post-1020482</guid>
+					<title><![CDATA[Reply To: PocketSphinx VAD &amp; Noise Robust Processing]]></title>
+					<link>/forums/topic/pocketsphinx-vad-noise-robust-processing/#post-1020482</link>
+					<pubDate>Mon, 10 Mar 2014 07:19:30 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The VAD for Pocketsphinx .8 and greater is the same one that has been in Sphinxbase since 2010 – is it possible you&#8217;re thinking of a planned feature rather than a shipped one? It is expected that the VAD estimation and recognition won&#8217;t work as well in a noisy environment.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pocketsphinx-vad-noise-robust-processing/#post-1020499</guid>
+					<title><![CDATA[Reply To: PocketSphinx VAD &amp; Noise Robust Processing]]></title>
+					<link>/forums/topic/pocketsphinx-vad-noise-robust-processing/#post-1020499</link>
+					<pubDate>Wed, 12 Mar 2014 02:19:38 +0000</pubDate>
+					<dc:creator>andrew</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Nickolay said noise-robust processing and VAD have been added in subversion, but maybe they aren&#8217;t part of an official release yet.</p>
+<p>For my use of openears, it doesn&#8217;t work well in a noisy environment, but it works very well in a quite room. Improved noise-robust processing and VAD are critical to make my project useful outside of a lab.</p>
+<p>Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pocketsphinx-vad-noise-robust-processing/#post-1020504</guid>
+					<title><![CDATA[Reply To: PocketSphinx VAD &amp; Noise Robust Processing]]></title>
+					<link>/forums/topic/pocketsphinx-vad-noise-robust-processing/#post-1020504</link>
+					<pubDate>Wed, 12 Mar 2014 07:15:14 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>It hasn&#8217;t been added in the bleeding-edge Sphinx svn repo under cont_ad.h/cont_ad_base.c – if it is part of a brand new area of source in svn let me know the names of the source files and I&#8217;ll take a look. Good noise robustness is important for everyone&#8217;s project, but performance in very noisy environments is always going to be less accurate and with mistakes in speech/silence estimation. To set expectations, if there is new VAD implementation and it is mature enough to go into production code, it might be possible to look at and maybe add starting in April or May – this isn&#8217;t an area of the project where changes can be made quickly or with any kind of pressure because it heavily affects every app that uses the project.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pocketsphinx-vad-noise-robust-processing/#post-1020605</guid>
+					<title><![CDATA[Reply To: PocketSphinx VAD &amp; Noise Robust Processing]]></title>
+					<link>/forums/topic/pocketsphinx-vad-noise-robust-processing/#post-1020605</link>
+					<pubDate>Wed, 26 Mar 2014 01:10:23 +0000</pubDate>
+					<dc:creator>andrew</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle, the new VAD code was merged into trunk just over a week ago (r12368-r12371). Is it difficult to merge the new VAD code in OpenEars?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pocketsphinx-vad-noise-robust-processing/#post-1020610</guid>
+					<title><![CDATA[Reply To: PocketSphinx VAD &amp; Noise Robust Processing]]></title>
+					<link>/forums/topic/pocketsphinx-vad-noise-robust-processing/#post-1020610</link>
+					<pubDate>Wed, 26 Mar 2014 18:42:28 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sure, check out my previous response for info about timeframe for being able to check it out.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pocketsphinx-vad-noise-robust-processing/#post-1020663</guid>
+					<title><![CDATA[Reply To: PocketSphinx VAD &amp; Noise Robust Processing]]></title>
+					<link>/forums/topic/pocketsphinx-vad-noise-robust-processing/#post-1020663</link>
+					<pubDate>Tue, 01 Apr 2014 17:43:13 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, I&#8217;ve had a chance to view the code and it is still a moving target, with fixes for crashes in related feature code being checked in. This is something that will have to come in once a stable version is released, probably as .9 of Sphinxbase/Pocketsphinx.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Different Voice recognition OR recognition for greater time &#8211; Politepix</title>
+		<atom:link href="/forums/topic/different-voice-recognition-or-recognition-for-greater-time/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/different-voice-recognition-or-recognition-for-greater-time/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:08:41 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/different-voice-recognition-or-recognition-for-greater-time/#post-1021853</guid>
+					<title><![CDATA[Different Voice recognition OR recognition for greater time]]></title>
+					<link>/forums/topic/different-voice-recognition-or-recognition-for-greater-time/#post-1021853</link>
+					<pubDate>Sat, 05 Jul 2014 12:04:41 +0000</pubDate>
+					<dc:creator>Nawazish Abbas</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Dear all , kindly help me, i am developing my final year project on Voice Recognition.<br />
+When i speak some phonetics words like gymnastic etc it recognize but when A B C ,,, it does not well enough .<br />
+As well as it recognize on its own way , some time it never listen correct any word </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/different-voice-recognition-or-recognition-for-greater-time/#post-1021854</guid>
+					<title><![CDATA[Reply To: Different Voice recognition OR recognition for greater time]]></title>
+					<link>/forums/topic/different-voice-recognition-or-recognition-for-greater-time/#post-1021854</link>
+					<pubDate>Sat, 05 Jul 2014 12:21:59 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Nawazish,</p>
+<p>Unfortunately this is an issue with all speech recognition engines. You can read more about it by searching these forums for the word &#8220;letters&#8221;. The search field is in the right-side column of this page. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

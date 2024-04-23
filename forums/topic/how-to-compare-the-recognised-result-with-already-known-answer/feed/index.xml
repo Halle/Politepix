@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>How to compare the recognised result with already known answer?  &#8211; Politepix</title>
+		<atom:link href="/forums/topic/how-to-compare-the-recognised-result-with-already-known-answer/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/how-to-compare-the-recognised-result-with-already-known-answer/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:54:36 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/how-to-compare-the-recognised-result-with-already-known-answer/#post-1017085</guid>
+					<title><![CDATA[How to compare the recognised result with already known answer?]]></title>
+					<link>/forums/topic/how-to-compare-the-recognised-result-with-already-known-answer/#post-1017085</link>
+					<pubDate>Tue, 30 Apr 2013 02:58:45 +0000</pubDate>
+					<dc:creator>elecxd</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>Just want to know if it&#8217;s possible to compare a recognised result with already known answer? For example, I already know the sentence is &#8220;Good Morning&#8221;, then after I say it, the app can compare my speech with the answer using some fuzzy logic algorithm and give a score. Is it possible? How to implement it?</p>
+<p>Thanks and Regards,</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-to-compare-the-recognised-result-with-already-known-answer/#post-1017087</guid>
+					<title><![CDATA[Reply To: How to compare the recognised result with already known answer?]]></title>
+					<link>/forums/topic/how-to-compare-the-recognised-result-with-already-known-answer/#post-1017087</link>
+					<pubDate>Tue, 30 Apr 2013 06:13:51 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>This sounds like you just want to compare the speech to another NSString, is that correct or do you want to do something more complex than that? There&#8217;s an example of comparing with a known string in the sample app that ships with the distribution if you search for the string &#8220;CHANGE MODEL&#8221; in its view controller.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-to-compare-the-recognised-result-with-already-known-answer/#post-1017090</guid>
+					<title><![CDATA[Reply To: How to compare the recognised result with already known answer?]]></title>
+					<link>/forums/topic/how-to-compare-the-recognised-result-with-already-known-answer/#post-1017090</link>
+					<pubDate>Tue, 30 Apr 2013 08:01:03 +0000</pubDate>
+					<dc:creator>elecxd</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>Thank you very much.</p>
+<p>May I know which sample app? Let me download and check first.</p>
+<p>Regards,</p>
+<p>&nbsp;</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-to-compare-the-recognised-result-with-already-known-answer/#post-1017091</guid>
+					<title><![CDATA[Reply To: How to compare the recognised result with already known answer?]]></title>
+					<link>/forums/topic/how-to-compare-the-recognised-result-with-already-known-answer/#post-1017091</link>
+					<pubDate>Tue, 30 Apr 2013 08:05:32 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>The OpenEars distribution that you download from the main page contains the framework project (OpenEars.xcodeproj), and also a sample app project showing an implementation of the framework (OpenEarsSampleApp.xcodeproj). </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-to-compare-the-recognised-result-with-already-known-answer/#post-1017111</guid>
+					<title><![CDATA[Reply To: How to compare the recognised result with already known answer?]]></title>
+					<link>/forums/topic/how-to-compare-the-recognised-result-with-already-known-answer/#post-1017111</link>
+					<pubDate>Thu, 02 May 2013 06:29:41 +0000</pubDate>
+					<dc:creator>elecxd</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>Thank you very much. I checked the sample. Another question, can I get the result in percentage between [0.0, 1.0], that&#8217;s mean how similarity between the result and the answer. How to set the threshold? Thanks again.</p>
+<p>Regards,</p>
+<p>elecxd</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-to-compare-the-recognised-result-with-already-known-answer/#post-1017113</guid>
+					<title><![CDATA[Reply To: How to compare the recognised result with already known answer?]]></title>
+					<link>/forums/topic/how-to-compare-the-recognised-result-with-already-known-answer/#post-1017113</link>
+					<pubDate>Thu, 02 May 2013 06:52:24 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi elecxd,</p>
+<p>OK, I understand now what you want to do &#8212; you want to compare two audio files: an existing recording and the new incoming speech from the user, correct? There is no way to do this which is highly accurate because things like background noise and microphone distance will affect the score more than correctness will.</p>
+<p>If it&#8217;s just for fun and not a crucial application, you can put your original file through runRecognitionOnWavFileAtPath:usingLanguageModelAtPath:dictionaryAtPath:languageModelIsJSGF: and compare the score to the score of the incoming speech.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

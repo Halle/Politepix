@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Flite and Ducking &#8211; Politepix</title>
+		<atom:link href="/forums/topic/flite-and-ducking/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/flite-and-ducking/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:59:33 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/flite-and-ducking/#post-9019</guid>
+					<title><![CDATA[Flite and Ducking]]></title>
+					<link>/forums/topic/flite-and-ducking/#post-9019</link>
+					<pubDate>Sun, 25 Mar 2012 19:29:57 +0000</pubDate>
+					<dc:creator>mspector</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Again!</p>
+<p>So in my project I am now trying to duck out background music (or whatever the user is currently playing) when flite speaks, and then bring the music back to normal volume when flite is done speaking.  I am able to bring the volume down, but I am not able to get the volume back up.  I think this has to do with the timing of the program and how long flite is speaking for.  When I tried inputting a loop to stop the code until self.fliteController.speechInProgress is false, it is logged that the flite controller never enters the &#8220;finishPlaying&#8221; method.  On the other hand, when I don&#8217;t have this loop and just log once flite has entered its &#8220;finishPlaying&#8221; method, it logs that it has entered it.  Do you have any suggestions? I need to be able to know once flite is done, and then do something when its finished.</p>
+<p>Thank you in advance!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-and-ducking/#post-9021</guid>
+					<title><![CDATA[Reply To: Flite and Ducking]]></title>
+					<link>/forums/topic/flite-and-ducking/#post-9021</link>
+					<pubDate>Sun, 25 Mar 2012 20:33:57 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hiya,</p>
+<p>Which version?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-and-ducking/#post-9022</guid>
+					<title><![CDATA[Reply To: Flite and Ducking]]></title>
+					<link>/forums/topic/flite-and-ducking/#post-9022</link>
+					<pubDate>Sun, 25 Mar 2012 20:37:18 +0000</pubDate>
+					<dc:creator>mspector</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Version .913 I think&#8230;I downloaded the files back in January</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-and-ducking/#post-9047</guid>
+					<title><![CDATA[Reply To: Flite and Ducking]]></title>
+					<link>/forums/topic/flite-and-ducking/#post-9047</link>
+					<pubDate>Mon, 26 Mar 2012 11:41:34 +0000</pubDate>
+					<dc:creator>mspector</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>If you think it would be worthwhile to update to the current version of OpenEars I can also do that for the new flitecontroller code.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-and-ducking/#post-9048</guid>
+					<title><![CDATA[Reply To: Flite and Ducking]]></title>
+					<link>/forums/topic/flite-and-ducking/#post-9048</link>
+					<pubDate>Mon, 26 Mar 2012 12:01:30 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I guess I would suggest that because the AudioSessionManager has been revised, which probably relates to your question. When you update, be sure to read the docs and be sure to no longer directly invoke AudioSessionManager, since that is now internal to the framework.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-and-ducking/#post-9050</guid>
+					<title><![CDATA[Reply To: Flite and Ducking]]></title>
+					<link>/forums/topic/flite-and-ducking/#post-9050</link>
+					<pubDate>Mon, 26 Mar 2012 12:47:21 +0000</pubDate>
+					<dc:creator>mspector</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Okay I&#8217;ll work on the update and see if I can figure it out.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-and-ducking/#post-9063</guid>
+					<title><![CDATA[Reply To: Flite and Ducking]]></title>
+					<link>/forums/topic/flite-and-ducking/#post-9063</link>
+					<pubDate>Mon, 26 Mar 2012 18:10:19 +0000</pubDate>
+					<dc:creator>mspector</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Downloaded the new version and I successfully got ducking to work by adding some code to audiosessionmanager and flitecontroller.  Thanks for the new version! Working great so far!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-and-ducking/#post-9066</guid>
+					<title><![CDATA[Reply To: Flite and Ducking]]></title>
+					<link>/forums/topic/flite-and-ducking/#post-9066</link>
+					<pubDate>Mon, 26 Mar 2012 18:17:31 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That&#8217;s great!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-and-ducking/#post-1017313</guid>
+					<title><![CDATA[Reply To: Flite and Ducking]]></title>
+					<link>/forums/topic/flite-and-ducking/#post-1017313</link>
+					<pubDate>Tue, 28 May 2013 03:58:27 +0000</pubDate>
+					<dc:creator>raulrea</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>hello mspector<br />
+do you mind posting what code you used to do the ducking? </p>
+<p>thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-and-ducking/#post-1017704</guid>
+					<title><![CDATA[Reply To: Flite and Ducking]]></title>
+					<link>/forums/topic/flite-and-ducking/#post-1017704</link>
+					<pubDate>Fri, 19 Jul 2013 08:18:50 +0000</pubDate>
+					<dc:creator>lbrt</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Could I ask for the code use for ducking background music using flightcontroller?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

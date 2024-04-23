@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>No google juice on NBest &#8211; Politepix</title>
+		<atom:link href="/forums/topic/no-google-juice-on-nbest/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/no-google-juice-on-nbest/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:00:40 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/no-google-juice-on-nbest/#post-1019784</guid>
+					<title><![CDATA[No google juice on NBest]]></title>
+					<link>/forums/topic/no-google-juice-on-nbest/#post-1019784</link>
+					<pubDate>Fri, 17 Jan 2014 19:04:18 +0000</pubDate>
+					<dc:creator>davestrand</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi.</p>
+<p>Could you briefly explain what N-Best is and how it is typically used? -&gt; pocketsphinxDidReceiveNBestHypothesisArray</p>
+<p>Does it look for multiple string combinations? </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/no-google-juice-on-nbest/#post-1019785</guid>
+					<title><![CDATA[Reply To: No google juice on NBest]]></title>
+					<link>/forums/topic/no-google-juice-on-nbest/#post-1019785</link>
+					<pubDate>Fri, 17 Jan 2014 19:17:40 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Dave,</p>
+<p>It just returns the top hypotheses, for however many hypotheses it found for the utterance while searching. So if it found 3 valid hypotheses, it is returning the 3 best results, which is why it&#8217;s called n-best (n because the number it is going to find isn&#8217;t known in advance).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/no-google-juice-on-nbest/#post-1019786</guid>
+					<title><![CDATA[Reply To: No google juice on NBest]]></title>
+					<link>/forums/topic/no-google-juice-on-nbest/#post-1019786</link>
+					<pubDate>Fri, 17 Jan 2014 19:49:52 +0000</pubDate>
+					<dc:creator>davestrand</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ah,  ok thanks. :)  </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

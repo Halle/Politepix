@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>oe_assertions start to fail on long speeches  &#8211; Politepix</title>
+		<atom:link href="/forums/topic/oe_assertions-start-to-fail-on-long-speeches/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/oe_assertions-start-to-fail-on-long-speeches/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:49:04 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/oe_assertions-start-to-fail-on-long-speeches/#post-1022453</guid>
+					<title><![CDATA[oe_assertions start to fail on long speeches]]></title>
+					<link>/forums/topic/oe_assertions-start-to-fail-on-long-speeches/#post-1022453</link>
+					<pubDate>Fri, 05 Sep 2014 00:12:22 +0000</pubDate>
+					<dc:creator>omgbobbyg</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Halle,</p>
+<p>We&#8217;re using RapidEars/Rejecto/OpenEars to do live speech recognition on prepared text a user is reading. We&#8217;ve got it working fine for 4-5 minute long speeches, however we&#8217;ve noticed that after some time of speaking (anywhere between 6-15 minutes users have reported) OpenEars stops working and a whole bunch oe_assertions() start to fail like these:</p>
+<p>failed oe_assertion `hmm_frame(&amp;hmm_re_combelleautechnologiespromptsmart-&gt;hmm_re_combelleautechnologiespromptsmart) &gt;= frame_idx_re_combelleautechnologiespromptsmart’<br />
+failed oe_assertion `hmm_frame(&amp;hmm_re_combelleautechnologiespromptsmart-&gt;hmm_re_combelleautechnologiespromptsmart) == frame_idx_re_combelleautechnologiespromptsmart’<br />
+failed oe_assertion `frame_idx_re_combelleautechnologiespromptsmart == bpe.frame_re_combelleautechnologiespromptsmart’</p>
+<p>One thing I suspect might be the culprit is that whenever these assertions start to fail, the hypothesis being delivered to our rapidEars recognition delegate is very long (<a href="https://www.dropbox.com/s/8qdz2lqkln0tere/hypothesis?dl=0" title="Hypothesis of 900 words" target="_blank" rel="nofollow"></a>) . </p>
+<p>I noticed that it happens more often when there are no pauses in the speech (which I guess explains why the hypothesis is so long). </p>
+<p>i.) Any idea what might be causing the assertions to start to fail?</p>
+<p>ii.) Are there options on rapidears or openears to tell it to not continue to generate such a long hypothesis in the absence of pauses by the speaker?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/oe_assertions-start-to-fail-on-long-speeches/#post-1022454</guid>
+					<title><![CDATA[Reply To: oe_assertions start to fail on long speeches]]></title>
+					<link>/forums/topic/oe_assertions-start-to-fail-on-long-speeches/#post-1022454</link>
+					<pubDate>Fri, 05 Sep 2014 02:05:37 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yes, there are some practical limits to how long a single hypothesis can be for live recognition in RapidEars – an unbounded hypothesis length in live recognition wasn&#8217;t a design goal and isn&#8217;t currently possible. I&#8217;m currently examining these issues for an upcoming version update, so if you&#8217;d like to send me a recording and a dictionary/language model pair that replicates the exceptions, I can add them to the testbed and see if a better result is possible in the next version.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

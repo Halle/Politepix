@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Performance and Recognition Tips needed for small vocabularies &#8211; Politepix</title>
+		<atom:link href="/forums/topic/performance-and-recognition-tips-needed-for-small-vocabularies/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/performance-and-recognition-tips-needed-for-small-vocabularies/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:08:50 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/performance-and-recognition-tips-needed-for-small-vocabularies/#post-1021677</guid>
+					<title><![CDATA[Performance and Recognition Tips needed for small vocabularies]]></title>
+					<link>/forums/topic/performance-and-recognition-tips-needed-for-small-vocabularies/#post-1021677</link>
+					<pubDate>Sat, 14 Jun 2014 15:24:20 +0000</pubDate>
+					<dc:creator>mikeh</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,<br />
+  I am hoping to use OpenEars + Rejecto.   For my situation, when a user issues a command/letter/word, the options are pretty small.  Can anyone shed some light on possible strategies to help with recognition performance:</p>
+<p>1.  What are the tradeoffs of switching to different (but smaller) languages (word arrays) dynamically?  (stop listening, load the new language, start listening).  If we are in a situation where we know there are really only 3 options, it it worth the effort to switch to a smaller recognition set? And continually do this as the user drills down the hierarchy of possible choices.</p>
+<p>2. How do we interpret the hypothesis array:  Here&#8217;s the result of me saying the letter &#8216;H&#8217; {<br />
+        Hypothesis = &#8220;DEE ___REJ_CH&#8221;;<br />
+        Score = &#8220;-32346&#8221;;<br />
+    },<br />
+Does this mean DEE was the best guess and CH was a guess that was rejected?  Sometimes I get a set of only rejected items.</p>
+<p>3.  For recognizing letters, I seem to get better recognition if I use the spelling of the letter (&#8216;EYE&#8217; for I ; &#8216;PEA&#8217; for P ; &#8216;CUE&#8217; for Q ; etc). Is this just happenstance or should I always do this?</p>
+<p> If I have a single letter in my word set are the phonemes automatically added?  I have no sound recognition experience, so I don&#8217;t know if the concepts of phonemes are even used here.</p>
+<p>thanks so much!</p>
+<p>mike</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/performance-and-recognition-tips-needed-for-small-vocabularies/#post-1021680</guid>
+					<title><![CDATA[Reply To: Performance and Recognition Tips needed for small vocabularies]]></title>
+					<link>/forums/topic/performance-and-recognition-tips-needed-for-small-vocabularies/#post-1021680</link>
+					<pubDate>Sun, 15 Jun 2014 09:34:56 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Mike,</p>
+<blockquote><p>1. What are the tradeoffs of switching to different (but smaller) languages (word arrays) dynamically? (stop listening, load the new language, start listening). If we are in a situation where we know there are really only 3 options, it it worth the effort to switch to a smaller recognition set? And continually do this as the user drills down the hierarchy of possible choices.</p></blockquote>
+<p>There are really no tradeoffs here. You don&#8217;t need to stop and start since OpenEars can switch language models while recognition is in progress so it doesn&#8217;t noticeably consume time or resources. If you have some kind of OOV rejection like Rejecto, it is always better to present the most appropriate vocabulary choices without anything extraneous.</p>
+<blockquote><p>2. How do we interpret the hypothesis array: Here’s the result of me saying the letter ‘H’ {<br />
+Hypothesis = “DEE ___REJ_CH”;<br />
+Score = “-32346″;<br />
+},<br />
+Does this mean DEE was the best guess and CH was a guess that was rejected? Sometimes I get a set of only rejected items.
+</p></blockquote>
+<p>Well, this isn&#8217;t the format that OpenEars delivers this info in, and it doesn&#8217;t deliver the rejected phonemes at all unless you specifically request that they are delivered by configuration. So, I think there may be some confusion here between the way that OpenEars returns this information and the way this particular app has been implemented, also underscored by the other question in which there is some audio session behavior that looks like it emerges from app elements that aren&#8217;t related to OpenEars. It would be difficult to answer these kinds of questions which are about the particular elements of this app&#8217;s OpenEars implementation without knowing anything about that. But the result shown above between the curly braces isn&#8217;t how hypotheses are returned out of the box using OpenEars with Rejecto.</p>
+<blockquote><p>3. For recognizing letters, I seem to get better recognition if I use the spelling of the letter (‘EYE’ for I ; ‘PEA’ for P ; ‘CUE’ for Q ; etc). Is this just happenstance or should I always do this?</p></blockquote>
+<p>I think in this case perceived differences are coincidental – both &#8220;EYE&#8221; and &#8220;I&#8221; pick up the identical pronunciations from the master phonetic dictionary in the acoustic model. I believe there should be no difference between using &#8220;P&#8221; and &#8220;PEA&#8221; since they will both be phonetically transcribed as &#8220;P IY&#8221; with no alternate pronunciations by LanguageModelGenerator, and this should be the case for all letter sounds (that they are pulled from the same source, not that they have no alternative pronunciations – some may).</p>
+<p>The biggest recognition issue you are going to encounter is the nature of this single letter recognition task, which is extremely challenging for all speech recognition engines. If you search this forum for the keyword &#8220;letters&#8221; you can read a number of past discussions of it.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/performance-and-recognition-tips-needed-for-small-vocabularies/#post-1021686</guid>
+					<title><![CDATA[Reply To: Performance and Recognition Tips needed for small vocabularies]]></title>
+					<link>/forums/topic/performance-and-recognition-tips-needed-for-small-vocabularies/#post-1021686</link>
+					<pubDate>Mon, 16 Jun 2014 18:47:19 +0000</pubDate>
+					<dc:creator>mikeh</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That hypothesis is coming from this method (via the sample project):<br />
+&#8211; (void) pocketsphinxDidReceiveNBestHypothesisArray:(NSArray *)hypothesisArray<br />
+{ // Pocketsphinx has an n-best hypothesis dictionary.<br />
+   NSLog(@&#8221;hypothesisArray is %@&#8221;,hypothesisArray);<br />
+}</p>
+<p>Thanks for the tip.  After searching there is reference to being able to modify (by hand?) your dictionary.</p>
+<p>1.  It seems that this file is written each time the app starts.  Is there a way to edit it and load it &#8212; rather than just write it?</p>
+<p>2.  Where can I learn about the format of this file?  The &#8216;IY&#8217; suffix seems to be added to many of my words.  What does IY mean&gt;</p>
+<p>Thanks for handling my basic questions.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/performance-and-recognition-tips-needed-for-small-vocabularies/#post-1021687</guid>
+					<title><![CDATA[Reply To: Performance and Recognition Tips needed for small vocabularies]]></title>
+					<link>/forums/topic/performance-and-recognition-tips-needed-for-small-vocabularies/#post-1021687</link>
+					<pubDate>Mon, 16 Jun 2014 19:10:12 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>
+That hypothesis is coming from this method (via the sample project):<br />
+&#8211; (void) pocketsphinxDidReceiveNBestHypothesisArray:(NSArray *)hypothesisArray<br />
+{ // Pocketsphinx has an n-best hypothesis dictionary.<br />
+NSLog(@”hypothesisArray is %@”,hypothesisArray);<br />
+}
+</p></blockquote>
+<p>OK, thank you for clarifying. I don&#8217;t recommend using n-best in combination with Rejecto since n-best is designed to return most-confident hypotheses in order of confidence, while Rejecto deals with confidence differently, by not returning results for low-confidence recognitions. Using them together will tend to undermine both of their separate benefits so I&#8217;d pick one or the other for good results.</p>
+<blockquote><p>
+1. It seems that this file is written each time the app starts. Is there a way to edit it and load it — rather than just write it?
+</p></blockquote>
+<p>It would be better to edit the master phonetic dictionary so that it contains the phonetic transcriptions you want to have loaded into your dictionary file, and to continue to generate your language models dynamically so that they pick up the modifications from the master phonetic lookup dictionary. Here is some info about doing that, which should also shed some light on your second question:</p>
+<p><a href="/2012/12/04/openears-tips-and-tricks-5-customizing-the-master-phonetic-dictionary-or-using-a-new-one/">/2012/12/04/openears-tips-and-tricks-5-customizing-the-master-phonetic-dictionary-or-using-a-new-one/</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>How do you improve recognition? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/how-do-you-improve-recognition/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/how-do-you-improve-recognition/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:02:34 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/how-do-you-improve-recognition/#post-1019043</guid>
+					<title><![CDATA[How do you improve recognition?]]></title>
+					<link>/forums/topic/how-do-you-improve-recognition/#post-1019043</link>
+					<pubDate>Sat, 30 Nov 2013 04:24:29 +0000</pubDate>
+					<dc:creator>SparkyNZ</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi. I&#8217;m using OpenEars to recognise keyword phrases such as:</p>
+<p>PLAYER STOP<br />
+PLAYER PLAY</p>
+<p>What I have found with the tutorial code is that I can say &#8220;PLAYER GO&#8221; and it matches one of the above phrases (usually PLAYER PLAY).</p>
+<p>The recognitionScore delegate gives me a recognitionScore and utteranceID. I am not seeing much difference between using PLAYER PLAY and PLAYER GO in the recognitionScore values.</p>
+<p>I also can&#8217;t find any information on what recognitionScore actually represents. I&#8217;m seeing negative score values &#8211; but what is a good score and what is a bad score? Is closer to zero better? Should I ever expect a positive score?</p>
+<p>I have my vocabulary defines as follows:</p>
+<p>  NSArray  *words = [NSArray arrayWithObjects:@&#8221;PLAYER STOP&#8221;, @&#8221;PLAYER PLAY&#8221;, @&#8221;PLAYER SKIP&#8221;, @&#8221;PLAYER BACK&#8221;, nil];</p>
+<p>Here&#8217;s the debug output for &#8220;PLAYER GO&#8221;, &#8220;PLAYER GO&#8221;, &#8220;PLAYER GO&#8221; and &#8220;PLAYER GO&#8221; which I would hope does not match any words.</p>
+<p>2013-11-30 17:21:42.052 TestApp[43282:907] Pocketsphinx has detected speech.<br />
+2013-11-30 17:21:43.729 TestApp[43282:907] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-11-30 17:21:44.005 TestApp[43282:907] The received hypothesis is PLAYER with a score of -219 and an ID of 000000000<br />
+2013-11-30 17:21:44.109 TestApp[43282:907] Pocketsphinx is now listening.<br />
+2013-11-30 17:21:46.782 TestApp[43282:907] Pocketsphinx has detected speech.<br />
+2013-11-30 17:21:48.464 TestApp[43282:907] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-11-30 17:21:48.763 TestApp[43282:907] The received hypothesis is PLAYER PLAY with a score of -179 and an ID of 000000001<br />
+2013-11-30 17:21:48.847 TestApp[43282:907] Pocketsphinx is now listening.<br />
+2013-11-30 17:21:51.258 TestApp[43282:907] Pocketsphinx has detected speech.<br />
+2013-11-30 17:21:53.073 TestApp[43282:907] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-11-30 17:21:53.377 TestApp[43282:907] The received hypothesis is PLAYER PLAY with a score of -1464 and an ID of 000000002<br />
+2013-11-30 17:21:53.457 TestApp[43282:907] Pocketsphinx is now listening.<br />
+2013-11-30 17:21:55.485 TestApp[43282:907] Pocketsphinx has detected speech.<br />
+2013-11-30 17:21:57.168 TestApp[43282:907] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-11-30 17:21:57.457 TestApp[43282:907] The received hypothesis is PLAYER PLAY with a score of -2932 and an ID of 000000003<br />
+2013-11-30 17:21:57.551 TestApp[43282:907] Pocketsphinx is now listening.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-do-you-improve-recognition/#post-1019055</guid>
+					<title><![CDATA[Reply To: How do you improve recognition?]]></title>
+					<link>/forums/topic/how-do-you-improve-recognition/#post-1019055</link>
+					<pubDate>Mon, 02 Dec 2013 09:24:04 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>The score is a negative number representing decreasing probability as their distance from zero increases. It has very limited application in an app &#8212; you can use it to compare to another score within the same session, speaker and environment only, but scores should never be compared with each other or with a constant across multiple sessions or speakers. The reason for this is that the score is very heavily influenced by the speaker, their accent and other speech characteristics, the mic used, the distance from the mic, and the background noise. So if you try to pick an arbitrary number that means &#8220;accurate score&#8221; for everyone, you will end up excluding all recognition for speakers who don&#8217;t match the profile of your test speaker plus their test environment. It&#8217;s better to ignore it in nearly all cases.</p>
+<p>I regret including the scores in the callbacks since the first versions of OpenEars because now they would be hard to remove, but they don&#8217;t bring a lot to the table and are often looked at as a way to refine accuracy confidence across multiple users, which they aren&#8217;t particularly good for since the engine itself has already used the scoring for that to the extent it is useful. You can use them to see if accuracy for a particular utterance has increased or decreased within the same session.</p>
+<p>The task you are doing is sort of on the line between keyword spotting and command-and-control, which means that out of vocabulary recognition (the engine hearing a word that isn&#8217;t in the vocabulary and matching it to a word that is in the vocabulary) is a big issue as you&#8217;ve discovered. This is the usage case for which Rejecto was developed.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

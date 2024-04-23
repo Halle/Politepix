@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] Do I need a paid plugin? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/do-i-need-a-paid-plugin/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/do-i-need-a-paid-plugin/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:08:21 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/do-i-need-a-paid-plugin/#post-1023123</guid>
+					<title><![CDATA[[Resolved] Do I need a paid plugin?]]></title>
+					<link>/forums/topic/do-i-need-a-paid-plugin/#post-1023123</link>
+					<pubDate>Mon, 01 Dec 2014 20:22:34 +0000</pubDate>
+					<dc:creator>jugg1es</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I have OpenEars running well, but I can&#8217;t get it to do exactly what I need and I&#8217;m not sure if it&#8217;s because I need a paid plugin.</p>
+<p>My requirements:</p>
+<p>1) Dynamically generate (relatively) small grammar sets (or language models as they&#8217;re called here I guess)<br />
+2) After a recognition event, the previous grammar is obsolete and I need to be able to quickly trash the current models and insert new ones<br />
+3) I don&#8217;t need recognition events as the words are spoken<br />
+4)  I&#8217;d rather not have to write each grammar set to the disk each time</p>
+<p>Basically, I&#8217;m having trouble when I try to load new language models and it seems to take longer than necessary to load models in the first place.  Since I have to create possibly dozens of models during the course of the app, I don&#8217;t want the models to write to disk.  Do I need a paid plugin to do this? or can I use OpenEars alone?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/do-i-need-a-paid-plugin/#post-1023125</guid>
+					<title><![CDATA[Reply To: [Resolved] Do I need a paid plugin?]]></title>
+					<link>/forums/topic/do-i-need-a-paid-plugin/#post-1023125</link>
+					<pubDate>Mon, 01 Dec 2014 20:43:52 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<blockquote><p>1) Dynamically generate (relatively) small grammar sets (or language models as they’re called here I guess)</p></blockquote>
+<p>Language models (which are statistical models) and grammars (which are rulesets) are actually two different things, but both are supported by OpenEars. You can read more about both in the documentation for PocketsphinxController and LanguageModelGenerator if you&#8217;re interested. Choosing between them is generally one of the most important UX design decisions for a speech UI.</p>
+<blockquote><p>2) After a recognition event, the previous grammar is obsolete and I need to be able to quickly trash the current models and insert new ones</p></blockquote>
+<p>OK, this is the standard use case that the language model and grammar generation API was designed for.</p>
+<blockquote><p>Basically, I’m having trouble when I try to load new language models and it seems to take longer than necessary to load models in the first place. </p></blockquote>
+<p>This doesn&#8217;t really take an easily-perceptible amount of time, so if you are ever finding yourself waiting for a language model or grammar to be generated, that is a suggestion that there is some other issue. What is your indication that it is language model generation that is causing a delay versus something else?</p>
+<p>It doesn&#8217;t sound like you need a plugin necessarily since your use case is the standard one. The only thing that sounds unusual is being concerned with the models or grammar writing out (what is the concern there?), and the issue with the delay or perception of delay due to some other cause. We can troubleshoot the delay and see what it is that is causing that symptom.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/do-i-need-a-paid-plugin/#post-1023126</guid>
+					<title><![CDATA[Reply To: [Resolved] Do I need a paid plugin?]]></title>
+					<link>/forums/topic/do-i-need-a-paid-plugin/#post-1023126</link>
+					<pubDate>Mon, 01 Dec 2014 20:54:49 +0000</pubDate>
+					<dc:creator>jugg1es</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for your quick reply.  </p>
+<p>I think that the Language Model will best suit my needs.  The reason I&#8217;m concerned about it writing to disk is that I need to be able to load the models quickly (read: almost instantly) and since the app might need to generate a new model 40 times during one session, we&#8217;re talking about hundreds of files written to disk.  </p>
+<p>Is there a way to overwrite the current language model file each time?  When I try to do this, I get errors that say either &#8216;failed to delete&#8217; or &#8216;failed to access&#8217; one or all of the model files.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/do-i-need-a-paid-plugin/#post-1023127</guid>
+					<title><![CDATA[Reply To: [Resolved] Do I need a paid plugin?]]></title>
+					<link>/forums/topic/do-i-need-a-paid-plugin/#post-1023127</link>
+					<pubDate>Mon, 01 Dec 2014 20:58:01 +0000</pubDate>
+					<dc:creator>jugg1es</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Also, when I say there&#8217;s a delay when loading the model, I&#8217;m talking about the time it takes from when you load the model and start listening.  It takes a second or two during the &#8216;calibration&#8217; phase to actually start listening.  So it&#8217;s not that the model takes a long time to load, but theres a significant time between loading the model and &#8216;Listening&#8217; event.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/do-i-need-a-paid-plugin/#post-1023128</guid>
+					<title><![CDATA[Reply To: [Resolved] Do I need a paid plugin?]]></title>
+					<link>/forums/topic/do-i-need-a-paid-plugin/#post-1023128</link>
+					<pubDate>Mon, 01 Dec 2014 21:15:07 +0000</pubDate>
+					<dc:creator>jugg1es</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Please disregard my previous posts :) I got it working like I want it to.</p>
+<p>The reason I was having trouble was due to a separate bug in my app.  Thanks a lot for your help and supporting this great free tool! </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/do-i-need-a-paid-plugin/#post-1023129</guid>
+					<title><![CDATA[Reply To: [Resolved] Do I need a paid plugin?]]></title>
+					<link>/forums/topic/do-i-need-a-paid-plugin/#post-1023129</link>
+					<pubDate>Mon, 01 Dec 2014 21:19:53 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>Is there a way to overwrite the current language model file each time?</p></blockquote>
+<p>No, this wouldn&#8217;t work since the previous model is actually in use (see below). What you can do is simply delete a model once you are sure you&#8217;re done with it (i.e. not after you&#8217;ve switched to a new model, but after you&#8217;ve switched to the new model after the new model).</p>
+<blockquote><p>It takes a second or two during the ‘calibration’ phase to actually start listening</p></blockquote>
+<p>OK, this is the underlying issue. PocketsphinxController can instantly switch between models on the fly, it does not require starting and stopping. Check out the PocketsphinxController method </p>
+<pre>changeLanguageModelToFile:</pre>
+<p> – there is a full example of its use in the sample app.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/do-i-need-a-paid-plugin/#post-1023130</guid>
+					<title><![CDATA[Reply To: [Resolved] Do I need a paid plugin?]]></title>
+					<link>/forums/topic/do-i-need-a-paid-plugin/#post-1023130</link>
+					<pubDate>Mon, 01 Dec 2014 21:21:24 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>The reason I was having trouble was due to a separate bug in my app.</p></blockquote>
+<p>Glad to hear it – I still strongly suggest instant-switching between language models on the fly with changeLanguageModelToFile: instead of starting and stopping the session for every new model. Good luck with your project!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

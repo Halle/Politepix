@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>RapidEars ignoring secondsOfSilenceToDetect &#8211; Politepix</title>
+		<atom:link href="/forums/topic/rapidears-ignoring-secondsofsilencetodetect/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/rapidears-ignoring-secondsofsilencetodetect/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:42:50 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/rapidears-ignoring-secondsofsilencetodetect/#post-1020739</guid>
+					<title><![CDATA[RapidEars ignoring secondsOfSilenceToDetect]]></title>
+					<link>/forums/topic/rapidears-ignoring-secondsofsilencetodetect/#post-1020739</link>
+					<pubDate>Tue, 08 Apr 2014 01:16:08 +0000</pubDate>
+					<dc:creator>morchella</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>It appears that when setFinalizeHypothesis = FALSE, RapidEars ignores the setting for secondsOfSilenceToDetect. Is this a bug? I don&#8217;t need the finalized hypothesis, but I do need to control how long pocketsphinxController waits before considering the utterance ended.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-ignoring-secondsofsilencetodetect/#post-1020742</guid>
+					<title><![CDATA[Reply To: RapidEars ignoring secondsOfSilenceToDetect]]></title>
+					<link>/forums/topic/rapidears-ignoring-secondsofsilencetodetect/#post-1020742</link>
+					<pubDate>Tue, 08 Apr 2014 02:27:54 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>RapidEars doesn&#8217;t use secondsOfSilenceToDetect. Both live and finalized hypotheses are delivered as soon as they are available.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-ignoring-secondsofsilencetodetect/#post-1020743</guid>
+					<title><![CDATA[Reply To: RapidEars ignoring secondsOfSilenceToDetect]]></title>
+					<link>/forums/topic/rapidears-ignoring-secondsofsilencetodetect/#post-1020743</link>
+					<pubDate>Tue, 08 Apr 2014 02:44:14 +0000</pubDate>
+					<dc:creator>morchella</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry if I was unclear. There is a rapidEarsDidDetectEndOfSpeech delegate method which appears to always be called 50-300ms after pocketsphinxDidDetectFinishedSpeech. I have observed that these end of speech callbacks are sensitive to secondsOfSilenceToDetect, but only when setFinalizeHypothesis = TRUE.</p>
+<p>Is this the intended behavior?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-ignoring-secondsofsilencetodetect/#post-1020744</guid>
+					<title><![CDATA[Reply To: RapidEars ignoring secondsOfSilenceToDetect]]></title>
+					<link>/forums/topic/rapidears-ignoring-secondsofsilencetodetect/#post-1020744</link>
+					<pubDate>Tue, 08 Apr 2014 02:59:30 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That&#8217;s correct – finalizing the hypothesis means that the end of speech is detected and reported, while using live recognition only means that there is no wait for a pause or consequent callback when a pause is detected because a pause at the end of an utterance isn&#8217;t used by the engine for determining the hypothesis.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-ignoring-secondsofsilencetodetect/#post-1020745</guid>
+					<title><![CDATA[Reply To: RapidEars ignoring secondsOfSilenceToDetect]]></title>
+					<link>/forums/topic/rapidears-ignoring-secondsofsilencetodetect/#post-1020745</link>
+					<pubDate>Tue, 08 Apr 2014 03:25:40 +0000</pubDate>
+					<dc:creator>morchella</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yes, but even when setFinalizeHypothesis = FALSE, the end of speech is still detected and reported. It&#8217;s just that the config option (secondsOfSilenceToDetect) is now ignored.</p>
+<p>I can work around it, but it seems like incorrect behavior.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-ignoring-secondsofsilencetodetect/#post-1020749</guid>
+					<title><![CDATA[Reply To: RapidEars ignoring secondsOfSilenceToDetect]]></title>
+					<link>/forums/topic/rapidears-ignoring-secondsofsilencetodetect/#post-1020749</link>
+					<pubDate>Tue, 08 Apr 2014 07:25:14 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I hear what you&#8217;re saying, but it is by design. Live mode does not do any kind of waiting for a pause in order to derive state, so if the engine is only operating in live mode, it uses its own logic to determine when is a good time to call an utterance over so that continuous recognition is able to proceed without notable pauses or skips. secondsOfSilenceToDetect and rapidEarsDidDetectEndOfSpeech both refer to pause detection, which isn&#8217;t a feature of live mode. It could be documented better, I agree.</p>
+<p>I think that if I wanted to use live mode hypotheses and non-live mode utterance logic I&#8217;d probably turn finalize on and just ignore its hyp output. The overhead isn&#8217;t that heavy.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-ignoring-secondsofsilencetodetect/#post-1020764</guid>
+					<title><![CDATA[Reply To: RapidEars ignoring secondsOfSilenceToDetect]]></title>
+					<link>/forums/topic/rapidears-ignoring-secondsofsilencetodetect/#post-1020764</link>
+					<pubDate>Tue, 08 Apr 2014 16:41:43 +0000</pubDate>
+					<dc:creator>morchella</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Okay, thanks Halle, I appreciate the advice!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

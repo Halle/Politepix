@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Use of openEars for commercial apps &#8211; Politepix</title>
+		<atom:link href="/forums/topic/use-of-openears-for-commercial-apps/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/use-of-openears-for-commercial-apps/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:55:12 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/use-of-openears-for-commercial-apps/#post-1016772</guid>
+					<title><![CDATA[Use of openEars for commercial apps]]></title>
+					<link>/forums/topic/use-of-openears-for-commercial-apps/#post-1016772</link>
+					<pubDate>Tue, 26 Mar 2013 07:47:06 +0000</pubDate>
+					<dc:creator>priya1588</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Can openEars non paid version be used in commercial apps/apps going to app store?Are there any apps using openEars already available on app store?Is there any chance that non paid version will be converted to paid one in future?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/use-of-openears-for-commercial-apps/#post-1016773</guid>
+					<title><![CDATA[Reply To: Use of openEars for commercial apps]]></title>
+					<link>/forums/topic/use-of-openears-for-commercial-apps/#post-1016773</link>
+					<pubDate>Tue, 26 Mar 2013 08:00:18 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Yes, this is covered in the FAQ at <a href="/openears/support">/openears/support</a> and in the license that ships with OpenEars. You can see many apps that are on the App Store right now if you open the main OpenEars page at <a href="/openears">/openears</a> and look to the right side of the page. There are also many, many more that aren&#8217;t listed there. </p>
+<p><b>Is there any chance that non paid version will be converted to paid one in future?</b></p>
+<p>I don&#8217;t think there is any software made by any company where there is no chance that its license might change at some unspecified point in the future. However, the license you receive with the copy of OpenEars that you download right now is your license for its use, even if some future version had a different license. I have no plans to start charging for OpenEars.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

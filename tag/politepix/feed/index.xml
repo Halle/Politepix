@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>politepix &#8211; Politepix</title>
+	<atom:link href="/tag/politepix/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>iOS Frameworks for speech recognition, text to speech and more</description>
+	<lastBuildDate>Sat, 07 Jul 2012 14:55:54 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.5.2</generator>
+<site xmlns="com-wordpress:feed-additions:1">206848719</site>	<item>
+		<title>OpenEars 1.0 released</title>
+		<link>/2012/03/07/newopenearsrelease10/</link>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Wed, 07 Mar 2012 19:16:19 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[linkedin]]></category>
+		<category><![CDATA[openears]]></category>
+		<category><![CDATA[politepix]]></category>
+		<guid isPermaLink="false">/?p=8737</guid>
+
+					<description><![CDATA[I am extraordinarily happy to announce that OpenEars 1.0 is out now. This version has so many fixes and new features: Ultra-fast, ultra-easy install All-C language modelling and 3x faster phonetic lookup fallback method for vastly faster dynamic language model generation Language model generation is now tuned to creating contextual models from long sentences with [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>I am extraordinarily happy to announce that OpenEars 1.0 is <a href="/openears">out now</a>. This version has <strong>so</strong> many fixes and new features:</p>
+<ul>
+<li>Ultra-fast, ultra-easy install</li>
+<li>All-C language modelling and 3x faster phonetic lookup fallback method for vastly faster dynamic language model generation</li>
+<li>Language model generation is now tuned to creating contextual models from long sentences with improved recognition accuracy</li>
+<li>Only runs with ios 4 and 5 since the only devices that need 3 can&#8217;t use OpenEars due to hardware shortcomings. This allows optimizations that make OpenEars faster.</li>
+<li>ARC/LLVM compatible</li>
+<li>General recognition accuracy is improved, recognition speed is much faster in release versions due to LLVM</li>
+<li>Uses the latest .7 versions of all of the Sphinx libraries</li>
+<li>Calibration takes half the time and is configurable as an OpenEarsConfig.h constant</li>
+<li>Silence detection period is configurable programmatically</li>
+<li>It should no longer be necessary to do anything special in order to use iOS media objects such as AVPlayer.</li>
+<li>It is possible to set OpenEars to programmatically mix with background sounds such as iPod music, although this is not a default setting.</li>
+<li>OpenEars no longer attempts to start Pocketsphinx on a device that has no audio input available</li>
+<li>OpenEars now cleans dynamic language model arrays on input for problematic whitespace</li>
+<li>JSGF now has better perception </li>
+<li>Dynamic JSGF switching has been added</li>
+<li>The AudioSessionManager is now only used internally, since it was the main cause of configuration difficulty for most developers. OpenEars now manages the audio session automagically. Don&#8217;t call AudioSessionManager directly any more, it&#8217;s no longer a developer-facing class of OpenEars.</li>
+<li>All reported bugs fixed</li>
+<li>OpenEars has a license change and is no longer EFF/OSI-defined OSS. It is free as in beer so we&#8217;ll start calling it shared source instead of open source. The big license changes paraphrased (please read the new license since you are agreeing to it when you use the framework): you can&#8217;t redistribute it as source, using it in something other than an app requires permission and special licensing, contribution terms are spelled out. Although this affects a miniscule number of developers that have used OpenEars so far, it&#8217;s a change, so if absolutely anyone wants to talk this over with me/ask more about it, I sincerely welcome you to get in touch via the contact page and I will answer and discuss any good-faith question.</li>
+</ul>
+<p>[politepix-blog-inline-text-ad]</p>
+<p>I really hope that you enjoy this easier, faster and more flexible 1.0 version of OpenEars!</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">8737</post-id>	</item>
+	</channel>
+</rss>

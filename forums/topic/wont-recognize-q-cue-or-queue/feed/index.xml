@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Won&#039;t Recognize Q, CUE, or QUEUE &#8211; Politepix</title>
+		<atom:link href="/forums/topic/wont-recognize-q-cue-or-queue/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/wont-recognize-q-cue-or-queue/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:48:08 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/wont-recognize-q-cue-or-queue/#post-1015706</guid>
+					<title><![CDATA[Won&#039;t Recognize Q, CUE, or QUEUE]]></title>
+					<link>/forums/topic/wont-recognize-q-cue-or-queue/#post-1015706</link>
+					<pubDate>Thu, 21 Feb 2013 22:03:29 +0000</pubDate>
+					<dc:creator>giebler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I can&#8217;t get the program to recognize any of these: Q, QUEUE or CUE.</p>
+<p>Can you offer any hints?  In a business usage, we will be using Q1, Q2, Q3 and Q4.</p>
+<p>The program does recognize &#8220;QUARTER&#8221;, but we can&#8217;t force users to say that.</p>
+<p>We&#8217;re buying Rejecto next week to help eliminate wrong words, but right now we&#8217;re having trouble with the right words.</p>
+<p>Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wont-recognize-q-cue-or-queue/#post-1015707</guid>
+					<title><![CDATA[Reply To: Won&#039;t Recognize Q, CUE, or QUEUE]]></title>
+					<link>/forums/topic/wont-recognize-q-cue-or-queue/#post-1015707</link>
+					<pubDate>Thu, 21 Feb 2013 22:15:20 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hmm, single letters that rhyme with other single letters are very challenging for recognition. </p>
+<p>Since you already know the number of required quarters, something sneaky you can try is to have Q1 etc be the entire word, that is, instead of trying to recognize the combination of Q and 1, you will have a word &#8220;Q1&#8221; in your language model and you&#8217;ll edit the dictionary used so that the entry for Q1 reads as follows:</p>
+<pre>
+Q1   K Y UW W AH N
+</pre>
+<p>You&#8217;d do this for each quarter. Having the multiple syllable/sound combinations available for distinguishing between the quarters should make them recognizable.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wont-recognize-q-cue-or-queue/#post-1015708</guid>
+					<title><![CDATA[Reply To: Won&#039;t Recognize Q, CUE, or QUEUE]]></title>
+					<link>/forums/topic/wont-recognize-q-cue-or-queue/#post-1015708</link>
+					<pubDate>Thu, 21 Feb 2013 22:17:35 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Here&#8217;s the skinny on making custom language models before runtime:</p>
+<p><a href="/2012/11/02/openears-tips-1-create-a-language-model-before-runtime-from-a-text-file/">/2012/11/02/openears-tips-1-create-a-language-model-before-runtime-from-a-text-file/</a></p>
+<p>and editing your phonetic dictionary:</p>
+<p><a href="/2012/12/04/openears-tips-and-tricks-5-customizing-the-master-phonetic-dictionary-or-using-a-new-one/">/2012/12/04/openears-tips-and-tricks-5-customizing-the-master-phonetic-dictionary-or-using-a-new-one/</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wont-recognize-q-cue-or-queue/#post-1015711</guid>
+					<title><![CDATA[Reply To: Won&#039;t Recognize Q, CUE, or QUEUE]]></title>
+					<link>/forums/topic/wont-recognize-q-cue-or-queue/#post-1015711</link>
+					<pubDate>Fri, 22 Feb 2013 14:25:41 +0000</pubDate>
+					<dc:creator>giebler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Here&#8217;s what (and where) I put in the .dic file:</p>
+<p>Q.S	K Y UW Z<br />
+Q1 K Y UW W AH N<br />
+Q2 K Y UW T UW<br />
+Q3 K Y UW TH R IY<br />
+Q4 K Y UW F AO R<br />
+QANA	K AA N AH</p>
+<p>I had to edit the .dic file in Hex since at first Xcode put spaces instead of a tab.</p>
+<p>It still doesn&#8217;t recognize Q1, Q2, Q3 or Q4. </p>
+<p>It comes out &#8220;Two One&#8221; or &#8220;U One&#8221; no matter how clearly I speak.</p>
+<p>I need both &#8220;Two&#8221; and &#8220;U&#8221; (U.S.) in my recognition file.</p>
+<p>Any other thoughts?  I don&#8217;t know what else to do.  Would Rejecto help?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wont-recognize-q-cue-or-queue/#post-1015712</guid>
+					<title><![CDATA[Reply To: Won&#039;t Recognize Q, CUE, or QUEUE]]></title>
+					<link>/forums/topic/wont-recognize-q-cue-or-queue/#post-1015712</link>
+					<pubDate>Fri, 22 Feb 2013 14:49:03 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The issue of doing recognition with several individual words that are only a syllable long and all rhyme with each other is not a satisfactorily-solved issue in speech recognition. This is another variation of the general issue of recognition of the English alphabet, which you can read people trying to find fixes for in every speech-recognition-related resource, unfortunately. There is no contextual cue for which one is the &#8220;real one&#8221; in the case you&#8217;re describing so as soon as there is any distance from the mic, the sounds are going to get mixed up.</p>
+<p>The strategy for dealing with it is going to be some combination of removing confusing words from the model and fusing multiple words together that you know will be spoken together.</p>
+<p>An example is that you don&#8217;t need the loose letter &#8220;U&#8221; if its presence there is just in order to let &#8220;U.S.&#8221; be recognized. In that case, make the word &#8220;U.S.&#8221;:</p>
+<p>U.S. Y UW AH S</p>
+<p>This will also improve the accuracy of words that are spoken near utterances of &#8220;U.S.&#8221;.</p>
+<p>The next issue I see is that the &#8220;Q1&#8221; etc segment has a couple of obscure words before and after it, which suggests to me that this is a big language model. Do you have the opportunity to switch between smaller, more contextually-specific language models?</p>
+<p>Can you do counting in either its own language model that you switch to, or with some kind of prefix? e.g. &#8220;Category 2&#8221; instead of just &#8220;2&#8221;.</p>
+<p>The last thing is that you haven&#8217;t shown the entry in the language model or the pocketsphinx logging output, so I don&#8217;t know for sure whether your alteration is actually in your language model as far as pocketsphinx is concerned. If you remove &#8220;U&#8221; and &#8220;2&#8221;, are you able to recognize &#8220;Q1&#8221;? If not, there might be an issue in the language model in general.</p>
+<p>In case you have confirmed that the language model is OK, and none of these approaches are options for you (although they are almost always options for an app that you can make design decisions about), the last possibility is to do it as a JSGF ruleset rather than a statistical ARPA model. Searching this forum for JSGF should help you get started.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wont-recognize-q-cue-or-queue/#post-1015713</guid>
+					<title><![CDATA[Reply To: Won&#039;t Recognize Q, CUE, or QUEUE]]></title>
+					<link>/forums/topic/wont-recognize-q-cue-or-queue/#post-1015713</link>
+					<pubDate>Fri, 22 Feb 2013 14:55:26 +0000</pubDate>
+					<dc:creator>giebler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I also can&#8217;t get it to recognize our company name (IMS) which I also added to the .dic file as shown here:</p>
+<p>IMRIE	IH M ER IY<br />
+IMS	AY EH M EH S<br />
+IMUS	AY M AH S</p>
+<p>Any suggestions for this one?</p>
+<p>Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wont-recognize-q-cue-or-queue/#post-1015714</guid>
+					<title><![CDATA[Reply To: Won&#039;t Recognize Q, CUE, or QUEUE]]></title>
+					<link>/forums/topic/wont-recognize-q-cue-or-queue/#post-1015714</link>
+					<pubDate>Fri, 22 Feb 2013 14:59:20 +0000</pubDate>
+					<dc:creator>giebler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m adding these entries to the cmu07a.dic file and then generating my .dic file by adding Q1,Q2,Q3,Q4 and IMS to the language array and generating it.  I&#8217;ll download my language file to make sure they ended up there&#8230;</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wont-recognize-q-cue-or-queue/#post-1015715</guid>
+					<title><![CDATA[Reply To: Won&#039;t Recognize Q, CUE, or QUEUE]]></title>
+					<link>/forums/topic/wont-recognize-q-cue-or-queue/#post-1015715</link>
+					<pubDate>Fri, 22 Feb 2013 15:01:38 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yes, step one is definitely making sure that these new words are present in your language model and phonetic dictionary. Also, turn on verbosePocketsphinx so you receive any complaints from pocketsphinx about your language model or dictionary.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wont-recognize-q-cue-or-queue/#post-1015716</guid>
+					<title><![CDATA[Reply To: Won&#039;t Recognize Q, CUE, or QUEUE]]></title>
+					<link>/forums/topic/wont-recognize-q-cue-or-queue/#post-1015716</link>
+					<pubDate>Fri, 22 Feb 2013 15:02:20 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Also turn on OpenEarsLogging and verboseCMUCLMTK so you get any relevant output from the process of generating the language models.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wont-recognize-q-cue-or-queue/#post-1015717</guid>
+					<title><![CDATA[Reply To: Won&#039;t Recognize Q, CUE, or QUEUE]]></title>
+					<link>/forums/topic/wont-recognize-q-cue-or-queue/#post-1015717</link>
+					<pubDate>Fri, 22 Feb 2013 15:18:41 +0000</pubDate>
+					<dc:creator>giebler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Even though I was generating a new .dic file, it was failing to copy it to the proper folder and still using the old one!  Once I discovered that,  your suggestions for Q1,Q2,Q3,Q4 and IMS are all working!</p>
+<p>Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>fliteDidFinishSpeaking not being called &#8211; Politepix</title>
+		<atom:link href="/forums/topic/flitedidfinishspeaking-not-being-called/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/flitedidfinishspeaking-not-being-called/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:59:39 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/flitedidfinishspeaking-not-being-called/#post-1017635</guid>
+					<title><![CDATA[fliteDidFinishSpeaking not being called]]></title>
+					<link>/forums/topic/flitedidfinishspeaking-not-being-called/#post-1017635</link>
+					<pubDate>Tue, 09 Jul 2013 09:49:51 +0000</pubDate>
+					<dc:creator>Richa Kumar</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>fliteDidFinishSpeaking delegate function is not being called.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flitedidfinishspeaking-not-being-called/#post-1017636</guid>
+					<title><![CDATA[Reply To: fliteDidFinishSpeaking not being called]]></title>
+					<link>/forums/topic/flitedidfinishspeaking-not-being-called/#post-1017636</link>
+					<pubDate>Tue, 09 Jul 2013 09:57:10 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Richa,</p>
+<p>If you&#8217;d like help with your issues, please take a look at this post:</p>
+<p><a href="/forums/topic/install-issues-and-their-solutions/">/forums/topic/install-issues-and-their-solutions/</a></p>
+<p>And show the code that you have written. I am happy to help but it isn&#8217;t possible to give help with an issue like this without any information about your code and what you have tried already, since the fliteDidFinishSpeaking delegate function is known to work.</p>
+<p>When you show your code, please show the parts where you set the delegate of OpenEarsEventsObserver. Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

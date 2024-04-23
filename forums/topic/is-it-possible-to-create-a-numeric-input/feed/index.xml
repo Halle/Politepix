@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>is it possible to create a numeric input? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/is-it-possible-to-create-a-numeric-input/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/is-it-possible-to-create-a-numeric-input/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:40:07 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/is-it-possible-to-create-a-numeric-input/#post-8862</guid>
+					<title><![CDATA[is it possible to create a numeric input?]]></title>
+					<link>/forums/topic/is-it-possible-to-create-a-numeric-input/#post-8862</link>
+					<pubDate>Tue, 20 Mar 2012 13:53:37 +0000</pubDate>
+					<dc:creator>dmorrow</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, here&#8217;s the thing.</p>
+<p>I&#8217;d like the app to listen to an instruction like this:</p>
+<p>&#8220;rotate 23 degrees&#8221;</p>
+<p>Where the &#8220;23&#8221; is an arbitrary number that the user can speak. If this were a C format string, it would be &#8220;format %i degrees&#8221;, and the string returned back to me would have the number in it. </p>
+<p>Is this possible?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/is-it-possible-to-create-a-numeric-input/#post-8863</guid>
+					<title><![CDATA[Reply To: is it possible to create a numeric input?]]></title>
+					<link>/forums/topic/is-it-possible-to-create-a-numeric-input/#post-8863</link>
+					<pubDate>Tue, 20 Mar 2012 14:00:16 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Have you tried creating a language model which uses the number-related words you&#8217;d like to recognize? e.g. &#8220;ONE&#8221;, &#8220;TWO&#8221;, [&#8230;.] , &#8220;TWENTY&#8221;, [&#8230;.], &#8220;HUNDRED EIGHTY&#8221;, [&#8230;.]</p>
+<p>This is what would be necessary if you wanted to mix in numbers with other speech. If you want to recognize numbers exclusively, you&#8217;d want to replace your acoustic model with the tidigits acoustic model (and also create a language model that contains the spoken versions of the numbers you want to be able to recognize).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/is-it-possible-to-create-a-numeric-input/#post-8864</guid>
+					<title><![CDATA[Reply To: is it possible to create a numeric input?]]></title>
+					<link>/forums/topic/is-it-possible-to-create-a-numeric-input/#post-8864</link>
+					<pubDate>Tue, 20 Mar 2012 14:07:29 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>If the main intention of the idea is to always have a template-style sentence with variable numbers inserted in a fixed position, you want to investigate how to write JSGF rules and use a JSGF grammar with OpenEars rather than an ARPA language model.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

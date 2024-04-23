@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Detect level (RMS) of recognized speech &#8211; Politepix</title>
+		<atom:link href="/forums/topic/detect-level-rms-of-recognized-speech/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/detect-level-rms-of-recognized-speech/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:06:01 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/detect-level-rms-of-recognized-speech/#post-1020682</guid>
+					<title><![CDATA[Detect level (RMS) of recognized speech]]></title>
+					<link>/forums/topic/detect-level-rms-of-recognized-speech/#post-1020682</link>
+					<pubDate>Thu, 03 Apr 2014 22:55:06 +0000</pubDate>
+					<dc:creator>ggjunker</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Is there a way with the offline speech detection?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/detect-level-rms-of-recognized-speech/#post-1020683</guid>
+					<title><![CDATA[Reply To: Detect level (RMS) of recognized speech]]></title>
+					<link>/forums/topic/detect-level-rms-of-recognized-speech/#post-1020683</link>
+					<pubDate>Thu, 03 Apr 2014 23:02:42 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Sure, take a look at the sample app for level reading of incoming audio.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/detect-level-rms-of-recognized-speech/#post-1020684</guid>
+					<title><![CDATA[Reply To: Detect level (RMS) of recognized speech]]></title>
+					<link>/forums/topic/detect-level-rms-of-recognized-speech/#post-1020684</link>
+					<pubDate>Thu, 03 Apr 2014 23:25:53 +0000</pubDate>
+					<dc:creator>ggjunker</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>A HA! </p>
+<p>[self.pocketsphinxController pocketsphinxInputLevel]]</p>
+<p>I knew I had seen it somewhere before, but after running the OpenEarsSampleApp awhile ago I had been working only with the tutorial code, which skips that part.</p>
+<p>Thanks Halle!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/detect-level-rms-of-recognized-speech/#post-1020695</guid>
+					<title><![CDATA[Reply To: Detect level (RMS) of recognized speech]]></title>
+					<link>/forums/topic/detect-level-rms-of-recognized-speech/#post-1020695</link>
+					<pubDate>Fri, 04 Apr 2014 23:44:21 +0000</pubDate>
+					<dc:creator>ggjunker</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Got it working, thanks. Just one question &#8212; is the level reported averaged over the 500ms or so that it takes that method to return? Or is it taking a point sample somewhere in that window of time?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/detect-level-rms-of-recognized-speech/#post-1020697</guid>
+					<title><![CDATA[Reply To: Detect level (RMS) of recognized speech]]></title>
+					<link>/forums/topic/detect-level-rms-of-recognized-speech/#post-1020697</link>
+					<pubDate>Sat, 05 Apr 2014 08:41:54 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>It&#8217;s an average of point samples.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

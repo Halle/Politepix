@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Childeren voice &#8211; Politepix</title>
+		<atom:link href="/forums/topic/childeren-voice/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/childeren-voice/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:43:39 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/childeren-voice/#post-1018452</guid>
+					<title><![CDATA[Childeren voice]]></title>
+					<link>/forums/topic/childeren-voice/#post-1018452</link>
+					<pubDate>Sun, 29 Sep 2013 19:00:41 +0000</pubDate>
+					<dc:creator>buraks</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>I&#8217;m trying NeatSpeech, I implemented the API to my project, it works good.</p>
+<p>I need a child voice (boy&amp;girl) is it possible to find? or how can I make it? (with pitch configuration e.c. )</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/childeren-voice/#post-1018453</guid>
+					<title><![CDATA[Reply To: Childeren voice]]></title>
+					<link>/forums/topic/childeren-voice/#post-1018453</link>
+					<pubDate>Sun, 29 Sep 2013 19:19:47 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome buraks,</p>
+<p>The best way is to experiment with setting a value for the voice&#8217;s properties .pitch and .transform above 0.0 when you initialize the voice.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

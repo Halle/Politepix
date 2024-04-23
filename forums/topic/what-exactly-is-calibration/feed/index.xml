@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>What exactly is calibration &#8211; Politepix</title>
+		<atom:link href="/forums/topic/what-exactly-is-calibration/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/what-exactly-is-calibration/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:03:06 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/what-exactly-is-calibration/#post-1016899</guid>
+					<title><![CDATA[What exactly is calibration]]></title>
+					<link>/forums/topic/what-exactly-is-calibration/#post-1016899</link>
+					<pubDate>Wed, 10 Apr 2013 04:08:57 +0000</pubDate>
+					<dc:creator>uzziel</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello Halle,</p>
+<p>What exactly is happening during PocketSphinx&#8217;s calibration phase?  Is the engine measuring ambient noise or is it expecting a sample of the user&#8217;s voice?</p>
+<p>Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/what-exactly-is-calibration/#post-1016900</guid>
+					<title><![CDATA[Reply To: What exactly is calibration]]></title>
+					<link>/forums/topic/what-exactly-is-calibration/#post-1016900</link>
+					<pubDate>Wed, 10 Apr 2013 08:02:11 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome uzziel,</p>
+<p>It&#8217;s measuring ambient noise (very specifically it is finding what constitutes &#8220;silence&#8221;).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/what-exactly-is-calibration/#post-1016920</guid>
+					<title><![CDATA[Reply To: What exactly is calibration]]></title>
+					<link>/forums/topic/what-exactly-is-calibration/#post-1016920</link>
+					<pubDate>Thu, 11 Apr 2013 01:26:22 +0000</pubDate>
+					<dc:creator>uzziel</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks Halle!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/what-exactly-is-calibration/#post-1022718</guid>
+					<title><![CDATA[Reply To: What exactly is calibration]]></title>
+					<link>/forums/topic/what-exactly-is-calibration/#post-1022718</link>
+					<pubDate>Sun, 12 Oct 2014 21:39:28 +0000</pubDate>
+					<dc:creator>ThatGuy</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Does calibration work against a very noisy environment such as being in a cafeteria? Or just minor noise levels such as being in a coffee shop?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/what-exactly-is-calibration/#post-1022721</guid>
+					<title><![CDATA[Reply To: What exactly is calibration]]></title>
+					<link>/forums/topic/what-exactly-is-calibration/#post-1022721</link>
+					<pubDate>Mon, 13 Oct 2014 05:39:13 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>It depends a bit on the vocabulary in use. It&#8217;s necessary to test under different noise levels in order to establish how it affects specific apps.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

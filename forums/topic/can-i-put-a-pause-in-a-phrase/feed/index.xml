@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Can I put a pause in a phrase &#8211; Politepix</title>
+		<atom:link href="/forums/topic/can-i-put-a-pause-in-a-phrase/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/can-i-put-a-pause-in-a-phrase/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:03:24 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/can-i-put-a-pause-in-a-phrase/#post-1022208</guid>
+					<title><![CDATA[Can I put a pause in a phrase]]></title>
+					<link>/forums/topic/can-i-put-a-pause-in-a-phrase/#post-1022208</link>
+					<pubDate>Wed, 13 Aug 2014 16:37:08 +0000</pubDate>
+					<dc:creator>boombatz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>HI,<br />
+Is there a &#8220;pause&#8221; available for the &#8220;say&#8221; command?<br />
+i.e.  I want to say &#8220;Welcome (1 second pause) please say begin to get started&#8221;<br />
+Thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/can-i-put-a-pause-in-a-phrase/#post-1022209</guid>
+					<title><![CDATA[Reply To: Can I put a pause in a phrase]]></title>
+					<link>/forums/topic/can-i-put-a-pause-in-a-phrase/#post-1022209</link>
+					<pubDate>Wed, 13 Aug 2014 16:41:00 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry, there&#8217;s no pause.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/can-i-put-a-pause-in-a-phrase/#post-1022219</guid>
+					<title><![CDATA[Reply To: Can I put a pause in a phrase]]></title>
+					<link>/forums/topic/can-i-put-a-pause-in-a-phrase/#post-1022219</link>
+					<pubDate>Thu, 14 Aug 2014 15:46:53 +0000</pubDate>
+					<dc:creator>boombatz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK. thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

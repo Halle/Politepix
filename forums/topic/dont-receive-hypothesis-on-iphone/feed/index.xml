@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Don&#039;t Receive Hypothesis on iPhone &#8211; Politepix</title>
+		<atom:link href="/forums/topic/dont-receive-hypothesis-on-iphone/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/dont-receive-hypothesis-on-iphone/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:04:48 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/dont-receive-hypothesis-on-iphone/#post-1019471</guid>
+					<title><![CDATA[Don&#039;t Receive Hypothesis on iPhone]]></title>
+					<link>/forums/topic/dont-receive-hypothesis-on-iphone/#post-1019471</link>
+					<pubDate>Wed, 15 Jan 2014 04:43:20 +0000</pubDate>
+					<dc:creator>weavercs</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>When I run my app on the simulator I  detect speech and receive a hypothesis: </p>
+<p>Pocketsphinx is now listening.</p>
+<p>2014-01-14 23:34:37.256 VoiceFacts1[7419:70b] Pocketsphinx has detected speech.</p>
+<p>2014-01-14 23:34:39.191 VoiceFacts1[7419:70b] Pocketsphinx has detected a period of silence, concluding an utterance. 0.000000 seconds of silence to detect</p>
+<p>2014-01-14 23:34:47.049 VoiceFacts1[7419:70b] The received hypothesis is THIRTEEN with a score of -1816 and an ID of 000000000</p>
+<p>2014-01-14 23:34:49.536 VoiceFacts1[7419:70b] Pocketsphinx has stopped listening.</p>
+<p>But when I run the exact same code on my iPhone I get this log sequence and NO hypothesis:</p>
+<p>Pocketsphinx is now listening.</p>
+<p>2014-01-14 23:30:46.065 VoiceFacts1[404:60b] Pocketsphinx has detected speech.</p>
+<p>2014-01-14 23:30:47.748 VoiceFacts1[404:60b] Pocketsphinx has detected a period of silence, concluding an utterance. 0.000000 seconds of silence to detect</p>
+<p>2014-01-14 23:30:47.905 VoiceFacts1[404:60b] Pocketsphinx has stopped listening.</p>
+<p>I have tried this with various values for secondsOfSilenceToDetect.</p>
+<p>What can be the difference?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/dont-receive-hypothesis-on-iphone/#post-1019472</guid>
+					<title><![CDATA[Reply To: Don&#039;t Receive Hypothesis on iPhone]]></title>
+					<link>/forums/topic/dont-receive-hypothesis-on-iphone/#post-1019472</link>
+					<pubDate>Wed, 15 Jan 2014 08:46:19 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Does that happen when you run the sample app and use words from the sample app&#8217;s vocabulary? Normally, if there is any difference, it is the simulator which is worse since it has a different and simpler driver. If there is a problem with recognition on an actual device, that will come down to an implementation issue so it might be helpful to share some background on how the app is set up.  My main recommendation would be to go through the tutorial and documentation so you can be sure that your expectations are in line with the capabilities of the SDK.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/dont-receive-hypothesis-on-iphone/#post-1019477</guid>
+					<title><![CDATA[Reply To: Don&#039;t Receive Hypothesis on iPhone]]></title>
+					<link>/forums/topic/dont-receive-hypothesis-on-iphone/#post-1019477</link>
+					<pubDate>Wed, 15 Jan 2014 11:17:07 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Looking at the logging in your example above, there is something unusual about it. The lowest value that can be used for silence to detect is .1 seconds, and it&#8217;s generally inadvisable to reduce from the default of .7 which has been chosen for being the best value for most usage cases. In most cases in which a change is needed, it is a change to a longer silence detection period. Your log shows a silence detection period of 0.0, so that can&#8217;t work, and your longer detection periods you are testing with may still be too short for your usage case.</p>
+<p>Sometimes when developers are first implementing OpenEars, they set the silence detection to a very low value on the theory that it will make OpenEars work like RapidEars, but RapidEars is a different library and its realtime detection has a (very) different design from stock OpenEars which pause-detection silence lengths are unrelated to. Giving OpenEars a silence detection period that is significantly shorter than a normal pause that people make while speaking will break it, since it has to wait for a pause at the end of a word or phrase in order to be able to judge the end of speech and submit the speech audio for recognition. If the pause is shorter than the length of a speech pause (which is around a half second or more), speech fragments will be submitted to the recognizer prematurely and this will/ought to result in null hypotheses.</p>
+<p>If you actually have 0.0 seconds of silence to detect as shown in your logs, or close to 0.0 seconds, that will break speech detection. So it is somewhat possible that the reason you are seeing the result that it works on the simulator is that the simulator is incorrectly estimating speech/silence levels based on its worse driver, and that means that the ultra-short pauses aren&#8217;t being correctly noticed by the simulator so that when the simulator submits speech it is coincidentally not in fragments. In effect, the simulator is coincidentally operating the same as the device would if the device had a silence detection period of standard length.</p>
+<p>I would probably leave the default speech detection silence period alone since it is pretty well tuned to the driver and it is already on the short side (the early versions of OpenEars used a full second since that is the suggestion from the CMU Sphinx project). If this doesn&#8217;t improve your issue, let me know some more specifics about the implementation and I will try to help.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/dont-receive-hypothesis-on-iphone/#post-1019497</guid>
+					<title><![CDATA[Reply To: Don&#039;t Receive Hypothesis on iPhone]]></title>
+					<link>/forums/topic/dont-receive-hypothesis-on-iphone/#post-1019497</link>
+					<pubDate>Wed, 15 Jan 2014 20:27:14 +0000</pubDate>
+					<dc:creator>weavercs</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thank you for looking at this. The value of 0 for secondsOfSilenceToDetect means that I didn&#8217;t set it at all. It evidently is initialized to 0 and 0 must be taken as the default value of .7. It is now working fine tht way.<br />
+The reason it wasn&#8217;t getting any hypothesis for speech was that I was calling stopListening in the callback  pocketsphinxDidDetectSpeech. For some reason this wasn&#8217;t bothering the simulator. I should have paid more attention to your caveat not to rely on the simulated version of the package.<br />
+I was finally able to get the demo app running and it helped me a lot to improve my program. I still have much to learn about OpenEars but now I have a good start. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/dont-receive-hypothesis-on-iphone/#post-1019507</guid>
+					<title><![CDATA[Reply To: Don&#039;t Receive Hypothesis on iPhone]]></title>
+					<link>/forums/topic/dont-receive-hypothesis-on-iphone/#post-1019507</link>
+					<pubDate>Wed, 15 Jan 2014 21:24:06 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That&#8217;s great! Yeah, unfortunately the job of making the simulator perform exactly like the device would be a major undertaking (since there are so many potential audio devices on a Mac) that would take time away from working on the stuff that is actually going to end up in front of an enduser, so I have to stick with a very minimal simulator driver and it has its differences. I&#8217;ll look into the bug with the seconds of silence being misreported in the logging.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/dont-receive-hypothesis-on-iphone/#post-1019758</guid>
+					<title><![CDATA[Reply To: Don&#039;t Receive Hypothesis on iPhone]]></title>
+					<link>/forums/topic/dont-receive-hypothesis-on-iphone/#post-1019758</link>
+					<pubDate>Thu, 16 Jan 2014 13:27:49 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>So, I&#8217;m looking into the funny value for seconds of silence to detect and I can&#8217;t find any logging statements in OpenEars in the format &#8220;0.000000 seconds of silence to detect&#8221;. Do you know where that logged value is originating from?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

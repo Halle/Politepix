@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Can OpenEars Outputs Anything I Say? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/can-openears-outputs-anything-i-say/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/can-openears-outputs-anything-i-say/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:04:59 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/can-openears-outputs-anything-i-say/#post-1019080</guid>
+					<title><![CDATA[Can OpenEars Outputs Anything I Say?]]></title>
+					<link>/forums/topic/can-openears-outputs-anything-i-say/#post-1019080</link>
+					<pubDate>Wed, 04 Dec 2013 19:56:27 +0000</pubDate>
+					<dc:creator>pmpascua</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi, Im interested in using the OpenEars library for my project and I want to ask you some questions</p>
+<p>Does the software convert any speech I can make into voice? If I say &#8220;Pao&#8221;, would it output &#8216;Pao&#8217;? What about &#8220;BLAHBLAHBLAH&#8221;, would it output that? Or is it just limited to dictionary words?</p>
+<p>If I say a number, lets say five, does it output &#8216;5&#8217; or &#8216;five?</p>
+<p>How long do I make a pause till I get the output? </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/can-openears-outputs-anything-i-say/#post-1019081</guid>
+					<title><![CDATA[Reply To: Can OpenEars Outputs Anything I Say?]]></title>
+					<link>/forums/topic/can-openears-outputs-anything-i-say/#post-1019081</link>
+					<pubDate>Wed, 04 Dec 2013 20:02:45 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>OpenEars can recognize words from a vocabulary that you set. If you make a vocabulary with &#8220;Pao&#8221; it can recognize &#8220;Pao&#8221;, but you might have to make an entry in its lookup dictionary for how that should be pronounced. &#8220;5&#8221; versus &#8220;five&#8221; is the same &#8212; you add the one to your dictionary that you want returned. You can adjust the pause but it defaults to .7 seconds which I think is the best timeframe for most applications.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/can-openears-outputs-anything-i-say/#post-1019082</guid>
+					<title><![CDATA[Reply To: Can OpenEars Outputs Anything I Say?]]></title>
+					<link>/forums/topic/can-openears-outputs-anything-i-say/#post-1019082</link>
+					<pubDate>Wed, 04 Dec 2013 20:05:08 +0000</pubDate>
+					<dc:creator>pmpascua</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Is there a way to recognize anything? I had an app that makes people fill out forms that contains first name, last name, address, etc and a speech recognition is nice to have compared to typing a keyboard</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/can-openears-outputs-anything-i-say/#post-1019083</guid>
+					<title><![CDATA[Reply To: Can OpenEars Outputs Anything I Say?]]></title>
+					<link>/forums/topic/can-openears-outputs-anything-i-say/#post-1019083</link>
+					<pubDate>Wed, 04 Dec 2013 20:15:18 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Nope, it (and all speech recognition) always works from a predefined vocabulary list. If you can get text of their name, you can add the name to the list, but that might not help you since presumably you want them to make their very first name entry via speech, correct? So without knowing their name in advance, you can&#8217;t recognize their name.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/can-openears-outputs-anything-i-say/#post-1019084</guid>
+					<title><![CDATA[Reply To: Can OpenEars Outputs Anything I Say?]]></title>
+					<link>/forums/topic/can-openears-outputs-anything-i-say/#post-1019084</link>
+					<pubDate>Wed, 04 Dec 2013 20:24:06 +0000</pubDate>
+					<dc:creator>pmpascua</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>:( so how do I add vocabularies? on the devices&#8217; lookup dictionary?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/can-openears-outputs-anything-i-say/#post-1019085</guid>
+					<title><![CDATA[Reply To: Can OpenEars Outputs Anything I Say?]]></title>
+					<link>/forums/topic/can-openears-outputs-anything-i-say/#post-1019085</link>
+					<pubDate>Wed, 04 Dec 2013 20:39:29 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Just run through the quickstart tutorial, it will make it all clear.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/can-openears-outputs-anything-i-say/#post-1019177</guid>
+					<title><![CDATA[Reply To: Can OpenEars Outputs Anything I Say?]]></title>
+					<link>/forums/topic/can-openears-outputs-anything-i-say/#post-1019177</link>
+					<pubDate>Mon, 16 Dec 2013 17:33:44 +0000</pubDate>
+					<dc:creator>pmpascua</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi, I followed the quick start tutorial just today and so far its working. One thing I don&#8217;t like is to predefining the vocabularies such that it accepts all possible words spoken. Is there a way to at least get the vocabulary lists on the device instead of typing all possible words?</p>
+<p>For the numbers, I&#8217;ve added &#8216;1&#8217; along with &#8216;WORD&#8217; &amp; &#8216;STATEMENT&#8217; and when I said &#8216;1&#8217;, it returns &#8216;WORD&#8217;. why is that? Also, when &#8216;1&#8217; and &#8216;ONE&#8217; is added, &#8216;ONE&#8217; always returns; Does it mean that its more likely to return words instead of numbers?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/can-openears-outputs-anything-i-say/#post-1019178</guid>
+					<title><![CDATA[Reply To: Can OpenEars Outputs Anything I Say?]]></title>
+					<link>/forums/topic/can-openears-outputs-anything-i-say/#post-1019178</link>
+					<pubDate>Mon, 16 Dec 2013 17:48:03 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p> Is there a way to at least get the vocabulary lists on the device instead of typing all possible words?</p></blockquote>
+<p>I don&#8217;t quite understand this question &#8212; can you clarify what you are wanting to do here a bit more?</p>
+<blockquote><p>For the numbers, I’ve added ’1′ along with ‘WORD’ &#038; ‘STATEMENT’ and when I said ’1′, it returns ‘WORD’. why is that? Also, when ’1′ and ‘ONE’ is added, ‘ONE’ always returns; Does it mean that its more likely to return words instead of numbers?</p></blockquote>
+<p>This is probably because &#8220;ONE&#8221; is finding a more accurate pronunciation match in the dictionary for your accent. If &#8220;1&#8221; is giving undesired results and &#8220;ONE&#8221; isn&#8217;t, go with &#8220;ONE&#8221;. It&#8217;s always necessary to do a bit of refinement on a vocabulary for best results.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/can-openears-outputs-anything-i-say/#post-1019180</guid>
+					<title><![CDATA[Reply To: Can OpenEars Outputs Anything I Say?]]></title>
+					<link>/forums/topic/can-openears-outputs-anything-i-say/#post-1019180</link>
+					<pubDate>Mon, 16 Dec 2013 20:06:49 +0000</pubDate>
+					<dc:creator>pmpascua</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>I don’t quite understand this question — can you clarify what you are wanting to do here a bit more?</p></blockquote>
+<p>Nevermind, I&#8217;ll figure it out on my own.</p>
+<p>I just found a critical problem. Let say I made a view controller to be presented and it contains a button to toggle whether to turn on or off OpenEars. When turned on, it calls the [pocketspinxController startListening] and when turned off, it calls the [pocketspinxController stopListening]. However when I turned it on again,either on same view or when the view is dismissed and presented again, it either crash or just froze on [pocket startListening]. Any Ideas why?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/can-openears-outputs-anything-i-say/#post-1019181</guid>
+					<title><![CDATA[Reply To: Can OpenEars Outputs Anything I Say?]]></title>
+					<link>/forums/topic/can-openears-outputs-anything-i-say/#post-1019181</link>
+					<pubDate>Mon, 16 Dec 2013 20:22:55 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You can only have one listening loop running at once. If you have one running, you have to stop it before starting a new one.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

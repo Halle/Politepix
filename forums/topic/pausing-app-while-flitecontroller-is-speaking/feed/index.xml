@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Pausing app while FliteController is speaking &#8211; Politepix</title>
+		<atom:link href="/forums/topic/pausing-app-while-flitecontroller-is-speaking/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/pausing-app-while-flitecontroller-is-speaking/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:39:38 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/pausing-app-while-flitecontroller-is-speaking/#post-10523</guid>
+					<title><![CDATA[Pausing app while FliteController is speaking]]></title>
+					<link>/forums/topic/pausing-app-while-flitecontroller-is-speaking/#post-10523</link>
+					<pubDate>Tue, 10 Jul 2012 23:35:21 +0000</pubDate>
+					<dc:creator>woodyard</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Can anyone recommend the best way to pause the main application while FliteController is speaking?  </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pausing-app-while-flitecontroller-is-speaking/#post-10525</guid>
+					<title><![CDATA[Reply To: Pausing app while FliteController is speaking]]></title>
+					<link>/forums/topic/pausing-app-while-flitecontroller-is-speaking/#post-10525</link>
+					<pubDate>Wed, 11 Jul 2012 09:22:47 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>What do you mean by pausing the main application?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pausing-app-while-flitecontroller-is-speaking/#post-10532</guid>
+					<title><![CDATA[Reply To: Pausing app while FliteController is speaking]]></title>
+					<link>/forums/topic/pausing-app-while-flitecontroller-is-speaking/#post-10532</link>
+					<pubDate>Wed, 11 Jul 2012 16:57:12 +0000</pubDate>
+					<dc:creator>woodyard</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry for the poor explanation &#8211; I had one foot out the dooor at the time.</p>
+<p>I&#8217;m writing an application to help young children with their literacy skills.  The application shows them a word, and then they have six seconds to say the word correctly.  If they say it correctly, the app says &#8220;Correct&#8221;.  If they say it incorrectly, the app says the word correctly.</p>
+<p>So &#8211; the app uses all the OpenEars components!</p>
+<p>Anyway &#8211; the problem I&#8217;m trying to overcome is that currently, when the timer runs out and &#8220;correct&#8221; or the word is said the next word is shown and the timer for the enxt word is starting while the FliteController is in the process of saying &#8220;correct&#8221; or saying the word that was missed.  I need the app to wait for FliteController to finish speaking, and THEN move on to the next word/timer.</p>
+<p>I&#8217;ve tried inserting a BOOL flag into fliteDidStartSpeaking and flitedDidFInishSpeaking and then writing a convenience method that calls fliteController then &#8220;waits&#8221; using a WHILE loop based on that Boolean value, but have not been successful using that approach.  </p>
+<p>Is there a better way to accomplish this, and if not &#8211; perhaps I&#8217;ve just missed something.  Here is my convenience method and my overrides for both flite methods:</p>
+<p>&#8211; (void) claraSay: (NSString *)message;<br />
+{<br />
+    [self.fliteController say:message withVoice:kVoice];<br />
+    while ( self.fliteIsSpeaking ) {<br />
+        NSLog(@&#8221;Clara is waiting&#8230;.&#8221;);<br />
+    }<br />
+}</p>
+<p>&#8211; (void) fliteDidStartSpeaking<br />
+{<br />
+    NSLog(@&#8221;Flite has started speaking&#8221;); // Log it.</p>
+<p>    self.fliteIsSpeaking=TRUE;</p>
+<p>}</p>
+<p>&#8211; (void) fliteDidFinishSpeaking<br />
+{</p>
+<p>  NSLog(@&#8221;Flite has finished speaking&#8221;); // Log it.</p>
+<p>  self.fliteIsSpeaking=FALSE;</p>
+<p>}</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pausing-app-while-flitecontroller-is-speaking/#post-10534</guid>
+					<title><![CDATA[Reply To: Pausing app while FliteController is speaking]]></title>
+					<link>/forums/topic/pausing-app-while-flitecontroller-is-speaking/#post-10534</link>
+					<pubDate>Thu, 12 Jul 2012 12:57:09 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sounds like a nice app, always happy to hear about that kind of use of OpenEars. This is more of a general application design question but I don&#8217;t mind taking a stab at it.  </p>
+<p>I think that the most efficient way to deal with this kind of issue is to launch the follow-up method (in this case whatever the &#8220;ask next question&#8221; method is) _from_ fliteDidFinishSpeaking (as part of an OpenEarsEventsObserver instance that is instantiated in the class whether the follow-up method lives). Generally, a good pattern for that kind of approach is to have a &#8220;queue&#8221; of questions which are added to an NSMutableArray at whatever point you know what they are supposed to be, and every time fliteDidFinishSpeaking is called you check the queue to see if there are any questions left in it to ask. If there is a next question in the queue, you launch your question method using that question from fliteDidFinishSpeaking and also remove it from the queue. Eventually you will run out of questions and fliteDidFinishSpeaking will not result in another question being asked. If logic dictates that there are new questions that should be asked, you add them to the queue. Does that make sense?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pausing-app-while-flitecontroller-is-speaking/#post-10787</guid>
+					<title><![CDATA[Reply To: Pausing app while FliteController is speaking]]></title>
+					<link>/forums/topic/pausing-app-while-flitecontroller-is-speaking/#post-10787</link>
+					<pubDate>Wed, 08 Aug 2012 02:12:01 +0000</pubDate>
+					<dc:creator>woodyard</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thank you &#8211; that did the trick!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

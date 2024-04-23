@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>How do I activate button pressed event? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/how-do-i-activate-button-pressed-event/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/how-do-i-activate-button-pressed-event/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:09:21 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/how-do-i-activate-button-pressed-event/#post-1022541</guid>
+					<title><![CDATA[How do I activate button pressed event?]]></title>
+					<link>/forums/topic/how-do-i-activate-button-pressed-event/#post-1022541</link>
+					<pubDate>Mon, 15 Sep 2014 16:58:43 +0000</pubDate>
+					<dc:creator>okmred</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ok, so I&#8217;m reviewing the documentation and am not clear on how to use a voice command in an app. How do you associate the word, stop with a stop button and have it perform that action? Thanks for any help or specific links to resources to read.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-do-i-activate-button-pressed-event/#post-1022543</guid>
+					<title><![CDATA[Reply To: How do I activate button pressed event?]]></title>
+					<link>/forums/topic/how-do-i-activate-button-pressed-event/#post-1022543</link>
+					<pubDate>Mon, 15 Sep 2014 17:16:38 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>OpenEars performs continuous recognition, meaning that touch events are not used in order to start or stop recognition, but instead there is ongoing listening and you trigger the events of your app based on speech that is recognized. </p>
+<p>Please check out the sample app that ships with OpenEars (it&#8217;s in the folder OpenEarsSampleApp and is called OpenEarsSampleApp.xcodeproj) in order to see a complete example of an app that performs the major functions you&#8217;ve mentioned, or step through the tutorial tool here, which also answers those questions with a step-by-step approach: <a href="/openears/tutorial">/openears/tutorial</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-do-i-activate-button-pressed-event/#post-1022545</guid>
+					<title><![CDATA[Reply To: How do I activate button pressed event?]]></title>
+					<link>/forums/topic/how-do-i-activate-button-pressed-event/#post-1022545</link>
+					<pubDate>Mon, 15 Sep 2014 17:32:06 +0000</pubDate>
+					<dc:creator>okmred</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>But it does not work with the simulator&#8230;correct?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-do-i-activate-button-pressed-event/#post-1022547</guid>
+					<title><![CDATA[Reply To: How do I activate button pressed event?]]></title>
+					<link>/forums/topic/how-do-i-activate-button-pressed-event/#post-1022547</link>
+					<pubDate>Mon, 15 Sep 2014 17:35:15 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>It works, but you can&#8217;t use it to evaluate how accurate recognition is. Recognition is much less accurate on the Simulator.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-do-i-activate-button-pressed-event/#post-1022548</guid>
+					<title><![CDATA[Reply To: How do I activate button pressed event?]]></title>
+					<link>/forums/topic/how-do-i-activate-button-pressed-event/#post-1022548</link>
+					<pubDate>Mon, 15 Sep 2014 17:46:08 +0000</pubDate>
+					<dc:creator>okmred</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I can compile and run, but the simulator just says &#8220;not possible to start recognition loop&#8221; in the status area??</p>
+<p>Ideas?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-do-i-activate-button-pressed-event/#post-1022550</guid>
+					<title><![CDATA[Reply To: How do I activate button pressed event?]]></title>
+					<link>/forums/topic/how-do-i-activate-button-pressed-event/#post-1022550</link>
+					<pubDate>Mon, 15 Sep 2014 19:10:53 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Nope, if there is something unusual about your host machine the Simulator might not work, so you&#8217;d need to troubleshoot your machine settings for that – I regretfully can&#8217;t help with that at all.  </p>
+<p>You can check out the post <a href="/forums/topic/install-issues-and-their-solutions/">Please read before you post – how to troubleshoot and provide logging info here</a> to see how to turn on the logging that provides troubleshooting information for this kind of issue so you can troubleshoot it further.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-do-i-activate-button-pressed-event/#post-1022552</guid>
+					<title><![CDATA[Reply To: How do I activate button pressed event?]]></title>
+					<link>/forums/topic/how-do-i-activate-button-pressed-event/#post-1022552</link>
+					<pubDate>Mon, 15 Sep 2014 19:23:27 +0000</pubDate>
+					<dc:creator>okmred</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ok, thats fine, thanks.</p>
+<p>What I am missing , is the example of saying &#8220;stop&#8221; and having a stop button action performed. Which sample were you pointing me to?</p>
+<p>Thanks for additional direction.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-do-i-activate-button-pressed-event/#post-1022553</guid>
+					<title><![CDATA[Reply To: How do I activate button pressed event?]]></title>
+					<link>/forums/topic/how-do-i-activate-button-pressed-event/#post-1022553</link>
+					<pubDate>Mon, 15 Sep 2014 19:27:28 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The sample app shows how to trigger actions with speech (the example in there is the speech &#8220;CHANGE MODEL&#8221;, which triggers a change of language model).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-do-i-activate-button-pressed-event/#post-1022554</guid>
+					<title><![CDATA[Reply To: How do I activate button pressed event?]]></title>
+					<link>/forums/topic/how-do-i-activate-button-pressed-event/#post-1022554</link>
+					<pubDate>Mon, 15 Sep 2014 20:04:05 +0000</pubDate>
+					<dc:creator>okmred</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>ahhhhhhh&#8230;&#8230;. Got it, thanks. I was not looking for that &#8230;exactly.</p>
+<p>Ok, done.</p>
+<p>Thanks again.</p>
+<p>I&#8217;m sure I&#8217;ll be back, but this has been a good day.</p>
+<p>Have a great evening.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-do-i-activate-button-pressed-event/#post-1022555</guid>
+					<title><![CDATA[Reply To: How do I activate button pressed event?]]></title>
+					<link>/forums/topic/how-do-i-activate-button-pressed-event/#post-1022555</link>
+					<pubDate>Mon, 15 Sep 2014 20:14:10 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Super! Have a great evening yourself.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

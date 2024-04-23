@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Some of the Sounds are skipping in flite controller &#8211; Politepix</title>
+		<atom:link href="/forums/topic/some-of-the-sounds-are-skipping-in-flite-controller/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/some-of-the-sounds-are-skipping-in-flite-controller/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:59:42 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/some-of-the-sounds-are-skipping-in-flite-controller/#post-1017628</guid>
+					<title><![CDATA[Some of the Sounds are skipping in flite controller]]></title>
+					<link>/forums/topic/some-of-the-sounds-are-skipping-in-flite-controller/#post-1017628</link>
+					<pubDate>Mon, 08 Jul 2013 07:39:10 +0000</pubDate>
+					<dc:creator>Richa Kumar</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,<br />
+I am using OpenEars framework with one voice (slt).<br />
+The filte controller plays some sounds and skips some sounds.Please help</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/some-of-the-sounds-are-skipping-in-flite-controller/#post-1017629</guid>
+					<title><![CDATA[Reply To: Some of the Sounds are skipping in flite controller]]></title>
+					<link>/forums/topic/some-of-the-sounds-are-skipping-in-flite-controller/#post-1017629</link>
+					<pubDate>Mon, 08 Jul 2013 07:40:38 +0000</pubDate>
+					<dc:creator>Richa Kumar</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Loading speech data for Flite concluded successfully is not being called for some words</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/some-of-the-sounds-are-skipping-in-flite-controller/#post-1017630</guid>
+					<title><![CDATA[Reply To: Some of the Sounds are skipping in flite controller]]></title>
+					<link>/forums/topic/some-of-the-sounds-are-skipping-in-flite-controller/#post-1017630</link>
+					<pubDate>Mon, 08 Jul 2013 08:20:00 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>This usually happens if you make one speech call after another without letting the first one finish before calling the next one. Go ahead and show your code if you&#8217;d like assistance.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

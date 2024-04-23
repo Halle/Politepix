@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Limit hypothesis to phrases defined in model &#8211; Politepix</title>
+		<atom:link href="/forums/topic/limit-hypothesis-to-phrases-defined-in-model/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/limit-hypothesis-to-phrases-defined-in-model/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:52:33 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/limit-hypothesis-to-phrases-defined-in-model/#post-8099</guid>
+					<title><![CDATA[Limit hypothesis to phrases defined in model]]></title>
+					<link>/forums/topic/limit-hypothesis-to-phrases-defined-in-model/#post-8099</link>
+					<pubDate>Thu, 17 Nov 2011 22:43:34 +0000</pubDate>
+					<dc:creator>culov</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Let&#8217;s say my dynamically generated language model is defined by the following array:  [&#8220;ONE&#8221;, &#8220;MY SAMPLE SENTENCE&#8221;].</p>
+<p>Many times, when I speak the phrase &#8220;My sample sentence&#8221; into my phone, the hypothesis returned will be &#8220;ONE SAMPLE SENTENCE&#8221;.  What I want to be able to do is prevent the library from allowing fragments of inputs to be recombined to form new, acceptable phrases.  In the example above, I imagine that if this were possible, when Open Ears is determining the hypothesis, if it were forced to choose between &#8220;MY SAMPLE SENTENCE&#8221; or &#8220;ONE&#8221;, it would make the right decision.  </p>
+<p>I&#8217;ve spent a couple hours looking through the source, but there were many aspects that I had trouble understanding.  What I&#8217;d like to know is whether there is an easy way of accomplishing what I&#8217;d like, and if there isn&#8217;t perhaps some input on how difficult it might be to add such a feature myself and how I might want to go about it.</p>
+<p>Thanks a lot</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/limit-hypothesis-to-phrases-defined-in-model/#post-8101</guid>
+					<title><![CDATA[Reply To: Limit hypothesis to phrases defined in model]]></title>
+					<link>/forums/topic/limit-hypothesis-to-phrases-defined-in-model/#post-8101</link>
+					<pubDate>Thu, 17 Nov 2011 22:45:46 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This is a case for switching over to a JSGF grammar instead of an ARPA language model. There are links to some JSGF resources in the docs and there are some questions already in these forums which touch on this, but the CMU Sphinx forum might be an even better resource.</p>
+<p>I deleted a thread about this earlier this week because it turned into a sort of tech support re-enactment of Heart of Darkness, but here is my answer to its initial question of where to get started with JSGF:</p>
+<p>You can give the PocketsphinxController recognizer either a .languagemodel file or a .gram file depending on whether you want to use an ARPA model or a JSGF grammar. To see an over-simplified example of a .gram file for OpenEars, you can download previous version 0.902 here and look at the .gram file included with it:</p>
+<p><a href="/wp-content/uploads/0.9.02.zip">/wp-content/uploads/0.9.02.zip</a></p>
+<p>To see a somewhat more complex example of a .gram file look at [OPENEARS]/CMULibraries/sphinxbase-0.6.1/test/unit/test_fsg/polite.gram</p>
+<p>You can probably also find more .gram files in the sphinxbase and pocketsphinx folders in CMULibraries.</p>
+<p>One limitation is that you can’t use JSGFs which import other rules using at the top.</p>
+<p>A .gram file still needs the corresponding phonetic dictionary .dic file in order to function. It is obviously necessary to run the startListening: method with JSGF:TRUE at the end. Using JSGF means that you can’t switch dynamically between grammars while the recognizer is running in the current version of OpenEars like you can with ARPA models.</p>
+<p>Here is documentation for the JSGF format so you can write your own rules:</p>
+<p><a href="https://en.wikipedia.org/wiki/JSGF" rel="nofollow">https://en.wikipedia.org/wiki/JSGF</a><br />
+<a href="https://www.w3.org/TR/jsgf/" rel="nofollow">https://www.w3.org/TR/jsgf/</a><br />
+<a href="https://cmusphinx.sourceforge.net/sphinx4/javadoc/edu/cmu/sphinx/jsgf/JSGFGrammar.html" rel="nofollow">https://cmusphinx.sourceforge.net/sphinx4/javadoc/edu/cmu/sphinx/jsgf/JSGFGrammar.html</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/limit-hypothesis-to-phrases-defined-in-model/#post-8103</guid>
+					<title><![CDATA[Reply To: Limit hypothesis to phrases defined in model]]></title>
+					<link>/forums/topic/limit-hypothesis-to-phrases-defined-in-model/#post-8103</link>
+					<pubDate>Thu, 17 Nov 2011 23:21:29 +0000</pubDate>
+					<dc:creator>culov</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the response Halle.  I&#8217;m going finish reading the resources you provided, and also spend some time playing with sample JSGF grammars when I get on my development machine.  I had a hunch that JSGF would be the way to go, but the added delay involved with stopping and starting the listener may rule it out for me, since my current implementation used 2 distinct ARPA models (about 1200 phrases each) that I frequently switch between.  I think i could only make it work with my project if I combined both models into a JSGF grammar thus eliminating the need to switch language models.  My dilemma then is deciding whether I could produce more successful results by creating a large JSGF grammar or 2 medium-sized ARPA grammars plus adding some post-processing to the hypothesis.  I&#8217;m currently working on the latter option, and I think I might be able to process the hypothesis well enough to produce a valid NSString for my purposes.  One issue that I see coming up constantly is that the library gets tripped up between similar sounded words &#8212; for example it might interpret EIGHTY as EIGHT or vice versa.  Would changing the grammar to JSGF help avoid this at all?</p>
+<p>Also, it is my understanding that a JSGF grammar would allow multiple language model phrases in a single hypothesis, which would be necessary for my project.  Is this the case, or would every hypothesis necessarily have to be strictly specified in the language model?</p>
+<p>Thanks</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/limit-hypothesis-to-phrases-defined-in-model/#post-8104</guid>
+					<title><![CDATA[Reply To: Limit hypothesis to phrases defined in model]]></title>
+					<link>/forums/topic/limit-hypothesis-to-phrases-defined-in-model/#post-8104</link>
+					<pubDate>Thu, 17 Nov 2011 23:49:26 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>Would changing the grammar to JSGF help avoid this at all?</p></blockquote>
+<p>If you have some kind of logical pattern that lets you set a rule, and the rule will only allow &#8220;eight&#8221; instead of &#8220;eighty&#8221; when it&#8217;s [preceded by x || followed by y || whatevered by whatever], it will help. If you don&#8217;t have the opportunity to use logic to rule out similar-sounding sentence parts it will help less, but it will still probably be helpful to restrict recognition to a subset of phrases you expect.</p>
+<p>I don&#8217;t really understand this question fully, can you give an example:</p>
+<blockquote><p>Also, it is my understanding that a JSGF grammar would allow multiple language model phrases in a single hypothesis, which would be necessary for my project.</p></blockquote>
+<p>BTW, if you search around there is some alpha code for dynamic switching between JSGF grammars posted in another discussion here but I don&#8217;t know offhand what the link is.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/limit-hypothesis-to-phrases-defined-in-model/#post-8155</guid>
+					<title><![CDATA[Reply To: Limit hypothesis to phrases defined in model]]></title>
+					<link>/forums/topic/limit-hypothesis-to-phrases-defined-in-model/#post-8155</link>
+					<pubDate>Tue, 22 Nov 2011 09:03:07 +0000</pubDate>
+					<dc:creator>culov</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>What I meant was, when the hypothesis is calculated, will it allow for given phrases to be recombined &#8212; I figured out that the answer is &#8220;only if i want them to be&#8221;</p>
+<p>I spent the day changing over to JSGF, and I believe that overall, it works significantly worse than the ARPA model.   The accuracy is actually worse, and the processing takes 8-10 times as long.  Even if the accuracy were perfect, the duration of the processing rules it out for me.  Also, when I test it on an iPod Touch 4G, I get a memory warning right about the time pocket sphinx begins calibrating.  I already simplified my grammar as much as possible.  So now I am going back to ARPA and I am facing  the same problem I had when I started this thread:  Cleaning up the hypothesis of phrases that weren&#8217;t included in the grammar.  I don&#8217;t know if I&#8217;ll be able to complete my project with satisfactory results using post-processing method, but unless you can offer me additional tips, I believe that it may be my last shot at getting this thing to work.</p>
+<p>Thanks so much for your help</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/limit-hypothesis-to-phrases-defined-in-model/#post-8157</guid>
+					<title><![CDATA[Reply To: Limit hypothesis to phrases defined in model]]></title>
+					<link>/forums/topic/limit-hypothesis-to-phrases-defined-in-model/#post-8157</link>
+					<pubDate>Tue, 22 Nov 2011 09:51:52 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>What I meant was, when the hypothesis is calculated, will it allow for given phrases to be recombined — I figured out that the answer is “only if i want them to be”</p></blockquote>
+<p>It still isn&#8217;t clear to me what your goal is here.</p>
+<p>Out of curiosity, how large is your language model/grammar? 8-10x processing sounds really unusual to me, as does reduced accuracy for JSGF. A memory warning at calibration is also very unusual in my experience, especially on a device that recent.</p>
+<p>Have you changed anything in your setup to make it not be stock? I.e. are you using Pocketsphinx .7 or have you made changes to the library? Question 2 is if you get the same results when using your grammar with the sample app, without making any other changes.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/limit-hypothesis-to-phrases-defined-in-model/#post-8164</guid>
+					<title><![CDATA[Reply To: Limit hypothesis to phrases defined in model]]></title>
+					<link>/forums/topic/limit-hypothesis-to-phrases-defined-in-model/#post-8164</link>
+					<pubDate>Tue, 22 Nov 2011 21:18:20 +0000</pubDate>
+					<dc:creator>culov</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Let me give you an example to better illustrate what I desire.  For arguments sake let&#8217;s say a valid command would be something in the form:  &#8220;number POUNDS  numberTwo OUNCES&#8221; or   &#8220;numberTwo OUNCES number  POUNDS.&#8221;  I want to reject, therefore, any sample input that doesn&#8217;t meet these qualifications in the speech detection level.</p>
+<p>So my grammar then was simply:   |   POUNDS  OUNCES |    OUNCES  POUNDS</p>
+<p>otherKeywords contained about 1000 phrases, averaging 3 words per phrase, and  was defined to match any number, up to 1000.  numberTwo was 0-15.</p>
+<p>I&#8217;ve made no modifications to the library except the changes suggested <a href="/forums/topic/keep-system-sounds-while-listening/"> in this thead</a> to keep system sounds.  Haven&#8217;t tried using the grammar with the sample app yet&#8211;  I will give this a try in a moment.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/limit-hypothesis-to-phrases-defined-in-model/#post-8166</guid>
+					<title><![CDATA[Reply To: Limit hypothesis to phrases defined in model]]></title>
+					<link>/forums/topic/limit-hypothesis-to-phrases-defined-in-model/#post-8166</link>
+					<pubDate>Tue, 22 Nov 2011 21:22:57 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, you might just find that a grammar with phrases comprising 3000 words just isn&#8217;t that performant on the hardware. The limits of in-device processing are far lower than what can be done server-side. But it&#8217;s definitely worth trying with the plain implementation just to see if there is a configuration issue.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/limit-hypothesis-to-phrases-defined-in-model/#post-8167</guid>
+					<title><![CDATA[Reply To: Limit hypothesis to phrases defined in model]]></title>
+					<link>/forums/topic/limit-hypothesis-to-phrases-defined-in-model/#post-8167</link>
+					<pubDate>Tue, 22 Nov 2011 21:23:40 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>(What I mean is, your requirements may mean that you have to look at server-based solutions).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/limit-hypothesis-to-phrases-defined-in-model/#post-8188</guid>
+					<title><![CDATA[Reply To: Limit hypothesis to phrases defined in model]]></title>
+					<link>/forums/topic/limit-hypothesis-to-phrases-defined-in-model/#post-8188</link>
+					<pubDate>Mon, 28 Nov 2011 05:17:24 +0000</pubDate>
+					<dc:creator>culov</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I tried with the plain implementation and the results were the same.  I dropped the grammar down to about 60 words and it&#8217;s still much slower and less accurate than my ARPA model with thousands of phrases.  Is this typical, or am I likely doing something wrong?  Because most of my users will be using the app in an environment without internet access, I won&#8217;t be able to do a server-side implementation.  </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

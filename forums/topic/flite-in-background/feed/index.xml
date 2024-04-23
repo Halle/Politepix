@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Flite in background &#8211; Politepix</title>
+		<atom:link href="/forums/topic/flite-in-background/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/flite-in-background/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:47:49 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/flite-in-background/#post-8669</guid>
+					<title><![CDATA[Flite in background]]></title>
+					<link>/forums/topic/flite-in-background/#post-8669</link>
+					<pubDate>Sat, 25 Feb 2012 18:57:51 +0000</pubDate>
+					<dc:creator>mspector</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am writing a location-based app that runs primarily in the background.  In info.plist for background execution I have enabled location and app plays audio, but when testing the application, the location updates worked but the flite controller didn&#8217;t speak.  Can the flite controller be configured to speak during background execution?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-in-background/#post-8670</guid>
+					<title><![CDATA[Reply To: Flite in background]]></title>
+					<link>/forums/topic/flite-in-background/#post-8670</link>
+					<pubDate>Sat, 25 Feb 2012 19:27:16 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>I&#8217;m pretty doubtful that you can initiate new audio while in the background. I think you&#8217;re limited to continuing an audio stream you&#8217;ve already started before going into the background.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-in-background/#post-8671</guid>
+					<title><![CDATA[Reply To: Flite in background]]></title>
+					<link>/forums/topic/flite-in-background/#post-8671</link>
+					<pubDate>Sat, 25 Feb 2012 19:29:12 +0000</pubDate>
+					<dc:creator>mspector</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>And thats true even if the audio session was started before the program entered the background correct? If so, would there be a way to save the speech to an audio file and link it to a local notification?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-in-background/#post-8672</guid>
+					<title><![CDATA[Reply To: Flite in background]]></title>
+					<link>/forums/topic/flite-in-background/#post-8672</link>
+					<pubDate>Sat, 25 Feb 2012 19:59:40 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>To the best of my knowledge, the only consideration is whether there is an open stream from or to a device speaker or mic at the time of backgrounding; audio session is not a factor.</p>
+<blockquote><p>If so, would there be a way to save the speech to an audio file and link it to a local notification?</p></blockquote>
+<p>I can imagine that this _might_ be possible, but it&#8217;s probably going to be a complex implementation that isn&#8217;t going to make use of many of the conveniences of the original code. I can&#8217;t give pointers on how to do it, sorry.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-in-background/#post-8677</guid>
+					<title><![CDATA[Reply To: Flite in background]]></title>
+					<link>/forums/topic/flite-in-background/#post-8677</link>
+					<pubDate>Mon, 27 Feb 2012 14:16:58 +0000</pubDate>
+					<dc:creator>mspector</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the response and OpenEars has been a great addition to my application.  Just as an update I think I have started to get it working once in the background by adding the line of code: [[UIApplication sharedApplication] beginReceivingRemoteControlEvents]; to my viewdidload method.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-in-background/#post-8678</guid>
+					<title><![CDATA[Reply To: Flite in background]]></title>
+					<link>/forums/topic/flite-in-background/#post-8678</link>
+					<pubDate>Mon, 27 Feb 2012 15:29:23 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks!  Always happy to hear that it can do things I don&#8217;t expect it to be able to do :) .</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-in-background/#post-11139</guid>
+					<title><![CDATA[Reply To: Flite in background]]></title>
+					<link>/forums/topic/flite-in-background/#post-11139</link>
+					<pubDate>Sat, 15 Sep 2012 02:11:55 +0000</pubDate>
+					<dc:creator>gotok</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p><a href="/forums/profile/mspector/" class="bbp-user-mention bbp-user-id-623"> @mspector</a>,<br />
+Have you tried setting your audio session category to &#8220;AVAudioSessionCategoryPlayback&#8221;?<br />
+That works for me. My app also has the location and audio flags for background execution set in plist.<br />
+Both GPS and Flite continue to work for me with the screen locked.<br />
+The problem I had was that my app was rejected because the &#8220;plays background audio&#8221; flag was set and my app did not play background audio. Flite doesn&#8217;t count as background audio. I had to add background audio to my app in order for it to be approved.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-in-background/#post-1015899</guid>
+					<title><![CDATA[Reply To: Flite in background]]></title>
+					<link>/forums/topic/flite-in-background/#post-1015899</link>
+					<pubDate>Wed, 13 Mar 2013 20:22:41 +0000</pubDate>
+					<dc:creator>jimmychou</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am having a problem with flite  running on an app in the background.<br />
+As suggested by others, I tried setting AV Category to &#8216;AVAudioSessionCategoryPlayback&#8217; with categoryOption to &#8216;AVAudioSessionCategoryOptionMixWithOthers&#8217;<br />
+However, the Flite controller always reset the audio session to PlayAndRecord.</p>
+<p>As a result, it won&#8217;t do TTS when entering background thread.<br />
+This is running on an iPhone 5 with IOS6.<br />
+I also added the background modes  &#8216;app play audio&#8217; in plist.</p>
+<p>[log output below]</p>
+<p>Please help.<br />
+Thanks,</p>
+<p>the log output</p>
+<p>// checking av session category<br />
+myAV session category in BG: AVAudioSessionCategoryPlayback<br />
+myAV session categoryOption in BG: 1</p>
+<p>// flite logging<br />
+I&#8217;m running flite<br />
+Checking and resetting all audio session settings.<br />
+audioCategory is incorrect, we will change it.<br />
+audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.<br />
+bluetoothInput is incorrect, we will change it.<br />
+bluetooth input is now on the correct setting of 1.<br />
+categoryDefaultToSpeaker is incorrect, we will change it.<br />
+CategoryDefaultToSpeaker is now on the correct setting of 1.<br />
+preferredBufferSize is correct, we will leave it as it is.<br />
+preferredSampleRateCheck is correct, we will leave it as it is.<br />
+I&#8217;m done running flite and it took 0.275146 seconds<br />
+Flite audio player was nil when referenced so attempting to allocate a new audio player.<br />
+Loading speech data for Flite concluded successfully.</p>
+<p>// checking av session category after flite<br />
+myAV session category in BG after flite: AVAudioSessionCategoryPlayAndRecord<br />
+myAV session categoryOption in BG after flite: 12</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-in-background/#post-1015906</guid>
+					<title><![CDATA[Reply To: Flite in background]]></title>
+					<link>/forums/topic/flite-in-background/#post-1015906</link>
+					<pubDate>Thu, 14 Mar 2013 08:51:03 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I think that the suggestion is that you change AudioSessionManager&#8217;s audio session category and then recompile the framework so that when it overrides, it overrides to your chosen session category instead of its own.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-in-background/#post-1015916</guid>
+					<title><![CDATA[Reply To: Flite in background]]></title>
+					<link>/forums/topic/flite-in-background/#post-1015916</link>
+					<pubDate>Fri, 15 Mar 2013 05:05:31 +0000</pubDate>
+					<dc:creator>jimmychou</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the quick response.</p>
+<p>Not sure if I am doing it right, I was able to make  Flite speak in the background after making two changes in AudioSessionManager.m.</p>
+<p>       1.  self.soundMixing = TRUE;<br />
+       2. audioCategoryClassification = kAudioSessionCategory_MediaPlayback;</p>
+<p>The weird part is that the Flite can only speak one phrase after entering the background mode. It was working fine if the app is running in the foreground.</p>
+<p>Below are my findings after many hours of debugging:</p>
+<p>1. the AVAudioPlayer delegates did not get called after the [self.audioPlayer play] in the background mode.</p>
+<p>2. since the audioPlay did not get destroyed and neither speaking, the lazy accessory of AVAudioPlayer bypassed the initWithData when another phrase was sent to FliteController.</p>
+<p>3. When the app is running in the foreground, the AVAudioPlayer delegates were triggered on the main thread.</p>
+<p>4. However, since my app was running in another background queue (NSOperationQueue), the Application Delegate was the only application thread running on the main thread. I don&#8217;t see any log message coming out of main thread any more.</p>
+<p>5. I found a work around by checking to see audioPlay is playing in the lazy accessor code to destroy the audioPlayer and execute the play command again. I kind of suspect this may cause problem some where else.</p>
+<p>I am not clear what happen to Flite Controller, as a delegate, running in the back ground mode. </p>
+<p>Let me know what you think.</p>
+<p>Will do more investigation later.</p>
+<p>Thanks,</p>
+<p>==============================<br />
+logs &#8211; (907 is the main thread):<br />
+===============================<br />
+4784:1803	 I&#8217;m running flite<br />
+4784:1803	 Checking and resetting all audio session settings.<br />
+4784:1803	 audioCategory is correct, we will leave it as it is.<br />
+4784:1803	 bluetoothInput is correct, we will leave it as it is.<br />
+4784:1803	 categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+4784:1803	 OverrideCategoryMixWithOthers is correct, we will leave it as it is.<br />
+4784:1803	 preferredBufferSize is correct, we will leave it as it is.<br />
+4784:1803	 preferredSampleRateCheck is correct, we will leave it as it is.<br />
+4784:1803	 I&#8217;m done running flite and it took 0.306104 seconds<br />
+4784:1803	 Flite posting suspend notification<br />
+4784:907   Flite sending suspend recognition notification.<br />
+4784:1803	 Flite audio player was nil when referenced so attempting to allocate a new audio player.<br />
+4784:1803	 Loading speech data for Flite concluded successfully.<br />
+4784:907  AVAudioPlayer did finish playing with success flag of 1<br />
+4784:907  Flite sending resume recognition notification.<br />
+4784:907	</p>
+<p>	Running in the background!</p>
+<p>4784:390b	 I&#8217;m running flite<br />
+4784:390b	 Checking and resetting all audio session settings.<br />
+4784:390b	 audioCategory is correct, we will leave it as it is.<br />
+4784:390b	 bluetoothInput is correct, we will leave it as it is.<br />
+4784:390b	 categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+4784:390b	 OverrideCategoryMixWithOthers is correct, we will leave it as it is.<br />
+4784:390b	 preferredBufferSize is correct, we will leave it as it is.<br />
+4784:390b	 preferredSampleRateCheck is correct, we will leave it as it is.<br />
+4784:390b	 I&#8217;m done running flite and it took 0.216623 seconds<br />
+4784:390b	 Flite posting suspend notification<br />
+4784:390b	 Flite audio player was nil when referenced so attempting to allocate a new audio player.<br />
+4784:390b	 Loading speech data for Flite concluded successfully.<br />
+	                 (no voice)<br />
+4784:390f	 I&#8217;m running flite<br />
+4784:390f	 Checking and resetting all audio session settings.<br />
+4784:390f	 audioCategory is correct, we will leave it as it is.<br />
+4784:390f	 bluetoothInput is correct, we will leave it as it is.<br />
+4784:390f	 categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+4784:390f	 OverrideCategoryMixWithOthers is correct, we will leave it as it is.<br />
+4784:390f	 preferredBufferSize is correct, we will leave it as it is.<br />
+4784:390f	 preferredSampleRateCheck is correct, we will leave it as it is.<br />
+4784:390f	 I&#8217;m done running flite and it took 0.208594 seconds<br />
+4784:390f	 Flite posting suspend notification<br />
+4784:390f	 Loading speech data for Flite concluded successfully.<br />
+                        (no voice)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

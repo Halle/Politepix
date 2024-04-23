@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Change pitch without recreating voice obj &#8211; Politepix</title>
+		<atom:link href="/forums/topic/change-pitch-without-recreating-voice-obj/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/change-pitch-without-recreating-voice-obj/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:45:00 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/change-pitch-without-recreating-voice-obj/#post-12473</guid>
+					<title><![CDATA[Change pitch without recreating voice obj]]></title>
+					<link>/forums/topic/change-pitch-without-recreating-voice-obj/#post-12473</link>
+					<pubDate>Mon, 12 Nov 2012 06:47:40 +0000</pubDate>
+					<dc:creator>josh</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>With neatspeech is it possible to change the pitch without recreating the voice object as this takes time? I have tried using the voice pitch variable however it doesn&#8217;t seem to update the pitch. I have also tried using the fliteController duration_stretch variable but this seems to be ignored if neatspeech libraries are included. To get duration_stretch to work I have to switch back to OpenEars slt and remove the neatspeech libraries.</p>
+<p>Example code:<br />
+voice = [[William alloc] initWithPitch:pitch speed:speed transform:transform];<br />
+[self.fliteController sayWithNeatSpeech:text withVoice: voice];</p>
+<p>// later &#8230; say with a high voice<br />
+voice.pitch = 1.0;<br />
+[self.fliteController sayWithNeatSpeech:othertext withVoice: voice];</p>
+<p>Thanks in advance.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/change-pitch-without-recreating-voice-obj/#post-12474</guid>
+					<title><![CDATA[Reply To: Change pitch without recreating voice obj]]></title>
+					<link>/forums/topic/change-pitch-without-recreating-voice-obj/#post-12474</link>
+					<pubDate>Mon, 12 Nov 2012 07:32:36 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>In NeatSpeech, voice characteristics have to be set during initialization.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/change-pitch-without-recreating-voice-obj/#post-12475</guid>
+					<title><![CDATA[Reply To: Change pitch without recreating voice obj]]></title>
+					<link>/forums/topic/change-pitch-without-recreating-voice-obj/#post-12475</link>
+					<pubDate>Mon, 12 Nov 2012 08:14:11 +0000</pubDate>
+					<dc:creator>josh</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ok, thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Detect speech, record it, then chop it up by word. &#8211; Politepix</title>
+		<atom:link href="/forums/topic/detect-speech-record-it-then-chop-it-up-by-word/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/detect-speech-record-it-then-chop-it-up-by-word/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:08:53 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/detect-speech-record-it-then-chop-it-up-by-word/#post-1021512</guid>
+					<title><![CDATA[Detect speech, record it, then chop it up by word.]]></title>
+					<link>/forums/topic/detect-speech-record-it-then-chop-it-up-by-word/#post-1021512</link>
+					<pubDate>Wed, 04 Jun 2014 18:12:27 +0000</pubDate>
+					<dc:creator>geareddev</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>I would like to detect speech(OpenEars), record it (SaveThatWave), and then chop the recorded file up by word.  I can manage the actual chopping up of sounds, but I&#8217;d need the timestamps for each detected word so that I knew where to cut. Do any of the politepix products provide that information?  </p>
+<p>Thank You</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/detect-speech-record-it-then-chop-it-up-by-word/#post-1021515</guid>
+					<title><![CDATA[Reply To: Detect speech, record it, then chop it up by word.]]></title>
+					<link>/forums/topic/detect-speech-record-it-then-chop-it-up-by-word/#post-1021515</link>
+					<pubDate>Wed, 04 Jun 2014 18:28:07 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>RapidEars has an API for receiving start times and end times from individual words:</p>
+<pre>
+- (void) rapidEarsDidDetectLiveSpeechAsWordArray:(NSArray *) words
+scoreArray:		(NSArray *) 	scores
+startTimeArray:		(NSArray *) 	startTimes
+endTimeArray:		(NSArray *) 	endTimes 
+
+- (void) rapidEarsDidDetectFinishedSpeechAsWordArray:(NSArray *) 	words
+scoreArray:		(NSArray *) 	scores
+startTimeArray:		(NSArray *) 	startTimes
+endTimeArray:		(NSArray *) 	endTimes 
+</pre>
+<p>You have to also set these setters to TRUE where you set up PocketsphinxController:</p>
+<pre>
+- (void) setReturnSegments:(BOOL)returnSegments; 
+- (void) setReturnSegmentTimes:(BOOL)returnSegmentTimes; 
+</pre>
+<p>I&#8217;ve never attempted to use these times to do a spot-edit of a SaveThatWave file, and my assumption is that they will be accurate but have some kind of offset since SaveThatWave almost certainly doesn&#8217;t use the same instant to start its timing as RapidEars correlates its timing to.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

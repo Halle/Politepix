@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>On the fly additions to RuleOrama &#8211; Politepix</title>
+		<atom:link href="/forums/topic/on-the-fly-additions-to-ruleorama/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/on-the-fly-additions-to-ruleorama/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:57:22 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/on-the-fly-additions-to-ruleorama/#post-1021442</guid>
+					<title><![CDATA[On the fly additions to RuleOrama]]></title>
+					<link>/forums/topic/on-the-fly-additions-to-ruleorama/#post-1021442</link>
+					<pubDate>Fri, 30 May 2014 14:25:15 +0000</pubDate>
+					<dc:creator>10</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Is possible to add new words on the fly (after compiling in runtime) to cover different scenarios to RuleORama? Is any way to implement this?</p>
+<p>Is Rejecto inside RuleORama or I need to add it to complete the config?</p>
+<p>Any suggestion is welcome</p>
+<p>Thanks,</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/on-the-fly-additions-to-ruleorama/#post-1021443</guid>
+					<title><![CDATA[Reply To: On the fly additions to RuleOrama]]></title>
+					<link>/forums/topic/on-the-fly-additions-to-ruleorama/#post-1021443</link>
+					<pubDate>Fri, 30 May 2014 14:30:16 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>That&#8217;s the way that RuleORama works by default – are you experiencing some other result? Currently RuleORama and Rejecto don&#8217;t work together, but that may change if there is a lot of interest in having them work together.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/on-the-fly-additions-to-ruleorama/#post-1021444</guid>
+					<title><![CDATA[Reply To: On the fly additions to RuleOrama]]></title>
+					<link>/forums/topic/on-the-fly-additions-to-ruleorama/#post-1021444</link>
+					<pubDate>Fri, 30 May 2014 14:36:19 +0000</pubDate>
+					<dc:creator>10</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>No, this works Ok, this is only why in my soft I need to specify to different clients different orders for example: each one can have a set of tools with different names, and they have it in a file. Is possible use this file to feed the grammar in run time or grammar must be defined in the compile as a constant?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/on-the-fly-additions-to-ruleorama/#post-1021445</guid>
+					<title><![CDATA[Reply To: On the fly additions to RuleOrama]]></title>
+					<link>/forums/topic/on-the-fly-additions-to-ruleorama/#post-1021445</link>
+					<pubDate>Fri, 30 May 2014 14:45:01 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Right, writing grammars on the fly is how RuleORama works by default, no need to have it as a constant. Here is an explanation of how the dynamic grammar language works so you can create new NSDictionaries to hand off to it as needed:</p>
+<p><a href="/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/">/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/</a></p>
+<p>RuleORama is only slightly different from the format described there (and in the docs) in that it needs to disregard the rule types that have repetitions for performance reasons.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/on-the-fly-additions-to-ruleorama/#post-1021447</guid>
+					<title><![CDATA[Reply To: On the fly additions to RuleOrama]]></title>
+					<link>/forums/topic/on-the-fly-additions-to-ruleorama/#post-1021447</link>
+					<pubDate>Fri, 30 May 2014 15:12:00 +0000</pubDate>
+					<dc:creator>10</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks :)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/on-the-fly-additions-to-ruleorama/#post-1021449</guid>
+					<title><![CDATA[Reply To: On the fly additions to RuleOrama]]></title>
+					<link>/forums/topic/on-the-fly-additions-to-ruleorama/#post-1021449</link>
+					<pubDate>Fri, 30 May 2014 16:11:44 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You&#8217;re welcome :)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

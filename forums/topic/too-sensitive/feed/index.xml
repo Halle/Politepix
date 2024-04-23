@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] Too sensitive &#8211; Politepix</title>
+		<atom:link href="/forums/topic/too-sensitive/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/too-sensitive/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:08:18 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/too-sensitive/#post-1023780</guid>
+					<title><![CDATA[[Resolved] Too sensitive]]></title>
+					<link>/forums/topic/too-sensitive/#post-1023780</link>
+					<pubDate>Wed, 24 Dec 2014 09:16:13 +0000</pubDate>
+					<dc:creator>mrbits</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I have a few words that my app listens for, things like &#8220;set&#8221;, &#8220;ok&#8221;, etc.</p>
+<p>The problem is, it has a min dog it&#8217;s own and picks up on the slightest of background noise and detects it as a word.</p>
+<p>If I just mumble something random it gets detected.</p>
+<p>Is there any way of reducing the sensitivity?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/too-sensitive/#post-1023781</guid>
+					<title><![CDATA[Reply To: [Resolved] Too sensitive]]></title>
+					<link>/forums/topic/too-sensitive/#post-1023781</link>
+					<pubDate>Wed, 24 Dec 2014 09:20:56 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>For the issue of quiet background noises being detected as speech, take a look at the vadThreshold property of OEPocketsphinxController – it may be too low for your application. For the issue of intentionally-spoken out-of-vocabulary words being recognized as words in your vocabulary, check out Rejecto.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/too-sensitive/#post-1023783</guid>
+					<title><![CDATA[Reply To: [Resolved] Too sensitive]]></title>
+					<link>/forums/topic/too-sensitive/#post-1023783</link>
+					<pubDate>Wed, 24 Dec 2014 09:41:30 +0000</pubDate>
+					<dc:creator>mrbits</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks Halle, both those seemed to help. Is there any possibly of rejecto going on sale any time soon? I am a very small developer with not much income.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/too-sensitive/#post-1023784</guid>
+					<title><![CDATA[Reply To: [Resolved] Too sensitive]]></title>
+					<link>/forums/topic/too-sensitive/#post-1023784</link>
+					<pubDate>Wed, 24 Dec 2014 09:56:57 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry, no sale plans at the moment, but I&#8217;m glad it&#8217;s helpful for the issue. If there are any interesting product developments to report I usually send them out in the newsletter, and the newsletters generally come with a coupon, so the best bet is to subscribe to the newsletter.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/too-sensitive/#post-1024014</guid>
+					<title><![CDATA[Reply To: [Resolved] Too sensitive]]></title>
+					<link>/forums/topic/too-sensitive/#post-1024014</link>
+					<pubDate>Sun, 28 Dec 2014 09:33:20 +0000</pubDate>
+					<dc:creator>mrbits</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That&#8217;s a shame, I would love to get it now just I can&#8217;t afford it.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/too-sensitive/#post-1024015</guid>
+					<title><![CDATA[Reply To: [Resolved] Too sensitive]]></title>
+					<link>/forums/topic/too-sensitive/#post-1024015</link>
+					<pubDate>Sun, 28 Dec 2014 10:55:17 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>TBH it&#8217;s actually my preference that developers test the demos for a bit and solve a few of their integration questions before purchasing, since there&#8217;s really no rush and it leads to the best outcomes.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: The Dream of One Thousand (* 80) Cranes	</title>
+	<atom:link href="/2010/10/03/the-dream-of-one-thousand-80-cranes/feed/" rel="self" type="application/rss+xml" />
+	<link>/2010/10/03/the-dream-of-one-thousand-80-cranes/</link>
+	<description>iOS Frameworks for speech recognition, text to speech and more</description>
+	<lastBuildDate>Sat, 07 Jul 2012 14:56:45 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.5.2</generator>
+	<item>
+		<title>
+		By: happy		</title>
+		<link>/2010/10/03/the-dream-of-one-thousand-80-cranes/#comment-1417</link>
+
+		<dc:creator><![CDATA[happy]]></dc:creator>
+		<pubDate>Tue, 25 Oct 2011 04:52:54 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1130#comment-1417</guid>
+
+					<description><![CDATA[when I see the butterfly, I didn&#039;t think it is a butterfly.
+I thought it was some small dinosaur or T-rex is opening its mouth, showing its teeth. haha. different point of view I guess.
+
+anyway, cool blog, mixing birds and code all over the place. if you get stressed it seems your photo of birds trying to relax me a bit.]]></description>
+			<content:encoded><![CDATA[<p>when I see the butterfly, I didn&#8217;t think it is a butterfly.<br />
+I thought it was some small dinosaur or T-rex is opening its mouth, showing its teeth. haha. different point of view I guess.</p>
+<p>anyway, cool blog, mixing birds and code all over the place. if you get stressed it seems your photo of birds trying to relax me a bit.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

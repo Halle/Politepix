@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Reached Word Limit &#8211; Politepix</title>
+		<atom:link href="/forums/topic/reached-word-limit/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/reached-word-limit/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:02:31 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/reached-word-limit/#post-1019086</guid>
+					<title><![CDATA[Reached Word Limit]]></title>
+					<link>/forums/topic/reached-word-limit/#post-1019086</link>
+					<pubDate>Wed, 04 Dec 2013 22:52:29 +0000</pubDate>
+					<dc:creator>slcott</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I tried generating a language model using ~130k words to test the limits of the framework. I reached the following problem. I don&#8217;t see in the API how to alter this value.</p>
+<blockquote><p>
+Starting wfreq2vocab<br />
+The number of records 64001 reach the user-defined limit 64000, consider to increase the number of records by -records
+</p></blockquote>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/reached-word-limit/#post-1019088</guid>
+					<title><![CDATA[Reply To: Reached Word Limit]]></title>
+					<link>/forums/topic/reached-word-limit/#post-1019088</link>
+					<pubDate>Thu, 05 Dec 2013 07:01:38 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>There&#8217;s no way in the API to alter it. Functional vocabulary sizes for offline recognition are between 20 and perhaps 1000 words depending on the vocabulary.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

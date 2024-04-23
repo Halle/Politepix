@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Can&#039;t play audio &#8211; Politepix</title>
+		<atom:link href="/forums/topic/cant-play-audio/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/cant-play-audio/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:00:43 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/cant-play-audio/#post-1021452</guid>
+					<title><![CDATA[Can&#039;t play audio]]></title>
+					<link>/forums/topic/cant-play-audio/#post-1021452</link>
+					<pubDate>Sat, 31 May 2014 02:27:15 +0000</pubDate>
+					<dc:creator>derekm9292</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I cannot, for the life of me, get audio files to play. I&#8217;ve been trying to suspend speech recognition and then play a small sound, but it just doesn&#8217;t work.</p>
+<p>I attempted to to add the code to play the file to the demo project too and that doesn&#8217;t work either. I saw the other forum post about not being able to play files using AVAudioPlayer and he said that he just rebuilt and cleaned his project and it started working. I don&#8217;t know why that would fix my issue, but I tried it anyway and nothing.</p>
+<p>Here&#8217;s my code for playing a small wav file.</p>
+<p>NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@&#8221;sound&#8221; ofType:@&#8221;wav&#8221;]];</p>
+<p>    NSError *error;<br />
+    AVAudioPlayer *audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&amp;error];</p>
+<p>    if (audioPlayer == nil)<br />
+        NSLog(@&#8221;%@&#8221;,[error description]);<br />
+    else<br />
+        [audioPlayer play];</p>
+<p>I could really use some help here.<br />
+Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/cant-play-audio/#post-1021453</guid>
+					<title><![CDATA[Reply To: Can&#039;t play audio]]></title>
+					<link>/forums/topic/cant-play-audio/#post-1021453</link>
+					<pubDate>Sat, 31 May 2014 08:46:15 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Derek,</p>
+<p>This is default functionality (FliteController and FliteController+NeatSpeech both use AVAudioPlayer to play back synthesized speech simultaneously with PocketsphinxController whether suspended or not, so it has to be compatible), so I would start by troubleshooting the actual audio file and its playback outside of the OpenEars context. </p>
+<p>It isn&#8217;t clear from the code excerpt above how you resume listening, but if your goal is to suspend, completely play your audio, and resume, you probably also need to hook up the AVAudioPlayer delegate methods so you can resume on the callback that your AVAudioPlayer playback completed rather than simultaneously starting playback and calling resume, which could maybe turn into a race condition for audio resources.</p>
+<p>You can also peek at FliteController to see an example of AVAudioPlayer usage during PocketsphinxController listening which is known to work.</p>
+<p><em><strong>Signature:</strong> Did you know that OpenEars has a credit requirement in its license? It&#8217;s true! You can read more about it here: <a href="/openears/support/#Q_What_license_does_OpenEars_use">/openears/support/#Q_What_license_does_OpenEars_use</a></em></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/cant-play-audio/#post-1021466</guid>
+					<title><![CDATA[Reply To: Can&#039;t play audio]]></title>
+					<link>/forums/topic/cant-play-audio/#post-1021466</link>
+					<pubDate>Sat, 31 May 2014 21:42:21 +0000</pubDate>
+					<dc:creator>derekm9292</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>I&#8217;ve been looking around, maybe I&#8217;m just blind, but I can&#8217;t seem to find the source for FliteController. Could you link me to it?</p>
+<p>Thanks,<br />
+Derek</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/cant-play-audio/#post-1021467</guid>
+					<title><![CDATA[Reply To: Can&#039;t play audio]]></title>
+					<link>/forums/topic/cant-play-audio/#post-1021467</link>
+					<pubDate>Sun, 01 Jun 2014 08:05:55 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Derek,</p>
+<p>It will be the first hit for FliteController in either Spotlight or Xcode&#8217;s file search.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

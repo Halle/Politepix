@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>which pluging would best for accuracy for voice to text in offline mode? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/which-pluging-would-best-for-accuracy-in-for-voice-to-text/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/which-pluging-would-best-for-accuracy-in-for-voice-to-text/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:08:30 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/which-pluging-would-best-for-accuracy-in-for-voice-to-text/#post-1022048</guid>
+					<title><![CDATA[which pluging would best for accuracy for voice to text in offline mode?]]></title>
+					<link>/forums/topic/which-pluging-would-best-for-accuracy-in-for-voice-to-text/#post-1022048</link>
+					<pubDate>Thu, 24 Jul 2014 13:36:19 +0000</pubDate>
+					<dc:creator>Mahesh</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am new to open ears, I need your help to identify which plugin would best for accuracy  for voice to text in offline mode? (neatspeech /Rapidears/Rejecto etc.)</p>
+<p>2: for offline mode,  is it necessary to add either &#8220;text files containing worlds in capitals&#8221; or &#8220;array of words&#8221; in my project?</p>
+<p>if it is necessary than how can I increase accuracy of texts which I get from hypothesis ?</p>
+<p>Please help me,<br />
+Thanks in advance</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/which-pluging-would-best-for-accuracy-in-for-voice-to-text/#post-1022050</guid>
+					<title><![CDATA[Reply To: which pluging would best for accuracy for voice to text in offline mode?]]></title>
+					<link>/forums/topic/which-pluging-would-best-for-accuracy-in-for-voice-to-text/#post-1022050</link>
+					<pubDate>Thu, 24 Jul 2014 13:43:17 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Mahesh,</p>
+<p>I think it would be helpful for you to go through the tutorial to get a sense of how OpenEars works, since there isn&#8217;t a way to have accuracy issues yet if you haven&#8217;t created a vocabulary for your app: <a href="/openears/tutorial">/openears/tutorial</a></p>
+<p>Let me know if you have specific questions which come up as a result of trying the tutorial, since I think the tutorial will answer the basis functionality questions and then I can probably help with the specifics.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

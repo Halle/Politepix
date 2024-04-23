@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Decibel metering from an iPhone audio unit	</title>
+	<atom:link href="/2010/06/18/decibel-metering-from-an-iphone-audio-unit/feed/" rel="self" type="application/rss+xml" />
+	<link>/2010/06/18/decibel-metering-from-an-iphone-audio-unit/</link>
+	<description>iOS Frameworks for speech recognition, text to speech and more</description>
+	<lastBuildDate>Sat, 21 Jun 2014 08:11:58 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.5.2</generator>
+	<item>
+		<title>
+		By: Halle		</title>
+		<link>/2010/06/18/decibel-metering-from-an-iphone-audio-unit/#comment-2229</link>
+
+		<dc:creator><![CDATA[Halle]]></dc:creator>
+		<pubDate>Thu, 03 Jan 2013 09:49:33 +0000</pubDate>
+		<guid isPermaLink="false">/?p=477#comment-2229</guid>
+
+					<description><![CDATA[Hi Pier,
+
+You are correct, I&#039;ve edited the code in the post. Thanks for catching that!]]></description>
+			<content:encoded><![CDATA[<p>Hi Pier,</p>
+<p>You are correct, I&#8217;ve edited the code in the post. Thanks for catching that!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Pier		</title>
+		<link>/2010/06/18/decibel-metering-from-an-iphone-audio-unit/#comment-2226</link>
+
+		<dc:creator><![CDATA[Pier]]></dc:creator>
+		<pubDate>Tue, 01 Jan 2013 07:26:48 +0000</pubDate>
+		<guid isPermaLink="false">/?p=477#comment-2226</guid>
+
+					<description><![CDATA[Thanks for this... trying to figure it out. 
+
+There&#039;s a typo here, no? 
+if((sampleDB == sampleDB) &#038;&#038; (sampleDB = -DBL_MAX))
+
+should be 
+
+if((sampleDB == sampleDB) &#038;&#038; (sampleDB != -DBL_MAX))]]></description>
+			<content:encoded><![CDATA[<p>Thanks for this&#8230; trying to figure it out. </p>
+<p>There&#8217;s a typo here, no?<br />
+if((sampleDB == sampleDB) &amp;&amp; (sampleDB = -DBL_MAX))</p>
+<p>should be </p>
+<p>if((sampleDB == sampleDB) &amp;&amp; (sampleDB != -DBL_MAX))</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Halle		</title>
+		<link>/2010/06/18/decibel-metering-from-an-iphone-audio-unit/#comment-1885</link>
+
+		<dc:creator><![CDATA[Halle]]></dc:creator>
+		<pubDate>Thu, 08 Nov 2012 15:56:32 +0000</pubDate>
+		<guid isPermaLink="false">/?p=477#comment-1885</guid>
+
+					<description><![CDATA[Hi Waruna,
+
+-74.0 means no input at all. So, you only need to troubleshoot why there is no rendered content in the buffers that are in your callback. All Audio Unit and Audio Session code has a method of error checking (including the buffer callback), so log that error checking code and it should tell you what is happening.]]></description>
+			<content:encoded><![CDATA[<p>Hi Waruna,</p>
+<p>-74.0 means no input at all. So, you only need to troubleshoot why there is no rendered content in the buffers that are in your callback. All Audio Unit and Audio Session code has a method of error checking (including the buffer callback), so log that error checking code and it should tell you what is happening.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Waruna		</title>
+		<link>/2010/06/18/decibel-metering-from-an-iphone-audio-unit/#comment-1884</link>
+
+		<dc:creator><![CDATA[Waruna]]></dc:creator>
+		<pubDate>Thu, 08 Nov 2012 15:42:58 +0000</pubDate>
+		<guid isPermaLink="false">/?p=477#comment-1884</guid>
+
+					<description><![CDATA[Hi,
+Thanks for your resource full article . However when tired this example i always get -74.0 values. Do you what could be the reason for this. 
+I used recordingCallback function instead of AudioUnitRenderCallback could this be the problem? 
+Appreciate your answer or any suggestion.]]></description>
+			<content:encoded><![CDATA[<p>Hi,<br />
+Thanks for your resource full article . However when tired this example i always get -74.0 values. Do you what could be the reason for this.<br />
+I used recordingCallback function instead of AudioUnitRenderCallback could this be the problem?<br />
+Appreciate your answer or any suggestion.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Halle		</title>
+		<link>/2010/06/18/decibel-metering-from-an-iphone-audio-unit/#comment-1713</link>
+
+		<dc:creator><![CDATA[Halle]]></dc:creator>
+		<pubDate>Mon, 27 Aug 2012 21:45:04 +0000</pubDate>
+		<guid isPermaLink="false">/?p=477#comment-1713</guid>
+
+					<description><![CDATA[Hi Ants,
+
+I&#039;d guess that you&#039;re getting unexpected results because of a different input besides a signed 16-bit integer using the full range of samples that this assumes. Since you&#039;re getting floats out, am I correct that your input is a float value?]]></description>
+			<content:encoded><![CDATA[<p>Hi Ants,</p>
+<p>I&#8217;d guess that you&#8217;re getting unexpected results because of a different input besides a signed 16-bit integer using the full range of samples that this assumes. Since you&#8217;re getting floats out, am I correct that your input is a float value?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ants		</title>
+		<link>/2010/06/18/decibel-metering-from-an-iphone-audio-unit/#comment-1712</link>
+
+		<dc:creator><![CDATA[Ants]]></dc:creator>
+		<pubDate>Mon, 27 Aug 2012 21:39:13 +0000</pubDate>
+		<guid isPermaLink="false">/?p=477#comment-1712</guid>
+
+					<description><![CDATA[Hey Halle,
+
+A couple of questions. Firstly the if that checks for rational number and isn&#039;t infinite
+
+if((sampleDB == sampleDB) &#038;&#038; (sampleDB = -DBL_MAX)) { 
+
+Shouldn&#039;t that be sampleDB != -DBL_MAX ? I seem to be getting values of DBOFFSET.
+
+If I change to != then I get values out but the range is really small. I tried changing DBOFFSET to -94 however all that did was change the offset (DUH). In my case it seems to be around -9.7 with only slight variation between -10 &#038; -9.6. Is that the low pass filter that is having this effect?
+
+Thanks Ants]]></description>
+			<content:encoded><![CDATA[<p>Hey Halle,</p>
+<p>A couple of questions. Firstly the if that checks for rational number and isn&#8217;t infinite</p>
+<p>if((sampleDB == sampleDB) &amp;&amp; (sampleDB = -DBL_MAX)) { </p>
+<p>Shouldn&#8217;t that be sampleDB != -DBL_MAX ? I seem to be getting values of DBOFFSET.</p>
+<p>If I change to != then I get values out but the range is really small. I tried changing DBOFFSET to -94 however all that did was change the offset (DUH). In my case it seems to be around -9.7 with only slight variation between -10 &amp; -9.6. Is that the low pass filter that is having this effect?</p>
+<p>Thanks Ants</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Halle		</title>
+		<link>/2010/06/18/decibel-metering-from-an-iphone-audio-unit/#comment-1507</link>
+
+		<dc:creator><![CDATA[Halle]]></dc:creator>
+		<pubDate>Wed, 06 Jun 2012 13:04:17 +0000</pubDate>
+		<guid isPermaLink="false">/?p=477#comment-1507</guid>
+
+					<description><![CDATA[Hiya Thom,
+
+Pitch detection is going to be a little outside of the topic of this blog post, but here is a good SO thread that should get you started and then some: http://stackoverflow.com/questions/7623166/avaudio-detect-note-pitch-etc-iphone-xcode-objective-c]]></description>
+			<content:encoded><![CDATA[<p>Hiya Thom,</p>
+<p>Pitch detection is going to be a little outside of the topic of this blog post, but here is a good SO thread that should get you started and then some: <a href="http://stackoverflow.com/questions/7623166/avaudio-detect-note-pitch-etc-iphone-xcode-objective-c" rel="nofollow ugc">http://stackoverflow.com/questions/7623166/avaudio-detect-note-pitch-etc-iphone-xcode-objective-c</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: thom		</title>
+		<link>/2010/06/18/decibel-metering-from-an-iphone-audio-unit/#comment-1506</link>
+
+		<dc:creator><![CDATA[thom]]></dc:creator>
+		<pubDate>Wed, 06 Jun 2012 12:57:07 +0000</pubDate>
+		<guid isPermaLink="false">/?p=477#comment-1506</guid>
+
+					<description><![CDATA[Hello hale,
+
+Ive readed true out all the comments. But one thing I just cant figure out. If I  want the meter to show me between 400 and 500 Hz what is the best way to get to work with this. The purpose of this is so you can tune instruments with this meter. I hope you still read this topic.
+
+Thanks,
+Thom]]></description>
+			<content:encoded><![CDATA[<p>Hello hale,</p>
+<p>Ive readed true out all the comments. But one thing I just cant figure out. If I  want the meter to show me between 400 and 500 Hz what is the best way to get to work with this. The purpose of this is so you can tune instruments with this meter. I hope you still read this topic.</p>
+<p>Thanks,<br />
+Thom</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Halle		</title>
+		<link>/2010/06/18/decibel-metering-from-an-iphone-audio-unit/#comment-1487</link>
+
+		<dc:creator><![CDATA[Halle]]></dc:creator>
+		<pubDate>Wed, 02 May 2012 07:06:05 +0000</pubDate>
+		<guid isPermaLink="false">/?p=477#comment-1487</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2010/06/18/decibel-metering-from-an-iphone-audio-unit/#comment-1486&quot;&gt;Tim&lt;/a&gt;.
+
+It has a role that is explained in the comments. It&#039;s a quick way of throwing out any NaN values that might come through for unforeseen reasons. Here&#039;s another example for you: http://stackoverflow.com/a/2109282/119717]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2010/06/18/decibel-metering-from-an-iphone-audio-unit/#comment-1486">Tim</a>.</p>
+<p>It has a role that is explained in the comments. It&#8217;s a quick way of throwing out any NaN values that might come through for unforeseen reasons. Here&#8217;s another example for you: <a href="http://stackoverflow.com/a/2109282/119717" rel="nofollow ugc">http://stackoverflow.com/a/2109282/119717</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Tim		</title>
+		<link>/2010/06/18/decibel-metering-from-an-iphone-audio-unit/#comment-1486</link>
+
+		<dc:creator><![CDATA[Tim]]></dc:creator>
+		<pubDate>Wed, 02 May 2012 02:00:31 +0000</pubDate>
+		<guid isPermaLink="false">/?p=477#comment-1486</guid>
+
+					<description><![CDATA[In the above code the condition (sampleDB == sampleDB) should always be true and unnecessary.
+
+Thanks a bunch for sharing this code!]]></description>
+			<content:encoded><![CDATA[<p>In the above code the condition (sampleDB == sampleDB) should always be true and unnecessary.</p>
+<p>Thanks a bunch for sharing this code!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

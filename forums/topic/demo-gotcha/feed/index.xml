@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Demo Gotcha &#8211; Politepix</title>
+		<atom:link href="/forums/topic/demo-gotcha/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/demo-gotcha/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:00:18 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/demo-gotcha/#post-1017938</guid>
+					<title><![CDATA[Demo Gotcha]]></title>
+					<link>/forums/topic/demo-gotcha/#post-1017938</link>
+					<pubDate>Sun, 11 Aug 2013 22:00:50 +0000</pubDate>
+					<dc:creator>markNZed</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>The demo was not speaking out loud, and not making any noise. I thought it was broken.</p>
+<p>I&#8217;ll share this experience in the hope it may save you some time.</p>
+<p>I had my iPhone paired with a bluetooth headset some time ago. I don&#8217;t use the headset.  </p>
+<p>It seems that OpenEars picks up that bluetooth headset and reroutes the audio output. This is the case for the demo and my code using OpenEars. I don&#8217;t think it should do that unless we ask it to :)</p>
+<p>Still a great framework!</p>
+<p>   Mark</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/demo-gotcha/#post-1017940</guid>
+					<title><![CDATA[Reply To: Demo Gotcha]]></title>
+					<link>/forums/topic/demo-gotcha/#post-1017940</link>
+					<pubDate>Mon, 12 Aug 2013 10:12:17 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Mark,</p>
+<p>Thanks for the feedback. I&#8217;m not quite sure I agree with the premise yet but I&#8217;m happy to talk it through and appreciate the input. </p>
+<p>It sounds like there is a bluetooth headset which is both paired and powered on, is that correct? My expectation as a developer is that in this scenario, the user has actively chosen BT as their audio route (OpenEars always has to make some assumptions about what the default route should be and they are based on probable usage cases), so if I want it instead to ignore the BT device I will override the route code. Is it a common scenario for your users that they have a BT device paired and powered on but wouldn&#8217;t expect it to be the in/out audio route? Anyone else wants to share their own usage cases that I might be overlooking here, please go ahead; this is an interesting question that I hadn&#8217;t realized might be an issue.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/demo-gotcha/#post-1017946</guid>
+					<title><![CDATA[Reply To: Demo Gotcha]]></title>
+					<link>/forums/topic/demo-gotcha/#post-1017946</link>
+					<pubDate>Mon, 12 Aug 2013 23:39:33 +0000</pubDate>
+					<dc:creator>markNZed</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>The bluetooth device was on and it had been paired in the past. But the audio was not being routed to it in other apps or my app. I had forgotten that it was paired. </p>
+<p>Other apps would route sound to the speaker. The iPhone phone app  pops up with an option to choose the headset or not.</p>
+<p>I don&#8217;t think this is a common scenario. But maybe OpenEars should allow for the app to decide if the bluetooth is used or not because it seems many apps ignore the bluetooth output. </p>
+<p>In my use case I probably need to change my app to behave like OpenEars :)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/demo-gotcha/#post-1017955</guid>
+					<title><![CDATA[Reply To: Demo Gotcha]]></title>
+					<link>/forums/topic/demo-gotcha/#post-1017955</link>
+					<pubDate>Tue, 13 Aug 2013 09:32:17 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>In my use case I probably need to change my app to behave like OpenEars :)</p></blockquote>
+<p>Heh :) . This is definitely an maximally-interesting API design question. One of the design goals of OpenEars is for it to generally do the right thing without configuring or selecting every option in play (there are so many areas of potential optional behavior in the whole SDK that it could become development-thwartingly twiddly for the use cases of 95% of developers if I went with the wall-o-switches approach, and impossible to give good support for), and then to operate on the basis that developers who want to customize and add new hooks can dig in and alter the source however they need to. But that also means that there should be occasional discussions about whether a default expectation is correct.</p>
+<p>IMO, apps that positively route audio to a route other than a paired and powered-on BT audio device are <em>probably</em> making the wrong call because the user has done enough to indicate their intentions with the BT device when they physically switched it on, which in my understanding of user expectations says more than tapping a screen button when the devices in question have a constrained battery life. Apple&#8217;s approach covers all the bases and is clearly safest.</p>
+<p>But the shortcoming of having the discussion here is that the only information that matters is the ultimate user experience. Do you have people you can test with and get feedback from about what they are intending when they have a BT device attached and are using your app? I find that there are sometimes surprises about what is important or an obvious default to people using the apps and what isn&#8217;t.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/demo-gotcha/#post-1017967</guid>
+					<title><![CDATA[Reply To: Demo Gotcha]]></title>
+					<link>/forums/topic/demo-gotcha/#post-1017967</link>
+					<pubDate>Tue, 13 Aug 2013 20:57:11 +0000</pubDate>
+					<dc:creator>markNZed</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>There will be some beta testing in the field of one app we are developing that integrates OpenEars and will use headsets. The app I was working on is the HiLO Lens app &#8211; that is already available in the App Store. I&#8217;ve not had feedback on behavior with headsets yet for HiLO Lens.</p>
+<p>My use case is control of the camera. In that scenario I think your defaults make sense.</p>
+<p>If open ears is going to be an ideal citizen then it probably needs to check what the audio setup is prior to re-routing it. So if the app is using the headset then use the headset but if the headset is not being used then don&#8217;t use it. I&#8217;m trying to think  of an example &#8211; how about bluetooth audio in a car &#8211; we want the phone calls routed to the car audio but not confirmation noises made by an app. </p>
+<p>Your approach of KISS and let the hackers make changes is a good one I think. Keeping the entry barrier as low as possible is more important.</p>
+<p>    Mark</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/demo-gotcha/#post-1017968</guid>
+					<title><![CDATA[Reply To: Demo Gotcha]]></title>
+					<link>/forums/topic/demo-gotcha/#post-1017968</link>
+					<pubDate>Tue, 13 Aug 2013 20:57:28 +0000</pubDate>
+					<dc:creator>markNZed</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>PS the HiLO Lens app is free.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/demo-gotcha/#post-1017969</guid>
+					<title><![CDATA[Reply To: Demo Gotcha]]></title>
+					<link>/forums/topic/demo-gotcha/#post-1017969</link>
+					<pubDate>Tue, 13 Aug 2013 21:14:00 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the considered feedback. I think you make a good point and I&#8217;ll keep it in mind as I&#8217;m making some audio session tweaks in upcoming versions. Congrats on the HiLO app being out &#8212; feel free to share a link to the app if you&#8217;d like!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

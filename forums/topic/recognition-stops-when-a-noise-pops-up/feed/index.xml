@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Unwanted recognition of long background noises &#8211; Politepix</title>
+		<atom:link href="/forums/topic/recognition-stops-when-a-noise-pops-up/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/recognition-stops-when-a-noise-pops-up/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:04:34 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/recognition-stops-when-a-noise-pops-up/#post-1018713</guid>
+					<title><![CDATA[Unwanted recognition of long background noises]]></title>
+					<link>/forums/topic/recognition-stops-when-a-noise-pops-up/#post-1018713</link>
+					<pubDate>Tue, 22 Oct 2013 12:48:33 +0000</pubDate>
+					<dc:creator>gborgia</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Xcode app IPAD and Iphone :<br />
+4 commands -REJECTo used<br />
+External symptom :voice is recognised but in many cases<br />
+when a loud noise pops in the background ( even music ) the system<br />
+stops listening<br />
+guess it freezes in Processing speech, please wait…<br />
+sometimes it recovers but on a random mode</p>
+<p>Trace/log follows<br />
+ram<br />
+2013-10-22 08:16:21.260 baka[804:c07] Starting idngram2lm<br />
+sih_add WARNING: repeated hashing of ‘___REJ_F’, older value will be overridden.</p>
+<p>2013-10-22 08:16:21.263 baka[804:c07] Done with idngram2lm<br />
+2013-10-22 08:16:21.264 baka[804:c07] Done creating language model with CMUCLMTK in 0.016937 seconds.<br />
+2013-10-22 08:16:21.265 baka[804:c07] Starting sphinx_lm_convert<br />
+2013-10-22 08:16:21.269 baka[804:c07] Finishing sphinx_lm_convert<br />
+2013-10-22 08:16:21.270 baka[804:c07] I’m done running dynamic language model generation and it took 404136981.270778 seconds<br />
+2013-10-22 08:16:21.271 baka[804:c07] Dynamic language generator completed successfully, you can find your new files OpenEarsDynamicGrammar.DMP<br />
+and<br />
+OpenEarsDynamicGrammar.dic<br />
+at the paths<br />
+/Users/giorgioborgia/Library/Application Support/iPhone Simulator/6.1/Applications/E8A1E508-FD62-452C-A576-8AACF2F03D21/Library/Caches/OpenEarsDynamicGrammar.DMP<br />
+and<br />
+/Users/giorgioborgia/Library/Application Support/iPhone Simulator/6.1/Applications/E8A1E508-FD62-452C-A576-8AACF2F03D21/Library/Caches/OpenEarsDynamicGrammar.dic<br />
+2013-10-22 08:16:21.272 baka[804:c07] A sample rate was requested that isn’t one of the two supported values of 16000 or 8000 so we will use the default of 16000.<br />
+2013-10-22 08:16:21.273 baka[804:c07] The audio session has never been initialized so we will do that now.<br />
+2013-10-22 08:16:21.273 baka[804:c07] Checking and resetting all audio session settings.<br />
+2013-10-22 08:16:21.274 baka[804:c07] audioCategory is incorrect, we will change it.<br />
+2013-10-22 08:16:21.293 baka[804:c07] audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.<br />
+2013-10-22 08:16:21.293 baka[804:c07] bluetoothInput is incorrect, we will change it.<br />
+2013-10-22 08:16:21.294 baka[804:c07] bluetooth input is now on the correct setting of 1.<br />
+2013-10-22 08:16:21.294 baka[804:c07] Output Device: Speaker.<br />
+2013-10-22 08:16:21.295 baka[804:c07] preferredBufferSize is incorrect, we will change it.<br />
+2013-10-22 08:16:21.295 baka[804:c07] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2013-10-22 08:16:21.296 baka[804:c07] preferredSampleRateCheck is incorrect, we will change it.<br />
+2013-10-22 08:16:21.296 baka[804:c07] preferred hardware sample rate is now on the correct setting of 16000.000000.<br />
+2013-10-22 08:16:21.296 baka[804:c07] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2013-10-22 08:16:21.297 baka[804:c07] Exiting startAudioSession.<br />
+2013-10-22 08:16:21.298 baka[804:c07] Dynamic langua<br />
+2013-10-22 08:16:21.298 baka[804:450b] Recognition loop has started<br />
+2013-10-22 08:16:21.298 baka[804:c07] ReStartd the Show<br />
+2013-10-22 08:16:21.299 baka[804:c07] restarted<br />
+2013-10-22 08:16:21.300 baka[804:c07] iPhone or iPod Touch<br />
+2013-10-22 08:16:21.375 baka[804:450b] Starting openAudioDevice on the simulator. This Simulator-compatible audio driver is only provided to you as a convenience so you can use the Simulator to test recognition logic, however, its audio driver is not supported and bug reports for it will be circular-filed.<br />
+2013-10-22 08:16:22.360 baka[804:450b] Calibration has started<br />
+2013-10-22 08:16:22.360 baka[804:c07] Pocketsphinx calibration has started.<br />
+2013-10-22 08:16:24.562 baka[804:450b] Calibration has completed<br />
+2013-10-22 08:16:24.562 baka[804:c07] Pocketsphinx calibration is complete.<br />
+2013-10-22 08:16:24.563 baka[804:450b] Project has these words in its dictionary:<br />
+___REJ_AA<br />
+___REJ_AE<br />
+___REJ_AH<br />
+___REJ_AO<br />
+___REJ_AW<br />
+___REJ_AY<br />
+___REJ_B<br />
+___REJ_CH<br />
+___REJ_D<br />
+___REJ_DH<br />
+___REJ_EH<br />
+___REJ_ER<br />
+___REJ_EY<br />
+___REJ_F<br />
+___REJ_G<br />
+___REJ_HH<br />
+___REJ_IH<br />
+___REJ_IY<br />
+___REJ_JH<br />
+___REJ_K<br />
+___REJ_L<br />
+___REJ_M<br />
+___REJ_N<br />
+___REJ_NG<br />
+___REJ_OW<br />
+___REJ_OY<br />
+___REJ_P<br />
+___REJ_R<br />
+___REJ_S<br />
+___REJ_SH<br />
+___REJ_T<br />
+___REJ_TH<br />
+___REJ_UH<br />
+___REJ_UW<br />
+___REJ_V<br />
+___REJ_W<br />
+___REJ_Y<br />
+___REJ_Z<br />
+___REJ_ZH<br />
+BACK<br />
+NEXT<br />
+NEXT(2)<br />
+RESTART<br />
+TOM<br />
+2013-10-22 08:16:24.564 baka[804:450b] Listening.<br />
+2013-10-22 08:16:24.564 baka[804:c07] Pocketsphinx is now listening.<br />
+2013-10-22 08:16:29.573 baka[804:450b] Speech detected…<br />
+2013-10-22 08:16:29.574 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:16:31.548 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:16:31.555 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:16:31.605 baka[804:450b] Pocketsphinx heard “NEXT” with a score of (-3467) and an utterance ID of 000000000.<br />
+2013-10-22 08:16:31.605 baka[804:c07] The received hypothesis is NEXT with a score of -3467 and an ID of 000000000 and a pija of -3467<br />
+2013-10-22 08:16:31.606 baka[804:c07] ReStartd the Show<br />
+2013-10-22 08:16:31.606 baka[804:c07] iPhone or iPod Touch<br />
+2013-10-22 08:16:31.607 baka[804:c07] moving ima 0<br />
+2013-10-22 08:16:31.607 baka[804:c07] Cicking ——————- 11<br />
+2013-10-22 08:16:31.624 baka[804:c07] k after5 Notif<br />
+2013-10-22 08:16:31.625 baka[804:c07] string does not contain bla<br />
+2013-10-22 08:16:31.625 baka[804:c07] Pocketsphinx has suspended recognition.<br />
+2013-10-22 08:16:35.525 baka[804:c07] xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br />
+2013-10-22 08:16:35.526 baka[804:c07] Pocketsphinx has resumed recognition.<br />
+2013-10-22 08:16:40.822 baka[804:450b] Speech detected…<br />
+2013-10-22 08:16:40.823 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:16:42.807 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:16:42.816 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:16:42.867 baka[804:450b] Pocketsphinx heard “NEXT” with a score of (-2954) and an utterance ID of 000000001.<br />
+2013-10-22 08:16:42.868 baka[804:c07] The received hypothesis is NEXT with a score of -2954 and an ID of 000000001 and a pija of -2954<br />
+2013-10-22 08:16:42.868 baka[804:c07] ReStartd the Show<br />
+2013-10-22 08:16:42.869 baka[804:c07] iPhone or iPod Touch<br />
+2013-10-22 08:16:42.869 baka[804:c07] moving ima 1<br />
+2013-10-22 08:16:42.870 baka[804:c07] Cicking ——————- 8<br />
+2013-10-22 08:16:42.874 baka[804:450b] Listening.<br />
+2013-10-22 08:16:42.897 baka[804:c07] k after5 Notif<br />
+2013-10-22 08:16:42.898 baka[804:c07] string does not contain bla<br />
+2013-10-22 08:16:42.898 baka[804:c07] Pocketsphinx is now listening.<br />
+2013-10-22 08:16:42.899 baka[804:c07] Pocketsphinx has suspended recognition.<br />
+2013-10-22 08:16:45.313 baka[804:c07] xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br />
+2013-10-22 08:16:45.314 baka[804:c07] Pocketsphinx has resumed recognition.<br />
+2013-10-22 08:16:47.211 baka[804:450b] Speech detected…<br />
+2013-10-22 08:16:47.212 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:16:49.218 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:16:49.225 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:16:49.244 baka[804:450b] Pocketsphinx heard “NEXT” with a score of (-1591) and an utterance ID of 000000002.<br />
+2013-10-22 08:16:49.245 baka[804:c07] The received hypothesis is NEXT with a score of -1591 and an ID of 000000002 and a pija of -1591<br />
+2013-10-22 08:16:49.245 baka[804:c07] ReStartd the Show<br />
+2013-10-22 08:16:49.246 baka[804:c07] iPhone or iPod Touch<br />
+2013-10-22 08:16:49.246 baka[804:c07] moving ima 2<br />
+2013-10-22 08:16:49.246 baka[804:c07] Cicking ——————- 10<br />
+2013-10-22 08:16:49.260 baka[804:c07] k after5 Notif<br />
+2013-10-22 08:16:49.260 baka[804:c07] string does not contain bla<br />
+2013-10-22 08:16:49.261 baka[804:c07] Pocketsphinx has suspended recognition.<br />
+2013-10-22 08:16:52.255 baka[804:c07] xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br />
+2013-10-22 08:16:52.256 baka[804:c07] Pocketsphinx has resumed recognition.<br />
+2013-10-22 08:16:56.173 baka[804:450b] Speech detected…<br />
+2013-10-22 08:16:56.173 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:16:57.914 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:16:57.921 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:16:57.946 baka[804:450b] Pocketsphinx heard “NEXT” with a score of (-4457) and an utterance ID of 000000003.<br />
+2013-10-22 08:16:57.947 baka[804:c07] The received hypothesis is NEXT with a score of -4457 and an ID of 000000003 and a pija of -4457<br />
+2013-10-22 08:16:57.947 baka[804:c07] ReStartd the Show<br />
+2013-10-22 08:16:57.948 baka[804:c07] iPhone or iPod Touch<br />
+2013-10-22 08:16:57.948 baka[804:c07] moving ima 3<br />
+2013-10-22 08:16:57.948 baka[804:c07] Cicking ——————- 7<br />
+2013-10-22 08:16:57.955 baka[804:450b] Listening.<br />
+2013-10-22 08:16:57.990 baka[804:c07] k after5 Notif<br />
+2013-10-22 08:16:57.991 baka[804:c07] string does not contain bla<br />
+2013-10-22 08:16:57.991 baka[804:c07] Pocketsphinx is now listening.<br />
+2013-10-22 08:16:57.992 baka[804:c07] Pocketsphinx has suspended recognition.<br />
+2013-10-22 08:17:00.150 baka[804:c07] xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br />
+2013-10-22 08:17:00.150 baka[804:c07] Pocketsphinx has resumed recognition.<br />
+2013-10-22 08:17:00.749 baka[804:450b] Speech detected…<br />
+2013-10-22 08:17:00.749 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:17:02.267 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:17:02.274 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:17:02.304 baka[804:450b] Pocketsphinx heard ” ” with a score of (-21857) and an utterance ID of 000000004.<br />
+2013-10-22 08:17:02.305 baka[804:450b] Hypothesis was null so we aren’t returning it. If you want null hypotheses to also be returned, set PocketsphinxController’s property returnNullHypotheses to TRUE before starting PocketsphinxController.<br />
+2013-10-22 08:17:02.309 baka[804:450b] Listening.<br />
+2013-10-22 08:17:02.309 baka[804:c07] Pocketsphinx is now listening.<br />
+2013-10-22 08:17:09.228 baka[804:450b] Speech detected…<br />
+2013-10-22 08:17:09.229 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:17:11.482 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:17:11.492 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:17:11.521 baka[804:450b] Pocketsphinx heard “NEXT” with a score of (-4345) and an utterance ID of 000000005.<br />
+2013-10-22 08:17:11.521 baka[804:c07] The received hypothesis is NEXT with a score of -4345 and an ID of 000000005 and a pija of -4345<br />
+—– bunch equal deleted .<br />
+2013-10-22 08:18:56.349 baka[804:450b] Listening.<br />
+2013-10-22 08:18:56.350 baka[804:c07] Pocketsphinx is now listening.<br />
+2013-10-22 08:19:00.066 baka[804:450b] Speech detected…<br />
+2013-10-22 08:19:00.067 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:19:04.884 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:19:04.894 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:19:07.066 baka[804:450b] Pocketsphinx heard ” ” with a score of (-10524) and an utterance ID of 000000020.<br />
+2013-10-22 08:19:07.066 baka[804:450b] Hypothesis was null so we aren’t returning it. If you want null hypotheses to also be returned, set PocketsphinxController’s property returnNullHypotheses to TRUE before starting PocketsphinxController.<br />
+2013-10-22 08:19:07.077 baka[804:450b] Listening.<br />
+2013-10-22 08:19:07.077 baka[804:c07] Pocketsphinx is now listening.<br />
+2013-10-22 08:19:09.301 baka[804:450b] Speech detected…<br />
+2013-10-22 08:19:09.301 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:19:13.850 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:19:13.857 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:19:15.489 baka[804:450b] Pocketsphinx heard ” ” with a score of (-16287) and an utterance ID of 000000021.<br />
+2013-10-22 08:19:15.490 baka[804:450b] Hypothesis was null so we aren’t returning it. If you want null hypotheses to also be returned, set PocketsphinxController’s property returnNullHypotheses to TRUE before starting PocketsphinxController.<br />
+2013-10-22 08:19:15.493 baka[804:450b] Listening.<br />
+2013-10-22 08:19:15.494 baka[804:c07] Pocketsphinx is now listening.<br />
+2013-10-22 08:19:25.672 baka[804:450b] Speech detected…<br />
+2013-10-22 08:19:25.672 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:19:27.165 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:19:27.172 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:19:27.196 baka[804:450b] Pocketsphinx heard ” ” with a score of (-1115) and an utterance ID of 000000022.<br />
+2013-10-22 08:19:27.196 baka[804:450b] Hypothesis was null so we aren’t returning it. If you want null hypotheses to also be returned, set PocketsphinxController’s property returnNullHypotheses to TRUE before starting PocketsphinxController.<br />
+2013-10-22 08:19:27.207 baka[804:450b] Listening.<br />
+2013-10-22 08:19:27.208 baka[804:c07] Pocketsphinx is now listening.<br />
+2013-10-22 08:20:01.006 baka[804:450b] Speech detected…<br />
+2013-10-22 08:20:01.007 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:20:03.258 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:20:03.266 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:20:03.646 baka[804:450b] Pocketsphinx heard ” ” with a score of (-3880) and an utterance ID of 000000023.<br />
+2013-10-22 08:20:03.647 baka[804:450b] Hypothesis was null so we aren’t returning it. If you want null hypotheses to also be returned, set PocketsphinxController’s property returnNullHypotheses to TRUE before starting PocketsphinxController.<br />
+2013-10-22 08:20:03.649 baka[804:450b] Listening.<br />
+2013-10-22 08:20:03.649 baka[804:c07] Pocketsphinx is now listening.<br />
+2013-10-22 08:20:06.862 baka[804:450b] Speech detected…<br />
+2013-10-22 08:20:06.863 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:20:07.853 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:20:07.863 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:20:07.906 baka[804:450b] Pocketsphinx heard ” ” with a score of (-24409) and an utterance ID of 000000024.<br />
+2013-10-22 08:20:07.907 baka[804:450b] Hypothesis was null so we aren’t returning it. If you want null hypotheses to also be returned, set PocketsphinxController’s property returnNullHypotheses to TRUE before starting PocketsphinxController.<br />
+2013-10-22 08:20:07.909 baka[804:450b] Listening.<br />
+2013-10-22 08:20:07.910 baka[804:c07] Pocketsphinx is now listening.<br />
+2013-10-22 08:20:11.742 baka[804:450b] Speech detected…<br />
+2013-10-22 08:20:11.743 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:20:15.285 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:20:15.293 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:20:15.779 baka[804:450b] Pocketsphinx heard ” ” with a score of (-26157) and an utterance ID of 000000025.<br />
+2013-10-22 08:20:15.780 baka[804:450b] Hypothesis was null so we aren’t returning it. If you want null hypotheses to also be returned, set PocketsphinxController’s property returnNullHypotheses to TRUE before starting PocketsphinxController.<br />
+2013-10-22 08:20:15.780 baka[804:450b] Listening.<br />
+2013-10-22 08:20:15.781 baka[804:c07] Pocketsphinx is now listening.<br />
+2013-10-22 08:20:16.595 baka[804:450b] Speech detected…<br />
+2013-10-22 08:20:16.595 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:20:19.638 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:20:19.646 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:20:19.682 baka[804:450b] Pocketsphinx heard ” ” with a score of (0) and an utterance ID of 000000026.<br />
+2013-10-22 08:20:19.683 baka[804:450b] Hypothesis was null so we aren’t returning it. If you want null hypotheses to also be returned, set PocketsphinxController’s property returnNullHypotheses to TRUE before starting PocketsphinxController.<br />
+2013-10-22 08:20:19.693 baka[804:450b] Listening.<br />
+2013-10-22 08:20:19.693 baka[804:c07] Pocketsphinx is now listening.<br />
+2013-10-22 08:20:25.591 baka[804:450b] Speech detected…<br />
+2013-10-22 08:20:25.592 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:20:28.858 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:20:28.864 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:20:28.915 baka[804:450b] Pocketsphinx heard ” ” with a score of (-15076) and an utterance ID of 000000027.<br />
+2013-10-22 08:20:28.915 baka[804:450b] Hypothesis was null so we aren’t returning it. If you want null hypotheses to also be returned, set PocketsphinxController’s property returnNullHypotheses to TRUE before starting PocketsphinxController.<br />
+2013-10-22 08:20:28.922 baka[804:450b] Listening.<br />
+2013-10-22 08:20:28.923 baka[804:c07] Pocketsphinx is now listening.<br />
+2013-10-22 08:20:46.601 baka[804:450b] Speech detected…<br />
+2013-10-22 08:20:46.601 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:20:47.278 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:20:47.288 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:20:47.324 baka[804:450b] Pocketsphinx heard ” ” with a score of (-21421) and an utterance ID of 000000028.<br />
+2013-10-22 08:20:47.325 baka[804:450b] Hypothesis was null so we aren’t returning it. If you want null hypotheses to also be returned, set PocketsphinxController’s property returnNullHypotheses to TRUE before starting PocketsphinxController.<br />
+2013-10-22 08:20:47.334 baka[804:450b] Listening.<br />
+2013-10-22 08:20:47.335 baka[804:c07] Pocketsphinx is now listening.<br />
+2013-10-22 08:20:51.169 baka[804:450b] Speech detected…<br />
+2013-10-22 08:20:51.170 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:20:53.166 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:20:53.174 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:20:53.278 baka[804:450b] Pocketsphinx heard ” ” with a score of (-7416) and an utterance ID of 000000029.<br />
+2013-10-22 08:20:53.278 baka[804:450b] Hypothesis was null so we aren’t returning it. If you want null hypotheses to also be returned, set PocketsphinxController’s property returnNullHypotheses to TRUE before starting PocketsphinxController.<br />
+2013-10-22 08:20:53.290 baka[804:450b] Listening.<br />
+2013-10-22 08:20:53.290 baka[804:c07] Pocketsphinx is now listening.<br />
+2013-10-22 08:21:00.149 baka[804:450b] Speech detected…<br />
+2013-10-22 08:21:00.149 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:21:03.916 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:21:03.924 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:21:04.085 baka[804:450b] Pocketsphinx heard ” ” with a score of (-43347) and an utterance ID of 000000030.<br />
+2013-10-22 08:21:04.085 baka[804:450b] Hypothesis was null so we aren’t returning it. If you want null hypotheses to also be returned, set PocketsphinxController’s property returnNullHypotheses to TRUE before starting PocketsphinxController.<br />
+2013-10-22 08:21:04.098 baka[804:450b] Listening.<br />
+2013-10-22 08:21:04.098 baka[804:c07] Pocketsphinx is now listening.<br />
+2013-10-22 08:21:13.714 baka[804:450b] Speech detected…<br />
+2013-10-22 08:21:13.714 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:21:16.719 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:21:16.729 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:21:16.979 baka[804:450b] Pocketsphinx heard ” ” with a score of (-61295) and an utterance ID of 000000031.<br />
+2013-10-22 08:21:16.979 baka[804:450b] Hypothesis was null so we aren’t returning it. If you want null hypotheses to also be returned, set PocketsphinxController’s property returnNullHypotheses to TRUE before starting PocketsphinxController.<br />
+2013-10-22 08:21:16.984 baka[804:450b] Listening.<br />
+2013-10-22 08:21:16.984 baka[804:c07] Pocketsphinx is now listening.<br />
+2013-10-22 08:21:32.639 baka[804:450b] Speech detected…<br />
+2013-10-22 08:21:32.639 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:21:34.891 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:21:34.897 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:21:35.029 baka[804:450b] Pocketsphinx heard ” ” with a score of (-55219) and an utterance ID of 000000032.<br />
+2013-10-22 08:21:35.030 baka[804:450b] Hypothesis was null so we aren’t returning it. If you want null hypotheses to also be returned, set PocketsphinxController’s property returnNullHypotheses to TRUE before starting PocketsphinxController.<br />
+2013-10-22 08:21:35.036 baka[804:450b] Listening.<br />
+2013-10-22 08:21:35.037 baka[804:c07] Pocketsphinx is now listening.<br />
+2013-10-22 08:21:39.818 baka[804:450b] Speech detected…<br />
+2013-10-22 08:21:39.819 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:21:42.571 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:21:42.582 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:21:42.791 baka[804:450b] Pocketsphinx heard ” ” with a score of (-14952) and an utterance ID of 000000033.<br />
+2013-10-22 08:21:42.791 baka[804:450b] Hypothesis was null so we aren’t returning it. If you want null hypotheses to also be returned, set PocketsphinxController’s property returnNullHypotheses to TRUE before starting PocketsphinxController.<br />
+2013-10-22 08:21:42.803 baka[804:450b] Listening.<br />
+2013-10-22 08:21:42.803 baka[804:c07] Pocketsphinx is now listening.<br />
+2013-10-22 08:21:48.008 baka[804:450b] Speech detected…<br />
+2013-10-22 08:21:48.009 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:21:49.482 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:21:49.490 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:21:49.528 baka[804:450b] Pocketsphinx heard “NEXT” with a score of (-28924) and an utterance ID of 000000034.<br />
+2013-10-22 08:21:49.529 baka[804:c07] The received hypothesis is NEXT with a score of -28924 and an ID of 000000034 and a pija of -28924<br />
+2013-10-22 08:21:49.536 baka[804:450b] Listening.<br />
+2013-10-22 08:21:49.536 baka[804:c07] Pocketsphinx is now listening.<br />
+2013-10-22 08:21:58.247 baka[804:450b] Speech detected…<br />
+2013-10-22 08:21:58.248 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:22:00.235 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:22:00.242 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:22:00.289 baka[804:450b] Pocketsphinx heard “TOM NEXT” with a score of (-13238) and an utterance ID of 000000035.<br />
+2013-10-22 08:22:00.289 baka[804:c07] The received hypothesis is TOM NEXT with a score of -13238 and an ID of 000000035 and a pija of -13238<br />
+2013-10-22 08:22:00.300 baka[804:450b] Listening.<br />
+2013-10-22 08:22:00.301 baka[804:c07] Pocketsphinx is now listening.<br />
+2013-10-22 08:22:10.044 baka[804:450b] Speech detected…<br />
+2013-10-22 08:22:10.045 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:22:12.029 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:22:12.037 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:22:12.057 baka[804:450b] Pocketsphinx heard “NEXT” with a score of (-2766) and an utterance ID of 000000036.<br />
+2013-10-22 08:22:12.057 baka[804:c07] The received hypothesis is NEXT with a score of -2766 and an ID of 000000036 and a pija of -2766<br />
+2013-10-22 08:22:12.058 baka[804:c07] ReStartd the Show<br />
+2013-10-22 08:22:12.059 baka[804:c07] iPhone or iPod Touch<br />
+2013-10-22 08:22:12.059 baka[804:c07] moving ima 5<br />
+2013-10-22 08:22:12.059 baka[804:c07] Cicking ——————- 10<br />
+2013-10-22 08:22:12.060 baka[804:450b] Listening.<br />
+2013-10-22 08:22:12.107 baka[804:c07] k after5 Notif<br />
+2013-10-22 08:22:12.107 baka[804:c07] string does not contain bla<br />
+2013-10-22 08:22:12.108 baka[804:c07] Pocketsphinx is now listening.<br />
+2013-10-22 08:22:12.108 baka[804:c07] Pocketsphinx has suspended recognition.<br />
+2013-10-22 08:22:14.812 baka[804:c07] xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br />
+2013-10-22 08:22:14.812 baka[804:c07] Pocketsphinx has resumed recognition.<br />
+2013-10-22 08:22:28.212 baka[804:450b] Speech detected…<br />
+2013-10-22 08:22:28.212 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:22:28.665 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:22:28.673 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:22:28.692 baka[804:450b] Pocketsphinx heard ” ” with a score of (-18869) and an utterance ID of 000000037.<br />
+2013-10-22 08:22:28.693 baka[804:450b] Hypothesis was null so we aren’t returning it. If you want null hypotheses to also be returned, set PocketsphinxController’s property returnNullHypotheses to TRUE before starting PocketsphinxController.<br />
+2013-10-22 08:22:28.696 baka[804:450b] Listening.<br />
+2013-10-22 08:22:28.697 baka[804:c07] Pocketsphinx is now listening.<br />
+2013-10-22 08:22:38.447 baka[804:450b] Speech detected…<br />
+2013-10-22 08:22:38.448 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:23:28.313 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:23:28.320 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:23:40.989 baka[804:450b] Pocketsphinx heard ” ” with a score of (-177618) and an utterance ID of 000000038.<br />
+2013-10-22 08:23:40.989 baka[804:450b] Hypothesis was null so we aren’t returning it. If you want null hypotheses to also be returned, set PocketsphinxController’s property returnNullHypotheses to TRUE before starting PocketsphinxController.<br />
+2013-10-22 08:23:40.996 baka[804:450b] Listening.<br />
+2013-10-22 08:23:40.997 baka[804:c07] Pocketsphinx is now listening.<br />
+2013-10-22 08:23:52.158 baka[804:450b] Speech detected…<br />
+2013-10-22 08:23:52.159 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:23:54.422 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:23:54.428 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:23:54.445 baka[804:450b] Pocketsphinx heard ” ” with a score of (0) and an utterance ID of 000000039.<br />
+2013-10-22 08:23:54.445 baka[804:450b] Hypothesis was null so we aren’t returning it. If you want null hypotheses to also be returned, set PocketsphinxController’s property returnNullHypotheses to TRUE before starting PocketsphinxController.<br />
+2013-10-22 08:23:54.451 baka[804:450b] Listening.<br />
+2013-10-22 08:23:54.452 baka[804:c07] Pocketsphinx is now listening.<br />
+2013-10-22 08:23:59.298 baka[804:450b] Speech detected…<br />
+2013-10-22 08:23:59.299 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:24:00.304 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:24:00.314 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:24:00.346 baka[804:450b] Pocketsphinx heard ” ” with a score of (-720) and an utterance ID of 000000040.<br />
+2013-10-22 08:24:00.347 baka[804:450b] Hypothesis was null so we aren’t returning it. If you want null hypotheses to also be returned, set PocketsphinxController’s property returnNullHypotheses to TRUE before starting PocketsphinxController.<br />
+2013-10-22 08:24:00.348 baka[804:450b] Listening.<br />
+2013-10-22 08:24:00.349 baka[804:c07] Pocketsphinx is now listening.<br />
+2013-10-22 08:24:03.690 baka[804:450b] Speech detected…<br />
+2013-10-22 08:24:03.690 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:24:06.699 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:24:06.710 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:24:07.356 baka[804:450b] Pocketsphinx heard “NEXT” with a score of (-17609) and an utterance ID of 000000041.<br />
+2013-10-22 08:24:07.356 baka[804:c07] The received hypothesis is NEXT with a score of -17609 and an ID of 000000041 and a pija of -17609<br />
+2013-10-22 08:24:07.360 baka[804:450b] Listening.<br />
+2013-10-22 08:24:07.361 baka[804:c07] Pocketsphinx is now listening.<br />
+2013-10-22 08:24:18.552 baka[804:450b] Speech detected…<br />
+2013-10-22 08:24:18.552 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:24:20.017 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:24:20.026 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:24:20.037 baka[804:450b] Pocketsphinx heard ” ” with a score of (-16229) and an utterance ID of 000000042.<br />
+2013-10-22 08:24:20.038 baka[804:450b] Hypothesis was null so we aren’t returning it. If you want null hypotheses to also be returned, set PocketsphinxController’s property returnNullHypotheses to TRUE before starting PocketsphinxController.<br />
+2013-10-22 08:24:20.049 baka[804:450b] Listening.<br />
+2013-10-22 08:24:20.050 baka[804:c07] Pocketsphinx is now listening.<br />
+2013-10-22 08:24:22.377 baka[804:450b] Speech detected…<br />
+2013-10-22 08:24:22.378 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:24:24.369 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:24:24.379 baka[804:450b] Processing speech, please wait…<br />
+2013-10-22 08:24:24.790 baka[804:450b] Pocketsphinx heard ” ” with a score of (-30886) and an utterance ID of 000000043.<br />
+2013-10-22 08:24:24.790 baka[804:450b] Hypothesis was null so we aren’t returning it. If you want null hypotheses to also be returned, set PocketsphinxController’s property returnNullHypotheses to TRUE before starting PocketsphinxController.<br />
+2013-10-22 08:24:24.797 baka[804:450b] Listening.<br />
+2013-10-22 08:24:24.798 baka[804:c07] Pocketsphinx is now listening.<br />
+2013-10-22 08:24:25.579 baka[804:450b] Speech detected…<br />
+2013-10-22 08:24:25.580 baka[804:c07] Pocketsphinx has detected speech.<br />
+2013-10-22 08:24:50.991 baka[804:c07] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-10-22 08:24:50.999 baka[804:450b] Processing speech, please wait…<br />
+>>>>>>>>>> I never returns from that >>>>>>>> Someone started a permanent noise or sound</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recognition-stops-when-a-noise-pops-up/#post-1018714</guid>
+					<title><![CDATA[Reply To: recognition stops when a noise pops up &#8211;]]></title>
+					<link>/forums/topic/recognition-stops-when-a-noise-pops-up/#post-1018714</link>
+					<pubDate>Tue, 22 Oct 2013 12:58:15 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>I&#8217;m going to edit the above so that it has all the other info from the mis-post in the instructions topic and then I will remove that post. Can you let me know what other audio or video processes (or other significant processes that could affect the audio session) are happening in these sections:</p>
+<pre>
+2013-10-22 08:22:12.058 baka[804:c07] ReStartd the Show
+2013-10-22 08:22:12.059 baka[804:c07] iPhone or iPod Touch
+2013-10-22 08:22:12.059 baka[804:c07] moving ima 5
+2013-10-22 08:22:12.059 baka[804:c07] Cicking ——————- 10
+2013-10-22 08:22:12.060 baka[804:450b] Listening.
+2013-10-22 08:22:12.107 baka[804:c07] k after5 Notif
+</pre>
+<p>And what is the audio input device in use?</p>
+<p>One last question about this:</p>
+<pre>
+>>>>>>>>>> I never returns from that >>>>>>>> Someone started a permanent noise or sound
+</pre>
+<p>Do you mean that the noise or sound is ongoing for the entire period in which no hypothesis gets returned? If the sound never stops and it is louder than the level that was calibrated as being speech, we can&#8217;t do anything about that since it means that the user has entered an environment in which recognition of their own speech is no longer possible due to conflicting noise at the same level as speech. But if the noise appears and then stops, and no end of speech is ever again detected, that would be a possible issue.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recognition-stops-when-a-noise-pops-up/#post-1018719</guid>
+					<title><![CDATA[Reply To: recognition stops when a noise pops up &#8211;]]></title>
+					<link>/forums/topic/recognition-stops-when-a-noise-pops-up/#post-1018719</link>
+					<pubDate>Tue, 22 Oct 2013 13:44:39 +0000</pubDate>
+					<dc:creator>gborgia</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Tx a lot:<br />
+F:what other audio or video processes (or other significant processes that could affect the audio session) are happening in these sections:?<br />
+A: the app plays audio short mp3 using<br />
+ audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:modelURL error:&amp;error];<br />
+Someone  is checking in // that to detect resource abuse :)<br />
+Video usage is more than simple a mere set of jpegs being displayed<br />
+F:Do you mean that the noise or sound is ongoing for the entire period in which no hypothesis gets returned? If the sound &#8230;?<br />
+A: We tried both ,but we do understand the permanent and high volume problem ,so we discarded that<br />
+Problem is   &#8230; But if the noise appears and then stops, and no end of speech is ever again detected ..<br />
+Sometimes end of speech is detected ,but on many cases no.<br />
+I have in front of mine :</p>
+<p>Iphone that recovers from sound &#8216;storm&#8217;<br />
+Iphone that dont recover from SAME sound storm<br />
+IPAD   that dont recover from SAME sound storm </p>
+<p>R<br />
+G</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recognition-stops-when-a-noise-pops-up/#post-1018720</guid>
+					<title><![CDATA[Reply To: recognition stops when a noise pops up &#8211;]]></title>
+					<link>/forums/topic/recognition-stops-when-a-noise-pops-up/#post-1018720</link>
+					<pubDate>Tue, 22 Oct 2013 13:50:59 +0000</pubDate>
+					<dc:creator>gborgia</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Fresh Update :<br />
+My Ladinen-Chinese partner  (yes a Chinese from BOZEN :))<br />
+found with patience that IPAD recovers after a long period and restarts<br />
+listening ,of course after u stop the sound &#8230;..<br />
+If we could get a better timeout that would be enough as we are testing this<br />
+with pro earphones<br />
+R<br />
+G</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recognition-stops-when-a-noise-pops-up/#post-1018721</guid>
+					<title><![CDATA[Reply To: recognition stops when a noise pops up &#8211;]]></title>
+					<link>/forums/topic/recognition-stops-when-a-noise-pops-up/#post-1018721</link>
+					<pubDate>Tue, 22 Oct 2013 13:51:20 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>the app plays audio short mp3 using<br />
+audioPlayer</p></blockquote>
+<p>This should be OK, but a) are you suspending/resuming when you play this or is it being submitted as part of the sound to be recognized, and b) is it being actively played in the timeframe in which you get the recognition that never returns a hypothesis?</p>
+<blockquote><p>Video usage is more than simple a mere set of jpegs being displayed</p></blockquote>
+<p>Is this displayed with any kind of video object, or is it displayed with UIImage?</p>
+<blockquote><p>Problem is … But if the noise appears and then stops, and no end of speech is ever again detected</p></blockquote>
+<p>Does this also happen with the sample app that ships with the distribution if you don&#8217;t make any changes to it?</p>
+<p>Which acoustic model are you using?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recognition-stops-when-a-noise-pops-up/#post-1018722</guid>
+					<title><![CDATA[Reply To: recognition stops when a noise pops up &#8211;]]></title>
+					<link>/forums/topic/recognition-stops-when-a-noise-pops-up/#post-1018722</link>
+					<pubDate>Tue, 22 Oct 2013 13:55:30 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m envious of your partner; Bozen is a lovely place. OK, so does that mean that we can say that eventually recognition is performed when a very long sound stops, but it is unpleasantly slow because it is finally scanning all of what has become an extremely long utterance? In that case, maybe you can get your solution from this thread about a similar issue, in which we found a workaround: <a href="/forums/topic/cancel-current-processing-on-pause-detected/">/forums/topic/cancel-current-processing-on-pause-detected/</a></p>
+<p>I might end up adding this feature to the main distribution since it seems like in keyword spotting mode, few developers want such long utterances to be completely analyzed.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recognition-stops-when-a-noise-pops-up/#post-1018723</guid>
+					<title><![CDATA[Reply To: recognition stops when a noise pops up &#8211;]]></title>
+					<link>/forums/topic/recognition-stops-when-a-noise-pops-up/#post-1018723</link>
+					<pubDate>Tue, 22 Oct 2013 15:44:36 +0000</pubDate>
+					<dc:creator>gborgia</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>fine<br />
+understood<br />
+we ll check and come back<br />
+but some a.<br />
+f )are you suspending/resuming when you play this or is it being submitted as part of the sound to be recognized, and b) is it being actively played in the tim<br />
+a ) we stop recognition while the device talks ( in radio we call half  duplex f) s this displayed with any kind of video object, or is it displayed with UIImage?<br />
+a)   _topImageView = [[UIImageView alloc] initWithFrame:self.bounds];<br />
+_botImageView =&#8230;.<br />
+     usw&#8230;.<br />
+f) model ?<br />
+a)<br />
+&#8230;..<br />
+generateRejectingLanguageModelFromArray:languageArray<br />
+                                                         withFilesNamed:@&#8221;OpenEarsDynamicGrammar&#8221;<br />
+                                                 withOptionalExclusions:nada<br />
+                                                        usingVowelsOnly:FALSE<br />
+                                                             withWeight:nil<br />
+                                                 forAcousticModelAtPath:[AcousticModel pathToModel:@&#8221;AcousticModelEnglish&#8221;]]; </p>
+<p>&#8230;..</p>
+<p>note that I tried with Spanish ( most Catala-Occitan speakers like me manage<br />
+ Spanish ) and same thing happens</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recognition-stops-when-a-noise-pops-up/#post-1018724</guid>
+					<title><![CDATA[Reply To: recognition stops when a noise pops up &#8211;]]></title>
+					<link>/forums/topic/recognition-stops-when-a-noise-pops-up/#post-1018724</link>
+					<pubDate>Tue, 22 Oct 2013 15:49:12 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, thanks for the info &#8212; let me know if the suggestion in the other topic is helpful for the issue you&#8217;re seeing.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recognition-stops-when-a-noise-pops-up/#post-1019210</guid>
+					<title><![CDATA[Reply To: Unwanted recognition of long background noises]]></title>
+					<link>/forums/topic/recognition-stops-when-a-noise-pops-up/#post-1019210</link>
+					<pubDate>Thu, 19 Dec 2013 09:45:51 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi gborgia,</p>
+<p>I&#8217;m doing some more research on the underlying reason behind these occasional long background noise recognitions now. My current theory is that they happen intermittently because of a useless calibration due to the audio intake during calibration being too short or undifferentiated. Is the issue you reported here alleviated at all if you set PocketsphinxController&#8217;s calibrationTime property to 2 or 3?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recognition-stops-when-a-noise-pops-up/#post-1019512</guid>
+					<title><![CDATA[Reply To: Unwanted recognition of long background noises]]></title>
+					<link>/forums/topic/recognition-stops-when-a-noise-pops-up/#post-1019512</link>
+					<pubDate>Wed, 15 Jan 2014 21:33:40 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>If you are still seeing this, can you see if this beta alleviates the issue for you?</p>
+<p><a href="/wp-content/uploads/OpenEarsDistributionBeta.tar.bz2">/wp-content/uploads/OpenEarsDistributionBeta.tar.bz2</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

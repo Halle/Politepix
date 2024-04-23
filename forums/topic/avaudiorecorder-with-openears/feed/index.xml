@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>AVAudioRecorder With OpenEars &#8211; Politepix</title>
+		<atom:link href="/forums/topic/avaudiorecorder-with-openears/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/avaudiorecorder-with-openears/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:55:16 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/avaudiorecorder-with-openears/#post-9335</guid>
+					<title><![CDATA[AVAudioRecorder With OpenEars]]></title>
+					<link>/forums/topic/avaudiorecorder-with-openears/#post-9335</link>
+					<pubDate>Mon, 16 Apr 2012 16:43:03 +0000</pubDate>
+					<dc:creator>dingua</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi all,</p>
+<p>as i read in the forum ,normally the response it is no.<br />
+But i ask it , may be i can find a solution with you:<br />
+Can i use AvAudioRecorder to record what is said by user at the same time of the voice recognition process?<br />
+If not , there is another alternative?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/avaudiorecorder-with-openears/#post-9336</guid>
+					<title><![CDATA[Reply To: AVAudioRecorder With OpenEars]]></title>
+					<link>/forums/topic/avaudiorecorder-with-openears/#post-9336</link>
+					<pubDate>Mon, 16 Apr 2012 17:34:58 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Basically, the situation with this is that there is one microphone (in most devices), so there is one stream of samples, and OpenEars&#8217; RemoteIO driver is consuming them. So they aren&#8217;t available for something else (like an AVAudioRecorder) to consume.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/avaudiorecorder-with-openears/#post-9337</guid>
+					<title><![CDATA[Reply To: AVAudioRecorder With OpenEars]]></title>
+					<link>/forums/topic/avaudiorecorder-with-openears/#post-9337</link>
+					<pubDate>Mon, 16 Apr 2012 17:46:11 +0000</pubDate>
+					<dc:creator>dingua</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for responding;<br />
+And ther is no solution to get recorded data which openears use to make recognition process?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/avaudiorecorder-with-openears/#post-9338</guid>
+					<title><![CDATA[Reply To: AVAudioRecorder With OpenEars]]></title>
+					<link>/forums/topic/avaudiorecorder-with-openears/#post-9338</link>
+					<pubDate>Mon, 16 Apr 2012 17:51:39 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>None that are part of the basic functionality of the framework as supported here, sorry.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/avaudiorecorder-with-openears/#post-1016499</guid>
+					<title><![CDATA[Reply To: AVAudioRecorder With OpenEars]]></title>
+					<link>/forums/topic/avaudiorecorder-with-openears/#post-1016499</link>
+					<pubDate>Mon, 25 Mar 2013 16:45:57 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>To update, you could now do this using the SaveThatWave plugin.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

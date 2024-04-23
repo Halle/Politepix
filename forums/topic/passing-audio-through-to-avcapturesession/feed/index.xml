@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Passing audio through to AVCaptureSession &#8211; Politepix</title>
+		<atom:link href="/forums/topic/passing-audio-through-to-avcapturesession/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/passing-audio-through-to-avcapturesession/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:03:08 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/passing-audio-through-to-avcapturesession/#post-1019220</guid>
+					<title><![CDATA[Passing audio through to AVCaptureSession]]></title>
+					<link>/forums/topic/passing-audio-through-to-avcapturesession/#post-1019220</link>
+					<pubDate>Sat, 21 Dec 2013 00:30:32 +0000</pubDate>
+					<dc:creator>uzziel</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>I&#8217;ve been using OpenEars in my camera app and it&#8217;s working beautifully.  Thanks for all the work you&#8217;ve put in to it.  I recently added video recording to the app and the videos that I&#8217;m creating have no audio in them.  I think that OpenEars is holding on to the mic.  Is there a way to pass the audio through to an AVCaptureSession so that I can both run the speech recognition system and get the audio in to a video file?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/passing-audio-through-to-avcapturesession/#post-1019221</guid>
+					<title><![CDATA[Reply To: Passing audio through to AVCaptureSession]]></title>
+					<link>/forums/topic/passing-audio-through-to-avcapturesession/#post-1019221</link>
+					<pubDate>Sat, 21 Dec 2013 07:23:39 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>This is unlikely to work, because PocketsphinxController has very specific audio session requirements which won&#8217;t have much in common with that of AVCaptureSession, and if PocketsphinxController isn&#8217;t overriding the mic that AVCaptureSession needs it is likely to be the opposite case in which AVCaptureSession is overriding the mic that PocketsphinxController needs, and or the mic being available to both but with the wrong characteristics (for instance, sample rate, mono v stereo, etc). But, you can give it a try by setting PocketsphinxController&#8217;s audioSessionMixing to TRUE and see if that helps. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/passing-audio-through-to-avcapturesession/#post-1019225</guid>
+					<title><![CDATA[Reply To: Passing audio through to AVCaptureSession]]></title>
+					<link>/forums/topic/passing-audio-through-to-avcapturesession/#post-1019225</link>
+					<pubDate>Sun, 22 Dec 2013 03:10:41 +0000</pubDate>
+					<dc:creator>uzziel</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks Halle,</p>
+<p>I&#8217;ve upgraded the framework and tried this out.  So far, no luck.</p>
+<p>Are you not using the AVFoundation framework to handle the audio input within the framework?  I was hoping this was the case, because I believe you can use AVCaptureInput objects to do things like waveform analysis of an audio stream and still pass it through to output like a video file.</p>
+<p>SaveThatWave might do what I want if I can&#8217;t figure out another approach.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/passing-audio-through-to-avcapturesession/#post-1019231</guid>
+					<title><![CDATA[Reply To: Passing audio through to AVCaptureSession]]></title>
+					<link>/forums/topic/passing-audio-through-to-avcapturesession/#post-1019231</link>
+					<pubDate>Sun, 22 Dec 2013 08:39:53 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry, the recording driver uses audio units rather than any prewrapped AVFoundation objects. But AVFoundation is already linked to your project because FliteController uses it, so it&#8217;s easy to experiment with if you have ideas about how to accomplish your goal. There are some AVFoundation objects that are less session-overwhelming than others (for instance, AVFoundation itself is linked to FliteController because AVAudioPlayer coexists with PocketsphinxController&#8217;s driver effortlessly as long as no calls to the session are made when setting up the player).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

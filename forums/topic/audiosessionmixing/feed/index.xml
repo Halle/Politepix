@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] audioSessionMixing &#8211; Politepix</title>
+		<atom:link href="/forums/topic/audiosessionmixing/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/audiosessionmixing/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:01:12 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/audiosessionmixing/#post-1023645</guid>
+					<title><![CDATA[[Resolved] audioSessionMixing]]></title>
+					<link>/forums/topic/audiosessionmixing/#post-1023645</link>
+					<pubDate>Sun, 21 Dec 2014 02:14:27 +0000</pubDate>
+					<dc:creator>cocoapriest</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>What happened to the audioSessionMixing property in 2.0? (PocketsphinxController)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/audiosessionmixing/#post-1023646</guid>
+					<title><![CDATA[Reply To: [Resolved] audioSessionMixing]]></title>
+					<link>/forums/topic/audiosessionmixing/#post-1023646</link>
+					<pubDate>Sun, 21 Dec 2014 08:26:14 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>It&#8217;s used by default now.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/audiosessionmixing/#post-1023652</guid>
+					<title><![CDATA[Reply To: [Resolved] audioSessionMixing]]></title>
+					<link>/forums/topic/audiosessionmixing/#post-1023652</link>
+					<pubDate>Sun, 21 Dec 2014 21:18:45 +0000</pubDate>
+					<dc:creator>cocoapriest</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>ah, thanks</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

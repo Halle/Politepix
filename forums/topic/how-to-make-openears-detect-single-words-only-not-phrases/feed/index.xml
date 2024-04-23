@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>How to make OpenEars detect single words only, not phrases. &#8211; Politepix</title>
+		<atom:link href="/forums/topic/how-to-make-openears-detect-single-words-only-not-phrases/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/how-to-make-openears-detect-single-words-only-not-phrases/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:06:04 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/how-to-make-openears-detect-single-words-only-not-phrases/#post-1020577</guid>
+					<title><![CDATA[How to make OpenEars detect single words only, not phrases.]]></title>
+					<link>/forums/topic/how-to-make-openears-detect-single-words-only-not-phrases/#post-1020577</link>
+					<pubDate>Sat, 22 Mar 2014 14:34:39 +0000</pubDate>
+					<dc:creator>Xiangxin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m currently using the dynamic language model.</p>
+<pre><code>
+NSArray *languageArray = [[NSArray alloc] initWithArray:[NSArray arrayWithObjects:
+                                                             @&quot;UP&quot;,
+                                                             @&quot;DOWN&quot;,
+                                                             @&quot;FIRE&quot;,
+                                                             nil]];	
+LanguageModelGenerator *languageModelGenerator = [[LanguageModelGenerator alloc] init];
+NSError *error = [languageModelGenerator generateLanguageModelFromArray:languageArray withFilesNamed:@&quot;OpenEarsDynamicGrammar&quot; forAcousticModelAtPath:[AcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;]];</code></pre>
+<p>It detects combinations of words in my vocabulary automatically. It may cause potential delay as it waits for the next word. I wonder is there a way to make OpenEars only detect single words? </p>
+<p>Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-to-make-openears-detect-single-words-only-not-phrases/#post-1020580</guid>
+					<title><![CDATA[Reply To: How to make OpenEars detect single words only, not phrases.]]></title>
+					<link>/forums/topic/how-to-make-openears-detect-single-words-only-not-phrases/#post-1020580</link>
+					<pubDate>Sun, 23 Mar 2014 10:25:20 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Sorry, I don&#8217;t quite understand the question yet. Is the wish that the recognition engine would only attempt to listen for the first word-like utterance a user makes and then ignore subsequent ones? </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-to-make-openears-detect-single-words-only-not-phrases/#post-1020582</guid>
+					<title><![CDATA[Reply To: How to make OpenEars detect single words only, not phrases.]]></title>
+					<link>/forums/topic/how-to-make-openears-detect-single-words-only-not-phrases/#post-1020582</link>
+					<pubDate>Sun, 23 Mar 2014 10:52:40 +0000</pubDate>
+					<dc:creator>Xiangxin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yes. I just want one word, no phrase or sentence. Is that possible?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-to-make-openears-detect-single-words-only-not-phrases/#post-1020583</guid>
+					<title><![CDATA[Reply To: How to make OpenEars detect single words only, not phrases.]]></title>
+					<link>/forums/topic/how-to-make-openears-detect-single-words-only-not-phrases/#post-1020583</link>
+					<pubDate>Sun, 23 Mar 2014 11:00:17 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The issue is that there is no concept of a word for the speech recognition engine until it has already found a hypothesis. Until it has searched for a hypothesis, it is just dealing with a set of phonemes in the utterance that it found, and the utterance is defined by speech followed by a pause. After it attempts to recognize the utterance, there is a concept of a word because the phonemes in the utterance were matched with words with a high probability of being the spoken words. So concepts like &#8220;one word&#8221; would have to come into effect after the speech utterance has been analyzed by the engine, not before.</p>
+<p>What you could do if you only want to know the first word a user said is to take the delivered hypothesis (either in OpenEars or RapidEars) and split it into an array along the whitespace separator and then just use the word at index zero.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

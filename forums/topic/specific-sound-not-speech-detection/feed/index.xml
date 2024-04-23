@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>specific sound (not speech) detection? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/specific-sound-not-speech-detection/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/specific-sound-not-speech-detection/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:07:58 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/specific-sound-not-speech-detection/#post-1024231</guid>
+					<title><![CDATA[specific sound (not speech) detection?]]></title>
+					<link>/forums/topic/specific-sound-not-speech-detection/#post-1024231</link>
+					<pubDate>Wed, 14 Jan 2015 01:38:05 +0000</pubDate>
+					<dc:creator>FLVR</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I apologize if my question is too general for this forum, however I thought I&#8217;d give it a shot.</p>
+<p>Politepix managed to create an intelligence that detects and recognizes speech to text. Meaning it is able to input words to its system.</p>
+<p>Also it is known that Siri nowadays supports Asian languages such as Cantonese, Mandarin, Korean</p>
+<p>Words are just a bunch sounds&#8230; I am wondering, then, if there is an intelligence that detects specific sounds that are not &#8220;words&#8221; (ex. clap sound, whistle sound, breathing sound).</p>
+<p>So far all I found are frameworks or SDK&#8217;s that are based on decibel sensitivity.</p>
+<p>Truly Appreciate any feedback or reference. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/specific-sound-not-speech-detection/#post-1024236</guid>
+					<title><![CDATA[Reply To: specific sound (not speech) detection?]]></title>
+					<link>/forums/topic/specific-sound-not-speech-detection/#post-1024236</link>
+					<pubDate>Wed, 14 Jan 2015 11:10:23 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Sorry, I&#8217;m not aware of any frameworks which do that.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

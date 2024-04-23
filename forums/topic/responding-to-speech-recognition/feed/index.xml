@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Responding to Speech Recognition &#8211; Politepix</title>
+		<atom:link href="/forums/topic/responding-to-speech-recognition/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/responding-to-speech-recognition/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:02:13 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/responding-to-speech-recognition/#post-1021981</guid>
+					<title><![CDATA[Responding to Speech Recognition]]></title>
+					<link>/forums/topic/responding-to-speech-recognition/#post-1021981</link>
+					<pubDate>Wed, 16 Jul 2014 20:04:48 +0000</pubDate>
+					<dc:creator>ThatGuy</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello All,</p>
+<p>I&#8217;m very new to OpenEars and I come to ask you a simple question.  How do you respond to speech recognition?  I&#8217;m sorry to burden you guys, but I&#8217;m still learning how all of this works.</p>
+<p>So this was my attempt on how to respond to speech recognition.  I put an if statement under the pocketsphinxDidReceiveHypothesis void.  The condition was if the hypothesis equaled a certain piece of text.</p>
+<pre><code>- (void) pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID {
+	NSLog(@&quot;The received hypothesis is %@ with a score of %@ and an ID of %@&quot;, hypothesis, recognitionScore, utteranceID);
+    
+    if ((hypothesis = @&quot;WORD&quot;)) {
+        
+        //Whatever Code I Need
+        
+    }
+} </code></pre>
+<p>It ends up with a lot of bugs and glitches, but how do you guys do it?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/responding-to-speech-recognition/#post-1021984</guid>
+					<title><![CDATA[Reply To: Responding to Speech Recognition]]></title>
+					<link>/forums/topic/responding-to-speech-recognition/#post-1021984</link>
+					<pubDate>Wed, 16 Jul 2014 20:43:08 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>OK, I think this may be more about getting started with Objective-C than with OpenEars specifically, and I can unfortunately only provide a very limited amount of help with general programming questions here since support time and resources are limited. But, I can see if I can help a bit in this question to get you on the right track while you can look into more general programming sites in order to connect with people who can help with getting started.</p>
+<p>A few things that would help:</p>
+<p>• it&#8217;s always very important to provide some specific information about what happened when things didn&#8217;t work correctly. So, in order to get good help with bugs and glitches, it&#8217;s really important to show the full errors you receive or to very specifically describe the bugs and the glitches, or there isn&#8217;t any way to give help from the other side.</p>
+<p>• in C, which includes the C aspects of Objective-C, this kind of equal sign is for assignment (giving variables new values): &#8220;=&#8221; and this kind of equal sign is for equality (comparing values as you have done above): &#8220;==&#8221;. You can&#8217;t use  a single equal sign to see if two values are the same. That will instead assign a new value and will always evaluate as true in an if statement. To see if two values are the same you have to compare them with &#8220;==&#8221;.</p>
+<p>• But more importantly, in Objective-C, NSStrings are not compared with each other with &#8220;==&#8221; in order to see if they have the same characters in them because they are pointers to objects and not primitive types like a single char or int value that could be compared with &#8220;==&#8221;. There is a method of NSString called isEqualToString: which performs this comparison check and returns a BOOL that is true or false, so that is what has to be used in order to check if your NSString is the same as some other NSString.</p>
+<p>There are examples of doing exactly this kind of comparison in the sample app that ships with OpenEars, so check it out and you can see many different kinds of processes that are part of a speech recognition app.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/responding-to-speech-recognition/#post-1021986</guid>
+					<title><![CDATA[Reply To: Responding to Speech Recognition]]></title>
+					<link>/forums/topic/responding-to-speech-recognition/#post-1021986</link>
+					<pubDate>Wed, 16 Jul 2014 23:54:43 +0000</pubDate>
+					<dc:creator>ThatGuy</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks Halle, yeah I might need to read up on objective c&#8230;  Anyways, I fixed it.  I just added isEqual.</p>
+<pre><code>if ([hypothesis  isEqual: @&quot;WORD&quot;]) {
+        
+        //Whatever Code I Need
+        
+    }</code></pre>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/responding-to-speech-recognition/#post-1021987</guid>
+					<title><![CDATA[Reply To: Responding to Speech Recognition]]></title>
+					<link>/forums/topic/responding-to-speech-recognition/#post-1021987</link>
+					<pubDate>Thu, 17 Jul 2014 00:31:11 +0000</pubDate>
+					<dc:creator>ThatGuy</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Also, I&#8217;m only a young teen trying to embark on my journey into the computer world. :D </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/responding-to-speech-recognition/#post-1021991</guid>
+					<title><![CDATA[Reply To: Responding to Speech Recognition]]></title>
+					<link>/forums/topic/responding-to-speech-recognition/#post-1021991</link>
+					<pubDate>Thu, 17 Jul 2014 08:18:56 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>Also, I’m only a young teen trying to embark on my journey into the computer world. :D</p></blockquote>
+<p>Just keep in mind when you find a better place to ask starter questions that it&#8217;s very important to be specific about what isn&#8217;t working and show any errors you receive, and if you get answers to your questions, give them a read instead of tuning them out and continuing to copy and paste other non-working code – you never know what you&#8217;ll learn.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Speech not always detected &#8211; Politepix</title>
+		<atom:link href="/forums/topic/speech-not-always-detected/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/speech-not-always-detected/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:39:38 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/speech-not-always-detected/#post-10801</guid>
+					<title><![CDATA[Speech not always detected]]></title>
+					<link>/forums/topic/speech-not-always-detected/#post-10801</link>
+					<pubDate>Thu, 09 Aug 2012 13:43:14 +0000</pubDate>
+					<dc:creator>Lloydy</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>HI,</p>
+<p>I&#8217;m using OpenEars in my app and occasionally it doesn&#8217;t detect speech, it seems to be particularly funny about the word NO. I have to shout quite loud next to the mic for it to detect.</p>
+<p>Basically i am playing a video using AVFoundation then i start listening for a response. Then based on the response i play a new clip. COuld this be something to do with AVFoundation and AudioSessions</p>
+<p>I&#8217;m running the latest distribution from the download link with iOS5</p>
+<p>If you need some more information please let me know</p>
+<p>Hope you can help</p>
+<p>thank you</p>
+<p>Lloyd</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/speech-not-always-detected/#post-10802</guid>
+					<title><![CDATA[Reply To: Speech not always detected]]></title>
+					<link>/forums/topic/speech-not-always-detected/#post-10802</link>
+					<pubDate>Thu, 09 Aug 2012 13:46:11 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Can you turn on OpenEarsLogging and show the log? Is the same issue there if you use the sample app and make &#8220;NO&#8221; one of the dynamically-created words in the dynamic model without any of your video code?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/speech-not-always-detected/#post-10803</guid>
+					<title><![CDATA[Reply To: Speech not always detected]]></title>
+					<link>/forums/topic/speech-not-always-detected/#post-10803</link>
+					<pubDate>Thu, 09 Aug 2012 15:13:25 +0000</pubDate>
+					<dc:creator>Lloydy</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>HI Halle,</p>
+<p>Thanks so much for the quick response, it seems ok in the sample app, which suggests i&#8217;m doing something wrong, i&#8217;m creating my language model online as i&#8217;m trying to keep the app as small as possible &#8211; could this be anything to do with it. Also below is the reading g i get before it dean;t pick up my voice</p>
+<p>Thanks again</p>
+<p>Lloyd</p>
+<p>Audio route has changed for the following reason:<br />
+There has been a change of category<br />
+ The previous audio route was SpeakerAndMicrophone<br />
+This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is SpeakerAndMicrophone<br />
+Audio route has changed for the following reason:<br />
+There has been a change of category<br />
+The previous audio route was Speaker<br />
+This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is SpeakerAndMicrophone<br />
+Pocketsphinx has resumed recognition.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/speech-not-always-detected/#post-10804</guid>
+					<title><![CDATA[Reply To: Speech not always detected]]></title>
+					<link>/forums/topic/speech-not-always-detected/#post-10804</link>
+					<pubDate>Thu, 09 Aug 2012 15:18:31 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>It might not be an actual mistake, but possibly some kind of limit to how well OpenEars can override the audio session with respect to the timing of your video if it&#8217;s close. What is in your log excerpt isn&#8217;t anything bad, but it might be helpful to see the whole thing (minus your own app logging which I don&#8217;t need to see). It does sound like the video might be changing the audio session and your recognition loop has quiet input as a result or possibly a wrong sample rate or something similar. </p>
+<p>Are you playing the video before starting the recognition loop or during it? </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/speech-not-always-detected/#post-10805</guid>
+					<title><![CDATA[Reply To: Speech not always detected]]></title>
+					<link>/forums/topic/speech-not-always-detected/#post-10805</link>
+					<pubDate>Thu, 09 Aug 2012 15:30:59 +0000</pubDate>
+					<dc:creator>Lloydy</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Here is the complete log</p>
+<p>I&#8217;ll do my best to explain &#8211; basically i initialise OpenEars then suspend listening whilst i play the first video, when the video gets to the end i resume listening but i also play a silent video (Idle) on loop whilst i wait for the user to respond, once i get the response i load a new video. During the idle stage i use the following code to remove the audio from the video track &#8211; could this be affecting anything</p>
+<p>NSArray *audioTracks = [self.idleAsset tracksWithMediaType:AVMediaTypeAudio];</p>
+<p>// Mute all the audio tracks<br />
+NSMutableArray *allAudioParams = [NSMutableArray array];<br />
+            for (AVAssetTrack *track in audioTracks) {<br />
+                AVMutableAudioMixInputParameters *audioInputParams =[AVMutableAudioMixInputParameters audioMixInputParameters];<br />
+                [audioInputParams setVolume:0.0 atTime:kCMTimeZero];<br />
+                [audioInputParams setTrackID:[track trackID]];<br />
+                [allAudioParams addObject:audioInputParams];<br />
+            }<br />
+AVMutableAudioMix *audioZeroMix = [AVMutableAudioMix audioMix];<br />
+[audioZeroMix setInputParameters:allAudioParams];</p>
+<p>The audio session has never been initialized so we will do that now.<br />
+Checking and resetting all audio session settings.<br />
+audioCategory is incorrect, we will change it.<br />
+audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.<br />
+bluetoothInput is incorrect, we will change it.<br />
+bluetooth input is now on the correct setting of 1.<br />
+categoryDefaultToSpeaker is incorrect, we will change it.<br />
+CategoryDefaultToSpeaker is now on the correct setting of 1.<br />
+preferredBufferSize is incorrect, we will change it.<br />
+PreferredBufferSize is now on the correct setting of 0.128000.<br />
+preferredSampleRateCheck is incorrect, we will change it.<br />
+preferred hardware sample rate is now on the correct setting of 16000.000000.<br />
+AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+Exiting startAudioSession.<br />
+Recognition loop has started<br />
+Starting openAudioDevice on the device.<br />
+Audio unit wrapper successfully created.<br />
+Set audio route to SpeakerAndMicrophone<br />
+Checking and resetting all audio session settings.<br />
+audioCategory is correct, we will leave it as it is.<br />
+bluetoothInput is correct, we will leave it as it is.<br />
+categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+preferredBufferSize is correct, we will leave it as it is.<br />
+preferredSampleRateCheck is correct, we will leave it as it is.<br />
+Setting the variables for the device and starting it.<br />
+Looping through ringbuffer sections and pre-allocating them.<br />
+Started audio output unit.<br />
+Calibration has started<br />
+Calibration has completed<br />
+ Project has these words in its dictionary:<br />
+AHA<br />
+ARMS<br />
+BLUE<br />
+COURSE<br />
+DAY<br />
+DO</p>
+<p>GREEN<br />
+HELLO<br />
+HELLO(2)<br />
+I<br />
+INDEED</p>
+<p>NASTY<br />
+NICE<br />
+NICE(2)<br />
+NIGHT<br />
+NO<br />
+NOSE<br />
+OF<br />
+OK<br />
+RED<br />
+SILENCE<br />
+SORRY<br />
+STOP<br />
+SURE<br />
+THANK<br />
+THANKS<br />
+YEAH<br />
+YELLOW<br />
+YEP<br />
+YES<br />
+YOU</p>
+<p>Listening.<br />
+Pocketsphinx calibration is complete.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/speech-not-always-detected/#post-10806</guid>
+					<title><![CDATA[Reply To: Speech not always detected]]></title>
+					<link>/forums/topic/speech-not-always-detected/#post-10806</link>
+					<pubDate>Thu, 09 Aug 2012 15:39:11 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, the issue is that the video player completely changes the audio session, so if you continuously play a video while PocketsphinxController is suspended, it guarantees that its built-in audio session reset behavior won&#8217;t work. I think the only option is to find a way to do what you need to do without always running a video.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/speech-not-always-detected/#post-10807</guid>
+					<title><![CDATA[Reply To: Speech not always detected]]></title>
+					<link>/forums/topic/speech-not-always-detected/#post-10807</link>
+					<pubDate>Thu, 09 Aug 2012 15:43:49 +0000</pubDate>
+					<dc:creator>Lloydy</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK thanks for your quick responses &#8211; really appreciate it. </p>
+<p>Can i stop the video force the audio session and then start the video again?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/speech-not-always-detected/#post-10808</guid>
+					<title><![CDATA[Reply To: Speech not always detected]]></title>
+					<link>/forums/topic/speech-not-always-detected/#post-10808</link>
+					<pubDate>Thu, 09 Aug 2012 15:48:53 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I don&#8217;t really want to give advice here regarding forcing the audio session to reset because in 99% of cases the issue is not due to the audio session and folks will read the steps here and do stuff to the audio session directly and end up with messed-up apps that are very confusing for me to troubleshoot. That said, in this one case it might be worth your while to go investigate how the shared audio session manager is started by the internal classes and give it a go.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/speech-not-always-detected/#post-10809</guid>
+					<title><![CDATA[Reply To: Speech not always detected]]></title>
+					<link>/forums/topic/speech-not-always-detected/#post-10809</link>
+					<pubDate>Thu, 09 Aug 2012 15:49:27 +0000</pubDate>
+					<dc:creator>Lloydy</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>thanks</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

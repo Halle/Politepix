@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Audio playback bit rate reduction during  &#8211; Politepix</title>
+		<atom:link href="/forums/topic/audio-playback-bit-rate-reduction-during/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/audio-playback-bit-rate-reduction-during/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:00:44 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/audio-playback-bit-rate-reduction-during/#post-1023078</guid>
+					<title><![CDATA[Audio playback bit rate reduction during]]></title>
+					<link>/forums/topic/audio-playback-bit-rate-reduction-during/#post-1023078</link>
+					<pubDate>Wed, 26 Nov 2014 18:50:26 +0000</pubDate>
+					<dc:creator>davestrand</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Forgive my ignorance, but if you could hint me in the right direction that would be great.  Almost every aspect of my app is complete with one exception.  My app plays 44.100 mp3 files and then pauses and uses OpenEars voice recognition.  For the most part it works great, switching back and forth between listening to (or sampling audio) recognizing speech, and then flipping back to high resolution playback.  When starting the app for the first time everything sounds great,  but if I exit my app, and go back in, for some reason when the first audio clip is played it sounds like it&#8217;s playing at low bitrate instead of 44k.  It seems to snap into the low-fi audio when the following code is executed.  I have tried to delay the execution of this code, and also tried to pause all audio until it is completed and calibration is done.   (The same code works fine at the startup of the app)  Again audio is then restored when the next mp3 is played.  Any hints would be great.  I have also tried to stopListen first, but then the calibration never fully completes.</p>
+<p><code>[self.pocketsphinxController startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[AcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;] languageModelIsJSGF:NO];</code></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/audio-playback-bit-rate-reduction-during/#post-1023081</guid>
+					<title><![CDATA[Reply To: Audio playback bit rate reduction during]]></title>
+					<link>/forums/topic/audio-playback-bit-rate-reduction-during/#post-1023081</link>
+					<pubDate>Wed, 26 Nov 2014 18:59:30 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>This is a conflict between the PlayAndRecord audio session used by OpenEars and the audio session used by the file playback. You can learn much more about it by searching these forums for the keywords audio coexistence.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/audio-playback-bit-rate-reduction-during/#post-1023086</guid>
+					<title><![CDATA[Reply To: Audio playback bit rate reduction during]]></title>
+					<link>/forums/topic/audio-playback-bit-rate-reduction-during/#post-1023086</link>
+					<pubDate>Wed, 26 Nov 2014 21:01:56 +0000</pubDate>
+					<dc:creator>davestrand</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks, I&#8217;ll keep looking.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

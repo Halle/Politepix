@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Reading PDF/Word documents with open ears &#8211; Politepix</title>
+		<atom:link href="/forums/topic/reading-pdfword-documents-with-open-ears/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/reading-pdfword-documents-with-open-ears/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:00:05 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/reading-pdfword-documents-with-open-ears/#post-1017266</guid>
+					<title><![CDATA[Reading PDF/Word documents with open ears]]></title>
+					<link>/forums/topic/reading-pdfword-documents-with-open-ears/#post-1017266</link>
+					<pubDate>Mon, 20 May 2013 17:36:26 +0000</pubDate>
+					<dc:creator>andynov123</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Can Open Ears read a pdf or word document or will it take too long to process something like a 5 page pdf file?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/reading-pdfword-documents-with-open-ears/#post-1017267</guid>
+					<title><![CDATA[Reply To: Reading PDF/Word documents with open ears]]></title>
+					<link>/forums/topic/reading-pdfword-documents-with-open-ears/#post-1017267</link>
+					<pubDate>Mon, 20 May 2013 17:58:05 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>OpenEars can read text, so you would need to decide how to convert a file format that isn&#8217;t plain text into plain text to be used by OpenEars, and then you would need to split it up into small enough chunks of text that it wouldn&#8217;t be prohibitively slow for the enduser to listen to. NeatSpeech has built-in queuing to deal with keeping large amounts of text speaking fluently, but even with NeatSpeech you aren&#8217;t going to want to give it a 5-page Word file&#8217;s worth of text at once.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

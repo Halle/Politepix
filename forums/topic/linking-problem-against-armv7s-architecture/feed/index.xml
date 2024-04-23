@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Linking problem against armv7s architecture &#8211; Politepix</title>
+		<atom:link href="/forums/topic/linking-problem-against-armv7s-architecture/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/linking-problem-against-armv7s-architecture/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:56:46 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/linking-problem-against-armv7s-architecture/#post-1024130</guid>
+					<title><![CDATA[Linking problem against armv7s architecture]]></title>
+					<link>/forums/topic/linking-problem-against-armv7s-architecture/#post-1024130</link>
+					<pubDate>Thu, 08 Jan 2015 08:42:08 +0000</pubDate>
+					<dc:creator>tripledee</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>I try to add OpenEars framework to my application to provide my users with voice commands. When I build the provided Sample application, everything is all right.<br />
+When I build my application (for armv7 &amp; armv7s architectures), I got several errors associated with this message:</p>
+<p>ld: warning: directory not found for option &#8216;-F&#8221;/Users/theUser/myProject/Framework/&#8221;&#8216;<br />
+ld: warning: ignoring file /Users/theUser/myProject/Framework/OpenEars.framework/OpenEars, file was built for archive which is not the architecture being linked (armv7s): /Users/theUser/myProject/Framework/OpenEars.framework/OpenEars<br />
+Undefined symbols for architecture armv7s</p>
+<p>I followed the tutorial to install properly the framework in my App. I also tried to rebuild SLT and/or OpenEars projects with &#8216;armv7&#8217; and &#8216;armv7s&#8217; architectures, before installing the framework. I made dozen of tries without any success. Any idea?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/linking-problem-against-armv7s-architecture/#post-1024131</guid>
+					<title><![CDATA[Reply To: Linking problem against armv7s architecture]]></title>
+					<link>/forums/topic/linking-problem-against-armv7s-architecture/#post-1024131</link>
+					<pubDate>Thu, 08 Jan 2015 09:04:47 +0000</pubDate>
+					<dc:creator>tripledee</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>After new tries, I could remove the first warning (directory not found) but It didn&#8217;t change anything on the second one, and build fails with many errors &#8220;Undefined symbols for architecture armv7s&#8221;</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/linking-problem-against-armv7s-architecture/#post-1024132</guid>
+					<title><![CDATA[Reply To: Linking problem against armv7s architecture]]></title>
+					<link>/forums/topic/linking-problem-against-armv7s-architecture/#post-1024132</link>
+					<pubDate>Thu, 08 Jan 2015 09:11:13 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>armv7s has been removed from the framework since Apple has removed it from their architectures list in Xcode 6, there is some more info here:</p>
+<p><a href="/upgradeguide/">/upgradeguide/</a></p>
+<p>The short version is that armv7s is unneeded and can be removed from your apps. You can rebuild the framework to include armv7s if you know how to do that and how to troubleshoot it on your own, but I unfortunately don&#8217;t give support for doing that here since it is likely to be a difficult troubleshooting process and not needed in order to provide a good app experience.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/linking-problem-against-armv7s-architecture/#post-1024134</guid>
+					<title><![CDATA[Reply To: Linking problem against armv7s architecture]]></title>
+					<link>/forums/topic/linking-problem-against-armv7s-architecture/#post-1024134</link>
+					<pubDate>Thu, 08 Jan 2015 09:37:17 +0000</pubDate>
+					<dc:creator>tripledee</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thank you!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

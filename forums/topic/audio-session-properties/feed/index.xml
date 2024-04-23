@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Audio session properties  &#8211; Politepix</title>
+		<atom:link href="/forums/topic/audio-session-properties/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/audio-session-properties/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:43:56 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/audio-session-properties/#post-1017726</guid>
+					<title><![CDATA[Audio session properties]]></title>
+					<link>/forums/topic/audio-session-properties/#post-1017726</link>
+					<pubDate>Tue, 23 Jul 2013 02:22:27 +0000</pubDate>
+					<dc:creator>josh</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Hal,</p>
+<p>Can you tell me what is set when you start the audio session? i.e. what audio session properties are set (e.g. kAudioSessionProperty_PreferredHardwareIOBufferDuration, etc). I am using RapidEars and Rejecto SDKs.</p>
+<p>The reason I ask is because I&#8217;m using a variety of other SDKs and they rely on a standard audio session so I need to reset the audio session after using OpenEars voice recognition.</p>
+<p>Many thanks!<br />
+Josh</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/audio-session-properties/#post-1017731</guid>
+					<title><![CDATA[Reply To: Audio session properties]]></title>
+					<link>/forums/topic/audio-session-properties/#post-1017731</link>
+					<pubDate>Tue, 23 Jul 2013 15:22:40 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Josh,</p>
+<p>All of the audio session settings used by RapidEars can be found in OpenEars&#8217; class AudioSessionManager, and you can make changes to them and recompile OpenEars in order to use the changes. However, I would expect that it isn&#8217;t possible to change many aspects of the audio session without issues, since RapidEars relies very heavily on its specific audio session requirements.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

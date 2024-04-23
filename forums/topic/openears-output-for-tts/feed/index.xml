@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Openears output for TTS &#8211; Politepix</title>
+		<atom:link href="/forums/topic/openears-output-for-tts/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/openears-output-for-tts/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:57:34 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/openears-output-for-tts/#post-1018216</guid>
+					<title><![CDATA[Openears output for TTS]]></title>
+					<link>/forums/topic/openears-output-for-tts/#post-1018216</link>
+					<pubDate>Mon, 02 Sep 2013 04:47:16 +0000</pubDate>
+					<dc:creator>forum_user19</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>WHen Openears generates the &#8220;wave&#8221; output file to speak is the output<br />
+a mono type files.. I only hear output on one speaker? How to get stereo?<br />
+THanks</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-output-for-tts/#post-1018222</guid>
+					<title><![CDATA[Reply To: Openears output for TTS]]></title>
+					<link>/forums/topic/openears-output-for-tts/#post-1018222</link>
+					<pubDate>Mon, 02 Sep 2013 17:59:04 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Flite speech is synthesized as a mono file. It should play into both headphone speakers as split mono when headphones are attached.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

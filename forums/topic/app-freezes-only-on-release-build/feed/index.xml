@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>App freezes only on release build &#8211; Politepix</title>
+		<atom:link href="/forums/topic/app-freezes-only-on-release-build/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/app-freezes-only-on-release-build/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:02:29 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/app-freezes-only-on-release-build/#post-1019107</guid>
+					<title><![CDATA[App freezes only on release build]]></title>
+					<link>/forums/topic/app-freezes-only-on-release-build/#post-1019107</link>
+					<pubDate>Sat, 07 Dec 2013 19:38:14 +0000</pubDate>
+					<dc:creator>gbay2</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hey, in my app I set up everything upon loading and then when the user presses and holds a button I start recognition with this</p>
+<p>[pocketsphinxController<br />
+            startListeningWithLanguageModelAtPath:lmPath<br />
+            dictionaryAtPath:dicPath<br />
+            acousticModelAtPath:[AcousticModel pathToModel:@&#8221;AcousticModelEnglish&#8221;] // Change &#8220;AcousticModelEnglish&#8221; to &#8220;AcousticModelSpanish&#8221; to perform Spanish recognition instead of English.<br />
+            languageModelIsJSGF:NO<br />
+    ];</p>
+<p>and once the speech is processed I stop recognition with </p>
+<p>[pocketsphinxController suspendRecognition];<br />
+[pocketsphinxController stopListening];</p>
+<p>When building my app through Xcode it never seems to crash but when I archive and install the ipa, the app seems to hang right I call startListeningWithLanguageModel several times</p>
+<p>Here&#8217;s a copy of my log</p>
+<p><a href="http://pastebin.com/MNxJSjsD" rel="nofollow">http://pastebin.com/MNxJSjsD</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/app-freezes-only-on-release-build/#post-1019108</guid>
+					<title><![CDATA[Reply To: App freezes only on release build]]></title>
+					<link>/forums/topic/app-freezes-only-on-release-build/#post-1019108</link>
+					<pubDate>Sat, 07 Dec 2013 19:48:49 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Not sure why this would happen in release only, but this is unusual:</p>
+<blockquote><p>the app seems to hang right I call startListeningWithLanguageModel several times</p></blockquote>
+<p>It&#8217;s unlikely to be necessary to call startListeningWithLanguageModel many times. The usual app design would have it called once and to control whether recognition is being performed with suspend and resume rather than startListening and stopListening. Is there an app requirement that leads to calling it repeatedly?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/app-freezes-only-on-release-build/#post-1019109</guid>
+					<title><![CDATA[Reply To: App freezes only on release build]]></title>
+					<link>/forums/topic/app-freezes-only-on-release-build/#post-1019109</link>
+					<pubDate>Sat, 07 Dec 2013 19:51:55 +0000</pubDate>
+					<dc:creator>gbay2</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for replying so quickly!</p>
+<p>The app is an alarm clock so I&#8217;m trying to conserve battery power as the user can keep the app open in the foreground, lock the phone overnight and have their alarms go off regardless of volume settings (a standard procedure in iOS alarm apps).</p>
+<p>Would using suspend have any effect on my battery life? </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/app-freezes-only-on-release-build/#post-1019110</guid>
+					<title><![CDATA[Reply To: App freezes only on release build]]></title>
+					<link>/forums/topic/app-freezes-only-on-release-build/#post-1019110</link>
+					<pubDate>Sat, 07 Dec 2013 20:12:37 +0000</pubDate>
+					<dc:creator>gbay2</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m trying to use suspend and resume but get the following infinitely looped.</p>
+<p>We use our own audio session, could that be causing the problem?</p>
+<p>2013-12-07 15:10:22.878 TinyHeartsClock[23415:7033] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext </p>
+<p>log:</p>
+<p>2013-12-07 15:10:16.184 TinyHeartsClock[23415:d20f] Listening.<br />
+2013-12-07 15:10:16.185 TinyHeartsClock[23415:60b] -[SpeechToTextListener pocketsphinxDidStartListening] [Line 110] Pocketsphinx is now listening.<br />
+2013-12-07 15:10:16.984 TinyHeartsClock[23415:d20f] Speech detected&#8230;<br />
+2013-12-07 15:10:16.985 TinyHeartsClock[23415:60b] -[SpeechToTextListener pocketsphinxDidDetectSpeech] [Line 116] Pocketsphinx has detected speech.<br />
+2013-12-07 15:10:20.033 TinyHeartsClock[23415:d20f] Stopping audio unit.<br />
+2013-12-07 15:10:20.035 TinyHeartsClock[23415:60b] -[SpeechToTextListener pocketsphinxDidDetectFinishedSpeech] [Line 121] Pocketsphinx has detected a period of silence, concluding an utterance.<br />
+2013-12-07 15:10:20.162 TinyHeartsClock[23415:d20f] Audio Output Unit stopped, cleaning up variable states.<br />
+2013-12-07 15:10:20.164 TinyHeartsClock[23415:d20f] Processing speech, please wait&#8230;<br />
+2013-12-07 15:10:20.443 TinyHeartsClock[23415:d20f] Pocketsphinx heard &#8220;7&#8221; with a score of (-9177) and an utterance ID of 000000000.<br />
+2013-12-07 15:10:20.445 TinyHeartsClock[23415:d20f] Checking and resetting all audio session settings.<br />
+2013-12-07 15:10:20.447 TinyHeartsClock[23415:60b] -[SpeechToTextListener pocketsphinxDidReceiveHypothesis:recognitionScore:utteranceID:] [Line 92] poocketsphinx did receive hypothesis 7<br />
+2013-12-07 15:10:20.449 TinyHeartsClock[23415:d20f] audioCategory is correct, we will leave it as it is.<br />
+2013-12-07 15:10:20.450 TinyHeartsClock[23415:60b] -[SpeechRecognizerViewController speechToTextListenerDelegateDidFinishReceivingSpeech:speechToTextListener:] [Line 192] received speech 7<br />
+2013-12-07 15:10:20.456 TinyHeartsClock[23415:60b] -[SpeechRecognizerViewController disableListener] [Line 238] disable listener<br />
+2013-12-07 15:10:20.453 TinyHeartsClock[23415:d20f] bluetoothInput is correct, we will leave it as it is.<br />
+2013-12-07 15:10:20.457 TinyHeartsClock[23415:60b] -[SpeechToTextListener stopListening] [Line 175] stop listening<br />
+2013-12-07 15:10:20.460 TinyHeartsClock[23415:60b] -[SpeechToTextListener stopListening] [Line 177] stop listening 2<br />
+2013-12-07 15:10:20.463 TinyHeartsClock[23415:60b] -[NSString(GRStringAdditions) stringAfterString:] [Line 44] remaining speech<br />
+2013-12-07 15:10:20.460 TinyHeartsClock[23415:d20f] Output Device: SpeakerAndMicrophone.<br />
+2013-12-07 15:10:20.467 TinyHeartsClock[23415:d20f] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2013-12-07 15:10:20.474 TinyHeartsClock[23415:d20f] OverrideCategoryMixWithOthers is correct, we will leave it as it is.<br />
+2013-12-07 15:10:20.477 TinyHeartsClock[23415:d20f] preferredBufferSize is correct, we will leave it as it is.<br />
+2013-12-07 15:10:20.479 TinyHeartsClock[23415:d20f] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2013-12-07 15:10:20.482 TinyHeartsClock[23415:d20f] Setting the variables for the device and starting it.<br />
+2013-12-07 15:10:20.485 TinyHeartsClock[23415:d20f] Looping through ringbuffer sections and pre-allocating them.<br />
+2013-12-07 15:10:20:490 TinyHeartsClock[23415:1547] TestFlight: Checkpoint Passed &#8211; VOICE_SUCCESS<br />
+2013-12-07 15:10:20.511 TinyHeartsClock[23415:d20f] Started audio output unit.<br />
+2013-12-07 15:10:20.608 TinyHeartsClock[23415:60b] -[SpeechToTextListener pocketsphinxDidSuspendRecognition] [Line 131] Pocketsphinx has suspended recognition.<br />
+2013-12-07 15:10:21.462 TinyHeartsClock[23415:60b] -[SpeechRecognizerViewController reconfigureAudioForPlayingSounds] [Line 245] reconfig listener1<br />
+2013-12-07 15:10:22.042 TinyHeartsClock[23415:60b] -[SpeechRecognizerViewController reconfigureAudioForPlayingSounds] [Line 251] reconfig listener2<br />
+2013-12-07 15:10:22.131 TinyHeartsClock[23415:60b] -[SpeechRecognizerViewController reconfigureAudioForPlayingSounds] [Line 253] reconfig listener3<br />
+2013-12-07 15:10:22.133 TinyHeartsClock[23415:60b] -[SpeechRecognizerViewController reconfigureAudioForPlayingSounds] [Line 255] reconfig listener4<br />
+2013-12-07 15:10:22.134 TinyHeartsClock[23415:9103] Audio route has changed for the following reason:<br />
+2013-12-07 15:10:22.135 TinyHeartsClock[23415:9103] There has been a change of category<br />
+2013-12-07 15:10:22.140 TinyHeartsClock[23415:9103] The previous audio route was SpeakerAndMicrophone<br />
+2013-12-07 15:10:22.140 TinyHeartsClock[23415:9103] This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is Speaker<br />
+2013-12-07 15:10:22.419 TinyHeartsClock[23415:7033] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2013-12-07 15:10:22.599 TinyHeartsClock[23415:7033] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2013-12-07 15:10:22.623 TinyHeartsClock[23415:7033] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2013-12-07 15:10:22.646 TinyHeartsClock[23415:7033] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2013-12-07 15:10:22.669 TinyHeartsClock[23415:7033] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2013-12-07 15:10:22.692 TinyHeartsClock[23415:7033] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2013-12-07 15:10:22.716 TinyHeartsClock[23415:7033] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2013-12-07 15:10:22.739 TinyHeartsClock[23415:7033] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2013-12-07 15:10:22.762 TinyHeartsClock[23415:7033] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2013-12-07 15:10:22.785 TinyHeartsClock[23415:7033] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2013-12-07 15:10:22.809 TinyHeartsClock[23415:7033] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2013-12-07 15:10:22.832 TinyHeartsClock[23415:7033] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2013-12-07 15:10:22.855 TinyHeartsClock[23415:7033] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2013-12-07 15:10:22.878 TinyHeartsClock[23415:7033] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2013-12-07 15:10:22.901 TinyHeartsClock[23415:7033] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext<br />
+2013-12-07 15:10:22.925 TinyHeartsClock[23415:7033] Audio Unit render error: kAudioUnitErr_CannotDoInCurrentContext </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/app-freezes-only-on-release-build/#post-1019111</guid>
+					<title><![CDATA[Reply To: App freezes only on release build]]></title>
+					<link>/forums/topic/app-freezes-only-on-release-build/#post-1019111</link>
+					<pubDate>Sat, 07 Dec 2013 20:43:13 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yup, you can&#8217;t override the audio session if you use PocketsphinxController. You can try setting the property audioSessionMixing to TRUE in order to use media objects that attempt to use other session settings for better coexistence, but ultimately PocketsphinxController must be allowed to use its own audio session settings when it&#8217;s in progress or it won&#8217;t be able to render the mic stream.</p>
+<p>Check out whether the audio session issue is the cause of the issue you&#8217;re seeing, and if not we can troubleshoot it further. I don&#8217;t think there is any reason that performing a correct shutdown and restart of the listening loop should cause any issues in debug or release mode if you prefer to do that so that the loop is off when the phone is locked, as long as you&#8217;re sure that it isn&#8217;t getting started multiple times. The loop uses very little CPU when no speech is in progress (like 2% on newer devices), but if it is still running when the phone is locked through a night of sleep that&#8217;s probably not ideal for the battery.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Break in logic to ask for voice input? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/break-in-logic-to-ask-for-voice-input/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/break-in-logic-to-ask-for-voice-input/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:47:53 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/break-in-logic-to-ask-for-voice-input/#post-1015859</guid>
+					<title><![CDATA[Break in logic to ask for voice input?]]></title>
+					<link>/forums/topic/break-in-logic-to-ask-for-voice-input/#post-1015859</link>
+					<pubDate>Tue, 12 Mar 2013 05:52:49 +0000</pubDate>
+					<dc:creator>Romines</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>I have what might be a really silly question, but if it&#8217;s possible, it would help me out a ton.<br />
+I have a for loop that displays questions on the screen one at a time, but I need to be able to break out of the for loop in order to ask the user for the answer to the question on the screen. Is this possible and how?</p>
+<p>Thank you very much for any help you are able to give.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/break-in-logic-to-ask-for-voice-input/#post-1015861</guid>
+					<title><![CDATA[Reply To: Break in logic to ask for voice input?]]></title>
+					<link>/forums/topic/break-in-logic-to-ask-for-voice-input/#post-1015861</link>
+					<pubDate>Tue, 12 Mar 2013 07:58:26 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi, </p>
+<p>Does the question relate to OpenEars specifically or is it about Objective-C in general?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/break-in-logic-to-ask-for-voice-input/#post-1015877</guid>
+					<title><![CDATA[Reply To: Break in logic to ask for voice input?]]></title>
+					<link>/forums/topic/break-in-logic-to-ask-for-voice-input/#post-1015877</link>
+					<pubDate>Tue, 12 Mar 2013 15:02:36 +0000</pubDate>
+					<dc:creator>Romines</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I suppose it could relate to both because I do not know what method to call to get more voice input from the user</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/break-in-logic-to-ask-for-voice-input/#post-1015878</guid>
+					<title><![CDATA[Reply To: Break in logic to ask for voice input?]]></title>
+					<link>/forums/topic/break-in-logic-to-ask-for-voice-input/#post-1015878</link>
+					<pubDate>Tue, 12 Mar 2013 15:15:32 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Voice input is listened for continuously in OpenEars, but if you want to temporarily stop listening you can look into the suspendListening/resumeListening methods of PocketsphinxController.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/break-in-logic-to-ask-for-voice-input/#post-1015879</guid>
+					<title><![CDATA[Reply To: Break in logic to ask for voice input?]]></title>
+					<link>/forums/topic/break-in-logic-to-ask-for-voice-input/#post-1015879</link>
+					<pubDate>Tue, 12 Mar 2013 15:56:59 +0000</pubDate>
+					<dc:creator>Romines</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I knew about the suspend and resume listening methods but how do I pause the for loop and wait until the user gives input?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/break-in-logic-to-ask-for-voice-input/#post-1015880</guid>
+					<title><![CDATA[Reply To: Break in logic to ask for voice input?]]></title>
+					<link>/forums/topic/break-in-logic-to-ask-for-voice-input/#post-1015880</link>
+					<pubDate>Tue, 12 Mar 2013 16:03:16 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I would genuinely like to be able to help with this kind of app design logical flow question but I&#8217;m afraid it&#8217;s beyond what I can offer support for. If you definitely need to exit your loop for every question, you don&#8217;t really want a loop but some kind of delegate callback or NSNotification pattern. But there is also no inherent reason that you should have to exit a loop in order to call other functionality in the course of your app. I have to recommend investigating patterns for logical flow in an app &#8212; I think there is some good stuff at the Apple developer site, and please feel free to bring more questions here that are about OpenEars specifically.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

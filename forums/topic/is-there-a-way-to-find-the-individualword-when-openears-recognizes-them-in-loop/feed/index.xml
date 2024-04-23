@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Is there a way to find the individualword when OpenEars recognizes them in loop. &#8211; Politepix</title>
+		<atom:link href="/forums/topic/is-there-a-way-to-find-the-individualword-when-openears-recognizes-them-in-loop/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/is-there-a-way-to-find-the-individualword-when-openears-recognizes-them-in-loop/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:09:36 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/is-there-a-way-to-find-the-individualword-when-openears-recognizes-them-in-loop/#post-1022145</guid>
+					<title><![CDATA[Is there a way to find the individualword when OpenEars recognizes them in loop.]]></title>
+					<link>/forums/topic/is-there-a-way-to-find-the-individualword-when-openears-recognizes-them-in-loop/#post-1022145</link>
+					<pubDate>Thu, 07 Aug 2014 22:28:41 +0000</pubDate>
+					<dc:creator>skp</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,<br />
+I am planning to use Open Ears for my app. I have the predefined file(.arpa, .dic) added to my project. Speech detection works fine.</p>
+<p>The issue I have is that multiple words are recognized during the speech and are clubbed into one word “hypothesis” in the method &#8211; (void) pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID . </p>
+<p>I use this as the detected word. </p>
+<p>Is there a way to find the words as and when Open ears recognizes them in loop. </p>
+<p>Eg: My file has these 3 words</p>
+<p>HI<br />
+YELLOW FRUIT<br />
+WHEN</p>
+<p>When open ears starts to listen in loop if user speaks fast enough to say all these words, the received hypothesis word shows as one word “HI YELLOW FRUIT WHEN”</p>
+<p>Instead, I want to know the words individually when speech is detected.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/is-there-a-way-to-find-the-individualword-when-openears-recognizes-them-in-loop/#post-1022147</guid>
+					<title><![CDATA[Reply To: Is there a way to find the individualword when OpenEars recognizes them in loop.]]></title>
+					<link>/forums/topic/is-there-a-way-to-find-the-individualword-when-openears-recognizes-them-in-loop/#post-1022147</link>
+					<pubDate>Fri, 08 Aug 2014 07:23:48 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Is the question about how to divide an NSString into its component words?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/is-there-a-way-to-find-the-individualword-when-openears-recognizes-them-in-loop/#post-1022154</guid>
+					<title><![CDATA[Reply To: Is there a way to find the individualword when OpenEars recognizes them in loop.]]></title>
+					<link>/forums/topic/is-there-a-way-to-find-the-individualword-when-openears-recognizes-them-in-loop/#post-1022154</link>
+					<pubDate>Fri, 08 Aug 2014 17:55:40 +0000</pubDate>
+					<dc:creator>skp</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,<br />
+I am already dividing the string into the predefined words. However, wanted to know if Open Ears has any method of showing the identified word as and when it detects it rather than updating it as a phrase in &#8220;hypothesis&#8221;</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/is-there-a-way-to-find-the-individualword-when-openears-recognizes-them-in-loop/#post-1022155</guid>
+					<title><![CDATA[Reply To: Is there a way to find the individualword when OpenEars recognizes them in loop.]]></title>
+					<link>/forums/topic/is-there-a-way-to-find-the-individualword-when-openears-recognizes-them-in-loop/#post-1022155</link>
+					<pubDate>Fri, 08 Aug 2014 18:10:58 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The plugin RapidEars can show recognition results in real time (that is, live as the user is speaking). There&#8217;s more info here: <a href="/rapidears">/rapidears</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

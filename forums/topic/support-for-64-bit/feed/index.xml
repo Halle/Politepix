@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Support for 64 bit? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/support-for-64-bit/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/support-for-64-bit/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:01:26 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/support-for-64-bit/#post-1018969</guid>
+					<title><![CDATA[Support for 64 bit?]]></title>
+					<link>/forums/topic/support-for-64-bit/#post-1018969</link>
+					<pubDate>Thu, 21 Nov 2013 19:22:27 +0000</pubDate>
+					<dc:creator>tbreslow</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>I am building an app for the new iPhones but the framework doesn&#8217;t seem to support the 64 bit architectures (x86_64 for the simulator and amd64 for the device).</p>
+<p>Is this available?</p>
+<p>Best,</p>
+<p>Todd</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/support-for-64-bit/#post-1018970</guid>
+					<title><![CDATA[Reply To: Support for 64 bit?]]></title>
+					<link>/forums/topic/support-for-64-bit/#post-1018970</link>
+					<pubDate>Thu, 21 Nov 2013 19:27:30 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Todd,</p>
+<p>Yes, I am working away on this as we speak and hope it&#8217;s only a matter of weeks. The conversion is a big job and the whole platform has to be released simultaneously which is why it is taking a bit of time.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/support-for-64-bit/#post-1018982</guid>
+					<title><![CDATA[Reply To: Support for 64 bit?]]></title>
+					<link>/forums/topic/support-for-64-bit/#post-1018982</link>
+					<pubDate>Mon, 25 Nov 2013 16:35:54 +0000</pubDate>
+					<dc:creator>mcolonj</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>how would you recommend building for iOS 7 and iPhone 5s?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/support-for-64-bit/#post-1018983</guid>
+					<title><![CDATA[Reply To: Support for 64 bit?]]></title>
+					<link>/forums/topic/support-for-64-bit/#post-1018983</link>
+					<pubDate>Mon, 25 Nov 2013 16:43:19 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>For now you can just open up your app build settings and remove the 64-bit architecture from the ARCHITECTURES setting. This will work fine on the 64-bit devices and have no effect on the others.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/support-for-64-bit/#post-1019150</guid>
+					<title><![CDATA[Reply To: Support for 64 bit?]]></title>
+					<link>/forums/topic/support-for-64-bit/#post-1019150</link>
+					<pubDate>Thu, 12 Dec 2013 21:05:41 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The new version of OpenEars out now is 64-bit compatible.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

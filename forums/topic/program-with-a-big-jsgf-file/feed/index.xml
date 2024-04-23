@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>program with a big jsgf file &#8211; Politepix</title>
+		<atom:link href="/forums/topic/program-with-a-big-jsgf-file/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/program-with-a-big-jsgf-file/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:57:05 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/program-with-a-big-jsgf-file/#post-1022760</guid>
+					<title><![CDATA[program with a big jsgf file]]></title>
+					<link>/forums/topic/program-with-a-big-jsgf-file/#post-1022760</link>
+					<pubDate>Wed, 15 Oct 2014 01:51:28 +0000</pubDate>
+					<dc:creator>lin029011</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>When I use a jsgf file which has about two thousands words, it recognized quickly and the accuracy is high. But if use twenty thousands words in jsgf file, it&#8217;s very slow and accuracy is low.<br />
+How can I improve it?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/program-with-a-big-jsgf-file/#post-1022761</guid>
+					<title><![CDATA[Reply To: program with a big jsgf file]]></title>
+					<link>/forums/topic/program-with-a-big-jsgf-file/#post-1022761</link>
+					<pubDate>Wed, 15 Oct 2014 02:12:23 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>When I use a jsgf file which has about two thousands words, it recognized quickly and the accuracy is high.</p></blockquote>
+<p>That is very surprising that you have those results on a real device. Is it possible that those are actually simulator results? JSGF with Pocketsphinx on a real device is usually going to be pretty slow with a hundred words or so, let alone thousands or tens of thousands of words.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/program-with-a-big-jsgf-file/#post-1022762</guid>
+					<title><![CDATA[Reply To: program with a big jsgf file]]></title>
+					<link>/forums/topic/program-with-a-big-jsgf-file/#post-1022762</link>
+					<pubDate>Wed, 15 Oct 2014 02:35:15 +0000</pubDate>
+					<dc:creator>lin029011</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I have test Pocketsphinx in Android with the big jsgf. In Android, the initialization is slow, but the recoginzation seems good.So I test it in IOS.</p>
+<p>Is it better to use ARPA if I have thousands of words?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/program-with-a-big-jsgf-file/#post-1022763</guid>
+					<title><![CDATA[Reply To: program with a big jsgf file]]></title>
+					<link>/forums/topic/program-with-a-big-jsgf-file/#post-1022763</link>
+					<pubDate>Wed, 15 Oct 2014 02:40:35 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>I have test Pocketsphinx in Android with the big jsgf. In Android, the initialization is slow, but the recoginzation seems good.So I test it in IOS.</p></blockquote>
+<p>On which Android device do you have fast recognition with a JSGF with thousands of words?</p>
+<blockquote><p>Is it better to use ARPA if I have thousands of words?</p></blockquote>
+<p>It will be faster, yes.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/program-with-a-big-jsgf-file/#post-1022764</guid>
+					<title><![CDATA[Reply To: program with a big jsgf file]]></title>
+					<link>/forums/topic/program-with-a-big-jsgf-file/#post-1022764</link>
+					<pubDate>Wed, 15 Oct 2014 02:54:07 +0000</pubDate>
+					<dc:creator>lin029011</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>My Android device is Galaxy Nexus I9250.<br />
+I will try ARPA later.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Generate Rejecto LM from Text File &#8211; Politepix</title>
+		<atom:link href="/forums/topic/generate-rejecto-lm-from-text-file/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/generate-rejecto-lm-from-text-file/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:43:01 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/generate-rejecto-lm-from-text-file/#post-1019962</guid>
+					<title><![CDATA[Generate Rejecto LM from Text File]]></title>
+					<link>/forums/topic/generate-rejecto-lm-from-text-file/#post-1019962</link>
+					<pubDate>Tue, 28 Jan 2014 20:18:47 +0000</pubDate>
+					<dc:creator>tyeh</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Is it possible to have an interface generateRejectingLanguageModelFromTextFile, similar to generateLanguageModelFromTextFile?<br />
+Thanks</p>
+<p>-Thomas</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/generate-rejecto-lm-from-text-file/#post-1019963</guid>
+					<title><![CDATA[Reply To: Generate Rejecto LM from Text File]]></title>
+					<link>/forums/topic/generate-rejecto-lm-from-text-file/#post-1019963</link>
+					<pubDate>Tue, 28 Jan 2014 20:51:23 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>I can consider adding it to Rejecto, but the code to handle it in your app is pretty brief if you want to do it right now:</p>
+<pre>
+NSError *error = nil;
+NSString *textFileString = [NSString stringWithContentsOfFile:pathToMyTextFile encoding:NSUTF8StringEncoding error:&#038;error];
+
+if(error) {
+  NSLog(@"Error reading in text file: %@", error);
+}
+
+NSArray *corpusArray = [textFileString componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]]; 
+</pre>
+<p>That corpusArray can be used as your word array with Rejecto. LanguageModelGenerator&#8217;s version adds a bit more error checking and text normalization on the assumption that all kinds of weird input might go in, but that&#8217;s the basis of it.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/generate-rejecto-lm-from-text-file/#post-1019964</guid>
+					<title><![CDATA[Reply To: Generate Rejecto LM from Text File]]></title>
+					<link>/forums/topic/generate-rejecto-lm-from-text-file/#post-1019964</link>
+					<pubDate>Tue, 28 Jan 2014 21:03:42 +0000</pubDate>
+					<dc:creator>tyeh</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the suggestion. Looks easy enough never mind about adding the new interface then.<br />
+-Thomas</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

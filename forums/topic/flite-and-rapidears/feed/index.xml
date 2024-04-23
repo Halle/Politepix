@@ -1,0 +1,781 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] Flite and RapidEars &#8211; Politepix</title>
+		<atom:link href="/forums/topic/flite-and-rapidears/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/flite-and-rapidears/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:50:26 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/flite-and-rapidears/#post-1023017</guid>
+					<title><![CDATA[[Resolved] Flite and RapidEars]]></title>
+					<link>/forums/topic/flite-and-rapidears/#post-1023017</link>
+					<pubDate>Thu, 20 Nov 2014 20:40:40 +0000</pubDate>
+					<dc:creator>adb</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>What is the correct way to use fliteController with RapidEars for feedback on hypothesis? If I try to have the fliteController give feedback in rapidEarsDidReceiveFinishedSpeechHypothesis: but it gets picked up by RapidEars. I need a reliable way to suspend and resume while flite is speaking. I have tried to suspend/resume pocketsphynx to no avail.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-and-rapidears/#post-1023018</guid>
+					<title><![CDATA[Reply To: [Resolved] Flite and RapidEars]]></title>
+					<link>/forums/topic/flite-and-rapidears/#post-1023018</link>
+					<pubDate>Thu, 20 Nov 2014 20:57:16 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>FliteController handles its own suspend and resume, you don&#8217;t need to do it.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-and-rapidears/#post-1023019</guid>
+					<title><![CDATA[Reply To: [Resolved] Flite and RapidEars]]></title>
+					<link>/forums/topic/flite-and-rapidears/#post-1023019</link>
+					<pubDate>Thu, 20 Nov 2014 21:06:06 +0000</pubDate>
+					<dc:creator>adb</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I read that as well but it is not working. RapidEars picks up flite in rapidEarsDidReceiveFinishedSpeechHypothesis: after it is said.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-and-rapidears/#post-1023021</guid>
+					<title><![CDATA[Reply To: [Resolved] Flite and RapidEars]]></title>
+					<link>/forums/topic/flite-and-rapidears/#post-1023021</link>
+					<pubDate>Thu, 20 Nov 2014 21:13:12 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, can you check out this topic about logging and show the complete logging (OpenEarsLogging, verbosePocketsphinx, setRapidEarsToVerbose:TRUE) from a session in which that happens:</p>
+<p> <a href="/forums/topic/install-issues-and-their-solutions/">Please read before you post – how to troubleshoot and provide logging info here</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-and-rapidears/#post-1023022</guid>
+					<title><![CDATA[Reply To: [Resolved] Flite and RapidEars]]></title>
+					<link>/forums/topic/flite-and-rapidears/#post-1023022</link>
+					<pubDate>Thu, 20 Nov 2014 21:29:47 +0000</pubDate>
+					<dc:creator>adb</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Halle,</p>
+<p>Thanks for the quick responses. Here is the log data:</p>
+<p>2014-11-20 15:23:26.169 TimeFlowV2[752:104140] Starting OpenEars logging for OpenEars version 1.7 on 32-bit device: iPhone running iOS version: 8.100000<br />
+2014-11-20 15:23:26.321 TimeFlowV2[752:104140] I&#8217;m done running performDictionaryLookup and it took 0.075714 seconds<br />
+2014-11-20 15:23:26.426 TimeFlowV2[752:104140] Starting dynamic language model generation<br />
+2014-11-20 15:23:26.432 TimeFlowV2[752:104140] Able to open /var/mobile/Containers/Data/Application/7314BE0C-59C4-46C3-ACD2-13851947528E/Library/Caches/TimeFlowGrammerRuleSet.corpus for reading<br />
+2014-11-20 15:23:26.433 TimeFlowV2[752:104140] Able to open /var/mobile/Containers/Data/Application/7314BE0C-59C4-46C3-ACD2-13851947528E/Library/Caches/TimeFlowGrammerRuleSet_pipe.txt for writing<br />
+2014-11-20 15:23:26.434 TimeFlowV2[752:104140] Starting text2wfreq_impl<br />
+2014-11-20 15:23:26.449 TimeFlowV2[752:104140] Done with text2wfreq_impl<br />
+2014-11-20 15:23:26.450 TimeFlowV2[752:104140] Able to open /var/mobile/Containers/Data/Application/7314BE0C-59C4-46C3-ACD2-13851947528E/Library/Caches/TimeFlowGrammerRuleSet_pipe.txt for reading.<br />
+2014-11-20 15:23:26.452 TimeFlowV2[752:104140] Able to open /var/mobile/Containers/Data/Application/7314BE0C-59C4-46C3-ACD2-13851947528E/Library/Caches/TimeFlowGrammerRuleSet.vocab for reading.<br />
+2014-11-20 15:23:26.452 TimeFlowV2[752:104140] Starting wfreq2vocab<br />
+2014-11-20 15:23:26.454 TimeFlowV2[752:104140] Done with wfreq2vocab<br />
+2014-11-20 15:23:26.455 TimeFlowV2[752:104140] Starting text2idngram<br />
+2014-11-20 15:23:26.475 TimeFlowV2[752:104140] Done with text2idngram<br />
+2014-11-20 15:23:26.480 TimeFlowV2[752:104140] Starting idngram2lm</p>
+<p>2014-11-20 15:23:26.491 TimeFlowV2[752:104140] Done with idngram2lm<br />
+2014-11-20 15:23:26.492 TimeFlowV2[752:104140] Starting sphinx_lm_convert<br />
+2014-11-20 15:23:26.497 TimeFlowV2[752:104140] Finishing sphinx_lm_convert<br />
+2014-11-20 15:23:26.502 TimeFlowV2[752:104140] Done creating language model with CMUCLMTK in 0.074842 seconds.<br />
+2014-11-20 15:23:26.508 TimeFlowV2[752:104140] Generating fast grammar took 0.300853 seconds<br />
+2014-11-20 15:23:26.510 TimeFlowV2[752:104140] Starting sphinx_lm_convert<br />
+2014-11-20 15:23:26.516 TimeFlowV2[752:104140] Finishing sphinx_lm_convert</p>
+<p>2014-11-20 15:23:31.763 TimeFlowV2[752:104140] Starting dynamic language model generation<br />
+2014-11-20 15:23:31.772 TimeFlowV2[752:104140] Able to open /var/mobile/Containers/Data/Application/7314BE0C-59C4-46C3-ACD2-13851947528E/Library/Caches/TimeFlowGrammerRuleSet2.corpus for reading<br />
+2014-11-20 15:23:31.773 TimeFlowV2[752:104140] Able to open /var/mobile/Containers/Data/Application/7314BE0C-59C4-46C3-ACD2-13851947528E/Library/Caches/TimeFlowGrammerRuleSet2_pipe.txt for writing<br />
+2014-11-20 15:23:31.774 TimeFlowV2[752:104140] Starting text2wfreq_impl<br />
+2014-11-20 15:23:31.795 TimeFlowV2[752:104140] Done with text2wfreq_impl<br />
+2014-11-20 15:23:31.796 TimeFlowV2[752:104140] Able to open /var/mobile/Containers/Data/Application/7314BE0C-59C4-46C3-ACD2-13851947528E/Library/Caches/TimeFlowGrammerRuleSet2_pipe.txt for reading.<br />
+2014-11-20 15:23:31.798 TimeFlowV2[752:104140] Able to open /var/mobile/Containers/Data/Application/7314BE0C-59C4-46C3-ACD2-13851947528E/Library/Caches/TimeFlowGrammerRuleSet2.vocab for reading.<br />
+2014-11-20 15:23:31.798 TimeFlowV2[752:104140] Starting wfreq2vocab<br />
+2014-11-20 15:23:31.805 TimeFlowV2[752:104140] Done with wfreq2vocab<br />
+2014-11-20 15:23:31.806 TimeFlowV2[752:104140] Starting text2idngram<br />
+2014-11-20 15:23:31.841 TimeFlowV2[752:104140] Done with text2idngram<br />
+2014-11-20 15:23:31.845 TimeFlowV2[752:104140] Starting idngram2lm</p>
+<p>2014-11-20 15:23:31.874 TimeFlowV2[752:104140] Done with idngram2lm<br />
+2014-11-20 15:23:31.875 TimeFlowV2[752:104140] Starting sphinx_lm_convert<br />
+2014-11-20 15:23:31.890 TimeFlowV2[752:104140] Finishing sphinx_lm_convert<br />
+2014-11-20 15:23:31.895 TimeFlowV2[752:104140] Done creating language model with CMUCLMTK in 0.131294 seconds.<br />
+2014-11-20 15:23:31.911 TimeFlowV2[752:104140] Generating fast grammar took 5.379857 seconds<br />
+2014-11-20 15:23:31.912 TimeFlowV2[752:104140] Starting sphinx_lm_convert<br />
+2014-11-20 15:23:31.926 TimeFlowV2[752:104140] Finishing sphinx_lm_convert<br />
+2014-11-20 15:23:31.930 TimeFlowV2[752:104140] Accuracy set to 20.<br />
+2014-11-20 15:23:31.931 TimeFlowV2[752:104140] User gave mic permission for this app.<br />
+2014-11-20 15:23:31.932 TimeFlowV2[752:104140] A sample rate was requested that isn&#8217;t one of the two supported values of 16000 or 8000 so we will use the default of 16000.<br />
+2014-11-20 15:23:31.933 TimeFlowV2[752:104140] The audio session has already been initialized but we will override its properties.<br />
+2014-11-20 15:23:31.933 TimeFlowV2[752:104140] Checking and resetting all audio session settings.<br />
+2014-11-20 15:23:31.935 TimeFlowV2[752:104140] audioCategory is incorrect, we will change it.<br />
+2014-11-20 15:23:31.935 TimeFlowV2[752:104140] audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.<br />
+2014-11-20 15:23:31.936 TimeFlowV2[752:104140] bluetoothInput is incorrect, we will change it.<br />
+2014-11-20 15:23:31.936 TimeFlowV2[752:104140] bluetooth input is now on the correct setting of 1.<br />
+2014-11-20 15:23:31.939 TimeFlowV2[752:104140] Output Device: ReceiverAndMicrophone.<br />
+2014-11-20 15:23:31.939 TimeFlowV2[752:104140] categoryDefaultToSpeaker is incorrect, we will change it.<br />
+2014-11-20 15:23:31.940 TimeFlowV2[752:104140] CategoryDefaultToSpeaker is now on the correct setting of 1.<br />
+2014-11-20 15:23:31.941 TimeFlowV2[752:104140] preferredBufferSize is incorrect, we will change it.<br />
+2014-11-20 15:23:31.942 TimeFlowV2[752:104140] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2014-11-20 15:23:31.942 TimeFlowV2[752:104140] preferredSampleRateCheck is incorrect, we will change it.<br />
+2014-11-20 15:23:31.943 TimeFlowV2[752:104140] preferred hardware sample rate is now on the correct setting of 16000.000000.<br />
+2014-11-20 15:23:32.232 TimeFlowV2[752:104140] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2014-11-20 15:23:32.233 TimeFlowV2[752:104140] Exiting startAudioSession.<br />
+2014-11-20 15:23:32.248 TimeFlowV2[752:104246] setSecondsOfSilence value of 0.000000 was too large or too small or was NULL, using default of 0.700000.<br />
+2014-11-20 15:23:32.252 TimeFlowV2[752:104246] Project has these words or phrases in its dictionary:<br />
+OMMITTED<br />
+2014-11-20 15:23:32.253 TimeFlowV2[752:104246] Recognition loop has started<br />
+INFO: file_omitted(0): Parsing command line:<br />
+\<br />
+	-lm /var/mobile/Containers/Data/Application/7314BE0C-59C4-46C3-ACD2-13851947528E/Library/Caches/TimeFlowGrammerRuleSet.DMP \<br />
+	-beam 1e-66 \<br />
+	-bestpath yes \<br />
+	-dict /var/mobile/Containers/Data/Application/7314BE0C-59C4-46C3-ACD2-13851947528E/Library/Caches/TimeFlowGrammerRuleSet.dic \<br />
+	-hmm /private/var/mobile/Containers/Bundle/Application/764368A1-D88E-4705-A908-103D2213B5D5/TimeFlowV2.app/AcousticModelEnglish.bundle \<br />
+	-lw 6.5 \<br />
+	-samprate 16000 </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-adchdr		0		0<br />
+-adcin		no		no<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-align<br />
+-alpha		0.97		9.700000e-01<br />
+-arcdumpdir<br />
+-ascale		20.0		2.000000e+01<br />
+-aw		1		1<br />
+-backtrace	no		no<br />
+-beam		1e-48		1.000000e-66<br />
+-bestpath	yes		yes<br />
+-bestpathlw	9.5		9.500000e+00<br />
+-bghist		no		no<br />
+-cepdir<br />
+-cepext		.mfc		.mfc<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		8.0<br />
+-compallsen	no		no<br />
+-ctl<br />
+-ctlcount	-1		-1<br />
+-ctlincr	1		1<br />
+-ctloffset	0		0<br />
+-debug				0<br />
+-dict				/var/mobile/Containers/Data/Application/7314BE0C-59C4-46C3-ACD2-13851947528E/Library/Caches/TimeFlowGrammerRuleSet.dic<br />
+-dictcase	no		no<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-ds		1		1<br />
+-fdict<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-featparams<br />
+-fillprob	1e-8		1.000000e-08<br />
+-frate		100		100<br />
+-fsg<br />
+-fsgusealtpron	yes		yes<br />
+-fsgusefiller	yes		yes<br />
+-fwdflat	yes		yes<br />
+-fwdflatbeam	1e-64		1.000000e-64<br />
+-fwdflatlw	8.5		8.500000e+00<br />
+-fwdflatsfwin	25		25<br />
+-fwdflatwbeam	7e-29		7.000000e-29<br />
+-fwdtree	yes		yes<br />
+-fwdtreelm<br />
+-hmm				/private/var/mobile/Containers/Bundle/Application/764368A1-D88E-4705-A908-103D2213B5D5/TimeFlowV2.app/AcousticModelEnglish.bundle<br />
+-hyp<br />
+-hypprefix<br />
+-input_endian	little		little<br />
+-jsgf<br />
+-kdmaxbbi	-1		-1<br />
+-kdmaxdepth	0		0<br />
+-kdtree<br />
+-latsize	512		512<br />
+-lda<br />
+-ldadim		0		0<br />
+-lextreedump	0		0<br />
+-lifter		0		0<br />
+-lm				/var/mobile/Containers/Data/Application/7314BE0C-59C4-46C3-ACD2-13851947528E/Library/Caches/TimeFlowGrammerRuleSet.DMP<br />
+-lmctl<br />
+-lmname		default		default<br />
+-logbase	1.0001		1.000100e+00<br />
+-logfn<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.333333e+02<br />
+-lpbeam		1e-40		1.000000e-40<br />
+-lponlybeam	7e-29		7.000000e-29<br />
+-lw		6.5		6.500000e+00<br />
+-maxhmmpf	-1		-1<br />
+-maxnewoov	20		20<br />
+-maxsilfr	-1		-1<br />
+-maxwpf		50		50<br />
+-mdef<br />
+-mean<br />
+-mfclogdir<br />
+-min_endfr	0		0<br />
+-mixw<br />
+-mixwfloor	0.0000001	1.000000e-07<br />
+-mllr<br />
+-mmap		yes		yes<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		40<br />
+-nwpen		1.0		1.000000e+00<br />
+-pbeam		1e-48		1.000000e-48<br />
+-pip		1.0		1.000000e+00<br />
+-pl_beam	1e-10		1.000000e-10<br />
+-pl_pbeam	1e-5		1.000000e-05<br />
+-pl_window	0		0<br />
+-rawlogdir<br />
+-remove_dc	no		no<br />
+-round_filters	yes		yes<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-sendump<br />
+-senlogdir<br />
+-senmgau<br />
+-silprob	0.005		5.000000e-03<br />
+-smoothspec	no		no<br />
+-svspec<br />
+-tmat<br />
+-tmatfloor	0.0001		1.000000e-04<br />
+-topn		4		4<br />
+-topn_beam	0		0<br />
+-toprule<br />
+-transform	legacy		legacy<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	6.855498e+03<br />
+-usewdphones	no		no<br />
+-uw		1.0		1.000000e+00<br />
+-var<br />
+-varfloor	0.0001		1.000000e-04<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-vm<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wbeam		7e-29		7.000000e-29<br />
+-wip		0.65		6.500000e-01<br />
+-wlen		0.025625	2.562500e-02</p>
+<p>INFO: file_omitted(0): Parsing command line:<br />
+\<br />
+	-nfilt 20 \<br />
+	-lowerf 1 \<br />
+	-upperf 4000 \<br />
+	-wlen 0.025 \<br />
+	-transform dct \<br />
+	-round_filters no \<br />
+	-remove_dc yes \<br />
+	-svspec 0-12/13-25/26-38 \<br />
+	-feat 1s_c_d_dd \<br />
+	-agc none \<br />
+	-cmn current \<br />
+	-cmninit 47 \<br />
+	-varnorm no </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-alpha		0.97		9.700000e-01<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		47<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-frate		100		100<br />
+-input_endian	little		little<br />
+-lda<br />
+-ldadim		0		0<br />
+-lifter		0		0<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.000000e+00<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		20<br />
+-remove_dc	no		yes<br />
+-round_filters	yes		no<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-smoothspec	no		no<br />
+-svspec				0-12/13-25/26-38<br />
+-transform	legacy		dct<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	4.000000e+03<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wlen		0.025625	2.500000e-02</p>
+<p>INFO: file_omitted(0): Parsed model-specific feature parameters from /private/var/mobile/Containers/Bundle/Application/764368A1-D88E-4705-A908-103D2213B5D5/TimeFlowV2.app/AcousticModelEnglish.bundle/feat.params<br />
+INFO: file_omitted(0): Reading HMM transition probability matrices: /private/var/mobile/Containers/Bundle/Application/764368A1-D88E-4705-A908-103D2213B5D5/TimeFlowV2.app/AcousticModelEnglish.bundle/transition_matrices<br />
+INFO: file_omitted(0): Loading senones from dump file /private/var/mobile/Containers/Bundle/Application/764368A1-D88E-4705-A908-103D2213B5D5/TimeFlowV2.app/AcousticModelEnglish.bundle/sendump<br />
+INFO: file_omitted(0): BEGIN FILE FORMAT DESCRIPTION<br />
+INFO: file_omitted(0): Using memory-mapped I/O for senones<br />
+INFO: file_omitted(0): Building PID tables for dictionary<br />
+INFO: file_omitted(0): Allocating 50^3 * 2 bytes (244 KiB) for word-initial triphones<br />
+INFO: file_omitted(0): Allocated 30200 bytes (29 KiB) for word-final triphones<br />
+INFO: file_omitted(0): Allocated 30200 bytes (29 KiB) for single-phone word triphones<br />
+ERROR: &#8220;file_omitted&#8221;, line 0: File /var/mobile/Containers/Data/Application/7314BE0C-59C4-46C3-ACD2-13851947528E/Library/Caches/TimeFlowGrammerRuleSet.DMP not found<br />
+INFO: file_omitted(0): Number of word mappings: 100<br />
+INFO: file_omitted(0): Number of word mappings: 100<br />
+INFO: file_omitted(0): Initialized arc buffer &#8216;fwdtree&#8217;, each arc occupies 12 bytes<br />
+2014-11-20 15:23:32.349 TimeFlowV2[752:104246] Starting openAudioDevice on the device.<br />
+2014-11-20 15:23:32.350 TimeFlowV2[752:104246] Audio unit wrapper successfully created.<br />
+2014-11-20 15:23:32.363 TimeFlowV2[752:104246] Set audio route to SpeakerAndMicrophone<br />
+2014-11-20 15:23:32.365 TimeFlowV2[752:104246] Restoring SmartCMN value of 54.763176<br />
+2014-11-20 15:23:32.365 TimeFlowV2[752:104246] Checking and resetting all audio session settings.<br />
+2014-11-20 15:23:32.367 TimeFlowV2[752:104246] audioCategory is correct, we will leave it as it is.<br />
+2014-11-20 15:23:32.367 TimeFlowV2[752:104246] bluetoothInput is correct, we will leave it as it is.<br />
+2014-11-20 15:23:32.368 TimeFlowV2[752:104246] Output Device: SpeakerAndMicrophone.<br />
+2014-11-20 15:23:32.369 TimeFlowV2[752:104246] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2014-11-20 15:23:32.369 TimeFlowV2[752:104246] preferredBufferSize is incorrect, we will change it.<br />
+2014-11-20 15:23:32.371 TimeFlowV2[752:104246] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2014-11-20 15:23:32.373 TimeFlowV2[752:104246] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2014-11-20 15:23:32.375 TimeFlowV2[752:104246] Setting the variables for the device and starting it.<br />
+2014-11-20 15:23:32.377 TimeFlowV2[752:104246] Looping through ringbuffer sections and pre-allocating them.</p>
+<p>2014-11-20 15:23:32.704 TimeFlowV2[752:104246] Started audio output unit.<br />
+2014-11-20 15:23:32.705 TimeFlowV2[752:104246] Calibration has started<br />
+2014-11-20 15:23:32.729 TimeFlowV2[752:104140] Audio route has changed for the following reason:<br />
+2014-11-20 15:23:32.730 TimeFlowV2[752:104140] There has been a change of category<br />
+2014-11-20 15:23:32.730 TimeFlowV2[752:104140] The previous audio route was Speaker<br />
+2014-11-20 15:23:32.731 TimeFlowV2[752:104140] This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is SpeakerAndMicrophone<br />
+2014-11-20 15:23:34.908 TimeFlowV2[752:104246] Calibration has completed<br />
+2014-11-20 15:23:34.910 TimeFlowV2[752:104246] Listening.<br />
+2014-11-20 15:23:38.659 TimeFlowV2[752:104246] Speech detected&#8230;<br />
+INFO: file_omitted(0): arc_buffer_producer_start_utt<br />
+time delta 1416518618.661699 start 0000000<br />
+INFO: file_omitted(0): arc_buffer_consumer_start_utt<br />
+time delta 1416518618.664940 start 0000000<br />
+INFO: file_omitted(0): cmn_prior_update: from &lt; 54.76  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00 &gt;<br />
+INFO: file_omitted(0): cmn_prior_update: to   &lt; 46.89 -4.59 -1.65 -1.14 -2.20 -2.61 -0.43 -0.06 -0.71 -0.06 -0.58 -0.12 -0.25 &gt;<br />
+INFO: file_omitted(0): idx 103 is final (103)<br />
+INFO: file_omitted(0): fwdtree: marking arc buffer final<br />
+INFO: file_omitted(0): fwdtree: allocated 32 arcs (0 KiB)<br />
+INFO: file_omitted(0): fwdtree: allocated 128 start frame entries (0 KiB)<br />
+INFO: file_omitted(0): Waiting for 1 consumers to finish<br />
+time delta 1416518620.341692 partial result fwdflat<br />
+partial: &lt;s&gt;:(0000000)<br />
+time delta 1416518620.349776 partial result fwdflat<br />
+partial: &lt;s&gt;:CREATE#^#TIMER:(0000000)<br />
+time delta 1416518620.352812 partial result fwdflat<br />
+partial: &lt;s&gt;:CREATE#^#TIMER:&lt;sil&gt;:(0000000)<br />
+INFO: file_omitted(0): idx 103 is final (103)<br />
+time delta 1416518620.353899 final result fwdflat<br />
+full: &lt;s&gt;:CREATE#^#TIMER:time delta 1416518620.354005 &lt;sil&gt;:end 0000000<br />
+2014-11-20 15:23:40.354 TimeFlowV2[752:104140] I&#8217;m running flite<br />
+2014-11-20 15:23:40.355 TimeFlowV2[752:104140] Checking and resetting all audio session settings.<br />
+2014-11-20 15:23:40.356 TimeFlowV2[752:104140] audioCategory is correct, we will leave it as it is.<br />
+2014-11-20 15:23:40.357 TimeFlowV2[752:104140] bluetoothInput is correct, we will leave it as it is.<br />
+2014-11-20 15:23:40.357 TimeFlowV2[752:104140] Output Device: SpeakerAndMicrophone.<br />
+2014-11-20 15:23:40.358 TimeFlowV2[752:104140] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2014-11-20 15:23:40.359 TimeFlowV2[752:104140] preferredBufferSize is incorrect, we will change it.<br />
+2014-11-20 15:23:40.360 TimeFlowV2[752:104140] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2014-11-20 15:23:40.361 TimeFlowV2[752:104140] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2014-11-20 15:23:40.734 TimeFlowV2[752:104140] I&#8217;m done running flite and it took 0.379356 seconds<br />
+2014-11-20 15:23:40.734 TimeFlowV2[752:104140] Flite audio player was nil when referenced so attempting to allocate a new audio player.<br />
+2014-11-20 15:23:40.735 TimeFlowV2[752:104140] Loading speech data for Flite concluded successfully.<br />
+(0000000)<br />
+time delta 1416518620.770111 end 0000000<br />
+2014-11-20 15:23:40.769 TimeFlowV2[752:104246] there is a request to change to the language model file /var/mobile/Containers/Data/Application/7314BE0C-59C4-46C3-ACD2-13851947528E/Library/Caches/TimeFlowGrammerRuleSet2.DMP. It is only possible to change language models with a valid ARPA file so if you experience a crash or error, not making a change language model request using an ARPA language model is the most likely reason.<br />
+2014-11-20 15:23:40.773 TimeFlowV2[752:104140] Flite sending suspend recognition notification.<br />
+2014-11-20 15:23:40.777 TimeFlowV2[752:104246] Stopping audio unit.<br />
+2014-11-20 15:23:40.898 TimeFlowV2[752:104246] Audio Output Unit stopped, cleaning up variable states.<br />
+2014-11-20 15:23:40.899 TimeFlowV2[752:104246] This device is not recording, so first we will set its recording status to 0<br />
+2014-11-20 15:23:40.900 TimeFlowV2[752:104246] The audio unit is running so we are going to dispose of its instance<br />
+INFO: file_omitted(0): fwdflat canceled<br />
+INFO: file_omitted(0): fwdtree canceled<br />
+INFO: file_omitted(0): TOTAL fwdtree 0.599 wall 0.582 xRT<br />
+INFO: file_omitted(0): TOTAL fwdflat 6.874 wall 6.674 xRT<br />
+INFO: file_omitted(0): Parsing command line:<br />
+\<br />
+	-lm /var/mobile/Containers/Data/Application/7314BE0C-59C4-46C3-ACD2-13851947528E/Library/Caches/TimeFlowGrammerRuleSet2.DMP \<br />
+	-beam 1e-66 \<br />
+	-bestpath yes \<br />
+	-dict /var/mobile/Containers/Data/Application/7314BE0C-59C4-46C3-ACD2-13851947528E/Library/Caches/TimeFlowGrammerRuleSet2.dic \<br />
+	-hmm /private/var/mobile/Containers/Bundle/Application/764368A1-D88E-4705-A908-103D2213B5D5/TimeFlowV2.app/AcousticModelEnglish.bundle \<br />
+	-lw 6.5 \<br />
+	-samprate 16000 </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-adchdr		0		0<br />
+-adcin		no		no<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-align<br />
+-alpha		0.97		9.700000e-01<br />
+-arcdumpdir<br />
+-ascale		20.0		2.000000e+01<br />
+-aw		1		1<br />
+-backtrace	no		no<br />
+-beam		1e-48		1.000000e-66<br />
+-bestpath	yes		yes<br />
+-bestpathlw	9.5		9.500000e+00<br />
+-bghist		no		no<br />
+-cepdir<br />
+-cepext		.mfc		.mfc<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		8.0<br />
+-compallsen	no		no<br />
+-ctl<br />
+-ctlcount	-1		-1<br />
+-ctlincr	1		1<br />
+-ctloffset	0		0<br />
+-debug				0<br />
+-dict				/var/mobile/Containers/Data/Application/7314BE0C-59C4-46C3-ACD2-13851947528E/Library/Caches/TimeFlowGrammerRuleSet2.dic<br />
+-dictcase	no		no<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-ds		1		1<br />
+-fdict<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-featparams<br />
+-fillprob	1e-8		1.000000e-08<br />
+-frate		100		100<br />
+-fsg<br />
+-fsgusealtpron	yes		yes<br />
+-fsgusefiller	yes		yes<br />
+-fwdflat	yes		yes<br />
+-fwdflatbeam	1e-64		1.000000e-64<br />
+-fwdflatlw	8.5		8.500000e+00<br />
+-fwdflatsfwin	25		25</p>
+<p>-fwdflatwbeam	7e-29		7.000000e-29<br />
+-fwdtree	yes		yes<br />
+-fwdtreelm<br />
+-hmm				/private/var/mobile/Containers/Bundle/Application/764368A1-D88E-4705-A908-103D2213B5D5/TimeFlowV2.app/AcousticModelEnglish.bundle<br />
+-hyp<br />
+-hypprefix<br />
+-input_endian	little		little<br />
+-jsgf<br />
+-kdmaxbbi	-1		-1<br />
+-kdmaxdepth	0		0<br />
+-kdtree<br />
+-latsize	512		512<br />
+-lda<br />
+-ldadim		0		0<br />
+-lextreedump	0		0<br />
+-lifter		0		0<br />
+-lm				/var/mobile/Containers/Data/Application/7314BE0C-59C4-46C3-ACD2-13851947528E/Library/Caches/TimeFlowGrammerRuleSet2.DMP<br />
+-lmctl<br />
+-lmname		default		default<br />
+-logbase	1.0001		1.000100e+00<br />
+-logfn<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.333333e+02<br />
+-lpbeam		1e-40		1.000000e-40<br />
+-lponlybeam	7e-29		7.000000e-29<br />
+-lw		6.5		6.500000e+00<br />
+-maxhmmpf	-1		-1<br />
+-maxnewoov	20		20<br />
+-maxsilfr	-1		-1<br />
+-maxwpf		50		50<br />
+-mdef<br />
+-mean<br />
+-mfclogdir<br />
+-min_endfr	0		0<br />
+-mixw<br />
+-mixwfloor	0.0000001	1.000000e-07<br />
+-mllr<br />
+-mmap		yes		yes<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		40<br />
+-nwpen		1.0		1.000000e+00<br />
+-pbeam		1e-48		1.000000e-48<br />
+-pip		1.0		1.000000e+00<br />
+-pl_beam	1e-10		1.000000e-10<br />
+-pl_pbeam	1e-5		1.000000e-05<br />
+-pl_window	0		0<br />
+-rawlogdir<br />
+-remove_dc	no		no<br />
+-round_filters	yes		yes<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-sendump<br />
+-senlogdir<br />
+-senmgau<br />
+-silprob	0.005		5.000000e-03<br />
+-smoothspec	no		no<br />
+-svspec<br />
+-tmat<br />
+-tmatfloor	0.0001		1.000000e-04<br />
+-topn		4		4<br />
+-topn_beam	0		0<br />
+-toprule<br />
+-transform	legacy		legacy<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	6.855498e+03<br />
+-usewdphones	no		no<br />
+-uw		1.0		1.000000e+00<br />
+-var<br />
+-varfloor	0.0001		1.000000e-04<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-vm<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wbeam		7e-29		7.000000e-29<br />
+-wip		0.65		6.500000e-01<br />
+-wlen		0.025625	2.562500e-02</p>
+<p>INFO: file_omitted(0): Parsing command line:<br />
+\<br />
+	-nfilt 20 \<br />
+	-lowerf 1 \<br />
+	-upperf 4000 \<br />
+	-wlen 0.025 \<br />
+	-transform dct \<br />
+	-round_filters no \<br />
+	-remove_dc yes \<br />
+	-svspec 0-12/13-25/26-38 \<br />
+	-feat 1s_c_d_dd \<br />
+	-agc none \<br />
+	-cmn current \<br />
+	-cmninit 47 \<br />
+	-varnorm no </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-alpha		0.97		9.700000e-01<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		47<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-frate		100		100<br />
+-input_endian	little		little<br />
+-lda<br />
+-ldadim		0		0<br />
+-lifter		0		0<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.000000e+00<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		20<br />
+-remove_dc	no		yes<br />
+-round_filters	yes		no<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-smoothspec	no		no<br />
+-svspec				0-12/13-25/26-38<br />
+-transform	legacy		dct<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	4.000000e+03<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wlen		0.025625	2.500000e-02</p>
+<p>INFO: file_omitted(0): Parsed model-specific feature parameters from /private/var/mobile/Containers/Bundle/Application/764368A1-D88E-4705-A908-103D2213B5D5/TimeFlowV2.app/AcousticModelEnglish.bundle/feat.params<br />
+INFO: file_omitted(0): Reading HMM transition probability matrices: /private/var/mobile/Containers/Bundle/Application/764368A1-D88E-4705-A908-103D2213B5D5/TimeFlowV2.app/AcousticModelEnglish.bundle/transition_matrices<br />
+INFO: file_omitted(0): Loading senones from dump file /private/var/mobile/Containers/Bundle/Application/764368A1-D88E-4705-A908-103D2213B5D5/TimeFlowV2.app/AcousticModelEnglish.bundle/sendump<br />
+INFO: file_omitted(0): BEGIN FILE FORMAT DESCRIPTION<br />
+INFO: file_omitted(0): Using memory-mapped I/O for senones<br />
+INFO: file_omitted(0): Building PID tables for dictionary<br />
+INFO: file_omitted(0): Allocating 50^3 * 2 bytes (244 KiB) for word-initial triphones<br />
+INFO: file_omitted(0): Allocated 30200 bytes (29 KiB) for word-final triphones<br />
+INFO: file_omitted(0): Allocated 30200 bytes (29 KiB) for single-phone word triphones<br />
+ERROR: &#8220;file_omitted&#8221;, line 0: File /var/mobile/Containers/Data/Application/7314BE0C-59C4-46C3-ACD2-13851947528E/Library/Caches/TimeFlowGrammerRuleSet2.DMP not found<br />
+INFO: file_omitted(0): Number of word mappings: 725<br />
+INFO: file_omitted(0): Number of word mappings: 725<br />
+INFO: file_omitted(0): Initialized arc buffer &#8216;fwdtree&#8217;, each arc occupies 12 bytes<br />
+2014-11-20 15:23:41.045 TimeFlowV2[752:104246] Starting openAudioDevice on the device.<br />
+2014-11-20 15:23:41.046 TimeFlowV2[752:104246] Audio unit wrapper successfully created.<br />
+2014-11-20 15:23:41.055 TimeFlowV2[752:104246] Set audio route to SpeakerAndMicrophone<br />
+2014-11-20 15:23:41.057 TimeFlowV2[752:104246] Restoring SmartCMN value of 46.893669<br />
+2014-11-20 15:23:41.057 TimeFlowV2[752:104246] Checking and resetting all audio session settings.<br />
+2014-11-20 15:23:41.059 TimeFlowV2[752:104246] audioCategory is correct, we will leave it as it is.<br />
+2014-11-20 15:23:41.060 TimeFlowV2[752:104246] bluetoothInput is correct, we will leave it as it is.<br />
+2014-11-20 15:23:41.061 TimeFlowV2[752:104246] Output Device: SpeakerAndMicrophone.<br />
+2014-11-20 15:23:41.061 TimeFlowV2[752:104246] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2014-11-20 15:23:41.062 TimeFlowV2[752:104246] preferredBufferSize is correct, we will leave it as it is.<br />
+2014-11-20 15:23:41.063 TimeFlowV2[752:104246] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2014-11-20 15:23:41.063 TimeFlowV2[752:104246] Setting the variables for the device and starting it.<br />
+2014-11-20 15:23:41.064 TimeFlowV2[752:104246] Looping through ringbuffer sections and pre-allocating them.<br />
+2014-11-20 15:23:41.067 TimeFlowV2[752:104246] Started audio output unit.<br />
+2014-11-20 15:23:41.068 TimeFlowV2[752:104246] Listening.<br />
+2014-11-20 15:23:41.715 TimeFlowV2[752:104246] Speech detected&#8230;<br />
+INFO: file_omitted(0): arc_buffer_producer_start_utt<br />
+time delta 1416518621.716527 start 0000001<br />
+INFO: file_omitted(0): arc_buffer_consumer_start_utt<br />
+time delta 1416518621.719415 start 0000001<br />
+2014-11-20 15:23:42.434 TimeFlowV2[752:104140] AVAudioPlayer did finish playing with success flag of 1<br />
+2014-11-20 15:23:42.586 TimeFlowV2[752:104140] Flite sending resume recognition notification.<br />
+INFO: file_omitted(0): cmn_prior_update: from &lt; 46.89  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00 &gt;<br />
+INFO: file_omitted(0): cmn_prior_update: to   &lt; 53.92 -7.42  0.74 -3.86 -1.99 -0.30 -0.69 -0.51 -0.38  0.55 -0.75  0.42  0.12 &gt;<br />
+INFO: file_omitted(0): idx 137 is final (137)<br />
+INFO: file_omitted(0): fwdtree: marking arc buffer final<br />
+INFO: file_omitted(0): fwdtree: allocated 256 arcs (3 KiB)<br />
+INFO: file_omitted(0): fwdtree: allocated 256 start frame entries (1 KiB)<br />
+INFO: file_omitted(0): Waiting for 1 consumers to finish<br />
+time delta 1416518623.873590 partial result fwdflat<br />
+partial: &lt;s&gt;:(0000001)<br />
+time delta 1416518623.880837 partial result fwdflat<br />
+partial: &lt;s&gt;:SET:(0000001)<br />
+time delta 1416518623.892117 partial result fwdflat<br />
+partial: &lt;s&gt;:SET#^#8#^#HOUR:(0000001)<br />
+time delta 1416518623.907454 partial result fwdflat<br />
+partial: &lt;s&gt;:SET#^#8#^#HOUR:8#^#HOUR:(0000001)<br />
+time delta 1416518623.911900 partial result fwdflat<br />
+partial: &lt;s&gt;:SET#^#8#^#HOUR:8#^#SECONDS:(0000001)<br />
+time delta 1416518623.922615 partial result fwdflat<br />
+partial: &lt;s&gt;:SET#^#8#^#HOUR:8#^#SECONDS:&lt;sil&gt;:(0000001)<br />
+INFO: file_omitted(0): idx 137 is final (137)<br />
+time delta 1416518623.925594 end 0000001<br />
+time delta 1416518623.925648 final result fwdflat<br />
+full: &lt;s&gt;:SET#^#8#^#HOUR:8#^#SECONDS:&lt;sil&gt;:(0000001)<br />
+time delta 1416518623.929309 end 0000001<br />
+2014-11-20 15:23:43.936 TimeFlowV2[752:104246] Stopping audio unit.<br />
+2014-11-20 15:23:43.969 TimeFlowV2[752:104246] Audio Output Unit stopped, cleaning up variable states.<br />
+2014-11-20 15:23:43.969 TimeFlowV2[752:104246] This device is not recording, so first we will set its recording status to 0<br />
+2014-11-20 15:23:43.970 TimeFlowV2[752:104246] The audio unit is running so we are going to dispose of its instance<br />
+INFO: file_omitted(0): fwdtree canceled<br />
+INFO: file_omitted(0): TOTAL fwdtree 0.216 wall 0.158 xRT<br />
+INFO: file_omitted(0): fwdflat canceled<br />
+INFO: file_omitted(0): TOTAL fwdflat 0.773 wall 0.564 xRT<br />
+2014-11-20 15:23:43.981 TimeFlowV2[752:104246] No longer listening.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-and-rapidears/#post-1023023</guid>
+					<title><![CDATA[Reply To: [Resolved] Flite and RapidEars]]></title>
+					<link>/forums/topic/flite-and-rapidears/#post-1023023</link>
+					<pubDate>Thu, 20 Nov 2014 21:32:52 +0000</pubDate>
+					<dc:creator>adb</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>To clarify, all I am doing is checking for hypothesis data in rapidEarsDidReceiveFinishedSpeechHypothesis: and running flite like so [self.fliteController say:@&#8221;SET THE DURATION&#8221; withVoice:self.slt];. I do run a changeLanguageModelToFile right before this if that makes any difference. RapidEars picks up audio from flite and since I am listening for a command that begins with &#8220;SET&#8221; in my rule it thinks it hears set and returns a result.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-and-rapidears/#post-1023027</guid>
+					<title><![CDATA[Reply To: [Resolved] Flite and RapidEars]]></title>
+					<link>/forums/topic/flite-and-rapidears/#post-1023027</link>
+					<pubDate>Fri, 21 Nov 2014 11:28:57 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Do you get a different outcome when you don&#8217;t change models right before?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-and-rapidears/#post-1023033</guid>
+					<title><![CDATA[Reply To: [Resolved] Flite and RapidEars]]></title>
+					<link>/forums/topic/flite-and-rapidears/#post-1023033</link>
+					<pubDate>Fri, 21 Nov 2014 13:51:52 +0000</pubDate>
+					<dc:creator>adb</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>No, I commented it out and still had the same results.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-and-rapidears/#post-1023034</guid>
+					<title><![CDATA[Reply To: [Resolved] Flite and RapidEars]]></title>
+					<link>/forums/topic/flite-and-rapidears/#post-1023034</link>
+					<pubDate>Fri, 21 Nov 2014 14:23:43 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Is it hearing the entire phrase or a subset?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flite-and-rapidears/#post-1023058</guid>
+					<title><![CDATA[Reply To: [Resolved] Flite and RapidEars]]></title>
+					<link>/forums/topic/flite-and-rapidears/#post-1023058</link>
+					<pubDate>Sat, 22 Nov 2014 16:19:16 +0000</pubDate>
+					<dc:creator>adb</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry for the delayed response. It appears to be hearing all of it. I will change my rule to match exactly what flite is saying and test that quick.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Microphone Privacy &#8211; Politepix</title>
+		<atom:link href="/forums/topic/microphone-privacy/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/microphone-privacy/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:58:11 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/microphone-privacy/#post-1018486</guid>
+					<title><![CDATA[Microphone Privacy]]></title>
+					<link>/forums/topic/microphone-privacy/#post-1018486</link>
+					<pubDate>Wed, 02 Oct 2013 14:27:35 +0000</pubDate>
+					<dc:creator>benwirz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Does anyone know how to detect if the user has enabled Microphone Privacy for your app under iOS7? </p>
+<p>Thanks,<br />
+Ben</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/microphone-privacy/#post-1018488</guid>
+					<title><![CDATA[Reply To: Microphone Privacy]]></title>
+					<link>/forums/topic/microphone-privacy/#post-1018488</link>
+					<pubDate>Wed, 02 Oct 2013 16:41:30 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Ben,</p>
+<p>Have you seen this post: <a href="http://stackoverflow.com/questions/18625738/ios-7-microphone-input-permission-refused-how-to-detect" rel="nofollow">http://stackoverflow.com/questions/18625738/ios-7-microphone-input-permission-refused-how-to-detect</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

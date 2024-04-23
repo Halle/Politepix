@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>OpenEar crashes when detecting voice &#8211; Politepix</title>
+		<atom:link href="/forums/topic/openear-crashes-when-detecting-voice/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/openear-crashes-when-detecting-voice/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:39:31 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/openear-crashes-when-detecting-voice/#post-10920</guid>
+					<title><![CDATA[OpenEar crashes when detecting voice]]></title>
+					<link>/forums/topic/openear-crashes-when-detecting-voice/#post-10920</link>
+					<pubDate>Mon, 03 Sep 2012 17:03:19 +0000</pubDate>
+					<dc:creator>hohl</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am successfully integrated OpenEars framework an hour ago, but know I wanted to test the voice recognition and it doesn&#8217;t work. I set up a very minimalistic view controller to test it in my app, but it always crashes when some voice is detected.</p>
+<p>It crashes in ps_start_utt in 0x80df2. I have logging enabled and receive following output: <a href="https://www.sourcedrop.net/WPg4e3069b5b0" rel="nofollow">https://www.sourcedrop.net/WPg4e3069b5b0</a></p>
+<p>The source of the view controller is just some copy&amp;paste from the sample app. <a href="https://www.sourcedrop.net/bsB4e270527f7" rel="nofollow">https://www.sourcedrop.net/bsB4e270527f7</a></p>
+<p>Does it matter that my application is a music player and changes the AVAudioSession on launch? <code>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions<br />
+{<br />
+    NSError *audioSessionError = nil;<br />
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:&amp;audioSessionError];<br />
+    [[AVAudioSession sharedInstance] setActive:YES error:&amp;audioSessionError];<br />
+    if (audioSessionError != nil) {<br />
+        NSLog(@"Something went wrong with initialising the audio session!");<br />
+    }</p>
+<p>    AudioSessionSetActive(true);<br />
+    AudioSessionAddPropertyListener(kAudioSessionProperty_AudioRouteChange, ARAudioSessionPropertyListener, nil);</p>
+<p>    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];<br />
+    // Override point for customization after application launch.<br />
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {<br />
+        self.viewController = [[ARViewController alloc] initWithNibName:@"ARViewController_iPhone" bundle:nil];<br />
+    } else {<br />
+        self.viewController = [[ARViewController alloc] initWithNibName:@"ARViewController_iPad" bundle:nil];<br />
+    }<br />
+    self.window.rootViewController = self.viewController;<br />
+    [self.window makeKeyAndVisible];</p>
+<p>    [OpenEarsLogging startOpenEarsLogging];<br />
+    return YES;<br />
+}</code></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openear-crashes-when-detecting-voice/#post-10922</guid>
+					<title><![CDATA[Reply To: OpenEar crashes when detecting voice]]></title>
+					<link>/forums/topic/openear-crashes-when-detecting-voice/#post-10922</link>
+					<pubDate>Mon, 03 Sep 2012 17:10:42 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>To find out why PocketsphinxController is crashing, set verbosePocketSphinx to true. It probably can&#8217;t find all or part of the acoustic model or the language model in your new app.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openear-crashes-when-detecting-voice/#post-10923</guid>
+					<title><![CDATA[Reply To: OpenEar crashes when detecting voice]]></title>
+					<link>/forums/topic/openear-crashes-when-detecting-voice/#post-10923</link>
+					<pubDate>Mon, 03 Sep 2012 17:16:19 +0000</pubDate>
+					<dc:creator>hohl</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I already had [OpenEarsLogging startOpenEarsLogging];</p>
+<p>And setting verbosePocketSphinx doesn&#8217;t change anything. Just Listening and then crashes.</p>
+<p>Acoustic model and language model is generated dynamically, so this shouldn&#8217;t be missing.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openear-crashes-when-detecting-voice/#post-10925</guid>
+					<title><![CDATA[Reply To: OpenEar crashes when detecting voice]]></title>
+					<link>/forums/topic/openear-crashes-when-detecting-voice/#post-10925</link>
+					<pubDate>Mon, 03 Sep 2012 17:29:04 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OpenEarsLogging and verbosePocketSphinx aren&#8217;t related. OpenEarsLogging logs the basic functionality of the audio driver etc, and verbosePocketSphinx logs what is going on under the surface for pocketsphinx, which is where your issue is. I don&#8217;t think it&#8217;s possible that you won&#8217;t get any new logging output when you turn on verbosePocketSphinx since the crash is occurring after pocketsphinx is starting. Please double-check that it is turned on so you can show your logs.</p>
+<blockquote><p>Acoustic model and language model is generated dynamically, so this shouldn’t be missing.</p></blockquote>
+<p>The language model can be generated dynamically, but the acoustic model is part of the &#8220;framework&#8221; folder that has to be dragged into an app and cannot be dynamically generated. My guess is that the acoustic model isn&#8217;t in your new app.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openear-crashes-when-detecting-voice/#post-10927</guid>
+					<title><![CDATA[Reply To: OpenEar crashes when detecting voice]]></title>
+					<link>/forums/topic/openear-crashes-when-detecting-voice/#post-10927</link>
+					<pubDate>Mon, 03 Sep 2012 17:32:28 +0000</pubDate>
+					<dc:creator>hohl</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Oh, I mixed it up with the grammar model. All I have in my resources is: <a href="http://cl.ly/image/0b3m3C2L0q37" rel="nofollow">http://cl.ly/image/0b3m3C2L0q37</a> (which is just the whole framework folder)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openear-crashes-when-detecting-voice/#post-10928</guid>
+					<title><![CDATA[Reply To: OpenEar crashes when detecting voice]]></title>
+					<link>/forums/topic/openear-crashes-when-detecting-voice/#post-10928</link>
+					<pubDate>Mon, 03 Sep 2012 17:33:52 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You just need to get the verbosePocketSphinx logging turned on and it will tell you what is going wrong. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openear-crashes-when-detecting-voice/#post-10929</guid>
+					<title><![CDATA[Reply To: OpenEar crashes when detecting voice]]></title>
+					<link>/forums/topic/openear-crashes-when-detecting-voice/#post-10929</link>
+					<pubDate>Mon, 03 Sep 2012 17:36:11 +0000</pubDate>
+					<dc:creator>hohl</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Doesn&#8217;t matter anymore. After your last comment, I found out, that the framework folder must be included in flat form (using groups instead of folder references). Not it works.</p>
+<p>Thanks for the support.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openear-crashes-when-detecting-voice/#post-10930</guid>
+					<title><![CDATA[Reply To: OpenEar crashes when detecting voice]]></title>
+					<link>/forums/topic/openear-crashes-when-detecting-voice/#post-10930</link>
+					<pubDate>Mon, 03 Sep 2012 17:38:48 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ah, gotcha. OK, glad it&#8217;s working for you!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

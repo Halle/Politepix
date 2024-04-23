@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>weird &#8211; Politepix</title>
+	<atom:link href="/tag/weird/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>iOS Frameworks for speech recognition, text to speech and more</description>
+	<lastBuildDate>Sat, 07 Jul 2012 14:58:00 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.5.2</generator>
+<site xmlns="com-wordpress:feed-additions:1">206848719</site>	<item>
+		<title>Who is on the balcony, springtime addendum</title>
+		<link>/2010/03/29/who-is-on-the-balcony-springtime-addendum/</link>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Mon, 29 Mar 2010 11:12:03 +0000</pubDate>
+				<category><![CDATA[Photographs]]></category>
+		<category><![CDATA[Urban birds]]></category>
+		<category><![CDATA[balcony]]></category>
+		<category><![CDATA[bird]]></category>
+		<category><![CDATA[chat]]></category>
+		<category><![CDATA[duck]]></category>
+		<category><![CDATA[mallard]]></category>
+		<category><![CDATA[weird]]></category>
+		<guid isPermaLink="false">/?p=238</guid>
+
+					<description><![CDATA[Mallards are on the balcony, sitting heavily in flowerpots that E. just planted yesterday, in the rain, having a chat. [politepix-blog-inline-text-ad]]]></description>
+										<content:encoded><![CDATA[<p><strong>Mallards are on the balcony</strong>, sitting heavily in flowerpots that E. just planted yesterday, in the rain, having a chat.<br />
+<img decoding="async" alt="Two Big Mallards Hanging Out In Our Flowerpots And Chatting" src="https://i0.wp.com/www.politepix.com/wp-content/uploads/DSC03979.jpg?resize=610%2C408&#038;ssl=1" width="610" height="408" data-recalc-dims="1" /></p>
+<p>[politepix-blog-inline-text-ad]</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">238</post-id>	</item>
+	</channel>
+</rss>

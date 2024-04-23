@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Testing with simulator?? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/testing-with-simulator/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/testing-with-simulator/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:09:23 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/testing-with-simulator/#post-1022532</guid>
+					<title><![CDATA[Testing with simulator??]]></title>
+					<link>/forums/topic/testing-with-simulator/#post-1022532</link>
+					<pubDate>Mon, 15 Sep 2014 14:30:51 +0000</pubDate>
+					<dc:creator>okmred</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Is there a way to test with the simulator?<br />
+I do not have an apple app account just yet and wanted to test the app locally to make sure I am doing things correctly. Thanks for any thoughts.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/testing-with-simulator/#post-1022533</guid>
+					<title><![CDATA[Reply To: Testing with simulator??]]></title>
+					<link>/forums/topic/testing-with-simulator/#post-1022533</link>
+					<pubDate>Mon, 15 Sep 2014 14:42:38 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>You can&#8217;t test out recognition quality, sorry. It will run on the simulator, but the quality of recognition will be significantly worse than on a device, so it can&#8217;t be used for information about accuracy.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/testing-with-simulator/#post-1022536</guid>
+					<title><![CDATA[Reply To: Testing with simulator??]]></title>
+					<link>/forums/topic/testing-with-simulator/#post-1022536</link>
+					<pubDate>Mon, 15 Sep 2014 15:17:33 +0000</pubDate>
+					<dc:creator>okmred</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ok, but it should acknowledge &#8220;something&#8221;&#8230;ok, that should be good enough for my unit testing. Thanks, that helps.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

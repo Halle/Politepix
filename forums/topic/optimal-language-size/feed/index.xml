@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Optimal Language Size? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/optimal-language-size/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/optimal-language-size/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:40:18 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/optimal-language-size/#post-8356</guid>
+					<title><![CDATA[Optimal Language Size?]]></title>
+					<link>/forums/topic/optimal-language-size/#post-8356</link>
+					<pubDate>Tue, 03 Jan 2012 00:50:32 +0000</pubDate>
+					<dc:creator>aerialcombat</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I do know that the smaller the language size, the better performance it will have.<br />
+But if I HAD to stretch it far, what would be the biggest language size without going overboard?</p>
+<p>100? 200? 300?</p>
+<p>By language size, I mean the number of recognizable hypotheses.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/optimal-language-size/#post-8357</guid>
+					<title><![CDATA[Reply To: Optimal Language Size?]]></title>
+					<link>/forums/topic/optimal-language-size/#post-8357</link>
+					<pubDate>Tue, 03 Jan 2012 10:02:47 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi there,</p>
+<p>I don&#8217;t think it would be helpful to give any advice other than simply testing the language sizes you are speculating about and see firsthand what results you get. There are a few variables even within a total number of recognizable hypotheses so it&#8217;s better to verify how it performs.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/optimal-language-size/#post-8358</guid>
+					<title><![CDATA[Reply To: Optimal Language Size?]]></title>
+					<link>/forums/topic/optimal-language-size/#post-8358</link>
+					<pubDate>Tue, 03 Jan 2012 14:27:13 +0000</pubDate>
+					<dc:creator>aerialcombat</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks, will do. :)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

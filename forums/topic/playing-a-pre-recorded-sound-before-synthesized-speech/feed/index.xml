@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Playing a pre-recorded sound before synthesized speech. &#8211; Politepix</title>
+		<atom:link href="/forums/topic/playing-a-pre-recorded-sound-before-synthesized-speech/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/playing-a-pre-recorded-sound-before-synthesized-speech/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:48:30 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/playing-a-pre-recorded-sound-before-synthesized-speech/#post-14068</guid>
+					<title><![CDATA[Playing a pre-recorded sound before synthesized speech.]]></title>
+					<link>/forums/topic/playing-a-pre-recorded-sound-before-synthesized-speech/#post-14068</link>
+					<pubDate>Sat, 01 Dec 2012 02:20:52 +0000</pubDate>
+					<dc:creator>MB</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>Is it possible to play a pre-recorded sound before playing synthesized speech?<br />
+This is what I&#8217;ve figured out so far.</p>
+<p>I can create an OpenEarsEventsObserver object and set the delegate to object which implements.</p>
+<p>&#8211; (void) fliteDidStartSpeaking; </p>
+<p>However how do I used this callback method to insert/play pre recorded sound before synthesized speech.</p>
+<p>Thanks,</p>
+<p>&#8211;MB.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/playing-a-pre-recorded-sound-before-synthesized-speech/#post-14144</guid>
+					<title><![CDATA[Reply To: Playing a pre-recorded sound before synthesized speech.]]></title>
+					<link>/forums/topic/playing-a-pre-recorded-sound-before-synthesized-speech/#post-14144</link>
+					<pubDate>Sat, 01 Dec 2012 09:43:14 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>You can play a sound whenever you like using standard AVAudioPlayer methods and their delegates. Just initiate speech once the AVAudioPlayer delegate method audioPlayerDidFinishPlaying:successfully: returns.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/playing-a-pre-recorded-sound-before-synthesized-speech/#post-14187</guid>
+					<title><![CDATA[Reply To: Playing a pre-recorded sound before synthesized speech.]]></title>
+					<link>/forums/topic/playing-a-pre-recorded-sound-before-synthesized-speech/#post-14187</link>
+					<pubDate>Sat, 01 Dec 2012 18:53:28 +0000</pubDate>
+					<dc:creator>MB</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the response.<br />
+I want to play the sound before synthesized speech starts playing. Is that possible?  The &#8216;audioPlayerDidFinishPlaying:successfully:&#8217; would only allow audio to be inserted afterwards.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/playing-a-pre-recorded-sound-before-synthesized-speech/#post-14189</guid>
+					<title><![CDATA[Reply To: Reply To: Playing a pre-recorded sound before synthesized speech.]]></title>
+					<link>/forums/topic/playing-a-pre-recorded-sound-before-synthesized-speech/#post-14189</link>
+					<pubDate>Sat, 01 Dec 2012 19:56:46 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<blockquote><p>The ‘audioPlayerDidFinishPlaying:successfully:’ would only allow audio to be inserted afterwards.</p></blockquote>
+<p>Only if you start playing the AVAudioPlayer sound after the speech returns the OpenEarsEventsObserver method. If you initiate the speech as a result of the audioPlayerDidFinishPlaying:successfully: method of a sound that you play using AVAudioPlayer being called, the sound will precede the speech.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

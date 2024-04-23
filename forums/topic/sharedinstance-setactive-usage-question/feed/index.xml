@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] sharedInstance SetActive: usage question &#8211; Politepix</title>
+		<atom:link href="/forums/topic/sharedinstance-setactive-usage-question/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/sharedinstance-setactive-usage-question/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:05:10 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/sharedinstance-setactive-usage-question/#post-1023565</guid>
+					<title><![CDATA[[Resolved] sharedInstance SetActive: usage question]]></title>
+					<link>/forums/topic/sharedinstance-setactive-usage-question/#post-1023565</link>
+					<pubDate>Mon, 15 Dec 2014 19:55:43 +0000</pubDate>
+					<dc:creator>tbreslow</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p><em>Another API change is that before you start setting properties of OEPocketsphinxController for the first time, it is necessary to call its setActive method</em></p>
+<p>Forgive me if this is an ignorant question, but does this mean I have to keep track of whether it is the first time I am setting properties so that I can know if I need to call this?</p>
+<p>I have upgraded to 2.0 per the guide and it is fantastic, but I am not setting this to true and therefore did not expect it to start recognition. This call is for setting properties only, not for starting recognition?</p>
+<p>Many Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/sharedinstance-setactive-usage-question/#post-1023566</guid>
+					<title><![CDATA[Reply To: [Resolved] sharedInstance SetActive: usage question]]></title>
+					<link>/forums/topic/sharedinstance-setactive-usage-question/#post-1023566</link>
+					<pubDate>Mon, 15 Dec 2014 20:06:31 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>It isn&#8217;t harmful to call it more than once.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/sharedinstance-setactive-usage-question/#post-1023793</guid>
+					<title><![CDATA[Reply To: [Resolved] sharedInstance SetActive: usage question]]></title>
+					<link>/forums/topic/sharedinstance-setactive-usage-question/#post-1023793</link>
+					<pubDate>Thu, 25 Dec 2014 12:23:17 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>To clarify a bit now that I&#8217;ve seen some code which does this, I think the question is probably usually being asked in order to put the setActive: code into a lazy accessor to avoid getting rid of the OEPocketsphinxController  lazy accessor pattern from 1.x. </p>
+<p>I would recommend both against having a lazy accessor and from putting setActive: into it, since I&#8217;m not offering an API contract that I will never put anything in setActive: that would be preferable to do fewer times, although currently I don&#8217;t see a potential issue from calling setActive: multiple times.</p>
+<p>Therefore, the best way to go would be to get rid of the lazy accessor, now or soonish, and then you will have less and simpler code, and you will also know pretty well where your first invocation of OEPocketsphinxController is so you can call setActive: one time, before it.  Hope this is helpful.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/sharedinstance-setactive-usage-question/#post-1024022</guid>
+					<title><![CDATA[Reply To: [Resolved] sharedInstance SetActive: usage question]]></title>
+					<link>/forums/topic/sharedinstance-setactive-usage-question/#post-1024022</link>
+					<pubDate>Mon, 29 Dec 2014 14:13:54 +0000</pubDate>
+					<dc:creator>tbreslow</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Many thanks!</p>
+<p>(I removed the lazy accessors during my switch to 2.0.)</p>
+<p>There are two different parts of my application where it is possible to use voice recognition and the <code>sharedInstance</code>. Right now I am checking <code>isListening</code> to determine whether I need to <code>setActive:YES</code> and call <code>startListeningWithLanguageModelAtPath</code>. </p>
+<p>Is this a valid approach?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/sharedinstance-setactive-usage-question/#post-1024023</guid>
+					<title><![CDATA[Reply To: [Resolved] sharedInstance SetActive: usage question]]></title>
+					<link>/forums/topic/sharedinstance-setactive-usage-question/#post-1024023</link>
+					<pubDate>Mon, 29 Dec 2014 15:30:22 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That sounds reasonable!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

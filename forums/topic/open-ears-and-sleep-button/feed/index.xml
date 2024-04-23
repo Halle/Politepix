@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>open ears and sleep button &#8211; Politepix</title>
+		<atom:link href="/forums/topic/open-ears-and-sleep-button/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/open-ears-and-sleep-button/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:40:13 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/open-ears-and-sleep-button/#post-8707</guid>
+					<title><![CDATA[open ears and sleep button]]></title>
+					<link>/forums/topic/open-ears-and-sleep-button/#post-8707</link>
+					<pubDate>Sun, 04 Mar 2012 17:08:37 +0000</pubDate>
+					<dc:creator>chadfaling@gmail.com</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Will open ears still operate after person has hit the sleep button?</p>
+<p>Lets say I press the sleep button on my Iphone so that I can place it in my pocket without worry of pocket dialing someone; but I want open ears to still be able to recognize my voice and respond, is this possible?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/open-ears-and-sleep-button/#post-8708</guid>
+					<title><![CDATA[Reply To: open ears and sleep button]]></title>
+					<link>/forums/topic/open-ears-and-sleep-button/#post-8708</link>
+					<pubDate>Sun, 04 Mar 2012 19:09:07 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I don&#8217;t know offhand so I&#8217;d just recommend trying it on the sample app, but the answer is most likely no for the reasons explained in this StackOverflow question:</p>
+<p><a href="http://stackoverflow.com/questions/8198220/nstimer-events-do-no-occur-when-screen-locked-on-ios-5" rel="nofollow">http://stackoverflow.com/questions/8198220/nstimer-events-do-no-occur-when-screen-locked-on-ios-5</a></p>
+<p>Without being able to react to events, it&#8217;s unlikely that a speech recognition engine is going to do much.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/open-ears-and-sleep-button/#post-8709</guid>
+					<title><![CDATA[Reply To: open ears and sleep button]]></title>
+					<link>/forums/topic/open-ears-and-sleep-button/#post-8709</link>
+					<pubDate>Mon, 05 Mar 2012 03:30:54 +0000</pubDate>
+					<dc:creator>chadfaling@gmail.com</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Halle,</p>
+<p>Thanks for the response and link!<br />
+This is crazy that apple won&#8217;t allow apps to run once the screen has been locked! There must be a way around this&#8230; I&#8217;ll keep looking&#8230;</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/open-ears-and-sleep-button/#post-8710</guid>
+					<title><![CDATA[Reply To: open ears and sleep button]]></title>
+					<link>/forums/topic/open-ears-and-sleep-button/#post-8710</link>
+					<pubDate>Mon, 05 Mar 2012 08:21:36 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Well, it isn&#8217;t that they don&#8217;t run, it&#8217;s that they cut down on notifications and timer processes to save battery. I think it&#8217;s probably more about enduser expectations about what happens when they press the lock button than Apple being controlling, since pocket dialing is probably not a big worry due to the touch interface.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

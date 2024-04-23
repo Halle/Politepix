@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>SimpleAudioEngine in Cocos2d no sound &#8211; Politepix</title>
+		<atom:link href="/forums/topic/simpleaudioengine-in-cocos2d-no-sound/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/simpleaudioengine-in-cocos2d-no-sound/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:06:16 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/simpleaudioengine-in-cocos2d-no-sound/#post-1017450</guid>
+					<title><![CDATA[SimpleAudioEngine in Cocos2d no sound]]></title>
+					<link>/forums/topic/simpleaudioengine-in-cocos2d-no-sound/#post-1017450</link>
+					<pubDate>Sat, 08 Jun 2013 10:40:23 +0000</pubDate>
+					<dc:creator>artcube</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>After adding openears to my Cocos2d project, playing a sound on a device using SimpleAudioEngine gives no error but plays no sound.  Works fine in simulator.</p>
+<p>Even initializing openears causes this issue without saying anything.  </p>
+<p>This is the call:</p>
+<p>        [[SimpleAudioEngine sharedEngine] playEffect:POPING_SOUND pitch:1.0f pan:0.0 gain:1.0];</p>
+<p>As long as I initialize:</p>
+<p>    self.fliteController = [[FliteController alloc] init];</p>
+<p>No sound comes out.  I should mention the POPING_SOUND is a wav file.</p>
+<p>Thanks for the help, I really like the engine but it needs to work with sound.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/simpleaudioengine-in-cocos2d-no-sound/#post-1017451</guid>
+					<title><![CDATA[Reply To: SimpleAudioEngine in Cocos2d no sound]]></title>
+					<link>/forums/topic/simpleaudioengine-in-cocos2d-no-sound/#post-1017451</link>
+					<pubDate>Sat, 08 Jun 2013 11:18:11 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>The underlying issue is that OpenEars&#8217; sound requirements add up to an additional audio engine&#8217;s worth of code, so there is probably an unwanted interaction between OpenEars&#8217; audio session handling and SimpleAudioEngine. A search through this forum for &#8220;audiosession&#8221; and/or &#8220;allowmixing&#8221; should turn up some explanations of how to turn on mixing for different audio streams/sessions, which would be the first troubleshooting step. This issue:</p>
+<p><a href="/forums/topic/openears-avplayer-issue/">/forums/topic/openears-avplayer-issue/</a></p>
+<p>Probably has very similar underpinnings, so it is probable worth a read to debug the issue you&#8217;re seeing.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/simpleaudioengine-in-cocos2d-no-sound/#post-1020311</guid>
+					<title><![CDATA[Reply To: SimpleAudioEngine in Cocos2d no sound]]></title>
+					<link>/forums/topic/simpleaudioengine-in-cocos2d-no-sound/#post-1020311</link>
+					<pubDate>Mon, 24 Feb 2014 23:45:24 +0000</pubDate>
+					<dc:creator>BenoitFreslon</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>I got the same problem.</p>
+<p>Did you find a workaround?</p>
+<p>Thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/simpleaudioengine-in-cocos2d-no-sound/#post-1020320</guid>
+					<title><![CDATA[Reply To: SimpleAudioEngine in Cocos2d no sound]]></title>
+					<link>/forums/topic/simpleaudioengine-in-cocos2d-no-sound/#post-1020320</link>
+					<pubDate>Tue, 25 Feb 2014 09:47:04 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>OpenEars isn&#8217;t expected to work alongside another audio engine, since they will be addressing the same resources.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/simpleaudioengine-in-cocos2d-no-sound/#post-1020322</guid>
+					<title><![CDATA[Reply To: SimpleAudioEngine in Cocos2d no sound]]></title>
+					<link>/forums/topic/simpleaudioengine-in-cocos2d-no-sound/#post-1020322</link>
+					<pubDate>Tue, 25 Feb 2014 10:33:44 +0000</pubDate>
+					<dc:creator>BenoitFreslon</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I just found a workaround to resume sounds in cocos2d.</p>
+<p>I added this line of code:</p>
+<pre><code>    NSError *error;
+    [[AVAudioSession sharedInstance]
+     setCategory:AVAudioSessionCategorySoloAmbient error:&amp;error];</code></pre>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/simpleaudioengine-in-cocos2d-no-sound/#post-1020323</guid>
+					<title><![CDATA[Reply To: SimpleAudioEngine in Cocos2d no sound]]></title>
+					<link>/forums/topic/simpleaudioengine-in-cocos2d-no-sound/#post-1020323</link>
+					<pubDate>Tue, 25 Feb 2014 10:37:03 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Do you then set the audio session back to one that OpenEars can use for speech recognition?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/simpleaudioengine-in-cocos2d-no-sound/#post-1020324</guid>
+					<title><![CDATA[Reply To: SimpleAudioEngine in Cocos2d no sound]]></title>
+					<link>/forums/topic/simpleaudioengine-in-cocos2d-no-sound/#post-1020324</link>
+					<pubDate>Tue, 25 Feb 2014 10:42:15 +0000</pubDate>
+					<dc:creator>BenoitFreslon</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I try to stop all active OpenEars delegate like this:</p>
+<pre><code>- (void) stop {
+    if (self.openEarsEventsObserver) {
+        self.openEarsEventsObserver.delegate = nil;
+        self.openEarsEventsObserver = nil;
+    }
+    if (self.pocketsphinxController)  {
+        [self.pocketsphinxController stopListening];
+        self.pocketsphinxController = nil;
+    }
+    
+    NSError *error;
+    [[AVAudioSession sharedInstance]
+     setCategory:AVAudioSessionCategorySoloAmbient error:&amp;error];
+} </code></pre>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

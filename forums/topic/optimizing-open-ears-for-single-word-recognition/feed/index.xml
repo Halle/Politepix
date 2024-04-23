@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Optimizing open ears for single word recognition &#8211; Politepix</title>
+		<atom:link href="/forums/topic/optimizing-open-ears-for-single-word-recognition/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/optimizing-open-ears-for-single-word-recognition/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:48:15 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/optimizing-open-ears-for-single-word-recognition/#post-14907</guid>
+					<title><![CDATA[Optimizing open ears for single word recognition]]></title>
+					<link>/forums/topic/optimizing-open-ears-for-single-word-recognition/#post-14907</link>
+					<pubDate>Fri, 14 Dec 2012 21:19:24 +0000</pubDate>
+					<dc:creator>woodyard</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am writing an app for kids that presents them with a single word, and then uses OpenEars to see if they repeat it correctly.</p>
+<p>Currently if I use a headset and mic I get a successful recognition rate of about 91%.  Results using a built in mic are close to 75%.  I&#8217;m wondering if anyone has any tips on optimizing OpenEars for this type of application.  For example, should I have the app create a single word dictionary prior to showing each word?  Would that produce better results or is that an impractical approach.</p>
+<p>Also &#8211; on a side note does anyone know if the dynamically created dictionary files can be redirected to another folder other than the &#8220;Documents&#8221; folder ( where they are visible via iTunes ).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/optimizing-open-ears-for-single-word-recognition/#post-14908</guid>
+					<title><![CDATA[Reply To: Optimizing open ears for single word recognition]]></title>
+					<link>/forums/topic/optimizing-open-ears-for-single-word-recognition/#post-14908</link>
+					<pubDate>Fri, 14 Dec 2012 21:28:30 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This is generally due to speaking too far away from the built-in device mic. Its optimal distance is telephoning distance so if the device is far away you won&#8217;t get as good results as with the headset mic.  </p>
+<p>What exactly is happening when the recognition is wrong, is it something like the kid said &#8220;cat&#8221; but it recognized &#8220;hat&#8221;, where both &#8220;cat&#8221; and &#8220;hat&#8221; are words that are in the language model, or more like the kid said something unrelated but it was recognized as either &#8220;cat&#8221; or &#8220;hat&#8221;?</p>
+<p>The best advice I can give is to optimize a language model so it doesn&#8217;t have a lot of very similar-sounding short words in it, because that is the most challenging circumstance to get right. In that case I might want to use smaller language models and maybe try and see if Rejecto handles rejecting out of vocabulary speech (that&#8217;s only helpful if you are getting recognitions due to words which aren&#8217;t in the language model at all).</p>
+<p>I will take the request about having an option for putting the language models elsewhere under advisement for the next version of OpenEars, you make a good point. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/optimizing-open-ears-for-single-word-recognition/#post-1015452</guid>
+					<title><![CDATA[Reply To: Optimizing open ears for single word recognition]]></title>
+					<link>/forums/topic/optimizing-open-ears-for-single-word-recognition/#post-1015452</link>
+					<pubDate>Wed, 23 Jan 2013 04:48:06 +0000</pubDate>
+					<dc:creator>woodyard</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I finally had a chance to do more testing today and found something unexpected.  I used the code from the sample app to dump the mic levels to the console while pocket sphinx is working.  </p>
+<p>The typical patter was this:  silence ( approx -100 DB ) followed by a peak of anywhere from -80 DB to -65 DB and then either a message from pocket sphinx saying &#8220;speech detected&#8221; followed by the hypothesis, etc.  OR no message &#8220;speech detected&#8221; followed by no other messages from pocket sphinx.</p>
+<p>At approximately -76 DB and above the results were good,  below -76 DB is where consistency started to drop off.  </p>
+<p>So, to summarize the problem I&#8217;m seeing doesn&#8217;t seem to be the accuracy of the word identification, but rather the threshold for whatever causes pocket sphinx to generate a &#8220;speech detected&#8221; is higher than what I would like.</p>
+<p>I looked through the API documentation again but did not see the option to adjust that.  Any suggestions appreciated.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/optimizing-open-ears-for-single-word-recognition/#post-1015454</guid>
+					<title><![CDATA[Reply To: Optimizing open ears for single word recognition]]></title>
+					<link>/forums/topic/optimizing-open-ears-for-single-word-recognition/#post-1015454</link>
+					<pubDate>Wed, 23 Jan 2013 11:14:00 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You can&#8217;t adjust the sensitivity of the voice activity detection, sorry. It sounds like it is too sensitive, is that correct? If the issue is that the users are speaking too quietly or from too far away for recognition to be accurate when it is triggered, this is generally something that is best addressed with user education: &#8220;MyApp works best if you speak clearly from no more than $DISTANCE away&#8221;. If the issue is that utterances are triggering recognition that are not user speech that relates to the app, Rejecto was designed to give a null result under that circumstance rather than a wrong hypothesis. If I have it backward and the issue is insufficient mic sensitivity, you could experiment with the suggestions in this thread:</p>
+<p><a href="/forums/topic/add-mode-options-next-version/">/forums/topic/add-mode-options-next-version/</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/optimizing-open-ears-for-single-word-recognition/#post-1015456</guid>
+					<title><![CDATA[Reply To: Optimizing open ears for single word recognition]]></title>
+					<link>/forums/topic/optimizing-open-ears-for-single-word-recognition/#post-1015456</link>
+					<pubDate>Wed, 23 Jan 2013 15:55:49 +0000</pubDate>
+					<dc:creator>woodyard</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>It&#8217;s the latter &#8211; insufficient mic sensitivity.  I looked at that thread, and it looks like I should attempt to follow the steps described by hartsteins in his May 25th post to nvrtd.  Is that correct?  The other parts of the thread seem to be about output routing.  He mentions recompiling the framework after making the addition &#8211; does the framework get rebuilt when you do a clean-&gt;build in XCode, or are there special steps required to get the framework to recompile?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/optimizing-open-ears-for-single-word-recognition/#post-1015457</guid>
+					<title><![CDATA[Reply To: Optimizing open ears for single word recognition]]></title>
+					<link>/forums/topic/optimizing-open-ears-for-single-word-recognition/#post-1015457</link>
+					<pubDate>Wed, 23 Jan 2013 16:05:31 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, yes the steps described in that post should help you with insufficient sensitivity, although please keep the downside in mind &#8212; if you increase the sensitivity you will also have more incidental noises triggering recognition (chirping birds, etc). Sometimes sensitivity issues are related to doing testing in a single environment and if you optimize for increasing or decreasing sensitivity based on one environment you will see a decline in performance on the other end of the spectrum (developers usually like to work in quiet environments but users like to do speech recognition in noisy ones). Just wanted to mention that issue in advance.</p>
+<p>When you make a change to the framework, you need to clean and build the framework project (OpenEars.xcodeproj). Then the new framework should be picked up in your app the next time you build and clean. You can test this by selecting the framework file in your app project and selecting &#8220;view in finder&#8221; and then when it takes you to the finder file, do &#8220;get info&#8221; and see if its last modified date is the time that you built the framework project.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/optimizing-open-ears-for-single-word-recognition/#post-1015466</guid>
+					<title><![CDATA[Reply To: Optimizing open ears for single word recognition]]></title>
+					<link>/forums/topic/optimizing-open-ears-for-single-word-recognition/#post-1015466</link>
+					<pubDate>Thu, 24 Jan 2013 18:26:03 +0000</pubDate>
+					<dc:creator>woodyard</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>In this code snippet:<br />
+// kAudioSessionMode_Default = ‘dflt’,<br />
+ // kAudioSessionMode_VoiceChat = ‘vcct’,<br />
+ // kAudioSessionMode_VideoRecording = ‘vrcd’,<br />
+ // kAudioSessionMode_Measurement = ‘msmt’</p>
+<p>UInt32 audioModeClassification = kAudioSessionMode_VideoRecording; //set what you want it to be<br />
+ UInt32 audioModeCheckSize = sizeof (UInt32);<br />
+ UInt32 audioModeCheck = 999;</p>
+<p>Is it necessary to remove the // in front of  // kAudioSessionMode_VideoRecording = ‘vrcd’,?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/optimizing-open-ears-for-single-word-recognition/#post-1015467</guid>
+					<title><![CDATA[Reply To: Optimizing open ears for single word recognition]]></title>
+					<link>/forums/topic/optimizing-open-ears-for-single-word-recognition/#post-1015467</link>
+					<pubDate>Thu, 24 Jan 2013 18:28:52 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Looks that way to me. I haven&#8217;t tested that code so you&#8217;re a bit on your own with it, but those look like constants so I expect that you&#8217;d want to uncomment the one corresponding to the recording type you want to use.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

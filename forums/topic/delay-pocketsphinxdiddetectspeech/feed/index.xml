@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Delay pocketsphinxDidDetectSpeech &#8211; Politepix</title>
+		<atom:link href="/forums/topic/delay-pocketsphinxdiddetectspeech/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/delay-pocketsphinxdiddetectspeech/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:48:24 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/delay-pocketsphinxdiddetectspeech/#post-15077</guid>
+					<title><![CDATA[Delay pocketsphinxDidDetectSpeech]]></title>
+					<link>/forums/topic/delay-pocketsphinxdiddetectspeech/#post-15077</link>
+					<pubDate>Sat, 22 Dec 2012 13:13:18 +0000</pubDate>
+					<dc:creator>kelvin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>How do i delay the pocketsphinxDidDetectSpeech by 5 seconds? I&#8217;m playing some sound files during the 5 seconds and i do not want it to detect the sounds. I&#8217;ve try suspending the recognition and resuming the recognition. But how do i delay it using [self performSelector:@selector(?:) withObject:nil afterDelay:5.0f];</p>
+<p>I&#8217;ve try putting [self.pocketsphinxController resumeRecognition]; in a function and calling it in the selector with the delay. But it failed with error unrecognized selector sent to instance.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/delay-pocketsphinxdiddetectspeech/#post-15078</guid>
+					<title><![CDATA[Reply To: Delay pocketsphinxDidDetectSpeech]]></title>
+					<link>/forums/topic/delay-pocketsphinxdiddetectspeech/#post-15078</link>
+					<pubDate>Sat, 22 Dec 2012 14:37:22 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>pocketsphinxDidDetectSpeech is a delegate method, so you don&#8217;t want to delay it since you don&#8217;t call it directly, you just want to address the underlying functionality that you control directly which is whether recognition is engaged or not. Suspending recognition before playing your sound and resuming it afterwards should work perfectly for the goal of halting recognition during other media playback, so if it isn&#8217;t working perfectly we should figure out why. What happens when you suspend before you play your sound back and resume after your sound is done playing?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/delay-pocketsphinxdiddetectspeech/#post-15079</guid>
+					<title><![CDATA[Reply To: Delay pocketsphinxDidDetectSpeech]]></title>
+					<link>/forums/topic/delay-pocketsphinxdiddetectspeech/#post-15079</link>
+					<pubDate>Sat, 22 Dec 2012 14:55:50 +0000</pubDate>
+					<dc:creator>kelvin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I have tried suspending the recognition after flite finished speaking and after a delay of 5 seconds before playing a sound file but it seems that pocketsphinx did detect the sound file which is not what i wanted. Following are my functions for your reference.</p>
+<p>&#8211; (void) fliteDidFinishSpeaking {<br />
+[self.pocketsphinxController suspendRecognition];<br />
+[self performSelector:@selector(playAudioAlert:) withObject:nil afterDelay:5.0f];<br />
+}</p>
+<p>-(void) playAudioAlert{<br />
+self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:<br />
+                       [NSURL fileURLWithPath:[[NSBundle mainBundle]<br />
+                                               pathForResource:@&#8221;Audio1&#8243;                                          ofType:@&#8221;wav&#8221;]] error:nil];</p>
+<p>player.delegate = self;<br />
+[self.player play];<br />
+}</p>
+<p>-(void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{<br />
+    if(flag == YES){<br />
+        [self.pocketsphinxController resumeRecognition];<br />
+    }<br />
+}</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/delay-pocketsphinxdiddetectspeech/#post-15080</guid>
+					<title><![CDATA[Reply To: Delay pocketsphinxDidDetectSpeech]]></title>
+					<link>/forums/topic/delay-pocketsphinxdiddetectspeech/#post-15080</link>
+					<pubDate>Sat, 22 Dec 2012 15:10:15 +0000</pubDate>
+					<dc:creator>kelvin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I guess my problem would be after flite has finished speaking, i suspended recognition and wait for 5 sec before audio is played but during that time audioPlayerDidFinishPlaying would have been flagged with a &#8220;YES&#8221; and resumed recognition. So i guess i would have to find a way to stop recognition for 5 sec.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/delay-pocketsphinxdiddetectspeech/#post-15081</guid>
+					<title><![CDATA[Reply To: Delay pocketsphinxDidDetectSpeech]]></title>
+					<link>/forums/topic/delay-pocketsphinxdiddetectspeech/#post-15081</link>
+					<pubDate>Sat, 22 Dec 2012 16:32:13 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, can you explain to me a little more about why you can&#8217;t suspend recognition at the time that you start the playback of your own AVAudioPlayer and resume it when you receive the delegate callback that your own AVAudioPlayer has completed playback? It doesn&#8217;t yet make sense to me why you&#8217;d need to suspend for an arbitrary period of time when you know the moment that you can suspend and the moment that you can resume in order to not have recognition in progress during your sound playback.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/delay-pocketsphinxdiddetectspeech/#post-15082</guid>
+					<title><![CDATA[Reply To: Delay pocketsphinxDidDetectSpeech]]></title>
+					<link>/forums/topic/delay-pocketsphinxdiddetectspeech/#post-15082</link>
+					<pubDate>Sat, 22 Dec 2012 17:10:57 +0000</pubDate>
+					<dc:creator>kelvin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ok got it. Thanks alot for ur help.</p>
+<p>Another question is that we can&#8217;t vibrate the phone during the sound playback right? I&#8217;ve have read some of ur previous post regarding this topic and you mention [AudioSessionManager sharedAudioSessionManager].soundMixing = TRUE; Where do i add this code? Do i need to modify the framework? Any other addition steps?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/delay-pocketsphinxdiddetectspeech/#post-15083</guid>
+					<title><![CDATA[Reply To: Delay pocketsphinxDidDetectSpeech]]></title>
+					<link>/forums/topic/delay-pocketsphinxdiddetectspeech/#post-15083</link>
+					<pubDate>Sat, 22 Dec 2012 17:18:09 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, glad that was helpful. You don&#8217;t actually have to modify the framework in order to turn on sound mixing, it is not currently part of the public API and therefore likely to change in future versions but for the time being you can turn on sound mixing simply by including the line you referenced above right before you do startListeningWithLanguageModelAtPath:. It might be necessary for you to import AudioSessionManager.h in the view controller from which you want to do that.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/delay-pocketsphinxdiddetectspeech/#post-15084</guid>
+					<title><![CDATA[Reply To: Delay pocketsphinxDidDetectSpeech]]></title>
+					<link>/forums/topic/delay-pocketsphinxdiddetectspeech/#post-15084</link>
+					<pubDate>Sat, 22 Dec 2012 17:45:46 +0000</pubDate>
+					<dc:creator>kelvin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;ve added #import  to my view controller.</p>
+<p>And when i input this<br />
+[AudioSessionManager sharedAudioSessionManager].soundMixing = TRUE;</p>
+<p>the error shows<br />
+Property &#8216;soundMixing&#8217; not found on object of type &#8216;id&#8217;</p>
+<p>so i did this instead<br />
+[[AudioSessionManager sharedAudioSessionManager]setSoundMixing:YES];</p>
+<p>and added this for vibration<br />
+AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);<br />
+to &#8211; (void) fliteDidFinishSpeaking</p>
+<p>but it didn&#8217;t vibrate on the device.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/delay-pocketsphinxdiddetectspeech/#post-15085</guid>
+					<title><![CDATA[Reply To: Delay pocketsphinxDidDetectSpeech]]></title>
+					<link>/forums/topic/delay-pocketsphinxdiddetectspeech/#post-15085</link>
+					<pubDate>Sat, 22 Dec 2012 18:45:41 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry, that is something you&#8217;d need to troubleshoot further on your own. It could be that you aren&#8217;t instantiating it at the right point in the logical flow of the app, it could be that there is an issue in the logical flow of your app with where you are trying to initiate the vibration effect (similarly to with the original question in this topic) or it could be that soundMixing isn&#8217;t a fix for what you are trying to do. It isn&#8217;t a supported feature so regretfully there is a time issue for me with getting too deeply into exploring the different potential reasons it might not be working yet.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Double commands in hypothesis &#8211; Politepix</title>
+		<atom:link href="/forums/topic/double-commands-in-hypothesis/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/double-commands-in-hypothesis/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:44:39 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/double-commands-in-hypothesis/#post-13828</guid>
+					<title><![CDATA[Double commands in hypothesis]]></title>
+					<link>/forums/topic/double-commands-in-hypothesis/#post-13828</link>
+					<pubDate>Thu, 29 Nov 2012 19:57:04 +0000</pubDate>
+					<dc:creator>cricketgeek</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Using the code from the tutorial and OpenEars demo app everything is working great except I seem to get double commands inside of pocketsphinxDidReceiveHypothesis for the hypothesis sometimes even though I&#8217;m very carefully saying the command once. Actually, sometimes there are other words from my generated grammar and dictionary, like &#8220;RIGHT GO&#8221; or &#8220;LEFT GO STOP&#8221; when &#8220;GO&#8221; was spoken.</p>
+<p>Tried<br />
+[self.pocketSphinxController setSecondsOfSilenceToDetect:0.6];<br />
+and then also<br />
+[self.pocketSphinxController setNBestNumber:1];<br />
+[self.pocketSphinxController setReturnNbest:YES];</p>
+<p>other than cleaning the result up myself is there something I can tweak to get this only returning the best match and 1 result?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/double-commands-in-hypothesis/#post-13829</guid>
+					<title><![CDATA[Reply To: Double commands in hypothesis]]></title>
+					<link>/forums/topic/double-commands-in-hypothesis/#post-13829</link>
+					<pubDate>Thu, 29 Nov 2012 20:00:35 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Any chance you&#8217;re testing on the Simulator?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/double-commands-in-hypothesis/#post-13830</guid>
+					<title><![CDATA[Reply To: Double commands in hypothesis]]></title>
+					<link>/forums/topic/double-commands-in-hypothesis/#post-13830</link>
+					<pubDate>Thu, 29 Nov 2012 20:06:53 +0000</pubDate>
+					<dc:creator>cricketgeek</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>No, testing through an iPad 3. And I noticed this time that after I get the extra words in hypothesis, if I try again it usually works and only returns the 1 word, &#8220;STOP&#8221; or &#8220;GO&#8221;. I am using the demo version which I just downloaded yesterday (probably obvious from my noob question here).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/double-commands-in-hypothesis/#post-13831</guid>
+					<title><![CDATA[Reply To: Double commands in hypothesis]]></title>
+					<link>/forums/topic/double-commands-in-hypothesis/#post-13831</link>
+					<pubDate>Thu, 29 Nov 2012 20:11:51 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, is it happening on the first hypothesis of the session or does it also happen afterwards?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/double-commands-in-hypothesis/#post-13832</guid>
+					<title><![CDATA[Reply To: Reply To: Reply To: Double commands in hypothesis]]></title>
+					<link>/forums/topic/double-commands-in-hypothesis/#post-13832</link>
+					<pubDate>Thu, 29 Nov 2012 20:13:22 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Oh, another question &#8212; you posted this in the OpenEars plugins section, but from the info in the question I&#8217;ve been assuming that the question is actually about OpenEars without a plugin. Is this incorrect and the question is about one of the OpenEars plugins, or is it just about OpenEars itself?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/double-commands-in-hypothesis/#post-13833</guid>
+					<title><![CDATA[Reply To: Double commands in hypothesis]]></title>
+					<link>/forums/topic/double-commands-in-hypothesis/#post-13833</link>
+					<pubDate>Thu, 29 Nov 2012 20:22:42 +0000</pubDate>
+					<dc:creator>cricketgeek</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ok, yes I thought I was using Rejecto but I was not yet using anything in that area.<br />
+So I think this is just OpenEars.<br />
+This happens after the first hypothesis. Once I got &#8220;STOP&#8221; &#8220;LEFT&#8221; &#8220;STOP&#8221; &#8220;GO&#8221; &#8220;STOP&#8221; from just saying &#8220;STOP&#8221; once</p>
+<p>Anything wrong with the way the grammar and dictionary are setup?<br />
+	NSArray *words = @[@&#8221;LEFT&#8221;,@&#8221;RIGHT&#8221;,@&#8221;GO&#8221;,@&#8221;STOP&#8221;,@&#8221;FINISH&#8221;,@&#8221;KILL&#8221;];<br />
+	NSString *name = @&#8221;commandLanguageModelFile.languagemodel&#8221;;<br />
+	NSError *error = [lmGenerator generateLanguageModelFromArray:words withFilesNamed:name];</p>
+<p>	NSDictionary *languageGeneratorResults = nil;</p>
+<p>	if ([error code] == noErr)<br />
+	{<br />
+		languageGeneratorResults = [error userInfo];<br />
+		self.pathToDynamicallyGeneratedGrammar = [languageGeneratorResults objectForKey:@&#8221;LMPath&#8221;];<br />
+		self.pathToDynamicallyGeneratedDictionary = [languageGeneratorResults objectForKey:@&#8221;DictionaryPath&#8221;];</p>
+<p>		[self startListening];<br />
+	}<br />
+	else<br />
+	{<br />
+		NSLog(@&#8221;Error: %@&#8221;,[error localizedDescription]);<br />
+	}</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/double-commands-in-hypothesis/#post-13834</guid>
+					<title><![CDATA[Reply To: Reply To: Double commands in hypothesis]]></title>
+					<link>/forums/topic/double-commands-in-hypothesis/#post-13834</link>
+					<pubDate>Thu, 29 Nov 2012 20:36:27 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, that sounds a bit buggy. It&#8217;s possibly an iPad 3 issue with the cmninit value that we could probably fix right now.  Your code looks reasonable to me. </p>
+<p>Can I ask you to turn on verbosePocketsphinx and verboseLanguageModelGenerator and OpenEarsLogging and then print the log here? I&#8217;d like to see a log for 5 recognition rounds and it would be great if you would separately tell me what you really said.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/double-commands-in-hypothesis/#post-13835</guid>
+					<title><![CDATA[Reply To: Double commands in hypothesis]]></title>
+					<link>/forums/topic/double-commands-in-hypothesis/#post-13835</link>
+					<pubDate>Thu, 29 Nov 2012 20:47:39 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Also let me know which mic you are using when you&#8217;re getting these results and how far you are from the device, thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/double-commands-in-hypothesis/#post-13838</guid>
+					<title><![CDATA[Reply To: Double commands in hypothesis]]></title>
+					<link>/forums/topic/double-commands-in-hypothesis/#post-13838</link>
+					<pubDate>Thu, 29 Nov 2012 21:47:23 +0000</pubDate>
+					<dc:creator>cricketgeek</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ok, will do this evening or tomorrow morning. I am using the built-in mic at the top of the iPad. Also one thing I found by going through the official demo code was that after making the call below it worked perfectly. So I plugged that into my demo code just to see and it also worked perfectly every time.</p>
+<p>	[self.pocketSphinxController changeLanguageModelToFile:self.pathToDynamicallyGeneratedGrammar withDictionary:self.pathToDynamicallyGeneratedDictionary];</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/double-commands-in-hypothesis/#post-13839</guid>
+					<title><![CDATA[Reply To: Double commands in hypothesis]]></title>
+					<link>/forums/topic/double-commands-in-hypothesis/#post-13839</link>
+					<pubDate>Thu, 29 Nov 2012 21:52:36 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That&#8217;s funny, thanks for letting me know. It&#8217;s a big hint about what the underlying issue might be and I&#8217;m glad you have a workaround for now. When you get the time to send me the full log output I will see if I can track down the issue.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

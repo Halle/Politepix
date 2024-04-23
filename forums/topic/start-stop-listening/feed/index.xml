@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Start &amp; Stop Listening &#8211; Politepix</title>
+		<atom:link href="/forums/topic/start-stop-listening/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/start-stop-listening/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:38:57 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/start-stop-listening/#post-11481</guid>
+					<title><![CDATA[Start &amp; Stop Listening]]></title>
+					<link>/forums/topic/start-stop-listening/#post-11481</link>
+					<pubDate>Tue, 02 Oct 2012 16:07:23 +0000</pubDate>
+					<dc:creator>kelvin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>In V1.2.2 seems that flitecontroller hang after executing Stop listening &gt; Start &amp; Stop Listening immediately(after a few trials). </p>
+<p>It shows &#8220;Flite has started speaking&#8221; forever.</p>
+<p>2012-10-03 00:05:50.581 OpenEarsSampleApp[6997:11f03] Starting OpenEars logging for OpenEars version {{{{1.2.2}}}} on device: iPhone Simulator running iOS version: 6.000000<br />
+2012-10-03 00:05:50.583 OpenEarsSampleApp[6997:11f03] Normalized array contains the following entries:<br />
+(<br />
+    SUNDAY,<br />
+    MONDAY,<br />
+    TUESDAY,<br />
+    WEDNESDAY,<br />
+    THURSDAY,<br />
+    FRIDAY,<br />
+    SATURDAY,<br />
+    QUIDNUNC,<br />
+    &#8220;CHANGE MODEL&#8221;<br />
+)<br />
+2012-10-03 00:05:50.585 OpenEarsSampleApp[6997:11f03] Starting dynamic language model generation<br />
+2012-10-03 00:05:50.588 OpenEarsSampleApp[6997:11f03] Able to open /Users/TingFong/Library/Application Support/iPhone Simulator/6.0/Applications/3EA50F16-11FA-42FE-98F8-6F86E91E6D08/Documents/OpenEarsDynamicGrammar.corpus for reading<br />
+2012-10-03 00:05:50.589 OpenEarsSampleApp[6997:11f03] Able to open /Users/TingFong/Library/Application Support/iPhone Simulator/6.0/Applications/3EA50F16-11FA-42FE-98F8-6F86E91E6D08/Documents/OpenEarsDynamicGrammar_pipe.txt for writing<br />
+2012-10-03 00:05:50.591 OpenEarsSampleApp[6997:11f03] Starting text2wfreq_impl<br />
+2012-10-03 00:05:50.600 OpenEarsSampleApp[6997:11f03] Done with text2wfreq_impl<br />
+2012-10-03 00:05:50.602 OpenEarsSampleApp[6997:11f03] Able to open /Users/TingFong/Library/Application Support/iPhone Simulator/6.0/Applications/3EA50F16-11FA-42FE-98F8-6F86E91E6D08/Documents/OpenEarsDynamicGrammar_pipe.txt for reading.<br />
+2012-10-03 00:05:50.658 OpenEarsSampleApp[6997:11f03] Able to open /Users/TingFong/Library/Application Support/iPhone Simulator/6.0/Applications/3EA50F16-11FA-42FE-98F8-6F86E91E6D08/Documents/OpenEarsDynamicGrammar.vocab for reading.<br />
+2012-10-03 00:05:50.659 OpenEarsSampleApp[6997:11f03] Starting wfreq2vocab<br />
+2012-10-03 00:05:50.661 OpenEarsSampleApp[6997:11f03] Done with wfreq2vocab<br />
+2012-10-03 00:05:50.661 OpenEarsSampleApp[6997:11f03] Starting text2idngram<br />
+2012-10-03 00:05:50.666 OpenEarsSampleApp[6997:11f03] Done with text2idngram<br />
+2012-10-03 00:05:50.667 OpenEarsSampleApp[6997:11f03] Starting idngram2lm</p>
+<p>2012-10-03 00:05:50.671 OpenEarsSampleApp[6997:11f03] Done with idngram2lm<br />
+2012-10-03 00:05:50.672 OpenEarsSampleApp[6997:11f03] Starting sphinx_lm_convert<br />
+2012-10-03 00:05:50.677 OpenEarsSampleApp[6997:11f03] Finishing sphinx_lm_convert<br />
+2012-10-03 00:05:50.679 OpenEarsSampleApp[6997:11f03] Done creating language model with CMUCLMTK in 0.092770 seconds.<br />
+2012-10-03 00:05:50.720 OpenEarsSampleApp[6997:11f03] The word QUIDNUNC was not found in the dictionary /Users/TingFong/Library/Application Support/iPhone Simulator/6.0/Applications/3EA50F16-11FA-42FE-98F8-6F86E91E6D08/OpenEarsSampleApp.app/cmu07a.dic.<br />
+2012-10-03 00:05:50.721 OpenEarsSampleApp[6997:11f03] Now using the fallback method to look up the word QUIDNUNC<br />
+2012-10-03 00:05:50.721 OpenEarsSampleApp[6997:11f03] Using convertGraphemes for the word or phrase QUIDNUNC which doesn&#8217;t appear in the dictionary<br />
+2012-10-03 00:05:50.724 OpenEarsSampleApp[6997:11f03] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the default phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2012-10-03 00:05:50.735 OpenEarsSampleApp[6997:11f03] I&#8217;m done running performDictionaryLookup and it took 0.048527 seconds<br />
+2012-10-03 00:05:50.737 OpenEarsSampleApp[6997:11f03] I&#8217;m done running dynamic language model generation and it took 370886750.737907 seconds<br />
+2012-10-03 00:05:50.738 OpenEarsSampleApp[6997:11f03] Dynamic language generator completed successfully, you can find your new files OpenEarsDynamicGrammar.DMP<br />
+ and<br />
+OpenEarsDynamicGrammar.dic<br />
+ at the paths<br />
+/Users/TingFong/Library/Application Support/iPhone Simulator/6.0/Applications/3EA50F16-11FA-42FE-98F8-6F86E91E6D08/Documents/OpenEarsDynamicGrammar.DMP<br />
+and<br />
+/Users/TingFong/Library/Application Support/iPhone Simulator/6.0/Applications/3EA50F16-11FA-42FE-98F8-6F86E91E6D08/Documents/OpenEarsDynamicGrammar.dic<br />
+2012-10-03 00:05:50.739 OpenEarsSampleApp[6997:11f03] </p>
+<p>Welcome to the OpenEars sample project. This project understands the words:<br />
+BACKWARD,<br />
+CHANGE,<br />
+FORWARD,<br />
+GO,<br />
+LEFT,<br />
+MODEL,<br />
+RIGHT,<br />
+TURN,<br />
+and if you say &#8220;CHANGE MODEL&#8221; it will switch to its dynamically-generated model which understands the words:<br />
+CHANGE,<br />
+MODEL,<br />
+MONDAY,<br />
+TUESDAY,<br />
+WEDNESDAY,<br />
+THURSDAY,<br />
+FRIDAY,<br />
+SATURDAY,<br />
+SUNDAY,<br />
+QUIDNUNC<br />
+2012-10-03 00:05:50.740 OpenEarsSampleApp[6997:11f03] A sample rate was requested that isn&#8217;t one of the two supported values of 16000 or 8000 so we will use the default of 16000.<br />
+2012-10-03 00:05:50.741 OpenEarsSampleApp[6997:11f03] The audio session has never been initialized so we will do that now.<br />
+2012-10-03 00:05:50.742 OpenEarsSampleApp[6997:11f03] Checking and resetting all audio session settings.<br />
+2012-10-03 00:05:50.742 OpenEarsSampleApp[6997:11f03] audioCategory is incorrect, we will change it.<br />
+2012-10-03 00:05:50.743 OpenEarsSampleApp[6997:11f03] audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.<br />
+2012-10-03 00:05:50.744 OpenEarsSampleApp[6997:11f03] bluetoothInput is incorrect, we will change it.<br />
+2012-10-03 00:05:50.745 OpenEarsSampleApp[6997:11f03] bluetooth input is now on the correct setting of 1.<br />
+2012-10-03 00:05:50.746 OpenEarsSampleApp[6997:11f03] categoryDefaultToSpeaker is incorrect, we will change it.<br />
+2012-10-03 00:05:50.747 OpenEarsSampleApp[6997:11f03] CategoryDefaultToSpeaker is now on the correct setting of 1.<br />
+2012-10-03 00:05:50.749 OpenEarsSampleApp[6997:11f03] preferredBufferSize is incorrect, we will change it.<br />
+2012-10-03 00:05:50.750 OpenEarsSampleApp[6997:11f03] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2012-10-03 00:05:50.751 OpenEarsSampleApp[6997:11f03] preferredSampleRateCheck is incorrect, we will change it.<br />
+2012-10-03 00:05:50.752 OpenEarsSampleApp[6997:11f03] preferred hardware sample rate is now on the correct setting of 16000.000000.<br />
+2012-10-03 00:05:50.752 OpenEarsSampleApp[6997:11f03] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2012-10-03 00:05:50.753 OpenEarsSampleApp[6997:11f03] Exiting startAudioSession.<br />
+2012-10-03 00:05:50.754 OpenEarsSampleApp[6997:15803] Recognition loop has started<br />
+2012-10-03 00:05:50.765 OpenEarsSampleApp[6997:11f03] Pocketsphinx is starting up.<br />
+2012-10-03 00:05:50.787 OpenEarsSampleApp[6997:15803] Starting openAudioDevice on the simulator. This Simulator-compatible audio driver is only provided to you as a convenience so you can use the Simulator to test recognition logic, however, its audio driver is not supported and bug reports for it will be circular-filed.<br />
+2012-10-03 00:05:50.810 OpenEarsSampleApp[6997:11f03] The audio session has already been initialized but we will override its properties.<br />
+2012-10-03 00:05:50.831 OpenEarsSampleApp[6997:11f03] Checking and resetting all audio session settings.<br />
+2012-10-03 00:05:50.835 OpenEarsSampleApp[6997:11f03] audioCategory is correct, we will leave it as it is.<br />
+2012-10-03 00:05:50.837 OpenEarsSampleApp[6997:11f03] bluetoothInput is correct, we will leave it as it is.<br />
+2012-10-03 00:05:50.838 OpenEarsSampleApp[6997:11f03] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2012-10-03 00:05:50.839 OpenEarsSampleApp[6997:11f03] preferredBufferSize is correct, we will leave it as it is.<br />
+2012-10-03 00:05:50.840 OpenEarsSampleApp[6997:11f03] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2012-10-03 00:05:50.841 OpenEarsSampleApp[6997:11f03] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2012-10-03 00:05:50.841 OpenEarsSampleApp[6997:11f03] Exiting startAudioSession.<br />
+2012-10-03 00:05:50.869 OpenEarsSampleApp[6997:11f03] Pocketsphinx calibration has started.<br />
+2012-10-03 00:05:50.869 OpenEarsSampleApp[6997:15803] Calibration has started<br />
+2012-10-03 00:05:53.078 OpenEarsSampleApp[6997:15803] Calibration has completed<br />
+2012-10-03 00:05:53.078 OpenEarsSampleApp[6997:11f03] Pocketsphinx calibration is complete.<br />
+2012-10-03 00:05:53.079 OpenEarsSampleApp[6997:15803] Project has these words in its dictionary:<br />
+BACKWARD<br />
+CHANGE<br />
+FORWARD<br />
+GO<br />
+LEFT<br />
+MODEL<br />
+RIGHT<br />
+TURN<br />
+2012-10-03 00:05:53.080 OpenEarsSampleApp[6997:15803] Listening.<br />
+2012-10-03 00:05:53.080 OpenEarsSampleApp[6997:11f03] I&#8217;m running flite<br />
+2012-10-03 00:05:53.081 OpenEarsSampleApp[6997:11f03] Checking and resetting all audio session settings.<br />
+2012-10-03 00:05:53.082 OpenEarsSampleApp[6997:11f03] audioCategory is correct, we will leave it as it is.<br />
+2012-10-03 00:05:53.082 OpenEarsSampleApp[6997:11f03] bluetoothInput is correct, we will leave it as it is.<br />
+2012-10-03 00:05:53.083 OpenEarsSampleApp[6997:11f03] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2012-10-03 00:05:53.084 OpenEarsSampleApp[6997:11f03] preferredBufferSize is correct, we will leave it as it is.<br />
+2012-10-03 00:05:53.084 OpenEarsSampleApp[6997:11f03] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2012-10-03 00:05:53.158 OpenEarsSampleApp[6997:11f03] I&#8217;m done running flite and it took 0.077068 seconds<br />
+2012-10-03 00:05:53.158 OpenEarsSampleApp[6997:11f03] Flite audio player was nil when referenced so attempting to allocate a new audio player.<br />
+2012-10-03 00:05:53.162 OpenEarsSampleApp[6997:11f03] Loading speech data for Flite concluded successfully.<br />
+2012-10-03 00:05:53.180 OpenEarsSampleApp[6997:11f03] Pocketsphinx is now listening.<br />
+2012-10-03 00:05:53.181 OpenEarsSampleApp[6997:11f03] Flite sending suspend recognition notification.<br />
+2012-10-03 00:05:53.182 OpenEarsSampleApp[6997:11f03] Flite has started speaking<br />
+2012-10-03 00:05:54.794 OpenEarsSampleApp[6997:11f03] AVAudioPlayer did finish playing with success flag of 1<br />
+2012-10-03 00:05:54.946 OpenEarsSampleApp[6997:11f03] Flite sending resume recognition notification.<br />
+2012-10-03 00:05:55.448 OpenEarsSampleApp[6997:11f03] Flite has finished speaking<br />
+2012-10-03 00:05:56.792 OpenEarsSampleApp[6997:15803] No longer listening.<br />
+2012-10-03 00:05:56.862 OpenEarsSampleApp[6997:11f03] Pocketsphinx has stopped listening.<br />
+2012-10-03 00:05:59.489 OpenEarsSampleApp[6997:11f03] A sample rate was requested that isn&#8217;t one of the two supported values of 16000 or 8000 so we will use the default of 16000.<br />
+2012-10-03 00:05:59.490 OpenEarsSampleApp[6997:11f03] The audio session has already been initialized but we will override its properties.<br />
+2012-10-03 00:05:59.491 OpenEarsSampleApp[6997:11f03] Checking and resetting all audio session settings.<br />
+2012-10-03 00:05:59.492 OpenEarsSampleApp[6997:11f03] audioCategory is correct, we will leave it as it is.<br />
+2012-10-03 00:05:59.493 OpenEarsSampleApp[6997:11f03] bluetoothInput is correct, we will leave it as it is.<br />
+2012-10-03 00:05:59.493 OpenEarsSampleApp[6997:11f03] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2012-10-03 00:05:59.494 OpenEarsSampleApp[6997:11f03] preferredBufferSize is correct, we will leave it as it is.<br />
+2012-10-03 00:05:59.495 OpenEarsSampleApp[6997:11f03] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2012-10-03 00:05:59.496 OpenEarsSampleApp[6997:11f03] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2012-10-03 00:05:59.497 OpenEarsSampleApp[6997:11f03] Exiting startAudioSession.<br />
+2012-10-03 00:05:59.498 OpenEarsSampleApp[6997:15807] Recognition loop has started<br />
+2012-10-03 00:05:59.498 OpenEarsSampleApp[6997:11f03] Pocketsphinx is starting up.<br />
+2012-10-03 00:05:59.525 OpenEarsSampleApp[6997:15807] Starting openAudioDevice on the simulator. This Simulator-compatible audio driver is only provided to you as a convenience so you can use the Simulator to test recognition logic, however, its audio driver is not supported and bug reports for it will be circular-filed.<br />
+2012-10-03 00:05:59.531 OpenEarsSampleApp[6997:15807] Calibration has started<br />
+2012-10-03 00:05:59.531 OpenEarsSampleApp[6997:11f03] Pocketsphinx calibration has started.<br />
+2012-10-03 00:06:01.733 OpenEarsSampleApp[6997:15807] Calibration has completed<br />
+2012-10-03 00:06:01.735 OpenEarsSampleApp[6997:15807] Project has these words in its dictionary:<br />
+BACKWARD<br />
+CHANGE<br />
+FORWARD<br />
+GO<br />
+LEFT<br />
+MODEL<br />
+RIGHT<br />
+TURN<br />
+2012-10-03 00:06:01.738 OpenEarsSampleApp[6997:15807] No longer listening.<br />
+2012-10-03 00:06:01.802 OpenEarsSampleApp[6997:11f03] Pocketsphinx calibration is complete.<br />
+2012-10-03 00:06:01.804 OpenEarsSampleApp[6997:11f03] I&#8217;m running flite<br />
+2012-10-03 00:06:01.804 OpenEarsSampleApp[6997:11f03] Checking and resetting all audio session settings.<br />
+2012-10-03 00:06:01.805 OpenEarsSampleApp[6997:11f03] audioCategory is correct, we will leave it as it is.<br />
+2012-10-03 00:06:01.806 OpenEarsSampleApp[6997:11f03] bluetoothInput is correct, we will leave it as it is.<br />
+2012-10-03 00:06:01.806 OpenEarsSampleApp[6997:11f03] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2012-10-03 00:06:01.817 OpenEarsSampleApp[6997:11f03] preferredBufferSize is correct, we will leave it as it is.<br />
+2012-10-03 00:06:01.819 OpenEarsSampleApp[6997:11f03] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2012-10-03 00:06:01.882 OpenEarsSampleApp[6997:11f03] I&#8217;m done running flite and it took 0.077541 seconds<br />
+2012-10-03 00:06:01.883 OpenEarsSampleApp[6997:11f03] Flite audio player was nil when referenced so attempting to allocate a new audio player.<br />
+2012-10-03 00:06:01.884 OpenEarsSampleApp[6997:11f03] Loading speech data for Flite concluded successfully.<br />
+2012-10-03 00:06:01.900 OpenEarsSampleApp[6997:11f03] Pocketsphinx has stopped listening.<br />
+2012-10-03 00:06:01.902 OpenEarsSampleApp[6997:11f03] Flite sending suspend recognition notification.<br />
+2012-10-03 00:06:01.905 OpenEarsSampleApp[6997:11f03] Flite has started speaking<br />
+2012-10-03 00:06:03.514 OpenEarsSampleApp[6997:11f03] AVAudioPlayer did finish playing with success flag of 1<br />
+2012-10-03 00:06:03.666 OpenEarsSampleApp[6997:11f03] Flite sending resume recognition notification.<br />
+2012-10-03 00:06:04.169 OpenEarsSampleApp[6997:11f03] Flite has finished speaking<br />
+2012-10-03 00:06:06.951 OpenEarsSampleApp[6997:11f03] A sample rate was requested that isn&#8217;t one of the two supported values of 16000 or 8000 so we will use the default of 16000.<br />
+2012-10-03 00:06:06.952 OpenEarsSampleApp[6997:11f03] The audio session has already been initialized but we will override its properties.<br />
+2012-10-03 00:06:06.953 OpenEarsSampleApp[6997:11f03] Checking and resetting all audio session settings.<br />
+2012-10-03 00:06:06.954 OpenEarsSampleApp[6997:11f03] audioCategory is correct, we will leave it as it is.<br />
+2012-10-03 00:06:06.955 OpenEarsSampleApp[6997:11f03] bluetoothInput is correct, we will leave it as it is.<br />
+2012-10-03 00:06:06.956 OpenEarsSampleApp[6997:11f03] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2012-10-03 00:06:06.957 OpenEarsSampleApp[6997:11f03] preferredBufferSize is correct, we will leave it as it is.<br />
+2012-10-03 00:06:06.958 OpenEarsSampleApp[6997:11f03] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2012-10-03 00:06:06.959 OpenEarsSampleApp[6997:11f03] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2012-10-03 00:06:06.960 OpenEarsSampleApp[6997:11f03] Exiting startAudioSession.<br />
+2012-10-03 00:06:06.961 OpenEarsSampleApp[6997:1580f] Recognition loop has started<br />
+2012-10-03 00:06:06.961 OpenEarsSampleApp[6997:11f03] Pocketsphinx is starting up.<br />
+2012-10-03 00:06:06.988 OpenEarsSampleApp[6997:1580f] Starting openAudioDevice on the simulator. This Simulator-compatible audio driver is only provided to you as a convenience so you can use the Simulator to test recognition logic, however, its audio driver is not supported and bug reports for it will be circular-filed.<br />
+2012-10-03 00:06:06.997 OpenEarsSampleApp[6997:11f03] Pocketsphinx calibration has started.<br />
+2012-10-03 00:06:06.996 OpenEarsSampleApp[6997:1580f] Calibration has started<br />
+2012-10-03 00:06:09.199 OpenEarsSampleApp[6997:1580f] Calibration has completed<br />
+2012-10-03 00:06:09.201 OpenEarsSampleApp[6997:1580f] Project has these words in its dictionary:<br />
+BACKWARD<br />
+CHANGE<br />
+FORWARD<br />
+GO<br />
+LEFT<br />
+MODEL<br />
+RIGHT<br />
+TURN<br />
+2012-10-03 00:06:09.204 OpenEarsSampleApp[6997:1580f] No longer listening.<br />
+2012-10-03 00:06:09.299 OpenEarsSampleApp[6997:11f03] Pocketsphinx calibration is complete.<br />
+2012-10-03 00:06:09.301 OpenEarsSampleApp[6997:11f03] I&#8217;m running flite<br />
+2012-10-03 00:06:09.312 OpenEarsSampleApp[6997:11f03] Checking and resetting all audio session settings.<br />
+2012-10-03 00:06:09.314 OpenEarsSampleApp[6997:11f03] audioCategory is correct, we will leave it as it is.<br />
+2012-10-03 00:06:09.314 OpenEarsSampleApp[6997:11f03] bluetoothInput is correct, we will leave it as it is.<br />
+2012-10-03 00:06:09.315 OpenEarsSampleApp[6997:11f03] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2012-10-03 00:06:09.316 OpenEarsSampleApp[6997:11f03] preferredBufferSize is correct, we will leave it as it is.<br />
+2012-10-03 00:06:09.316 OpenEarsSampleApp[6997:11f03] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2012-10-03 00:06:09.373 OpenEarsSampleApp[6997:11f03] I&#8217;m done running flite and it took 0.061205 seconds<br />
+2012-10-03 00:06:09.375 OpenEarsSampleApp[6997:11f03] Flite audio player was nil when referenced so attempting to allocate a new audio player.<br />
+2012-10-03 00:06:09.375 OpenEarsSampleApp[6997:11f03] Loading speech data for Flite concluded successfully.<br />
+2012-10-03 00:06:09.388 OpenEarsSampleApp[6997:11f03] Pocketsphinx has stopped listening.<br />
+2012-10-03 00:06:09.390 OpenEarsSampleApp[6997:11f03] Flite sending suspend recognition notification.<br />
+2012-10-03 00:06:09.392 OpenEarsSampleApp[6997:11f03] Flite has started speaking<br />
+2012-10-03 00:06:11.003 OpenEarsSampleApp[6997:11f03] AVAudioPlayer did finish playing with success flag of 1<br />
+2012-10-03 00:06:11.155 OpenEarsSampleApp[6997:11f03] Flite sending resume recognition notification.<br />
+2012-10-03 00:06:11.658 OpenEarsSampleApp[6997:11f03] Flite has finished speaking<br />
+2012-10-03 00:06:14.287 OpenEarsSampleApp[6997:11f03] A sample rate was requested that isn&#8217;t one of the two supported values of 16000 or 8000 so we will use the default of 16000.<br />
+2012-10-03 00:06:14.288 OpenEarsSampleApp[6997:11f03] The audio session has already been initialized but we will override its properties.<br />
+2012-10-03 00:06:14.289 OpenEarsSampleApp[6997:11f03] Checking and resetting all audio session settings.<br />
+2012-10-03 00:06:14.290 OpenEarsSampleApp[6997:11f03] audioCategory is correct, we will leave it as it is.<br />
+2012-10-03 00:06:14.291 OpenEarsSampleApp[6997:11f03] bluetoothInput is correct, we will leave it as it is.<br />
+2012-10-03 00:06:14.292 OpenEarsSampleApp[6997:11f03] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2012-10-03 00:06:14.292 OpenEarsSampleApp[6997:11f03] preferredBufferSize is correct, we will leave it as it is.<br />
+2012-10-03 00:06:14.293 OpenEarsSampleApp[6997:11f03] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2012-10-03 00:06:14.294 OpenEarsSampleApp[6997:11f03] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2012-10-03 00:06:14.295 OpenEarsSampleApp[6997:11f03] Exiting startAudioSession.<br />
+2012-10-03 00:06:14.296 OpenEarsSampleApp[6997:11f03] Pocketsphinx is starting up.<br />
+2012-10-03 00:06:14.296 OpenEarsSampleApp[6997:15817] Recognition loop has started<br />
+2012-10-03 00:06:14.323 OpenEarsSampleApp[6997:15817] Starting openAudioDevice on the simulator. This Simulator-compatible audio driver is only provided to you as a convenience so you can use the Simulator to test recognition logic, however, its audio driver is not supported and bug reports for it will be circular-filed.<br />
+2012-10-03 00:06:14.335 OpenEarsSampleApp[6997:11f03] Pocketsphinx calibration has started.<br />
+2012-10-03 00:06:14.335 OpenEarsSampleApp[6997:15817] Calibration has started<br />
+2012-10-03 00:06:16.537 OpenEarsSampleApp[6997:15817] Calibration has completed<br />
+2012-10-03 00:06:16.538 OpenEarsSampleApp[6997:15817] Project has these words in its dictionary:<br />
+BACKWARD<br />
+CHANGE<br />
+FORWARD<br />
+GO<br />
+LEFT<br />
+MODEL<br />
+RIGHT<br />
+TURN<br />
+2012-10-03 00:06:16.541 OpenEarsSampleApp[6997:15817] No longer listening.<br />
+2012-10-03 00:06:16.556 OpenEarsSampleApp[6997:11f03] Pocketsphinx calibration is complete.<br />
+2012-10-03 00:06:16.559 OpenEarsSampleApp[6997:11f03] I&#8217;m running flite<br />
+2012-10-03 00:06:16.560 OpenEarsSampleApp[6997:11f03] Checking and resetting all audio session settings.<br />
+2012-10-03 00:06:16.561 OpenEarsSampleApp[6997:11f03] audioCategory is correct, we will leave it as it is.<br />
+2012-10-03 00:06:16.562 OpenEarsSampleApp[6997:11f03] bluetoothInput is correct, we will leave it as it is.<br />
+2012-10-03 00:06:16.562 OpenEarsSampleApp[6997:11f03] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2012-10-03 00:06:16.563 OpenEarsSampleApp[6997:11f03] preferredBufferSize is correct, we will leave it as it is.<br />
+2012-10-03 00:06:16.564 OpenEarsSampleApp[6997:11f03] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2012-10-03 00:06:16.627 OpenEarsSampleApp[6997:11f03] I&#8217;m done running flite and it took 0.067080 seconds<br />
+2012-10-03 00:06:16.628 OpenEarsSampleApp[6997:11f03] Flite audio player was nil when referenced so attempting to allocate a new audio player.<br />
+2012-10-03 00:06:16.628 OpenEarsSampleApp[6997:11f03] Loading speech data for Flite concluded successfully.<br />
+2012-10-03 00:06:16.645 OpenEarsSampleApp[6997:11f03] Pocketsphinx has stopped listening.<br />
+2012-10-03 00:06:16.648 OpenEarsSampleApp[6997:11f03] Flite sending suspend recognition notification.<br />
+2012-10-03 00:06:16.650 OpenEarsSampleApp[6997:11f03] Flite has started speaking<br />
+Error -50: Unable to get metering.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/start-stop-listening/#post-11482</guid>
+					<title><![CDATA[Reply To: Start &amp; Stop Listening]]></title>
+					<link>/forums/topic/start-stop-listening/#post-11482</link>
+					<pubDate>Tue, 02 Oct 2012 18:05:52 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>Is this with the unchanged sample app or a version that has changes?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/start-stop-listening/#post-11483</guid>
+					<title><![CDATA[Reply To: Start &amp; Stop Listening]]></title>
+					<link>/forums/topic/start-stop-listening/#post-11483</link>
+					<pubDate>Tue, 02 Oct 2012 18:07:15 +0000</pubDate>
+					<dc:creator>kelvin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>It&#8217;s the unchanged downloaded straight from the web.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/start-stop-listening/#post-11484</guid>
+					<title><![CDATA[Reply To: Start &amp; Stop Listening]]></title>
+					<link>/forums/topic/start-stop-listening/#post-11484</link>
+					<pubDate>Tue, 02 Oct 2012 18:11:29 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The logging is from the simulator, have you ever seen this on a device? I haven&#8217;t seen it in my device testing of iOS6.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/start-stop-listening/#post-11485</guid>
+					<title><![CDATA[Reply To: Start &amp; Stop Listening]]></title>
+					<link>/forums/topic/start-stop-listening/#post-11485</link>
+					<pubDate>Tue, 02 Oct 2012 18:17:10 +0000</pubDate>
+					<dc:creator>kelvin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>It&#8217;s only appearing in the simulator. Device works well.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/start-stop-listening/#post-11486</guid>
+					<title><![CDATA[Reply To: Start &amp; Stop Listening]]></title>
+					<link>/forums/topic/start-stop-listening/#post-11486</link>
+					<pubDate>Tue, 02 Oct 2012 18:24:36 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, I don&#8217;t actually support simulator-only issues, not because I don&#8217;t care at all but because the simulator just hosts the local audio devices of the desktop or laptop, meaning that any individual simulator-only issue can potentially be due to just one particular arrangement of hardware that is on the local machine, meaning that any fix might only fix something that is special to one desktop or laptop version or audio conversion device. </p>
+<p>Since the end-user of the app will never encounter the issue, I made the judgement call that it would be better to ignore simulator-only issues than to put heavy debugging time into issues that don&#8217;t affect app users. I hope that&#8217;s understandable and that you&#8217;ll let me know if you see issues with enduser devices.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/start-stop-listening/#post-11487</guid>
+					<title><![CDATA[Reply To: Start &amp; Stop Listening]]></title>
+					<link>/forums/topic/start-stop-listening/#post-11487</link>
+					<pubDate>Tue, 02 Oct 2012 18:26:13 +0000</pubDate>
+					<dc:creator>kelvin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Noted&#8230;</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

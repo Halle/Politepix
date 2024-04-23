@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] Problems with Video/Audio capture &#8211; Politepix</title>
+		<atom:link href="/forums/topic/problems-with-videoaudio-capture/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/problems-with-videoaudio-capture/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:08:58 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/problems-with-videoaudio-capture/#post-1022832</guid>
+					<title><![CDATA[[Resolved] Problems with Video/Audio capture]]></title>
+					<link>/forums/topic/problems-with-videoaudio-capture/#post-1022832</link>
+					<pubDate>Thu, 23 Oct 2014 15:46:09 +0000</pubDate>
+					<dc:creator>amministrazione@epocaricerca.it</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>I&#8217;m developing an app for recording videos with AV Foundation API (AVCaptureSession), with vocal commands included. I&#8217;ve troubles in capturing videos when OpenEars is running, the recording doesn&#8217;t start.<br />
+I tried also to stop listening before starting video capture, but it doesn&#8217;t work. Instead, if I remove OpenEars from the app, the recording works very well. </p>
+<p>Can you help me?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problems-with-videoaudio-capture/#post-1022834</guid>
+					<title><![CDATA[Reply To: [Resolved] Problems with Video/Audio capture]]></title>
+					<link>/forums/topic/problems-with-videoaudio-capture/#post-1022834</link>
+					<pubDate>Thu, 23 Oct 2014 17:12:52 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>This isn&#8217;t possible with the current version of OpenEars, although I am working on it for the upcoming version 2.0 (I don&#8217;t know when it will ship). </p>
+<p>The issue is that AVCaptureSession requires a completely different audio session from OpenEars and vice versa, so they currently cannot each allow the other access to the singular audio stream successfully. </p>
+<p>This is expected behavior since there are no examples of iOS audio objects in which two instantiated objects can make simultaneous use of a singular audio stream, but nonetheless I&#8217;m working on trying to make this possible with OpenEars and AVCaptureSession.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problems-with-videoaudio-capture/#post-1022836</guid>
+					<title><![CDATA[Reply To: [Resolved] Problems with Video/Audio capture]]></title>
+					<link>/forums/topic/problems-with-videoaudio-capture/#post-1022836</link>
+					<pubDate>Thu, 23 Oct 2014 18:47:33 +0000</pubDate>
+					<dc:creator>decoder</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>With OS7.1 I&#8217;ve got it working (check my previous thread).<br />
+With OS8.0 didn&#8217;t work anymore, but I was able to start it by turning off the audio on the AVCaptureSession</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problems-with-videoaudio-capture/#post-1022837</guid>
+					<title><![CDATA[Reply To: [Resolved] Problems with Video/Audio capture]]></title>
+					<link>/forums/topic/problems-with-videoaudio-capture/#post-1022837</link>
+					<pubDate>Thu, 23 Oct 2014 19:24:10 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Even the previous approach with iOS7 was not going to have a compatible sample rate, so it would heavily impact recognition accuracy. The next version should do better with this scenario.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problems-with-videoaudio-capture/#post-1022838</guid>
+					<title><![CDATA[Reply To: [Resolved] Problems with Video/Audio capture]]></title>
+					<link>/forums/topic/problems-with-videoaudio-capture/#post-1022838</link>
+					<pubDate>Thu, 23 Oct 2014 21:06:07 +0000</pubDate>
+					<dc:creator>decoder</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>True. The only workaround I see is to turn off the audio recording in the session.</p>
+<p>@Halle: Is there at least a very rough estimation of the 2.0 release?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problems-with-videoaudio-capture/#post-1022841</guid>
+					<title><![CDATA[Reply To: [Resolved] Problems with Video/Audio capture]]></title>
+					<link>/forums/topic/problems-with-videoaudio-capture/#post-1022841</link>
+					<pubDate>Fri, 24 Oct 2014 06:50:19 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Nope, sorry.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problems-with-videoaudio-capture/#post-1023388</guid>
+					<title><![CDATA[Reply To: [Resolved] Problems with Video/Audio capture]]></title>
+					<link>/forums/topic/problems-with-videoaudio-capture/#post-1023388</link>
+					<pubDate>Thu, 11 Dec 2014 11:08:06 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, with the 2.0 version out, I&#8217;d be very interested to know whether it coexists better with your video objects out of the box. If you have any complex workarounds, please remove them so they don&#8217;t affect the quality of your results using the current stock version. Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

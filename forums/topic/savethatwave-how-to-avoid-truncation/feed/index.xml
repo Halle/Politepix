@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>SaveThatWave: how to avoid truncation &#8211; Politepix</title>
+		<atom:link href="/forums/topic/savethatwave-how-to-avoid-truncation/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/savethatwave-how-to-avoid-truncation/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:44:10 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/savethatwave-how-to-avoid-truncation/#post-1017100</guid>
+					<title><![CDATA[SaveThatWave: how to avoid truncation]]></title>
+					<link>/forums/topic/savethatwave-how-to-avoid-truncation/#post-1017100</link>
+					<pubDate>Wed, 01 May 2013 05:13:58 +0000</pubDate>
+					<dc:creator>gman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>I am testing the demo version of SaveThatWave. It works well, but the file are truncated. The last .5 second or so of the utterance is missing from the saved wave. Changing pocketsphinxController.secondsOfSilenceToDetect does not help (not surprisingly).</p>
+<p>I did not fins any other property to adjust in the docs. How can I avoid the issue?</p>
+<p>Thank you.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/savethatwave-how-to-avoid-truncation/#post-1017101</guid>
+					<title><![CDATA[Reply To: SaveThatWave: how to avoid truncation]]></title>
+					<link>/forums/topic/savethatwave-how-to-avoid-truncation/#post-1017101</link>
+					<pubDate>Wed, 01 May 2013 06:39:02 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Is this on the Simulator?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/savethatwave-how-to-avoid-truncation/#post-1017110</guid>
+					<title><![CDATA[Reply To: SaveThatWave: how to avoid truncation]]></title>
+					<link>/forums/topic/savethatwave-how-to-avoid-truncation/#post-1017110</link>
+					<pubDate>Thu, 02 May 2013 05:12:59 +0000</pubDate>
+					<dc:creator>gman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yes, this is in the simulator. I did not have the opportunity to ty on a device yet. Should I expect a different behavior?</p>
+<p>&nbsp;</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/savethatwave-how-to-avoid-truncation/#post-1017112</guid>
+					<title><![CDATA[Reply To: SaveThatWave: how to avoid truncation]]></title>
+					<link>/forums/topic/savethatwave-how-to-avoid-truncation/#post-1017112</link>
+					<pubDate>Thu, 02 May 2013 06:46:41 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>It&#8217;s possible. The issue with the Simulator is that it just hosts your own desktop or laptop audio devices. Since it would be a huge, unbounded job for Apple to try to address every possible audio hardware combination in a computer (including external hardware) and really simulate iPhone audio sessions with it, they don&#8217;t try &#8212; the Simulator doesn&#8217;t actually emulate audio session code and that means (for instance) that your audio equipment might even be recording at a different sample rate than an iPhone would, among other possible differences like default buffer size or latency. For those same reasons, I also don&#8217;t put a lot of time/energy into trying to make OpenEars and its plugins behave identically on the Simulator as on the device because there will always be a new scenario to fix and it&#8217;s work that won&#8217;t improve the enduser experience of your OpenEars-enabled app. So OpenEars has a much simpler audio driver on the Simulator and it won&#8217;t always work as well as the device driver, which is much more strenuously tested.</p>
+<p>If you&#8217;re still seeing this behavior on the device, definitely let me know!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/savethatwave-how-to-avoid-truncation/#post-1017115</guid>
+					<title><![CDATA[Reply To: SaveThatWave: how to avoid truncation]]></title>
+					<link>/forums/topic/savethatwave-how-to-avoid-truncation/#post-1017115</link>
+					<pubDate>Thu, 02 May 2013 15:13:56 +0000</pubDate>
+					<dc:creator>gman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the explanation &#8211; makes sense.</p>
+<p>I did a quick test on a device (iPhone 5) and I seem to observe the same behavior on some of the recorded files but not all. This is using a headset with mic to record. I&#8217;ll do longer test within a day or two and report back.</p>
+<p>&nbsp;</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/savethatwave-how-to-avoid-truncation/#post-1017116</guid>
+					<title><![CDATA[Reply To: SaveThatWave: how to avoid truncation]]></title>
+					<link>/forums/topic/savethatwave-how-to-avoid-truncation/#post-1017116</link>
+					<pubDate>Thu, 02 May 2013 15:21:02 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, if you find truncation on the device let me know about it along with the Xcode version, iOS version, and device so I can replicate (also what kind of headphone we&#8217;re talking about if it isn&#8217;t the one which ships with the device). It&#8217;s also very useful to get some idea of what the input speech was like.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/savethatwave-how-to-avoid-truncation/#post-1017117</guid>
+					<title><![CDATA[Reply To: SaveThatWave: how to avoid truncation]]></title>
+					<link>/forums/topic/savethatwave-how-to-avoid-truncation/#post-1017117</link>
+					<pubDate>Thu, 02 May 2013 15:22:56 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>BTW, is this in a new app made using the tutorial, or is it added to an existing app? It&#8217;s possible that other aspects of an existing app can have an effect on the audio session, so let me know if there is anything special about the app.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/savethatwave-how-to-avoid-truncation/#post-1017119</guid>
+					<title><![CDATA[Reply To: SaveThatWave: how to avoid truncation]]></title>
+					<link>/forums/topic/savethatwave-how-to-avoid-truncation/#post-1017119</link>
+					<pubDate>Fri, 03 May 2013 05:32:02 +0000</pubDate>
+					<dc:creator>gman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I did more testing, and I verify the behavior is identical on devices.</p>
+<p>Here is the setup. I tested on an iPhone 5 and iPad 3, both running IOS 6.1.2. I remove all headsets and used the built-in mic.</p>
+<p>Truncation occurs on both devices. The symptom is that the last 200 to 500ms  are cut out. The input is typically two or three words, and it sounds like the last syllable or so is missing. I tried with longer sentences, and the problem is identical no matter how long the input is. The portion of recording between the start and the truncation sounds fine.</p>
+<p>The truncation occurs on each recording and is perfectly reproducible.</p>
+<p>This is in an app which opens an audio session for playback only. For these tests, I turned off playback, although the audio session is still opened. I have been testing PocketSphynx for some time in this app with audio playback on with problems.</p>
+<p>Aside from being embedded in the app the code is taken directly from the tutorial. It is largely unchanged, except that the model is usually changed between utterances. Whether the model is changed or not does not affect the truncation behavior.</p>
+<p>wavWasSavedAtLocation:(NSString *)location doesn&#8217;t do anything else then logging the location.</p>
+<p>pocketsphinxDidReceiveHypothesis calls a new delegate method which triggers an animation if the recognition is successful. Presumably that happens after the recording is save and does not interfere with the saving of the input.</p>
+<p>I tried setting pocketsphinxController.processSpeechLocally = FALSE and interestingly that does not work. wavWasSavedAtLocation does not get invoked anymore, and the log shows a continuous loop of &#8220;Pocketsphinx is now listening.&#8221; instead of just one when it&#8217;s set to true.</p>
+<p>Will purchase if we get it to work, let me know if I can provide more info.</p>
+<p>Thanks!</p>
+<p>&nbsp;</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/savethatwave-how-to-avoid-truncation/#post-1017123</guid>
+					<title><![CDATA[Reply To: SaveThatWave: how to avoid truncation]]></title>
+					<link>/forums/topic/savethatwave-how-to-avoid-truncation/#post-1017123</link>
+					<pubDate>Fri, 03 May 2013 07:55:40 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Can you elaborate on this:</p>
+<blockquote><p>This is in an app which opens an audio session for playback only</p></blockquote>
+<p>How does the app set the audio session?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/savethatwave-how-to-avoid-truncation/#post-1017125</guid>
+					<title><![CDATA[Reply To: SaveThatWave: how to avoid truncation]]></title>
+					<link>/forums/topic/savethatwave-how-to-avoid-truncation/#post-1017125</link>
+					<pubDate>Fri, 03 May 2013 08:46:19 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>(To clarify, I&#8217;m not disagreeing with or doubting your observation of the behavior, I just have a bit of a backlog so I&#8217;m trying to get all my ducks in a row before getting into this issue &#8212; it&#8217;s already entered as a bug and will get looked at).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

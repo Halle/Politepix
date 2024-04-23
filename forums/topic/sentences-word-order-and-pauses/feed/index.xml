@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Sentences, Word Order and Pauses &#8211; Politepix</title>
+		<atom:link href="/forums/topic/sentences-word-order-and-pauses/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/sentences-word-order-and-pauses/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:57:40 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/sentences-word-order-and-pauses/#post-1017333</guid>
+					<title><![CDATA[Sentences, Word Order and Pauses]]></title>
+					<link>/forums/topic/sentences-word-order-and-pauses/#post-1017333</link>
+					<pubDate>Thu, 30 May 2013 10:05:32 +0000</pubDate>
+					<dc:creator>lookbadgers</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I understand that OpenEars uses the previous word to help detection with the next word when working with sentences.</p>
+<p>If I had the corpus &#8220;THE QUICK BROWN FOX JUMPED OVER THE LAZY DOG&#8221;</p>
+<p>If it heard &#8220;THE QUICK&#8221; it increases the probability the next sound will be BROWN, I was wondering how much more does it increase the probability that the next sound will be matched with BROWN?</p>
+<p>If there was to be a pause between hearing &#8220;THE QUICK&#8221; and BROWN does this increased probability still apply?</p>
+<p>If there are likely to be pauses between words, is it better to have a corpus that contains the sentence as a whole and the individual words each on a new line?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/sentences-word-order-and-pauses/#post-1017334</guid>
+					<title><![CDATA[Reply To: Sentences, Word Order and Pauses]]></title>
+					<link>/forums/topic/sentences-word-order-and-pauses/#post-1017334</link>
+					<pubDate>Thu, 30 May 2013 10:44:21 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>There isn&#8217;t an answer in the form of &#8220;it&#8217;s 20% more likely&#8221; because it is dependent on the overall number of words as well as how many composed phrases were submitted to be turned into a language model. But I can tell you what is happening under the hood. </p>
+<p>Pocketsphinx as used by OpenEars takes into account unigrams (single words) bigrams (word pairs) and trigrams (word triplets) in language models. These are indicated in the language model as 1-gram, 2-gram and 3-gram and are collectively referred to as n-grams. When a set of individual words are submitted (meaning no composed phrases at all, just single words by themselves), the likelihood of each bigram and trigram is equal, meaning that all combinations of the words that can be expressed as a pair or a triplet are equally likely. When a phrase is submitted (taking yours as an example), every bigram and trigram that occurs within the phrase is more likely than word bigrams and trigrams composed of word combinations which do not appear within the phrase. The <s> and </s> symbols, indicating the beginning and end of an utterance, are also taken into account for probabilities so they appear in all of the n-gram sets. They are added automatically; you don&#8217;t do anything about them.</p>
+<p>With this information in mind about how it is working, it should be possible for you to construct a test which answers your question for the specific app you are developing, which I can&#8217;t really advise you about from the info in the description.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/sentences-word-order-and-pauses/#post-1017335</guid>
+					<title><![CDATA[Reply To: Sentences, Word Order and Pauses]]></title>
+					<link>/forums/topic/sentences-word-order-and-pauses/#post-1017335</link>
+					<pubDate>Thu, 30 May 2013 11:26:56 +0000</pubDate>
+					<dc:creator>lookbadgers</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thank you for the reply.  I now understand why it&#8217;s not an exact probability for all apps but instead a formula based on number of words in a sentence.</p>
+<p>With that in mind does a previous utterance have any impact on the next? </p>
+<p>For example the pause between &#8220;THE QUICK&#8221; and &#8220;BROWN&#8221;. Or is the second utterance &#8220;BROWN&#8221; treated as a 1-gram and the previous 2-gram &#8220;THE QUICK&#8221; disregarded.</p>
+<p>I&#8217;ve noticed sometime users have been hesitating between words in expected phrases and I am trying to find out if this has been reducing the quality of the perceived hypothesis after the pause.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/sentences-word-order-and-pauses/#post-1017336</guid>
+					<title><![CDATA[Reply To: Sentences, Word Order and Pauses]]></title>
+					<link>/forums/topic/sentences-word-order-and-pauses/#post-1017336</link>
+					<pubDate>Thu, 30 May 2013 11:34:31 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You have to construct a test for your app in order to see if recognition accuracy is reduced as a result of pauses. It isn&#8217;t difficult: you can turn on verbose output and use this method to submit recordings with and without pauses and look at the results:</p>
+<pre>
+- (void) runRecognitionOnWavFileAtPath: (NSString *) wavPath usingLanguageModelAtPath: (NSString *) languageModelPath
+dictionaryAtPath: (NSString *) dictionaryPath languageModelIsJSGF: (BOOL) languageModelIsJSGF</pre>
+<p>If you need to gather input recordings you can make them using the SaveThatWave demo.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/sentences-word-order-and-pauses/#post-1017337</guid>
+					<title><![CDATA[Reply To: Sentences, Word Order and Pauses]]></title>
+					<link>/forums/topic/sentences-word-order-and-pauses/#post-1017337</link>
+					<pubDate>Thu, 30 May 2013 11:41:29 +0000</pubDate>
+					<dc:creator>lookbadgers</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thank you, I will give that a try.  I was just hoping the question may have already been answered.  I will try and post my findings when I get time to test.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/sentences-word-order-and-pauses/#post-1017338</guid>
+					<title><![CDATA[Reply To: Sentences, Word Order and Pauses]]></title>
+					<link>/forums/topic/sentences-word-order-and-pauses/#post-1017338</link>
+					<pubDate>Thu, 30 May 2013 11:48:00 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That&#8217;s great &#8212; please share at least a little information about your app vocabulary (you don&#8217;t have to tell the exact words, but give us info about vocabulary size, number of phrases, and a similar kind of phrase to the one you&#8217;re testing) and things like the mic used and the length of the pauses and environmental factors so a reader can get the big picture. I don&#8217;t think this is something that will behave the same with every app or under every circumstance (which is why I can&#8217;t answer it off the cuff) so it would be most helpful to hear about the context for the findings.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/sentences-word-order-and-pauses/#post-1017402</guid>
+					<title><![CDATA[Reply To: Sentences, Word Order and Pauses]]></title>
+					<link>/forums/topic/sentences-word-order-and-pauses/#post-1017402</link>
+					<pubDate>Wed, 05 Jun 2013 16:02:36 +0000</pubDate>
+					<dc:creator>lookbadgers</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Just trying to get this up and running.  I can get SaveTheWave to work in the sample app.  However in my test application I get undefined symbols for architecture armv7 </p>
+<p>&#8220;_OBJC_CLASS_$_SaevTheWaveController&#8221;, referenced from:<br />
+objc-class-ref in&#8230;<br />
+ld: symbol(s) not found for architecture armv7<br />
+clang error: link command failed with exit code 1</p>
+<p>I have checked &#8220;Other Linker Flags&#8221; have the linker flag &#8220;-ObjC&#8221;:</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/sentences-word-order-and-pauses/#post-1017403</guid>
+					<title><![CDATA[Reply To: Sentences, Word Order and Pauses]]></title>
+					<link>/forums/topic/sentences-word-order-and-pauses/#post-1017403</link>
+					<pubDate>Wed, 05 Jun 2013 16:06:01 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>You misspelled SaveThatWaveController in your project.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/sentences-word-order-and-pauses/#post-1017419</guid>
+					<title><![CDATA[Reply To: Sentences, Word Order and Pauses]]></title>
+					<link>/forums/topic/sentences-word-order-and-pauses/#post-1017419</link>
+					<pubDate>Thu, 06 Jun 2013 11:59:06 +0000</pubDate>
+					<dc:creator>lookbadgers</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry that was a typo when writing out the error, the typo did not exist in the code.  Anyway that is now working and I can record wav files.</p>
+<p>I&#8217;m calling the method runRecognitionOnWavFileAtPath but nothing happens.</p>
+<p>I give the languageModel and dictionary paths generated by Rejecto. </p>
+<p>I recorded the wav file outside of the app in the end, I was wondering if the problem is it&#8217;s not the right format?</p>
+<p>16-bit PCM<br />
+16000Hz<br />
+Stereo</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/sentences-word-order-and-pauses/#post-1017420</guid>
+					<title><![CDATA[Reply To: Sentences, Word Order and Pauses]]></title>
+					<link>/forums/topic/sentences-word-order-and-pauses/#post-1017420</link>
+					<pubDate>Thu, 06 Jun 2013 12:08:42 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>I’m calling the method runRecognitionOnWavFileAtPath but nothing happens.</p></blockquote>
+<p>Do you mean that there is nothing ever returned in the OpenEarsEventsObserver pocketsphinxDidReceiveHypothesis: method?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Timing info in the result &#8211; Politepix</title>
+		<atom:link href="/forums/topic/timing-info-in-the-result/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/timing-info-in-the-result/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:55:06 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/timing-info-in-the-result/#post-1016833</guid>
+					<title><![CDATA[Timing info in the result]]></title>
+					<link>/forums/topic/timing-info-in-the-result/#post-1016833</link>
+					<pubDate>Mon, 01 Apr 2013 06:12:00 +0000</pubDate>
+					<dc:creator>OT</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>Do you have plans to include the timing info in the recognition results (e.g. start/end times at the word, or even phoneme level)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/timing-info-in-the-result/#post-1016837</guid>
+					<title><![CDATA[Reply To: Timing info in the result]]></title>
+					<link>/forums/topic/timing-info-in-the-result/#post-1016837</link>
+					<pubDate>Mon, 01 Apr 2013 08:33:21 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You can receive more timing information by turning on OpenEarsLogging, but there is no plan to return that info as delegate methods.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/timing-info-in-the-result/#post-1016853</guid>
+					<title><![CDATA[Reply To: Timing info in the result]]></title>
+					<link>/forums/topic/timing-info-in-the-result/#post-1016853</link>
+					<pubDate>Tue, 02 Apr 2013 21:09:10 +0000</pubDate>
+					<dc:creator>wenhuizhao</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Pocketsphinx has api to get start/end frame, acoustic score and language score for each word: ps_seg_frames, ps_seg_prob.<br />
+This two api return timing information as well as score for each word.<br />
+Is there anyway to get this api work in OpenEars?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/timing-info-in-the-result/#post-1016854</guid>
+					<title><![CDATA[Reply To: Timing info in the result]]></title>
+					<link>/forums/topic/timing-info-in-the-result/#post-1016854</link>
+					<pubDate>Tue, 02 Apr 2013 21:13:43 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Certainly, you can make any modifications to the Pocketsphinx code you like and recompile the framework. OpenEars doesn&#8217;t interfere with that, it just doesn&#8217;t return this data along with hypotheses through its own API.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/timing-info-in-the-result/#post-1016855</guid>
+					<title><![CDATA[Reply To: Timing info in the result]]></title>
+					<link>/forums/topic/timing-info-in-the-result/#post-1016855</link>
+					<pubDate>Tue, 02 Apr 2013 22:00:55 +0000</pubDate>
+					<dc:creator>wenhuizhao</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the quick response.  Is there any instruction for recompile the framework from source code? </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/timing-info-in-the-result/#post-1016857</guid>
+					<title><![CDATA[Reply To: Timing info in the result]]></title>
+					<link>/forums/topic/timing-info-in-the-result/#post-1016857</link>
+					<pubDate>Wed, 03 Apr 2013 07:27:16 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You&#8217;re actually just opening up OpenEars.xcodeproj after making your changes and pressing &#8220;run&#8221;.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

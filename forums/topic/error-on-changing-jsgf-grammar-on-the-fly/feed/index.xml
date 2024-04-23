@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Error on changing JSGF  grammar on the fly &#8211; Politepix</title>
+		<atom:link href="/forums/topic/error-on-changing-jsgf-grammar-on-the-fly/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/error-on-changing-jsgf-grammar-on-the-fly/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:57:18 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/error-on-changing-jsgf-grammar-on-the-fly/#post-1020441</guid>
+					<title><![CDATA[Error on changing JSGF  grammar on the fly]]></title>
+					<link>/forums/topic/error-on-changing-jsgf-grammar-on-the-fly/#post-1020441</link>
+					<pubDate>Tue, 04 Mar 2014 09:32:27 +0000</pubDate>
+					<dc:creator>buec</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi</p>
+<p>When i tried to change the JSGF grammar on the fly, i got an <strong>EXC_BAD_ACCESS</strong> Error. So i looked into the code. In the file <strong>ContinuousModel.m</strong> in the method <em>changeLanguageModelForDecoder</em>, i think the pocketsphinx function <em>ps_add_word</em> is called with the wrong values. For the &#8220;phones&#8221; argument just the whitespaces are passed instead of the phonesString. I think passing the <em>mutablePhonesString</em> value solves the problem. Would be nice if you could take a look at it.</p>
+<p>I am using the Version 1.65 of OpenEars.</p>
+<p>Regards<br />
+Matthias</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-on-changing-jsgf-grammar-on-the-fly/#post-1020442</guid>
+					<title><![CDATA[Reply To: Error on changing JSGF  grammar on the fly]]></title>
+					<link>/forums/topic/error-on-changing-jsgf-grammar-on-the-fly/#post-1020442</link>
+					<pubDate>Tue, 04 Mar 2014 09:45:05 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Thank you for the heads-up, I will take a look at it for the next update.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

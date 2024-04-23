@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>iOS 7 Compatibility &#8211; Politepix</title>
+		<atom:link href="/forums/topic/ios-7-compatibility/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/ios-7-compatibility/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:46:12 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/ios-7-compatibility/#post-1018344</guid>
+					<title><![CDATA[iOS 7 Compatibility]]></title>
+					<link>/forums/topic/ios-7-compatibility/#post-1018344</link>
+					<pubDate>Sat, 21 Sep 2013 09:42:19 +0000</pubDate>
+					<dc:creator>nvrtd frst</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I noticed that in iOS 7 they deprecated the AudioSession API for the AudioToolbox framework</p>
+<p>&#8220;The AudioSession API in the Audio Toolbox framework is deprecated. Apps should use the AVAudioSession class in the AV Foundation framework instead.&#8221; (from <a href="https://developer.apple.com/library/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS7.html" rel="nofollow">Apple docs</a>)</p>
+<p>If I&#8217;m correct, OpenEars uses this and I&#8217;m wondering how functionality will be affected for iOS 7 apps.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/ios-7-compatibility/#post-1018345</guid>
+					<title><![CDATA[Reply To: iOS 7 Compatibility]]></title>
+					<link>/forums/topic/ios-7-compatibility/#post-1018345</link>
+					<pubDate>Sat, 21 Sep 2013 09:50:47 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>Good question, but it won&#8217;t be affected. Deprecation means that the functionality is not being changed in the version in which the API is first deprecated, but it&#8217;s a request to start the process of switching to the preferred functionality so that a later OS release can phase out the deprecated  functionality. From the page you linked:</p>
+<p>&#8220;From time to time, Apple adds deprecation macros to APIs to indicate that those APIs should no longer be used in active development. When a deprecation occurs, it is not an immediate end-of-life to the specified API. Instead, it is the beginning of a grace period for transitioning off that API and onto newer and more modern replacements.&#8221;</p>
+<p>There are deprecated APIs from iOS 4 which are still supported in iOS 7 without any functional changes. I appreciate the concern and I will make sure that only AVAudioSession is in use before iOS 8.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/ios-7-compatibility/#post-1018346</guid>
+					<title><![CDATA[Reply To: iOS 7 Compatibility]]></title>
+					<link>/forums/topic/ios-7-compatibility/#post-1018346</link>
+					<pubDate>Sat, 21 Sep 2013 09:53:00 +0000</pubDate>
+					<dc:creator>nvrtd frst</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the quick reply as always Halle!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/ios-7-compatibility/#post-1018347</guid>
+					<title><![CDATA[Reply To: iOS 7 Compatibility]]></title>
+					<link>/forums/topic/ios-7-compatibility/#post-1018347</link>
+					<pubDate>Sat, 21 Sep 2013 10:07:04 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>No problem! I think I should probably make this change when I drop support for iOS4, since AudioSessionManager also has some switches for iOS4/iOS5 stuff which could be nicely simplified without iOS4 support at the same time that AVAudioSession will simplify the gnarly old AudioSession stuff, so everything in there can be looked at as a whole and the overall class will be much shorter. I am considering dropping iOS4 sooner rather than later based on these charts and others which seem to show iOS4 usage in the 5% range or less:</p>
+<p><a href="http://david-smith.org/iosversionstats/" rel="nofollow">http://david-smith.org/iosversionstats/</a></p>
+<p>But I&#8217;ve always tried to keep the backward OS compatibility for a pretty long time since I&#8217;m not crazy about the phenomenon of OS compatibility driving new device purchases from an environmental perspective. But at this point iOS4 usage is starting to look like the margin of error, so it&#8217;s probably time.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/ios-7-compatibility/#post-1018348</guid>
+					<title><![CDATA[Reply To: iOS 7 Compatibility]]></title>
+					<link>/forums/topic/ios-7-compatibility/#post-1018348</link>
+					<pubDate>Sat, 21 Sep 2013 10:13:54 +0000</pubDate>
+					<dc:creator>nvrtd frst</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I think that would be really great to simplify the code and I would be 100% for that sooner rather than later. If anyone is still using iOS 4, I feel sorry for them but progress must occur!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/ios-7-compatibility/#post-1018353</guid>
+					<title><![CDATA[Reply To: iOS 7 Compatibility]]></title>
+					<link>/forums/topic/ios-7-compatibility/#post-1018353</link>
+					<pubDate>Sun, 22 Sep 2013 07:04:21 +0000</pubDate>
+					<dc:creator>nvrtd frst</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Halle, the reason I ask is because I&#8217;m finding a weird bug as I move my app to iOS 7. To give some background, I made changes to the OpenEars classes that would allow my app to start pocketSphinxController in RemoteIO audioUnitSubtype or VPIO audioUnitSubtype. In the app, I could dealloc the pocketSphinxController instance and reinstantiate pocketSphinxController in another audioUnitSubtype dynamically.</p>
+<p>This would work fine in iOS 6. While a user was in app, they could switch from VPIO to listening in RemoteIO mode and back.</p>
+<p>However when the same app now loaded in iOS 7, the user will set the variable to switch from VPIO to remoteIO but it seems to stay in VPIO mode despite all the variables being passed correctly. I know it is being passed correctly because if they app is then terminated and restarted, it will be in RemoteIO mode.</p>
+<p>I hope this wasn&#8217;t too confusing. Basically what I&#8217;m saying is that in iOS6 the same code allows users to switch between VPIO and RemoteIO seemlessly, and yet when loaded on iOS7 it will only switch if you terminate the app and restart it. </p>
+<p>Thoughts? Is there any OpenEars classes that remain on the stack whenever a pocketSphinxController instance is dealloced and reinstantiated? Any help at all would be appreciated. I hope that this isn&#8217;t just some random iOS 7 bug in Core Audio&#8230;</p>
+<p>Using OpenEars 1.5.2.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/ios-7-compatibility/#post-1018354</guid>
+					<title><![CDATA[Reply To: iOS 7 Compatibility]]></title>
+					<link>/forums/topic/ios-7-compatibility/#post-1018354</link>
+					<pubDate>Sun, 22 Sep 2013 07:38:50 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry, I don&#8217;t have a lot of insight about the particulars of this behavior and it&#8217;s a bit outside of what I can give code-level support for, but I can share the following observations:</p>
+<p>• AudioSession has remained very stable and similar throughout the entire history of the API being exposed in the three years OpenEars has been using it, and AVAudioSession most likely just wraps it in some respect &#8212; just a guess, but the underlying audio code used by the high-level API is pretty likely to still be in C or C++ for performance reasons and the wrapper is probably being pushed not only because it results in fewer support requests to Apple but because it lets them make small changes in the underlying implementation, but probably not because the code used by AudioSession has actually gone away or changed massively. So my suspicion would not tend to point towards AudioSession even if it has just been deprecated. It would be very bad form to break something right at the time of deprecating it that all audio code depends on, and really out of character.</p>
+<p>• The entire reason OpenEars never used VPIO is because it has broken in one x.0 OS version and one minor version I can think of off the top of my head (it could have happened with more but since I stopped using it, I stopped testing it), while remoteIO has always behaved the same. So my suspicion would tend to gravitate towards VPIO at the time of a known-to-be-high-pressure x.0 release because there seems to be some kind of minor hole in the API&#8217;s testbed where VPIO behavior sometimes changes between releases and then gets fixed.</p>
+<p>• It may not be necessary for you to use VPIO with OpenEars >=1.5.x because it has a new audio modes API if you&#8217;re supporting 5.0 or greater. It&#8217;s controlled via PocketsphinxController so it might be worth a look.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/ios-7-compatibility/#post-1018355</guid>
+					<title><![CDATA[Reply To: iOS 7 Compatibility]]></title>
+					<link>/forums/topic/ios-7-compatibility/#post-1018355</link>
+					<pubDate>Sun, 22 Sep 2013 07:47:19 +0000</pubDate>
+					<dc:creator>nvrtd frst</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the insights Halle. I do use the audio session modes, but what I&#8217;m really looking for is noise cancellation because the app plays sounds while it still has to listen for voice commands&#8230; If you have any thoughts on noise cancellation other than using VPIO, I&#8217;d really appreciate it.</p>
+<p>I use the VoiceChat audio session mode with VPIO:</p>
+<pre><code>AVAudioSessionModeVoiceChat
+Specify this mode if your app is performing two-way voice communication, such as using Voice over Internet Protocol (VoIP).
+When this mode is in use, the device’s tonal equalization is optimized for voice and the set of allowable audio routes is reduced to only those appropriate for voice chat. For use with the AVAudioSessionCategoryPlayAndRecord audio session category. Apple recommends using the Voice Processing Audio Unit with this mode (see Audio Unit Hosting Guide for iOS).</code></pre>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/ios-7-compatibility/#post-1018357</guid>
+					<title><![CDATA[Reply To: iOS 7 Compatibility]]></title>
+					<link>/forums/topic/ios-7-compatibility/#post-1018357</link>
+					<pubDate>Sun, 22 Sep 2013 08:01:48 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>If VPIO works other than switching, what is the requirement to also use remoteio with it?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/ios-7-compatibility/#post-1018358</guid>
+					<title><![CDATA[Reply To: iOS 7 Compatibility]]></title>
+					<link>/forums/topic/ios-7-compatibility/#post-1018358</link>
+					<pubDate>Sun, 22 Sep 2013 09:20:23 +0000</pubDate>
+					<dc:creator>nvrtd frst</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The reason for allowing them to switch is that VPIO seems to drastically reduce the output volume. I&#8217;m not sure if it&#8217;s a bug or if I need to set other audioUnitProperties but it makes it EXTREMELY low volume when using VPIO. I also noticed that in iOS 5 the volume for VPIO was much louder (but still softer than when using remoteIO).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

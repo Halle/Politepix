@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Error message &#8211; Politepix</title>
+		<atom:link href="/forums/topic/error-message/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/error-message/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:06:29 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/error-message/#post-1019968</guid>
+					<title><![CDATA[Error message]]></title>
+					<link>/forums/topic/error-message/#post-1019968</link>
+					<pubDate>Wed, 29 Jan 2014 06:16:34 +0000</pubDate>
+					<dc:creator>bharti</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>i was trying to integrate the openears sample app into my app and i have changed the contents of .dic , .languagemodel,.txt file and now when i try to compile the code it gives me error that i have crossed the user defined limit of 64000 but i am not able to find this error msg in the sample app where as when i try to open the openears.xcodeproj i can modify it but i want to do that in the openearssample app..</p>
+<p>How should i proceed?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-message/#post-1019970</guid>
+					<title><![CDATA[Reply To: Error message]]></title>
+					<link>/forums/topic/error-message/#post-1019970</link>
+					<pubDate>Wed, 29 Jan 2014 07:20:04 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>OpenEars can&#8217;t be used with vocabularies of that size. A good vocabulary size for offline recognition on a handheld device will probably be fewer than ~200-500 words depending on content.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-message/#post-1019971</guid>
+					<title><![CDATA[Reply To: Error message]]></title>
+					<link>/forums/topic/error-message/#post-1019971</link>
+					<pubDate>Wed, 29 Jan 2014 09:58:57 +0000</pubDate>
+					<dc:creator>bharti</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Can u suggest how to add some 5000 words in the app and please tell me what has to be done with the .dic,.languagemodel,.txt file.While searching on the net i came across some .dic and .dmp where i get a word dictionary of around 5000.</p>
+<p>Can u please tell me how to include the fllowing.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-message/#post-1019972</guid>
+					<title><![CDATA[Reply To: Error message]]></title>
+					<link>/forums/topic/error-message/#post-1019972</link>
+					<pubDate>Wed, 29 Jan 2014 10:23:13 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>OpenEars can’t be used with vocabularies of that size. A good vocabulary size for offline recognition on a handheld device will probably be fewer than ~200-500 words depending on content. </p>
+<p>If you have a language model and dictionary like the one that you described, that is oversized for offline recognition and which contains words which are unlikely to be spoken by an iPhone user such as the CMU general language model I think you are referring to, you can use it with OpenEars very easily using its method:</p>
+<pre>
+- (void) startListeningWithLanguageModelAtPath:(NSString *)languageModelPath dictionaryAtPath:(NSString *)dictionaryPath acousticModelAtPath:(NSString *)acousticModelPath languageModelIsJSGF:(BOOL)languageModelIsJSGF;
+</pre>
+<p>This method is documented in the following places:</p>
+<p>In the sample app with examples<br />
+In the OpenEars documents and PDF and epub<br />
+In the OpenEars tutorial with examples<br />
+In the PocketsphinxController.h header</p>
+<p>The path to the DMP is passed to the languageModelPath argument and the path to the .dic is passed to the dictionaryPath argument.</p>
+<p>But the results of doing so will be inaccurate speech recognition, because the model is too large and its contents will not correspond to language that your app users will use.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-message/#post-1019973</guid>
+					<title><![CDATA[Reply To: Error message]]></title>
+					<link>/forums/topic/error-message/#post-1019973</link>
+					<pubDate>Wed, 29 Jan 2014 11:02:19 +0000</pubDate>
+					<dc:creator>bharti</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>ya i have already tried this method of yours but it was highly inaccurate and so if possible could u tell me any other way to implement it.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-message/#post-1019975</guid>
+					<title><![CDATA[Reply To: Error message]]></title>
+					<link>/forums/topic/error-message/#post-1019975</link>
+					<pubDate>Wed, 29 Jan 2014 11:08:16 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>I&#8217;d be happy to help you improve your accuracy. Here are my thoughts: the issue is that OpenEars can’t be used with vocabularies of that size. A good vocabulary size for offline recognition on a handheld device will probably be fewer than ~200-500 words depending on content.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-message/#post-1019976</guid>
+					<title><![CDATA[Reply To: Error message]]></title>
+					<link>/forums/topic/error-message/#post-1019976</link>
+					<pubDate>Wed, 29 Jan 2014 11:12:37 +0000</pubDate>
+					<dc:creator>bharti</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>ok thank u </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-message/#post-1019977</guid>
+					<title><![CDATA[Reply To: Error message]]></title>
+					<link>/forums/topic/error-message/#post-1019977</link>
+					<pubDate>Wed, 29 Jan 2014 12:20:56 +0000</pubDate>
+					<dc:creator>bharti</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>hi ,<br />
+I am sorry but we need to use it for online purpose.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-message/#post-1019978</guid>
+					<title><![CDATA[Reply To: Error message]]></title>
+					<link>/forums/topic/error-message/#post-1019978</link>
+					<pubDate>Wed, 29 Jan 2014 12:35:15 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, good luck!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

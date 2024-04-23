@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Politepix &#187; All Topics</title>
+		<atom:link href="/topics/feed/" rel="self" type="application/rss+xml" />
+		<link>/topics/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:40:32 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+		
+			
+				<item>
+					<guid>/forums/topic/crash-at-oecmuclmtkmodel-runcmuclmtkoncorpusfilewithbinbinarysuffix/</guid>
+					<title><![CDATA[crash at `[OECMUCLMTKModel runCMUCLMTKOnCorpusFile:withBin:binarySuffix:]`]]></title>
+					<link>/forums/topic/crash-at-oecmuclmtkmodel-runcmuclmtkoncorpusfilewithbinbinarysuffix/</link>
+					<pubDate>Thu, 21 Sep 2023 08:17:31 +0000</pubDate>
+					<dc:creator>minilv</dc:creator>
+
+					
+					<description>
+						<![CDATA[
+						<p>Replies: 1</p>
+						<p>.<br />
+.<br />
+.<br />
+7<br />
+myApp<br />
+rr_iopen.c &#8211; Line 128<br />
+rr_iclose + 128<br />
+8<br />
+myApp<br />
+idngram2lm.c &#8211; Line 1014<br />
+idngram2lm_main + 1014<br />
+9<br />
+myApp<br />
+OECMUCLMTKModel.m &#8211; Line 278<br />
+-[OECMUCLMTKModel runCMUCLMTKOnCorpusFile:withBin:binarySuffix:] + 278<br />
+10<br />
+myApp<br />
+OELanguageModelGenerator.m &#8211; Line 488<br />
+-[OELanguageModelGenerator createLanguageModelFromFilename:] + 488<br />
+11<br />
+myApp<br />
+OELanguageModelGenerator.m &#8211; Line 601<br />
+-[OELanguageModelGenerator generateLanguageModelFromArray:withFilesNamed:forAcousticModelAtPath:] + 601<br />
+12<br />
+myApp<br />
+mySDKController.swift &#8211; Line 113<br />
+mySDKController..setupOpenEars() + 113</p>
+<p>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br />
+myApp (353,0x21490be40) malloc: double free for ptr 0x113951000</p>
+<p>When app launch, setup openears, show the crash dump👆🏻. </p>
+						]]>
+					</description>
+
+					
+					
+					
+				</item>
+
+				
+				<item>
+					<guid>/forums/topic/error-in-generatelanguagemodelfromarray-call/</guid>
+					<title><![CDATA[Error in generateLanguageModelFromArray call]]></title>
+					<link>/forums/topic/error-in-generatelanguagemodelfromarray-call/</link>
+					<pubDate>Tue, 24 Aug 2021 11:54:20 +0000</pubDate>
+					<dc:creator>maxgarmar</dc:creator>
+
+					
+					<description>
+						<![CDATA[
+						<p>Replies: 20</p>
+						<p>Hi Halle,</p>
+<p>I hope you are doing well.<br />
+I downloaded the openears&#8217;s newest version and for changes needed for my app, now the initialization is created in a viewController which is recreated every time I call a button from other viewController (could be the reason of the problem maybe?).<br />
+So here is my problem:</p>
+<p>when I create the viewController in viewDidLoad I initialize all the parameters needed like used to be in my old version.<br />
+For my iPhone 6 device there is no problem recreating and initializing openears overtime I create the viewController but when I run it on iPad 2 simulator the second time I call the viewController and it initializes all the variables for openears I got an exception here and the app crashes:</p>
+<pre>
+err = [lmGenerator generateLanguageModelFromArray:words withFilesNamed:name forAcousticModelAtPath:[OEAcousticModel pathToModel:voiceLanguage]];
+</pre>
+<p>The log from openears is:</p>
+<p>[spoiler]<br />
+2016-04-06 21:19:51.855 QuickCart[8766:185061] Starting OpenEars logging for OpenEars version 2.501 on 32-bit device (or build): iPad Simulator running iOS version: 8.100000<br />
+2016-04-06 21:19:51.859 QuickCart[8766:185061] Starting dynamic language model generation</p>
+<p>2016-04-06 21:19:51.877 QuickCart[8766:185061] Done creating language model with CMUCLMTK in 0.017872 seconds.<br />
+2016-04-06 21:19:51.877 QuickCart[8766:185061] Since there is no cached version, loading the language model lookup list for the acoustic model called AcousticModelEnglish<br />
+2016-04-06 21:19:51.924 QuickCart[8766:185061] The word CEMENTO was not found in the dictionary of the acoustic model /Users/maxgarmar/Library/Developer/CoreSimulator/Devices/7C36E2E2-8FDD-4649-898C-61EC41D5C49E/data/Containers/Bundle/Application/4B29B1AE-C310-4E79-B6ED-6EE230383647/QuickCart.app/AcousticModelEnglish.bundle. Now using the fallback method to look it up. If this is happening more frequently than you would expect, likely causes can be that you are entering words in another language from the one you are recognizing, or that there are symbols (including numbers) that need to be spelled out or cleaned up, or you are using your own acoustic model and there is an issue with either its phonetic dictionary or it lacks a g2p file. Please get in touch at the forums for assistance with the last two possible issues.<br />
+2016-04-06 21:19:51.925 QuickCart[8766:185061] Using convertGraphemes for the word or phrase cemento which doesn&#8217;t appear in the dictionary<br />
+VAL: tried to access cart in -1 type val<br />
+[/spoiler]</p>
+<p>The last line is the one I see differences when the app runs well.<br />
+Perhaps as I told you if I initialize the openears variable everytime I call the viewController is messing around something? but then should happen on my iPhone 6 also, right?</p>
+<p>Thanks I hope my explanation can help</p>
+<p>Maxi</p>
+						]]>
+					</description>
+
+					
+					
+					
+				</item>
+
+				
+				<item>
+					<guid>/forums/topic/the-recognition-rate-is-very-low-at-a-distance-of-1-meter/</guid>
+					<title><![CDATA[The recognition rate is very low at a distance of 1 meter]]></title>
+					<link>/forums/topic/the-recognition-rate-is-very-low-at-a-distance-of-1-meter/</link>
+					<pubDate>Mon, 03 May 2021 09:36:27 +0000</pubDate>
+					<dc:creator>minilv</dc:creator>
+
+					
+					<description>
+						<![CDATA[
+						<p>Replies: 1</p>
+						<p>The recognition rate is very low at a distance of 1 meter.</p>
+						]]>
+					</description>
+
+					
+					
+					
+				</item>
+
+				
+				<item>
+					<guid>/forums/topic/oecontinuousmodel-stoplistening-app-not-respond/</guid>
+					<title><![CDATA[[OEContinuousModel stopListening] App Not Respond]]></title>
+					<link>/forums/topic/oecontinuousmodel-stoplistening-app-not-respond/</link>
+					<pubDate>Mon, 03 May 2021 09:36:08 +0000</pubDate>
+					<dc:creator>minilv</dc:creator>
+
+					
+					<description>
+						<![CDATA[
+						<p>Replies: 1</p>
+						<p>ANR stack is as follows:</p>
+<p><code></code>`<br />
+AppName 0x103bc8c00 -[OEContinuousModel stopListening]</p>
+<p>AppName 0x103be04ec -[OEPocketsphinxController stopListening]</p>
+<p><code></code>`</p>
+						]]>
+					</description>
+
+					
+					
+					
+				</item>
+
+				
+				<item>
+					<guid>/forums/topic/can-openears-recognize-new-sounds-not-in-the-dictionary/</guid>
+					<title><![CDATA[Can OpenEars recognize new sounds not in the dictionary]]></title>
+					<link>/forums/topic/can-openears-recognize-new-sounds-not-in-the-dictionary/</link>
+					<pubDate>Sun, 17 Jan 2021 09:01:30 +0000</pubDate>
+					<dc:creator>davidfield</dc:creator>
+
+					
+					<description>
+						<![CDATA[
+						<p>Replies: 1</p>
+						<p>I am looking for an API which can be used for the following:</p>
+<p>1. add to a collection new sounds which are not words in a recognized language.<br />
+2. parse an audio file and identify the positions in the file at which these sounds occur.</p>
+<p>Can OpenEars do the above? If not, are there any alternatives API&#8217;s or frameworks which could do this?</p>
+<p>Ideally, the API would be able to be integrated with Java or Swift code.</p>
+<p>Thanks very much</p>
+						]]>
+					</description>
+
+					
+					
+					
+				</item>
+
+				
+				<item>
+					<guid>/forums/topic/how-to-use-speech-recognition-for-previously-recorded-raw-audio/</guid>
+					<title><![CDATA[How to use Speech recognition for previously recorded raw audio]]></title>
+					<link>/forums/topic/how-to-use-speech-recognition-for-previously-recorded-raw-audio/</link>
+					<pubDate>Fri, 14 Aug 2020 15:27:19 +0000</pubDate>
+					<dc:creator>toinedeboer@outlook.com</dc:creator>
+
+					
+					<description>
+						<![CDATA[
+						<p>Replies: 2</p>
+						<p>Hello,</p>
+<p>For Android I have been using PocketSphinx for doing speech recognition for previously recorded audio parts, a single word represented in a byte array (PCM16).</p>
+<p>Can this be done by OpenEars as well?<br />
+(without needed to use the microphone implementation)</p>
+<p>Maybe the Android (PocketSphinx) code make my requirements more clear<br />
+// decoder is PcoektSphinx decoder, loaded with language models etc.<br />
+decoder.StartUtt();<br />
+decoder.ProcessRaw(audioBytesShorts, audioBytesShortsLength, false, true);<br />
+decoder.EndUtt();</p>
+<p>var finalHypothesis = decoder.Hyp();<br />
+var nbestIterator = decoder.Nbest()?.Iterator(); &#8230; etc</p>
+<p>Is something possible with OpenEars for iOS?<br />
+That would be great, instead of needed to make PocketSphinx workable on iOS myself.<br />
+Kind Regards,<br />
+Toine</p>
+						]]>
+					</description>
+
+					
+					
+					
+				</item>
+
+				
+				<item>
+					<guid>/forums/topic/openears-on-ios-13/</guid>
+					<title><![CDATA[OpenEars on iOS 13+]]></title>
+					<link>/forums/topic/openears-on-ios-13/</link>
+					<pubDate>Thu, 04 Jun 2020 08:20:03 +0000</pubDate>
+					<dc:creator>SlavaHacker32</dc:creator>
+
+					
+					<description>
+						<![CDATA[
+						<p>Replies: 1</p>
+						<p>Hi, I use OpenEars in my project. When I compiled project to device with iOS 12 everything is good, but on device with iOS 13+ I doesn&#8217;t receive valid hypothesis from OpenEars. I got this and other &#8220;hypothesis&#8221; like this:<br />
+___REJ_TH<br />
+___REJ_P<br />
+___REJ_NG </p>
+<p>On 12 iOS I got valid words. Can you help me? Maybe, I miss some config parameter for iOS 13+, or need to update OpenEars for latest version (how to see what version I use?), or this is my fail and OpenEars doesn&#8217;t depends on iOS version or xCode version</p>
+						]]>
+					</description>
+
+					
+					
+					
+				</item>
+
+				
+				<item>
+					<guid>/forums/topic/open-ears-when-screen-is-locked/</guid>
+					<title><![CDATA[Open ears when screen is locked]]></title>
+					<link>/forums/topic/open-ears-when-screen-is-locked/</link>
+					<pubDate>Sun, 03 May 2020 16:42:48 +0000</pubDate>
+					<dc:creator>Marcus</dc:creator>
+
+					
+					<description>
+						<![CDATA[
+						<p>Replies: 1</p>
+						<p>Hello,</p>
+<p>I read some old threads from 2012 but it didn&#8217;t really answer my question.</p>
+<p>I would like to develop an app where it listens to two words and once it hears it then it will trigger an action on the app. </p>
+<p>My question is can this be done when the phone is locked. For example, the user has the phone on the table and says those two words from a distance. Will openears still work? Furthermore, will this comply with apple&#8217;s policy of publishing this app on the apple store?</p>
+						]]>
+					</description>
+
+					
+					
+					
+				</item>
+
+				
+				<item>
+					<guid>/forums/topic/disappears-audio-on-video-after-restart-openears-listening/</guid>
+					<title><![CDATA[Disappears audio on video after restart OpenEars listening]]></title>
+					<link>/forums/topic/disappears-audio-on-video-after-restart-openears-listening/</link>
+					<pubDate>Mon, 06 Apr 2020 10:01:20 +0000</pubDate>
+					<dc:creator>SlavaHacker32</dc:creator>
+
+					
+					<description>
+						<![CDATA[
+						<p>Replies: 3</p>
+						<p>Hi. I use OpenEars speech recognizer. Also, I want to record video with sound while I read the text. When I start record everything is good but when I start to read new text sound on the video is desabled. I debug my app and found error:</p>
+<p>AVAudioSession.mm:1079:-[AVAudioSession setActive:withOptions:error:]: Deactivating an audio session that has running I/O. All I/O should be stopped or paused prior to deactivating the audio session.<br />
+2020-04-04 11:31:05.578667+0300 [4861:964887] Error: couldn&#8217;t set session inactive.: &#8216;!act&#8217;</p>
+<p>when I call OEPocketsphinxController.sharedInstance()?.stopListening() for stop current listening and start new text with new LanguageModel. </p>
+<p>I think that OpenEars  have a conflict with another AVFrameworks<br />
+Can you help me? </p>
+<p>I tried to call OEPocketsphinxController.sharedInstance()?.setActive(false) or AVAudioSession setActive but it is not fix my problem.</p>
+						]]>
+					</description>
+
+					
+					
+					
+				</item>
+
+				
+				<item>
+					<guid>/forums/topic/proper-way-to-startstop-oe/</guid>
+					<title><![CDATA[Proper way to start/stop OE?]]></title>
+					<link>/forums/topic/proper-way-to-startstop-oe/</link>
+					<pubDate>Fri, 20 Mar 2020 21:27:22 +0000</pubDate>
+					<dc:creator>warpling</dc:creator>
+
+					
+					<description>
+						<![CDATA[
+						<p>Replies: 13</p>
+						<p>Hey Halle,</p>
+<p>Long time, no issue ;)</p>
+<p>A tester of mine recently reported some strange behavior where locking the phone while OE is running causes the phone to hang from 5-30 seconds after the phone is unlocked again (there&#8217;s even some noticeable lag on the lock screen). I&#8217;ve replicated it in my app and don&#8217;t see it in the sample app (at least not as drastically) so I am wondering if I&#8217;m doing too much to help OE pause/stop/start etc, and if I should let it manage that itself more?</p>
+<p>I&#8217;m currently testing using 2.041 on an iPhone 6s, but have replicated the issue with 2.041 on an iPhone 5s.</p>
+<p>Upon receiving <code>applicationWillResignActive</code> I send <code>suspendRecognition</code> and then <code>stopListening</code> to <code>OEPocketsphinxController</code>&#8216;s sharedInstance. stopListening appears to block for a long time. Let me know if I can clean-up this log further to help you read it (I added some of my own logging around my calls to OE&#8217;s methods to see which ones were blocking).</p>
+<p>As always, thank you ?</p>
+<pre><code>
+2015-10-06 15:31:43.714 Blackbox[4323:1182048] Starting OpenEars logging for OpenEars version 2.041 on 64-bit device (or build): iPhone running iOS version: 9.000000
+2015-10-06 15:31:43.714 Blackbox[4323:1182048] Attempting to start listening session from startListeningWithLanguageModelAtPath:
+2015-10-06 15:31:43.714 Blackbox[4323:1182048] User gave mic permission for this app.
+2015-10-06 15:31:43.715 Blackbox[4323:1182048] Valid setSecondsOfSilence value of 0.400000 will be used.
+2015-10-06 15:31:43.715 Blackbox[4323:1182048] Successfully started listening session from startListeningWithLanguageModelAtPath:
+2015-10-06 15:31:43.715 Blackbox[4323:1182166] Starting listening.
+2015-10-06 15:31:43.715 Blackbox[4323:1182166] about to set up audio session
+2015-10-06 15:31:43.715 Blackbox[4323:1182166] Creating audio session with default settings.
+2015-10-06 15:31:43.968 Blackbox[4323:1182166] done starting audio unit
+2015-10-06 15:31:43.974 Blackbox[4323:1182167] Audio route has changed for the following reason:
+2015-10-06 15:31:43.976 Blackbox[4323:1182167] There was a category change. The new category is AVAudioSessionCategoryPlayAndRecord
+2015-10-06 15:31:43.980 Blackbox[4323:1182167] This is not a case in which OpenEars notifies of a route change. At the close of this function, the new audio route is ---SpeakerMicrophoneBuiltIn---. The previous route before changing to this route was &lt;AVAudioSessionRouteDescription: 0x13fe6abc0, 
+inputs = (
+    &quot;&lt;AVAudioSessionPortDescription: 0x13ff63160, type = MicrophoneBuiltIn; name = iPhone Microphone; UID = Built-In Microphone; selectedDataSource = Front&gt;&quot;
+); 
+outputs = (
+    &quot;&lt;AVAudioSessionPortDescription: 0x13ff752d0, type = Speaker; name = Speaker; UID = Speaker; selectedDataSource = (null)&gt;&quot;
+)&gt;.
+2015-10-06 15:31:44.016 Blackbox[4323:1182166] Restoring SmartCMN value of 39.168701
+2015-10-06 15:31:44.016 Blackbox[4323:1182166] Listening.
+2015-10-06 15:31:44.016 Blackbox[4323:1182166] Project has these words or phrases in its dictionary:
+BLACK
+BLACKBOX
+BOX
+
+2015-10-06 15:31:44.016 Blackbox[4323:1182166] Recognition loop has started
+2015-10-06 15:31:44:023 Blackbox[4323:1182048] ? SpeechChallengeManager: Managing Started
+2015-10-06 15:31:44:054 Blackbox[4323:1182048] ?? Pocketsphinx is now listening.
+2015-10-06 15:31:45:090 Blackbox[4323:1182048]  ? Remembrall: challengeAttempts ➡️ progress recalculation
+2015-10-06 15:31:45:090 Blackbox[4323:1182048] ℹ️ Recalculating progress 
+2015-10-06 15:31:45:096 Blackbox[4323:1182048] GameModel saved.
+2015-10-06 15:31:45:096 Blackbox[4323:1182048] ? SpeechChallengeManager: Recording Started
+2015-10-06 15:31:47.727 Blackbox[4323:1182157] Speech detected...
+2015-10-06 15:31:47:727 Blackbox[4323:1182048] ?? Pocketsphinx has detected speech.
+
+2015-10-06 15:31:48.591 Blackbox[4323:1182162] End of speech detected...
+2015-10-06 15:31:48:591 Blackbox[4323:1182048] ?? Pocketsphinx has detected a period of silence, concluding an utterance.
+2015-10-06 15:31:48.607 Blackbox[4323:1182162] Pocketsphinx heard &quot;BOX&quot; with a score of (-100480) and an utterance ID of 0.
+2015-10-06 15:31:48:608 Blackbox[4323:1182048] The received hypothesis is ON with a score of -100480 and an ID of 0
+2015-10-06 15:31:50.689 Blackbox[4323:1182048]  ** -[UIApplication _handleNonLaunchSpecificActions:forScene:withTransitionContext:completion:] ** unhandled action -&gt; &lt;FBSSceneSnapshotAction: 0x13feddee0&gt; {
+    handler = remote;
+    info = &lt;BSSettings: 0x14121fc60&gt; {
+        (1) = 5;
+    };
+}
+2015-10-06 15:31:50:761 Blackbox[4323:1182048] ⤵️ Application will resign active
+2015-10-06 15:31:50.775 Blackbox[4323:1182048] Attempting to stop
+2015-10-06 15:31:50.775 Blackbox[4323:1182048] Suspending recognition
+2015-10-06 15:31:50.776 Blackbox[4323:1182048] Finished suspending recognition
+2015-10-06 15:31:50.776 Blackbox[4323:1182048] Stopping listening.
+2015-10-06 15:31:52.322 Blackbox[4323:1182167] Audio route has changed for the following reason:
+2015-10-06 15:31:52.330 Blackbox[4323:1182167] There was a category change. The new category is AVAudioSessionCategoryPlayAndRecord
+2015-10-06 15:31:52.331 Blackbox[4323:1182167] This is not a case in which OpenEars notifies of a route change. At the close of this function, the new audio route is ---SpeakerMicrophoneBuiltIn---. The previous route before changing to this route was &lt;AVAudioSessionRouteDescription: 0x1410abf50, 
+inputs = (
+    &quot;&lt;AVAudioSessionPortDescription: 0x141080c00, type = MicrophoneBuiltIn; name = iPhone Microphone; UID = Built-In Microphone; selectedDataSource = Bottom&gt;&quot;
+); 
+outputs = (
+    &quot;&lt;AVAudioSessionPortDescription: 0x13fee42d0, type = Speaker; name = Speaker; UID = Speaker; selectedDataSource = (null)&gt;&quot;
+)&gt;.
+2015-10-06 15:31:54.198 Blackbox[4323:1182167] Audio route has changed for the following reason:
+2015-10-06 15:31:54.204 Blackbox[4323:1182167] There was a category change. The new category is AVAudioSessionCategoryPlayAndRecord
+2015-10-06 15:31:54.212 Blackbox[4323:1182167] This is not a case in which OpenEars notifies of a route change. At the close of this function, the new audio route is ---SpeakerMicrophoneBuiltIn---. The previous route before changing to this route was &lt;AVAudioSessionRouteDescription: 0x13ff4a230, 
+inputs = (
+    &quot;&lt;AVAudioSessionPortDescription: 0x13ff05660, type = MicrophoneBuiltIn; name = iPhone Microphone; UID = Built-In Microphone; selectedDataSource = Front&gt;&quot;
+); 
+outputs = (
+    &quot;&lt;AVAudioSessionPortDescription: 0x13ffcb090, type = Speaker; name = Speaker; UID = Speaker; selectedDataSource = (null)&gt;&quot;
+)&gt;.
+2015-10-06 15:32:22.267 Blackbox[4323:1182048] 15:32:22.267 WARNING:  [0x19f6f2000] 1251: AURemoteIO::Stop: error 0x10000004 calling TerminateOwnIOThread
+2015-10-06 15:32:22.268 Blackbox[4323:1182229] 15:32:22.268 ERROR:    [AURemoteIO::IOThread] &gt;aurioc&gt; 1503: AURemoteIO@0x140874040: IOThread exiting with error 0x10004002
+2015-10-06 15:32:23.793 Blackbox[4323:1182048] 15:32:23.793 ERROR:    [0x19f6f2000] AVAudioSession.mm:697: -[AVAudioSession setActive:withOptions:error:]: Deactivating an audio session that has running I/O. All I/O should be stopped or paused prior to deactivating the audio session.
+2015-10-06 15:32:23.796 Blackbox[4323:1182048] Error: couldn&#039;t set session inactive.: &#039;!act&#039;
+2015-10-06 15:32:23.796 Blackbox[4323:1182048] Error: there was a problem tearing down the audio session: Error Domain=NSOSStatusErrorDomain Code=560030580 &quot;(null)&quot;.
+2015-10-06 15:32:23.796 Blackbox[4323:1182048] Unable to stop listening because because an utterance is still in progress; trying again.
+2015-10-06 15:32:23.814 Blackbox[4323:1182167] Audio route has changed for the following reason:
+2015-10-06 15:32:23.815 Blackbox[4323:1182167] There was a category change. The new category is AVAudioSessionCategoryPlayAndRecord
+2015-10-06 15:32:23.816 Blackbox[4323:1182167] This is not a case in which OpenEars notifies of a route change. At the close of this function, the new audio route is ---SpeakerMicrophoneBuiltIn---. The previous route before changing to this route was &lt;AVAudioSessionRouteDescription: 0x141035940, 
+inputs = (
+    &quot;&lt;AVAudioSessionPortDescription: 0x141087200, type = MicrophoneBuiltIn; name = iPhone Microphone; UID = Built-In Microphone; selectedDataSource = Bottom&gt;&quot;
+); 
+outputs = (
+    &quot;&lt;AVAudioSessionPortDescription: 0x141271270, type = Speaker; name = Speaker; UID = Speaker; selectedDataSource = (null)&gt;&quot;
+)&gt;.
+2015-10-06 15:32:23.848 Blackbox[4323:1182048] Attempting to stop an unstopped utterance so listening can stop.
+2015-10-06 15:32:23.849 Blackbox[4323:1182048] No longer listening.
+2015-10-06 15:32:23.849 Blackbox[4323:1182048] Finished stopping listening
+2015-10-06 15:32:23:849 Blackbox[4323:1182048] ? SpeechChallengeManager: Recording Stopped
+2015-10-06 15:32:23:849 Blackbox[4323:1182048] ? Application did enter background
+2015-10-06 15:32:23.868 Blackbox[4323:1182048] Setting OEPocketsphinxController inactive
+2015-10-06 15:32:23.868 Blackbox[4323:1182048] Finished setting OEPocketsphinxController inactive
+2015-10-06 15:32:24:063 Blackbox[4323:1182048] ? SpeechChallengeManager: Managing Stopped
+</code></pre>
+						]]>
+					</description>
+
+					
+					
+					
+				</item>
+
+							
+		
+	</channel>
+	</rss>
+

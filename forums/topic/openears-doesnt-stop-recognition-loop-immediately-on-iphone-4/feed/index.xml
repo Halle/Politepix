@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>OpenEars doesn&#039;t stop recognition loop immediately on iPhone 4 &#8211; Politepix</title>
+		<atom:link href="/forums/topic/openears-doesnt-stop-recognition-loop-immediately-on-iphone-4/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/openears-doesnt-stop-recognition-loop-immediately-on-iphone-4/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:07:20 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/openears-doesnt-stop-recognition-loop-immediately-on-iphone-4/#post-1021128</guid>
+					<title><![CDATA[OpenEars doesn&#039;t stop recognition loop immediately on iPhone 4]]></title>
+					<link>/forums/topic/openears-doesnt-stop-recognition-loop-immediately-on-iphone-4/#post-1021128</link>
+					<pubDate>Tue, 06 May 2014 16:32:01 +0000</pubDate>
+					<dc:creator>Harz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m developing speech recognition application based on OpenEars and RapidEars. It works fine on iPhone 5 and 5s, but there is some bug on iPhone 4: OpenEars doesn&#8217;t stop recognition loop immediately when stopListening method is called. It&#8217;s delay correlates with quantity of recognized words in current loop and can be up to 1 minute and more… So, how can I stop recognition loop immediately (or at least during several seconds)? Below is openears log. Thanks in advice.</p>
+<p>2014-05-06 18:11:37.404 MyApp[2221:907] Stop button pressed<br />
+time delta 1399389097.435529 partial result fwdtree<br />
+partial: &lt;s&gt;: …[recognized words]… :(0000001)<br />
+INFO: file_omitted(0): cmn_prior_update: from &lt; 12.80 -1.94 -0.17  0.24 -0.35 -0.17 -0.14 -0.17 -0.31 -0.08 -0.17 -0.13 -0.13 &gt;<br />
+INFO: file_omitted(0): cmn_prior_update: to   &lt; 12.93 -2.03 -0.19  0.26 -0.36 -0.15 -0.15 -0.13 -0.34 -0.06 -0.16 -0.14 -0.10 &gt;<br />
+INFO: file_omitted(0): idx 1380 is final (1380)<br />
+INFO: file_omitted(0): fwdtree: marking arc buffer final<br />
+INFO: file_omitted(0): fwdtree: allocated 4096 arcs (48 KiB)<br />
+INFO: file_omitted(0): fwdtree: allocated 512 start frame entries (2 KiB)<br />
+INFO: file_omitted(0): Waiting for 1 consumers to finish<br />
+INFO: file_omitted(0): idx 1380 is final (1380)<br />
+time delta 1399389118.439060 end 0000001<br />
+2014-05-06 18:11:58.439 MyApp[2221:907] Status: Detected end of speech, Code: 4<br />
+INFO: file_omitted(0): fwdflat canceled<br />
+INFO: file_omitted(0): fwdtree canceled<br />
+INFO: file_omitted(0): TOTAL fwdtree 48.961 wall 2.135 xRT<br />
+INFO: file_omitted(0): TOTAL fwdflat 77.410 wall 3.376 xRT<br />
+2014-05-06 18:11:58.605 MyApp[2221:907] Status: It has stopped listening, Code: 3</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-doesnt-stop-recognition-loop-immediately-on-iphone-4/#post-1021129</guid>
+					<title><![CDATA[Reply To: OpenEars doesn&#039;t stop recognition loop immediately on iPhone 4]]></title>
+					<link>/forums/topic/openears-doesnt-stop-recognition-loop-immediately-on-iphone-4/#post-1021129</link>
+					<pubDate>Tue, 06 May 2014 16:41:55 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Are both the frameworks up to the current version? OpenEars is 1.7 and RapidEars is 1.65.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-doesnt-stop-recognition-loop-immediately-on-iphone-4/#post-1021130</guid>
+					<title><![CDATA[Reply To: OpenEars doesn&#039;t stop recognition loop immediately on iPhone 4]]></title>
+					<link>/forums/topic/openears-doesnt-stop-recognition-loop-immediately-on-iphone-4/#post-1021130</link>
+					<pubDate>Tue, 06 May 2014 17:15:03 +0000</pubDate>
+					<dc:creator>Harz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yes, OpenEars version is 1.7 (with minor changes in the code) and RapidEars is 1.65 (Licensed).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-doesnt-stop-recognition-loop-immediately-on-iphone-4/#post-1021131</guid>
+					<title><![CDATA[Reply To: OpenEars doesn&#039;t stop recognition loop immediately on iPhone 4]]></title>
+					<link>/forums/topic/openears-doesnt-stop-recognition-loop-immediately-on-iphone-4/#post-1021131</link>
+					<pubDate>Tue, 06 May 2014 17:18:22 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>What are the changes to OpenEars?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-doesnt-stop-recognition-loop-immediately-on-iphone-4/#post-1021132</guid>
+					<title><![CDATA[Reply To: OpenEars doesn&#039;t stop recognition loop immediately on iPhone 4]]></title>
+					<link>/forums/topic/openears-doesnt-stop-recognition-loop-immediately-on-iphone-4/#post-1021132</link>
+					<pubDate>Tue, 06 May 2014 17:22:47 +0000</pubDate>
+					<dc:creator>Harz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Modified method pathToModel to enable model updates via Wi-Fi.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-doesnt-stop-recognition-loop-immediately-on-iphone-4/#post-1021133</guid>
+					<title><![CDATA[Reply To: OpenEars doesn&#039;t stop recognition loop immediately on iPhone 4]]></title>
+					<link>/forums/topic/openears-doesnt-stop-recognition-loop-immediately-on-iphone-4/#post-1021133</link>
+					<pubDate>Tue, 06 May 2014 17:32:22 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, can you show the full logging output of both OpenEarsLogging and verbosePocketsphinx from the beginning to the end of the app session? It&#8217;s fine to omit anything that isn&#8217;t logging that OpenEars creates and to omit specific vocabulary as long as the vocabulary count isn&#8217;t changed.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-doesnt-stop-recognition-loop-immediately-on-iphone-4/#post-1021140</guid>
+					<title><![CDATA[Reply To: OpenEars doesn&#039;t stop recognition loop immediately on iPhone 4]]></title>
+					<link>/forums/topic/openears-doesnt-stop-recognition-loop-immediately-on-iphone-4/#post-1021140</link>
+					<pubDate>Tue, 06 May 2014 18:32:56 +0000</pubDate>
+					<dc:creator>Harz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;ve turned off own application&#8217;s logging. Here is full log: <a href="https://dl.dropboxusercontent.com/u/67401043/Log.txt" title="Log.txt" rel="nofollow"></a><br />
+But it was running on iPhone 5, not iPhone 4. And my problem didn&#8217;t took place in this case. I&#8217;ll be ready to show logging from iPhone 4 with discussed bug tomorrow, should I remove strings with partial results of recognized text?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-doesnt-stop-recognition-loop-immediately-on-iphone-4/#post-1021141</guid>
+					<title><![CDATA[Reply To: OpenEars doesn&#039;t stop recognition loop immediately on iPhone 4]]></title>
+					<link>/forums/topic/openears-doesnt-stop-recognition-loop-immediately-on-iphone-4/#post-1021141</link>
+					<pubDate>Tue, 06 May 2014 18:37:57 +0000</pubDate>
+					<dc:creator>Harz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>2014-05-06 21:07:08.962 MyApp[4651:60b] otherApps (<br />
+    &#8220;com.apple.mobilesafari&#8221;,<br />
+    &#8220;com.youmi.FileMasterEN&#8221;<br />
+)<br />
+2014-05-06 21:07:17.950 MyApp[4651:60b] &#8216;Open Ears&#8217; has been Initialized<br />
+2014-05-06 21:07:17.952 MyApp[4651:60b] Starting OpenEars logging for OpenEars version 1.7 on 32-bit device: iPhone running iOS version: 7.000000<br />
+2014-05-06 21:07:37.318 MyApp[4651:60b] Bundle Name : Model<br />
+2014-05-06 21:07:37.320 MyApp[4651:60b] OE Ext : Model Path is /var/mobile/Applications/E43C3D68-1E23-4C8A-96FD-917CCE0F8B8E/Documents/Model.bundle<br />
+2014-05-06 21:07:37.321 MyApp[4651:60b] OE Ext : Model Path is /var/mobile/Applications/E43C3D68-1E23-4C8A-96FD-917CCE0F8B8E/Documents/Model.bundle<br />
+2014-05-06 21:07:37.325 MyApp[4651:60b] Accuracy set to 20.<br />
+2014-05-06 21:07:37.327 MyApp[4651:60b] OE Ext : Model Path is /var/mobile/Applications/E43C3D68-1E23-4C8A-96FD-917CCE0F8B8E/Documents/Model.bundle<br />
+2014-05-06 21:07:37.336 MyApp[4651:60b] User gave mic permission for this app.<br />
+2014-05-06 21:07:37.338 MyApp[4651:60b] setting sample rate to 16000<br />
+2014-05-06 21:07:37.339 MyApp[4651:60b] The audio session has never been initialized so we will do that now.<br />
+2014-05-06 21:07:37.339 MyApp[4651:60b] Checking and resetting all audio session settings.<br />
+2014-05-06 21:07:37.340 MyApp[4651:60b] audioCategory is incorrect, we will change it.<br />
+2014-05-06 21:07:37.341 MyApp[4651:60b] audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.<br />
+2014-05-06 21:07:37.342 MyApp[4651:60b] bluetoothInput is incorrect, we will change it.<br />
+2014-05-06 21:07:37.343 MyApp[4651:60b] bluetooth input is now on the correct setting of 1.<br />
+2014-05-06 21:07:37.344 MyApp[4651:60b] Output Device: ReceiverAndMicrophone.<br />
+2014-05-06 21:07:37.345 MyApp[4651:60b] categoryDefaultToSpeaker is incorrect, we will change it.<br />
+2014-05-06 21:07:37.346 MyApp[4651:60b] CategoryDefaultToSpeaker is now on the correct setting of 1.<br />
+2014-05-06 21:07:37.347 MyApp[4651:60b] preferredBufferSize is incorrect, we will change it.<br />
+2014-05-06 21:07:37.348 MyApp[4651:60b] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2014-05-06 21:07:37.349 MyApp[4651:60b] preferredSampleRateCheck is incorrect, we will change it.<br />
+2014-05-06 21:07:37.350 MyApp[4651:60b] preferred hardware sample rate is now on the correct setting of 16000.000000.<br />
+2014-05-06 21:07:37.385 MyApp[4651:60b] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2014-05-06 21:07:37.386 MyApp[4651:60b] Exiting startAudioSession.<br />
+2014-05-06 21:07:37.394 MyApp[4651:650b] setSecondsOfSilence value of 0.000000 was too large or too small or was NULL, using default of 0.700000.<br />
+2014-05-06 21:07:37.400 MyApp[4651:600f] Audio route has changed for the following reason:<br />
+2014-05-06 21:07:37.401 MyApp[4651:600f] There has been a change of category<br />
+2014-05-06 21:07:37.402 MyApp[4651:600f] The previous audio route was Speaker<br />
+2014-05-06 21:07:37.403 MyApp[4651:600f] This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is SpeakerAndMicrophone<br />
+2014-05-06 21:07:37.409 MyApp[4651:650b] Project has these words or phrases in its dictionary:<br />
+[deleted]<br />
+2014-05-06 21:07:37.411 MyApp[4651:650b] Recognition loop has started<br />
+INFO: file_omitted(0): Parsing command line:<br />
+\<br />
+	-lm /var/mobile/Applications/E43C3D68-1E23-4C8A-96FD-917CCE0F8B8E/Documents/Model.bundle/base.lm.dmp \<br />
+	-dict /var/mobile/Applications/E43C3D68-1E23-4C8A-96FD-917CCE0F8B8E/Documents/Model.bundle/base.dic \<br />
+	-hmm /var/mobile/Applications/E43C3D68-1E23-4C8A-96FD-917CCE0F8B8E/Documents/Model.bundle \<br />
+	-lw 6.5 \<br />
+	-samprate 16000 \<br />
+	-rawlogdir /var/mobile/Applications/E43C3D68-1E23-4C8A-96FD-917CCE0F8B8E/Library/Caches </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-adchdr		0		0<br />
+-adcin		no		no<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-align<br />
+-alpha		0.97		9.700000e-01<br />
+-arcdumpdir<br />
+-ascale		20.0		2.000000e+01<br />
+-aw		1		1<br />
+-backtrace	no		no<br />
+-beam		1e-48		1.000000e-48<br />
+-bestpath	yes		yes<br />
+-bestpathlw	9.5		9.500000e+00<br />
+-bghist		no		no<br />
+-cepdir<br />
+-cepext		.mfc		.mfc<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		8.0<br />
+-compallsen	no		no<br />
+-ctl<br />
+-ctlcount	-1		-1<br />
+-ctlincr	1		1<br />
+-ctloffset	0		0<br />
+-debug				0<br />
+-dict				/var/mobile/Applications/E43C3D68-1E23-4C8A-96FD-917CCE0F8B8E/Documents/Model.bundle/base.dic<br />
+-dictcase	no		no<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-ds		1		1<br />
+-fdict<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-featparams<br />
+-fillprob	1e-8		1.000000e-08<br />
+-frate		100		100<br />
+-fsg<br />
+-fsgusealtpron	yes		yes<br />
+-fsgusefiller	yes		yes<br />
+-fwdflat	yes		yes<br />
+-fwdflatbeam	1e-64		1.000000e-64<br />
+-fwdflatlw	8.5		8.500000e+00<br />
+-fwdflatsfwin	25		25<br />
+-fwdflatwbeam	7e-29		7.000000e-29<br />
+-fwdtree	yes		yes<br />
+-fwdtreelm<br />
+-hmm				/var/mobile/Applications/E43C3D68-1E23-4C8A-96FD-917CCE0F8B8E/Documents/Model.bundle<br />
+-hyp<br />
+-hypprefix<br />
+-input_endian	little		little<br />
+-jsgf<br />
+-kdmaxbbi	-1		-1<br />
+-kdmaxdepth	0		0<br />
+-kdtree<br />
+-latsize	512		512<br />
+-lda<br />
+-ldadim		0		0<br />
+-lextreedump	0		0<br />
+-lifter		0		0<br />
+-lm				/var/mobile/Applications/E43C3D68-1E23-4C8A-96FD-917CCE0F8B8E/Documents/Model.bundle/base.lm.dmp<br />
+-lmctl<br />
+-lmname		default		default<br />
+-logbase	1.0001		1.000100e+00<br />
+-logfn<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.333333e+02<br />
+-lpbeam		1e-40		1.000000e-40<br />
+-lponlybeam	7e-29		7.000000e-29<br />
+-lw		6.5		6.500000e+00<br />
+-maxhmmpf	-1		-1<br />
+-maxnewoov	20		20<br />
+-maxsilfr	-1		-1<br />
+-maxwpf		50		50<br />
+-mdef<br />
+-mean<br />
+-mfclogdir<br />
+-min_endfr	0		0<br />
+-mixw<br />
+-mixwfloor	0.0000001	1.000000e-07<br />
+-mllr<br />
+-mmap		yes		yes<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		40<br />
+-nwpen		1.0		1.000000e+00<br />
+-pbeam		1e-48		1.000000e-48<br />
+-pip		1.0		1.000000e+00<br />
+-pl_beam	1e-10		1.000000e-10<br />
+-pl_pbeam	1e-5		1.000000e-05<br />
+-pl_window	0		0<br />
+-rawlogdir			/var/mobile/Applications/E43C3D68-1E23-4C8A-96FD-917CCE0F8B8E/Library/Caches<br />
+-remove_dc	no		no<br />
+-round_filters	yes		yes<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-sendump<br />
+-senlogdir<br />
+-senmgau<br />
+-silprob	0.005		5.000000e-03<br />
+-smoothspec	no		no<br />
+-svspec<br />
+-tmat<br />
+-tmatfloor	0.0001		1.000000e-04<br />
+-topn		4		4<br />
+-topn_beam	0		0<br />
+-toprule<br />
+-transform	legacy		legacy<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	6.855498e+03<br />
+-usewdphones	no		no<br />
+-uw		1.0		1.000000e+00<br />
+-var<br />
+-varfloor	0.0001		1.000000e-04<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-vm<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wbeam		7e-29		7.000000e-29<br />
+-wip		0.65		6.500000e-01<br />
+-wlen		0.025625	2.562500e-02</p>
+<p>INFO: file_omitted(0): Parsing command line:<br />
+\<br />
+	-nfilt 40 \<br />
+	-lowerf 133.3334 \<br />
+	-upperf 6855.4976 \<br />
+	-feat s2_4x \<br />
+	-agc none \<br />
+	-cmn current \<br />
+	-varnorm no \<br />
+	-fwdflat yes </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-alpha		0.97		9.700000e-01<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		8.0<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-feat		1s_c_d_dd	s2_4x<br />
+-frate		100		100<br />
+-input_endian	little		little<br />
+-lda<br />
+-ldadim		0		0<br />
+-lifter		0		0<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.333334e+02<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		40<br />
+-remove_dc	no		no<br />
+-round_filters	yes		yes<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-smoothspec	no		no<br />
+-svspec<br />
+-transform	legacy		legacy<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	6.855498e+03<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wlen		0.025625	2.562500e-02</p>
+<p>INFO: file_omitted(0): Parsed model-specific feature parameters from /var/mobile/Applications/E43C3D68-1E23-4C8A-96FD-917CCE0F8B8E/Documents/Model.bundle/feat.params<br />
+INFO: file_omitted(0): Reading HMM transition probability matrices: /var/mobile/Applications/E43C3D68-1E23-4C8A-96FD-917CCE0F8B8E/Documents/Model.bundle/transition_matrices<br />
+INFO: file_omitted(0): Loading senones from dump file /var/mobile/Applications/E43C3D68-1E23-4C8A-96FD-917CCE0F8B8E/Documents/Model.bundle/sendump<br />
+INFO: file_omitted(0): BEGIN FILE FORMAT DESCRIPTION<br />
+INFO: file_omitted(0): Rows: 64, Columns: 6147<br />
+INFO: file_omitted(0): Using memory-mapped I/O for senones<br />
+INFO: file_omitted(0): Building PID tables for dictionary<br />
+INFO: file_omitted(0): Allocating 49^3 * 2 bytes (229 KiB) for word-initial triphones<br />
+INFO: file_omitted(0): Allocated 29008 bytes (28 KiB) for word-final triphones<br />
+INFO: file_omitted(0): Allocated 29008 bytes (28 KiB) for single-phone word triphones<br />
+INFO: file_omitted(0): No \data\ mark in LM file<br />
+INFO: file_omitted(0): Number of word mappings: 2522<br />
+INFO: file_omitted(0): Number of word mappings: 2522<br />
+INFO: file_omitted(0): Initialized arc buffer &#8216;fwdtree&#8217;, each arc occupies 12 bytes<br />
+2014-05-06 21:07:38.845 MyApp[4651:650b] Starting openAudioDevice on the device.<br />
+2014-05-06 21:07:38.846 MyApp[4651:650b] Audio unit wrapper successfully created.<br />
+2014-05-06 21:07:38.854 MyApp[4651:650b] Set audio route to SpeakerAndMicrophone<br />
+2014-05-06 21:07:38.855 MyApp[4651:650b] Restoring SmartCMN value of 11.306060<br />
+2014-05-06 21:07:38.856 MyApp[4651:650b] Checking and resetting all audio session settings.<br />
+2014-05-06 21:07:38.858 MyApp[4651:650b] audioCategory is correct, we will leave it as it is.<br />
+2014-05-06 21:07:38.858 MyApp[4651:650b] bluetoothInput is correct, we will leave it as it is.<br />
+2014-05-06 21:07:38.859 MyApp[4651:650b] Output Device: SpeakerAndMicrophone.<br />
+2014-05-06 21:07:38.860 MyApp[4651:650b] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2014-05-06 21:07:38.861 MyApp[4651:650b] preferredBufferSize is correct, we will leave it as it is.<br />
+2014-05-06 21:07:38.862 MyApp[4651:650b] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2014-05-06 21:07:38.863 MyApp[4651:650b] Setting the variables for the device and starting it.<br />
+2014-05-06 21:07:38.863 MyApp[4651:650b] Looping through ringbuffer sections and pre-allocating them.<br />
+2014-05-06 21:07:39.359 MyApp[4651:650b] Started audio output unit.<br />
+2014-05-06 21:07:39.361 MyApp[4651:650b] Calibration has started<br />
+2014-05-06 21:07:41.566 MyApp[4651:650b] Calibration has completed<br />
+2014-05-06 21:07:41.568 MyApp[4651:650b] Listening.<br />
+2014-05-06 21:07:49.319 MyApp[4651:650b] Speech detected&#8230;<br />
+INFO: file_omitted(0): arc_buffer_producer_start_utt<br />
+time delta 1399399669.323025 start 0000000<br />
+INFO: file_omitted(0): arc_buffer_consumer_start_utt<br />
+time delta 1399399669.324462 start 0000000<br />
+time delta 1399399669.324843 partial result fwdtree<br />
+partial: &lt;s&gt;:(0000000)<br />
+time delta 1399399669.341870 partial result fwdtree</p>
+<p>_[deleted partial recognized results]_</p>
+<p>2014-05-06 21:08:04.284 MyApp[4651:60b] In ContinuousAudioUnit<br />
+INFO: file_omitted(0): cmn_prior_update: from &lt; 10.43 -1.69 -0.17  0.14 -0.38 -0.18  0.06 -0.16 -0.21 -0.02 -0.05 -0.10 -0.06 &gt;<br />
+INFO: file_omitted(0): cmn_prior_update: to   &lt; 10.42 -1.69 -0.17  0.14 -0.38 -0.18  0.06 -0.16 -0.21 -0.02 -0.05 -0.10 -0.06 &gt;<br />
+INFO: file_omitted(0): idx 1404 is final (1404)<br />
+INFO: file_omitted(0): fwdtree: marking arc buffer final<br />
+INFO: file_omitted(0): fwdtree: allocated 4096 arcs (48 KiB)<br />
+INFO: file_omitted(0): fwdtree: allocated 512 start frame entries (2 KiB)<br />
+INFO: file_omitted(0): Waiting for 1 consumers to finish<br />
+INFO: file_omitted(0): idx 1404 is final (1404)<br />
+2014-05-06 21:08:04.959 MyApp[4651:650b] Stopping audio unit.<br />
+2014-05-06 21:08:05.091 MyApp[4651:650b] Audio Output Unit stopped, cleaning up variable states.<br />
+2014-05-06 21:08:05.092 MyApp[4651:650b] This device is not recording, so first we will set its recording status to 0<br />
+2014-05-06 21:08:05.093 MyApp[4651:650b] The audio unit is running so we are going to dispose of its instance<br />
+INFO: file_omitted(0): fwdtree canceled<br />
+INFO: file_omitted(0): TOTAL fwdtree 6.994 wall 0.498 xRT<br />
+INFO: file_omitted(0): fwdflat canceled<br />
+INFO: file_omitted(0): TOTAL fwdflat 27.945 wall 1.990 xRT<br />
+2014-05-06 21:08:05.108 MyApp[4651:650b] No longer listening.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-doesnt-stop-recognition-loop-immediately-on-iphone-4/#post-1021142</guid>
+					<title><![CDATA[Reply To: OpenEars doesn&#039;t stop recognition loop immediately on iPhone 4]]></title>
+					<link>/forums/topic/openears-doesnt-stop-recognition-loop-immediately-on-iphone-4/#post-1021142</link>
+					<pubDate>Tue, 06 May 2014 20:11:22 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sent you an email – get in touch when you have a moment so I can assist you with this.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-doesnt-stop-recognition-loop-immediately-on-iphone-4/#post-1021148</guid>
+					<title><![CDATA[Reply To: OpenEars doesn&#039;t stop recognition loop immediately on iPhone 4]]></title>
+					<link>/forums/topic/openears-doesnt-stop-recognition-loop-immediately-on-iphone-4/#post-1021148</link>
+					<pubDate>Wed, 07 May 2014 09:29:32 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for getting in touch! OK, so, I&#8217;ve taken some time to look at your logging output and I think what I&#8217;m seeing is that this isn&#8217;t using one of the two supported 8khz acoustic models that ship with RapidEars, is that correct? It looks like this is probably one of the 16khz Voxforge models if I&#8217;m not mistaken, which is why the performance is going to be slow with RapidEars. Can you let me know if there are any other modifications before we look into if there are any ways to improve the performance for the slower 16khz models on the old devices? A few of the other Sphinx runtime arguments look a bit unexpected to me so it would be good to know if any other changes have been made so that the troubleshooting time can be put to the most efficient use.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>FlightController ducking when ipod music is playing &#8211; Politepix</title>
+		<atom:link href="/forums/topic/flightcontroller-ducking-when-ipod-music-is-playing/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/flightcontroller-ducking-when-ipod-music-is-playing/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:03:00 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/flightcontroller-ducking-when-ipod-music-is-playing/#post-1017705</guid>
+					<title><![CDATA[FlightController ducking when ipod music is playing]]></title>
+					<link>/forums/topic/flightcontroller-ducking-when-ipod-music-is-playing/#post-1017705</link>
+					<pubDate>Fri, 19 Jul 2013 09:10:48 +0000</pubDate>
+					<dc:creator>lbrt</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;ve been reading on the forums when it comes to ducking using flightcontroller and there seems to be a definite answer to this. The text to speech of openears is quite promising to use in an ios app. But I can&#8217;t seem to make any background music (played via the ipod player) to duck when I play a flightcontroller say function.</p>
+<p>Any help would be much appreciated. Thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flightcontroller-ducking-when-ipod-music-is-playing/#post-1017706</guid>
+					<title><![CDATA[Reply To: FlightController ducking when ipod music is playing]]></title>
+					<link>/forums/topic/flightcontroller-ducking-when-ipod-music-is-playing/#post-1017706</link>
+					<pubDate>Fri, 19 Jul 2013 09:25:24 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>I think you will have to make a change to AudioSessionManager.m and recompile the framework in order to do this.</p>
+<p>1. In your app class where you want to use TTS, import AudioSessionManager.h and send this message before instantiating FliteController: [[AudioSessionManager sharedAudioSessionManager]setSoundMixing:YES];</p>
+<p>2. In AudioSessionManager.m change this line:</p>
+<pre>        AudioSessionGetProperty (kAudioSessionProperty_OverrideCategoryMixWithOthers, &#038;overrideCategoryMixWithOthersCheckSize, &#038;overrideCategoryMixWithOthersCheck);</pre>
+<p>To this:</p>
+<pre>
+AudioSessionGetProperty (kAudioSessionProperty_OverrideCategoryMixWithOthers, &#038;overrideCategoryMixWithOthersCheckSize, &#038;overrideCategoryMixWithOthersCheck);
+
+UInt32 ducking = 1;
+    AudioSessionSetProperty(kAudioSessionProperty_OtherMixableAudioShouldDuck, sizeof(ducking), &#038;ducking);
+</pre>
+<p>I haven&#8217;t tested this code, it&#8217;s just my best guess off the top of my head of what the ducking code referenced in the other thread would look like. Let me know if it works for you.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flightcontroller-ducking-when-ipod-music-is-playing/#post-1017720</guid>
+					<title><![CDATA[Reply To: FlightController ducking when ipod music is playing]]></title>
+					<link>/forums/topic/flightcontroller-ducking-when-ipod-music-is-playing/#post-1017720</link>
+					<pubDate>Mon, 22 Jul 2013 08:30:59 +0000</pubDate>
+					<dc:creator>lbrt</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>This did the trick, at first I wasn&#8217;t considering recompiling the framework before i did this post. SO basically the solution is what you&#8217;ve said, adding the code above to AudiosessionManager. Setting shouldMix on AudiosessionManager after initializing the flightController.</p>
+<p>Thanks,<br />
+lbrt</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flightcontroller-ducking-when-ipod-music-is-playing/#post-1017732</guid>
+					<title><![CDATA[Reply To: FlightController ducking when ipod music is playing]]></title>
+					<link>/forums/topic/flightcontroller-ducking-when-ipod-music-is-playing/#post-1017732</link>
+					<pubDate>Tue, 23 Jul 2013 15:23:00 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Super, thanks for the followup.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>coreaudio &#8211; Politepix</title>
+	<atom:link href="/tag/coreaudio/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>iOS Frameworks for speech recognition, text to speech and more</description>
+	<lastBuildDate>Sat, 21 Jun 2014 08:11:58 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.5.2</generator>
+<site xmlns="com-wordpress:feed-additions:1">206848719</site>	<item>
+		<title>Decibel metering from an iPhone audio unit</title>
+		<link>/2010/06/18/decibel-metering-from-an-iphone-audio-unit/</link>
+					<comments>/2010/06/18/decibel-metering-from-an-iphone-audio-unit/#comments</comments>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Fri, 18 Jun 2010 10:04:52 +0000</pubDate>
+				<category><![CDATA[Code]]></category>
+		<category><![CDATA[amplitude]]></category>
+		<category><![CDATA[audio unit]]></category>
+		<category><![CDATA[audioqueue]]></category>
+		<category><![CDATA[audiounit]]></category>
+		<category><![CDATA[buffer]]></category>
+		<category><![CDATA[cocoa]]></category>
+		<category><![CDATA[core audio]]></category>
+		<category><![CDATA[coreaudio]]></category>
+		<category><![CDATA[decibel]]></category>
+		<category><![CDATA[iphone sdk]]></category>
+		<category><![CDATA[linkedin]]></category>
+		<category><![CDATA[metering]]></category>
+		<category><![CDATA[objective-c]]></category>
+		<category><![CDATA[remoteio]]></category>
+		<guid isPermaLink="false">/?p=477</guid>
+
+					<description><![CDATA[How to meter the samples from an iPhone audio unit to convert their amplitude into decibels.]]></description>
+										<content:encoded><![CDATA[<div class="woo-sc-box  note   full">
+<h3 class="heading">Hello visitor!</h3>
+<p>If Core Audio and iOS development is your cup of tea, you might also want to check out <a href="/openears">OpenEars</a>, Politepix&#8217;s shared source library for continuous speech recognition and text-to-speech for iPhone and iPad development. It even <a href="/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/">has an API for defining rules-based recognition grammars dynamically as of version 1.7</a> – pretty neat! On to decibel metering:</div>
+<p><a href="#decibels">[Take me right to the code please!]</a> There are three levels of abstraction for audio on the iPhone, with the <a title="AVAudio Class Reference" href="https://developer.apple.com/iphone/library/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/Reference/Reference.html" target="_self">AVAudioPlayer</a> as the easiest to use (great for 75% of cases) but with the least fine control and highest latency, then <a title="Audio Queue Services Reference" href="https://developer.apple.com/mac/library/documentation/MusicAudio/Reference/AudioQueueReference/Reference/reference.html">Audio Queue Services</a> as the middle step, with less latency and a callback where you can do a lot of useful stuff, and then at the lowest level there are two types of <a title="Tom Bolstad's Core Audio Tutorial" href="https://timbolstad.com/2010/03/14/core-audio-getting-started/">Audio</a> <a title="A Tasty Pixel Remote I/O info" href="https://atastypixel.com/blog/using-remoteio-audio-unit/">Unit</a>: <a title="Subfurther Remote I/O Brain Dump" href="https://www.subfurther.com/blog/?p=507">Remote I/O (or remoteio)</a> and the <a title="Core Audio Documentation" href="https://developer.apple.com/iphone/library/documentation/AudioUnit/Reference/AUComponentServicesReference/Reference/reference.html#//apple_ref/doc/c_ref/kAudioUnitSubType_VoiceProcessingIO">Voice Processing Audio Unit subtype</a>.</p>
+<p>Audio Units are a little bit less forgiving than Audio Queues in their setup, and they have a few more low-level settings that need to be accounted for, and they are a little less documented than Audio Queues, and their sample code on the developer site (Auriotouch) is a little less transparent than the one for Audio Queues (SpeakHere), all of which has led to the impression that they are ultra-difficult and should be approached with caution, although in practice the code is almost identical to that for Audio Queues if you aren&#8217;t mixing sounds and have a single callback. At least, I&#8217;ve spent as much time being mystified by a non-working Audio Queue as by a non-working Audio Unit on the iPhone. But it needs to be said that the main reason that Audio Units aren&#8217;t much harder than Audio Queues at this point is because a lot of independent developers have put a lot of time into experimenting, asking questions, and publishing their results. A year ago they were much more of a black box.</p>
+<p>The decision process on which technology to use is something like:</p>
+<p>Q. Are any of the following statements true: &#8220;I need the lowest possible latency&#8221;, &#8220;I need to work with network streams of audio or audio in memory&#8221;, &#8220;I need to do signal processing&#8221;, &#8220;I need to record voice with maximum clarity&#8221;<br />
+A. If yes, Audio Units are probably best. If no,<br />
+Q. With the answers to the previous questions being no, do you still need to be able to work with sound at the buffer level?<br />
+A: If yes, use Audio Queues or Audio Units, whichever is more comfortable. If no, use AVAudioPlayer/AVAudioRecorder.</p>
+<p>In my experience there is just one big downside to the Audio Unit on the iPhone, which is that there is no metering property for it. There is a metering property which you can see in the audio unit properties header and in the iPhone Audio Units docs, but it isn&#8217;t really turned on, and you can lose a lot of time discovering this via experimentation. So, if you&#8217;ve chosen to use Audio Units and your implementation is working, you have a render callback function. This is where you can meter your samples. I have only written/tested this for 16-bit mono PCM data so if you are using something else, adaptations might be required.</p>
+<p>To meter the samples in the render callback requires six steps.</p>
+<p>Step 1: get an array of your samples that you can loop through. Each sample contains the amplitude.<br />
+Step 2: for each sample, get its amplitude&#8217;s absolute value.<br />
+Step 3: for each sample&#8217;s absolute value, run it through a simple low-pass filter,<br />
+Step 4: for each sample&#8217;s filtered absolute value, convert it into decibels,<br />
+Step 5: for each sample&#8217;s filtered absolute value in decibels, add an offset value that normalizes the clipping point of the device to zero.<br />
+Step 6: keep the highest value you find.</p>
+<p>That end value will be more or less the same thing you&#8217;d get when using the metering property for an Audio Queue or AVAudioRecorder/AVAudioPlayer.</p>
+<p>[politepix-blog-inline-text-ad]</p>
+<p>Now, the actual code:</p>
+<pre style="width:900px;">	
+static OSStatus	AudioUnitRenderCallback (void *inRefCon,
+        AudioUnitRenderActionFlags *ioActionFlags,
+        const AudioTimeStamp *inTimeStamp,
+        UInt32 inBusNumber,
+        UInt32 inNumberFrames,
+        AudioBufferList *ioData) {
+
+		OSStatus err = AudioUnitRender(audioUnitWrapper-&gt;audioUnit, 
+                                               ioActionFlags, 
+                                               inTimeStamp,  
+                                               1, 
+                                               inNumberFrames, 
+                                               ioData);
+
+		if(err != 0) NSLog(@"AudioUnitRender status is %d", err);
+		// These values should be in a more conventional location 
+                //for a bunch of preprocessor defines in your real code
+#define DBOFFSET -74.0 
+		// DBOFFSET is An offset that will be used to normalize 
+                // the decibels to a maximum of zero.
+		// This is an estimate, you can do your own or construct 
+                // an experiment to find the right value
+#define LOWPASSFILTERTIMESLICE .001 
+		// LOWPASSFILTERTIMESLICE is part of the low pass filter 
+                // and should be a small positive value
+
+		SInt16* samples = (SInt16*)(ioData-&gt;mBuffers[0].mData); // Step 1: get an array of 
+                // your samples that you can loop through. Each sample contains the amplitude.
+
+		Float32 decibels = DBOFFSET; // When we have no signal we'll leave this on the lowest setting
+		Float32 currentFilteredValueOfSampleAmplitude, previousFilteredValueOfSampleAmplitude; // We'll need 
+                                                                                     // these in the low-pass filter
+		
+                Float32 peakValue = DBOFFSET; // We'll end up storing the peak value here
+
+		for (int i=0; i &lt; inNumberFrames; i++) { 
+
+			Float32 absoluteValueOfSampleAmplitude = abs(samples[i]); //Step 2: for each sample, 
+                                                                      // get its amplitude's absolute value.
+
+			// Step 3: for each sample's absolute value, run it through a simple low-pass filter
+			// Begin low-pass filter
+			currentFilteredValueOfSampleAmplitude = LOWPASSFILTERTIMESLICE * absoluteValueOfSampleAmplitude + (1.0 - LOWPASSFILTERTIMESLICE) * previousFilteredValueOfSampleAmplitude;
+			previousFilteredValueOfSampleAmplitude = currentFilteredValueOfSampleAmplitude;
+			Float32 amplitudeToConvertToDB = currentFilteredValueOfSampleAmplitude;
+			// End low-pass filter
+
+			Float32 sampleDB = 20.0*log10(amplitudeToConvertToDB) + DBOFFSET; 
+			// Step 4: for each sample's filtered absolute value, convert it into decibels
+			// Step 5: for each sample's filtered absolute value in decibels, 
+                        // add an offset value that normalizes the clipping point of the device to zero.
+
+			if((sampleDB == sampleDB) &amp;&amp; (sampleDB != -DBL_MAX)) { // if it's a rational number and 
+                                                                                       // isn't infinite
+
+				if(sampleDB &gt; peakValue) peakValue = sampleDB; // Step 6: keep the highest value 
+                                                                                  // you find.
+				decibels = peakValue; // final value
+			}
+		}
+
+		NSLog(@"decibel level is %f", decibels);
+
+		for (UInt32 i=0; i &lt; ioData-&gt;mNumberBuffers; i++) { // This is only if you need to silence 
+                                                                          // the output of the audio unit
+			memset(ioData-&gt;mBuffers[i].mData, 0, ioData-&gt;mBuffers[i].mDataByteSize); // Delete if you 
+                                                                                  // need audio output as well as input
+		}
+
+		return err;
+	}
+}</pre>
+<p>That should give you a metered decibel value which is analogous to the output of the metering property for an Audio Queue. If anyone has any corrections to this or comments I hope they&#8217;ll get in touch.</p>
+<p>My starting point for learning this technique was a helpful response email from iWillApps&#8217; Will to a silly question I had which got me on track analyzing the actual samples, and <a href="https://ccrma.stanford.edu/~jos/st/DB_Display.html">this page</a> where the math behind displaying DB is broken down pretty thoroughly, and <a href="https://stackoverflow.com/questions/2167513/iphone-how-to-measure-amplitude-of-a-pcm-coded-signal">this post</a> on Stack Overflow which explains that the process needs to be done on a rectified signal and has the low-pass filter code example.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/2010/06/18/decibel-metering-from-an-iphone-audio-unit/feed/</wfw:commentRss>
+			<slash:comments>54</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">477</post-id>	</item>
+	</channel>
+</rss>

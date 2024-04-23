@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Return hypothesis &#8211; Politepix</title>
+		<atom:link href="/forums/topic/return-hypothesis/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/return-hypothesis/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:39:07 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/return-hypothesis/#post-11350</guid>
+					<title><![CDATA[Return hypothesis]]></title>
+					<link>/forums/topic/return-hypothesis/#post-11350</link>
+					<pubDate>Wed, 26 Sep 2012 11:30:07 +0000</pubDate>
+					<dc:creator>kelvin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi halle,</p>
+<p>The issue on &#8220;App crash when KGetNbest is enabled&#8221; has been resolved in Openears 1.2.2, decided to post here since i can&#8217;t find the post thread. When i started testing in Openears 1.2.2 i found out that sometimes it returns only 2 out of the 5 hypothesis when KGetNbest is enabled. Does this means the remaining 3 contain NULL?</p>
+<p>2012-09-26 19:18:57.115 OpenEarsSampleApp[19013:10703] Pocketsphinx has detected speech.<br />
+2012-09-26 19:18:58.117 OpenEarsSampleApp[19013:10703] Pocketsphinx has detected a second of silence, concluding an utterance.<br />
+2012-09-26 19:18:58.128 OpenEarsSampleApp[19013:10703] The received hypothesis is RIGHT with a score of 0 and an ID of 000000010<br />
+2012-09-26 19:18:58.129 OpenEarsSampleApp[19013:10703] hypothesisArray is (<br />
+        {<br />
+        Hypothesis = RIGHT;<br />
+        Score = &#8220;-2313&#8221;;<br />
+    },<br />
+        {<br />
+        Hypothesis = RIGHT;<br />
+        Score = &#8220;-768629&#8221;;<br />
+    }<br />
+)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/return-hypothesis/#post-11351</guid>
+					<title><![CDATA[Reply To: Return hypothesis]]></title>
+					<link>/forums/topic/return-hypothesis/#post-11351</link>
+					<pubDate>Wed, 26 Sep 2012 11:38:52 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Correct, that was actually the origin of the crash &#8212; when there is a null hyp in nbest, Pocketsphinx doesn&#8217;t malloc an nbest structure at all, and my function was unaware of that and trying to release the same number of nbests as was requested. Seeing fewer than your maximum is a sign that everything is working.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/return-hypothesis/#post-11352</guid>
+					<title><![CDATA[Reply To: Return hypothesis]]></title>
+					<link>/forums/topic/return-hypothesis/#post-11352</link>
+					<pubDate>Wed, 26 Sep 2012 11:40:06 +0000</pubDate>
+					<dc:creator>kelvin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>ok&#8230; thanks for the update</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/return-hypothesis/#post-11353</guid>
+					<title><![CDATA[Reply To: Return hypothesis]]></title>
+					<link>/forums/topic/return-hypothesis/#post-11353</link>
+					<pubDate>Wed, 26 Sep 2012 11:42:01 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the heads-up that this isn&#8217;t self-evident, I have added it to the documentation.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

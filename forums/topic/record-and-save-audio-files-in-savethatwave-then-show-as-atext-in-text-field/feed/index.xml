@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Record and Save Audio files in SavethatWave then show as aText in text field.   &#8211; Politepix</title>
+		<atom:link href="/forums/topic/record-and-save-audio-files-in-savethatwave-then-show-as-atext-in-text-field/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/record-and-save-audio-files-in-savethatwave-then-show-as-atext-in-text-field/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:01:15 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/record-and-save-audio-files-in-savethatwave-then-show-as-atext-in-text-field/#post-1019855</guid>
+					<title><![CDATA[Record and Save Audio files in SavethatWave then show as aText in text field.]]></title>
+					<link>/forums/topic/record-and-save-audio-files-in-savethatwave-then-show-as-atext-in-text-field/#post-1019855</link>
+					<pubDate>Tue, 21 Jan 2014 10:50:05 +0000</pubDate>
+					<dc:creator>ManojNeelam</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I downloaded OpenEars distribution, Rapidears and Savethatwave.<br />
+I am beginner ios developer, i want to develop Speech to Text application in iOS.<br />
+I Followed the Tutorial i have done TTS.But how can i Record the audio file and convert it in to Text and i want to show in text field.<br />
+Can any one send me the sample complete code to record speech and convert to text.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/record-and-save-audio-files-in-savethatwave-then-show-as-atext-in-text-field/#post-1019857</guid>
+					<title><![CDATA[Reply To: Record and Save Audio files in SavethatWave then show as aText in text field.]]></title>
+					<link>/forums/topic/record-and-save-audio-files-in-savethatwave-then-show-as-atext-in-text-field/#post-1019857</link>
+					<pubDate>Tue, 21 Jan 2014 11:45:24 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome, </p>
+<p>I&#8217;m going to remove your other question since it is very similar to this one.</p>
+<blockquote><p>I downloaded OpenEars distribution, Rapidears and Savethatwave.<br />
+I am beginner ios developer, i want to develop Speech to Text application in iOS.</p></blockquote>
+<p>OK, the first thing is that you don&#8217;t need to use RapidEars to do speech recognition. OpenEars does speech recognition. RapidEars does it in real time as the user is speaking (instead of waiting for them to pause and then performing recognition), which is a feature that is fine to consider adding after you have the basics working, but it isn&#8217;t necessary for the app you have described so you should just stick to using free OpenEars for now.</p>
+<blockquote><p>But how can i Record the audio file and convert it in to Text and i want to show in text field.</p></blockquote>
+<p>You don&#8217;t need to record the audio file in order to perform speech recognition. OpenEars can do that for your automatically using its PocketsphinxController class. Take another look at the tutorial and choose the option &#8220;Offline speech recognition&#8221; and you will receive sample code for performing speech recognition. Alternately, the sample app which ships with OpenEars performs speech recognition on its specific vocabulary right out of the box, and it shows how to show the recognized speech as a text UILabel.</p>
+<p>From your other question:</p>
+<blockquote><p>can i get more support from openears that how can build the application and distribute</p></blockquote>
+<p>Sorry, the support is limited to questions that are specifically about implementing an OpenEars app. It would be great if there were enough time to also help with general questions about developing for the iPhone and writing Objective-C, but taking on such a large scope of support would make it difficult to continue developing OpenEars. You can ask questions about OpenEars features like how to create your own vocabulary that can be recognized by OpenEars and various settings of OpenEars, but not questions about how to build an application or distribute one, or beginning Objective-C questions like how to make a UILabel to show the results of speech recognition. For those questions, it is good to read a book about Objective-C/Cocoa since there are many good ones and they can give you better advice. It is a good idea to also read some of the OpenEars documentation before asking questions, since the documentation is not very long and it contains all of the answers to the most common questions.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

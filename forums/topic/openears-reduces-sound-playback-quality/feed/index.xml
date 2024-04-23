@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>OpenEars reduces sound playback quality &#8211; Politepix</title>
+		<atom:link href="/forums/topic/openears-reduces-sound-playback-quality/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/openears-reduces-sound-playback-quality/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:52:15 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/openears-reduces-sound-playback-quality/#post-10943</guid>
+					<title><![CDATA[OpenEars reduces sound playback quality]]></title>
+					<link>/forums/topic/openears-reduces-sound-playback-quality/#post-10943</link>
+					<pubDate>Mon, 03 Sep 2012 19:43:24 +0000</pubDate>
+					<dc:creator>hohl</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>When using OpenEars the sound playback quality gets reduced. Is there a way to prevent the AVAudioSession reconfiguring when using the PocketsphinxController the first time?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-reduces-sound-playback-quality/#post-10944</guid>
+					<title><![CDATA[Reply To: OpenEars reduces sound playback quality]]></title>
+					<link>/forums/topic/openears-reduces-sound-playback-quality/#post-10944</link>
+					<pubDate>Mon, 03 Sep 2012 19:48:52 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Can you describe the reduction more specifically? It shouldn&#8217;t be possible for the bitrate or sample rate to be changed so I&#8217;m unclear on what aspect of playback is different. You can&#8217;t use PocketsphinxController without the audio session settings it needs.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-reduces-sound-playback-quality/#post-10961</guid>
+					<title><![CDATA[Reply To: OpenEars reduces sound playback quality]]></title>
+					<link>/forums/topic/openears-reduces-sound-playback-quality/#post-10961</link>
+					<pubDate>Wed, 05 Sep 2012 10:19:36 +0000</pubDate>
+					<dc:creator>hohl</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>What I&#8217;ve found out when using logging is:<br />
+<code>2012-09-05 12:13:51.599 Autoradio[5729:707] preferredBufferSize is incorrect, we will change it.<br />
+2012-09-05 12:13:51.604 Autoradio[5729:707] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2012-09-05 12:13:51.609 Autoradio[5729:707] preferredSampleRateCheck is incorrect, we will change it.<br />
+2012-09-05 12:13:51.698 Autoradio[5729:707] preferred hardware sample rate is now on the correct setting of 16000.000000.</code></p>
+<p>May this result in reduction?<br />
+It&#8217;s hard to describe, maybe because I am not a musician. I would say everything sounds more dull. Thought of a lowering of the bitrate?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-reduces-sound-playback-quality/#post-10962</guid>
+					<title><![CDATA[Reply To: OpenEars reduces sound playback quality]]></title>
+					<link>/forums/topic/openears-reduces-sound-playback-quality/#post-10962</link>
+					<pubDate>Wed, 05 Sep 2012 10:33:37 +0000</pubDate>
+					<dc:creator>hohl</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I extended the logging a bit and recompiled the lib. That&#8217;s what I am getting:<br />
+<code>2012-09-05 12:29:57.733 Autoradio[5778:707] preferredBufferSize is incorrect, we will change it. Current value: 0.023000<br />
+2012-09-05 12:29:57.747 Autoradio[5778:707] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2012-09-05 12:29:57.755 Autoradio[5778:707] preferredSampleRateCheck is incorrect, we will change it. Current value: 44100.000000<br />
+2012-09-05 12:29:57.945 Autoradio[5778:707] preferred hardware sample rate is now on the correct setting of 16000.000000.</code><br />
+Sounds like a reduction of hardware sample rate? May I am able to change the check to something like if it is the prefereded kSamplesPerSecond or better or will this block the functionality of OpenEars?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-reduces-sound-playback-quality/#post-10963</guid>
+					<title><![CDATA[Reply To: OpenEars reduces sound playback quality]]></title>
+					<link>/forums/topic/openears-reduces-sound-playback-quality/#post-10963</link>
+					<pubDate>Wed, 05 Sep 2012 10:38:44 +0000</pubDate>
+					<dc:creator>hohl</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Changed it to:<br />
+<code>if (fabs(preferredSampleRateCheck - kSamplesPerSecond)  0.0) {</code> in AudioSessionManager.m:400 and it still works and the reduction doesn&#8217;t take place anymore.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-reduces-sound-playback-quality/#post-10965</guid>
+					<title><![CDATA[Reply To: OpenEars reduces sound playback quality]]></title>
+					<link>/forums/topic/openears-reduces-sound-playback-quality/#post-10965</link>
+					<pubDate>Wed, 05 Sep 2012 10:42:25 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ah, I understand now, you&#8217;re using a full 44.1k rate and PocketsphinxController requires (really requires) a 16k rate. If you convince it not to sample at 16k you will reduce the recognition accuracy severely. You&#8217;re correct that 16k recordings won&#8217;t sound as nice as 44.1k (CD quality) but if Pocketsphinx analyzed a 44.1k recording it would take forever.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-reduces-sound-playback-quality/#post-10966</guid>
+					<title><![CDATA[Reply To: OpenEars reduces sound playback quality]]></title>
+					<link>/forums/topic/openears-reduces-sound-playback-quality/#post-10966</link>
+					<pubDate>Wed, 05 Sep 2012 10:43:57 +0000</pubDate>
+					<dc:creator>hohl</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Something is wrong with the code tag in this forum so I uploaded the change to line 400 in AudioSessionManager.m here: <a href="https://www.sourcedrop.net/Tyj72cb2147c9" rel="nofollow">https://www.sourcedrop.net/Tyj72cb2147c9</a></p>
+<p>Will this have an influence on OpenEars?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-reduces-sound-playback-quality/#post-10967</guid>
+					<title><![CDATA[Reply To: OpenEars reduces sound playback quality]]></title>
+					<link>/forums/topic/openears-reduces-sound-playback-quality/#post-10967</link>
+					<pubDate>Wed, 05 Sep 2012 10:44:41 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Why do you need to make a CD-quality recording using the same stream that Pocketsphinx is using?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-reduces-sound-playback-quality/#post-10968</guid>
+					<title><![CDATA[Reply To: OpenEars reduces sound playback quality]]></title>
+					<link>/forums/topic/openears-reduces-sound-playback-quality/#post-10968</link>
+					<pubDate>Wed, 05 Sep 2012 10:45:01 +0000</pubDate>
+					<dc:creator>hohl</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ah ok. I understand. But since it still works with the small dictionary I am using I&#8217;ll let it like that.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-reduces-sound-playback-quality/#post-10969</guid>
+					<title><![CDATA[Reply To: OpenEars reduces sound playback quality]]></title>
+					<link>/forums/topic/openears-reduces-sound-playback-quality/#post-10969</link>
+					<pubDate>Wed, 05 Sep 2012 10:45:13 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>Will this have an influence on OpenEars?</p></blockquote>
+<p>Yup, see my answer that slipped in ahead of your last post.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

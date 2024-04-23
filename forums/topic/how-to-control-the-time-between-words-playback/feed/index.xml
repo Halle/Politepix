@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>How to control the time between words playback &#8211; Politepix</title>
+		<atom:link href="/forums/topic/how-to-control-the-time-between-words-playback/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/how-to-control-the-time-between-words-playback/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:55:07 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/how-to-control-the-time-between-words-playback/#post-1016829</guid>
+					<title><![CDATA[How to control the time between words playback]]></title>
+					<link>/forums/topic/how-to-control-the-time-between-words-playback/#post-1016829</link>
+					<pubDate>Sun, 31 Mar 2013 11:46:29 +0000</pubDate>
+					<dc:creator>itamar</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>when using  FliteController say with a string with more then one word, sometimes the time interval between two played words is too small . How can this be adjusted (I tried spaces)?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-to-control-the-time-between-words-playback/#post-1016838</guid>
+					<title><![CDATA[Reply To: How to control the time between words playback]]></title>
+					<link>/forums/topic/how-to-control-the-time-between-words-playback/#post-1016838</link>
+					<pubDate>Mon, 01 Apr 2013 08:34:00 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry, this is possible in NeatSpeech but not in the stock OpenEars Flite voices. In NeatSpeech you can use the pause token or use a comma or period.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

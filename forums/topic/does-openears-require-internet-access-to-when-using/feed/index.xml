@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Does OpenEars require internet access to when using? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/does-openears-require-internet-access-to-when-using/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/does-openears-require-internet-access-to-when-using/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:35:40 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/does-openears-require-internet-access-to-when-using/#post-7560</guid>
+					<title><![CDATA[Does OpenEars require internet access to when using?]]></title>
+					<link>/forums/topic/does-openears-require-internet-access-to-when-using/#post-7560</link>
+					<pubDate>Thu, 01 Sep 2011 10:24:43 +0000</pubDate>
+					<dc:creator>natalie</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>Currently I am evaluating some text to speech engine to be used for an iPhone app and OpenEars sounds like a great app to use. However, can I confirm that OpenEars does not require internet connectivity to run the text to speech? The engine and the data are included in the iPhone application itself?</p>
+<p>Thank you.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/does-openears-require-internet-access-to-when-using/#post-7561</guid>
+					<title><![CDATA[Reply To: Does OpenEars require internet access to when using?]]></title>
+					<link>/forums/topic/does-openears-require-internet-access-to-when-using/#post-7561</link>
+					<pubDate>Thu, 01 Sep 2011 12:13:34 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Correct, it does nothing over the network.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/does-openears-require-internet-access-to-when-using/#post-1032846</guid>
+					<title><![CDATA[Reply To: Does OpenEars require internet access to when using?]]></title>
+					<link>/forums/topic/does-openears-require-internet-access-to-when-using/#post-1032846</link>
+					<pubDate>Tue, 18 Jun 2019 03:29:00 +0000</pubDate>
+					<dc:creator>Saatyagi</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>I&#8217;ve purchased RapidEars licence for bundle id and now we&#8217;ve to change that bundle id for security reasons.</p>
+<p>Can you help me understand if if can be changed from old to new one ?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/does-openears-require-internet-access-to-when-using/#post-1032847</guid>
+					<title><![CDATA[Reply To: Does OpenEars require internet access to when using?]]></title>
+					<link>/forums/topic/does-openears-require-internet-access-to-when-using/#post-1032847</link>
+					<pubDate>Tue, 18 Jun 2019 06:37:58 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Greetings,</p>
+<p>Sorry, it isn&#8217;t possible to change a bundle ID after purchase.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

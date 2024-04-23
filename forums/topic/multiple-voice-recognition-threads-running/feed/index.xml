@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Multiple voice recognition threads running &#8211; Politepix</title>
+		<atom:link href="/forums/topic/multiple-voice-recognition-threads-running/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/multiple-voice-recognition-threads-running/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:57:27 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/multiple-voice-recognition-threads-running/#post-1018140</guid>
+					<title><![CDATA[Multiple voice recognition threads running]]></title>
+					<link>/forums/topic/multiple-voice-recognition-threads-running/#post-1018140</link>
+					<pubDate>Tue, 27 Aug 2013 06:42:54 +0000</pubDate>
+					<dc:creator>ThatGuyM</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi, I added open ears to my project and wrote the code as described in the open ears tutorial. The recognition process works fine. But if I go back to the previous view controller and re-visit the same view controller where the open ears is being used, I see duplicated console out put. </p>
+<blockquote><p>2013-08-27 11:59:14.781 MyApp[4078:907] Pocketsphinx calibration has started.<br />
+2013-08-27 11:59:14.782 MyApp[4078:907] Pocketsphinx calibration has started.<br />
+2013-08-27 11:59:16.982 MyApp[4078:907] Pocketsphinx calibration is complete.<br />
+2013-08-27 11:59:16.983 MyApp[4078:907] Pocketsphinx calibration is complete.<br />
+2013-08-27 11:59:16.985 MyApp[4078:907] Pocketsphinx is now listening.<br />
+2013-08-27 11:59:16.986 MyApp[4078:907] Pocketsphinx is now listening.</p></blockquote>
+<p>Any ideas? </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multiple-voice-recognition-threads-running/#post-1018141</guid>
+					<title><![CDATA[Reply To: Multiple voice recognition threads running]]></title>
+					<link>/forums/topic/multiple-voice-recognition-threads-running/#post-1018141</link>
+					<pubDate>Tue, 27 Aug 2013 07:10:13 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>it&#8217;s necessary to call [self.pocketsphinxController stopListening] before leaving the view controller so that the speech recognition thread can be released and then the view controller can be released.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multiple-voice-recognition-threads-running/#post-1019990</guid>
+					<title><![CDATA[Reply To: Multiple voice recognition threads running]]></title>
+					<link>/forums/topic/multiple-voice-recognition-threads-running/#post-1019990</link>
+					<pubDate>Thu, 30 Jan 2014 08:23:37 +0000</pubDate>
+					<dc:creator>chickenthief2</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Same problem, but I am certainly calling self.pocketsphinxController stopListening] when leaving (through ibaction on a button) the view controller. The console says it has stopped. But when I re-enter the view controller, I get the duplicated output as above. Any help is much appreciated.  </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multiple-voice-recognition-threads-running/#post-1019991</guid>
+					<title><![CDATA[Reply To: Multiple voice recognition threads running]]></title>
+					<link>/forums/topic/multiple-voice-recognition-threads-running/#post-1019991</link>
+					<pubDate>Thu, 30 Jan 2014 08:48:24 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>The causes for this are that is some way the memory management in the app is leading to having more than one PocketsphinxController. When you call stopListening, that allows an instantiated PocketsphinxController to release its thread and objects, if the memory management is otherwise only instantiating a single instance of PocketsphinxController in your app. But if there is something else leading to there being multiple PocketsphinxControllers, stopListening alone isn&#8217;t going to prevent this issue, so the issue to check out and troubleshoot is memory management. </p>
+<p>This could also happen if you have multiple instances of your view controller or if something else about the view controller doesn&#8217;t allow all of its objects to release on exit. I&#8217;d start by making sure you&#8217;re using the lazy instantiation pattern shown in the tutorial for PocketsphinxController and then move on to checking out whether something else in the app structure is leading to multiple view controller instances. If this doesn&#8217;t help, you could make a very, very stripped-down example app for me demonstrating the issue and I&#8217;ll take a look at it, but it has to basically have no code in it other than this phenomenon or it won&#8217;t be possible to test.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

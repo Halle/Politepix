@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Buffer injection &#8211; Politepix</title>
+		<atom:link href="/forums/topic/buffer-injection/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/buffer-injection/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:50:57 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/buffer-injection/#post-1021696</guid>
+					<title><![CDATA[Buffer injection]]></title>
+					<link>/forums/topic/buffer-injection/#post-1021696</link>
+					<pubDate>Wed, 18 Jun 2014 17:41:43 +0000</pubDate>
+					<dc:creator>ice-beem</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>is it possible to inject own audio buffer to openers without allowing openears to control the mic ? Because another functionality in app is using coreaudio to collect the audio.</p>
+<p>Thanks</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/buffer-injection/#post-1021697</guid>
+					<title><![CDATA[Reply To: Buffer injection]]></title>
+					<link>/forums/topic/buffer-injection/#post-1021697</link>
+					<pubDate>Wed, 18 Jun 2014 18:17:32 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry, that isn&#8217;t possible via an API method.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/buffer-injection/#post-1021704</guid>
+					<title><![CDATA[Reply To: Buffer injection]]></title>
+					<link>/forums/topic/buffer-injection/#post-1021704</link>
+					<pubDate>Thu, 19 Jun 2014 06:22:32 +0000</pubDate>
+					<dc:creator>bloomqvist</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You said it&#8217;s not possible via an API method. Is there another method?<br />
+Is there a way we can pass audio buffers directly to Sphinx recognition methods?</p>
+<p>If this is not possible, then how about the opposite? Let&#8217;s say OpenEars insists on controlling the mic. Can we then observe audio buffer events, so each time a new buffer arrives we can grab a copy of the audio buffer for the app&#8217;s other purposes?</p>
+<p>Thanks<br />
+Bloomqvist</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/buffer-injection/#post-1021709</guid>
+					<title><![CDATA[Reply To: Buffer injection]]></title>
+					<link>/forums/topic/buffer-injection/#post-1021709</link>
+					<pubDate>Thu, 19 Jun 2014 09:55:02 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<blockquote><p>Let’s say OpenEars insists on controlling the mic.</p></blockquote>
+<p>Well, this is basically the purpose of the framework when you use it to perform speech recognition – it is a low-latency continuous listening tool and its audio driver is very adapted to that goal. I mention this because I&#8217;m happy to help to extent possible, but it can be a case of diminishing returns to work around a primary feature, and there is a danger of basing your rework on an implementation detail which isn&#8217;t permanent.</p>
+<blockquote><p>Is there another method?<br />
+Is there a way we can pass audio buffers directly to Sphinx recognition methods?</p></blockquote>
+<p>If you want to work with buffers, you can modify the source in many different ways to make that possible, but it isn&#8217;t possible for me to provide code for that. Take a look at ContinuousAudioUnit.m which is where the buffer callback lives.  If you want to work with WAV files, OpenEars has two different methods that perform recognition on WAV files, either as a test file in the main loop or by using the less-supported WAV recognition method of PocketsphinxController.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/buffer-injection/#post-1021716</guid>
+					<title><![CDATA[Reply To: Buffer injection]]></title>
+					<link>/forums/topic/buffer-injection/#post-1021716</link>
+					<pubDate>Fri, 20 Jun 2014 06:07:24 +0000</pubDate>
+					<dc:creator>bloomqvist</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Halle,</p>
+<p>Thanks for the response to the first two questions. How about the last question? Let&#8217;s say OpenEars does its job as usual, but as it is receiving audio buffers and recognizing spoken commands, we can tap in to the audio buffer event processing. Can we then observe audio buffer events, so each time a new buffer arrives we can grab a copy of the audio buffer for the app’s other purposes?</p>
+<p>The reason I am asking this is that we cannot work with the wave file. What we are doing with the audio file requires the same level of low-latency that OpenEars provides for speech recognition (we need to process audio buffers nearly simultaneously alongside OpenEars).</p>
+<p>Thanks</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/buffer-injection/#post-1021717</guid>
+					<title><![CDATA[Reply To: Buffer injection]]></title>
+					<link>/forums/topic/buffer-injection/#post-1021717</link>
+					<pubDate>Fri, 20 Jun 2014 07:11:31 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>Sure, you can make changes like that by modifying the source in a few different ways, but with the time available it unfortunately isn&#8217;t possible for me to give specific code for doing that.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

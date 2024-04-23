@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Reducing the size of mdef and sendump &#8211; Politepix</title>
+		<atom:link href="/forums/topic/reducing-the-size-of-mdef-and-sendump/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/reducing-the-size-of-mdef-and-sendump/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:40:30 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/reducing-the-size-of-mdef-and-sendump/#post-4103</guid>
+					<title><![CDATA[Reducing the size of mdef and sendump]]></title>
+					<link>/forums/topic/reducing-the-size-of-mdef-and-sendump/#post-4103</link>
+					<pubDate>Tue, 07 Jun 2011 11:20:05 +0000</pubDate>
+					<dc:creator>mohammed-zulkifl</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,<br />
+    I am Newbie here, got interested in voice recognition lately for a project, your work has inspired me to go all out and do more with openears, may be some apps in near future. I have a unique problem, probably you would have come across and solved but i am not able to get hold of it right now. I want to recognize only 5 words, to improve its accuracy i want to reduce the mdef and sendump so that it can only contain those 5 words related content only. Also i want to recognize between 2 different voices. Let me know how i can achieve it. How to distinguish between voices.</p>
+<p>Thanks and I appreciate all the help. The way you have put efforts in OpenEars is laudable.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/reducing-the-size-of-mdef-and-sendump/#post-4104</guid>
+					<title><![CDATA[Reply To: Reducing the size of mdef and sendump]]></title>
+					<link>/forums/topic/reducing-the-size-of-mdef-and-sendump/#post-4104</link>
+					<pubDate>Tue, 07 Jun 2011 11:58:38 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Mohammed,</p>
+<p>Thanks for moving this over here and giving me a bit more background. So, the way that you restrict the possible recognition is via the use of a small language model, which it sounds like you&#8217;ve already done correctly. You could only change the mdef and sendump files by retraining the acoustic model, which I don&#8217;t think would give you results you&#8217;d be happy with, but if it is something you are very interested in, you can ask (very precise) questions about adapting the acoustic model at the CMU Pocketsphinx forums after reading the introduction here and trying to execute its instructions on your own: <a href="https://cmusphinx.sourceforge.net/wiki/tutorialadapt" rel="nofollow">https://cmusphinx.sourceforge.net/wiki/tutorialadapt</a>. I don&#8217;t recommend it if the plan is to have fast recognition across many different accents and under different recording environments, though.</p>
+<p>If you want to let me know what words are being confused for each other, maybe I can make some suggestions. As far as making the app smaller, there are several suggestions here: <a href="/openears/support/#13">/openears/support/#13</a></p>
+<p>Can you elaborate on what the purpose for distinguishing between the two voices would be? I don&#8217;t think there is any way to do that, but maybe I can make a suggestion if I know what concept behind it is.</p>
+<p>I hope this is helpful,</p>
+<p>Halle</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/reducing-the-size-of-mdef-and-sendump/#post-4105</guid>
+					<title><![CDATA[Reply To: Reducing the size of mdef and sendump]]></title>
+					<link>/forums/topic/reducing-the-size-of-mdef-and-sendump/#post-4105</link>
+					<pubDate>Tue, 07 Jun 2011 12:19:30 +0000</pubDate>
+					<dc:creator>mohammed-zulkifl</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks Halle, for pointing me the resources and also suggestions that it might not help me in the cause. I had the idea that by reducing the size of acoustic model i will be able to speed up the accuracy, which is not the case it seems. Thanks for pointing me into right direction.</p>
+<p>Also i want some pointers regarding differentiating between two spoken voices, person A tells a Word, person B tells a word i want to differentiate between two voices will the OpenEars will be able to help me in that regard.</p>
+<p>Thanks<br />
+Mohammed</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/reducing-the-size-of-mdef-and-sendump/#post-4106</guid>
+					<title><![CDATA[Reply To: Reducing the size of mdef and sendump]]></title>
+					<link>/forums/topic/reducing-the-size-of-mdef-and-sendump/#post-4106</link>
+					<pubDate>Tue, 07 Jun 2011 12:35:50 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You&#8217;re welcome, although it occurs to me that maybe I&#8217;m not understanding your exact issue &#8212; is it accuracy or is it speed? Accuracy would be the percentage of correct word matches without any regard for how long it takes. Speed would be how fast the recognition is returned without any regard for how correct it is.</p>
+<p>In my experience, with such a small language model combined with OpenEars .91, recognition on the device is basically instantaneous, maybe with a little bit of lag on an iPhone 3G or first-gen iPod. But before recognition begins, silence has to be detected, and the amount of silence that is detected in order to start recognition is  a fixed amount that is set in OpenEarsConfig.h. So that amount of time is non-negotiable because it functions as the signal that the user is done saying their word or phrase. If it feels slow, maybe it is due to this obligatory silence, or maybe there is another issue. You can time how fast the actual recognition is performed by using the new delegate methods of OpenEarsEventsObserver for .91.</p>
+<p>Hmm, I don&#8217;t think there is a reliable way to distinguish between the voices just using OpenEars. Even if there were, it would break down if you had two users with very similar timbres and accents unless it were very granular.  It sounds like you&#8217;re interested in acoustic fingerprinting, but from this discussion it looks like a bit of a no-go:</p>
+<p><a href="http://stackoverflow.com/questions/5692310/acoustic-fingerprint-code-for-ios" rel="nofollow">http://stackoverflow.com/questions/5692310/acoustic-fingerprint-code-for-ios</a></p>
+<p>This might be a case for just using some kind of interface/logic solution such as having each user tap a button when they want to speak, or log in at the beginning of a session so you know who they are.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/reducing-the-size-of-mdef-and-sendump/#post-4107</guid>
+					<title><![CDATA[Reply To: Reducing the size of mdef and sendump]]></title>
+					<link>/forums/topic/reducing-the-size-of-mdef-and-sendump/#post-4107</link>
+					<pubDate>Tue, 07 Jun 2011 12:54:27 +0000</pubDate>
+					<dc:creator>mohammed-zulkifl</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks again Halle, it was informative, I didn&#8217;t have any intention of fingerprinting a song or voice aka shazam, i just wanted to distinguish between two voices in an game like fun application, as OpenEars is able to detect the word spoken, if i will be able to figure to extend or already the capability exits to distinguish two voices, my project will be lot easier, its just a word play between two ppl. Instead of touch controls i am going to employ voice controls in game.</p>
+<p>Thanks &amp; regards<br />
+Mohammed Zulkifl</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/reducing-the-size-of-mdef-and-sendump/#post-4108</guid>
+					<title><![CDATA[Reply To: Reducing the size of mdef and sendump]]></title>
+					<link>/forums/topic/reducing-the-size-of-mdef-and-sendump/#post-4108</link>
+					<pubDate>Tue, 07 Jun 2011 13:18:08 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, so one thing you can do for more speed in the case of trying to do real-time game control is to reduce the silence time in OpenEarsConfig.h. If your commands are just single words, you might be able to get it pretty low without it being too &#8220;hair-trigger&#8221;. Trial and error should show how low you can reduce it.</p>
+<blockquote>
+<p>
+ i just wanted to distinguish between two voices in an game like fun application, as OpenEars is able to detect the word spoken, if i will be able to figure to extend or already the capability exits to distinguish two voices, my project will be lot easier, its just a word play between two ppl.
+</p>
+</blockquote>
+<p>Gotcha. I think you won&#8217;t be able to accurately distinguish between two users because you don&#8217;t know in advance how similar their voices will be, so it really would take you into acoustic fingerprinting territory.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

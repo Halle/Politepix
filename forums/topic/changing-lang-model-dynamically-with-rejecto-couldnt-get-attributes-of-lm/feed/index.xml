@@ -1,0 +1,810 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Changing Lang. Model Dynamically with Rejecto Couldn&#039;t Get Attributes of LM &#8211; Politepix</title>
+		<atom:link href="/forums/topic/changing-lang-model-dynamically-with-rejecto-couldnt-get-attributes-of-lm/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/changing-lang-model-dynamically-with-rejecto-couldnt-get-attributes-of-lm/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:50:51 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/changing-lang-model-dynamically-with-rejecto-couldnt-get-attributes-of-lm/#post-1021951</guid>
+					<title><![CDATA[Changing Lang. Model Dynamically with Rejecto Couldn&#039;t Get Attributes of LM]]></title>
+					<link>/forums/topic/changing-lang-model-dynamically-with-rejecto-couldnt-get-attributes-of-lm/#post-1021951</link>
+					<pubDate>Mon, 14 Jul 2014 18:29:25 +0000</pubDate>
+					<dc:creator>piggins</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi! I&#8217;m using the Rejecto plugin along with Open Ears in my app. When I change the language model dynamically in my app, pocketsphinx stops receiving and logging hypotheses. Before I change the language model, it works fine. However, after I do, it stops receiving hypotheses. I turned on OpenEars logging, and the error message is &#8220;Error: couldn&#8217;t get attributes of language model file.&#8221; This is all of the logging:</p>
+<p>Starting dynamic language model generation<br />
+2014-07-14 09:36:41.923 Flashcards[22688:613] Able to open /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary4.corpus for reading<br />
+2014-07-14 09:36:41.924 Flashcards[22688:613] Able to open /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary4_pipe.txt for writing<br />
+2014-07-14 09:36:41.924 Flashcards[22688:613] Starting text2wfreq_impl<br />
+2014-07-14 09:36:41.929 Flashcards[22688:613] Done with text2wfreq_impl<br />
+2014-07-14 09:36:41.929 Flashcards[22688:613] Able to open /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary4_pipe.txt for reading.<br />
+2014-07-14 09:36:41.930 Flashcards[22688:613] Able to open /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary4.vocab for reading.<br />
+2014-07-14 09:36:41.931 Flashcards[22688:613] Starting wfreq2vocab<br />
+2014-07-14 09:36:41.931 Flashcards[22688:613] Done with wfreq2vocab<br />
+2014-07-14 09:36:41.932 Flashcards[22688:613] Starting text2idngram<br />
+2014-07-14 09:36:41.937 Flashcards[22688:613] Done with text2idngram<br />
+2014-07-14 09:36:41.940 Flashcards[22688:613] Starting idngram2lm</p>
+<p>2014-07-14 09:36:41.943 Flashcards[22688:613] Done with idngram2lm<br />
+2014-07-14 09:36:41.944 Flashcards[22688:613] Starting sphinx_lm_convert<br />
+2014-07-14 09:36:41.948 Flashcards[22688:613] Finishing sphinx_lm_convert<br />
+2014-07-14 09:36:41.949 Flashcards[22688:613] Done creating language model with CMUCLMTK in 0.026836 seconds.<br />
+2014-07-14 09:36:41.949 Flashcards[22688:613] Starting sphinx_lm_convert<br />
+2014-07-14 09:36:41.952 Flashcards[22688:613] Finishing sphinx_lm_convert<br />
+2014-07-14 09:36:41.953 Flashcards[22688:613] I&#8217;m done running dynamic language model generation and it took 427048601.953926 seconds<br />
+2014-07-14 09:36:41.954 Flashcards[22688:613] setSecondsOfSilence value of 0.000000 was too large or too small or was NULL, using default of 0.700000.<br />
+2014-07-14 09:36:41.956 Flashcards[22688:3b03] there is a request to change to the language model file /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary4.DMP<br />
+2014-07-14 09:36:41.977 Flashcards[22688:3b03] A request has been made to change an ARPA grammar on the fly. The language model to change to is /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary4.DMP<br />
+2014-07-14 09:36:41.977 Flashcards[22688:3b03] Error: couldn&#8217;t get attributes of language model file.<br />
+2014-07-14 09:36:41.985 Flashcards[22688:3b03] languageModelID is 999<br />
+2014-07-14 09:36:42.064 Flashcards[22688:3b03] Success loading the dictionary file /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary4.dic.<br />
+2014-07-14 09:36:42.064 Flashcards[22688:3b03] There were too many errors to switch the language model or grammar, please search the console for the word &#8216;error&#8217; to investigate the issues.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/changing-lang-model-dynamically-with-rejecto-couldnt-get-attributes-of-lm/#post-1021952</guid>
+					<title><![CDATA[Reply To: Changing Lang. Model Dynamically with Rejecto Couldn&#039;t Get Attributes of LM]]></title>
+					<link>/forums/topic/changing-lang-model-dynamically-with-rejecto-couldnt-get-attributes-of-lm/#post-1021952</link>
+					<pubDate>Mon, 14 Jul 2014 18:33:08 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Sure, I can see if I can help with this. Go ahead and show the full unedited logging output with OpenEarsLogging and verbosePocketsphinx set on since it should show the issue. Also be sure to let me know the iOS version and Xcode version you&#8217;re seeing the issue with, and test against a real device rather than the Simulator.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/changing-lang-model-dynamically-with-rejecto-couldnt-get-attributes-of-lm/#post-1021953</guid>
+					<title><![CDATA[Reply To: Changing Lang. Model Dynamically with Rejecto Couldn&#039;t Get Attributes of LM]]></title>
+					<link>/forums/topic/changing-lang-model-dynamically-with-rejecto-couldnt-get-attributes-of-lm/#post-1021953</link>
+					<pubDate>Mon, 14 Jul 2014 18:49:30 +0000</pubDate>
+					<dc:creator>piggins</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This is the full logging output with OpenEarsLogging and verbosePocketsphinx set on. Does anything jump out to you?</p>
+<p>2014-07-14 11:53:57.198 Flashcards[23135:613] Starting OpenEars logging for OpenEars version 1.7 on 64-bit device: iPhone Simulator running iOS version: 7.100000<br />
+2014-07-14 11:53:57.345 Flashcards[23135:613] SHAMEFUL<br />
+2014-07-14 11:53:57.347 Flashcards[23135:613] Vocabulary1<br />
+2014-07-14 11:53:57.473 Flashcards[23135:613] I&#8217;m done running performDictionaryLookup and it took 0.051119 seconds<br />
+2014-07-14 11:53:57.521 Flashcards[23135:613] Starting dynamic language model generation<br />
+2014-07-14 11:53:57.539 Flashcards[23135:613] Able to open /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary1.corpus for reading<br />
+2014-07-14 11:53:57.539 Flashcards[23135:613] Able to open /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary1_pipe.txt for writing<br />
+2014-07-14 11:53:57.540 Flashcards[23135:613] Starting text2wfreq_impl<br />
+2014-07-14 11:53:57.606 Flashcards[23135:613] Done with text2wfreq_impl<br />
+2014-07-14 11:53:57.606 Flashcards[23135:613] Able to open /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary1_pipe.txt for reading.<br />
+2014-07-14 11:53:57.677 Flashcards[23135:613] Able to open /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary1.vocab for reading.<br />
+2014-07-14 11:53:57.678 Flashcards[23135:613] Starting wfreq2vocab<br />
+2014-07-14 11:53:57.679 Flashcards[23135:613] Done with wfreq2vocab<br />
+2014-07-14 11:53:57.680 Flashcards[23135:613] Starting text2idngram<br />
+2014-07-14 11:53:57.687 Flashcards[23135:613] Done with text2idngram<br />
+2014-07-14 11:53:57.689 Flashcards[23135:613] Starting idngram2lm</p>
+<p>2014-07-14 11:53:57.787 Flashcards[23135:613] Done with idngram2lm<br />
+2014-07-14 11:53:57.788 Flashcards[23135:613] Starting sphinx_lm_convert<br />
+2014-07-14 11:53:57.821 Flashcards[23135:613] Finishing sphinx_lm_convert<br />
+2014-07-14 11:53:57.823 Flashcards[23135:613] Done creating language model with CMUCLMTK in 0.300977 seconds.<br />
+2014-07-14 11:53:57.823 Flashcards[23135:613] Starting sphinx_lm_convert<br />
+2014-07-14 11:53:57.828 Flashcards[23135:613] Finishing sphinx_lm_convert<br />
+2014-07-14 11:53:57.829 Flashcards[23135:613] I&#8217;m done running dynamic language model generation and it took 427056837.829542 seconds<br />
+2014-07-14 11:53:57.832 Flashcards[23135:613] User gave mic permission for this app.<br />
+2014-07-14 11:53:57.833 Flashcards[23135:613] Leaving sample rate at the default of 16000.<br />
+2014-07-14 11:53:57.834 Flashcards[23135:613] The audio session has already been initialized but we will override its properties.<br />
+2014-07-14 11:53:57.834 Flashcards[23135:613] Checking and resetting all audio session settings.<br />
+2014-07-14 11:53:57.835 Flashcards[23135:613] audioCategory is incorrect, we will change it.<br />
+2014-07-14 11:53:57.835 Flashcards[23135:613] audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.<br />
+2014-07-14 11:53:57.836 Flashcards[23135:613] bluetoothInput is incorrect, we will change it.<br />
+2014-07-14 11:53:57.836 Flashcards[23135:613] bluetooth input is now on the correct setting of 1.<br />
+2014-07-14 11:53:57.837 Flashcards[23135:613] Output Device: Speaker.<br />
+2014-07-14 11:53:57.837 Flashcards[23135:613] categoryDefaultToSpeaker is incorrect, we will change it.<br />
+2014-07-14 11:53:57.874 Flashcards[23135:613] CategoryDefaultToSpeaker is now on the correct setting of 1.<br />
+2014-07-14 11:53:57.893 Flashcards[23135:613] preferredBufferSize is incorrect, we will change it.<br />
+2014-07-14 11:53:57.893 Flashcards[23135:613] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2014-07-14 11:53:57.894 Flashcards[23135:613] preferredSampleRateCheck is incorrect, we will change it.<br />
+2014-07-14 11:53:57.894 Flashcards[23135:613] preferred hardware sample rate is now on the correct setting of 16000.000000.<br />
+2014-07-14 11:53:57.895 Flashcards[23135:613] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2014-07-14 11:53:57.895 Flashcards[23135:613] Exiting startAudioSession.<br />
+2014-07-14 11:53:57.896 Flashcards[23135:3c03] setSecondsOfSilence value of 0.000000 was too large or too small or was NULL, using default of 0.700000.<br />
+2014-07-14 11:53:57.897 Flashcards[23135:3c03] Project has these words or phrases in its dictionary:<br />
+___REJ_AA<br />
+___REJ_AE<br />
+___REJ_AH<br />
+___REJ_AO<br />
+___REJ_AW<br />
+___REJ_AY<br />
+___REJ_B<br />
+___REJ_CH<br />
+___REJ_D<br />
+___REJ_DH<br />
+___REJ_EH<br />
+___REJ_ER<br />
+___REJ_EY<br />
+___REJ_F<br />
+___REJ_G<br />
+___REJ_HH<br />
+___REJ_IH<br />
+___REJ_IY<br />
+___REJ_JH<br />
+___REJ_K<br />
+___REJ_L<br />
+___REJ_M<br />
+___REJ_N<br />
+___REJ_NG<br />
+___REJ_OW<br />
+___REJ_OY<br />
+___REJ_P<br />
+___REJ_R<br />
+___REJ_S<br />
+___REJ_SH<br />
+___REJ_T<br />
+&#8230;and 10 more.<br />
+2014-07-14 11:53:57.898 Flashcards[23135:3c03] Recognition loop has started<br />
+INFO: file_omitted(0): Parsing command line:<br />
+\<br />
+	-lm /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary1.DMP \<br />
+	-beam 1e-96 \<br />
+	-bestpath no \<br />
+	-dict /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary1.dic \<br />
+	-fwdflatbeam 1e-128 \<br />
+	-hmm /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Flashcards.app/AcousticModelEnglish.bundle \<br />
+	-lw 6.500000 \<br />
+	-samprate 16000 </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-alpha		0.97		9.700000e-01<br />
+-argfile<br />
+-ascale		20.0		2.000000e+01<br />
+-aw		1		1<br />
+-backtrace	no		no<br />
+-beam		1e-48		1.000000e-96<br />
+-bestpath	yes		no<br />
+-bestpathlw	9.5		9.500000e+00<br />
+-bghist		no		no<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		8.0<br />
+-compallsen	no		no<br />
+-debug				0<br />
+-dict				/Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary1.dic<br />
+-dictcase	no		no<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-ds		1		1<br />
+-fdict<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-featparams<br />
+-fillprob	1e-8		1.000000e-08<br />
+-frate		100		100<br />
+-fsg<br />
+-fsgusealtpron	yes		yes<br />
+-fsgusefiller	yes		yes<br />
+-fwdflat	yes		yes<br />
+-fwdflatbeam	1e-64		1.000000e-128<br />
+-fwdflatefwid	4		4<br />
+-fwdflatlw	8.5		8.500000e+00<br />
+-fwdflatsfwin	25		25<br />
+-fwdflatwbeam	7e-29		7.000000e-29<br />
+-fwdtree	yes		yes<br />
+-hmm				/Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Flashcards.app/AcousticModelEnglish.bundle<br />
+-input_endian	little		little<br />
+-jsgf<br />
+-kdmaxbbi	-1		-1<br />
+-kdmaxdepth	0		0<br />
+-kdtree<br />
+-latsize	5000		5000<br />
+-lda<br />
+-ldadim		0		0<br />
+-lextreedump	0		0<br />
+-lifter		0		0<br />
+-lm				/Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary1.DMP<br />
+-lmctl<br />
+-lmname		default		default<br />
+-logbase	1.0001		1.000100e+00<br />
+-logfn<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.333333e+02<br />
+-lpbeam		1e-40		1.000000e-40<br />
+-lponlybeam	7e-29		7.000000e-29<br />
+-lw		6.5		6.500000e+00<br />
+-maxhmmpf	-1		-1<br />
+-maxnewoov	20		20<br />
+-maxwpf		-1		-1<br />
+-mdef<br />
+-mean<br />
+-mfclogdir<br />
+-min_endfr	0		0<br />
+-mixw<br />
+-mixwfloor	0.0000001	1.000000e-07<br />
+-mllr<br />
+-mmap		yes		yes<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		40<br />
+-nwpen		1.0		1.000000e+00<br />
+-pbeam		1e-48		1.000000e-48<br />
+-pip		1.0		1.000000e+00<br />
+-pl_beam	1e-10		1.000000e-10<br />
+-pl_pbeam	1e-5		1.000000e-05<br />
+-pl_window	0		0<br />
+-rawlogdir<br />
+-remove_dc	no		no<br />
+-round_filters	yes		yes<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-sendump<br />
+-senlogdir<br />
+-senmgau<br />
+-silprob	0.005		5.000000e-03<br />
+-smoothspec	no		no<br />
+-svspec<br />
+-tmat<br />
+-tmatfloor	0.0001		1.000000e-04<br />
+-topn		4		4<br />
+-topn_beam	0		0<br />
+-toprule<br />
+-transform	legacy		legacy<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	6.855498e+03<br />
+-usewdphones	no		no<br />
+-uw		1.0		1.000000e+00<br />
+-var<br />
+-varfloor	0.0001		1.000000e-04<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wbeam		7e-29		7.000000e-29<br />
+-wip		0.65		6.500000e-01<br />
+-wlen		0.025625	2.562500e-02</p>
+<p>INFO: file_omitted(0): Parsing command line:<br />
+\<br />
+	-nfilt 20 \<br />
+	-lowerf 1 \<br />
+	-upperf 4000 \<br />
+	-wlen 0.025 \<br />
+	-transform dct \<br />
+	-round_filters no \<br />
+	-remove_dc yes \<br />
+	-svspec 0-12/13-25/26-38 \<br />
+	-feat 1s_c_d_dd \<br />
+	-agc none \<br />
+	-cmn current \<br />
+	-cmninit 47 \<br />
+	-varnorm no </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-alpha		0.97		9.700000e-01<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		47<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-frate		100		100<br />
+-input_endian	little		little<br />
+-lda<br />
+-ldadim		0		0<br />
+-lifter		0		0<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.000000e+00<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		20<br />
+-remove_dc	no		yes<br />
+-round_filters	yes		no<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-smoothspec	no		no<br />
+-svspec				0-12/13-25/26-38<br />
+-transform	legacy		dct<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	4.000000e+03<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wlen		0.025625	2.500000e-02</p>
+<p>INFO: file_omitted(0): Parsed model-specific feature parameters from /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Flashcards.app/AcousticModelEnglish.bundle/feat.params<br />
+INFO: file_omitted(0): Initializing feature stream to type: &#8216;1s_c_d_dd&#8217;, ceplen=13, CMN=&#8217;current&#8217;, VARNORM=&#8217;no&#8217;, AGC=&#8217;none&#8217;<br />
+INFO: file_omitted(0): mean[0]= 12.00, mean[1..12]= 0.0<br />
+INFO: file_omitted(0): Using subvector specification 0-12/13-25/26-38<br />
+INFO: file_omitted(0): Reading model definition: /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Flashcards.app/AcousticModelEnglish.bundle/mdef<br />
+INFO: file_omitted(0): Found byte-order mark BMDF, assuming this is a binary mdef file<br />
+INFO: file_omitted(0): Reading binary model definition: /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Flashcards.app/AcousticModelEnglish.bundle/mdef<br />
+INFO: file_omitted(0): 50 CI-phone, 143047 CD-phone, 3 emitstate/phone, 150 CI-sen, 5150 Sen, 27135 Sen-Seq<br />
+INFO: file_omitted(0): Reading HMM transition probability matrices: /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Flashcards.app/AcousticModelEnglish.bundle/transition_matrices<br />
+INFO: file_omitted(0): Attempting to use SCHMM computation module<br />
+INFO: file_omitted(0): Reading mixture gaussian parameter: /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Flashcards.app/AcousticModelEnglish.bundle/means<br />
+INFO: file_omitted(0): 1 codebook, 3 feature, size:<br />
+INFO: file_omitted(0):  256&#215;13<br />
+INFO: file_omitted(0):  256&#215;13<br />
+INFO: file_omitted(0):  256&#215;13<br />
+INFO: file_omitted(0): Reading mixture gaussian parameter: /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Flashcards.app/AcousticModelEnglish.bundle/variances<br />
+INFO: file_omitted(0): 1 codebook, 3 feature, size:<br />
+INFO: file_omitted(0):  256&#215;13<br />
+INFO: file_omitted(0):  256&#215;13<br />
+INFO: file_omitted(0):  256&#215;13<br />
+INFO: file_omitted(0): 0 variance values floored<br />
+INFO: file_omitted(0): Loading senones from dump file /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Flashcards.app/AcousticModelEnglish.bundle/sendump<br />
+INFO: file_omitted(0): BEGIN FILE FORMAT DESCRIPTION<br />
+INFO: file_omitted(0): Using memory-mapped I/O for senones<br />
+INFO: file_omitted(0): Maximum top-N: 4 Top-N beams: 0 0 0<br />
+INFO: file_omitted(0): Allocating 4147 * 32 bytes (129 KiB) for word entries<br />
+INFO: file_omitted(0): Reading main dictionary: /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary1.dic<br />
+INFO: file_omitted(0): Allocated 0 KiB for strings, 0 KiB for phones<br />
+INFO: file_omitted(0): 40 words read<br />
+INFO: file_omitted(0): Reading filler dictionary: /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Flashcards.app/AcousticModelEnglish.bundle/noisedict<br />
+INFO: file_omitted(0): Allocated 0 KiB for strings, 0 KiB for phones<br />
+INFO: file_omitted(0): 11 words read<br />
+INFO: file_omitted(0): Building PID tables for dictionary<br />
+INFO: file_omitted(0): Allocating 50^3 * 2 bytes (244 KiB) for word-initial triphones<br />
+INFO: file_omitted(0): Allocated 60400 bytes (58 KiB) for word-final triphones<br />
+INFO: file_omitted(0): Allocated 60400 bytes (58 KiB) for single-phone word triphones<br />
+ERROR: &#8220;file_omitted&#8221;, line 0: File /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary1.DMP not found<br />
+INFO: file_omitted(0): Will use memory-mapped I/O for LM file<br />
+INFO: file_omitted(0): ngrams 1=42, 2=80, 3=40<br />
+INFO: file_omitted(0):       42 = LM.unigrams(+trailer) read<br />
+INFO: file_omitted(0):       80 = LM.bigrams(+trailer) read<br />
+INFO: file_omitted(0):       40 = LM.trigrams read<br />
+INFO: file_omitted(0):        3 = LM.prob2 entries read<br />
+INFO: file_omitted(0):        3 = LM.bo_wt2 entries read<br />
+INFO: file_omitted(0):        2 = LM.prob3 entries read<br />
+INFO: file_omitted(0):        1 = LM.tseg_base entries read<br />
+INFO: file_omitted(0):       42 = ascii word strings read<br />
+INFO: file_omitted(0): 1 unique initial diphones<br />
+INFO: file_omitted(0): 0 root, 0 non-root channels, 51 single-phone words<br />
+INFO: file_omitted(0): Creating search tree<br />
+INFO: file_omitted(0): before: 0 root, 0 non-root channels, 51 single-phone words<br />
+INFO: file_omitted(0): after: max nonroot chan increased to 132<br />
+INFO: file_omitted(0): after: 1 root, 4 non-root channels, 50 single-phone words<br />
+INFO: file_omitted(0): fwdflat: min_ef_width = 4, max_sf_win = 25<br />
+2014-07-14 11:53:58.252 Flashcards[23135:3c03] Starting openAudioDevice on the simulator. This Simulator-compatible audio driver is only provided to you as a convenience so you can use the Simulator to test recognition logic, however, its audio driver is not supported and bug reports for it will be circular-filed.<br />
+2014-07-14 11:53:58.287 Flashcards[23135:3c03] Restoring SmartCMN value of 35.114819<br />
+2014-07-14 11:53:59.131 Flashcards[23135:3c03] Calibration has started<br />
+2014-07-14 11:54:01.332 Flashcards[23135:3c03] Calibration has completed<br />
+2014-07-14 11:54:01.333 Flashcards[23135:3c03] Listening.<br />
+2014-07-14 11:54:01.333 Flashcards[23135:613] Started Listening<br />
+2014-07-14 11:54:34.916 Flashcards[23135:613] SPASMODIC<br />
+2014-07-14 11:54:34.917 Flashcards[23135:613] Vocabulary2<br />
+2014-07-14 11:54:35.017 Flashcards[23135:613] I&#8217;m done running performDictionaryLookup and it took 0.048521 seconds<br />
+2014-07-14 11:54:35.020 Flashcards[23135:613] Starting dynamic language model generation<br />
+2014-07-14 11:54:35.021 Flashcards[23135:613] Able to open /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary2.corpus for reading<br />
+2014-07-14 11:54:35.049 Flashcards[23135:613] Able to open /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary2_pipe.txt for writing<br />
+2014-07-14 11:54:35.049 Flashcards[23135:613] Starting text2wfreq_impl<br />
+2014-07-14 11:54:35.070 Flashcards[23135:613] Done with text2wfreq_impl<br />
+2014-07-14 11:54:35.070 Flashcards[23135:613] Able to open /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary2_pipe.txt for reading.<br />
+2014-07-14 11:54:35.071 Flashcards[23135:613] Able to open /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary2.vocab for reading.<br />
+2014-07-14 11:54:35.071 Flashcards[23135:613] Starting wfreq2vocab<br />
+2014-07-14 11:54:35.088 Flashcards[23135:613] Done with wfreq2vocab<br />
+2014-07-14 11:54:35.089 Flashcards[23135:613] Starting text2idngram<br />
+2014-07-14 11:54:35.110 Flashcards[23135:613] Done with text2idngram<br />
+2014-07-14 11:54:35.112 Flashcards[23135:613] Starting idngram2lm</p>
+<p>2014-07-14 11:54:35.115 Flashcards[23135:613] Done with idngram2lm<br />
+2014-07-14 11:54:35.115 Flashcards[23135:613] Starting sphinx_lm_convert<br />
+INFO: file_omitted(0): Parsing command line:<br />
+sphinx_lm_convert \<br />
+	-i /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary2.arpa \<br />
+	-o /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary2.DMP </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]	[VALUE]<br />
+-case<br />
+-debug			0<br />
+-help		no	no<br />
+-i			/Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary2.arpa<br />
+-ienc<br />
+-ifmt<br />
+-logbase	1.0001	1.000100e+00<br />
+-mmap		no	no<br />
+-o			/Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary2.DMP<br />
+-oenc		utf8	utf8<br />
+-ofmt			</p>
+<p>INFO: file_omitted(0): ngrams 1=42, 2=80, 3=40<br />
+INFO: file_omitted(0): Reading unigrams<br />
+INFO: file_omitted(0):       42 = #unigrams created<br />
+INFO: file_omitted(0): Reading bigrams<br />
+INFO: file_omitted(0):       80 = #bigrams created<br />
+INFO: file_omitted(0):        3 = #prob2 entries<br />
+INFO: file_omitted(0):        3 = #bo_wt2 entries<br />
+INFO: file_omitted(0): Reading trigrams<br />
+INFO: file_omitted(0):       40 = #trigrams created<br />
+INFO: file_omitted(0):        2 = #prob3 entries<br />
+INFO: file_omitted(0): Building DMP model&#8230;<br />
+INFO: file_omitted(0):       42 = #unigrams created<br />
+INFO: file_omitted(0):       80 = #bigrams created<br />
+INFO: file_omitted(0):        3 = #prob2 entries<br />
+INFO: file_omitted(0):        3 = #bo_wt2 entries<br />
+INFO: file_omitted(0):       40 = #trigrams created<br />
+INFO: file_omitted(0):        2 = #prob3 entries<br />
+2014-07-14 11:54:35.119 Flashcards[23135:613] Finishing sphinx_lm_convert<br />
+2014-07-14 11:54:35.120 Flashcards[23135:613] Done creating language model with CMUCLMTK in 0.099981 seconds.<br />
+2014-07-14 11:54:35.120 Flashcards[23135:613] Starting sphinx_lm_convert<br />
+INFO: file_omitted(0): Parsing command line:<br />
+sphinx_lm_convert \<br />
+	-i /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary2.arpa \<br />
+	-o /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary2.DMP </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]	[VALUE]<br />
+-case<br />
+-debug			0<br />
+-help		no	no<br />
+-i			/Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary2.arpa<br />
+-ienc<br />
+-ifmt<br />
+-logbase	1.0001	1.000100e+00<br />
+-mmap		no	no<br />
+-o			/Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary2.DMP<br />
+-oenc		utf8	utf8<br />
+-ofmt			</p>
+<p>INFO: file_omitted(0): ngrams 1=42, 2=80, 3=40<br />
+INFO: file_omitted(0): Reading unigrams<br />
+INFO: file_omitted(0):       42 = #unigrams created<br />
+INFO: file_omitted(0): Reading bigrams<br />
+INFO: file_omitted(0):       80 = #bigrams created<br />
+INFO: file_omitted(0):        3 = #prob2 entries<br />
+INFO: file_omitted(0):        3 = #bo_wt2 entries<br />
+INFO: file_omitted(0): Reading trigrams<br />
+INFO: file_omitted(0):       40 = #trigrams created<br />
+INFO: file_omitted(0):        2 = #prob3 entries<br />
+INFO: file_omitted(0): Building DMP model&#8230;<br />
+INFO: file_omitted(0):       42 = #unigrams created<br />
+INFO: file_omitted(0):       80 = #bigrams created<br />
+INFO: file_omitted(0):        3 = #prob2 entries<br />
+INFO: file_omitted(0):        3 = #bo_wt2 entries<br />
+INFO: file_omitted(0):       40 = #trigrams created<br />
+INFO: file_omitted(0):        2 = #prob3 entries<br />
+2014-07-14 11:54:35.124 Flashcards[23135:613] Finishing sphinx_lm_convert<br />
+2014-07-14 11:54:35.125 Flashcards[23135:613] I&#8217;m done running dynamic language model generation and it took 427056875.125829 seconds<br />
+2014-07-14 11:54:35.126 Flashcards[23135:613] setSecondsOfSilence value of 0.000000 was too large or too small or was NULL, using default of 0.700000.<br />
+2014-07-14 11:54:35.149 Flashcards[23135:3c03] there is a request to change to the language model file /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary2.DMP<br />
+2014-07-14 11:54:35.150 Flashcards[23135:3c03] A request has been made to change an ARPA grammar on the fly. The language model to change to is /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary2.DMP<br />
+2014-07-14 11:54:35.151 Flashcards[23135:3c03] Error: couldn&#8217;t get attributes of language model file.<br />
+ERROR: &#8220;file_omitted&#8221;, line 0: File /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary2.DMP not found<br />
+INFO: file_omitted(0): Will use memory-mapped I/O for LM file<br />
+INFO: file_omitted(0): ngrams 1=42, 2=80, 3=40<br />
+INFO: file_omitted(0):       42 = LM.unigrams(+trailer) read<br />
+INFO: file_omitted(0):       80 = LM.bigrams(+trailer) read<br />
+INFO: file_omitted(0):       40 = LM.trigrams read<br />
+INFO: file_omitted(0):        3 = LM.prob2 entries read<br />
+INFO: file_omitted(0):        3 = LM.bo_wt2 entries read<br />
+INFO: file_omitted(0):        2 = LM.prob3 entries read<br />
+INFO: file_omitted(0):        1 = LM.tseg_base entries read<br />
+INFO: file_omitted(0):       42 = ascii word strings read<br />
+2014-07-14 11:54:35.173 Flashcards[23135:3c03] languageModelID is 999<br />
+INFO: file_omitted(0): 1 unique initial diphones<br />
+INFO: file_omitted(0): 0 root, 0 non-root channels, 51 single-phone words<br />
+INFO: file_omitted(0): Creating search tree<br />
+INFO: file_omitted(0): before: 0 root, 0 non-root channels, 51 single-phone words<br />
+ERROR: &#8220;file_omitted&#8221;, line 0: No word from the language model has pronunciation in the dictionary<br />
+INFO: file_omitted(0): after: 0 root, 0 non-root channels, 50 single-phone words<br />
+INFO: file_omitted(0): Parsing command line:</p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-alpha		0.97		9.700000e-01<br />
+-ascale		20.0		2.000000e+01<br />
+-aw		1		1<br />
+-backtrace	no		no<br />
+-beam		1e-48		1.000000e-48<br />
+-bestpath	yes		yes<br />
+-bestpathlw	9.5		9.500000e+00<br />
+-bghist		no		no<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		8.0<br />
+-compallsen	no		no<br />
+-debug				0<br />
+-dict<br />
+-dictcase	no		no<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-ds		1		1<br />
+-fdict<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-featparams<br />
+-fillprob	1e-8		1.000000e-08<br />
+-frate		100		100<br />
+-fsg<br />
+-fsgusealtpron	yes		yes<br />
+-fsgusefiller	yes		yes<br />
+-fwdflat	yes		yes<br />
+-fwdflatbeam	1e-64		1.000000e-64<br />
+-fwdflatefwid	4		4<br />
+-fwdflatlw	8.5		8.500000e+00<br />
+-fwdflatsfwin	25		25<br />
+-fwdflatwbeam	7e-29		7.000000e-29<br />
+-fwdtree	yes		yes<br />
+-hmm<br />
+-input_endian	little		little<br />
+-jsgf<br />
+-kdmaxbbi	-1		-1<br />
+-kdmaxdepth	0		0<br />
+-kdtree<br />
+-latsize	5000		5000<br />
+-lda<br />
+-ldadim		0		0<br />
+-lextreedump	0		0<br />
+-lifter		0		0<br />
+-lm<br />
+-lmctl<br />
+-lmname		default		default<br />
+-logbase	1.0001		1.000100e+00<br />
+-logfn<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.333333e+02<br />
+-lpbeam		1e-40		1.000000e-40<br />
+-lponlybeam	7e-29		7.000000e-29<br />
+-lw		6.5		6.500000e+00<br />
+-maxhmmpf	-1		-1<br />
+-maxnewoov	20		20<br />
+-maxwpf		-1		-1<br />
+-mdef<br />
+-mean<br />
+-mfclogdir<br />
+-min_endfr	0		0<br />
+-mixw<br />
+-mixwfloor	0.0000001	1.000000e-07<br />
+-mllr<br />
+-mmap		yes		yes<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		40<br />
+-nwpen		1.0		1.000000e+00<br />
+-pbeam		1e-48		1.000000e-48<br />
+-pip		1.0		1.000000e+00<br />
+-pl_beam	1e-10		1.000000e-10<br />
+-pl_pbeam	1e-5		1.000000e-05<br />
+-pl_window	0		0<br />
+-rawlogdir<br />
+-remove_dc	no		no<br />
+-round_filters	yes		yes<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-sendump<br />
+-senlogdir<br />
+-senmgau<br />
+-silprob	0.005		5.000000e-03<br />
+-smoothspec	no		no<br />
+-svspec<br />
+-tmat<br />
+-tmatfloor	0.0001		1.000000e-04<br />
+-topn		4		4<br />
+-topn_beam	0		0<br />
+-toprule<br />
+-transform	legacy		legacy<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	6.855498e+03<br />
+-usewdphones	no		no<br />
+-uw		1.0		1.000000e+00<br />
+-var<br />
+-varfloor	0.0001		1.000000e-04<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wbeam		7e-29		7.000000e-29<br />
+-wip		0.65		6.500000e-01<br />
+-wlen		0.025625	2.562500e-02</p>
+<p>INFO: file_omitted(0): Allocating 4147 * 32 bytes (129 KiB) for word entries<br />
+INFO: file_omitted(0): Reading main dictionary: /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary2.dic<br />
+INFO: file_omitted(0): Allocated 0 KiB for strings, 0 KiB for phones<br />
+INFO: file_omitted(0): 40 words read<br />
+INFO: file_omitted(0): Reading filler dictionary: /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Flashcards.app/AcousticModelEnglish.bundle/noisedict<br />
+INFO: file_omitted(0): Allocated 0 KiB for strings, 0 KiB for phones<br />
+INFO: file_omitted(0): 11 words read<br />
+INFO: file_omitted(0): Building PID tables for dictionary<br />
+INFO: file_omitted(0): Allocating 50^3 * 2 bytes (244 KiB) for word-initial triphones<br />
+INFO: file_omitted(0): Allocated 60400 bytes (58 KiB) for word-final triphones<br />
+INFO: file_omitted(0): Allocated 60400 bytes (58 KiB) for single-phone word triphones<br />
+INFO: file_omitted(0): 1 unique initial diphones<br />
+INFO: file_omitted(0): 0 root, 0 non-root channels, 51 single-phone words<br />
+INFO: file_omitted(0): Creating search tree<br />
+INFO: file_omitted(0): before: 0 root, 0 non-root channels, 51 single-phone words<br />
+INFO: file_omitted(0): after: 1 root, 7 non-root channels, 50 single-phone words<br />
+2014-07-14 11:54:35.290 Flashcards[23135:3c03] Success loading the dictionary file /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary2.dic.<br />
+2014-07-14 11:54:35.291 Flashcards[23135:3c03] There were too many errors to switch the language model or grammar, please search the console for the word &#8216;error&#8217; to investigate the issues.<br />
+2014-07-14 11:54:35.291 Flashcards[23135:3c03] Listening.<br />
+2014-07-14 11:54:35.292 Flashcards[23135:613] Started Listening</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/changing-lang-model-dynamically-with-rejecto-couldnt-get-attributes-of-lm/#post-1021954</guid>
+					<title><![CDATA[Reply To: Changing Lang. Model Dynamically with Rejecto Couldn&#039;t Get Attributes of LM]]></title>
+					<link>/forums/topic/changing-lang-model-dynamically-with-rejecto-couldnt-get-attributes-of-lm/#post-1021954</link>
+					<pubDate>Mon, 14 Jul 2014 21:32:35 +0000</pubDate>
+					<dc:creator>piggins</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Also, I was testing on iOS 7.1 with Xcode 5.1.1</p>
+<p>I&#8217;m really sorry about the length of the logging. It might be helpful to isolate the lines that seem to show the error:</p>
+<p>2014-07-14 11:54:35.151 Flashcards[23135:3c03] Error: couldn’t get attributes of language model file.<br />
+ERROR: “file_omitted”, line 0: File /Users/SameerVijay/Library/Application Support/iPhone Simulator/7.1-64/Applications/8D531DE6-BD29-44C8-8DC1-7FC9EB62BAED/Library/Caches/Vocabulary2.DMP not found</p>
+<p>It says that the file can&#8217;t be found, but I&#8217;m fairly sure I created the file using:</p>
+<p>NSError *err = [lmGenerator generateRejectingLanguageModelFromArray:vocab withFilesNamed:name withOptionalExclusions:nil usingVowelsOnly:FALSE withWeight:nil forAcousticModelAtPath:[AcousticModel pathToModel:@&#8221;AcousticModelEnglish&#8221;]];</p>
+<p>NSDictionary *languageGeneratorResults = [err userInfo];</p>
+<p>    if([err code] == noErr) {</p>
+<p>        lmPath = [languageGeneratorResults objectForKey:@&#8221;LMPath&#8221;];<br />
+        dicPath = [languageGeneratorResults objectForKey:@&#8221;DictionaryPath&#8221;];<br />
+    }</p>
+<p>Thanks for any help!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/changing-lang-model-dynamically-with-rejecto-couldnt-get-attributes-of-lm/#post-1021959</guid>
+					<title><![CDATA[Reply To: Changing Lang. Model Dynamically with Rejecto Couldn&#039;t Get Attributes of LM]]></title>
+					<link>/forums/topic/changing-lang-model-dynamically-with-rejecto-couldnt-get-attributes-of-lm/#post-1021959</link>
+					<pubDate>Tue, 15 Jul 2014 08:19:32 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Does the issue with no longer getting hypotheses happen the very first time you change models, or does it happen the second and later times only? That is, can you make one single successful change and still get hypotheses or does it stop working any time there is a change request?</p>
+<p>The file not found errors are actually false positives – the .DMP and .dic files are being loaded correctly, but this could nonetheless be a bug due to the &#8220;couldn&#8217;t get attributes&#8221; issue.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/changing-lang-model-dynamically-with-rejecto-couldnt-get-attributes-of-lm/#post-1021967</guid>
+					<title><![CDATA[Reply To: Changing Lang. Model Dynamically with Rejecto Couldn&#039;t Get Attributes of LM]]></title>
+					<link>/forums/topic/changing-lang-model-dynamically-with-rejecto-couldnt-get-attributes-of-lm/#post-1021967</link>
+					<pubDate>Tue, 15 Jul 2014 16:08:11 +0000</pubDate>
+					<dc:creator>piggins</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The issue only occurs the second and later times. That is exactly the behavior. The first time I try it, after starting the app, it works perfectly. I can change the language model once, and it works perfectly again. Any further changes, however, cause this error to occur. Also, thanks a lot for the prompt replies!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/changing-lang-model-dynamically-with-rejecto-couldnt-get-attributes-of-lm/#post-1021968</guid>
+					<title><![CDATA[Reply To: Changing Lang. Model Dynamically with Rejecto Couldn&#039;t Get Attributes of LM]]></title>
+					<link>/forums/topic/changing-lang-model-dynamically-with-rejecto-couldnt-get-attributes-of-lm/#post-1021968</link>
+					<pubDate>Tue, 15 Jul 2014 16:43:02 +0000</pubDate>
+					<dc:creator>piggins</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Is this a known issue that can be fixed, given the fact that the situation you previously described is exactly what&#8217;s happening to me? Thanks again!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/changing-lang-model-dynamically-with-rejecto-couldnt-get-attributes-of-lm/#post-1021969</guid>
+					<title><![CDATA[Reply To: Changing Lang. Model Dynamically with Rejecto Couldn&#039;t Get Attributes of LM]]></title>
+					<link>/forums/topic/changing-lang-model-dynamically-with-rejecto-couldnt-get-attributes-of-lm/#post-1021969</link>
+					<pubDate>Tue, 15 Jul 2014 16:46:34 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>No problem! I appreciate hearing about the bug. Are you comfortable making changes to the OpenEars project and recompiling the framework? I could suggest a change you could test.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/changing-lang-model-dynamically-with-rejecto-couldnt-get-attributes-of-lm/#post-1021970</guid>
+					<title><![CDATA[Reply To: Changing Lang. Model Dynamically with Rejecto Couldn&#039;t Get Attributes of LM]]></title>
+					<link>/forums/topic/changing-lang-model-dynamically-with-rejecto-couldnt-get-attributes-of-lm/#post-1021970</link>
+					<pubDate>Tue, 15 Jul 2014 16:48:22 +0000</pubDate>
+					<dc:creator>piggins</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Absolutely! If there&#8217;s any possible fix I&#8217;d love to hear it.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/changing-lang-model-dynamically-with-rejecto-couldnt-get-attributes-of-lm/#post-1021971</guid>
+					<title><![CDATA[Reply To: Changing Lang. Model Dynamically with Rejecto Couldn&#039;t Get Attributes of LM]]></title>
+					<link>/forums/topic/changing-lang-model-dynamically-with-rejecto-couldnt-get-attributes-of-lm/#post-1021971</link>
+					<pubDate>Tue, 15 Jul 2014 17:20:27 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, I will do a permanent fix for this in the next version, but for now, look for this chunk in ContinuousModel.m:</p>
+<pre>
+		NSFileManager *fileManager = [[NSFileManager alloc] init];
+		NSError *error = nil;
+		NSDictionary *fileAttributes = [fileManager attributesOfItemAtPath:self.languageModelFileToChangeTo error:&#038;error];
+		if(error) {
+			if(openears_logging == 1) NSLog(@"Error: couldn't get attributes of language model file.");
+            fatalErrors++;
+		} else {
+			if(openears_logging == 1) NSLog(@"In this session, the requested language model will be known to Pocketsphinx as id %@.",[fileAttributes valueForKey:NSFileSystemFileNumber]);
+			languageModelID = [fileAttributes valueForKey:NSFileSystemFileNumber];
+		}
+        
+		[fileManager release];
+</pre>
+<p>I think this issue should be fixed if you comment this entire section above out, and change this line which precedes it:</p>
+<pre>
+NSNumber *languageModelID = [NSNumber numberWithInt:999];
+</pre>
+<p>So that the integer 999 is basically replaced with any guaranteed-to-be-unique int for that listening loop instance. So you could have a property int that increments right before it is assigned to that NSNumber, or you could derive it from a datestamp, or any similar approach to get a new number that you like. The goal is just to make sure that where it says 999 above is replaced with some other int which is definitely unique for every language model change request within a single run of the continuous listening loop.</p>
+<p>I would expect this to work – let me know if the 2nd and later model changes start listening successfully again.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

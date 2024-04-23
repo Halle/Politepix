@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Multiple recognition threads running &#8211; Politepix</title>
+		<atom:link href="/forums/topic/multiple-recognition-threads-running/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/multiple-recognition-threads-running/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:09:30 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/multiple-recognition-threads-running/#post-1022340</guid>
+					<title><![CDATA[Multiple recognition threads running]]></title>
+					<link>/forums/topic/multiple-recognition-threads-running/#post-1022340</link>
+					<pubDate>Fri, 22 Aug 2014 18:34:00 +0000</pubDate>
+					<dc:creator>MingHangDu</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello admin</p>
+<p>I met the same problem as the topic which seems not solved<br />
+<a href="/forums/topic/multiple-voice-recognition-threads-running/">/forums/topic/multiple-voice-recognition-threads-running/</a></p>
+<p>Here&#8217;s the sample code<br />
+<a href="https://dl.dropboxusercontent.com/u/5825996/OpenEarsSample.zip" rel="nofollow">https://dl.dropboxusercontent.com/u/5825996/OpenEarsSample.zip</a></p>
+<p>I do voice recognition in the SecondViewController. When I go back to the  ViewController(previous view controller) and push to SecondViewController again, there&#8217;re duplicated outputs. I&#8217;m sure [self.speechRecognition stopVoiceRecognition] works every time I finish voice recognition. Please help me! Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multiple-recognition-threads-running/#post-1022342</guid>
+					<title><![CDATA[Reply To: Multiple recognition threads running]]></title>
+					<link>/forums/topic/multiple-recognition-threads-running/#post-1022342</link>
+					<pubDate>Fri, 22 Aug 2014 18:38:20 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Take a look at this thread:</p>
+<p><a href="/forums/topic/repeats-in-nslog/">/forums/topic/repeats-in-nslog/</a></p>
+<p>This is due in some way to the management of the departure from the view controllers.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multiple-recognition-threads-running/#post-1022345</guid>
+					<title><![CDATA[Reply To: Multiple recognition threads running]]></title>
+					<link>/forums/topic/multiple-recognition-threads-running/#post-1022345</link>
+					<pubDate>Sat, 23 Aug 2014 00:49:24 +0000</pubDate>
+					<dc:creator>MingHangDu</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I put <code>self.speechRecognition.openEarsEventsObserver = nil;</code> in <code>- (void)viewWillDisappear:(BOOL)animated</code> in SecondViewController. It works!! Thanks a lot!!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

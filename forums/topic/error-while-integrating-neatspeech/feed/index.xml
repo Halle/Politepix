@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Error while integrating Neatspeech &#8211; Politepix</title>
+		<atom:link href="/forums/topic/error-while-integrating-neatspeech/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/error-while-integrating-neatspeech/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:44:36 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/error-while-integrating-neatspeech/#post-15162</guid>
+					<title><![CDATA[Error while integrating Neatspeech]]></title>
+					<link>/forums/topic/error-while-integrating-neatspeech/#post-15162</link>
+					<pubDate>Fri, 28 Dec 2012 08:35:35 +0000</pubDate>
+					<dc:creator>Ravi</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi, </p>
+<p> I got this error while integrating neatspeech </p>
+<p>Undefined symbols for architecture i386:<br />
+  &#8220;_OBJC_CLASS_$_Emma&#8221;, referenced from:<br />
+      objc-class-ref in ViewController.o<br />
+ld: symbol(s) not found for architecture i386<br />
+clang: error: linker command failed with exit code 1 (use -v to see invocation)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-while-integrating-neatspeech/#post-15165</guid>
+					<title><![CDATA[Reply To: Error while integrating Neatspeech]]></title>
+					<link>/forums/topic/error-while-integrating-neatspeech/#post-15165</link>
+					<pubDate>Fri, 28 Dec 2012 09:55:11 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Ravi,</p>
+<p>This can happen if you didn&#8217;t add the -ObjC other linker flag or if the voices weren&#8217;t added to your target when you imported the voices folder, usually due to something going wrong with this step:</p>
+<p>&#8220;In order to use NeatSpeech, as well as importing the framework into your OpenEars-enabled project, it is also necessary to import the voices and voice data files by dragging the &#8220;Voice&#8221; folder in the disk image into your app project. Make sure that in Xcode&#8217;s &#8220;Add&#8221; dialog, &#8220;Create groups for any added folders&#8221; is selected. Make sure that &#8220;Create folder references for any added folders&#8221; is not selected or your app will not work.&#8221;</p>
+<p>Also make sure that your app target is checked in that &#8220;Add file&#8221; dialog so the items which are being added are also being added to your target.</p>
+<p>The error just means that the code for the NeatSpeechVoice &#8220;Emma&#8221; is not available to your project.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

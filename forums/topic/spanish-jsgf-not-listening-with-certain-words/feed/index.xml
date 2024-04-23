@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Spanish JSGF not listening with certain words &#8211; Politepix</title>
+		<atom:link href="/forums/topic/spanish-jsgf-not-listening-with-certain-words/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/spanish-jsgf-not-listening-with-certain-words/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:05:09 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/spanish-jsgf-not-listening-with-certain-words/#post-1021328</guid>
+					<title><![CDATA[Spanish JSGF not listening with certain words]]></title>
+					<link>/forums/topic/spanish-jsgf-not-listening-with-certain-words/#post-1021328</link>
+					<pubDate>Wed, 21 May 2014 01:18:19 +0000</pubDate>
+					<dc:creator>chickenthief2</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;ve noticed that when I include certain words, Openears will not start listening. </p>
+<p>Some examples are:  @&#8221;CHARLAS&#8221;, @&#8221;CHARLO, @&#8221;ESCUCHAS&#8221;</p>
+<p>I&#8217;m using JSGF (which works great otherwise, by the way!). Remove all of these words, listening will start as normal. Include one or all of these words, and Openears will not start listening. </p>
+<p>That is, it will perform all of its usual initializing, but it STOPS after &#8220;Recognition loop has started&#8221;:  </p>
+<p><em>&#8220;Project has these words or phrases in its dictionary:</p>
+<p>[list of words]</p>
+<p>Recognition loop has started&#8221;</em></p>
+<p>and then no further messages in the console.  </p>
+<p>By the way, thanks for the fix that resulted from my previous thread.<br />
+<a href="/forums/topic/spanish-recognition-accented-words/">/forums/topic/spanish-recognition-accented-words/</a></p>
+<p>Thank you!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/spanish-jsgf-not-listening-with-certain-words/#post-1021331</guid>
+					<title><![CDATA[Reply To: Spanish JSGF not listening with certain words]]></title>
+					<link>/forums/topic/spanish-jsgf-not-listening-with-certain-words/#post-1021331</link>
+					<pubDate>Wed, 21 May 2014 07:35:14 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>OK, please turn on and share the complete logging that provides troubleshooting information for this kind of issue. More info about how to do this here: <a href="/forums/topic/install-issues-and-their-solutions/">/forums/topic/install-issues-and-their-solutions/</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/spanish-jsgf-not-listening-with-certain-words/#post-1021342</guid>
+					<title><![CDATA[Reply To: Spanish JSGF not listening with certain words]]></title>
+					<link>/forums/topic/spanish-jsgf-not-listening-with-certain-words/#post-1021342</link>
+					<pubDate>Wed, 21 May 2014 23:48:26 +0000</pubDate>
+					<dc:creator>chickenthief2</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>2014-05-21 16:40:05.504 Flash[7177:60b] Starting OpenEars logging for OpenEars version 1.7 on 64-bit device: iPhone running iOS version: 7.100000<br />
+2014-05-21 16:40:05.567 Flash[7177:60b] The word CAMBIAS was not found in the dictionary /var/mobile/Applications/706212D4-5C76-4A0B-8EF6-4CC4DF2EEF8D/Flash.app/AcousticModelSpanish.bundle/LanguageModelGeneratorLookupList.text/LanguageModelGeneratorLookupList.text.<br />
+2014-05-21 16:40:05.567 Flash[7177:60b] Now using the fallback method to look up the word CAMBIAS<br />
+2014-05-21 16:40:05.568 Flash[7177:60b] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the Spanish phonetic lookup dictionary is that your words are not in Spanish or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2014-05-21 16:40:05.570 Flash[7177:60b] I&#8217;m done running performDictionaryLookup and it took 0.008028 seconds<br />
+2014-05-21 16:40:05.661 Flash[7177:60b] User gave mic permission for this app.<br />
+2014-05-21 16:40:05.662 Flash[7177:60b] Leaving sample rate at the default of 16000.<br />
+2014-05-21 16:40:05.663 Flash[7177:60b] The audio session has never been initialized so we will do that now.<br />
+2014-05-21 16:40:05.664 Flash[7177:60b] Checking and resetting all audio session settings.<br />
+2014-05-21 16:40:05.665 Flash[7177:60b] audioCategory is correct, we will leave it as it is.<br />
+2014-05-21 16:40:05.666 Flash[7177:60b] bluetoothInput is incorrect, we will change it.<br />
+2014-05-21 16:40:05.672 Flash[7177:60b] bluetooth input is now on the correct setting of 1.<br />
+2014-05-21 16:40:05.673 Flash[7177:60b] Output Device: ReceiverAndMicrophone.<br />
+2014-05-21 16:40:05.675 Flash[7177:60b] categoryDefaultToSpeaker is incorrect, we will change it.<br />
+2014-05-21 16:40:05.715 Flash[7177:60b] CategoryDefaultToSpeaker is now on the correct setting of 1.<br />
+2014-05-21 16:40:05.720 Flash[7177:60b] preferredBufferSize is incorrect, we will change it.<br />
+2014-05-21 16:40:05.723 Flash[7177:60b] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2014-05-21 16:40:05.726 Flash[7177:60b] preferredSampleRateCheck is incorrect, we will change it.<br />
+2014-05-21 16:40:05.796 Flash[7177:60b] preferred hardware sample rate is now on the correct setting of 16000.000000.<br />
+2014-05-21 16:40:05.802 Flash[7177:60b] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2014-05-21 16:40:05.804 Flash[7177:60b] Exiting startAudioSession.<br />
+2014-05-21 16:40:05.805 Flash[7177:5e07] setSecondsOfSilence value of 0.000000 was too large or too small or was NULL, using default of 0.700000.<br />
+2014-05-21 16:40:05.807 Flash[7177:5e07] Project has these words or phrases in its dictionary:<br />
+CAMBIAS<br />
+CANTAS<br />
+2014-05-21 16:40:05.808 Flash[7177:5e07] Recognition loop has started<br />
+2014-05-21 16:40:06.377 Flash[7177:5e07] Starting openAudioDevice on the device.<br />
+2014-05-21 16:40:06.378 Flash[7177:5e07] Audio unit wrapper successfully created.<br />
+2014-05-21 16:40:06.385 Flash[7177:5e07] Set audio route to SpeakerAndMicrophone<br />
+2014-05-21 16:40:06.388 Flash[7177:5e07] There is no CMN plist so we are using the fresh CMN value 9.500000.<br />
+2014-05-21 16:40:06.389 Flash[7177:5e07] Checking and resetting all audio session settings.<br />
+2014-05-21 16:40:06.389 Flash[7177:5e07] audioCategory is correct, we will leave it as it is.<br />
+2014-05-21 16:40:06.390 Flash[7177:5e07] bluetoothInput is correct, we will leave it as it is.<br />
+2014-05-21 16:40:06.391 Flash[7177:5e07] Output Device: SpeakerAndMicrophone.<br />
+2014-05-21 16:40:06.391 Flash[7177:5e07] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2014-05-21 16:40:06.392 Flash[7177:5e07] preferredBufferSize is incorrect, we will change it.<br />
+2014-05-21 16:40:06.393 Flash[7177:5e07] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2014-05-21 16:40:06.394 Flash[7177:5e07] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2014-05-21 16:40:06.394 Flash[7177:5e07] Setting the variables for the device and starting it.<br />
+2014-05-21 16:40:06.395 Flash[7177:5e07] Looping through ringbuffer sections and pre-allocating them.<br />
+2014-05-21 16:40:06.697 Flash[7177:5e07] Started audio output unit.<br />
+2014-05-21 16:40:06.698 Flash[7177:5e07] Calibration has started<br />
+2014-05-21 16:40:06.698 Flash[7177:60b] Pocketsphinx calibration has started.<br />
+2014-05-21 16:40:08.902 Flash[7177:5e07] Calibration has completed<br />
+2014-05-21 16:40:08.902 Flash[7177:60b] Pocketsphinx calibration is complete.<br />
+2014-05-21 16:40:08.905 Flash[7177:5e07] Listening.<br />
+2014-05-21 16:40:08.906 Flash[7177:60b] Pocketsphinx has suspended recognition.<br />
+2014-05-21 16:40:08.908 Flash[7177:60b] Pocketsphinx is now listening.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/spanish-jsgf-not-listening-with-certain-words/#post-1021343</guid>
+					<title><![CDATA[Reply To: Spanish JSGF not listening with certain words]]></title>
+					<link>/forums/topic/spanish-jsgf-not-listening-with-certain-words/#post-1021343</link>
+					<pubDate>Wed, 21 May 2014 23:48:42 +0000</pubDate>
+					<dc:creator>chickenthief2</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>2014-05-21 16:45:05.962 Flash[7187:432b] Calibration has completed<br />
+2014-05-21 16:45:05.972 Flash[7187:432b] Stopping audio unit.<br />
+2014-05-21 16:45:06.063 Flash[7187:432b] Audio Output Unit stopped, cleaning up variable states.<br />
+2014-05-21 16:45:06.064 Flash[7187:432b] This device is not recording, so first we will set its recording status to 0<br />
+2014-05-21 16:45:06.064 Flash[7187:432b] The audio unit is running so we are going to dispose of its instance<br />
+2014-05-21 16:45:06.068 Flash[7187:432b] No longer listening.<br />
+2014-05-21 16:45:07.514 Flash[7187:3b03] Audio route has changed for the following reason:<br />
+2014-05-21 16:45:07.516 Flash[7187:60b] Starting OpenEars logging for OpenEars version 1.7 on 64-bit device: iPhone running iOS version: 7.100000<br />
+2014-05-21 16:45:07.518 Flash[7187:3b03] There has been a change of category<br />
+2014-05-21 16:45:07.522 Flash[7187:3b03] The previous audio route was SpeakerAndMicrophone<br />
+2014-05-21 16:45:07.525 Flash[7187:3b03] This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is ReceiverAndMicrophone<br />
+2014-05-21 16:45:07.544 Flash[7187:60b] The word CAMBIAS was not found in the dictionary /var/mobile/Applications/706212D4-5C76-4A0B-8EF6-4CC4DF2EEF8D/Flash.app/AcousticModelSpanish.bundle/LanguageModelGeneratorLookupList.text/LanguageModelGeneratorLookupList.text.<br />
+2014-05-21 16:45:07.545 Flash[7187:60b] Now using the fallback method to look up the word CAMBIAS<br />
+2014-05-21 16:45:07.546 Flash[7187:60b] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the Spanish phonetic lookup dictionary is that your words are not in Spanish or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2014-05-21 16:45:07.551 Flash[7187:60b] The word CHARLAS was not found in the dictionary /var/mobile/Applications/706212D4-5C76-4A0B-8EF6-4CC4DF2EEF8D/Flash.app/AcousticModelSpanish.bundle/LanguageModelGeneratorLookupList.text/LanguageModelGeneratorLookupList.text.<br />
+2014-05-21 16:45:07.552 Flash[7187:60b] Now using the fallback method to look up the word CHARLAS<br />
+2014-05-21 16:45:07.552 Flash[7187:60b] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the Spanish phonetic lookup dictionary is that your words are not in Spanish or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2014-05-21 16:45:07.553 Flash[7187:60b] I&#8217;m done running performDictionaryLookup and it took 0.012957 seconds<br />
+2014-05-21 16:45:07.566 Flash[7187:60b] User gave mic permission for this app.<br />
+2014-05-21 16:45:07.567 Flash[7187:60b] Leaving sample rate at the default of 16000.<br />
+2014-05-21 16:45:07.567 Flash[7187:60b] The audio session has already been initialized but we will override its properties.<br />
+2014-05-21 16:45:07.568 Flash[7187:60b] Checking and resetting all audio session settings.<br />
+2014-05-21 16:45:07.569 Flash[7187:60b] audioCategory is correct, we will leave it as it is.<br />
+2014-05-21 16:45:07.569 Flash[7187:60b] bluetoothInput is incorrect, we will change it.<br />
+2014-05-21 16:45:07.575 Flash[7187:60b] bluetooth input is now on the correct setting of 1.<br />
+2014-05-21 16:45:07.577 Flash[7187:60b] Output Device: ReceiverAndMicrophone.<br />
+2014-05-21 16:45:07.578 Flash[7187:60b] categoryDefaultToSpeaker is incorrect, we will change it.<br />
+2014-05-21 16:45:07.603 Flash[7187:60b] CategoryDefaultToSpeaker is now on the correct setting of 1.<br />
+2014-05-21 16:45:07.605 Flash[7187:60b] preferredBufferSize is incorrect, we will change it.<br />
+2014-05-21 16:45:07.610 Flash[7187:60b] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2014-05-21 16:45:07.611 Flash[7187:3b03] Audio route has changed for the following reason:<br />
+2014-05-21 16:45:07.613 Flash[7187:60b] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2014-05-21 16:45:07.612 Flash[7187:3b03] There has been a change of category<br />
+2014-05-21 16:45:07.615 Flash[7187:60b] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2014-05-21 16:45:07.614 Flash[7187:3b03] The previous audio route was ReceiverAndMicrophone<br />
+2014-05-21 16:45:07.616 Flash[7187:60b] Exiting startAudioSession.<br />
+2014-05-21 16:45:07.619 Flash[7187:3b03] This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is SpeakerAndMicrophone<br />
+2014-05-21 16:45:07.620 Flash[7187:1d1f] setSecondsOfSilence value of 0.000000 was too large or too small or was NULL, using default of 0.700000.<br />
+2014-05-21 16:45:07.621 Flash[7187:1d1f] Project has these words or phrases in its dictionary:<br />
+CAMBIAS<br />
+CANTAS<br />
+CHARLAS<br />
+2014-05-21 16:45:07.622 Flash[7187:1d1f] Recognition loop has started</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/spanish-jsgf-not-listening-with-certain-words/#post-1021344</guid>
+					<title><![CDATA[Reply To: Spanish JSGF not listening with certain words]]></title>
+					<link>/forums/topic/spanish-jsgf-not-listening-with-certain-words/#post-1021344</link>
+					<pubDate>Wed, 21 May 2014 23:53:00 +0000</pubDate>
+					<dc:creator>chickenthief2</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>1st post there works fine, 2nd stops at the last line there. Only difference is the one word. </p>
+<p>iOS 7.1 on a 5S.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/spanish-jsgf-not-listening-with-certain-words/#post-1021347</guid>
+					<title><![CDATA[Reply To: Spanish JSGF not listening with certain words]]></title>
+					<link>/forums/topic/spanish-jsgf-not-listening-with-certain-words/#post-1021347</link>
+					<pubDate>Thu, 22 May 2014 06:36:36 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>Please turn on verbosePocketsphinx for the logging.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/spanish-jsgf-not-listening-with-certain-words/#post-1021348</guid>
+					<title><![CDATA[Reply To: Spanish JSGF not listening with certain words]]></title>
+					<link>/forums/topic/spanish-jsgf-not-listening-with-certain-words/#post-1021348</link>
+					<pubDate>Fri, 23 May 2014 05:47:49 +0000</pubDate>
+					<dc:creator>chickenthief2</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>2014-05-22 20:41:22.041 Flash[7929:60b] Starting OpenEars logging for OpenEars version 1.7 on 64-bit device: iPhone running iOS version: 7.100000<br />
+2014-05-22 20:41:22.065 Flash[7929:3b03] Audio route has changed for the following reason:<br />
+2014-05-22 20:41:22.074 Flash[7929:3b03] There has been a change of category<br />
+2014-05-22 20:41:22.077 Flash[7929:3b03] The previous audio route was SpeakerAndMicrophone<br />
+2014-05-22 20:41:22.080 Flash[7929:3b03] This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is ReceiverAndMicrophone<br />
+2014-05-22 20:41:22.084 Flash[7929:60b] The word CAMBIAS was not found in the dictionary /var/mobile/Applications/A7EF8D25-8EB8-4047-8463-07A54BCE89FF/Flash.app/AcousticModelSpanish.bundle/LanguageModelGeneratorLookupList.text/LanguageModelGeneratorLookupList.text.<br />
+2014-05-22 20:41:22.085 Flash[7929:60b] Now using the fallback method to look up the word CAMBIAS<br />
+2014-05-22 20:41:22.085 Flash[7929:60b] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the Spanish phonetic lookup dictionary is that your words are not in Spanish or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2014-05-22 20:41:22.091 Flash[7929:60b] The word CHARLAS was not found in the dictionary /var/mobile/Applications/A7EF8D25-8EB8-4047-8463-07A54BCE89FF/Flash.app/AcousticModelSpanish.bundle/LanguageModelGeneratorLookupList.text/LanguageModelGeneratorLookupList.text.<br />
+2014-05-22 20:41:22.091 Flash[7929:60b] Now using the fallback method to look up the word CHARLAS<br />
+2014-05-22 20:41:22.092 Flash[7929:60b] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the Spanish phonetic lookup dictionary is that your words are not in Spanish or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2014-05-22 20:41:22.093 Flash[7929:60b] I&#8217;m done running performDictionaryLookup and it took 0.012437 seconds<br />
+2014-05-22 20:41:22.107 Flash[7929:60b] User gave mic permission for this app.<br />
+2014-05-22 20:41:22.107 Flash[7929:60b] Leaving sample rate at the default of 16000.<br />
+2014-05-22 20:41:22.108 Flash[7929:60b] The audio session has already been initialized but we will override its properties.<br />
+2014-05-22 20:41:22.109 Flash[7929:60b] Checking and resetting all audio session settings.<br />
+2014-05-22 20:41:22.109 Flash[7929:60b] audioCategory is correct, we will leave it as it is.<br />
+2014-05-22 20:41:22.110 Flash[7929:60b] bluetoothInput is incorrect, we will change it.<br />
+2014-05-22 20:41:22.115 Flash[7929:60b] bluetooth input is now on the correct setting of 1.<br />
+2014-05-22 20:41:22.116 Flash[7929:60b] Output Device: ReceiverAndMicrophone.<br />
+2014-05-22 20:41:22.118 Flash[7929:60b] categoryDefaultToSpeaker is incorrect, we will change it.<br />
+2014-05-22 20:41:22.142 Flash[7929:60b] CategoryDefaultToSpeaker is now on the correct setting of 1.<br />
+2014-05-22 20:41:22.148 Flash[7929:60b] preferredBufferSize is incorrect, we will change it.<br />
+2014-05-22 20:41:22.150 Flash[7929:60b] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2014-05-22 20:41:22.150 Flash[7929:3b03] Audio route has changed for the following reason:<br />
+2014-05-22 20:41:22.152 Flash[7929:60b] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2014-05-22 20:41:22.152 Flash[7929:3b03] There has been a change of category<br />
+2014-05-22 20:41:22.153 Flash[7929:60b] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2014-05-22 20:41:22.153 Flash[7929:3b03] The previous audio route was ReceiverAndMicrophone<br />
+2014-05-22 20:41:22.155 Flash[7929:60b] Exiting startAudioSession.<br />
+2014-05-22 20:41:22.156 Flash[7929:63ab] setSecondsOfSilence value of 0.000000 was too large or too small or was NULL, using default of 0.700000.<br />
+2014-05-22 20:41:22.159 Flash[7929:63ab] Project has these words or phrases in its dictionary:<br />
+CAMBIAS<br />
+CANTAS<br />
+CHARLAS<br />
+2014-05-22 20:41:22.159 Flash[7929:63ab] Recognition loop has started<br />
+INFO: file_omitted(0): Parsing command line:<br />
+\<br />
+	-jsgf /var/mobile/Applications/A7EF8D25-8EB8-4047-8463-07A54BCE89FF/Library/Caches/NameIWantForMyLanguageModelFiles.gram \<br />
+	-beam 1e-96 \<br />
+	-bestpath yes \<br />
+	-dict /var/mobile/Applications/A7EF8D25-8EB8-4047-8463-07A54BCE89FF/Library/Caches/NameIWantForMyLanguageModelFiles.dic \<br />
+	-fwdflatbeam 1e-128 \<br />
+	-hmm /var/mobile/Applications/A7EF8D25-8EB8-4047-8463-07A54BCE89FF/Flash.app/AcousticModelSpanish.bundle \<br />
+	-lw 3.000000 \<br />
+	-samprate 16000 </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-alpha		0.97		9.700000e-01<br />
+-argfile<br />
+-ascale		20.0		2.000000e+01<br />
+-aw		1		1<br />
+-backtrace	no		no<br />
+-beam		1e-48		1.000000e-96<br />
+-bestpath	yes		yes<br />
+-bestpathlw	9.5		9.500000e+00<br />
+-bghist		no		no<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		8.0<br />
+-compallsen	no		no<br />
+-debug				0<br />
+-dict				/var/mobile/Applications/A7EF8D25-8EB8-4047-8463-07A54BCE89FF/Library/Caches/NameIWantForMyLanguageModelFiles.dic<br />
+-dictcase	no		no<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-ds		1		1<br />
+-fdict<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-featparams<br />
+-fillprob	1e-8		1.000000e-08<br />
+-frate		100		100<br />
+-fsg<br />
+-fsgusealtpron	yes		yes<br />
+-fsgusefiller	yes		yes<br />
+-fwdflat	yes		yes<br />
+-fwdflatbeam	1e-64		1.000000e-128<br />
+-fwdflatefwid	4		4<br />
+-fwdflatlw	8.5		8.500000e+00<br />
+-fwdflatsfwin	25		25<br />
+-fwdflatwbeam	7e-29		7.000000e-29<br />
+-fwdtree	yes		yes<br />
+-hmm				/var/mobile/Applications/A7EF8D25-8EB8-4047-8463-07A54BCE89FF/Flash.app/AcousticModelSpanish.bundle<br />
+-input_endian	little		little<br />
+-jsgf				/var/mobile/Applications/A7EF8D25-8EB8-4047-8463-07A54BCE89FF/Library/Caches/NameIWantForMyLanguageModelFiles.gram<br />
+-kdmaxbbi	-1		-1<br />
+-kdmaxdepth	0		0<br />
+-kdtree<br />
+-latsize	5000		5000<br />
+-lda<br />
+-ldadim		0		0<br />
+-lextreedump	0		0<br />
+-lifter		0		0<br />
+-lm<br />
+-lmctl<br />
+-lmname		default		default<br />
+-logbase	1.0001		1.000100e+00<br />
+-logfn<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.333333e+02<br />
+-lpbeam		1e-40		1.000000e-40<br />
+-lponlybeam	7e-29		7.000000e-29<br />
+-lw		6.5		3.000000e+00<br />
+-maxhmmpf	-1		-1<br />
+-maxnewoov	20		20<br />
+-maxwpf		-1		-1<br />
+-mdef<br />
+-mean<br />
+-mfclogdir<br />
+-min_endfr	0		0<br />
+-mixw<br />
+-mixwfloor	0.0000001	1.000000e-07<br />
+-mllr<br />
+-mmap		yes		yes<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		40<br />
+-nwpen		1.0		1.000000e+00<br />
+-pbeam		1e-48		1.000000e-48<br />
+-pip		1.0		1.000000e+00<br />
+-pl_beam	1e-10		1.000000e-10<br />
+-pl_pbeam	1e-5		1.000000e-05<br />
+-pl_window	0		0<br />
+-rawlogdir<br />
+-remove_dc	no		no<br />
+-round_filters	yes		yes<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-sendump<br />
+-senlogdir<br />
+-senmgau<br />
+-silprob	0.005		5.000000e-03<br />
+-smoothspec	no		no<br />
+-svspec<br />
+-tmat<br />
+-tmatfloor	0.0001		1.000000e-04<br />
+-topn		4		4<br />
+-topn_beam	0		0<br />
+-toprule<br />
+-transform	legacy		legacy<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	6.855498e+03<br />
+-usewdphones	no		no<br />
+-uw		1.0		1.000000e+00<br />
+-var<br />
+-varfloor	0.0001		1.000000e-04<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wbeam		7e-29		7.000000e-29<br />
+-wip		0.65		6.500000e-01<br />
+-wlen		0.025625	2.562500e-02</p>
+<p>INFO: file_omitted(0): Parsing command line:<br />
+\<br />
+	-feat s3_1x39 \<br />
+	-cmn current \<br />
+	-cmninit 9.5 </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-alpha		0.97		9.700000e-01<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		9.5<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-feat		1s_c_d_dd	s3_1x39<br />
+-frate		100		100<br />
+-input_endian	little		little<br />
+-lda<br />
+-ldadim		0		0<br />
+-lifter		0		0<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.333333e+02<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		40<br />
+-remove_dc	no		no<br />
+-round_filters	yes		yes<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-smoothspec	no		no<br />
+-svspec<br />
+-transform	legacy		legacy<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	6.855498e+03<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wlen		0.025625	2.562500e-02</p>
+<p>INFO: file_omitted(0): Parsed model-specific feature parameters from /var/mobile/Applications/A7EF8D25-8EB8-4047-8463-07A54BCE89FF/Flash.app/AcousticModelSpanish.bundle/feat.params<br />
+INFO: file_omitted(0): Initializing feature stream to type: &#8216;s3_1x39&#8242;, ceplen=13, CMN=&#8217;current&#8217;, VARNORM=&#8217;no&#8217;, AGC=&#8217;none&#8217;<br />
+INFO: file_omitted(0): mean[0]= 12.00, mean[1..12]= 0.0<br />
+INFO: file_omitted(0): Reading model definition: /var/mobile/Applications/A7EF8D25-8EB8-4047-8463-07A54BCE89FF/Flash.app/AcousticModelSpanish.bundle/mdef<br />
+2014-05-22 20:41:22.155 Flash[7929:3b03] This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is SpeakerAndMicrophone<br />
+INFO: file_omitted(0): Allocating 27954 * 8 bytes (218 KiB) for CD tree<br />
+INFO: file_omitted(0): Reading HMM transition probability matrices: /var/mobile/Applications/A7EF8D25-8EB8-4047-8463-07A54BCE89FF/Flash.app/AcousticModelSpanish.bundle/transition_matrices<br />
+INFO: file_omitted(0): Attempting to use SCHMM computation module<br />
+INFO: file_omitted(0): Reading mixture gaussian parameter: /var/mobile/Applications/A7EF8D25-8EB8-4047-8463-07A54BCE89FF/Flash.app/AcousticModelSpanish.bundle/means<br />
+INFO: file_omitted(0): 2630 codebook, 1 feature, size:<br />
+INFO: file_omitted(0):  8&#215;39<br />
+INFO: file_omitted(0): Reading mixture gaussian parameter: /var/mobile/Applications/A7EF8D25-8EB8-4047-8463-07A54BCE89FF/Flash.app/AcousticModelSpanish.bundle/variances<br />
+INFO: file_omitted(0): 2630 codebook, 1 feature, size:<br />
+INFO: file_omitted(0):  8&#215;39<br />
+INFO: file_omitted(0): 1 variance values floored<br />
+INFO: file_omitted(0): Attempting to use PTHMM computation module<br />
+INFO: file_omitted(0): Reading mixture gaussian parameter: /var/mobile/Applications/A7EF8D25-8EB8-4047-8463-07A54BCE89FF/Flash.app/AcousticModelSpanish.bundle/means<br />
+INFO: file_omitted(0): 2630 codebook, 1 feature, size:<br />
+INFO: file_omitted(0):  8&#215;39<br />
+INFO: file_omitted(0): Reading mixture gaussian parameter: /var/mobile/Applications/A7EF8D25-8EB8-4047-8463-07A54BCE89FF/Flash.app/AcousticModelSpanish.bundle/variances<br />
+INFO: file_omitted(0): 2630 codebook, 1 feature, size:<br />
+INFO: file_omitted(0):  8&#215;39<br />
+INFO: file_omitted(0): 1 variance values floored<br />
+INFO: file_omitted(0): Number of codebooks exceeds 256: 2630<br />
+INFO: file_omitted(0): Falling back to general multi-stream GMM computation<br />
+INFO: file_omitted(0): Reading mixture gaussian parameter: /var/mobile/Applications/A7EF8D25-8EB8-4047-8463-07A54BCE89FF/Flash.app/AcousticModelSpanish.bundle/means<br />
+INFO: file_omitted(0): 2630 codebook, 1 feature, size:<br />
+INFO: file_omitted(0):  8&#215;39<br />
+INFO: file_omitted(0): Reading mixture gaussian parameter: /var/mobile/Applications/A7EF8D25-8EB8-4047-8463-07A54BCE89FF/Flash.app/AcousticModelSpanish.bundle/variances<br />
+INFO: file_omitted(0): 2630 codebook, 1 feature, size:<br />
+INFO: file_omitted(0):  8&#215;39<br />
+INFO: file_omitted(0): 1 variance values floored<br />
+INFO: file_omitted(0): Reading senone mixture weights: /var/mobile/Applications/A7EF8D25-8EB8-4047-8463-07A54BCE89FF/Flash.app/AcousticModelSpanish.bundle/mixture_weights<br />
+INFO: file_omitted(0): Truncating senone logs3(pdf) values by 10 bits<br />
+INFO: file_omitted(0): Not transposing mixture weights in memory<br />
+INFO: file_omitted(0): Read mixture weights for 2630 senones: 1 features x 8 codewords<br />
+INFO: file_omitted(0): Mapping senones to individual codebooks<br />
+INFO: file_omitted(0): The value of topn: 4<br />
+INFO: file_omitted(0): Allocating 4102 * 32 bytes (128 KiB) for word entries<br />
+INFO: file_omitted(0): Reading main dictionary: /var/mobile/Applications/A7EF8D25-8EB8-4047-8463-07A54BCE89FF/Library/Caches/NameIWantForMyLanguageModelFiles.dic<br />
+ERROR: &#8220;file_omitted&#8221;, line 0: Line 3: Phone &#8216;C&#8217; is mising in the acoustic model; word &#8216;CHARLAS&#8217; ignored<br />
+INFO: file_omitted(0): Allocated 0 KiB for strings, 0 KiB for phones<br />
+INFO: file_omitted(0): 2 words read<br />
+INFO: file_omitted(0): Reading filler dictionary: /var/mobile/Applications/A7EF8D25-8EB8-4047-8463-07A54BCE89FF/Flash.app/AcousticModelSpanish.bundle/noisedict<br />
+INFO: file_omitted(0): Allocated 0 KiB for strings, 0 KiB for phones<br />
+INFO: file_omitted(0): 3 words read<br />
+INFO: file_omitted(0): Building PID tables for dictionary<br />
+INFO: file_omitted(0): Allocating 26^3 * 2 bytes (34 KiB) for word-initial triphones<br />
+INFO: file_omitted(0): Allocated 16432 bytes (16 KiB) for word-final triphones<br />
+INFO: file_omitted(0): Allocated 16432 bytes (16 KiB) for single-phone word triphones<br />
+INFO: file_omitted(0): FSG(beam: -2159, pbeam: -1080, wbeam: -634; wip: -13, pip: 0)<br />
+INFO: file_omitted(0): Defined rule: &lt;NameIWantForMyLanguageModelFiles.g00000&gt;<br />
+INFO: file_omitted(0): Defined rule: &lt;NameIWantForMyLanguageModelFiles.rule_0&gt;<br />
+INFO: file_omitted(0): Defined rule: &lt;NameIWantForMyLanguageModelFiles.g00002&gt;<br />
+INFO: file_omitted(0): Defined rule: PUBLIC &lt;NameIWantForMyLanguageModelFiles.rule_1&gt;<br />
+INFO: file_omitted(0): Computing transitive closure for null transitions<br />
+INFO: file_omitted(0): 15 null transitions added<br />
+ERROR: &#8220;file_omitted&#8221;, line 0: The word &#8216;CHARLAS&#8217; is missing in the dictionary</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/spanish-jsgf-not-listening-with-certain-words/#post-1021362</guid>
+					<title><![CDATA[Reply To: Spanish JSGF not listening with certain words]]></title>
+					<link>/forums/topic/spanish-jsgf-not-listening-with-certain-words/#post-1021362</link>
+					<pubDate>Fri, 23 May 2014 14:53:07 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thank you for the complete logging output. These are the errors from your log leading to the issue as shown in the verbosePocketsphinx output:</p>
+<pre>
+ERROR: “file_omitted”, line 0: Line 3: Phone ‘C’ is mising in the acoustic model; word ‘CHARLAS’ ignored
+[....]
+ERROR: “file_omitted”, line 0: The word ‘CHARLAS’ is missing in the dictionary
+</pre>
+<p>First it can&#8217;t add the word because there is a wrong phoneme for the acoustic model and then it can&#8217;t find it for the finite state grammar because it didn&#8217;t add it to the dictionary, which is apparently an exit condition for JSGF but not for ARPA, so thanks very much for reporting this since it was also silently affecting ARPA models.</p>
+<p>This appears to be a bug in the fallback method for Spanish phoneme generation. I could fix it locally by opening up the OpenEars file Sscribe.m and changing line 47 which currently reads as follows:</p>
+<pre>
+@"ch" : @" C H ",
+</pre>
+<p>To this:</p>
+<pre>
+@"ch" : @" CH ",
+</pre>
+<p>Can you make this change, re-compile the OpenEars framework, and confirm to me that this fixes the problem for you? If it does, can you let me know if you see the issue with any other words or phonemes so we can troubleshoot any other occurrences of this problem at the same time before I release a fix? Thank you.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/spanish-jsgf-not-listening-with-certain-words/#post-1021365</guid>
+					<title><![CDATA[Reply To: Spanish JSGF not listening with certain words]]></title>
+					<link>/forums/topic/spanish-jsgf-not-listening-with-certain-words/#post-1021365</link>
+					<pubDate>Fri, 23 May 2014 17:29:00 +0000</pubDate>
+					<dc:creator>chickenthief2</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks, I&#8217;ll give it a try later and let you know.</p>
+<p>I suspect it&#8217;s only ch, but I&#8217;ll definitely let you know if I see any others.</p>
+<p>Makes sense as I never had a problem with listening starting under arpa.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/spanish-jsgf-not-listening-with-certain-words/#post-1021369</guid>
+					<title><![CDATA[Reply To: Spanish JSGF not listening with certain words]]></title>
+					<link>/forums/topic/spanish-jsgf-not-listening-with-certain-words/#post-1021369</link>
+					<pubDate>Sat, 24 May 2014 00:56:30 +0000</pubDate>
+					<dc:creator>chickenthief2</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hmm, so how can I access sscribe.m?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

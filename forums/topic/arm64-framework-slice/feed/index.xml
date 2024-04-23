@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>arm64 Framework Slice? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/arm64-framework-slice/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/arm64-framework-slice/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:02:12 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/arm64-framework-slice/#post-1018654</guid>
+					<title><![CDATA[arm64 Framework Slice?]]></title>
+					<link>/forums/topic/arm64-framework-slice/#post-1018654</link>
+					<pubDate>Wed, 16 Oct 2013 22:19:08 +0000</pubDate>
+					<dc:creator>wfilleman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>Any timetable you can comment on for an arm64 slice to the framework? I&#8217;m working to add speech recognition to my app(s) and this is one of the few frameworks left I need to support arm64 and the iPhone 5s (And presumably the new iPad here next week).</p>
+<p>Thanks for the response!<br />
+Wes</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/arm64-framework-slice/#post-1018656</guid>
+					<title><![CDATA[Reply To: arm64 Framework Slice?]]></title>
+					<link>/forums/topic/arm64-framework-slice/#post-1018656</link>
+					<pubDate>Thu, 17 Oct 2013 07:02:57 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Wes,</p>
+<p>Good question. I only just received my long-ago-ordered 5S yesterday (OpenEars has to be tested for 64-bit compatibility on a real device since a fair amount of its important code isn&#8217;t used on the Simulator), so this is the next issue up after the upcoming 1.6 release that is currently in testing. Exact timeframes aren&#8217;t possible but I know it&#8217;s important to get out ASAP.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/arm64-framework-slice/#post-1018659</guid>
+					<title><![CDATA[Reply To: arm64 Framework Slice?]]></title>
+					<link>/forums/topic/arm64-framework-slice/#post-1018659</link>
+					<pubDate>Thu, 17 Oct 2013 11:13:21 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Just for clarity&#8217;s sake, having an arm64 slice isn&#8217;t necessary in order to support those devices, just to support them with 64-bit width. To create apps for arm64 devices that run 32-bit code, it is only necessary to remove arm64 from the architectures entry in your Xcode build settings. There are many libraries which either don&#8217;t have a 64-bit version out yet because (like OpenEars) they couldn&#8217;t test against the Simulator and aren&#8217;t based in the US so couldn&#8217;t take advantage of greater supplies of the 5S, or may not for a long time since iOS isn&#8217;t one of their important build targets or they don&#8217;t want to drop support for older iOS versions (this is an issue for me, since defaulting to arm64 support will mean cutting off two entire major versions that I otherwise have decided to support).</p>
+<p><a href="http://stackoverflow.com/questions/19399472/warning-architectures-armv7-armv7s-didnt-contain-all-required-architectures" rel="nofollow">http://stackoverflow.com/questions/19399472/warning-architectures-armv7-armv7s-didnt-contain-all-required-architectures</a></p>
+<p><a href="http://stackoverflow.com/questions/18983975/run-32-bit-library-on-iphone-5s-64-bit" rel="nofollow">http://stackoverflow.com/questions/18983975/run-32-bit-library-on-iphone-5s-64-bit</a></p>
+<p>But as I said, I appreciate that everyone wants to support arm64 soon and I do as well.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/arm64-framework-slice/#post-1018665</guid>
+					<title><![CDATA[Reply To: arm64 Framework Slice?]]></title>
+					<link>/forums/topic/arm64-framework-slice/#post-1018665</link>
+					<pubDate>Thu, 17 Oct 2013 14:06:54 +0000</pubDate>
+					<dc:creator>wfilleman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>Thanks for the response and congrats on your new iPhone 5S!</p>
+<p>Yes, agreed on all points. I could remove arm64 from the valid architectures list and release, however, here&#8217;s my reasons for supporting the arm64 slice:</p>
+<p>&#8211; All current and future high-end iPhones and iPads (maybe even the mini at some point) will be using the new 64-bit chip.<br />
+&#8211; 64-bit uses the the new, redesigned 64-bit iOS frameworks. Object creation is about half the time and there are many fixes (read fixed memory leaks) here still affecting the 32-bit frameworks.<br />
+&#8211; If your app supports 64-bit, iOS doesn&#8217;t have to load in the 32-bit framework. This give more memory availability to your app.<br />
+&#8211; My app deals with heavy real-time video processing from multiple sources. The performance boost I&#8217;m seeing with arm64 is very significant.<br />
+&#8211; My user base is already at &gt; 75% iOS7. iOS 5 is less than 2%. My next app update will only support iOS 7. Older users can always download the latest available for their device. But any new features (like voice) will be an iOS 7 only feature for my app.</p>
+<p>I do use a host of other libraries where most have converted to offering an arm64 slice (however, I am still waiting on one other library to make the conversion). I&#8217;ve seen these other libraries do it a multitude of ways. Some have found a way to support back to 4.3 in one library.a file. Other&#8217;s have opted to release 2 frameworks, one that targets iOS 5 and below and another that targets iOS 6 and up (including arm64).</p>
+<p>With arm64, there are some great reasons to support it, but I do sympathize and agree that supporting a new slice with the backwards compatibility restrictions can be difficult.</p>
+<p>Thanks for all that you do. I&#8217;ve been playing with the demos (including Rejecto) and I&#8217;ve VERY impressed with what this on-device speech recognizer can do and I&#8217;m really looking forward to offering this as an upsell feature to my apps.</p>
+<p>Thanks!<br />
+Wes</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/arm64-framework-slice/#post-1018666</guid>
+					<title><![CDATA[Reply To: arm64 Framework Slice?]]></title>
+					<link>/forums/topic/arm64-framework-slice/#post-1018666</link>
+					<pubDate>Thu, 17 Oct 2013 14:45:48 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Wes,</p>
+<p>We&#8217;re in complete agreement; your points are 100% on the money and I&#8217;m actually looking forward to seeing if there are new features that can be supported that will take advantage of the strengths of the new architecture as it becomes more mainstream. I wanted to clarify just so that someone else reading this discussion doesn&#8217;t think they can&#8217;t make an app for the 5S at all yet, and to head off potentially having to answer that misconception in other channels. Thank you for your kind words!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/arm64-framework-slice/#post-1018667</guid>
+					<title><![CDATA[Reply To: arm64 Framework Slice?]]></title>
+					<link>/forums/topic/arm64-framework-slice/#post-1018667</link>
+					<pubDate>Thu, 17 Oct 2013 16:11:04 +0000</pubDate>
+					<dc:creator>wfilleman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>Agreed. arm7/7s/32-bit still works on the iPhone 5S. However, taking the time to convert to arm64 really impressed me with how easy it was to do (maybe 2 days tops) and the performance gains I got from running native 64-bit code on the new iPhone.</p>
+<p>Hopefully the OpenEars code base won&#8217;t give you too much trouble to compile as arm64. </p>
+<p>Wes </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/arm64-framework-slice/#post-1018668</guid>
+					<title><![CDATA[Reply To: arm64 Framework Slice?]]></title>
+					<link>/forums/topic/arm64-framework-slice/#post-1018668</link>
+					<pubDate>Thu, 17 Oct 2013 16:21:04 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I would be surprised if it were easy or fast, since the amount of source which is potentially affected and has to be cleared as working as expected is in the multiple hundreds of individual source files, or more than a thousand files including the plugins. Realistically, it is going to take some time to do properly.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/arm64-framework-slice/#post-1018669</guid>
+					<title><![CDATA[Reply To: arm64 Framework Slice?]]></title>
+					<link>/forums/topic/arm64-framework-slice/#post-1018669</link>
+					<pubDate>Thu, 17 Oct 2013 16:59:42 +0000</pubDate>
+					<dc:creator>wfilleman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>No argument here. I&#8217;m sure every project will be different. Here were my stats:</p>
+<p>Main app source:<br />
+400+ source files<br />
+~170k LOC</p>
+<p>COTS library to support real-time video streaming decoding (I have to compile this on my own):<br />
+Thousands of source files<br />
+??? LOC. Easily 400k+ LOC</p>
+<p>I didn&#8217;t find any issues with the wider bit definitions for integers, etc. In fact I could have just done a recompile and left the hundreds of warnings in place and the app worked perfectly. The majority of the time spent was cleaning up the warnings (mostly NSInteger casting).</p>
+<p>Now, if you are doing some intense bit shifting work where you need to detect the end of the 32-bit register, then I could see where moving to 64 might cause you some headaches. </p>
+<p>Hopefully it won&#8217;t be too bad for you; I&#8217;m sure every project will have a different experience.</p>
+<p>Good luck! (and I&#8217;m eagerly anticipating arm64 support :)<br />
+Wes</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/arm64-framework-slice/#post-1018670</guid>
+					<title><![CDATA[Reply To: arm64 Framework Slice?]]></title>
+					<link>/forums/topic/arm64-framework-slice/#post-1018670</link>
+					<pubDate>Thu, 17 Oct 2013 17:01:33 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/arm64-framework-slice/#post-1019146</guid>
+					<title><![CDATA[Reply To: arm64 Framework Slice?]]></title>
+					<link>/forums/topic/arm64-framework-slice/#post-1019146</link>
+					<pubDate>Thu, 12 Dec 2013 21:03:08 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Well, that turned out to be extremely difficult but 64-bit is now out for OpenEars and all of its plugins at <a href="/openears">/openears</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

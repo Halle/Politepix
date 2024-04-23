@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>SaveThatWave: specifying the file name &#8211; Politepix</title>
+		<atom:link href="/forums/topic/savethatwave-specifying-the-file-name/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/savethatwave-specifying-the-file-name/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:44:07 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/savethatwave-specifying-the-file-name/#post-1017171</guid>
+					<title><![CDATA[SaveThatWave: specifying the file name]]></title>
+					<link>/forums/topic/savethatwave-specifying-the-file-name/#post-1017171</link>
+					<pubDate>Wed, 08 May 2013 02:09:28 +0000</pubDate>
+					<dc:creator>gman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>Is there a way to specify the file name for a SaveThatWave recording? I can&#8217;t find it in the docs. For now I&#8217;m using a move in the call back, but that&#8217;s obviously not a great solution. </p>
+<p>Thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/savethatwave-specifying-the-file-name/#post-1017173</guid>
+					<title><![CDATA[Reply To: SaveThatWave: specifying the file name]]></title>
+					<link>/forums/topic/savethatwave-specifying-the-file-name/#post-1017173</link>
+					<pubDate>Wed, 08 May 2013 06:46:15 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi gman,</p>
+<p>Sorry, the naming system isn&#8217;t possible to change currently. I can put it in as a feature request. The timestamp would always need to be part of it in order to avoid collisions.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/savethatwave-specifying-the-file-name/#post-1017188</guid>
+					<title><![CDATA[Reply To: SaveThatWave: specifying the file name]]></title>
+					<link>/forums/topic/savethatwave-specifying-the-file-name/#post-1017188</link>
+					<pubDate>Fri, 10 May 2013 01:44:15 +0000</pubDate>
+					<dc:creator>gman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Makes sense. No need to open a feature request since I have a workaround.<br />
+Thanks again.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

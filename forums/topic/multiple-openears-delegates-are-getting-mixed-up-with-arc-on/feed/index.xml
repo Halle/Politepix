@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>multiple OpenEars delegates are getting mixed up with ARC on &#8211; Politepix</title>
+		<atom:link href="/forums/topic/multiple-openears-delegates-are-getting-mixed-up-with-arc-on/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/multiple-openears-delegates-are-getting-mixed-up-with-arc-on/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:56:55 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/multiple-openears-delegates-are-getting-mixed-up-with-arc-on/#post-1021500</guid>
+					<title><![CDATA[multiple OpenEars delegates are getting mixed up with ARC on]]></title>
+					<link>/forums/topic/multiple-openears-delegates-are-getting-mixed-up-with-arc-on/#post-1021500</link>
+					<pubDate>Wed, 04 Jun 2014 16:04:22 +0000</pubDate>
+					<dc:creator>gsboris</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I have 2 view controllers (VC1 and VC2) each of them uses OpenEars for TextToSpeach.<br />
+I also implemented delegate &lt;OpenEarsEventsObserver&gt; to capture -(void)fliteDidStartSpeaking{}<br />
+-(void)fliteDidFinishSpeaking{} events.</p>
+<p>My problem: on VC1 everything works perfect, then I move on to VC2 and here when -(void)fliteDidStartSpeaking{} or -(void)fliteDidFinishSpeaking{} events occur it uses methods from the VC1 not the current VC2.</p>
+<p>I tried nil-ing OpenEars object (cannot release in ARC) on VC1 before moving to VC2, app is crashing.</p>
+<p>To make it work, I had to turn off ARC and manually release all OpenEars objects on VC1 before moving on to VC2.</p>
+<p>Is there a way to make OpenEars use proper methods without turning ARC off?</p>
+<p>Here is my VC1.h (that malfunctions with ARC on, to make it work: ARC=off in project build settings and release OpenEars objects in viewWillDisappear and alloc/init in viewWillAppear):</p>
+<p>    #import &lt;Slt/Slt.h&gt;<br />
+    #import &lt;OpenEars/FliteController.h&gt;<br />
+    #import &lt;OpenEars/OpenEarsEventsObserver.h&gt;<br />
+    @interface VC1: UIViewController&lt;OpenEarsEventsObserverDelegate&gt;{<br />
+        FliteController *fliteController;<br />
+        Slt *slt;<br />
+        OpenEarsEventsObserver *openEarsEventsObserver;<br />
+        }<br />
+    @property (strong, nonatomic) FliteController *fliteController;<br />
+    @property (strong, nonatomic) Slt *slt;<br />
+    @property (strong, nonatomic) OpenEarsEventsObserver *openEarsEventsObserver;</p>
+<p>VC1.m</p>
+<p>    @synthesize fliteController,slt,openEarsEventsObserver;</p>
+<p>    -(void)say_it{<br />
+        [self.fliteController say:someTxt withVoice:self.slt];<br />
+    }<br />
+    -(void)stop_talking{<br />
+        [self.fliteController interruptTalking];<br />
+    }</p>
+<p>    -(void)fliteDidStartSpeaking{<br />
+        //do somthing when started speaking<br />
+    }<br />
+    -(void)fliteDidFinishSpeaking{<br />
+        //do something when finished speaking<br />
+    }<br />
+    -(void)navToNextVC{//next view<br />
+        UIViewController *nextVC= [self.storyboard instantiateViewControllerWithIdentifier:@&#8221;VC2&#8243;];<br />
+        [self.navigationController pushViewController:nextVC animated:YES];<br />
+    }<br />
+    -(void)viewDidLoad{<br />
+        fliteController = [[FliteController alloc] init];<br />
+        slt = [[Slt alloc] init];<br />
+        openEarsEventsObserver = [[OpenEarsEventsObserver alloc] init];<br />
+        [openEarsEventsObserver setDelegate:self];<br />
+    }</p>
+<p>VC2.h amd .m is essentially the same, just different methods for fliteDidStart(Finished)Speaking.</p>
+<p>Thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multiple-openears-delegates-are-getting-mixed-up-with-arc-on/#post-1021501</guid>
+					<title><![CDATA[Reply To: multiple OpenEars delegates are getting mixed up with ARC on]]></title>
+					<link>/forums/topic/multiple-openears-delegates-are-getting-mixed-up-with-arc-on/#post-1021501</link>
+					<pubDate>Wed, 04 Jun 2014 17:10:44 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Is the issue that only VC1 is getting callbacks, or is it possible that VC1 and VC2 are simultaneously getting callbacks from the same speech but you are reacting to the callback in VC1 first and not getting the info that VC2 is also getting the callback? The expectation is that they would both get a callback from the same speech event if they are both instantiated with OpenEarsEventsObserver delegates.</p>
+<p>Second question is about what is being set to nil. Did you set FliteController to nil, FliteController&#8217;s OpenEarsEventsObserver, or FliteController&#8217;s OpenEarsEventsObserver.delegate?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multiple-openears-delegates-are-getting-mixed-up-with-arc-on/#post-1021502</guid>
+					<title><![CDATA[Reply To: multiple OpenEars delegates are getting mixed up with ARC on]]></title>
+					<link>/forums/topic/multiple-openears-delegates-are-getting-mixed-up-with-arc-on/#post-1021502</link>
+					<pubDate>Wed, 04 Jun 2014 17:37:26 +0000</pubDate>
+					<dc:creator>gsboris</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>you are right, they both are called back, 1st on VC2 then on VC1.<br />
+1st I tried nil-ing everything i.e. fliteController,slt,openEarsEventsObserver.delegate,openEarsEventsObserver then just openEarsEventsObserver.delegate in both cases app crashes.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multiple-openears-delegates-are-getting-mixed-up-with-arc-on/#post-1021503</guid>
+					<title><![CDATA[Reply To: multiple OpenEars delegates are getting mixed up with ARC on]]></title>
+					<link>/forums/topic/multiple-openears-delegates-are-getting-mixed-up-with-arc-on/#post-1021503</link>
+					<pubDate>Wed, 04 Jun 2014 17:42:35 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>It should only be necessary to set the delegate of OpenEarsEventsObserver to nil – can you just do that and show the logging output and the backtrace for the crash? To get the backtrace you&#8217;ll type &#8220;bt&#8221; when the app suspends due to the crash and you have the lldb prompt. It&#8217;s surprising that it crashes without a set delegate (versus the crash originating from something else) since the delegate methods are optional.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multiple-openears-delegates-are-getting-mixed-up-with-arc-on/#post-1021505</guid>
+					<title><![CDATA[Reply To: multiple OpenEars delegates are getting mixed up with ARC on]]></title>
+					<link>/forums/topic/multiple-openears-delegates-are-getting-mixed-up-with-arc-on/#post-1021505</link>
+					<pubDate>Wed, 04 Jun 2014 17:45:02 +0000</pubDate>
+					<dc:creator>gsboris</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>kk, will try and get back to u asap</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multiple-openears-delegates-are-getting-mixed-up-with-arc-on/#post-1021506</guid>
+					<title><![CDATA[Reply To: multiple OpenEars delegates are getting mixed up with ARC on]]></title>
+					<link>/forums/topic/multiple-openears-delegates-are-getting-mixed-up-with-arc-on/#post-1021506</link>
+					<pubDate>Wed, 04 Jun 2014 17:53:14 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK. It&#8217;s actually working as designed that both view controllers get the events if they are both instantiated and have self as delegates. We can troubleshoot why you can&#8217;t make the first view controller no longer a delegate of the object.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multiple-openears-delegates-are-getting-mixed-up-with-arc-on/#post-1021507</guid>
+					<title><![CDATA[Reply To: multiple OpenEars delegates are getting mixed up with ARC on]]></title>
+					<link>/forums/topic/multiple-openears-delegates-are-getting-mixed-up-with-arc-on/#post-1021507</link>
+					<pubDate>Wed, 04 Jun 2014 18:02:40 +0000</pubDate>
+					<dc:creator>gsboris</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>IT IS WORKING NOW, sort of, but crashing<br />
+it does not call VC1 now from VC2 when I just .delegate=nil on view disappear</p>
+<p>it is crashing while trying:<br />
+[fliteController say:[txtArr objectAtIndex:hlIndx] withVoice:self.slt];</p>
+<p>here is bt:<br />
+* thread #1: tid = 0x63a5f, 0x0003d506 AIMExplorer`feat_find_featpair + 70, queue = &#8216;com.apple.main-thread&#8217;, stop reason = EXC_BAD_ACCESS (code=1, address=0xe8240489)<br />
+    frame #0: 0x0003d506 AIMExplorer`feat_find_featpair + 70<br />
+    frame #1: 0x0003d9e4 AIMExplorer`feat_set + 52<br />
+    frame #2: 0x0003daed AIMExplorer`feat_set_float + 77<br />
+    frame #3: 0x0003c769 AIMExplorer`flite_feat_set_float + 57<br />
+    frame #4: 0x000e898a AIMExplorer`-[FliteController say:withVoice:] + 746<br />
+  * frame #5: 0x0000df9b AIMExplorer`-[HighlightAndReadAloudViewController say_hlTxt](self=0x0a653b50, _cmd=0x00131581) + 203 at HighlightAndReadAloudViewController.m:180<br />
+    frame #6: 0x0000ceca AIMExplorer`-[HighlightAndReadAloudViewController buttonHandler:](self=0x0a653b50, _cmd=0x00130577, sender=0x0a6dba60) + 4186 at HighlightAndReadAloudViewController.m:100<br />
+    frame #7: 0x02245880 libobjc.A.dylib`-[NSObject performSelector:withObject:withObject:] + 77<br />
+    frame #8: 0x00ef53b9 UIKit`-[UIApplication sendAction:to:from:forEvent:] + 108<br />
+    frame #9: 0x00ef5345 UIKit`-[UIApplication sendAction:toTarget:fromSender:forEvent:] + 61<br />
+    frame #10: 0x00ff6bd1 UIKit`-[UIControl sendAction:to:forEvent:] + 66<br />
+    frame #11: 0x00ff6fc6 UIKit`-[UIControl _sendActionsForEvents:withEvent:] + 577<br />
+    frame #12: 0x00ff6243 UIKit`-[UIControl touchesEnded:withEvent:] + 641<br />
+    frame #13: 0x00f34ddd UIKit`-[UIWindow _sendTouchesForEvent:] + 852<br />
+    frame #14: 0x00f359d1 UIKit`-[UIWindow sendEvent:] + 1117<br />
+    frame #15: 0x00f075f2 UIKit`-[UIApplication sendEvent:] + 242<br />
+    frame #16: 0x00ef1353 UIKit`_UIApplicationHandleEventQueue + 11455<br />
+    frame #17: 0x0243d77f CoreFoundation`__CFRUNLOOP_IS_CALLING_OUT_TO_A_SOURCE0_PERFORM_FUNCTION__ + 15<br />
+    frame #18: 0x0243d10b CoreFoundation`__CFRunLoopDoSources0 + 235<br />
+    frame #19: 0x0245a1ae CoreFoundation`__CFRunLoopRun + 910<br />
+    frame #20: 0x024599d3 CoreFoundation`CFRunLoopRunSpecific + 467<br />
+    frame #21: 0x024597eb CoreFoundation`CFRunLoopRunInMode + 123<br />
+    frame #22: 0x04b075ee GraphicsServices`GSEventRunModal + 192<br />
+    frame #23: 0x04b0742b GraphicsServices`GSEventRun + 104<br />
+    frame #24: 0x00ef3f9b UIKit`UIApplicationMain + 1225<br />
+    frame #25: 0x0000be3d AIMExplorer`main(argc=1, argv=0xbfffed74) + 141 at main.m:16</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multiple-openears-delegates-are-getting-mixed-up-with-arc-on/#post-1021509</guid>
+					<title><![CDATA[Reply To: multiple OpenEars delegates are getting mixed up with ARC on]]></title>
+					<link>/forums/topic/multiple-openears-delegates-are-getting-mixed-up-with-arc-on/#post-1021509</link>
+					<pubDate>Wed, 04 Jun 2014 18:06:33 +0000</pubDate>
+					<dc:creator>gsboris</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>so now when I go back to VC1 it is crashing, that is</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multiple-openears-delegates-are-getting-mixed-up-with-arc-on/#post-1021510</guid>
+					<title><![CDATA[Reply To: multiple OpenEars delegates are getting mixed up with ARC on]]></title>
+					<link>/forums/topic/multiple-openears-delegates-are-getting-mixed-up-with-arc-on/#post-1021510</link>
+					<pubDate>Wed, 04 Jun 2014 18:06:52 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That looks more like it&#8217;s crashing because you aren&#8217;t using the recommended memory management from the sample app and tutorial. Can you switch over to that instead? Take a look at how FliteController is set up in the sample app and then only called as a property with self.fliteController. It&#8217;s also demonstrated step-by-step in the tutorial.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multiple-openears-delegates-are-getting-mixed-up-with-arc-on/#post-1021511</guid>
+					<title><![CDATA[Reply To: multiple OpenEars delegates are getting mixed up with ARC on]]></title>
+					<link>/forums/topic/multiple-openears-delegates-are-getting-mixed-up-with-arc-on/#post-1021511</link>
+					<pubDate>Wed, 04 Jun 2014 18:09:33 +0000</pubDate>
+					<dc:creator>gsboris</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, thanks, will do that</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

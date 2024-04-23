@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Rejecto &#8211; LanguageModel &#8211; Politepix</title>
+		<atom:link href="/forums/topic/rejecto-languagemodel/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/rejecto-languagemodel/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:44:48 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/rejecto-languagemodel/#post-14823</guid>
+					<title><![CDATA[Rejecto &#8211; LanguageModel]]></title>
+					<link>/forums/topic/rejecto-languagemodel/#post-14823</link>
+					<pubDate>Fri, 07 Dec 2012 12:50:34 +0000</pubDate>
+					<dc:creator>lookbadgers</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>It&#8217;s been a while since I last played with OpenEars, it&#8217;s great to see the enhancements and addition of sound recording testing.  I hope you are doing well, just a quick question.</p>
+<p>Can a language model be used with Rejecto? Or are there any plans to add support for this?</p>
+<p>Currently it uses generateRejectingLanguageModelFromArray but for future performance improvements would a language model be faster?</p>
+<p>Thank you,</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rejecto-languagemodel/#post-14824</guid>
+					<title><![CDATA[Reply To: Rejecto – LanguageModel]]></title>
+					<link>/forums/topic/rejecto-languagemodel/#post-14824</link>
+					<pubDate>Fri, 07 Dec 2012 13:00:04 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hiya and welcome back,</p>
+<p>I can take this under advisement as a requested feature, but the main thing Rejecto does is create a language model that incorporates the rejection features and has the rejecting elements added to the language model&#8217;s probability calculation, so there is no getting around the requirement to recalculate the lm&#8217;s probability model even if you start with a completed one. It also has to check and make sure that you aren&#8217;t already using one of the rejection phonemes in your real model and if so remove that phoneme from the rejection model, meaning that a premade .dic would also still need processing.</p>
+<p>Not saying there is no way, just that it isn&#8217;t trivial and it won&#8217;t vastly cut down on processing time.</p>
+<p>If you are seeing unpleasantly slow generation for a dynamic model, maybe you want to look at this tip I wrote up which had a suggestion at the end for avoiding any repeated use of the fallback pronunciation generation technique (i.e. the slow one):</p>
+<p><a href="/2012/12/04/openears-tips-and-tricks-5-customizing-the-master-phonetic-dictionary-or-using-a-new-one/">/2012/12/04/openears-tips-and-tricks-5-customizing-the-master-phonetic-dictionary-or-using-a-new-one/</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

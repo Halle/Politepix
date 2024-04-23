@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Build failed due to Duplicate Symbol &#8211; cannot proceed. Need Help &#8211; Politepix</title>
+		<atom:link href="/forums/topic/build-failed-due-to-duplicate-symbol-cannot-proceed-need-help/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/build-failed-due-to-duplicate-symbol-cannot-proceed-need-help/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:07:14 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/build-failed-due-to-duplicate-symbol-cannot-proceed-need-help/#post-1021300</guid>
+					<title><![CDATA[Build failed due to Duplicate Symbol &#8211; cannot proceed. Need Help]]></title>
+					<link>/forums/topic/build-failed-due-to-duplicate-symbol-cannot-proceed-need-help/#post-1021300</link>
+					<pubDate>Sat, 17 May 2014 17:29:22 +0000</pubDate>
+					<dc:creator>scottyistaken</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I followed the tutorials when integrating OpenEars to my existing app, I googled a lot and tried many of the suggestions but still cannot fix this build failed duplicate symbol.<br />
+I am using a device to build and not the simulator. I am using XCODE 5.1 and I downloaded the latest OpenEars distribution from your website. I am getting a duplicate symbol _update in:<br />
+    myapp/lib/Debug-iphoneos/myapp.framework/IOTmyapp<br />
+    /users/dev/Desktop/IOTmyappDebug/Framework/OpenEars.framework/OpenEars(OpenEars)<br />
+   ld: 1 duplicate symbol for architecture armv7</p>
+<p>I have done the following:<br />
+1. Drag the Framework folder to my project and made sure that create groups for any added folders is selected and NOT create folder references. I diligently followed the steps in the tutorial.<br />
+2. Check and there is no duplicate in Build Phases -&gt; Compile Sources<br />
+3. I remove the -all_load in other linker flag to isolate but problem exist.<br />
+4. I tried to use lipo, ar to flatten and try to remove the duplicate symbol _update but it says ar: _update not found in archive<br />
+5. Check if there is duplicate in framework but there is none.<br />
+6. Check #import if I accidentally imported .m instead of .h and everything is fine. </p>
+<p>Please help as I cannot use OpenEars since I am stuck in the build phase. Any lead to troubleshoot this problem will be much appreciated. </p>
+<p>Thank you very much.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/build-failed-due-to-duplicate-symbol-cannot-proceed-need-help/#post-1021301</guid>
+					<title><![CDATA[Reply To: Build failed due to Duplicate Symbol &#8211; cannot proceed. Need Help]]></title>
+					<link>/forums/topic/build-failed-due-to-duplicate-symbol-cannot-proceed-need-help/#post-1021301</link>
+					<pubDate>Sat, 17 May 2014 17:43:17 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Hmm, this looks a bit unexpected:</p>
+<pre>
+myapp/lib/Debug-iphoneos/myapp.framework/IOTmyapp
+/users/dev/Desktop/IOTmyappDebug/Framework/OpenEars.framework/OpenEars(OpenEars)
+</pre>
+<p>I don&#8217;t quite recognize why there would be a .framework for your app, and also why the folder &#8216;users&#8217; in the directory leading to the OpenEars framework is lowercase on an OS X system. Can you give me some more information about the platform and structure of this project?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/build-failed-due-to-duplicate-symbol-cannot-proceed-need-help/#post-1021304</guid>
+					<title><![CDATA[Reply To: Build failed due to Duplicate Symbol &#8211; cannot proceed. Need Help]]></title>
+					<link>/forums/topic/build-failed-due-to-duplicate-symbol-cannot-proceed-need-help/#post-1021304</link>
+					<pubDate>Sat, 17 May 2014 18:19:48 +0000</pubDate>
+					<dc:creator>scottyistaken</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for your quick reply. Sorry, my bad. I gave pseudo names as I retype to another PC&#8230; Below is the cut-and-paste of the error from Xcode:</p>
+<p>duplicate symbol _update in:<br />
+    IOTCamViewer/lib/Debug-iphoneos/IOTCamera.framework/IOTCamera<br />
+    /Users/dev/Desktop/IOTCamViewerDebug/Framework/OpenEars.framework/OpenEars(OpenEars)<br />
+ld: 1 duplicate symbol for architecture armv7<br />
+clang: error: linker command failed with exit code 1 (use -v to see invocation)</p>
+<p>The IOTCamera.framework is a third-party provided framework. Prior to adding the openears framework, the app build and run ok. After I copy the openear framework to the existing app and then build using device (not simulator), I get the duplicate symbol error. Hope you can help me as I am stuck and cannot move forward. </p>
+<p>Thank You!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/build-failed-due-to-duplicate-symbol-cannot-proceed-need-help/#post-1021305</guid>
+					<title><![CDATA[Reply To: Build failed due to Duplicate Symbol &#8211; cannot proceed. Need Help]]></title>
+					<link>/forums/topic/build-failed-due-to-duplicate-symbol-cannot-proceed-need-help/#post-1021305</link>
+					<pubDate>Sat, 17 May 2014 18:30:45 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, thank you for the background info – that makes it easier to help out. </p>
+<p>This could just be because each framework has a function called update, so when it was just IOTCamera there was only one update() function and then you added OpenEars and there were too many functions with that name. </p>
+<p>OpenEars&#8217; function &#8216;update&#8217; is declared in the file ac_hash.h, defined in the file ac_hash.c, and only referenced a single time in the file ac_lmfunc_impl.c on line 81 to the best of my knowledge. So, I would just rename it in these three places (I recommend &#8220;oe_update&#8221; or something like that), recompile the framework, and see if it clears up. </p>
+<p>If you&#8217;d like help with any specifics of that process, just let me know which part is giving difficulty.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/build-failed-due-to-duplicate-symbol-cannot-proceed-need-help/#post-1021306</guid>
+					<title><![CDATA[Reply To: Build failed due to Duplicate Symbol &#8211; cannot proceed. Need Help]]></title>
+					<link>/forums/topic/build-failed-due-to-duplicate-symbol-cannot-proceed-need-help/#post-1021306</link>
+					<pubDate>Sat, 17 May 2014 19:29:07 +0000</pubDate>
+					<dc:creator>scottyistaken</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thank you so much. You rock!</p>
+<p>I changed the 3 files as per your suggestion, recompiled the OpenEars Framework and drag the framework to my app. I was able to build successfully. Will start using OpenEars and see how it goes. </p>
+<p>Happy weekend. I was blown away by your fast response. Best of all, it fixed the problem :)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/build-failed-due-to-duplicate-symbol-cannot-proceed-need-help/#post-1021308</guid>
+					<title><![CDATA[Reply To: Build failed due to Duplicate Symbol &#8211; cannot proceed. Need Help]]></title>
+					<link>/forums/topic/build-failed-due-to-duplicate-symbol-cannot-proceed-need-help/#post-1021308</link>
+					<pubDate>Sat, 17 May 2014 20:58:15 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Glad it helped!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

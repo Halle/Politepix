@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>OOV words &#8211; training ? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/oov-words-training/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/oov-words-training/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:06:10 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/oov-words-training/#post-1020399</guid>
+					<title><![CDATA[OOV words &#8211; training ?]]></title>
+					<link>/forums/topic/oov-words-training/#post-1020399</link>
+					<pubDate>Sat, 01 Mar 2014 22:10:42 +0000</pubDate>
+					<dc:creator>ranavision</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;ve tried openears sucessfully, and generate custom vocabularies from arrays.<br />
+However, we need to recognize names from the addressbook, and here the fallback method inevitably fails miserably very often&#8230;<br />
+Do I understand correctly Flite is asked to synthesize the text, and returns an utterance that in turn generates the phonemes? Is it possible to inject a user recording instead and get back the phonemes?<br />
+Or can I get to see what the actual phonemes were that Openears thinks it has heard? I could then simply add them to the dictionary, using a few (2), (3) etc alternatives?<br />
+I&#8217;ve played around a bit with Rejecto but it doesn&#8217;t seem to help.</p>
+<p>I could write a parser and transcribe the texts (mainly French and Dutch sounding names) to phonemes myself, but that would be a lot of (guessing) work&#8230;. I&#8217;m pretty sure the data I need is generated somewhere in the recognition process???</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/oov-words-training/#post-1020400</guid>
+					<title><![CDATA[Reply To: OOV words &#8211; training ?]]></title>
+					<link>/forums/topic/oov-words-training/#post-1020400</link>
+					<pubDate>Sun, 02 Mar 2014 07:46:17 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>In my direct experience name generation from the addressbook usually works quite well on the order of about 90% accuracy – are the names primarily coming from another language?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/oov-words-training/#post-1020403</guid>
+					<title><![CDATA[Reply To: OOV words &#8211; training ?]]></title>
+					<link>/forums/topic/oov-words-training/#post-1020403</link>
+					<pubDate>Sun, 02 Mar 2014 10:37:38 +0000</pubDate>
+					<dc:creator>ranavision</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yes, like I said, Dutch, French. A few examples of differences fallback vs. (manual) below.<br />
+I&#8217;m not denying the 90%, I was having several &#8216;wow&#8217; moments wint openears!<br />
+But with larger lists, the accuracy drops, not only because of the missed names, but also because it starts &#8216;constructing&#8217; hits with mis-interpreted bits from these names&#8230;<br />
+So I was still hoping, as per my original question, that what I need is right there somewhere already :-)</p>
+<ul>
+<li>CLAES	K L EY Z (K L HH AH Z)</li>
+<li>HANNOT	HH AE N AA T (HH AE N OW)
+</li>
+<li>HEYRAUD	HH EH R AO D	(EY R OW)
+</li>
+<li>JACQUELINE(3)	JH AE K AH L IH N	(JH AH K L IY N)
+</li>
+<li>JEANFRANCOIS	JH IY N F R AE N S W AA	(JH AA N F R AA N Z W AH)
+</li>
+<li>MAILLEUX	M EH L OW	(M AA UW)
+</li>
+<li>PATRICK	P AE T R IH K	(P AA T R IH K)
+</li>
+<li>VILQUIN	V IH L K W IH N	(V IH L K AY N)
+</li>
+</ul>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/oov-words-training/#post-1020404</guid>
+					<title><![CDATA[Reply To: OOV words &#8211; training ?]]></title>
+					<link>/forums/topic/oov-words-training/#post-1020404</link>
+					<pubDate>Sun, 02 Mar 2014 11:05:07 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>No, there is really no way that you can get really accurate phoneme transcriptions from words from other languages using English-language tools. What makes them work correctly in English is that they follow grapheme to phoneme rules which can be said to apply to English (to the extent that g2p ever works well with English), so by definition they have to give mixed results for other languages.</p>
+<p>Here is how the two methods in OpenEars work in English. The first method tries to look up the word in the dictionary. If it isn&#8217;t found, the second method uses a set of rules for estimating the phonemes in a word based on the graphemes in it. These rules only apply to English – other languages have very different rules. Pure phoneme-based recognition doesn&#8217;t work well so IMO there is no way to reverse-engineer a pronunciation from a speech recognition utterance that will have a higher degree of accuracy than the fallback method. This problem will be extremely compounded by the fact that you will be doing recognition of people with accents that are very different than the speakers found in the English acoustic model that corresponds to the phonemes you&#8217;re looking for.</p>
+<p>If this were my task I would try to break it down as follows:</p>
+<p>1. Get a big word list of French names and a big word list of Dutch names. Both languages have much more consistent grapheme to phoneme rules than English, so it should be possible to find their phonemes in their native language by finding a source for those rules, for instance a g2p software library.<br />
+2. Create a map by which you can convert the phonemes found in those two word lists into closest approximations of the ones in the English set that are used by the acoustic model.<br />
+3. Add this combined list to the lookup list used by the main method.</p>
+<p>But getting good results with the language model generator in a language other than English or Spanish is really not expected behavior, so this will definitely need some kind of strategy for obtaining more text data including pronunciation transcriptions.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/oov-words-training/#post-1020406</guid>
+					<title><![CDATA[Reply To: OOV words &#8211; training ?]]></title>
+					<link>/forums/topic/oov-words-training/#post-1020406</link>
+					<pubDate>Sun, 02 Mar 2014 11:38:09 +0000</pubDate>
+					<dc:creator>ranavision</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>There are a few more approaches, one could be step-2 like: mapping dutch graphemes to english graphemes and submit that to the fallback. Had some good results with that and works on the fly.<br />
+Thanks for the feedback, I now know better what way to go about it.<br />
+And, finally, never trust IH K S P EH K T AH D B AH HH EY V Y ER.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/oov-words-training/#post-1020408</guid>
+					<title><![CDATA[Reply To: OOV words &#8211; training ?]]></title>
+					<link>/forums/topic/oov-words-training/#post-1020408</link>
+					<pubDate>Sun, 02 Mar 2014 12:19:22 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>There are a few more approaches, one could be step-2 like: mapping dutch graphemes to english graphemes and submit that to the fallback. Had some good results with that and works on the fly.</p></blockquote>
+<p>Yes, this is also a very good idea which exploits the fact that Dutch spelling is way more standard than English spelling. </p>
+<blockquote><p>And, finally, never trust IH K S P EH K T AH D B AH HH EY V Y ER.</p></blockquote>
+<p>S AA R IY,<br />
+AY<br />
+K AH N<br />
+OW N L IY<br />
+SH EY V<br />
+W AH N<br />
+Y AE K<br />
+AH T<br />
+AH<br />
+T AY M.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

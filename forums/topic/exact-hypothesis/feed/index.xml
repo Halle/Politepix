@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Exact Hypothesis &#8211; Politepix</title>
+		<atom:link href="/forums/topic/exact-hypothesis/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/exact-hypothesis/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:55:36 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/exact-hypothesis/#post-10985</guid>
+					<title><![CDATA[Exact Hypothesis]]></title>
+					<link>/forums/topic/exact-hypothesis/#post-10985</link>
+					<pubDate>Thu, 06 Sep 2012 12:33:06 +0000</pubDate>
+					<dc:creator>hohl</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>For example I have the Following dictionary:<br />
+<code>THE BEATLES<br />
+3 DOORS DOWN<br />
+A XYZ BAND NAME</code></p>
+<p>I only want hypothesis like &#8216;The Beatles&#8217; or &#8216;3 Doors Down&#8217;, but when using<br />
+<code>- (void)pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID</code><br />
+I can also get results like &#8216;The Doors name&#8217;, &#8216;A Beatles&#8217; and some other mixes. Is it possible to limit the results to exactly what the different dictionary entries are?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/exact-hypothesis/#post-10986</guid>
+					<title><![CDATA[Reply To: Exact Hypothesis]]></title>
+					<link>/forums/topic/exact-hypothesis/#post-10986</link>
+					<pubDate>Thu, 06 Sep 2012 12:40:04 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>On the engine side of things, only if you use JSGF, but this will significantly slow down your recognition and IMO it also reduces accuracy. </p>
+<p>You can also just screen your hypotheses for the results you are looking for, i.e. if you receive something other than the complete phrase in the order you expect it, ignore it.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/exact-hypothesis/#post-1020915</guid>
+					<title><![CDATA[Reply To: Exact Hypothesis]]></title>
+					<link>/forums/topic/exact-hypothesis/#post-1020915</link>
+					<pubDate>Mon, 21 Apr 2014 14:29:14 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Please check out the new dynamic generation language for OpenEars added with version 1.7: <a href="/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/">/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/exact-hypothesis/#post-1021024</guid>
+					<title><![CDATA[Reply To: Exact Hypothesis]]></title>
+					<link>/forums/topic/exact-hypothesis/#post-1021024</link>
+					<pubDate>Thu, 24 Apr 2014 17:06:50 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>In addition to the dynamic grammar generation that has been added to stock OpenEars in version 1.7, there is also a new plugin called RuleORama which can use the same API in order to generate grammars which are a bit faster and compatible with RapidEars: <a href="/ruleorama">/ruleorama</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

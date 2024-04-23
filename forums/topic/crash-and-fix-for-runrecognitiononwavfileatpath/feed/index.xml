@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] runRecognitionOnWavFileAtPath &#8211; Politepix</title>
+		<atom:link href="/forums/topic/crash-and-fix-for-runrecognitiononwavfileatpath/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/crash-and-fix-for-runrecognitiononwavfileatpath/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:08:11 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/crash-and-fix-for-runrecognitiononwavfileatpath/#post-1024099</guid>
+					<title><![CDATA[[Resolved] runRecognitionOnWavFileAtPath]]></title>
+					<link>/forums/topic/crash-and-fix-for-runrecognitiononwavfileatpath/#post-1024099</link>
+					<pubDate>Wed, 07 Jan 2015 01:36:53 +0000</pubDate>
+					<dc:creator>mrwaim</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>When I call runRecognitionOnWavFileAtPath, it fails because there are references to self.pocketSphinxDecoder instead of localPocketSphinxDecoder.</p>
+<p>I made fixes locally, and it now works.</p>
+<p>The fixes are &#8211; adding and referencing startUtteranceForDecoder, processRawForDecoder, endUtteranceForDecoder, and nBestForDecoder.</p>
+<p>I know that runRecognitionOnWavFileAtPath is superseded by pathToTestFile but I&#8217;m having accuracy problems and I wanted to debug further.</p>
+<p>Let me know what you think. I can prepare a code change if that would help.</p>
+<p>Thanks,<br />
+Ibrahim</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/crash-and-fix-for-runrecognitiononwavfileatpath/#post-1024107</guid>
+					<title><![CDATA[Reply To: [Resolved] runRecognitionOnWavFileAtPath]]></title>
+					<link>/forums/topic/crash-and-fix-for-runrecognitiononwavfileatpath/#post-1024107</link>
+					<pubDate>Wed, 07 Jan 2015 11:17:08 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This is fixed in the current version.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/crash-and-fix-for-runrecognitiononwavfileatpath/#post-1024110</guid>
+					<title><![CDATA[Reply To: [Resolved] runRecognitionOnWavFileAtPath]]></title>
+					<link>/forums/topic/crash-and-fix-for-runrecognitiononwavfileatpath/#post-1024110</link>
+					<pubDate>Wed, 07 Jan 2015 11:48:07 +0000</pubDate>
+					<dc:creator>mrwaim</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks! I must of just missed it.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

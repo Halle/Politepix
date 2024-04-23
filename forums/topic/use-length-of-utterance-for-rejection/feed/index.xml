@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Use length of utterance for rejection? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/use-length-of-utterance-for-rejection/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/use-length-of-utterance-for-rejection/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:52:08 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/use-length-of-utterance-for-rejection/#post-1018895</guid>
+					<title><![CDATA[Use length of utterance for rejection?]]></title>
+					<link>/forums/topic/use-length-of-utterance-for-rejection/#post-1018895</link>
+					<pubDate>Thu, 14 Nov 2013 00:53:00 +0000</pubDate>
+					<dc:creator>morchella</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I realize that OpenEars is not really intended for keyword spotting, however my app requires mixing of keywords with other speech. My keywords are short (single words); most of the rejected speech is long (sentences).</p>
+<p>I have tried Rejecto and still often get single item matches when the utterance was a whole sentence, despite setting weight to 2.0. I&#8217;m wondering if there&#8217;s any way to use the length of the utterance to rule out full sentences?</p>
+<p>(As a side note, I think 2 minutes is too short for demo timeout. I fully respect your need to prevent abuse, but this stuff is complicated and wouldn&#8217;t 15min accomplish the goal just as well?)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/use-length-of-utterance-for-rejection/#post-1018896</guid>
+					<title><![CDATA[Reply To: Use length of utterance for rejection?]]></title>
+					<link>/forums/topic/use-length-of-utterance-for-rejection/#post-1018896</link>
+					<pubDate>Thu, 14 Nov 2013 07:54:07 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome morchella,</p>
+<p>OpenEars is fine for use with keyword spotting applications. I think the way I would probably handle this requirement would be to turn on the option of having the Rejecto phonemes returned in your hypothesis, and just reject the hyp if there are too many of them in a single hypothesis. </p>
+<blockquote><p>(As a side note, I think 2 minutes is too short for demo timeout. I fully respect your need to prevent abuse, but this stuff is complicated and wouldn’t 15min accomplish the goal just as well?)</p></blockquote>
+<p>Sorry this is making things more difficult for you; that isn&#8217;t the intention and I understand that speech applications are not so simple (that was a big part of the impetus for adding the pathToTestFile which is designed to make it easy for you to replicate issues that you are working on repeatedly). Practically the timeout is more like 2:30, but to give you some background, here is a link to a study including analytics for how long apps are used on average:</p>
+<p><a href="http://readwrite.com/2012/01/17/study_average_app_session_lasts_about_1_minute" rel="nofollow">http://readwrite.com/2012/01/17/study_average_app_session_lasts_about_1_minute</a></p>
+<p>It found that the average app usage period is about half the length of the Rejecto timeout. The alternatives to having a timeout that is related to the average app usage length would either be the reality of people shipping the demo linked to their app for apps with short usage requirements, or having some kind of much more intrusive network license checking that would time out the demo after a fixed chronological period (like 30-60 days) which IMO would be more disruptive to development since some projects take years to complete. I think this would be worse because it would result in sales from half-finished apps that might never ship, which I&#8217;m not comfortable with as a revenue stream.</p>
+<p>But I appreciate the feedback and get the reason for it, and I&#8217;ve been considering standardizing all of the demos to the same 4:00 length to make things easier and more consistent.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/use-length-of-utterance-for-rejection/#post-1018902</guid>
+					<title><![CDATA[Reply To: Use length of utterance for rejection?]]></title>
+					<link>/forums/topic/use-length-of-utterance-for-rejection/#post-1018902</link>
+					<pubDate>Thu, 14 Nov 2013 16:59:01 +0000</pubDate>
+					<dc:creator>morchella</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Halle, thanks! You are awesome for taking the time to respond in detail. I will play around with this some more as you suggest. </p>
+<p>Personally, I would never design an app to fail after &#8220;average&#8221; use time was exceeded, but then I would also never rip off another software developer. :)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/use-length-of-utterance-for-rejection/#post-1018904</guid>
+					<title><![CDATA[Reply To: Use length of utterance for rejection?]]></title>
+					<link>/forums/topic/use-length-of-utterance-for-rejection/#post-1018904</link>
+					<pubDate>Thu, 14 Nov 2013 17:28:56 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thank you! I know; I think the majority of developers wouldn&#8217;t do that and it&#8217;s a drag that we have to deal with copy protection from either side of the equation.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/use-length-of-utterance-for-rejection/#post-1019148</guid>
+					<title><![CDATA[Reply To: Use length of utterance for rejection?]]></title>
+					<link>/forums/topic/use-length-of-utterance-for-rejection/#post-1019148</link>
+					<pubDate>Thu, 12 Dec 2013 21:04:48 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>In the current version 1.64, I&#8217;ve standardized the time across all plugins to be 3 minutes so it&#8217;s more convenient to try out multiple plugins at once.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

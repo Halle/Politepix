@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>pocketSphinx continuous recognition loop has failed &#8211; Politepix</title>
+		<atom:link href="/forums/topic/pocketsphinx-continuous-recognition-loop-has-failed/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/pocketsphinx-continuous-recognition-loop-has-failed/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:00:59 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/pocketsphinx-continuous-recognition-loop-has-failed/#post-1021413</guid>
+					<title><![CDATA[pocketSphinx continuous recognition loop has failed]]></title>
+					<link>/forums/topic/pocketsphinx-continuous-recognition-loop-has-failed/#post-1021413</link>
+					<pubDate>Tue, 27 May 2014 18:57:31 +0000</pubDate>
+					<dc:creator>Matt</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I ran into an issue that for the most part is minor but I thought I would bring it up here for discussion because I am looking for an elegant solution.</p>
+<p>The issue is: with PocketsphinxController if you try to start listening while a phone is on a call it will fail and fire back pocketSphinxContinuousSetupDidFail.</p>
+<p>This is understandable as the phone&#8217;s audio session is occupied with the call. However after the call ends PocketsphinxController will still return isListening = YES; And trying to start listening after this point fails. The only solution I have found is to nil the controller and create a new one. But I am wondering if there is a more elegant way to detect a problem inside PocketsphinxController.</p>
+<p>Is it possible to reset a PocketsphinxController instance. Or nil it in a safe way. (for example I have found that if I call [pocketsphinxController stopListening] and set it to nil while it is calibrating that this can cause crashes if a new controller is created too soon).</p>
+<p>I am wondering about this broadly. If the controller fails for any reason is it safe to assume you have to throw it out and create a new one?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pocketsphinx-continuous-recognition-loop-has-failed/#post-1021421</guid>
+					<title><![CDATA[Reply To: pocketSphinx continuous recognition loop has failed]]></title>
+					<link>/forums/topic/pocketsphinx-continuous-recognition-loop-has-failed/#post-1021421</link>
+					<pubDate>Wed, 28 May 2014 06:28:57 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>No, I think this is just a plain old bug – I probably just need to make sure there are no cases in which this happens after a failure is returned:</p>
+<blockquote><p>PocketsphinxController will still return isListening = YES</p></blockquote>
+<p>I actually can&#8217;t see how that is possible when reviewing the current code – every failure calls performContinuousFailureStopForIssue: and every call of that method sets isListening to FALSE, but it can get some testing after WWDC to see why the promise isn&#8217;t being fulfilled under that circumstance of a call interruption. Broadly, the idea is that you&#8217;ll keep the same instance around for your whole session and it will deal with exceptions politely and not have issues toggling between a started and a stopped state even if there has been a failure. I appreciate hearing about cases where this isn&#8217;t working yet.</p>
+<blockquote><p>(for example I have found that if I call [pocketsphinxController stopListening] and set it to nil while it is calibrating that this can cause crashes if a new controller is created too soon).</p></blockquote>
+<p>Sorry, not quite following this yet – why is it being set to nil while it is calibrating and/or why is it calibrating while it is stopping?</p>
+<p>To set it to nil, first ask it to stop and then when you have a callback in the OpenEarsEventsObserver method pocketsphinxDidStopListening you can set it to nil if you like. Until that callback, it is busy safely winding down its threads and it won&#8217;t be safe to stop.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pocketsphinx-continuous-recognition-loop-has-failed/#post-1021425</guid>
+					<title><![CDATA[Reply To: pocketSphinx continuous recognition loop has failed]]></title>
+					<link>/forums/topic/pocketsphinx-continuous-recognition-loop-has-failed/#post-1021425</link>
+					<pubDate>Wed, 28 May 2014 12:44:08 +0000</pubDate>
+					<dc:creator>Matt</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Looking at the source, it appears the failure happens inside ContinuousModel.m prepareTestAndOpenAudioDevice method. At this point it fails to open an audio device and posts a PocketsphinxContinuousSetupDidFail notification. performContinuousFailureStopForIssue: never gets called.</p>
+<p>If I work my way back, prepareTestAndOpenAudioDevice is called within listeningLoopWithLanguageModelAtPath:dictionaryAtPath:acousticModelAtPath:languageModelIsJSGF: at which point isListening=YES; prepareTestAndOpenAudioDevice fails and subsequently causes listeningLoopWithLanguageModelAtPath:&#8230; to return immediately.</p>
+<p>Hopefully that is of some help in the future, after WWDC.</p>
+<blockquote><p>Sorry, not quite following this yet – why is it being set to nil while it is calibrating and/or why is it calibrating while it is stopping?</p></blockquote>
+<p>This is mostly for robustness. For example I have a button that allows toggling pocketsphinxController listening (start/stop listening). Because I ran into the issue above I am trying to nil the controller when the user toggles the button to off/stop. In fact this may be the way to go anyways to clear up resources. This presents the problem where the user can toggle the switch off while the controller is calibrating, etc.</p>
+<p>Am I always guaranteed that pocketsphinxDidStopListening and/or pocketSphinxContinuousSetupDidFail will fire in the event that the controller fails?</p>
+<p>Then I could safely nil the controller if something went wrong and allow the user or system to toggle listening back on (which would start with a fresh controller).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pocketsphinx-continuous-recognition-loop-has-failed/#post-1021426</guid>
+					<title><![CDATA[Reply To: pocketSphinx continuous recognition loop has failed]]></title>
+					<link>/forums/topic/pocketsphinx-continuous-recognition-loop-has-failed/#post-1021426</link>
+					<pubDate>Wed, 28 May 2014 13:07:04 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>Because I ran into the issue above I am trying to nil the controller when the user toggles the button to off/stop</p></blockquote>
+<p>You definitely can&#8217;t nil the controller unless you&#8217;ve received a callback that listening has stopped – when it works otherwise it&#8217;s coincidental, due to lucky timing with the threads being released and your assignment of nil. You can nil it if the user sets it to off and then you get a callback. In the meantime before the callback you have to block further interaction with the on/off button or you will end up with unreachable threads with events in them that can lead to a bad termination, again except in lucky cases. </p>
+<p>The design is to have a single instance that works robustly, not to destroy and create instances over a session, so the effort should just go into the robustness for the single instance. It sounds like you found a case in which the normal chain of events doesn&#8217;t fire – I appreciate it and I&#8217;ll take a look at the case you found in a bit, thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

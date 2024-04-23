@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Keeping audio running when app goes into background &#8211; Politepix</title>
+		<atom:link href="/forums/topic/keeping-audio-running-when-app-goes-into-background/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/keeping-audio-running-when-app-goes-into-background/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:39:22 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/keeping-audio-running-when-app-goes-into-background/#post-10991</guid>
+					<title><![CDATA[Keeping audio running when app goes into background]]></title>
+					<link>/forums/topic/keeping-audio-running-when-app-goes-into-background/#post-10991</link>
+					<pubDate>Mon, 10 Sep 2012 13:28:02 +0000</pubDate>
+					<dc:creator>ameetnsharma</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi. I&#8217;m trying to keep flite speaking when the app goes into the background. Right now the audio stops. In my info.plist, I&#8217;ve included audio as one of the required background modes.</p>
+<p>Is there anything else I need to do?</p>
+<p>Thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/keeping-audio-running-when-app-goes-into-background/#post-10992</guid>
+					<title><![CDATA[Reply To: Keeping audio running when app goes into background]]></title>
+					<link>/forums/topic/keeping-audio-running-when-app-goes-into-background/#post-10992</link>
+					<pubDate>Mon, 10 Sep 2012 13:34:14 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This is the only information I have on the subject:<br />
+<a href="/forums/topic/flite-in-background/">/forums/topic/flite-in-background/</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/keeping-audio-running-when-app-goes-into-background/#post-10993</guid>
+					<title><![CDATA[Reply To: Keeping audio running when app goes into background]]></title>
+					<link>/forums/topic/keeping-audio-running-when-app-goes-into-background/#post-10993</link>
+					<pubDate>Mon, 10 Sep 2012 13:35:38 +0000</pubDate>
+					<dc:creator>ameetnsharma</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the quick response! Appreciate it!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/keeping-audio-running-when-app-goes-into-background/#post-10994</guid>
+					<title><![CDATA[Reply To: Keeping audio running when app goes into background]]></title>
+					<link>/forums/topic/keeping-audio-running-when-app-goes-into-background/#post-10994</link>
+					<pubDate>Mon, 10 Sep 2012 13:38:09 +0000</pubDate>
+					<dc:creator>ameetnsharma</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hmmm&#8230; in that thread, you mentioned keeping the current audio stream running, even if you can&#8217;t initiate a new stream. In my app, the current audio stream stops quickly after hitting the home button. Is there a way to allow the current stream to continue?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/keeping-audio-running-when-app-goes-into-background/#post-10995</guid>
+					<title><![CDATA[Reply To: Keeping audio running when app goes into background]]></title>
+					<link>/forums/topic/keeping-audio-running-when-app-goes-into-background/#post-10995</link>
+					<pubDate>Mon, 10 Sep 2012 13:48:22 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m surprised to hear that it&#8217;s possible and in the thread it&#8217;s actually the other developer who has a method, so I can&#8217;t really help with implementing his approach unfortunately.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/keeping-audio-running-when-app-goes-into-background/#post-10996</guid>
+					<title><![CDATA[Reply To: Keeping audio running when app goes into background]]></title>
+					<link>/forums/topic/keeping-audio-running-when-app-goes-into-background/#post-10996</link>
+					<pubDate>Mon, 10 Sep 2012 13:50:24 +0000</pubDate>
+					<dc:creator>ameetnsharma</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>No prob. Thanks again. I&#8217;ll try experimenting with it.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/keeping-audio-running-when-app-goes-into-background/#post-10997</guid>
+					<title><![CDATA[Reply To: Keeping audio running when app goes into background]]></title>
+					<link>/forums/topic/keeping-audio-running-when-app-goes-into-background/#post-10997</link>
+					<pubDate>Mon, 10 Sep 2012 13:55:39 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, good luck!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/keeping-audio-running-when-app-goes-into-background/#post-10998</guid>
+					<title><![CDATA[Reply To: Keeping audio running when app goes into background]]></title>
+					<link>/forums/topic/keeping-audio-running-when-app-goes-into-background/#post-10998</link>
+					<pubDate>Mon, 10 Sep 2012 14:22:21 +0000</pubDate>
+					<dc:creator>ameetnsharma</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Just to update, I got it working. The reason it wasn&#8217;t working before was that I was editing the wrong info.plist (i was accidentally editing the test-info.plist file instead).</p>
+<p>Setting audio as one of the required background modes looks like all that needs to be done. very nice.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/keeping-audio-running-when-app-goes-into-background/#post-10999</guid>
+					<title><![CDATA[Reply To: Keeping audio running when app goes into background]]></title>
+					<link>/forums/topic/keeping-audio-running-when-app-goes-into-background/#post-10999</link>
+					<pubDate>Mon, 10 Sep 2012 14:33:32 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Awesome, good to have the confirmation.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

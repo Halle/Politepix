@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Error: Number of streams should be 2 or 3 &#8211; Politepix</title>
+		<atom:link href="/forums/topic/error-number-of-streams-should-be-2-or-3/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/error-number-of-streams-should-be-2-or-3/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:44:13 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/error-number-of-streams-should-be-2-or-3/#post-1016872</guid>
+					<title><![CDATA[Error: Number of streams should be 2 or 3]]></title>
+					<link>/forums/topic/error-number-of-streams-should-be-2-or-3/#post-1016872</link>
+					<pubDate>Fri, 05 Apr 2013 20:21:40 +0000</pubDate>
+					<dc:creator>pgmartin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi</p>
+<p>I am trying to use the NeatSpeech demo plugin with the OpenEars demo.  I followed the simple steps outlined in the guide.  Replaced the references for Slt to Beatrice voice (as I require a UK sound).</p>
+<p>I also added a button to the xib that reads a text box and speaks the value using sayWithNeatSpeech.</p>
+<p>Problem is I get the following error each time it should be speaking: </p>
+<p>Error: HTS_GStreamSet_create: The number of streams should be 2 or 3.</p>
+<p>The log:</p>
+<p>2013-04-05 21:06:32.495 OpenEarsSampleApp[4549:11f03] Pocketsphinx calibration is complete.<br />
+2013-04-05 21:06:32.495 OpenEarsSampleApp[4549:15803] Listening.<br />
+2013-04-05 21:06:32.496 OpenEarsSampleApp[4549:11f03] Pocketsphinx is now listening.<br />
+2013-04-05 21:06:41.694 OpenEarsSampleApp[4549:11f03] Initializing NeatSpeech: by using NeatSpeechDemo, you assert that you have read and agree to the demo terms contained in the registered download package<br />
+2013-04-05 21:06:41.695 OpenEarsSampleApp[4549:11f03] Flite sending suspend recognition notification.<br />
+2013-04-05 21:06:41.696 OpenEarsSampleApp[4549:11f03] Flite has started speaking</p>
+<p>Error: HTS_GStreamSet_create: The number of streams should be 2 or 3.</p>
+<p>The demo speaks once PocketSphinx calibration was completed, the same errors occurs then too.  I have commented out that line currently so the rest of the demo can work.</p>
+<p>Any help is most appreciated.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-number-of-streams-should-be-2-or-3/#post-1016873</guid>
+					<title><![CDATA[Reply To: Error: Number of streams should be 2 or 3]]></title>
+					<link>/forums/topic/error-number-of-streams-should-be-2-or-3/#post-1016873</link>
+					<pubDate>Fri, 05 Apr 2013 20:33:07 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>I know this is working fine since I just tested it a few days ago, but I think the issue you are seeing probably has something to do with replacing the references to Slt (which is a FliteController voice) with Beatrice (which is a NeatSpeech voice, so they aren&#8217;t really 100% interchangeable in terms of how they are initialized and which methods need to be used with them). It sounds a bit like you&#8217;re using the sample app, is that correct? Could you instead start from scratch and use the tutorial tool here:</p>
+<p><a href="/openears/tutorial">/openears/tutorial</a></p>
+<p>selecting &#8220;Offline speech synthesis with better voices (paid plugin)&#8221; in order to build an app that is designed for use with NeatSpeech from the start? My other advice is to make sure that you&#8217;ve dragged in the folder VoiceData, which is something that sometimes gets overlooked in the instructions. Let me know if those steps help.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-number-of-streams-should-be-2-or-3/#post-1016894</guid>
+					<title><![CDATA[Reply To: Error: Number of streams should be 2 or 3]]></title>
+					<link>/forums/topic/error-number-of-streams-should-be-2-or-3/#post-1016894</link>
+					<pubDate>Tue, 09 Apr 2013 19:20:05 +0000</pubDate>
+					<dc:creator>pgmartin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks, Halle.</p>
+<p>I am using the OpenEarsSampleApp.  It was previously speaking with the Slt voice.</p>
+<p>I have followed the tutorial again and completed each step modifying the openEarsSampleApp.  I checked the voices frameworks and Voices/VoiceData all seem ok.</p>
+<p>I still get the same error:<br />
+Error: HTS_GStreamSet_create: The number of streams should be 2 or 3.<br />
+sayWithNeatSpeech:withVoice: seems to cause it.  The log says &#8220;Flite has started speaking&#8221; then the error is logged immediately after that.<br />
+If am sure it should work, as the tutorial steps are very simple really.  Could there be something else in my set up or the simulator that I need to change?  I am using XCode 4.6 and have tried iPad 6.1 simulator and iphone 6.1 simulator.  When using 5.1 simulator no audio works at all (but that I am told is a bug in that version of the simulator)&#8230;</p>
+<p>Cheers</p>
+<p>Phil</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-number-of-streams-should-be-2-or-3/#post-1016895</guid>
+					<title><![CDATA[Reply To: Error: Number of streams should be 2 or 3]]></title>
+					<link>/forums/topic/error-number-of-streams-should-be-2-or-3/#post-1016895</link>
+					<pubDate>Tue, 09 Apr 2013 19:27:49 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Phil,</p>
+<p>OK, I still strongly recommend not doing anything with the sample app (including modifying it following the tutorial) and really starting from scratch with a new app made from the tutorial instructions, so you don&#8217;t have to troubleshoot something that is already full of settings that are designed around demoing OpenEars by itself.</p>
+<p>I haven&#8217;t heard of this issue before, but I tend to think it will disappear with a really fresh start.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-number-of-streams-should-be-2-or-3/#post-1016896</guid>
+					<title><![CDATA[Reply To: Error: Number of streams should be 2 or 3]]></title>
+					<link>/forums/topic/error-number-of-streams-should-be-2-or-3/#post-1016896</link>
+					<pubDate>Tue, 09 Apr 2013 19:53:19 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>BTW, just wanted to mention in case you didn&#8217;t see it that there are little clipboard icons on all of the code in the tutorial, so you can just click them and the code will be pasted directly to your clipboard and you can paste it into your project to make it as easy as possible to add to a new app.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-number-of-streams-should-be-2-or-3/#post-1016909</guid>
+					<title><![CDATA[Reply To: Error: Number of streams should be 2 or 3]]></title>
+					<link>/forums/topic/error-number-of-streams-should-be-2-or-3/#post-1016909</link>
+					<pubDate>Wed, 10 Apr 2013 19:01:42 +0000</pubDate>
+					<dc:creator>pgmartin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle</p>
+<p>Thanks for your help.  Starting from scratch did fix it.</p>
+<p>Now my barebones app is working, I noticed the UK voices often pop loudly (a bit like when you tap a microphone) and they are quite sibilant.  Is that just because it&#8217;s on the simulator?</p>
+<p>The recorded examples on the NeatSpeech webpage don&#8217;t pop or sound as &#8220;essy&#8221; so is it safe to assume they will sound better on a real iPad?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-number-of-streams-should-be-2-or-3/#post-1016910</guid>
+					<title><![CDATA[Reply To: Error: Number of streams should be 2 or 3]]></title>
+					<link>/forums/topic/error-number-of-streams-should-be-2-or-3/#post-1016910</link>
+					<pubDate>Wed, 10 Apr 2013 19:07:44 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hmm, is it possible that you&#8217;re using a somewhat old version of NeatSpeech? The current version was specifically released in order to fix UK voice popping noises but it&#8217;s been out for a bit now. If you are still hearing popping with the version from the last month, please let me know an example sentence so that I can test it locally.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-number-of-streams-should-be-2-or-3/#post-1016911</guid>
+					<title><![CDATA[Reply To: Error: Number of streams should be 2 or 3]]></title>
+					<link>/forums/topic/error-number-of-streams-should-be-2-or-3/#post-1016911</link>
+					<pubDate>Wed, 10 Apr 2013 19:19:17 +0000</pubDate>
+					<dc:creator>pgmartin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I downloaded the NeatSpeechDemo from a link in the politepix order confirmation email (from 4th April). Opening up the download it says NeatSpeech version 1.1 in the license agreement.</p>
+<p>Is that the current version?</p>
+<p>&nbsp;</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-number-of-streams-should-be-2-or-3/#post-1016913</guid>
+					<title><![CDATA[Reply To: Error: Number of streams should be 2 or 3]]></title>
+					<link>/forums/topic/error-number-of-streams-should-be-2-or-3/#post-1016913</link>
+					<pubDate>Wed, 10 Apr 2013 19:22:39 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yup, that is the current version. Can you let me know the sentence with which you are getting pops, so I can check it out? The recordings on the page are also made from the Simulator with version 1.1, so it could be something restricted to particular words which I can investigate and hopefully fix.</p>
+<p>Please let me know your Xcode version, target SDK, and Simulator version with which you&#8217;re hearing issues along with the sentence so I can set up a test. Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-number-of-streams-should-be-2-or-3/#post-1016919</guid>
+					<title><![CDATA[Reply To: Error: Number of streams should be 2 or 3]]></title>
+					<link>/forums/topic/error-number-of-streams-should-be-2-or-3/#post-1016919</link>
+					<pubDate>Wed, 10 Apr 2013 22:02:12 +0000</pubDate>
+					<dc:creator>pgmartin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Using Beatrice voice. Here are some examples.  XCode 4.6, SDK 6.1, IPad 6.1 simulator</p>
+<p>Words in a sentence that pop are below in <strong>[bold]</strong>. Words that do a quieter click are in <em>[italic]</em></p>
+<p><strong>[Hello]</strong>, this is Beatrice</p>
+<p>One fine evening a young princess <strong>[put]</strong> on her bonnet and clogs, and went out to take a walk <strong>[</strong><strong>by]</strong> herself in a wood; and when she came to a cool <strong>[spring]</strong> of water with a <em>[rose]</em> in the middle of it, she sat herself down to rest a while. Now she had a golden ball in her hand, which was <em>[her]</em> favourite plaything; and she was always tossing it <strong>[up]</strong> into the air, and catching it again as it fell.</p>
+<p>The same text in Elliott voice sounds much better. I think I only noticed one click in the last sentence&#8230;</p>
+<p>&#8230;and she <em>[was]</em> always tossing it up into the air, and catching it again as it fell.</p>
+<p>Thanks</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

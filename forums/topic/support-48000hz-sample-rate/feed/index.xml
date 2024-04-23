@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Support 48000Hz sample rate &#8211; Politepix</title>
+		<atom:link href="/forums/topic/support-48000hz-sample-rate/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/support-48000hz-sample-rate/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:43:19 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/support-48000hz-sample-rate/#post-1019069</guid>
+					<title><![CDATA[Support 48000Hz sample rate]]></title>
+					<link>/forums/topic/support-48000hz-sample-rate/#post-1019069</link>
+					<pubDate>Tue, 03 Dec 2013 08:41:05 +0000</pubDate>
+					<dc:creator>tonylee</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am going to use RapidEars with some audio detector library. But it works only when 44100Hz or above. But I found that RapidEars only works for 8k or 16kHz. Can it support 48kHz sample rate?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/support-48000hz-sample-rate/#post-1019070</guid>
+					<title><![CDATA[Reply To: Support 48000Hz sample rate]]></title>
+					<link>/forums/topic/support-48000hz-sample-rate/#post-1019070</link>
+					<pubDate>Tue, 03 Dec 2013 08:52:50 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Sorry, RapidEars is only supported at 16kHz input. The 8k option in OpenEars isn&#8217;t supported for RapidEars or stock PocketsphinxController; it&#8217;s made available for the cases in which you want to only do speech detection (without recognition) and then do something different than offline recognition with the speech after it is detected and would prefer to take in 8k speech. But offline recognition needs to be done at an input rate of 16k.</p>
+<p>You can give it a try with changing the sample rate or letting the other library override it and see what the results are &#8212; sometimes with a small and unique vocabulary the results can be acceptable for recognition, but it isn&#8217;t possible to give support for unexpected results or technical or implementation issues that could arise as a result.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/support-48000hz-sample-rate/#post-1019071</guid>
+					<title><![CDATA[Reply To: Support 48000Hz sample rate]]></title>
+					<link>/forums/topic/support-48000hz-sample-rate/#post-1019071</link>
+					<pubDate>Tue, 03 Dec 2013 09:51:48 +0000</pubDate>
+					<dc:creator>tonylee</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Because the library makes use of ultrasound, it requires the sample rate higher than 38kHz. The RapidEars library forces the AudioSession to 16kHz which is far less than the requirement..</p>
+<p>And I think sub-sampling from 48kHz to 16kHz is quite easy (only skip 2 &amp; 3 bytes). By supporting this feature RapidEars can also work well with other framework like AirPlay. I think it is valuable to implement.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/support-48000hz-sample-rate/#post-1019072</guid>
+					<title><![CDATA[Reply To: Support 48000Hz sample rate]]></title>
+					<link>/forums/topic/support-48000hz-sample-rate/#post-1019072</link>
+					<pubDate>Tue, 03 Dec 2013 10:16:10 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Tony,</p>
+<p>Thank you for your suggestion.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

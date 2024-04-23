@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>rubymotion  &#8211; Politepix</title>
+		<atom:link href="/forums/topic/rubymotion/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/rubymotion/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:43:09 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/rubymotion/#post-1016907</guid>
+					<title><![CDATA[rubymotion]]></title>
+					<link>/forums/topic/rubymotion/#post-1016907</link>
+					<pubDate>Wed, 10 Apr 2013 18:32:22 +0000</pubDate>
+					<dc:creator>fim32</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>just getting started, trying to get the neatspeech going before paying for the license.</p>
+<p>i got openears running through rubymotion, so I thought it would be simple to add the neatspeech plugin!  I&#8217;ve got all the frameworks in the right places, but dang if i can figure out where its looking for the VoiceData dir, any thoughts?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rubymotion/#post-1016908</guid>
+					<title><![CDATA[Reply To: rubymotion]]></title>
+					<link>/forums/topic/rubymotion/#post-1016908</link>
+					<pubDate>Wed, 10 Apr 2013 18:38:53 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Somehow or another it needs to find the contents (the individual files, that is) of VoiceData at the root of mainBundle. I&#8217;m not familiar with rubymotion but a frequent source of issues in this kind of situation is with Xcode creating a subfolder in mainBundle rather than copying the files directly to root. You should be able to verify that the files are in the right place by opening up the app product package and just looking in the bundle to see if the files are there and are where they ought to be.</p>
+<p>However, I have never tested with rubymotion and don&#8217;t actively support it, so I can&#8217;t guarantee that the licensed version works with it. If you want to buy a license, maybe consider sending me over a sample app with a test bundle id first so that I can check out whether you&#8217;ll be able to make use of a license. You can contact me about this via the contact form when you&#8217;re ready.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rubymotion/#post-1016923</guid>
+					<title><![CDATA[Reply To: rubymotion]]></title>
+					<link>/forums/topic/rubymotion/#post-1016923</link>
+					<pubDate>Thu, 11 Apr 2013 06:13:05 +0000</pubDate>
+					<dc:creator>fim32</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>In case anyone else is trying to do this, I got it to work!</p>
+<p>First, the libs need the VoiceData files NOT in nested structure, I copied all the individual files into the Resources folder.  When the app builds, those files will all end up in the root of the app.  As a side, it makes the directory structure in the app kind of ugly, but anyways.</p>
+<p>Secondly, probably due to the way rubymotion tries to figure out what to import, I couldn&#8217;t use the 2 frameworks separately.  Also, the number of header files made gen_bridge_metadata (the utiltiy for osx to figure out what&#8217;s in a framework) choke.</p>
+<p>So, I reformed the framework, with just the 2 libraries (OpenEars, NeatSpeech), all the Header files from NeatSpeech (only 2) and whatever Headers I thought were important from OpenEars.  Obviously, I guessed the latter, but since I only want playback I picked: FliteController.h and FliteVoice.h.</p>
+<p>Then, in the Rakefile:</p>
+<blockquote><p>app.vendor_project(&#8216;vendor/OpenEars/OpenEarsNeatSpeech.framework&#8217;, :static, :products =&gt; [&#8216;OpenEars&#8217;, &#8216;NeatSpeechDemo&#8217;], :headers_dir =&gt; &#8216;Headers&#8217;)</p></blockquote>
+<p>From there, it&#8217;s more simple.  The voice you want to add gets added as another separate framework:</p>
+<blockquote><p>app.vendor_project(&#8216;vendor/OpenEars/Voices/Demo/Emma.framework&#8217;, :static, :products =&gt; [&#8216;Emma&#8217;], :headers_dir =&gt; &#8216;Headers&#8217;)</p></blockquote>
+<p>And, then, the calls for the framework look more like Ruby:</p>
+<blockquote><p>@fc = FliteController.alloc.init</p>
+<p>@voice = Emma.alloc.initWithPitch(0.0, speed:0.0, transform:0.0)</p>
+<p>&nbsp;</p>
+<p>@fc.sayWithNeatSpeech(&#8220;I have always wished for my computer to be as easy to use as my telephone; my wish has come true because I can no longer figure out how to use my telephone.&#8221;, withVoice:@voice)</p></blockquote>
+<p>Now, to see if it will fit my needs!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rubymotion/#post-1017187</guid>
+					<title><![CDATA[Reply To: rubymotion]]></title>
+					<link>/forums/topic/rubymotion/#post-1017187</link>
+					<pubDate>Fri, 10 May 2013 00:34:10 +0000</pubDate>
+					<dc:creator>brucep</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi there,</p>
+<p>I&#8217;m trying to use OpenEars in a RubyMotion project too. In my case I don&#8217;t need NeatSpeach, just OpenEars. I&#8217;m not sure which files to add to my vendor folder though. When I unpack the OpenEars download there&#8217;s a folder at the root called Framework. Should I move that whole folder into my vendor directory or just Framework/OpenEars.framework? If I do the latter then where should I put the other files and folders that are next to OpenEars.framework such as cmu07a.dic etc.</p>
+<p>I can&#8217;t find any .a files in the OpenEars distribution, apparently RubyMotion expects them.</p>
+<p>Thanks in advance for any guidance you guys can offer.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rubymotion/#post-1019164</guid>
+					<title><![CDATA[Reply To: rubymotion]]></title>
+					<link>/forums/topic/rubymotion/#post-1019164</link>
+					<pubDate>Fri, 13 Dec 2013 20:05:09 +0000</pubDate>
+					<dc:creator>vaunteandy</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>+1 here.  How do you go about using Open Ears with Rubymotion. I am getting this error:</p>
+<p>This is what I put in my Rakefile:</p>
+<p><code>app.vendor_project(&quot;vendor/OpenEars&quot;,:xcode,:xcodeproj =&gt; &quot;OpenEars/OpenEars.xcodeproj&quot;)</code></p>
+<p>This is the error message:</p>
+<p><code>ERROR! Building vendor project&lt;/code&gt;vendor/OpenEars&#039; failed to create at least one .a&#039; library.</code></p>
+<p>Thank you!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

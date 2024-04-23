@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>returnNullHypotheses when runRecognitionOnWavFileAtPath &#8211; Politepix</title>
+		<atom:link href="/forums/topic/returnnullhypotheses-when-runrecognitiononwavfileatpath/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/returnnullhypotheses-when-runrecognitiononwavfileatpath/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:03:31 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/returnnullhypotheses-when-runrecognitiononwavfileatpath/#post-1021314</guid>
+					<title><![CDATA[returnNullHypotheses when runRecognitionOnWavFileAtPath]]></title>
+					<link>/forums/topic/returnnullhypotheses-when-runrecognitiononwavfileatpath/#post-1021314</link>
+					<pubDate>Mon, 19 May 2014 09:40:00 +0000</pubDate>
+					<dc:creator>buec</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>I have just noticed that the returnNullHypotheses doesn&#8217;t work, when running runRecognitionOnWavFileAtPath. I think it would be very useful if you get null hypotheses when trying to test something.</p>
+<p>Regards<br />
+Matthias</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/returnnullhypotheses-when-runrecognitiononwavfileatpath/#post-1021316</guid>
+					<title><![CDATA[Reply To: returnNullHypotheses when runRecognitionOnWavFileAtPath]]></title>
+					<link>/forums/topic/returnnullhypotheses-when-runrecognitiononwavfileatpath/#post-1021316</link>
+					<pubDate>Mon, 19 May 2014 09:53:34 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Matthias,</p>
+<p>Thanks for your feedback. runRecognitionOnWavFileAtPath is deprecated as a method of testing now that there is the much more real-world test approach available by using PocketsphinxController&#8217;s pathToTestFile property – among its many benefits is that unlike runRecognitionOnWavFileAtPath it uses the main recognition loop, so as test-affecting features are added (like returnNullHypotheses, smartCMN,) they are automatically supported in testing as well.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

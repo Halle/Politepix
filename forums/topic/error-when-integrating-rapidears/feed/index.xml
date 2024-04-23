@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Error when integrating RapidEars  &#8211; Politepix</title>
+		<atom:link href="/forums/topic/error-when-integrating-rapidears/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/error-when-integrating-rapidears/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:43:05 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/error-when-integrating-rapidears/#post-1019379</guid>
+					<title><![CDATA[Error when integrating RapidEars]]></title>
+					<link>/forums/topic/error-when-integrating-rapidears/#post-1019379</link>
+					<pubDate>Sat, 11 Jan 2014 09:56:28 +0000</pubDate>
+					<dc:creator>Sat</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>I get errors when integrating RapidEars with OpenEars sample app.</p>
+<p>&lt;versions and conditions&gt;<br />
+ &#8211; OpenEars(1.52)<br />
+ &#8211; RapidEars(1.64) demo version<br />
+ &#8211; Using the sample app of OpenEars. The sample app works fine.<br />
+ &#8211; Followed the tutorial and added the codes for RapidEars.</p>
+<p>&lt;error message&gt;<br />
+Apple Match-O Linker Warning<br />
+Directory not found for option &#8216;F&#8221;/Users&#8230;</p>
+<p>&#8212;<br />
+ld: warning: directory not found for option &#8216;-F&#8221;/Users/satoshi/Downloads/OpenEarsDistribution/OpenEarsSampleApp/../Framework&#8221;&#8216;<br />
+Undefined symbols for architecture i386:<br />
+  &#8220;_closeAudioDevice&#8221;, referenced from:<br />
+      -[ContinuousModel(RapidEars) realtimeListeningLoopWithLanguageModelAtPath:dictionaryAtPath:acousticModelAtPath:] in RapidEarsDemo(ContinuousModel+RapidEars.o)<br />
+  &#8220;_openAudioDevice&#8221;, referenced from:<br />
+      -[ContinuousModel(RapidEars) realtimeListeningLoopWithLanguageModelAtPath:dictionaryAtPath:acousticModelAtPath:] in RapidEarsDemo(ContinuousModel+RapidEars.o)<br />
+  &#8220;_readBufferContents&#8221;, referenced from:<br />
+      -[ContinuousModel(RapidEars) realtimeListeningLoopWithLanguageModelAtPath:dictionaryAtPath:acousticModelAtPath:] in RapidEarsDemo(ContinuousModel+RapidEars.o)<br />
+      -[ContinuousModel(RapidEars) realtimeListeningLoopWithLanguageModelAtPath:dictionaryAtPath:acousticModelAtPath:] in RapidEarsDemo(ContinuousModel+RapidEars.o)<br />
+  &#8220;_startRecording&#8221;, referenced from:<br />
+      -[ContinuousModel(RapidEars) realtimeListeningLoopWithLanguageModelAtPath:dictionaryAtPath:acousticModelAtPath:] in RapidEarsDemo(ContinuousModel+RapidEars.o)<br />
+  &#8220;_stopRecording&#8221;, referenced from:<br />
+      -[ContinuousModel(RapidEars) realtimeListeningLoopWithLanguageModelAtPath:dictionaryAtPath:acousticModelAtPath:] in RapidEarsDemo(ContinuousModel+RapidEars.o)<br />
+ld: symbol(s) not found for architecture i386<br />
+clang: error: linker command failed with exit code 1 (use -v to see invocation)</p>
+<p>I searched on the web and found that it is related to framework reference. But I can see Rapidears framework on the navigator bar and in &#8220;Build Phases &gt; Link Binary with Libraries&#8221;.<br />
+I am sorry if this is a basic thing.</p>
+<p>Thank You.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-when-integrating-rapidears/#post-1019380</guid>
+					<title><![CDATA[Reply To: Error when integrating RapidEars]]></title>
+					<link>/forums/topic/error-when-integrating-rapidears/#post-1019380</link>
+					<pubDate>Sat, 11 Jan 2014 10:19:47 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>This is probably going to be the framework search path in build settings being wrong. When you do the tutorial, at the part with instructions about how to initially add the framework folder, there is a description of the required settings on the add dialog in order to avoid getting these issues &#8212; would you mind trying the tutorial process again with a fresh app and take some extra time checking out that step?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-when-integrating-rapidears/#post-1019381</guid>
+					<title><![CDATA[Reply To: Error when integrating RapidEars]]></title>
+					<link>/forums/topic/error-when-integrating-rapidears/#post-1019381</link>
+					<pubDate>Sat, 11 Jan 2014 10:22:31 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Oh, also &#8212; although it&#8217;s of course possible to add RapidEars to the sample app, the tutorial doesn&#8217;t explain how to do that. It&#8217;s written on the assumption that you are creating a new app following the tutorial steps. I would not add RapidEars to the sample app but instead follow the tutorial with a new app. This is much better because you&#8217;ll know the app is set up correctly but also because it very quickly walks you through the major functions of the SDK so you have a sense of what is going on once you&#8217;re done.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-when-integrating-rapidears/#post-1019382</guid>
+					<title><![CDATA[Reply To: Error when integrating RapidEars]]></title>
+					<link>/forums/topic/error-when-integrating-rapidears/#post-1019382</link>
+					<pubDate>Sat, 11 Jan 2014 12:32:14 +0000</pubDate>
+					<dc:creator>Sat</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle, thank you very much for the quick reply.</p>
+<p>I tried the tutorial process again with a fresh app, but ended up with the same result. (OpenEars works fine, again.)</p>
+<p>I carefully added frameworks with the options described in the tutorial.</p>
+<p>&lt;selected options&gt; (both for OpenEars and RapidEars)<br />
+ &#8211; &#8220;Create groups for any added folders&#8221; is selected<br />
+ &#8211; &#8220;Create folder references for any added folders&#8221; is NOT selected<br />
+ &#8211; &#8220;Copy items into destination group&#8217;s folder (if needed)&#8221;</p>
+<p>Actually, I have been already struggling with this error for days with another original app. Is there any sample app of RapidEars, maybe?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-when-integrating-rapidears/#post-1019383</guid>
+					<title><![CDATA[Reply To: Error when integrating RapidEars]]></title>
+					<link>/forums/topic/error-when-integrating-rapidears/#post-1019383</link>
+					<pubDate>Sat, 11 Jan 2014 12:49:54 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Have you taken a look at that Framework Search Paths setting in Build Settings and verified that it looks correct? This sounds like it could be the Xcode bug that is described in the tutorial. If it is a search path that seems wrong or has a lot of weird backslashes in it, replace it with a path ending with the same resource that isn&#8217;t so weird.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-when-integrating-rapidears/#post-1019384</guid>
+					<title><![CDATA[Reply To: Error when integrating RapidEars]]></title>
+					<link>/forums/topic/error-when-integrating-rapidears/#post-1019384</link>
+					<pubDate>Sat, 11 Jan 2014 13:12:25 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry, I didn&#8217;t answer your question about the sample app. I&#8217;ve decided that it isn&#8217;t a good idea to have individual sample apps for all of the plugins since the tutorial usually works fine to get started quickly and having 4 (and soon 5) different sample apps to test and maintain for every OpenEars/plugin release, every Xcode release and every significant iOS or Objective-C change would create overhead that wouldn&#8217;t be sensible to take on, in addition to a new area of tech support from developers who want to integrate a second or third plugin into a different plugin&#8217;s sample app, which is common. That attention would really be better focused on the frameworks which is why the quickstart tutorial tool was made instead. But I&#8217;ll be happy to help you out until we have the tutorial working for you, since it is known to work.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-when-integrating-rapidears/#post-1019389</guid>
+					<title><![CDATA[Reply To: Error when integrating RapidEars]]></title>
+					<link>/forums/topic/error-when-integrating-rapidears/#post-1019389</link>
+					<pubDate>Sun, 12 Jan 2014 01:50:04 +0000</pubDate>
+					<dc:creator>Sat</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Following the advice, I checked the Framework Search Path setting.</p>
+<p>/$(inherited)<br />
+/Users/satoshi/Desktop/testApps/test_20130111_1/Framework<br />
+/Users/satoshi/Desktop/testApps/test_20130111_1<br />
+  All of them are non-recursive.</p>
+<p>OpenEars frameworks are under the second directory, and RapidEars is under the third one. I also tried deleting /$(inherited), but there is no effect.</p>
+<p>I understand what you wrote about sample apps. Thanks for the help.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-when-integrating-rapidears/#post-1019396</guid>
+					<title><![CDATA[Reply To: Error when integrating RapidEars]]></title>
+					<link>/forums/topic/error-when-integrating-rapidears/#post-1019396</link>
+					<pubDate>Sun, 12 Jan 2014 09:52:16 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, I just saw that you are using OpenEars 1.5.2, can you use 1.6.4 for everything? This could be happening because you are mixing a 64-bit version of RapidEars with a 32-bit version of OpenEars and they don&#8217;t have the same architectures available (meaning they don&#8217;t have the same objects available for each architecture). Be sure to start with a new app.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-when-integrating-rapidears/#post-1019399</guid>
+					<title><![CDATA[Reply To: Error when integrating RapidEars]]></title>
+					<link>/forums/topic/error-when-integrating-rapidears/#post-1019399</link>
+					<pubDate>Sun, 12 Jan 2014 12:08:40 +0000</pubDate>
+					<dc:creator>Sat</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I installed OpenEars 1.6.4, and it works now! Thank you very much!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-when-integrating-rapidears/#post-1019400</guid>
+					<title><![CDATA[Reply To: Error when integrating RapidEars]]></title>
+					<link>/forums/topic/error-when-integrating-rapidears/#post-1019400</link>
+					<pubDate>Sun, 12 Jan 2014 12:46:48 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Very glad to hear it &#8212; sorry I overlooked that detail which you shared right at the start.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

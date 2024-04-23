@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Getting Output level for NeatSpeech &#8211; Politepix</title>
+		<atom:link href="/forums/topic/getting-output-level-for-neatspeech/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/getting-output-level-for-neatspeech/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:44:55 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/getting-output-level-for-neatspeech/#post-12717</guid>
+					<title><![CDATA[Getting Output level for NeatSpeech]]></title>
+					<link>/forums/topic/getting-output-level-for-neatspeech/#post-12717</link>
+					<pubDate>Thu, 15 Nov 2012 04:14:22 +0000</pubDate>
+					<dc:creator>josh</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Is it possible to get the output level using the Neat Speech library? The [fliteController fileOutputLevel] method works well with OpenEars but as soon as I switch to NeatSpeech it only outputs 0.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/getting-output-level-for-neatspeech/#post-12775</guid>
+					<title><![CDATA[Reply To: Getting Output level for NeatSpeech]]></title>
+					<link>/forums/topic/getting-output-level-for-neatspeech/#post-12775</link>
+					<pubDate>Thu, 15 Nov 2012 08:10:33 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Whoops, this may have been an oversight in version 1.0, I will check it out. If you want to try to make a quick change to OpenEars in the meantime that might help, find this line in the project OpenEars.xcodeproj in the class FliteController:</p>
+<p>&#8211; (Float32) fliteOutputLevel {<br />
+    if(self.speechInProgress == TRUE) {</p>
+<p>and change it to:</p>
+<p>&#8211; (Float32) fliteOutputLevel {<br />
+    if([self.audioPlayer isPlaying] == TRUE) {</p>
+<p>Then recompile the OpenEars framework and use in your app. Let me know if that results in audio output being restored.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/getting-output-level-for-neatspeech/#post-13011</guid>
+					<title><![CDATA[Reply To: Getting Output level for NeatSpeech]]></title>
+					<link>/forums/topic/getting-output-level-for-neatspeech/#post-13011</link>
+					<pubDate>Fri, 16 Nov 2012 13:16:47 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This is fixed in OpenEars 1.2.4 out today.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/getting-output-level-for-neatspeech/#post-13084</guid>
+					<title><![CDATA[Reply To: Getting Output level for NeatSpeech]]></title>
+					<link>/forums/topic/getting-output-level-for-neatspeech/#post-13084</link>
+					<pubDate>Mon, 19 Nov 2012 09:55:26 +0000</pubDate>
+					<dc:creator>josh</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks a lot! The latest version fixed the fliteOutputLevel. However, just to let you know the  fliteController.speechInProgress still always returns false.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/getting-output-level-for-neatspeech/#post-13086</guid>
+					<title><![CDATA[Reply To: Getting Output level for NeatSpeech]]></title>
+					<link>/forums/topic/getting-output-level-for-neatspeech/#post-13086</link>
+					<pubDate>Mon, 19 Nov 2012 10:02:37 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, good to know, thanks. In a pinch, from outside of the class you can always check whether speech is in progress by checking the boolean [self.fliteController.audioPlayer isPlaying].</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

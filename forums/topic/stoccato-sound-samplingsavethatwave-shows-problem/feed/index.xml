@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Stoccato sound sampling/SaveThatWave shows problem &#8211; Politepix</title>
+		<atom:link href="/forums/topic/stoccato-sound-samplingsavethatwave-shows-problem/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/stoccato-sound-samplingsavethatwave-shows-problem/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:42:53 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/stoccato-sound-samplingsavethatwave-shows-problem/#post-1020619</guid>
+					<title><![CDATA[Stoccato sound sampling/SaveThatWave shows problem]]></title>
+					<link>/forums/topic/stoccato-sound-samplingsavethatwave-shows-problem/#post-1020619</link>
+					<pubDate>Fri, 28 Mar 2014 20:41:23 +0000</pubDate>
+					<dc:creator>hughescr</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m having some trouble in my OpenEars/SaveThatWave app.  I think the same problem is happening when I don&#8217;t use SaveThatWave, but SaveThatWave makes it more clear I think what&#8217;s going on.</p>
+<p>My app is trying to listen to a sequence of digits [0..9] being spoken.  I initialize like this:</p>
+<pre><code>
+    LanguageModelGenerator *lmGenerator = [[LanguageModelGenerator alloc] init];
+
+    NSString *name = @&quot;NumberNaming&quot;;
+    NSString *acousticModel = [AcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;];
+    NSError *err = [lmGenerator generateLanguageModelFromArray:@[@&quot;ONE&quot;,@&quot;TWO&quot;,@&quot;THREE&quot;,@&quot;FOUR&quot;,@&quot;FIVE&quot;,@&quot;SIX&quot;,@&quot;SEVEN&quot;,@&quot;EIGHT&quot;,@&quot;NINE&quot;,@&quot;ZERO&quot;]
+                                                withFilesNamed:name
+                                        forAcousticModelAtPath:acousticModel];
+    self.openEarsEventsObserver.delegate = self;
+
+    self.pocketsphinxController.audioMode = @&quot;VoiceChat&quot;;
+    self.pocketsphinxController.calibrationTime = 3;
+    self.pocketsphinxController.secondsOfSilenceToDetect = 1.5;
+    [self.pocketsphinxController startListeningWithLanguageModelAtPath:[languageGeneratorResults objectForKey:@&quot;LMPath&quot;]
+                                                      dictionaryAtPath:[languageGeneratorResults objectForKey:@&quot;DictionaryPath&quot;]
+                                                   acousticModelAtPath:acousticModel
+                                                   languageModelIsJSGF:NO];
+    [self.saveThatWaveController start]; // For saving WAVs from OpenEars
+</code></pre>
+<p>and</p>
+<pre><code>
+- (PocketsphinxController *)pocketsphinxController
+{
+    if(pocketsphinxController == nil)
+    {
+        pocketsphinxController = [[PocketsphinxController alloc] init];
+		pocketsphinxController.outputAudio = TRUE;
+    }
+
+    return pocketsphinxController;
+}
+
+- (OpenEarsEventsObserver *)openEarsEventsObserver
+{
+    if(openEarsEventsObserver == nil)
+    {
+        openEarsEventsObserver = [[OpenEarsEventsObserver alloc] init];
+    }
+
+    return openEarsEventsObserver;
+}
+
+- (SaveThatWaveController *)saveThatWaveController
+{
+    if(saveThatWaveController == nil)
+    {
+        saveThatWaveController = [[SaveThatWaveController alloc] init];
+    }
+
+	return saveThatWaveController;
+}
+
+</code></pre>
+<p>I use [self.pocketsphinxController suspendRecognition] in pocketsphinxDidStartListening to suspend listening till I&#8217;m ready, then [self.pocketsphinxController resumeRecognition] when I want to start listening.</p>
+<p>Now.  In the emulator, everything works great.  When I run on an actual hardware iPad, the first time I resumeRecognition, OpenEars quickly calls me back on pocketsphinxDidResumeRecognition, but if I start talking, it doesn&#8217;t seem to hear anything for a second or two.  pocketsphinxDidDetectSpeech isn&#8217;t fired and anything I say doesn&#8217;t get hypothesized.  If I wait silently for a while, then start talking, it hears me, but about 1/2 the time, the audio being recorded is very staccato and recognition is hopeless.  <a href="http://rungie.com/openears_recording_201403281318170.wav" rel="nofollow">Here</a> is a sample recording from SaveTheWave.  It sounds like maybe a buffering problem, where it&#8217;s got chunks of other parts of the recording stitched in the middle.</p>
+<p>Any thoughts on what might be going on here?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/stoccato-sound-samplingsavethatwave-shows-problem/#post-1020620</guid>
+					<title><![CDATA[Reply To: Stoccato sound sampling/SaveThatWave shows problem]]></title>
+					<link>/forums/topic/stoccato-sound-samplingsavethatwave-shows-problem/#post-1020620</link>
+					<pubDate>Fri, 28 Mar 2014 20:51:30 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>I would expect that this is due to the VoiceChat audio mode. The alternate audio modes besides the default are offered without any guarantee of performance since their behaviors are undocumented and change from OS version to OS version and they aren&#8217;t part of the testbed. They were added due to several requests, but unfortunately can only be used on an as-is basis and should not be used if you are encountering issues resulting from them.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/stoccato-sound-samplingsavethatwave-shows-problem/#post-1020621</guid>
+					<title><![CDATA[Reply To: Stoccato sound sampling/SaveThatWave shows problem]]></title>
+					<link>/forums/topic/stoccato-sound-samplingsavethatwave-shows-problem/#post-1020621</link>
+					<pubDate>Fri, 28 Mar 2014 21:29:53 +0000</pubDate>
+					<dc:creator>hughescr</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Disabling the audio mode does make it seem to record &amp; recognize accurately.  But now the audio that I&#8217;m playing during suspendRecognition using an AVPlayer is way way muted.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/stoccato-sound-samplingsavethatwave-shows-problem/#post-1020622</guid>
+					<title><![CDATA[Reply To: Stoccato sound sampling/SaveThatWave shows problem]]></title>
+					<link>/forums/topic/stoccato-sound-samplingsavethatwave-shows-problem/#post-1020622</link>
+					<pubDate>Fri, 28 Mar 2014 21:44:42 +0000</pubDate>
+					<dc:creator>hughescr</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Oh, I see looking at the code that you&#8217;re using the old deprecated AudioSessionGetProperty() and AudioSessionSetProperty() instead of the AVAudioSession that iOS7 wants; I guess it&#8217;s probably not just deprecated in iOS7 but actually just broken too.  I&#8217;ll see if I can hack something together with AVAudioSession that works.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/stoccato-sound-samplingsavethatwave-shows-problem/#post-1020623</guid>
+					<title><![CDATA[Reply To: Stoccato sound sampling/SaveThatWave shows problem]]></title>
+					<link>/forums/topic/stoccato-sound-samplingsavethatwave-shows-problem/#post-1020623</link>
+					<pubDate>Fri, 28 Mar 2014 21:50:39 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This might be a basic limitation of the PlayAndRecord audio session when it isn&#8217;t used in combination with the VoiceChat mode (btw, the VoiceChat mode didn&#8217;t have this side-effect of changing interaction with media object playback in previous versions of iOS, and could easily cease having it in the future, which is part of the reason I don&#8217;t build the framework around special audio mode behaviors) but you can also try to turn on PocketsphinxController&#8217;s audioSessionMixing property to see if it is a session mixing issue rather than the somewhat buggy playback issue with VoiceChat.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/stoccato-sound-samplingsavethatwave-shows-problem/#post-1020624</guid>
+					<title><![CDATA[Reply To: Stoccato sound sampling/SaveThatWave shows problem]]></title>
+					<link>/forums/topic/stoccato-sound-samplingsavethatwave-shows-problem/#post-1020624</link>
+					<pubDate>Fri, 28 Mar 2014 21:55:29 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>Oh, I see looking at the code that you’re using the old deprecated AudioSessionGetProperty() and AudioSessionSetProperty() instead of the AVAudioSession that iOS7 wants; I guess it’s probably not just deprecated in iOS7 but actually just broken too. I’ll see if I can hack something together with AVAudioSession that works.</p></blockquote>
+<p>AVAudioSession is a higher-level wrapper on the older C-based AudioSession code, but the changes from OS to OS are not due to the API, deprecation, or being broken – there have been behavioral changes in these types of audio behavior in every OS since iOS 3 IIRC. The PlayAndRecord audio session has always had undesirable effects on playback since it was first introduced.</p>
+<p>The VoiceChat-related skipping issue isn&#8217;t due to the audio API, BTW. It originates in the Pocketsphinx VAD, which isn&#8217;t designed to work with an audio mode that has noise suppression.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/stoccato-sound-samplingsavethatwave-shows-problem/#post-1020625</guid>
+					<title><![CDATA[Reply To: Stoccato sound sampling/SaveThatWave shows problem]]></title>
+					<link>/forums/topic/stoccato-sound-samplingsavethatwave-shows-problem/#post-1020625</link>
+					<pubDate>Sat, 29 Mar 2014 01:27:19 +0000</pubDate>
+					<dc:creator>hughescr</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I went and re-wrote AudioSessionManager.m using the AVFoundation stuff (and at the same time converted the whole project to ARC if you&#8217;re interested in that).  Same behavior, so you&#8217;re right :)  I tried the newer GameChat and VideoChat settings too, and also no luck.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/stoccato-sound-samplingsavethatwave-shows-problem/#post-1020627</guid>
+					<title><![CDATA[Reply To: Stoccato sound sampling/SaveThatWave shows problem]]></title>
+					<link>/forums/topic/stoccato-sound-samplingsavethatwave-shows-problem/#post-1020627</link>
+					<pubDate>Sat, 29 Mar 2014 09:23:38 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yeah, the bigger issue unfortunately is that even if those modes helped your issue, there is no contract for their behavior so it could stop helping on a different device or architecture or after a minor or major OS update. That&#8217;s why OpenEars only uses the remoteIO audio unit and defaults to the standard audio mode even though other units and modes occasionally have better performance in various combinations depending on OS version and device.</p>
+<p>The mode property was added after a lot of agitation for it, but I&#8217;m pretty likely to remove it in a future update since it has led to a lot of issues and support requests and I don&#8217;t have a great explanation for what it&#8217;s doing there if it causes problems without bringing positive results other than &#8220;people wanted it&#8221;; i.e. I made a design mistake.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

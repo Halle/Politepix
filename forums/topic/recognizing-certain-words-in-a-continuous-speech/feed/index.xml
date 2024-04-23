@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Recognizing certain words in a continuous speech &#8211; Politepix</title>
+		<atom:link href="/forums/topic/recognizing-certain-words-in-a-continuous-speech/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/recognizing-certain-words-in-a-continuous-speech/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:04:52 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/recognizing-certain-words-in-a-continuous-speech/#post-1019374</guid>
+					<title><![CDATA[Recognizing certain words in a continuous speech]]></title>
+					<link>/forums/topic/recognizing-certain-words-in-a-continuous-speech/#post-1019374</link>
+					<pubDate>Fri, 10 Jan 2014 21:36:07 +0000</pubDate>
+					<dc:creator>AppsDev</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>I&#8217;m integrating my iOS app with the offline voice recognition functionality, and I wonder if it is possible to recognize some, let&#8217;s say, key words while the user is in a conversation, or in the middle of a complete sentence. I mean: for example, I&#8217;d like to recognize the word &#8220;HELLO&#8221; in a phrase or sentence &#8220;* HELLO *&#8221;, being * whatever the user is saying. I&#8217;m only able to detect isolated words between silences, is it possible to do what I&#8217;d like to do with this SDK? Could somebody help me to solve this?</p>
+<p>Thanks in advance</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/recognizing-certain-words-in-a-continuous-speech/#post-1019375</guid>
+					<title><![CDATA[Reply To: Recognizing certain words in a continuous speech]]></title>
+					<link>/forums/topic/recognizing-certain-words-in-a-continuous-speech/#post-1019375</link>
+					<pubDate>Fri, 10 Jan 2014 21:41:06 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>This is basically what Rejecto is for: <a href="/rejecto">/rejecto</a>. It allows words which aren&#8217;t in the vocabulary to be ignored in a recognition pass so that you can do keyword spotting.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

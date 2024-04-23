@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Using open Ears Framework in my app &#8211; Politepix</title>
+		<atom:link href="/forums/topic/using-open-ears-framework-in-my-app/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/using-open-ears-framework-in-my-app/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:38:47 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/using-open-ears-framework-in-my-app/#post-11561</guid>
+					<title><![CDATA[Using open Ears Framework in my app]]></title>
+					<link>/forums/topic/using-open-ears-framework-in-my-app/#post-11561</link>
+					<pubDate>Tue, 09 Oct 2012 09:55:09 +0000</pubDate>
+					<dc:creator>vignesh</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Folks,</p>
+<p>I have a one doubt using open ears framework in my application</p>
+<p>I added open ears frame work to my app then size of my app will be increased near 40Mb,Before adding this framework app size will be 18Mb.<br />
+So as per app store guidelines app size 20Mb will be only allowed so wt can i do for using this framework into my app.<br />
+and one more thing is this framework is public api (app-center allowed r not)r not<br />
+please give response as early as possible.</p>
+<p>Thanks,<br />
+Vignesh</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-open-ears-framework-in-my-app/#post-11562</guid>
+					<title><![CDATA[Reply To: Using open Ears Framework in my app]]></title>
+					<link>/forums/topic/using-open-ears-framework-in-my-app/#post-11562</link>
+					<pubDate>Tue, 09 Oct 2012 10:11:40 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Vignesh,</p>
+<p>Welcome. There is no problem with app acceptance and OpenEars, it has public APIs and only uses public APIs. This is covered in the FAQ but you can also see several well-known apps that use OpenEars to the right of the main OpenEars page at <a href="/openears">/openears</a> so you don&#8217;t have to take my word for it.</p>
+<p>Reducing your application size is also covered in the FAQ so give it a read:</p>
+<p><a href="/openears/support">/openears/support</a></p>
+<p>OpenEars should only increase your app size by about 7 mb if you are using speech recognition and maybe another 5mb per voice used for TTS.</p>
+<p>By the way, the App Store doesn&#8217;t limit your app size to 20mb; there are apps that are hundreds of mb in size. But I agree that it is friendly to your users to create the smallest app possible.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

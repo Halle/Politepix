@@ -1,0 +1,1207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] Error in implementing RuleORama &#8211; Politepix</title>
+		<atom:link href="/forums/topic/error-in-implementing-ruleorama/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/error-in-implementing-ruleorama/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:50:37 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/error-in-implementing-ruleorama/#post-1022261</guid>
+					<title><![CDATA[[Resolved] Error in implementing RuleORama]]></title>
+					<link>/forums/topic/error-in-implementing-ruleorama/#post-1022261</link>
+					<pubDate>Sat, 16 Aug 2014 14:27:44 +0000</pubDate>
+					<dc:creator>Gaurav Kumar</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>I&#8217;m trying to implement RuleORama Plugin in my app for creating rules-based grammars for better accuracy &amp; fast recognition. I want to use it with RapidEars for increase the speed of grammar-based recognition, but I&#8217;m getting the error for implementing RuleORoma. As I&#8217;m try to install app on my device it crash. I&#8217;m following all the steps shown in tutorial but still I&#8217;m getting the error. Here is the log file, please help me where I&#8217;m getting wrong.</p>
+<p>Starting OpenEars logging for OpenEars version 1.7 on 32-bit device: iPad running iOS version: 7.100000<br />
+2014-08-16 14:36:05.005 OpenEarDemo[7688:60b] User gave mic permission for this app.<br />
+2014-08-16 14:36:05.075 OpenEarDemo[7688:60b] I&#8217;m done running performDictionaryLookup and it took 0.035152 seconds<br />
+2014-08-16 14:36:05.134 OpenEarDemo[7688:60b] Starting dynamic language model generation<br />
+2014-08-16 14:36:05.138 OpenEarDemo[7688:60b] Able to open /var/mobile/Applications/D5A36984-4BA9-41D7-B464-C892CA4FA618/Library/Caches/NameIWantForMyLanguageModelFiles.corpus for reading<br />
+2014-08-16 14:36:05.139 OpenEarDemo[7688:60b] Able to open /var/mobile/Applications/D5A36984-4BA9-41D7-B464-C892CA4FA618/Library/Caches/NameIWantForMyLanguageModelFiles_pipe.txt for writing<br />
+2014-08-16 14:36:05.140 OpenEarDemo[7688:60b] Starting text2wfreq_impl<br />
+2014-08-16 14:36:05.154 OpenEarDemo[7688:60b] Done with text2wfreq_impl<br />
+2014-08-16 14:36:05.155 OpenEarDemo[7688:60b] Able to open /var/mobile/Applications/D5A36984-4BA9-41D7-B464-C892CA4FA618/Library/Caches/NameIWantForMyLanguageModelFiles_pipe.txt for reading.<br />
+2014-08-16 14:36:05.157 OpenEarDemo[7688:60b] Able to open /var/mobile/Applications/D5A36984-4BA9-41D7-B464-C892CA4FA618/Library/Caches/NameIWantForMyLanguageModelFiles.vocab for reading.<br />
+2014-08-16 14:36:05.158 OpenEarDemo[7688:60b] Starting wfreq2vocab<br />
+2014-08-16 14:36:05.160 OpenEarDemo[7688:60b] Done with wfreq2vocab<br />
+2014-08-16 14:36:05.161 OpenEarDemo[7688:60b] Starting text2idngram<br />
+2014-08-16 14:36:05.178 OpenEarDemo[7688:60b] Done with text2idngram<br />
+2014-08-16 14:36:05.183 OpenEarDemo[7688:60b] Starting idngram2lm</p>
+<p>2014-08-16 14:36:05.195 OpenEarDemo[7688:60b] Done with idngram2lm<br />
+2014-08-16 14:36:05.196 OpenEarDemo[7688:60b] Starting sphinx_lm_convert<br />
+2014-08-16 14:36:05.199 OpenEarDemo[7688:60b] Finishing sphinx_lm_convert<br />
+2014-08-16 14:36:05.204 OpenEarDemo[7688:60b] Done creating language model with CMUCLMTK in 0.069398 seconds.<br />
+2014-08-16 14:36:05.208 OpenEarDemo[7688:60b] Generating fast grammar took 0.197649 seconds<br />
+2014-08-16 14:36:05.210 OpenEarDemo[7688:60b] Starting sphinx_lm_convert<br />
+2014-08-16 14:36:05.213 OpenEarDemo[7688:60b] Finishing sphinx_lm_convert<br />
+2014-08-16 14:36:05.216 OpenEarDemo[7688:60b] lmpath /var/mobile/Applications/D5A36984-4BA9-41D7-B464-C892CA4FA618/Library/Caches/NameIWantForMyLanguageModelFiles.DMP<br />
+ dicpath /var/mobile/Applications/D5A36984-4BA9-41D7-B464-C892CA4FA618/Library/Caches/NameIWantForMyLanguageModelFiles.dic<br />
+2014-08-16 14:36:05.217 OpenEarDemo[7688:60b] User gave mic permission for this app.<br />
+2014-08-16 14:36:05.219 OpenEarDemo[7688:60b] Leaving sample rate at the default of 16000.<br />
+2014-08-16 14:36:05.220 OpenEarDemo[7688:60b] The audio session has never been initialized so we will do that now.<br />
+2014-08-16 14:36:05.221 OpenEarDemo[7688:60b] Checking and resetting all audio session settings.<br />
+2014-08-16 14:36:05.223 OpenEarDemo[7688:60b] audioCategory is incorrect, we will change it.<br />
+2014-08-16 14:36:05.224 OpenEarDemo[7688:60b] audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.<br />
+2014-08-16 14:36:05.225 OpenEarDemo[7688:60b] bluetoothInput is incorrect, we will change it.<br />
+2014-08-16 14:36:05.226 OpenEarDemo[7688:60b] bluetooth input is now on the correct setting of 1.<br />
+2014-08-16 14:36:05.228 OpenEarDemo[7688:60b] Output Device: SpeakerAndMicrophone.<br />
+2014-08-16 14:36:05.229 OpenEarDemo[7688:60b] categoryDefaultToSpeaker is incorrect, we will change it.<br />
+2014-08-16 14:36:05.230 OpenEarDemo[7688:60b] CategoryDefaultToSpeaker is now on the correct setting of 1.<br />
+2014-08-16 14:36:05.231 OpenEarDemo[7688:60b] preferredBufferSize is incorrect, we will change it.<br />
+2014-08-16 14:36:05.233 OpenEarDemo[7688:60b] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2014-08-16 14:36:05.234 OpenEarDemo[7688:60b] preferredSampleRateCheck is incorrect, we will change it.<br />
+2014-08-16 14:36:05.235 OpenEarDemo[7688:60b] preferred hardware sample rate is now on the correct setting of 16000.000000.<br />
+2014-08-16 14:36:05.260 OpenEarDemo[7688:60b] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2014-08-16 14:36:05.262 OpenEarDemo[7688:60b] Exiting startAudioSession.<br />
+2014-08-16 14:36:05.265 OpenEarDemo[7688:5c0b] setSecondsOfSilence value of 0.000000 was too large or too small or was NULL, using default of 0.700000.<br />
+2014-08-16 14:36:05.267 OpenEarDemo[7688:60b] Accuracy set to 20.<br />
+2014-08-16 14:36:05.268 OpenEarDemo[7688:5c0b] Project has these words or phrases in its dictionary:<br />
+JOHN JOHN<br />
+2014-08-16 14:36:05.270 OpenEarDemo[7688:60b] User gave mic permission for this app.<br />
+2014-08-16 14:36:05.272 OpenEarDemo[7688:5c0b] Recognition loop has started<br />
+2014-08-16 14:36:05.272 OpenEarDemo[7688:5c0b] The file you&#8217;ve sent to the decoder appears to be an ARPA-style language model based on its naming, but you have set languageModelIsJSGF: to TRUE. If you are experiencing recognition issues, there is a good chance that this is the reason for it.<br />
+2014-08-16 14:36:05.577 OpenEarDemo[7688:60b] A sample rate was requested that isn&#8217;t one of the two supported values of 16000 or 8000 so we will use the default of 16000.<br />
+2014-08-16 14:36:05.579 OpenEarDemo[7688:60b] The audio session has already been initialized but we will override its properties.<br />
+2014-08-16 14:36:05.581 OpenEarDemo[7688:60b] Checking and resetting all audio session settings.<br />
+2014-08-16 14:36:05.582 OpenEarDemo[7688:60b] audioCategory is correct, we will leave it as it is.<br />
+2014-08-16 14:36:05.583 OpenEarDemo[7688:60b] bluetoothInput is correct, we will leave it as it is.<br />
+2014-08-16 14:36:05.584 OpenEarDemo[7688:60b] Output Device: SpeakerAndMicrophone.<br />
+2014-08-16 14:36:05.585 OpenEarDemo[7688:60b] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2014-08-16 14:36:05.587 OpenEarDemo[7688:60b] preferredBufferSize is incorrect, we will change it.<br />
+2014-08-16 14:36:05.588 OpenEarDemo[7688:60b] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2014-08-16 14:36:05.589 OpenEarDemo[7688:60b] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2014-08-16 14:36:05.590 OpenEarDemo[7688:60b] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2014-08-16 14:36:05.591 OpenEarDemo[7688:60b] Exiting startAudioSession.<br />
+2014-08-16 14:36:05.593 OpenEarDemo[7688:5c0f] setSecondsOfSilence value of 0.060000 was too large or too small or was NULL, using default of 0.700000.<br />
+2014-08-16 14:36:05.594 OpenEarDemo[7688:5b0f] input level 0.000000<br />
+2014-08-16 14:36:05.595 OpenEarDemo[7688:5c0f] Project has these words or phrases in its dictionary:<br />
+JOHN JOHN<br />
+2014-08-16 14:36:05.597 OpenEarDemo[7688:5c0f] Recognition loop has started<br />
+2014-08-16 14:36:05.654 OpenEarDemo[7688:60b] volume 0.750000<br />
+OpenEarDemo(7688,0x38e6000) malloc: *** mach_vm_map(size=4190957568) failed (error code=3)<br />
+*** error: can&#8217;t allocate region<br />
+*** set a breakpoint in malloc_error_break to debug<br />
+calloc(1047739392,4) failed from_re_demo file_omitted(0)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-in-implementing-ruleorama/#post-1022268</guid>
+					<title><![CDATA[Reply To: [Resolved] Error in implementing RuleORama]]></title>
+					<link>/forums/topic/error-in-implementing-ruleorama/#post-1022268</link>
+					<pubDate>Sat, 16 Aug 2014 18:29:49 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>To know exactly why there is a crash you&#8217;d need to also turn on verbosePocketsphinx, but this output from OpenEarsLogging is probably the underlying cause:</p>
+<blockquote><p>The file you’ve sent to the decoder appears to be an ARPA-style language model based on its naming, but you have set languageModelIsJSGF: to TRUE. If you are experiencing recognition issues, there is a good chance that this is the reason for it.</p></blockquote>
+<p>You probably have languageModelIsJSGF set to TRUE as a result of trying out a grammar with stock OpenEars, but when you use RuleORama, you don&#8217;t set this to TRUE. Go ahead and turn on verbosePocketsphinx to get more help.</p>
+<p>A couple of other things you might want to take a look at: RapidEars doesn&#8217;t have an argument languageModelIsJSGF, so that isn&#8217;t a RapidEars listening session (in case you intend to be using RapidEars).  The other thing I noticed in the logging is that it is unlikely to be functional to create a grammar with a single word, either with stock grammars or with RuleORama. There is no strong reason to create a grammar with one word since there is no functional difference between a grammar with a single word and a statistical language model with a single word – they will bother be able to recognize either single utterances of the one word or repetitions.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-in-implementing-ruleorama/#post-1022515</guid>
+					<title><![CDATA[Reply To: [Resolved] Error in implementing RuleORama]]></title>
+					<link>/forums/topic/error-in-implementing-ruleorama/#post-1022515</link>
+					<pubDate>Sat, 13 Sep 2014 20:11:24 +0000</pubDate>
+					<dc:creator>djfink</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello!</p>
+<p>I am having the exact same problem when combining RapidEars with Rule-O-Rama. I&#8217;ve implemented the demo pretty much verbatim, here&#8217;s my viewDidLoad method:</p>
+<p>###########################################################################</p>
+<p>[super viewDidLoad];<br />
+// Do any additional setup after loading the view, typically from a nib.</p>
+<p>[OpenEarsLogging startOpenEarsLogging];</p>
+<p>self.lmGenerator = [[LanguageModelGenerator alloc] init];</p>
+<p>NSString *name = @&#8221;NameIWantForMyLanguageModelFiles&#8221;;</p>
+<p>NSDictionary *grammar = @{<br />
+                          ThisWillBeSaidOnce : @[<br />
+                                  @{ OneOfTheseCanBeSaidOnce : @[@&#8221;HELLO COMPUTER&#8221;, @&#8221;GREETINGS ROBOT&#8221;]},<br />
+                                  @{ OneOfTheseWillBeSaidOnce : @[@&#8221;DO THE FOLLOWING&#8221;, @&#8221;INSTRUCTION&#8221;]},<br />
+                                  @{ OneOfTheseWillBeSaidOnce : @[@&#8221;GO&#8221;, @&#8221;MOVE&#8221;]},<br />
+                                  @{ThisWillBeSaidOnce : @[<br />
+                                            @{ OneOfTheseWillBeSaidOnce : @[@&#8221;10&#8243;, @&#8221;20&#8243;,@&#8221;30&#8243;]},<br />
+                                            @{ OneOfTheseWillBeSaidOnce : @[@&#8221;LEFT&#8221;, @&#8221;RIGHT&#8221;, @&#8221;FORWARD&#8221;]}<br />
+                                            ]},<br />
+                                  @{ ThisCanBeSaidOnce : @[@&#8221;THANK YOU&#8221;]}<br />
+                                  ]<br />
+                          };</p>
+<p>NSError *err = [self.lmGenerator generateFastGrammarFromDictionary:grammar withFilesNamed:name forAcousticModelAtPath:[AcousticModel pathToModel:@&#8221;AcousticModelEnglish&#8221;]];</p>
+<p>NSDictionary *languageGeneratorResults = nil;</p>
+<p>NSString *lmPath = nil;<br />
+NSString *dicPath = nil;</p>
+<p>if([err code] == noErr) {</p>
+<p>    languageGeneratorResults = [err userInfo];</p>
+<p>    lmPath = [languageGeneratorResults objectForKey:@&#8221;LMPath&#8221;];<br />
+    dicPath = [languageGeneratorResults objectForKey:@&#8221;DictionaryPath&#8221;];</p>
+<p>} else {<br />
+    NSLog(@&#8221;Error: %@&#8221;,[err localizedDescription]);<br />
+}</p>
+<p>self.openEarsEventObserver = [[OpenEarsEventsObserver alloc] init];<br />
+[self.openEarsEventObserver setDelegate:self];</p>
+<p>self.pocketsphinxController = [[PocketsphinxController alloc] init];</p>
+<p>[self.pocketsphinxController setRapidEarsToVerbose:FALSE];<br />
+[self.pocketsphinxController setRapidEarsAccuracy:10];<br />
+[self.pocketsphinxController setFinalizeHypothesis:TRUE];<br />
+[self.pocketsphinxController setFasterPartials:TRUE];<br />
+[self.pocketsphinxController setFasterFinals:FALSE];</p>
+<p>[self.pocketsphinxController setVerbosePocketSphinx:TRUE];</p>
+<p>[self.pocketsphinxController startRealtimeListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[AcousticModel pathToModel:@&#8221;AcousticModelEnglish&#8221;]];</p>
+<p>###########################################################################</p>
+<p>And here is the output with OpenEarsLogging and pocketsphinxControllerVerbose both on:</p>
+<p>###########################################################################</p>
+<p>2014-09-13 16:03:22.826 OpenEarsTest[1248:60b] Starting OpenEars logging for OpenEars version 1.7 on 32-bit device: iPhone running iOS version: 7.100000<br />
+2014-09-13 16:03:22.981 OpenEarsTest[1248:60b] The word 10 was not found in the dictionary /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/OpenEarsTest.app/AcousticModelEnglish.bundle/LanguageModelGeneratorLookupList.text/LanguageModelGeneratorLookupList.text.<br />
+2014-09-13 16:03:22.982 OpenEarsTest[1248:60b] Now using the fallback method to look up the word 10<br />
+2014-09-13 16:03:22.983 OpenEarsTest[1248:60b] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the English phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2014-09-13 16:03:22.989 OpenEarsTest[1248:60b] Using convertGraphemes for the word or phrase 10 which doesn&#8217;t appear in the dictionary<br />
+2014-09-13 16:03:23.094 OpenEarsTest[1248:60b] The word 20 was not found in the dictionary /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/OpenEarsTest.app/AcousticModelEnglish.bundle/LanguageModelGeneratorLookupList.text/LanguageModelGeneratorLookupList.text.<br />
+2014-09-13 16:03:23.095 OpenEarsTest[1248:60b] Now using the fallback method to look up the word 20<br />
+2014-09-13 16:03:23.096 OpenEarsTest[1248:60b] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the English phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2014-09-13 16:03:23.098 OpenEarsTest[1248:60b] Using convertGraphemes for the word or phrase 20 which doesn&#8217;t appear in the dictionary<br />
+2014-09-13 16:03:23.192 OpenEarsTest[1248:60b] The word 30 was not found in the dictionary /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/OpenEarsTest.app/AcousticModelEnglish.bundle/LanguageModelGeneratorLookupList.text/LanguageModelGeneratorLookupList.text.<br />
+2014-09-13 16:03:23.194 OpenEarsTest[1248:60b] Now using the fallback method to look up the word 30<br />
+2014-09-13 16:03:23.195 OpenEarsTest[1248:60b] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the English phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2014-09-13 16:03:23.196 OpenEarsTest[1248:60b] Using convertGraphemes for the word or phrase 30 which doesn&#8217;t appear in the dictionary<br />
+2014-09-13 16:03:23.290 OpenEarsTest[1248:60b] I&#8217;m done running performDictionaryLookup and it took 0.388514 seconds<br />
+2014-09-13 16:03:23.527 OpenEarsTest[1248:60b] Starting dynamic language model generation<br />
+2014-09-13 16:03:23.533 OpenEarsTest[1248:60b] Able to open /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles.corpus for reading<br />
+2014-09-13 16:03:23.535 OpenEarsTest[1248:60b] Able to open /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles_pipe.txt for writing<br />
+2014-09-13 16:03:23.536 OpenEarsTest[1248:60b] Starting text2wfreq_impl<br />
+2014-09-13 16:03:23.554 OpenEarsTest[1248:60b] Done with text2wfreq_impl<br />
+2014-09-13 16:03:23.556 OpenEarsTest[1248:60b] Able to open /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles_pipe.txt for reading.<br />
+2014-09-13 16:03:23.558 OpenEarsTest[1248:60b] Able to open /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles.vocab for reading.<br />
+2014-09-13 16:03:23.559 OpenEarsTest[1248:60b] Starting wfreq2vocab<br />
+2014-09-13 16:03:23.563 OpenEarsTest[1248:60b] Done with wfreq2vocab<br />
+2014-09-13 16:03:23.565 OpenEarsTest[1248:60b] Starting text2idngram<br />
+2014-09-13 16:03:23.585 OpenEarsTest[1248:60b] Done with text2idngram<br />
+2014-09-13 16:03:23.592 OpenEarsTest[1248:60b] Starting idngram2lm</p>
+<p>2014-09-13 16:03:23.610 OpenEarsTest[1248:60b] Done with idngram2lm<br />
+2014-09-13 16:03:23.611 OpenEarsTest[1248:60b] Starting sphinx_lm_convert<br />
+2014-09-13 16:03:23.618 OpenEarsTest[1248:60b] Finishing sphinx_lm_convert<br />
+2014-09-13 16:03:23.624 OpenEarsTest[1248:60b] Done creating language model with CMUCLMTK in 0.096605 seconds.<br />
+2014-09-13 16:03:23.640 OpenEarsTest[1248:60b] Generating fast grammar took 0.784263 seconds<br />
+2014-09-13 16:03:23.642 OpenEarsTest[1248:60b] Starting sphinx_lm_convert<br />
+2014-09-13 16:03:23.648 OpenEarsTest[1248:60b] Finishing sphinx_lm_convert<br />
+2014-09-13 16:03:23.651 OpenEarsTest[1248:60b] Accuracy set to 10.<br />
+2014-09-13 16:03:23.661 OpenEarsTest[1248:60b] User gave mic permission for this app.<br />
+2014-09-13 16:03:23.663 OpenEarsTest[1248:60b] A sample rate was requested that isn&#8217;t one of the two supported values of 16000 or 8000 so we will use the default of 16000.<br />
+2014-09-13 16:03:23.664 OpenEarsTest[1248:60b] The audio session has never been initialized so we will do that now.<br />
+2014-09-13 16:03:23.665 OpenEarsTest[1248:60b] Checking and resetting all audio session settings.<br />
+2014-09-13 16:03:23.666 OpenEarsTest[1248:60b] audioCategory is incorrect, we will change it.<br />
+2014-09-13 16:03:23.667 OpenEarsTest[1248:60b] audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.<br />
+2014-09-13 16:03:23.668 OpenEarsTest[1248:60b] bluetoothInput is incorrect, we will change it.<br />
+2014-09-13 16:03:23.669 OpenEarsTest[1248:60b] bluetooth input is now on the correct setting of 1.<br />
+2014-09-13 16:03:23.671 OpenEarsTest[1248:60b] Output Device: ReceiverAndMicrophone.<br />
+2014-09-13 16:03:23.673 OpenEarsTest[1248:60b] categoryDefaultToSpeaker is incorrect, we will change it.<br />
+2014-09-13 16:03:23.674 OpenEarsTest[1248:60b] CategoryDefaultToSpeaker is now on the correct setting of 1.<br />
+2014-09-13 16:03:23.675 OpenEarsTest[1248:60b] preferredBufferSize is incorrect, we will change it.<br />
+2014-09-13 16:03:23.676 OpenEarsTest[1248:60b] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2014-09-13 16:03:23.678 OpenEarsTest[1248:60b] preferredSampleRateCheck is incorrect, we will change it.<br />
+2014-09-13 16:03:23.679 OpenEarsTest[1248:60b] preferred hardware sample rate is now on the correct setting of 16000.000000.<br />
+2014-09-13 16:03:23.708 OpenEarsTest[1248:60b] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2014-09-13 16:03:23.709 OpenEarsTest[1248:60b] Exiting startAudioSession.<br />
+2014-09-13 16:03:23.713 OpenEarsTest[1248:4507] setSecondsOfSilence value of 0.000000 was too large or too small or was NULL, using default of 0.700000.<br />
+2014-09-13 16:03:23.727 OpenEarsTest[1248:4507] Project has these words or phrases in its dictionary:<br />
+DO THE FOLLOWING GO 10 FORWARD<br />
+DO THE FOLLOWING GO 10 FORWARD(2)<br />
+DO THE FOLLOWING GO 10 FORWARD THANK YOU<br />
+DO THE FOLLOWING GO 10 FORWARD THANK YOU(2)<br />
+DO THE FOLLOWING GO 10 LEFT<br />
+DO THE FOLLOWING GO 10 LEFT(2)<br />
+DO THE FOLLOWING GO 10 LEFT THANK YOU<br />
+DO THE FOLLOWING GO 10 LEFT THANK YOU(2)<br />
+DO THE FOLLOWING GO 10 RIGHT<br />
+DO THE FOLLOWING GO 10 RIGHT(2)<br />
+DO THE FOLLOWING GO 10 RIGHT THANK YOU<br />
+DO THE FOLLOWING GO 10 RIGHT THANK YOU(2)<br />
+DO THE FOLLOWING GO 20 FORWARD<br />
+DO THE FOLLOWING GO 20 FORWARD(2)<br />
+DO THE FOLLOWING GO 20 FORWARD THANK YOU<br />
+DO THE FOLLOWING GO 20 FORWARD THANK YOU(2)<br />
+DO THE FOLLOWING GO 20 LEFT<br />
+DO THE FOLLOWING GO 20 LEFT(2)<br />
+DO THE FOLLOWING GO 20 LEFT THANK YOU<br />
+DO THE FOLLOWING GO 20 LEFT THANK YOU(2)<br />
+DO THE FOLLOWING GO 20 RIGHT<br />
+DO THE FOLLOWING GO 20 RIGHT(2)<br />
+DO THE FOLLOWING GO 20 RIGHT THANK YOU<br />
+DO THE FOLLOWING GO 20 RIGHT THANK YOU(2)<br />
+DO THE FOLLOWING GO 30 FORWARD<br />
+DO THE FOLLOWING GO 30 FORWARD(2)<br />
+DO THE FOLLOWING GO 30 FORWARD THANK YOU<br />
+DO THE FOLLOWING GO 30 FORWARD THANK YOU(2)<br />
+DO THE FOLLOWING GO 30 LEFT<br />
+DO THE FOLLOWING GO 30 LEFT(2)<br />
+DO THE FOLLOWING GO 30 LEFT THANK YOU<br />
+&#8230;and 510 more.<br />
+2014-09-13 16:03:23.730 OpenEarsTest[1248:4507] Recognition loop has started<br />
+2014-09-13 16:03:23.742 OpenEarsTest[1248:3a03] Audio route has changed for the following reason:<br />
+2014-09-13 16:03:23.749 OpenEarsTest[1248:3a03] There has been a change of category<br />
+2014-09-13 16:03:23.781 OpenEarsTest[1248:3a03] The previous audio route was Speaker<br />
+2014-09-13 16:03:23.788 OpenEarsTest[1248:3a03] This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is SpeakerAndMicrophone<br />
+OpenEarsTest(1248,0x31a0000) malloc: *** mach_vm_map(size=4190957568) failed (error code=3)<br />
+*** error: can&#8217;t allocate region<br />
+*** set a breakpoint in malloc_error_break to debug<br />
+calloc(1047739392,4) failed from_re_demo file_omitted(0)</p>
+<p>###########################################################################</p>
+<p>Any help would be greatly appreciated. Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-in-implementing-ruleorama/#post-1022516</guid>
+					<title><![CDATA[Reply To: [Resolved] Error in implementing RuleORama]]></title>
+					<link>/forums/topic/error-in-implementing-ruleorama/#post-1022516</link>
+					<pubDate>Sat, 13 Sep 2014 20:21:05 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>This is a different problem that the previous one, but we can troubleshoot it. Can you set this:</p>
+<p>[self.pocketsphinxController setRapidEarsToVerbose:FALSE];</p>
+<p>to this:</p>
+<p>[self.pocketsphinxController setRapidEarsToVerbose:TRUE];</p>
+<p> so we can see the verbose output from the recognizer?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-in-implementing-ruleorama/#post-1022517</guid>
+					<title><![CDATA[Reply To: [Resolved] Error in implementing RuleORama]]></title>
+					<link>/forums/topic/error-in-implementing-ruleorama/#post-1022517</link>
+					<pubDate>Sat, 13 Sep 2014 20:24:03 +0000</pubDate>
+					<dc:creator>djfink</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sure thing, here&#8217;s the new output:</p>
+<p>2014-09-13 16:22:02.291 OpenEarsTest[1289:60b] Starting OpenEars logging for OpenEars version 1.7 on 32-bit device: iPhone running iOS version: 7.100000<br />
+2014-09-13 16:22:02.465 OpenEarsTest[1289:60b] The word 10 was not found in the dictionary /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/OpenEarsTest.app/AcousticModelEnglish.bundle/LanguageModelGeneratorLookupList.text/LanguageModelGeneratorLookupList.text.<br />
+2014-09-13 16:22:02.467 OpenEarsTest[1289:60b] Now using the fallback method to look up the word 10<br />
+2014-09-13 16:22:02.468 OpenEarsTest[1289:60b] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the English phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2014-09-13 16:22:02.474 OpenEarsTest[1289:60b] Using convertGraphemes for the word or phrase 10 which doesn&#8217;t appear in the dictionary<br />
+2014-09-13 16:22:02.579 OpenEarsTest[1289:60b] The word 20 was not found in the dictionary /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/OpenEarsTest.app/AcousticModelEnglish.bundle/LanguageModelGeneratorLookupList.text/LanguageModelGeneratorLookupList.text.<br />
+2014-09-13 16:22:02.581 OpenEarsTest[1289:60b] Now using the fallback method to look up the word 20<br />
+2014-09-13 16:22:02.582 OpenEarsTest[1289:60b] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the English phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2014-09-13 16:22:02.584 OpenEarsTest[1289:60b] Using convertGraphemes for the word or phrase 20 which doesn&#8217;t appear in the dictionary<br />
+2014-09-13 16:22:02.678 OpenEarsTest[1289:60b] The word 30 was not found in the dictionary /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/OpenEarsTest.app/AcousticModelEnglish.bundle/LanguageModelGeneratorLookupList.text/LanguageModelGeneratorLookupList.text.<br />
+2014-09-13 16:22:02.679 OpenEarsTest[1289:60b] Now using the fallback method to look up the word 30<br />
+2014-09-13 16:22:02.681 OpenEarsTest[1289:60b] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the English phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2014-09-13 16:22:02.682 OpenEarsTest[1289:60b] Using convertGraphemes for the word or phrase 30 which doesn&#8217;t appear in the dictionary<br />
+2014-09-13 16:22:02.776 OpenEarsTest[1289:60b] I&#8217;m done running performDictionaryLookup and it took 0.393348 seconds<br />
+2014-09-13 16:22:03.015 OpenEarsTest[1289:60b] Starting dynamic language model generation<br />
+2014-09-13 16:22:03.021 OpenEarsTest[1289:60b] Able to open /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles.corpus for reading<br />
+2014-09-13 16:22:03.023 OpenEarsTest[1289:60b] Able to open /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles_pipe.txt for writing<br />
+2014-09-13 16:22:03.024 OpenEarsTest[1289:60b] Starting text2wfreq_impl<br />
+2014-09-13 16:22:03.042 OpenEarsTest[1289:60b] Done with text2wfreq_impl<br />
+2014-09-13 16:22:03.043 OpenEarsTest[1289:60b] Able to open /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles_pipe.txt for reading.<br />
+2014-09-13 16:22:03.045 OpenEarsTest[1289:60b] Able to open /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles.vocab for reading.<br />
+2014-09-13 16:22:03.046 OpenEarsTest[1289:60b] Starting wfreq2vocab<br />
+2014-09-13 16:22:03.050 OpenEarsTest[1289:60b] Done with wfreq2vocab<br />
+2014-09-13 16:22:03.052 OpenEarsTest[1289:60b] Starting text2idngram<br />
+2014-09-13 16:22:03.072 OpenEarsTest[1289:60b] Done with text2idngram<br />
+2014-09-13 16:22:03.080 OpenEarsTest[1289:60b] Starting idngram2lm</p>
+<p>2014-09-13 16:22:03.097 OpenEarsTest[1289:60b] Done with idngram2lm<br />
+2014-09-13 16:22:03.099 OpenEarsTest[1289:60b] Starting sphinx_lm_convert<br />
+2014-09-13 16:22:03.106 OpenEarsTest[1289:60b] Finishing sphinx_lm_convert<br />
+2014-09-13 16:22:03.112 OpenEarsTest[1289:60b] Done creating language model with CMUCLMTK in 0.096545 seconds.<br />
+2014-09-13 16:22:03.128 OpenEarsTest[1289:60b] Generating fast grammar took 0.806542 seconds<br />
+2014-09-13 16:22:03.130 OpenEarsTest[1289:60b] Starting sphinx_lm_convert<br />
+2014-09-13 16:22:03.135 OpenEarsTest[1289:60b] Finishing sphinx_lm_convert<br />
+2014-09-13 16:22:03.138 OpenEarsTest[1289:60b] Accuracy set to 10.<br />
+2014-09-13 16:22:03.147 OpenEarsTest[1289:60b] User gave mic permission for this app.<br />
+2014-09-13 16:22:03.149 OpenEarsTest[1289:60b] A sample rate was requested that isn&#8217;t one of the two supported values of 16000 or 8000 so we will use the default of 16000.<br />
+2014-09-13 16:22:03.150 OpenEarsTest[1289:60b] The audio session has never been initialized so we will do that now.<br />
+2014-09-13 16:22:03.151 OpenEarsTest[1289:60b] Checking and resetting all audio session settings.<br />
+2014-09-13 16:22:03.153 OpenEarsTest[1289:60b] audioCategory is incorrect, we will change it.<br />
+2014-09-13 16:22:03.154 OpenEarsTest[1289:60b] audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.<br />
+2014-09-13 16:22:03.155 OpenEarsTest[1289:60b] bluetoothInput is incorrect, we will change it.<br />
+2014-09-13 16:22:03.156 OpenEarsTest[1289:60b] bluetooth input is now on the correct setting of 1.<br />
+2014-09-13 16:22:03.158 OpenEarsTest[1289:60b] Output Device: ReceiverAndMicrophone.<br />
+2014-09-13 16:22:03.160 OpenEarsTest[1289:60b] categoryDefaultToSpeaker is incorrect, we will change it.<br />
+2014-09-13 16:22:03.161 OpenEarsTest[1289:60b] CategoryDefaultToSpeaker is now on the correct setting of 1.<br />
+2014-09-13 16:22:03.162 OpenEarsTest[1289:60b] preferredBufferSize is incorrect, we will change it.<br />
+2014-09-13 16:22:03.163 OpenEarsTest[1289:60b] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2014-09-13 16:22:03.165 OpenEarsTest[1289:60b] preferredSampleRateCheck is incorrect, we will change it.<br />
+2014-09-13 16:22:03.166 OpenEarsTest[1289:60b] preferred hardware sample rate is now on the correct setting of 16000.000000.<br />
+2014-09-13 16:22:03.197 OpenEarsTest[1289:60b] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2014-09-13 16:22:03.199 OpenEarsTest[1289:60b] Exiting startAudioSession.<br />
+2014-09-13 16:22:03.205 OpenEarsTest[1289:4507] setSecondsOfSilence value of 0.000000 was too large or too small or was NULL, using default of 0.700000.<br />
+2014-09-13 16:22:03.203 OpenEarsTest[1289:3a03] Audio route has changed for the following reason:<br />
+2014-09-13 16:22:03.217 OpenEarsTest[1289:4507] Project has these words or phrases in its dictionary:<br />
+DO THE FOLLOWING GO 10 FORWARD<br />
+DO THE FOLLOWING GO 10 FORWARD(2)<br />
+DO THE FOLLOWING GO 10 FORWARD THANK YOU<br />
+DO THE FOLLOWING GO 10 FORWARD THANK YOU(2)<br />
+DO THE FOLLOWING GO 10 LEFT<br />
+DO THE FOLLOWING GO 10 LEFT(2)<br />
+DO THE FOLLOWING GO 10 LEFT THANK YOU<br />
+DO THE FOLLOWING GO 10 LEFT THANK YOU(2)<br />
+DO THE FOLLOWING GO 10 RIGHT<br />
+DO THE FOLLOWING GO 10 RIGHT(2)<br />
+DO THE FOLLOWING GO 10 RIGHT THANK YOU<br />
+DO THE FOLLOWING GO 10 RIGHT THANK YOU(2)<br />
+DO THE FOLLOWING GO 20 FORWARD<br />
+DO THE FOLLOWING GO 20 FORWARD(2)<br />
+DO THE FOLLOWING GO 20 FORWARD THANK YOU<br />
+DO THE FOLLOWING GO 20 FORWARD THANK YOU(2)<br />
+DO THE FOLLOWING GO 20 LEFT<br />
+DO THE FOLLOWING GO 20 LEFT(2)<br />
+DO THE FOLLOWING GO 20 LEFT THANK YOU<br />
+DO THE FOLLOWING GO 20 LEFT THANK YOU(2)<br />
+DO THE FOLLOWING GO 20 RIGHT<br />
+DO THE FOLLOWING GO 20 RIGHT(2)<br />
+DO THE FOLLOWING GO 20 RIGHT THANK YOU<br />
+DO THE FOLLOWING GO 20 RIGHT THANK YOU(2)<br />
+DO THE FOLLOWING GO 30 FORWARD<br />
+DO THE FOLLOWING GO 30 FORWARD(2)<br />
+DO THE FOLLOWING GO 30 FORWARD THANK YOU<br />
+DO THE FOLLOWING GO 30 FORWARD THANK YOU(2)<br />
+DO THE FOLLOWING GO 30 LEFT<br />
+DO THE FOLLOWING GO 30 LEFT(2)<br />
+DO THE FOLLOWING GO 30 LEFT THANK YOU<br />
+&#8230;and 510 more.<br />
+2014-09-13 16:22:03.207 OpenEarsTest[1289:3a03] There has been a change of category<br />
+2014-09-13 16:22:03.236 OpenEarsTest[1289:3a03] The previous audio route was Speaker<br />
+2014-09-13 16:22:03.231 OpenEarsTest[1289:4507] Recognition loop has started<br />
+2014-09-13 16:22:03.248 OpenEarsTest[1289:3a03] This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is SpeakerAndMicrophone<br />
+INFO: file_omitted(0): Parsing command line:<br />
+\<br />
+	-lm /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles.DMP \<br />
+	-beam 1e-66 \<br />
+	-bestpath yes \<br />
+	-dict /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles.dic \<br />
+	-hmm /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/OpenEarsTest.app/AcousticModelEnglish.bundle \<br />
+	-lw 6.5 \<br />
+	-samprate 16000 </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-adchdr		0		0<br />
+-adcin		no		no<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-align<br />
+-alpha		0.97		9.700000e-01<br />
+-arcdumpdir<br />
+-ascale		20.0		2.000000e+01<br />
+-aw		1		1<br />
+-backtrace	no		no<br />
+-beam		1e-48		1.000000e-66<br />
+-bestpath	yes		yes<br />
+-bestpathlw	9.5		9.500000e+00<br />
+-bghist		no		no<br />
+-cepdir<br />
+-cepext		.mfc		.mfc<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		8.0<br />
+-compallsen	no		no<br />
+-ctl<br />
+-ctlcount	-1		-1<br />
+-ctlincr	1		1<br />
+-ctloffset	0		0<br />
+-debug				0<br />
+-dict				/var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles.dic<br />
+-dictcase	no		no<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-ds		1		1<br />
+-fdict<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-featparams<br />
+-fillprob	1e-8		1.000000e-08<br />
+-frate		100		100<br />
+-fsg<br />
+-fsgusealtpron	yes		yes<br />
+-fsgusefiller	yes		yes<br />
+-fwdflat	yes		yes<br />
+-fwdflatbeam	1e-64		1.000000e-64<br />
+-fwdflatlw	8.5		8.500000e+00<br />
+-fwdflatsfwin	25		25<br />
+-fwdflatwbeam	7e-29		7.000000e-29<br />
+-fwdtree	yes		yes<br />
+-fwdtreelm<br />
+-hmm				/var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/OpenEarsTest.app/AcousticModelEnglish.bundle<br />
+-hyp<br />
+-hypprefix<br />
+-input_endian	little		little<br />
+-jsgf<br />
+-kdmaxbbi	-1		-1<br />
+-kdmaxdepth	0		0<br />
+-kdtree<br />
+-latsize	512		512<br />
+-lda<br />
+-ldadim		0		0<br />
+-lextreedump	0		0<br />
+-lifter		0		0<br />
+-lm				/var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles.DMP<br />
+-lmctl<br />
+-lmname		default		default<br />
+-logbase	1.0001		1.000100e+00<br />
+-logfn<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.333333e+02<br />
+-lpbeam		1e-40		1.000000e-40<br />
+-lponlybeam	7e-29		7.000000e-29<br />
+-lw		6.5		6.500000e+00<br />
+-maxhmmpf	-1		-1<br />
+-maxnewoov	20		20<br />
+-maxsilfr	-1		-1<br />
+-maxwpf		50		50<br />
+-mdef<br />
+-mean<br />
+-mfclogdir<br />
+-min_endfr	0		0<br />
+-mixw<br />
+-mixwfloor	0.0000001	1.000000e-07<br />
+-mllr<br />
+-mmap		yes		yes<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		40<br />
+-nwpen		1.0		1.000000e+00<br />
+-pbeam		1e-48		1.000000e-48<br />
+-pip		1.0		1.000000e+00<br />
+-pl_beam	1e-10		1.000000e-10<br />
+-pl_pbeam	1e-5		1.000000e-05<br />
+-pl_window	0		0<br />
+-rawlogdir<br />
+-remove_dc	no		no<br />
+-round_filters	yes		yes<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-sendump<br />
+-senlogdir<br />
+-senmgau<br />
+-silprob	0.005		5.000000e-03<br />
+-smoothspec	no		no<br />
+-svspec<br />
+-tmat<br />
+-tmatfloor	0.0001		1.000000e-04<br />
+-topn		4		4<br />
+-topn_beam	0		0<br />
+-toprule<br />
+-transform	legacy		legacy<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	6.855498e+03<br />
+-usewdphones	no		no<br />
+-uw		1.0		1.000000e+00<br />
+-var<br />
+-varfloor	0.0001		1.000000e-04<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-vm<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wbeam		7e-29		7.000000e-29<br />
+-wip		0.65		6.500000e-01<br />
+-wlen		0.025625	2.562500e-02</p>
+<p>INFO: file_omitted(0): Parsing command line:<br />
+\<br />
+	-nfilt 20 \<br />
+	-lowerf 1 \<br />
+	-upperf 4000 \<br />
+	-wlen 0.025 \<br />
+	-transform dct \<br />
+	-round_filters no \<br />
+	-remove_dc yes \<br />
+	-svspec 0-12/13-25/26-38 \<br />
+	-feat 1s_c_d_dd \<br />
+	-agc none \<br />
+	-cmn current \<br />
+	-cmninit 47 \<br />
+	-varnorm no </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-alpha		0.97		9.700000e-01<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		47<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-frate		100		100<br />
+-input_endian	little		little<br />
+-lda<br />
+-ldadim		0		0<br />
+-lifter		0		0<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.000000e+00<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		20<br />
+-remove_dc	no		yes<br />
+-round_filters	yes		no<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-smoothspec	no		no<br />
+-svspec				0-12/13-25/26-38<br />
+-transform	legacy		dct<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	4.000000e+03<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wlen		0.025625	2.500000e-02</p>
+<p>INFO: file_omitted(0): Parsed model-specific feature parameters from /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/OpenEarsTest.app/AcousticModelEnglish.bundle/feat.params<br />
+INFO: file_omitted(0): Reading HMM transition probability matrices: /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/OpenEarsTest.app/AcousticModelEnglish.bundle/transition_matrices<br />
+INFO: file_omitted(0): Loading senones from dump file /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/OpenEarsTest.app/AcousticModelEnglish.bundle/sendump<br />
+INFO: file_omitted(0): BEGIN FILE FORMAT DESCRIPTION<br />
+INFO: file_omitted(0): Using memory-mapped I/O for senones<br />
+INFO: file_omitted(0): Building PID tables for dictionary<br />
+INFO: file_omitted(0): Allocating 50^3 * 2 bytes (244 KiB) for word-initial triphones<br />
+INFO: file_omitted(0): Allocated 30200 bytes (29 KiB) for word-final triphones<br />
+INFO: file_omitted(0): Allocated 30200 bytes (29 KiB) for single-phone word triphones<br />
+ERROR: &#8220;file_omitted&#8221;, line 0: File /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles.DMP not found<br />
+OpenEarsTest(1289,0x31b4000) malloc: *** mach_vm_map(size=4190957568) failed (error code=3)<br />
+*** error: can&#8217;t allocate region<br />
+*** set a breakpoint in malloc_error_break to debug<br />
+calloc(1047739392,4) failed from_re_demo file_omitted(0)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-in-implementing-ruleorama/#post-1022518</guid>
+					<title><![CDATA[Reply To: [Resolved] Error in implementing RuleORama]]></title>
+					<link>/forums/topic/error-in-implementing-ruleorama/#post-1022518</link>
+					<pubDate>Sun, 14 Sep 2014 09:50:39 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks! Out of curiosity, do you get the same result with a simpler grammar? i.e. if you change any &#8220;CanBeSaid&#8221; statements to &#8220;WillBeSaid&#8221; so they don&#8217;t represent optional statements?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-in-implementing-ruleorama/#post-1022521</guid>
+					<title><![CDATA[Reply To: [Resolved] Error in implementing RuleORama]]></title>
+					<link>/forums/topic/error-in-implementing-ruleorama/#post-1022521</link>
+					<pubDate>Sun, 14 Sep 2014 16:04:43 +0000</pubDate>
+					<dc:creator>djfink</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I switched all of the CanBeSaid&#8217;s to WillBeSaid&#8217;s and also tried trimming the grammar to this:</p>
+<p>NSDictionary *grammar = @{<br />
+                          ThisWillBeSaidOnce : @[<br />
+                                  @{ OneOfTheseWillBeSaidOnce : @[@&#8221;HELLO COMPUTER&#8221;, @&#8221;GREETINGS ROBOT&#8221;]},<br />
+                                  ]<br />
+                          };</p>
+<p>Both times I get the same error message.</p>
+<p>Here&#8217;s the whole dump from the grammar above: </p>
+<p>2014-09-14 12:02:14.711 OpenEarsTest[1711:60b] Starting OpenEars logging for OpenEars version 1.7 on 32-bit device: iPhone running iOS version: 7.100000<br />
+2014-09-14 12:02:14.818 OpenEarsTest[1711:60b] I&#8217;m done running performDictionaryLookup and it took 0.066412 seconds<br />
+2014-09-14 12:02:14.868 OpenEarsTest[1711:60b] Starting dynamic language model generation<br />
+2014-09-14 12:02:14.872 OpenEarsTest[1711:60b] Able to open /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles.corpus for reading<br />
+2014-09-14 12:02:14.874 OpenEarsTest[1711:60b] Able to open /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles_pipe.txt for writing<br />
+2014-09-14 12:02:14.875 OpenEarsTest[1711:60b] Starting text2wfreq_impl<br />
+2014-09-14 12:02:14.890 OpenEarsTest[1711:60b] Done with text2wfreq_impl<br />
+2014-09-14 12:02:14.891 OpenEarsTest[1711:60b] Able to open /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles_pipe.txt for reading.<br />
+2014-09-14 12:02:14.893 OpenEarsTest[1711:60b] Able to open /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles.vocab for reading.<br />
+2014-09-14 12:02:14.895 OpenEarsTest[1711:60b] Starting wfreq2vocab<br />
+2014-09-14 12:02:14.896 OpenEarsTest[1711:60b] Done with wfreq2vocab<br />
+2014-09-14 12:02:14.898 OpenEarsTest[1711:60b] Starting text2idngram<br />
+2014-09-14 12:02:14.914 OpenEarsTest[1711:60b] Done with text2idngram<br />
+2014-09-14 12:02:14.918 OpenEarsTest[1711:60b] Starting idngram2lm</p>
+<p>2014-09-14 12:02:14.931 OpenEarsTest[1711:60b] Done with idngram2lm<br />
+2014-09-14 12:02:14.932 OpenEarsTest[1711:60b] Starting sphinx_lm_convert<br />
+2014-09-14 12:02:14.936 OpenEarsTest[1711:60b] Finishing sphinx_lm_convert<br />
+2014-09-14 12:02:14.940 OpenEarsTest[1711:60b] Done creating language model with CMUCLMTK in 0.071698 seconds.<br />
+2014-09-14 12:02:14.945 OpenEarsTest[1711:60b] Generating fast grammar took 0.206224 seconds<br />
+2014-09-14 12:02:14.948 OpenEarsTest[1711:60b] Starting sphinx_lm_convert<br />
+2014-09-14 12:02:14.950 OpenEarsTest[1711:60b] Finishing sphinx_lm_convert<br />
+2014-09-14 12:02:14.954 OpenEarsTest[1711:60b] Accuracy set to 10.<br />
+2014-09-14 12:02:14.963 OpenEarsTest[1711:60b] User gave mic permission for this app.<br />
+2014-09-14 12:02:14.965 OpenEarsTest[1711:60b] A sample rate was requested that isn&#8217;t one of the two supported values of 16000 or 8000 so we will use the default of 16000.<br />
+2014-09-14 12:02:14.966 OpenEarsTest[1711:60b] The audio session has never been initialized so we will do that now.<br />
+2014-09-14 12:02:14.967 OpenEarsTest[1711:60b] Checking and resetting all audio session settings.<br />
+2014-09-14 12:02:14.968 OpenEarsTest[1711:60b] audioCategory is incorrect, we will change it.<br />
+2014-09-14 12:02:14.969 OpenEarsTest[1711:60b] audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.<br />
+2014-09-14 12:02:14.970 OpenEarsTest[1711:60b] bluetoothInput is incorrect, we will change it.<br />
+2014-09-14 12:02:14.971 OpenEarsTest[1711:60b] bluetooth input is now on the correct setting of 1.<br />
+2014-09-14 12:02:14.973 OpenEarsTest[1711:60b] Output Device: ReceiverAndMicrophone.<br />
+2014-09-14 12:02:14.975 OpenEarsTest[1711:60b] categoryDefaultToSpeaker is incorrect, we will change it.<br />
+2014-09-14 12:02:14.976 OpenEarsTest[1711:60b] CategoryDefaultToSpeaker is now on the correct setting of 1.<br />
+2014-09-14 12:02:14.978 OpenEarsTest[1711:60b] preferredBufferSize is incorrect, we will change it.<br />
+2014-09-14 12:02:14.979 OpenEarsTest[1711:60b] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2014-09-14 12:02:14.980 OpenEarsTest[1711:60b] preferredSampleRateCheck is incorrect, we will change it.<br />
+2014-09-14 12:02:14.981 OpenEarsTest[1711:60b] preferred hardware sample rate is now on the correct setting of 16000.000000.<br />
+2014-09-14 12:02:15.012 OpenEarsTest[1711:60b] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2014-09-14 12:02:15.014 OpenEarsTest[1711:60b] Exiting startAudioSession.<br />
+2014-09-14 12:02:15.017 OpenEarsTest[1711:3a03] Audio route has changed for the following reason:<br />
+2014-09-14 12:02:15.021 OpenEarsTest[1711:4507] setSecondsOfSilence value of 0.000000 was too large or too small or was NULL, using default of 0.700000.<br />
+2014-09-14 12:02:15.019 OpenEarsTest[1711:3a03] There has been a change of category<br />
+2014-09-14 12:02:15.024 OpenEarsTest[1711:4507] Project has these words or phrases in its dictionary:<br />
+GREETINGS ROBOT<br />
+GREETINGS ROBOT(2)<br />
+HELLO COMPUTER<br />
+HELLO COMPUTER(2)<br />
+2014-09-14 12:02:15.024 OpenEarsTest[1711:3a03] The previous audio route was Speaker<br />
+2014-09-14 12:02:15.028 OpenEarsTest[1711:4507] Recognition loop has started<br />
+INFO: file_omitted(0): Parsing command line:<br />
+\<br />
+	-lm /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles.DMP \<br />
+	-beam 1e-66 \<br />
+	-bestpath yes \<br />
+	-dict /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles.dic \<br />
+	-hmm /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/OpenEarsTest.app/AcousticModelEnglish.bundle \<br />
+	-lw 6.5 \<br />
+	-samprate 16000 </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-adchdr		0		0<br />
+-adcin		no		no<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-align<br />
+-alpha		0.97		9.700000e-01<br />
+-arcdumpdir<br />
+-ascale		20.0		2.000000e+01<br />
+-aw		1		1<br />
+-backtrace	no		no<br />
+-beam		1e-48		1.000000e-66<br />
+-bestpath	yes		yes<br />
+-bestpathlw	9.5		9.500000e+00<br />
+-bghist		no		no<br />
+-cepdir<br />
+-cepext		.mfc		.mfc<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		8.0<br />
+-compallsen	no		no<br />
+-ctl<br />
+-ctlcount	-1		-1<br />
+-ctlincr	1		1<br />
+-ctloffset	0		0<br />
+-debug				0<br />
+-dict				/var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles.dic<br />
+-dictcase	no		no<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-ds		1		1<br />
+-fdict<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-featparams<br />
+-fillprob	1e-8		1.000000e-08<br />
+-frate		100		100<br />
+-fsg<br />
+-fsgusealtpron	yes		yes<br />
+-fsgusefiller	yes		yes<br />
+-fwdflat	yes		yes<br />
+-fwdflatbeam	1e-64		1.000000e-64<br />
+-fwdflatlw	8.5		8.500000e+00<br />
+-fwdflatsfwin	25		25<br />
+-fwdflatwbeam	7e-29		7.000000e-29<br />
+-fwdtree	yes		yes<br />
+-fwdtreelm<br />
+-hmm				/var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/OpenEarsTest.app/AcousticModelEnglish.bundle<br />
+-hyp<br />
+-hypprefix<br />
+-input_endian	little		little<br />
+-jsgf<br />
+-kdmaxbbi	-1		-1<br />
+-kdmaxdepth	0		0<br />
+-kdtree<br />
+-latsize	512		512<br />
+-lda<br />
+-ldadim		0		0<br />
+-lextreedump	0		0<br />
+-lifter		0		0<br />
+-lm				/var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles.DMP<br />
+-lmctl<br />
+-lmname		default		default<br />
+-logbase	1.0001		1.000100e+00<br />
+-logfn<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.333333e+02<br />
+-lpbeam		1e-40		1.000000e-40<br />
+-lponlybeam	7e-29		7.000000e-29<br />
+-lw		6.5		6.500000e+00<br />
+-maxhmmpf	-1		-1<br />
+-maxnewoov	20		20<br />
+-maxsilfr	-1		-1<br />
+-maxwpf		50		50<br />
+-mdef<br />
+-mean<br />
+-mfclogdir<br />
+-min_endfr	0		0<br />
+-mixw<br />
+-mixwfloor	0.0000001	1.000000e-07<br />
+-mllr<br />
+-mmap		yes		yes<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		40<br />
+-nwpen		1.0		1.000000e+00<br />
+-pbeam		1e-48		1.000000e-48<br />
+-pip		1.0		1.000000e+00<br />
+-pl_beam	1e-10		1.000000e-10<br />
+-pl_pbeam	1e-5		1.000000e-05<br />
+-pl_window	0		0<br />
+-rawlogdir<br />
+-remove_dc	no		no<br />
+-round_filters	yes		yes<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-sendump<br />
+-senlogdir<br />
+-senmgau<br />
+-silprob	0.005		5.000000e-03<br />
+-smoothspec	no		no<br />
+-svspec<br />
+-tmat<br />
+-tmatfloor	0.0001		1.000000e-04<br />
+-topn		4		4<br />
+-topn_beam	0		0<br />
+-toprule<br />
+-transform	legacy		legacy<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	6.855498e+03<br />
+-usewdphones	no		no<br />
+-uw		1.0		1.000000e+00<br />
+-var<br />
+-varfloor	0.0001		1.000000e-04<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-vm<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wbeam		7e-29		7.000000e-29<br />
+-wip		0.65		6.500000e-01<br />
+-wlen		0.025625	2.562500e-02</p>
+<p>INFO: file_omitted(0): Parsing command line:<br />
+\<br />
+	-nfilt 20 \<br />
+	-lowerf 1 \<br />
+	-upperf 4000 \<br />
+	-wlen 0.025 \<br />
+	-transform dct \<br />
+	-round_filters no \<br />
+	-remove_dc yes \<br />
+	-svspec 0-12/13-25/26-38 \<br />
+	-feat 1s_c_d_dd \<br />
+	-agc none \<br />
+	-cmn current \<br />
+	-cmninit 47 \<br />
+	-varnorm no </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-alpha		0.97		9.700000e-01<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		47<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-frate		100		100<br />
+-input_endian	little		little<br />
+-lda<br />
+-ldadim		0		0<br />
+-lifter		0		0<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.000000e+00<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		20<br />
+-remove_dc	no		yes<br />
+-round_filters	yes		no<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-smoothspec	no		no<br />
+-svspec				0-12/13-25/26-38<br />
+-transform	legacy		dct<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	4.000000e+03<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wlen		0.025625	2.500000e-02</p>
+<p>INFO: file_omitted(0): Parsed model-specific feature parameters from /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/OpenEarsTest.app/AcousticModelEnglish.bundle/feat.params<br />
+2014-09-14 12:02:15.033 OpenEarsTest[1711:3a03] This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is SpeakerAndMicrophone<br />
+INFO: file_omitted(0): Reading HMM transition probability matrices: /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/OpenEarsTest.app/AcousticModelEnglish.bundle/transition_matrices<br />
+INFO: file_omitted(0): Loading senones from dump file /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/OpenEarsTest.app/AcousticModelEnglish.bundle/sendump<br />
+INFO: file_omitted(0): BEGIN FILE FORMAT DESCRIPTION<br />
+INFO: file_omitted(0): Using memory-mapped I/O for senones<br />
+INFO: file_omitted(0): Building PID tables for dictionary<br />
+INFO: file_omitted(0): Allocating 50^3 * 2 bytes (244 KiB) for word-initial triphones<br />
+INFO: file_omitted(0): Allocated 30200 bytes (29 KiB) for word-final triphones<br />
+INFO: file_omitted(0): Allocated 30200 bytes (29 KiB) for single-phone word triphones<br />
+ERROR: &#8220;file_omitted&#8221;, line 0: File /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles.DMP not found<br />
+OpenEarsTest(1711,0x313a000) malloc: *** mach_vm_map(size=4190957568) failed (error code=3)<br />
+*** error: can&#8217;t allocate region<br />
+*** set a breakpoint in malloc_error_break to debug<br />
+calloc(1047739392,4) failed from_re_demo file_omitted(0)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-in-implementing-ruleorama/#post-1022522</guid>
+					<title><![CDATA[Reply To: [Resolved] Error in implementing RuleORama]]></title>
+					<link>/forums/topic/error-in-implementing-ruleorama/#post-1022522</link>
+					<pubDate>Sun, 14 Sep 2014 16:40:18 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, thank you for the info, I&#8217;ll look into it tomorrow.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-in-implementing-ruleorama/#post-1022537</guid>
+					<title><![CDATA[Reply To: [Resolved] Error in implementing RuleORama]]></title>
+					<link>/forums/topic/error-in-implementing-ruleorama/#post-1022537</link>
+					<pubDate>Mon, 15 Sep 2014 15:27:59 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, can you download the two current versions of the RapidEars and RuleORama demos I just pushed and see if you are still experiencing this or related issues? You can download updated demos at the same link you received when you first requested them.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-in-implementing-ruleorama/#post-1022538</guid>
+					<title><![CDATA[Reply To: [Resolved] Error in implementing RuleORama]]></title>
+					<link>/forums/topic/error-in-implementing-ruleorama/#post-1022538</link>
+					<pubDate>Mon, 15 Sep 2014 16:06:44 +0000</pubDate>
+					<dc:creator>djfink</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I get the same error. The log looks the same to me, except the &#8216;s have been changed to `s. Here&#8217;s the complete log: </p>
+<p>2014-09-15 12:02:24.063 OpenEarsTest[2286:60b] Starting OpenEars logging for OpenEars version 1.7 on 32-bit device: iPhone running iOS version: 7.100000<br />
+2014-09-15 12:02:24.167 OpenEarsTest[2286:60b] I&#8217;m done running performDictionaryLookup and it took 0.066763 seconds<br />
+2014-09-15 12:02:24.215 OpenEarsTest[2286:60b] Starting dynamic language model generation<br />
+2014-09-15 12:02:24.220 OpenEarsTest[2286:60b] Able to open /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles.corpus for reading<br />
+2014-09-15 12:02:24.221 OpenEarsTest[2286:60b] Able to open /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles_pipe.txt for writing<br />
+2014-09-15 12:02:24.222 OpenEarsTest[2286:60b] Starting text2wfreq_impl<br />
+2014-09-15 12:02:24.237 OpenEarsTest[2286:60b] Done with text2wfreq_impl<br />
+2014-09-15 12:02:24.239 OpenEarsTest[2286:60b] Able to open /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles_pipe.txt for reading.<br />
+2014-09-15 12:02:24.241 OpenEarsTest[2286:60b] Able to open /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles.vocab for reading.<br />
+2014-09-15 12:02:24.242 OpenEarsTest[2286:60b] Starting wfreq2vocab<br />
+2014-09-15 12:02:24.244 OpenEarsTest[2286:60b] Done with wfreq2vocab<br />
+2014-09-15 12:02:24.246 OpenEarsTest[2286:60b] Starting text2idngram<br />
+2014-09-15 12:02:24.265 OpenEarsTest[2286:60b] Done with text2idngram<br />
+2014-09-15 12:02:24.269 OpenEarsTest[2286:60b] Starting idngram2lm</p>
+<p>2014-09-15 12:02:24.281 OpenEarsTest[2286:60b] Done with idngram2lm<br />
+2014-09-15 12:02:24.282 OpenEarsTest[2286:60b] Starting sphinx_lm_convert<br />
+2014-09-15 12:02:24.285 OpenEarsTest[2286:60b] Finishing sphinx_lm_convert<br />
+2014-09-15 12:02:24.290 OpenEarsTest[2286:60b] Done creating language model with CMUCLMTK in 0.073727 seconds.<br />
+2014-09-15 12:02:24.295 OpenEarsTest[2286:60b] Generating fast grammar took 0.208084 seconds<br />
+2014-09-15 12:02:24.297 OpenEarsTest[2286:60b] Starting sphinx_lm_convert<br />
+2014-09-15 12:02:24.300 OpenEarsTest[2286:60b] Finishing sphinx_lm_convert<br />
+2014-09-15 12:02:24.304 OpenEarsTest[2286:60b] Accuracy set to 10.<br />
+2014-09-15 12:02:24.313 OpenEarsTest[2286:60b] User gave mic permission for this app.<br />
+2014-09-15 12:02:24.314 OpenEarsTest[2286:60b] A sample rate was requested that isn&#8217;t one of the two supported values of 16000 or 8000 so we will use the default of 16000.<br />
+2014-09-15 12:02:24.316 OpenEarsTest[2286:60b] The audio session has never been initialized so we will do that now.<br />
+2014-09-15 12:02:24.317 OpenEarsTest[2286:60b] Checking and resetting all audio session settings.<br />
+2014-09-15 12:02:24.318 OpenEarsTest[2286:60b] audioCategory is incorrect, we will change it.<br />
+2014-09-15 12:02:24.319 OpenEarsTest[2286:60b] audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.<br />
+2014-09-15 12:02:24.320 OpenEarsTest[2286:60b] bluetoothInput is incorrect, we will change it.<br />
+2014-09-15 12:02:24.321 OpenEarsTest[2286:60b] bluetooth input is now on the correct setting of 1.<br />
+2014-09-15 12:02:24.323 OpenEarsTest[2286:60b] Output Device: ReceiverAndMicrophone.<br />
+2014-09-15 12:02:24.324 OpenEarsTest[2286:60b] categoryDefaultToSpeaker is incorrect, we will change it.<br />
+2014-09-15 12:02:24.326 OpenEarsTest[2286:60b] CategoryDefaultToSpeaker is now on the correct setting of 1.<br />
+2014-09-15 12:02:24.327 OpenEarsTest[2286:60b] preferredBufferSize is incorrect, we will change it.<br />
+2014-09-15 12:02:24.328 OpenEarsTest[2286:60b] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2014-09-15 12:02:24.330 OpenEarsTest[2286:60b] preferredSampleRateCheck is incorrect, we will change it.<br />
+2014-09-15 12:02:24.331 OpenEarsTest[2286:60b] preferred hardware sample rate is now on the correct setting of 16000.000000.<br />
+2014-09-15 12:02:24.363 OpenEarsTest[2286:60b] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2014-09-15 12:02:24.366 OpenEarsTest[2286:60b] Exiting startAudioSession.<br />
+2014-09-15 12:02:24.374 OpenEarsTest[2286:4507] setSecondsOfSilence value of 0.000000 was too large or too small or was NULL, using default of 0.700000.<br />
+2014-09-15 12:02:24.371 OpenEarsTest[2286:3a03] Audio route has changed for the following reason:<br />
+2014-09-15 12:02:24.377 OpenEarsTest[2286:4507] Project has these words or phrases in its dictionary:<br />
+GREETINGS ROBOT<br />
+GREETINGS ROBOT(2)<br />
+HELLO COMPUTER<br />
+HELLO COMPUTER(2)<br />
+2014-09-15 12:02:24.379 OpenEarsTest[2286:4507] Recognition loop has started<br />
+2014-09-15 12:02:24.376 OpenEarsTest[2286:3a03] There has been a change of category<br />
+INFO: file_omitted(0): Parsing command line:<br />
+\<br />
+	-lm /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles.DMP \<br />
+	-beam 1e-66 \<br />
+	-bestpath yes \<br />
+	-dict /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles.dic \<br />
+	-hmm /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/OpenEarsTest.app/AcousticModelEnglish.bundle \<br />
+	-lw 6.5 \<br />
+	-samprate 16000 </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-adchdr		0		0<br />
+-adcin		no		no<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-align<br />
+-alpha		0.97		9.700000e-01<br />
+-arcdumpdir<br />
+-ascale		20.0		2.000000e+01<br />
+-aw		1		1<br />
+-backtrace	no		no<br />
+-beam		1e-48		1.000000e-66<br />
+-bestpath	yes		yes<br />
+-bestpathlw	9.5		9.500000e+00<br />
+-bghist		no		no<br />
+-cepdir<br />
+-cepext		.mfc		.mfc<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		8.0<br />
+-compallsen	no		no<br />
+-ctl<br />
+-ctlcount	-1		-1<br />
+-ctlincr	1		1<br />
+-ctloffset	0		0<br />
+-debug				0<br />
+-dict				/var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles.dic<br />
+-dictcase	no		no<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-ds		1		1<br />
+-fdict<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-featparams<br />
+-fillprob	1e-8		1.000000e-08<br />
+-frate		100		100<br />
+-fsg<br />
+-fsgusealtpron	yes		yes<br />
+-fsgusefiller	yes		yes<br />
+-fwdflat	yes		yes<br />
+-fwdflatbeam	1e-64		1.000000e-64<br />
+-fwdflatlw	8.5		8.500000e+00<br />
+-fwdflatsfwin	25		25<br />
+-fwdflatwbeam	7e-29		7.000000e-29<br />
+-fwdtree	yes		yes<br />
+-fwdtreelm<br />
+-hmm				/var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/OpenEarsTest.app/AcousticModelEnglish.bundle<br />
+-hyp<br />
+-hypprefix<br />
+-input_endian	little		little<br />
+-jsgf<br />
+-kdmaxbbi	-1		-1<br />
+-kdmaxdepth	0		0<br />
+-kdtree<br />
+-latsize	512		512<br />
+-lda<br />
+-ldadim		0		0<br />
+-lextreedump	0		0<br />
+-lifter		0		0<br />
+-lm				/var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles.DMP<br />
+-lmctl<br />
+-lmname		default		default<br />
+-logbase	1.0001		1.000100e+00<br />
+-logfn<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.333333e+02<br />
+-lpbeam		1e-40		1.000000e-40<br />
+-lponlybeam	7e-29		7.000000e-29<br />
+-lw		6.5		6.500000e+00<br />
+-maxhmmpf	-1		-1<br />
+-maxnewoov	20		20<br />
+-maxsilfr	-1		-1<br />
+-maxwpf		50		50<br />
+-mdef<br />
+-mean<br />
+-mfclogdir<br />
+-min_endfr	0		0<br />
+-mixw<br />
+-mixwfloor	0.0000001	1.000000e-07<br />
+-mllr<br />
+-mmap		yes		yes<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		40<br />
+-nwpen		1.0		1.000000e+00<br />
+-pbeam		1e-48		1.000000e-48<br />
+-pip		1.0		1.000000e+00<br />
+-pl_beam	1e-10		1.000000e-10<br />
+-pl_pbeam	1e-5		1.000000e-05<br />
+-pl_window	0		0<br />
+-rawlogdir<br />
+-remove_dc	no		no<br />
+-round_filters	yes		yes<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-sendump<br />
+-senlogdir<br />
+-senmgau<br />
+-silprob	0.005		5.000000e-03<br />
+-smoothspec	no		no<br />
+-svspec<br />
+-tmat<br />
+-tmatfloor	0.0001		1.000000e-04<br />
+-topn		4		4<br />
+-topn_beam	0		0<br />
+-toprule<br />
+-transform	legacy		legacy<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	6.855498e+03<br />
+-usewdphones	no		no<br />
+-uw		1.0		1.000000e+00<br />
+-var<br />
+-varfloor	0.0001		1.000000e-04<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-vm<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wbeam		7e-29		7.000000e-29<br />
+-wip		0.65		6.500000e-01<br />
+-wlen		0.025625	2.562500e-02</p>
+<p>INFO: file_omitted(0): Parsing command line:<br />
+\<br />
+	-nfilt 20 \<br />
+	-lowerf 1 \<br />
+	-upperf 4000 \<br />
+	-wlen 0.025 \<br />
+	-transform dct \<br />
+	-round_filters no \<br />
+	-remove_dc yes \<br />
+	-svspec 0-12/13-25/26-38 \<br />
+	-feat 1s_c_d_dd \<br />
+	-agc none \<br />
+	-cmn current \<br />
+	-cmninit 47 \<br />
+	-varnorm no </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-alpha		0.97		9.700000e-01<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		47<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-frate		100		100<br />
+-input_endian	little		little<br />
+-lda<br />
+-ldadim		0		0<br />
+-lifter		0		0<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.000000e+00<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		20<br />
+-remove_dc	no		yes<br />
+-round_filters	yes		no<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-smoothspec	no		no<br />
+-svspec				0-12/13-25/26-38<br />
+-transform	legacy		dct<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	4.000000e+03<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wlen		0.025625	2.500000e-02</p>
+<p>INFO: file_omitted(0): Parsed model-specific feature parameters from /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/OpenEarsTest.app/AcousticModelEnglish.bundle/feat.params<br />
+2014-09-15 12:02:24.388 OpenEarsTest[2286:3a03] The previous audio route was Speaker<br />
+2014-09-15 12:02:24.419 OpenEarsTest[2286:3a03] This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is SpeakerAndMicrophone<br />
+INFO: file_omitted(0): Reading HMM transition probability matrices: /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/OpenEarsTest.app/AcousticModelEnglish.bundle/transition_matrices<br />
+INFO: file_omitted(0): Loading senones from dump file /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/OpenEarsTest.app/AcousticModelEnglish.bundle/sendump<br />
+INFO: file_omitted(0): BEGIN FILE FORMAT DESCRIPTION<br />
+INFO: file_omitted(0): Using memory-mapped I/O for senones<br />
+INFO: file_omitted(0): Building PID tables for dictionary<br />
+INFO: file_omitted(0): Allocating 50^3 * 2 bytes (244 KiB) for word-initial triphones<br />
+INFO: file_omitted(0): Allocated 30200 bytes (29 KiB) for word-final triphones<br />
+INFO: file_omitted(0): Allocated 30200 bytes (29 KiB) for single-phone word triphones<br />
+ERROR: &#8220;file_omitted&#8221;, line 0: File /var/mobile/Applications/93425C65-62E1-4DA3-B72A-CB896693720E/Library/Caches/NameIWantForMyLanguageModelFiles.DMP not found<br />
+OpenEarsTest(2286,0x31d1000) malloc: *** mach_vm_map(size=4190957568) failed (error code=3)<br />
+*** error: can&#8217;t allocate region<br />
+*** set a breakpoint in malloc_error_break to debug<br />
+calloc(1047739392,4) failed from_re_demo file_omitted(0)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

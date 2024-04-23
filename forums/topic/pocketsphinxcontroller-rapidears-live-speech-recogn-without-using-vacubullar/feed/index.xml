@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>PocketsphinxController + Rapidears Live Speech Recogn without using Vacubullar &#8211; Politepix</title>
+		<atom:link href="/forums/topic/pocketsphinxcontroller-rapidears-live-speech-recogn-without-using-vacubullar/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/pocketsphinxcontroller-rapidears-live-speech-recogn-without-using-vacubullar/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:04:41 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/pocketsphinxcontroller-rapidears-live-speech-recogn-without-using-vacubullar/#post-1019877</guid>
+					<title><![CDATA[PocketsphinxController + Rapidears Live Speech Recogn without using Vacubullar]]></title>
+					<link>/forums/topic/pocketsphinxcontroller-rapidears-live-speech-recogn-without-using-vacubullar/#post-1019877</link>
+					<pubDate>Thu, 23 Jan 2014 09:25:42 +0000</pubDate>
+					<dc:creator>ManojNeelam</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>In my application i need live speech recognition. i dont want any predefined words.If persons speak any thing application should recognize.For Live Speech Recognize i should use Rapidears. I follwed your Tutorial and I downloaded Distibution and Rapidears Free Demo.<br />
+I integrated the openears sample app with rapidears.<br />
+in startListening Method i have written:<br />
+[self.pocketsphinxController startRealtimeListeningWithLanguageModelAtPath:self.pathToGrammarToStartAppWith  dictionaryAtPath:self.pathToDictionaryToStartAppWith acousticModelAtPath:[AcousticModel pathToModel:@&#8221;AcousticModelEnglish&#8221;]];</p>
+<p>Delegate methods are calling they are not recognizing other words except that are present in in the dictionary.<br />
+ (void) rapidEarsDidReceiveLiveSpeechHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore {<br />
+    NSLog(@&#8221;rapidEarsDidReceiveLiveSpeechHypothesis: %@&#8221;,hypothesis);<br />
+}</p>
+<p>&#8211; (void) rapidEarsDidReceiveFinishedSpeechHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore {<br />
+    NSLog(@&#8221;rapidEarsDidReceiveFinishedSpeechHypothesis: %@&#8221;,hypothesis);</p>
+<p>I dont want to use any Vocabulary Dictionary.The user what he speak it should Recognize.for that what shall i write in this</p>
+<p>[self.pocketsphinxController startRealtimeListeningWithLanguageModelAtPath:&lt;#(NSString *)#&gt; dictionaryAtPath:&lt;#(NSString *)#&gt; acousticModelAtPath:&lt;#(NSString *)#&gt;];</p>
+<p>dictionaryAtPath = ?</p>
+<p>startRealtimeListeningWithLanguageModelAtPath = ?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pocketsphinxcontroller-rapidears-live-speech-recogn-without-using-vacubullar/#post-1019879</guid>
+					<title><![CDATA[Reply To: PocketsphinxController + Rapidears Live Speech Recogn without using Vacubullar]]></title>
+					<link>/forums/topic/pocketsphinxcontroller-rapidears-live-speech-recogn-without-using-vacubullar/#post-1019879</link>
+					<pubDate>Thu, 23 Jan 2014 09:42:12 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>&#8220;Live speech recognition&#8221; in this case doesn&#8217;t mean &#8220;the speech recognition engine can recognize words it is not aware of&#8221;, it means &#8220;the speech recognition is getting hypotheses for the user&#8217;s speech in real time as it is being spoken, rather than waiting for the user to pause and then analyzing all of the speech that happened before the pause&#8221;.</p>
+<p>There is no kind of speech recognition in which the engine can recognize words that a developer has not already given it as a vocabulary. The closest thing to that is cloud-based speech recognition (not offline like OpenEars, but online via a network API) where the API developer has already defined an extremely large vocabulary for the service, something that is possible because there is an extremely large amount of memory and CPU cycles available. The idea that some speech recognition engines can recognize anything the user might say is an illusion created by the fact that with a large data farm it is possible to give them access to such a large vocabulary. Because the vocabulary size has to be smaller in offline recognition, offline recognition cannot perform the illusion of &#8220;recognizing any word the user might say&#8221;. It has to be used with smaller vocabularies that you define for your particular app.</p>
+<p>What you need for your requirements is to find a network service which can do large vocabulary recognition. Nuance has this and I believe iSpeech also does. All of Politepix&#8217;s products are offline products that are designed not to send data over the network, so none of them are intended as tools for taking unstructured dictation from users using vocabularies that are the size of entire languages. I hope this is helpful.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

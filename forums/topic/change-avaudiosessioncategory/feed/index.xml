@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>change AVAudioSessionCategory &#8211; Politepix</title>
+		<atom:link href="/forums/topic/change-avaudiosessioncategory/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/change-avaudiosessioncategory/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:39:38 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/change-avaudiosessioncategory/#post-10811</guid>
+					<title><![CDATA[change AVAudioSessionCategory]]></title>
+					<link>/forums/topic/change-avaudiosessioncategory/#post-10811</link>
+					<pubDate>Fri, 10 Aug 2012 04:55:11 +0000</pubDate>
+					<dc:creator></dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi, </p>
+<p>Can you set the AVAudioSessionCategory to playback? Do I change it outside of the library or within the library</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/change-avaudiosessioncategory/#post-10812</guid>
+					<title><![CDATA[Reply To: change AVAudioSessionCategory]]></title>
+					<link>/forums/topic/change-avaudiosessioncategory/#post-10812</link>
+					<pubDate>Fri, 10 Aug 2012 07:15:10 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>There&#8217;s no built-in mechanism for changing the audio session category inside the framework (in fact, it&#8217;s required by the framework that you let it set its own audio session settings for good results) but you can always make your own calls to the audio session using standard AVAudioSession methods in parts of your app which don&#8217;t need to actively use OpenEars classes.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

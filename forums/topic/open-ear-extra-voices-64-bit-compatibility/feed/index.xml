@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Open Ear Extra voices 64 bit compatibility &#8211; Politepix</title>
+		<atom:link href="/forums/topic/open-ear-extra-voices-64-bit-compatibility/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/open-ear-extra-voices-64-bit-compatibility/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:09:33 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/open-ear-extra-voices-64-bit-compatibility/#post-1022160</guid>
+					<title><![CDATA[Open Ear Extra voices 64 bit compatibility]]></title>
+					<link>/forums/topic/open-ear-extra-voices-64-bit-compatibility/#post-1022160</link>
+					<pubDate>Sat, 09 Aug 2014 17:21:13 +0000</pubDate>
+					<dc:creator>josher32</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>I am trying to use one of your free extra voices for text to speech capability in my app.  My app was working fine with the Slt voice but when I try to add other voices such as Kal or Kal16 I get an error message:</p>
+<p>ld: warning: ignoring file /Volumes/EXTERNAL/Developer/WebSpeak/Awb.framework/Awb, missing required architecture x86_64 in file /Volumes/EXTERNAL/Developer/WebSpeak/Awb.framework/Awb (3 slices)<br />
+Undefined symbols for architecture x86_64:<br />
+  &#8220;_OBJC_CLASS_$_Awb&#8221;, referenced from:<br />
+      objc-class-ref in ThirdViewController.o<br />
+ld: symbol(s) not found for architecture x86_64<br />
+clang: error: linker command failed with exit code 1 (use -v to see invocation)</p>
+<p>ld: warning: ignoring file /Volumes/EXTERNAL/Developer/WebSpeak/Awb.framework/Awb, missing required architecture x86_64 in file /Volumes/EXTERNAL/Developer/WebSpeak/Awb.framework/Awb (3 slices)</p>
+<p>This makes me think that the extra voices aren&#8217;t x86 64 (64 bit) capable.  Is this correct?</p>
+<p>Thanks,</p>
+<p>Josh Meador</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/open-ear-extra-voices-64-bit-compatibility/#post-1022232</guid>
+					<title><![CDATA[Reply To: Open Ear Extra voices 64 bit compatibility]]></title>
+					<link>/forums/topic/open-ear-extra-voices-64-bit-compatibility/#post-1022232</link>
+					<pubDate>Thu, 14 Aug 2014 22:23:39 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Josh,</p>
+<p>My recollection is that they have all been recompiled for 64-bit, not sure what the issue is there. x86_64 is actually just the 64-bit Simulator, not the 64-bit devices, so see if it runs correctly if you target a real device.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

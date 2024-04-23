@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] Wondering how to add words to be recognized in app &#8211; Politepix</title>
+		<atom:link href="/forums/topic/wondering-how-to-add-words-to-be-recognized-in-app/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/wondering-how-to-add-words-to-be-recognized-in-app/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:09:01 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/wondering-how-to-add-words-to-be-recognized-in-app/#post-1023135</guid>
+					<title><![CDATA[[Resolved] Wondering how to add words to be recognized in app]]></title>
+					<link>/forums/topic/wondering-how-to-add-words-to-be-recognized-in-app/#post-1023135</link>
+					<pubDate>Tue, 02 Dec 2014 18:02:55 +0000</pubDate>
+					<dc:creator>salhayek</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am trying to put together a project for school where a user can be prompted to add words that will later be recognized in the app when spoken. I was able to get the word added but the only way it would be processed is if the app was restarted. I was wondering how to get the word list reprocessed as soon as the user hits submit in the app. </p>
+<p>I have been searching for a while and haven&#8217;t found anything that could help me and thought I would post a question. Thanks so much for all the help!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wondering-how-to-add-words-to-be-recognized-in-app/#post-1023136</guid>
+					<title><![CDATA[Reply To: [Resolved] Wondering how to add words to be recognized in app]]></title>
+					<link>/forums/topic/wondering-how-to-add-words-to-be-recognized-in-app/#post-1023136</link>
+					<pubDate>Tue, 02 Dec 2014 18:33:58 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>You just need to generate a new language model (in the same way you generated your initial model) and then call PocketsphinxController&#8217;s method:</p>
+<pre>
+- (void) changeLanguageModelToFile:(NSString *)languageModelPathAsString withDictionary:(NSString *)dictionaryPathAsString;
+</pre>
+<p>On an already-running listening session. This will switch over to your new model without any delay.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wondering-how-to-add-words-to-be-recognized-in-app/#post-1023137</guid>
+					<title><![CDATA[Reply To: [Resolved] Wondering how to add words to be recognized in app]]></title>
+					<link>/forums/topic/wondering-how-to-add-words-to-be-recognized-in-app/#post-1023137</link>
+					<pubDate>Tue, 02 Dec 2014 18:51:13 +0000</pubDate>
+					<dc:creator>salhayek</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thank you so much it turns out I just wasn&#8217;t calling that method.</p>
+<p>When the user hits submit:</p>
+<pre><code>NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:alertTextInput forKey:@&quot;commandword&quot;];
+            [self loadAppSettings];
+            
+            NSLog(@&quot;The new command is %@&quot;, self.commandWord);
+            
+            [self LanguageGenerator];
+            [pocketsphinxController changeLanguageModelToFile:self.lmPath withDictionary:self.dicPath];</code></pre>
+<p>In the language generator method:</p>
+<pre><code>LanguageModelGenerator *lmGenerator = [[LanguageModelGenerator alloc] init];
+    
+    self.wordList = [NSArray arrayWithObjects:
+                        self.commandWord,
+                        nil];
+    
+    NSError *err = [lmGenerator generateLanguageModelFromArray:self.wordList withFilesNamed:@&quot;LanguageModelFile&quot; forAcousticModelAtPath:[AcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;]];
+    
+    
+    self.languageGeneratorResults = nil;
+    self.lmPath = nil;
+    self.dicPath = nil;
+    
+    if([err code] == noErr) {
+        
+        self.languageGeneratorResults = [err userInfo];
+        
+        self.lmPath = [self.languageGeneratorResults objectForKey:@&quot;LMPath&quot;];
+        self.dicPath = [self.languageGeneratorResults objectForKey:@&quot;DictionaryPath&quot;];
+        
+    } else {
+        NSLog(@&quot;Error: %@&quot;,[err localizedDescription]);
+    }
+}
+</code></pre>
+<p>So it works now but only the first time I do it. If I try to go and change it again, it won&#8217;t recognize the word. I was reading somewhere on the forums that the names of the paths have to be unique, does this apply here?</p>
+<p>Thanks again for the help, you are definitely a life saver.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wondering-how-to-add-words-to-be-recognized-in-app/#post-1023138</guid>
+					<title><![CDATA[Reply To: [Resolved] Wondering how to add words to be recognized in app]]></title>
+					<link>/forums/topic/wondering-how-to-add-words-to-be-recognized-in-app/#post-1023138</link>
+					<pubDate>Tue, 02 Dec 2014 18:58:44 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That&#8217;s correct, each language model requires a unique name.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wondering-how-to-add-words-to-be-recognized-in-app/#post-1023139</guid>
+					<title><![CDATA[Reply To: [Resolved] Wondering how to add words to be recognized in app]]></title>
+					<link>/forums/topic/wondering-how-to-add-words-to-be-recognized-in-app/#post-1023139</link>
+					<pubDate>Tue, 02 Dec 2014 19:03:17 +0000</pubDate>
+					<dc:creator>salhayek</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>For the unique names, we are talking about the self.lmPath and self.dicPath in regards to the code above right?</p>
+<p>If users were going to change it multiple times in one sitting, should I generate a random string to name the files? If so, I think it would eventually take up space on the device. Or is there a way to clear the files created?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wondering-how-to-add-words-to-be-recognized-in-app/#post-1023140</guid>
+					<title><![CDATA[Reply To: [Resolved] Wondering how to add words to be recognized in app]]></title>
+					<link>/forums/topic/wondering-how-to-add-words-to-be-recognized-in-app/#post-1023140</link>
+					<pubDate>Tue, 02 Dec 2014 19:18:35 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>For the unique names, we are talking about the self.lmPath and self.dicPath in regards to the code above right?</p></blockquote>
+<p>We&#8217;re talking about the value given to withFilesNamed: above.</p>
+<blockquote><p>If users were going to change it multiple times in one sitting, should I generate a random string to name the files? If so, I think it would eventually take up space on the device. Or is there a way to clear the files created?</p></blockquote>
+<p>Once you have stopped listening (not while listening is in progress) you can delete them as you would any other file system files you have permissions to delete.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wondering-how-to-add-words-to-be-recognized-in-app/#post-1023141</guid>
+					<title><![CDATA[Reply To: [Resolved] Wondering how to add words to be recognized in app]]></title>
+					<link>/forums/topic/wondering-how-to-add-words-to-be-recognized-in-app/#post-1023141</link>
+					<pubDate>Tue, 02 Dec 2014 19:45:02 +0000</pubDate>
+					<dc:creator>salhayek</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thank you so much! You really helped me out! :)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wondering-how-to-add-words-to-be-recognized-in-app/#post-1023142</guid>
+					<title><![CDATA[Reply To: [Resolved] Wondering how to add words to be recognized in app]]></title>
+					<link>/forums/topic/wondering-how-to-add-words-to-be-recognized-in-app/#post-1023142</link>
+					<pubDate>Tue, 02 Dec 2014 20:00:04 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You&#8217;re welcome!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

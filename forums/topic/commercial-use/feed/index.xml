@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Commercial use &#8211; Politepix</title>
+		<atom:link href="/forums/topic/commercial-use/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/commercial-use/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:38:50 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/commercial-use/#post-11552</guid>
+					<title><![CDATA[Commercial use]]></title>
+					<link>/forums/topic/commercial-use/#post-11552</link>
+					<pubDate>Mon, 08 Oct 2012 14:44:50 +0000</pubDate>
+					<dc:creator>anands</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I read that we can use the open ears software for commercial purpose. But what i would like to know is, do i have to mention about politepix or the agreement link anywhere in my Application ? &#8220;Say powered by Politepix&#8221; ? </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/commercial-use/#post-11553</guid>
+					<title><![CDATA[Reply To: Commercial use]]></title>
+					<link>/forums/topic/commercial-use/#post-11553</link>
+					<pubDate>Mon, 08 Oct 2012 14:54:44 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sure, you can use it commercially for the purposes described in the license. </p>
+<p>Powered by Politepix is nice and I would find that fine for my own credit if there was some kind of link so curious parties could find out what that meant. It would still be necessary to credit CMU so take a look at that part of the FAQ: <a href="/openears/support">/openears/support</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/commercial-use/#post-11554</guid>
+					<title><![CDATA[Reply To: Commercial use]]></title>
+					<link>/forums/topic/commercial-use/#post-11554</link>
+					<pubDate>Mon, 08 Oct 2012 15:31:22 +0000</pubDate>
+					<dc:creator>anands</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I really didn&#8217;t quite understood. Credit CMU ? I went through this Link, <a href="http://www.speech.cs.cmu.edu/flite/download.html" rel="nofollow">http://www.speech.cs.cmu.edu/flite/download.html</a>, Do i have to credit the university and provide a the above link in the footer  ? </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/commercial-use/#post-11555</guid>
+					<title><![CDATA[Reply To: Commercial use]]></title>
+					<link>/forums/topic/commercial-use/#post-11555</link>
+					<pubDate>Mon, 08 Oct 2012 15:42:22 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ah, sorry, I over-edited the FAQ recently. OK, I can&#8217;t give you permission or advice for things relating to CMU because I am neither part of that program nor a lawyer. However, as another developer who uses their libraries I have the subjective impression that it is sufficient to credit each library and link to their agreement since the terms of their license are analogous to the MIT license. Something like this in your about appears to me as a good-faith attempt to meet CMU&#8217;s crediting request and mine:</p>
+<p>$MYAPP uses CMU Sphinx, CMU Flite, CMU CLMTK [link here to the CMU agreement] and Politepix&#8217;s OpenEars [link here to politepix.com/openears].</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/commercial-use/#post-11556</guid>
+					<title><![CDATA[Reply To: Commercial use]]></title>
+					<link>/forums/topic/commercial-use/#post-11556</link>
+					<pubDate>Mon, 08 Oct 2012 15:46:04 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Here is an example of the CMU license:</p>
+<p><a href="http://www.speech.cs.cmu.edu/flite/doc/flite_2.html#SEC2" rel="nofollow">http://www.speech.cs.cmu.edu/flite/doc/flite_2.html#SEC2</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/commercial-use/#post-11557</guid>
+					<title><![CDATA[Reply To: Commercial use]]></title>
+					<link>/forums/topic/commercial-use/#post-11557</link>
+					<pubDate>Mon, 08 Oct 2012 15:49:14 +0000</pubDate>
+					<dc:creator>anands</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This Really, Helps. Thanks, Halle.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/commercial-use/#post-11558</guid>
+					<title><![CDATA[Reply To: Commercial use]]></title>
+					<link>/forums/topic/commercial-use/#post-11558</link>
+					<pubDate>Mon, 08 Oct 2012 15:50:27 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>No prob, good luck with your app.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

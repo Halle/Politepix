@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Can&#039;t find  cmu07a.dic in Framework &#8211; Politepix</title>
+		<atom:link href="/forums/topic/cant-find-cmu07a-dic-in-framework/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/cant-find-cmu07a-dic-in-framework/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:02:44 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/cant-find-cmu07a-dic-in-framework/#post-1018717</guid>
+					<title><![CDATA[Can&#039;t find  cmu07a.dic in Framework]]></title>
+					<link>/forums/topic/cant-find-cmu07a-dic-in-framework/#post-1018717</link>
+					<pubDate>Tue, 22 Oct 2013 13:12:29 +0000</pubDate>
+					<dc:creator>HarryDewhurst</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I downloaded the OpenEars distribution, but I can&#8217;t find the dictionary file.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/cant-find-cmu07a-dic-in-framework/#post-1018718</guid>
+					<title><![CDATA[Reply To: Can&#039;t find  cmu07a.dic in Framework]]></title>
+					<link>/forums/topic/cant-find-cmu07a-dic-in-framework/#post-1018718</link>
+					<pubDate>Tue, 22 Oct 2013 13:17:09 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>As part of the standardization of lookup dictionaries to allow more languages than just English, it has been renamed to LanguageModelGeneratorLookupList.text and moved to the AcousticModelEnglish.bundle.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

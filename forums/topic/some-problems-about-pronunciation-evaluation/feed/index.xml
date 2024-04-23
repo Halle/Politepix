@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Some problems about pronunciation evaluation &#8211; Politepix</title>
+		<atom:link href="/forums/topic/some-problems-about-pronunciation-evaluation/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/some-problems-about-pronunciation-evaluation/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:07:29 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/some-problems-about-pronunciation-evaluation/#post-1020904</guid>
+					<title><![CDATA[Some problems about pronunciation evaluation]]></title>
+					<link>/forums/topic/some-problems-about-pronunciation-evaluation/#post-1020904</link>
+					<pubDate>Fri, 18 Apr 2014 08:38:08 +0000</pubDate>
+					<dc:creator>gump</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi all,</p>
+<p>I&#8217;m having some problems about pronunciation evaluation.<br />
+For a sentence, e.g. &#8220;how are you?&#8221;, my app can get the hypothesis by recognizing the speach of speaker by openears.<br />
+The hypothesis may be &#8220;how are &#8220;, &#8220;who are you&#8221; , &#8220;how are your baby&#8221;, and etc.<br />
+I wonder that if openears or pocketsphinx can get the score of every word in the hypothesis and the score of whole hypothesis to evaluate the pronunciation of speaker.</p>
+<p>Also, what language model required? </p>
+<p>Any thoughts on how to do that?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/some-problems-about-pronunciation-evaluation/#post-1020908</guid>
+					<title><![CDATA[Reply To: Some problems about pronunciation evaluation]]></title>
+					<link>/forums/topic/some-problems-about-pronunciation-evaluation/#post-1020908</link>
+					<pubDate>Sat, 19 Apr 2014 08:39:18 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>There are a number of issues with attempting this. The first is that in Pocketsphinx you can&#8217;t get scoring for each word (although this is an option with RapidEars). But the bigger issue is that the impact of pronunciation on scoring is much less than the impact of other factors. One big factor is environmental, i.e., background noises, which mic is used, mic distance, mic differences across different devices, room characteristics. Another is whether the acoustic characteristics of the speaker are well-represented in the acoustic model. For instance, I&#8217;ve received reports that very high female voices aren&#8217;t as accurately recognized as other male and female voices, and this will manifest in scores to a subtler extent with other underrepresented vocal characteristics. Another factor is that the scoring accuracy is heavily impacted by the size of the vocabulary. The problem is trying to separate these large factors from the relatively small factor of pronunciation quality.</p>
+<p>When developers ask about using the scores I always have the same advice: they can only be used to compare the same utterances <strong>within a single session</strong>. Meaning that you can gather scores about a number of utterances of the same statement from a single speaker in a single environment in a single app session and say that some scores are better than others and give that feedback to the user if you want. But you can never compare scores across multiple speakers, multiple devices, and multiple usage sessions in order to derive meaningful information, such as saying that a word utterance with a score of -2000 should always be understood to be a correct pronunciation.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/some-problems-about-pronunciation-evaluation/#post-1021072</guid>
+					<title><![CDATA[Reply To: Some problems about pronunciation evaluation]]></title>
+					<link>/forums/topic/some-problems-about-pronunciation-evaluation/#post-1021072</link>
+					<pubDate>Mon, 28 Apr 2014 06:23:46 +0000</pubDate>
+					<dc:creator>gump</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thank you for your instant reply and good advice.</p>
+<p>Another question:</p>
+<pre><code>static void print_word_times(int32 start)
+{
+ps_seg_t *iter = ps_seg_iter(ps, NULL);
+while (iter != NULL) {
+int32 sf, ef, pprob;
+float conf;
+ps_seg_frames (iter, &amp;sf, &amp;ef);
+pprob = ps_seg_prob (iter, NULL, NULL, NULL);
+conf = logmath_exp(ps_get_logmath(ps), pprob);
+printf (&quot;%s %f %f %f\n&quot;, ps_seg_word (iter), (sf + start) / 100.0, (ef + start) / 100.0, conf);
+iter = ps_seg_next (iter);
+}
+}</code></pre>
+<p>Why the conf always is 1.0?<br />
+Can you tell me the truth?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/some-problems-about-pronunciation-evaluation/#post-1021073</guid>
+					<title><![CDATA[Reply To: Some problems about pronunciation evaluation]]></title>
+					<link>/forums/topic/some-problems-about-pronunciation-evaluation/#post-1021073</link>
+					<pubDate>Mon, 28 Apr 2014 07:20:15 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That looks like a question for the Sphinx project.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

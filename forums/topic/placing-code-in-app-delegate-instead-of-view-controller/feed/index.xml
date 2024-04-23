@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Placing code in app delegate instead of view controller &#8211; Politepix</title>
+		<atom:link href="/forums/topic/placing-code-in-app-delegate-instead-of-view-controller/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/placing-code-in-app-delegate-instead-of-view-controller/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:38:44 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/placing-code-in-app-delegate-instead-of-view-controller/#post-11619</guid>
+					<title><![CDATA[Placing code in app delegate instead of view controller]]></title>
+					<link>/forums/topic/placing-code-in-app-delegate-instead-of-view-controller/#post-11619</link>
+					<pubDate>Mon, 15 Oct 2012 15:16:58 +0000</pubDate>
+					<dc:creator>gregquinn</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Am I correct in thinking that I can place openears code into the app delegate instead of view controller code? I&#8217;d like to be able to use it on different screens and dynamically load different vocabularies depending on the screen.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/placing-code-in-app-delegate-instead-of-view-controller/#post-11620</guid>
+					<title><![CDATA[Reply To: Placing code in app delegate instead of view controller]]></title>
+					<link>/forums/topic/placing-code-in-app-delegate-instead-of-view-controller/#post-11620</link>
+					<pubDate>Mon, 15 Oct 2012 15:24:48 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sure, if you like, or for a more standard architecture you can also put it in a root-level view controller and send commands back to it via delegate callbacks from the child controllers. The only thing I don&#8217;t support is putting it in a singleton because that usually goes badly due to all of the multithreading.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/placing-code-in-app-delegate-instead-of-view-controller/#post-11621</guid>
+					<title><![CDATA[Reply To: Placing code in app delegate instead of view controller]]></title>
+					<link>/forums/topic/placing-code-in-app-delegate-instead-of-view-controller/#post-11621</link>
+					<pubDate>Mon, 15 Oct 2012 15:43:42 +0000</pubDate>
+					<dc:creator>gregquinn</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Cool, thanks Halle.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/placing-code-in-app-delegate-instead-of-view-controller/#post-11622</guid>
+					<title><![CDATA[Reply To: Placing code in app delegate instead of view controller]]></title>
+					<link>/forums/topic/placing-code-in-app-delegate-instead-of-view-controller/#post-11622</link>
+					<pubDate>Mon, 15 Oct 2012 17:57:49 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>No problem, this is what I had in mind with the design so I&#8217;m happy when it&#8217;s used this way.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

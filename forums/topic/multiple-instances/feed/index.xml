@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>multiple instances &#8211; Politepix</title>
+		<atom:link href="/forums/topic/multiple-instances/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/multiple-instances/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:03:23 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/multiple-instances/#post-1022807</guid>
+					<title><![CDATA[multiple instances]]></title>
+					<link>/forums/topic/multiple-instances/#post-1022807</link>
+					<pubDate>Mon, 20 Oct 2014 22:46:33 +0000</pubDate>
+					<dc:creator>boombatz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>HI,<br />
+Not sure if this is iOS 8.  I have a button which lets the user &#8220;try again&#8221; and it takes them back to the VC that is running opening ears When they go in the second time it appears that open ears is running several instances. Is there a way to stop open ears and flite when it exits and then start it up again when the user goes back into the VC?<br />
+Thanks</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multiple-instances/#post-1022808</guid>
+					<title><![CDATA[Reply To: multiple instances]]></title>
+					<link>/forums/topic/multiple-instances/#post-1022808</link>
+					<pubDate>Tue, 21 Oct 2014 06:56:11 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>Yes, it&#8217;s always a requirement to stop instances of Pocketsphinx when leaving a view controller. Check out the documentation and the sample app to see how to do that.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multiple-instances/#post-1022822</guid>
+					<title><![CDATA[Reply To: multiple instances]]></title>
+					<link>/forums/topic/multiple-instances/#post-1022822</link>
+					<pubDate>Wed, 22 Oct 2014 15:24:17 +0000</pubDate>
+					<dc:creator>boombatz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Got it. Thanks a lot.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multiple-instances/#post-1022825</guid>
+					<title><![CDATA[Reply To: multiple instances]]></title>
+					<link>/forums/topic/multiple-instances/#post-1022825</link>
+					<pubDate>Thu, 23 Oct 2014 00:00:43 +0000</pubDate>
+					<dc:creator>boombatz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, I might be a dunce (probably am), but I cannot find what you are referring to in either the documentation or the sample app. Can you please point me in the right direction.<br />
+Thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multiple-instances/#post-1022826</guid>
+					<title><![CDATA[Reply To: multiple instances]]></title>
+					<link>/forums/topic/multiple-instances/#post-1022826</link>
+					<pubDate>Thu, 23 Oct 2014 00:52:58 +0000</pubDate>
+					<dc:creator>boombatz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m using your sample code and I do lazy instantiate pocketsphinx, but it is nil every time the view controller comes back and reinstantiates another one. Is there a way to kill the instance of pocketshinx in prepare to seque, or is there a better way?<br />
+Thanks a lot for the help.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multiple-instances/#post-1022827</guid>
+					<title><![CDATA[Reply To: multiple instances]]></title>
+					<link>/forums/topic/multiple-instances/#post-1022827</link>
+					<pubDate>Thu, 23 Oct 2014 01:26:25 +0000</pubDate>
+					<dc:creator>boombatz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>so here&#8217;s what&#8217;s happening. I am lazily instantiang the instances, but when I come back from another VC I see these messages on the console. Clearly it&#8217;s running a few times.  I see single messages while I&#8217;m still in the same VC. Help!!</p>
+<p>Pocketsphinx has resumed recognition.<br />
+Pocketsphinx has resumed recognition.<br />
+Pocketsphinx has detected speech.<br />
+Pocketsphinx has detected speech.<br />
+Has finished speaking<br />
+Has finished speaking<br />
+Pocketsphinx has detected a second of silence, concluding an utterance.<br />
+Pocketsphinx has detected a second of silence, concluding an utterance.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multiple-instances/#post-1022828</guid>
+					<title><![CDATA[Reply To: multiple instances]]></title>
+					<link>/forums/topic/multiple-instances/#post-1022828</link>
+					<pubDate>Thu, 23 Oct 2014 07:04:52 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You have to first call stopListening and also set any OpenEarsEventsObserver delegates to nil before leaving the view. It isn&#8217;t safe to leave until you have the callback in pocketsphinxDidStopListening that indicates that your attempt to stop listening completed. When you are looking for this info in the docs, check the method descriptions for the class you are working with.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multiple-instances/#post-1022833</guid>
+					<title><![CDATA[Reply To: multiple instances]]></title>
+					<link>/forums/topic/multiple-instances/#post-1022833</link>
+					<pubDate>Thu, 23 Oct 2014 16:31:22 +0000</pubDate>
+					<dc:creator>boombatz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Fixed it.  Thanks a lot, Halle. Works great now.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multiple-instances/#post-1022835</guid>
+					<title><![CDATA[Reply To: multiple instances]]></title>
+					<link>/forums/topic/multiple-instances/#post-1022835</link>
+					<pubDate>Thu, 23 Oct 2014 17:13:30 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Super!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

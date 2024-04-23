@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Error when submitting to App Store &#8211; Politepix</title>
+		<atom:link href="/forums/topic/error-when-submitting-to-app-store/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/error-when-submitting-to-app-store/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:36:31 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/error-when-submitting-to-app-store/#post-1022474</guid>
+					<title><![CDATA[Error when submitting to App Store]]></title>
+					<link>/forums/topic/error-when-submitting-to-app-store/#post-1022474</link>
+					<pubDate>Wed, 10 Sep 2014 05:12:40 +0000</pubDate>
+					<dc:creator>bvelasquez</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I get the following error when submitting to the app store or validating my build:</p>
+<p>ERROR ITMS-9000: &#8220;Missing or invalid signature.  The bundle &#8216;com.politepix.AcousticModelEnglish&#8217; at bundle path &#8216;Payload/HTTPCommander.app/AcousticModelEnglish.bundle&#8217; is not signed using an Apple submission certificate.</p>
+<p>Using Xcode 6, but tried on 5.1.1 also.  Any ideas why I&#8217;m getting this?  I have double checked my certificates and provision profiles.  They all seem correct.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-when-submitting-to-app-store/#post-1022475</guid>
+					<title><![CDATA[Reply To: Error when submitting to App Store]]></title>
+					<link>/forums/topic/error-when-submitting-to-app-store/#post-1022475</link>
+					<pubDate>Wed, 10 Sep 2014 06:41:30 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I think this is a new requirement as of now – I will see if I can produce new bundle versions later today that have a signature, thanks for the heads-up.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-when-submitting-to-app-store/#post-1022476</guid>
+					<title><![CDATA[Reply To: Error when submitting to App Store]]></title>
+					<link>/forums/topic/error-when-submitting-to-app-store/#post-1022476</link>
+					<pubDate>Wed, 10 Sep 2014 08:00:57 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, apparently a lot of others are experiencing this with unrelated frameworks in the last 12 hours (and I reexamined the bundle creating process and there is no opportunity to have it emit a signature as far as I can see). Can you try the suggestion in this Stack Overflow thread and see if it helps you:</p>
+<p><a href="http://stackoverflow.com/questions/25755142/appstore-submission-missing-or-invalid-signature-com-google-gppsignin3presou" rel="nofollow">http://stackoverflow.com/questions/25755142/appstore-submission-missing-or-invalid-signature-com-google-gppsignin3presou</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

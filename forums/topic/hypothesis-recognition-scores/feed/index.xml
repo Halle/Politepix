@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Hypothesis recognition scores &#8211; Politepix</title>
+		<atom:link href="/forums/topic/hypothesis-recognition-scores/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/hypothesis-recognition-scores/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:55:03 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/hypothesis-recognition-scores/#post-1016921</guid>
+					<title><![CDATA[Hypothesis recognition scores]]></title>
+					<link>/forums/topic/hypothesis-recognition-scores/#post-1016921</link>
+					<pubDate>Thu, 11 Apr 2013 02:36:20 +0000</pubDate>
+					<dc:creator>uzziel</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Halle,</p>
+<p>One more question.  When pocketsphinxDidReceiveHypothesis and pocketsphinxDidReceiveNBestHypothesisArray return, they pass along a hypothesis or hypothoses along with a recognition score.</p>
+<p>What exactly does the recognition score mean?  I&#8217;ve seen values from 0 to -8000; I am assuming that a cardinally larger score is a worse match?  e.g., -10 is a more certain match than -100 &#8211; is that correct?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/hypothesis-recognition-scores/#post-1016924</guid>
+					<title><![CDATA[Reply To: Hypothesis recognition scores]]></title>
+					<link>/forums/topic/hypothesis-recognition-scores/#post-1016924</link>
+					<pubDate>Thu, 11 Apr 2013 06:48:12 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Correct, they are probabilities with zero being certainty. They don&#8217;t have an enormous amount of utility (they are very subject to environmental conditions so you can&#8217;t use any kind of objective cutoff from session to session in order to say that a probability is too low) but you can compare them to each other within a single session, for instance.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

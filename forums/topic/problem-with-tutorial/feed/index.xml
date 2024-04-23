@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Problem with tutorial &#8211; Politepix</title>
+		<atom:link href="/forums/topic/problem-with-tutorial/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/problem-with-tutorial/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:09:39 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/problem-with-tutorial/#post-1022114</guid>
+					<title><![CDATA[Problem with tutorial]]></title>
+					<link>/forums/topic/problem-with-tutorial/#post-1022114</link>
+					<pubDate>Wed, 06 Aug 2014 16:18:12 +0000</pubDate>
+					<dc:creator>rkrausse</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am following the &#8216;Offline speech recognition&#8221; tutor. I add the required frameworks to my project but then I add the LanguageModelGenerator.h to the import, I get a compiler error. </p>
+<p>#import &lt;OpenEars/LanguageModelGenerator.h&gt; it returns error: file not found.</p>
+<p>I added the path of the framework to the Framework Search Paths but still nothing. Not sure I have the path correctly set. What should it be pointing to? What are the Unix Executable Files? I know a link but should it be pointing to that? Or the header folder under the &#8216;Versions/A&#8217; folder? </p>
+<p>Thanks<br />
+Ralph Krausse</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problem-with-tutorial/#post-1022121</guid>
+					<title><![CDATA[Reply To: Problem with tutorial]]></title>
+					<link>/forums/topic/problem-with-tutorial/#post-1022121</link>
+					<pubDate>Wed, 06 Aug 2014 16:29:33 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Ralph,</p>
+<p>Thanks for your new topic. Can you copy and paste the full error that is shown in Xcode? You shouldn&#8217;t ever add a path to Framework Search Path or for example change recursion settings there. There is an Xcode bug that can result in having to fix an existing Framework Search path, but the most that is ever needed is to look at the path that is already in there and remove any characters from it which could be causing it to be unusable by the project. The underlying cause is described in this tutorial step:</p>
+<blockquote><p>Inside your downloaded OpenEars distribution there is a folder called &#8220;Framework&#8221;. Drag that folder into your app project in Xcode. Make absolutely sure that in the add dialog &#8220;Create groups for any added folders&#8221; is selected and NOT &#8220;Create folder references for any added folders&#8221; because the wrong setting here will prevent your app from working. If you are using Xcode 5 with a build number of 5A1413 or later, it has a bug which results in frameworks linked by reference being changed to link at incorrect URL paths, so it is necessary for you to also check the box that says &#8220;Copy items into destination group&#8217;s folder (if needed)&#8221;, or you may receive errors that header files can&#8217;t be found. If you receive this kind of error with Xcode 5, it means that your Framework Search Path for the added frameworks has been changed to an invalid URL, so you may have to open that Build Setting for your app target and change it back to a correct path.</p></blockquote>
+<p>I would start fresh and follow the instructions in this path, and start out by not making any changes to any project build settings since it is normally not needed. If you still receive the error under that circumstance, look in Framework Search Path and show me what it says in there.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problem-with-tutorial/#post-1022122</guid>
+					<title><![CDATA[Reply To: Problem with tutorial]]></title>
+					<link>/forums/topic/problem-with-tutorial/#post-1022122</link>
+					<pubDate>Wed, 06 Aug 2014 16:58:13 +0000</pubDate>
+					<dc:creator>rkrausse</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Can you send me a email account that I can send you an image that will show my settings?</p>
+<p>In short, I did the above (at least I think I did and double checked it)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problem-with-tutorial/#post-1022123</guid>
+					<title><![CDATA[Reply To: Problem with tutorial]]></title>
+					<link>/forums/topic/problem-with-tutorial/#post-1022123</link>
+					<pubDate>Wed, 06 Aug 2014 18:47:43 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, send me a note via the contact form at <a href="/contact">/contact</a> and I can send you an address to send a screenshot to (we&#8217;ll probably keep discussing it here).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problem-with-tutorial/#post-1022130</guid>
+					<title><![CDATA[Reply To: Problem with tutorial]]></title>
+					<link>/forums/topic/problem-with-tutorial/#post-1022130</link>
+					<pubDate>Wed, 06 Aug 2014 21:41:07 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, I have the screenshot – go ahead and put the questions from the email here in the support topic so I can answer them for you, thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problem-with-tutorial/#post-1022132</guid>
+					<title><![CDATA[Reply To: Problem with tutorial]]></title>
+					<link>/forums/topic/problem-with-tutorial/#post-1022132</link>
+					<pubDate>Wed, 06 Aug 2014 23:19:03 +0000</pubDate>
+					<dc:creator>rkrausse</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks. So my questions. In the directions, you said move the framework folder (your stuff) to the xcode framework folder. That would place a folder called framework under framework so I assume you mean the contents of your framework folder IN the framework folder of XCode. So to exclude other issues, I just moved OpenEars framework over. 2nd question, I just see the Header folders in xcode, see the blue box. If I look at your download in finder, I see there is a Header, OpenEars and Resources which are all Unix Executable Files, I think these are just links to other places. There is also a Version folder with folders underneath that.</p>
+<p>You can see my path of my project called VRTestXCode and what is underneath it. </p>
+<p>Sorry to be a pain.</p>
+<p>thx<br />
+Ralph</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problem-with-tutorial/#post-1022133</guid>
+					<title><![CDATA[Reply To: Problem with tutorial]]></title>
+					<link>/forums/topic/problem-with-tutorial/#post-1022133</link>
+					<pubDate>Thu, 07 Aug 2014 06:17:49 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>From the tutorial:</p>
+<blockquote><p>Inside your downloaded OpenEars distribution there is a folder called &#8220;Framework&#8221;. Drag that folder into your app project in Xcode. </p></blockquote>
+<p>Is this the line which is causing confusion?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problem-with-tutorial/#post-1022136</guid>
+					<title><![CDATA[Reply To: Problem with tutorial]]></title>
+					<link>/forums/topic/problem-with-tutorial/#post-1022136</link>
+					<pubDate>Thu, 07 Aug 2014 12:25:30 +0000</pubDate>
+					<dc:creator>rkrausse</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I sent you another image. I have the Framework (your folder) off of the project root. I still get the same error. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problem-with-tutorial/#post-1022137</guid>
+					<title><![CDATA[Reply To: Problem with tutorial]]></title>
+					<link>/forums/topic/problem-with-tutorial/#post-1022137</link>
+					<pubDate>Thu, 07 Aug 2014 12:41:09 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>I still don&#8217;t really understand the instructions you have followed in making your app – can you let me know where this statement comes from: &#8220;you said move the framework folder (your stuff) to the xcode framework folder. That would place a folder called framework under framework&#8221;?</p>
+<p>The instructions don&#8217;t really correspond to this statement and I&#8217;m pretty sure that the issue is just that something got off track with the tutorial process when you started the first time so that a wrong step was taken that didn&#8217;t leave the project set up quite right, and the troubleshooting steps you&#8217;ve taken with making changes to Framework Search Path (when that is usually set automatically by the tutorial install process) have left the project in an unclear state.</p>
+<p>I think the best approach here is to start fresh with an app where nothing has been done yet and follow the tutorial very closely, taking plenty of time with the instructions. Here is what it says in the tutorial again about how the framework is moved into the project:</p>
+<blockquote><p>Inside your downloaded OpenEars distribution there is a folder called “Framework”. Drag that folder into your app project in Xcode.</p></blockquote>
+<p>This has been known to work for years, so I think it&#8217;s just a case for getting a fresh start and taking it a little more slowly with the tutorial, rather than trying to extensively troubleshoot the broken app.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/problem-with-tutorial/#post-1022138</guid>
+					<title><![CDATA[Reply To: Problem with tutorial]]></title>
+					<link>/forums/topic/problem-with-tutorial/#post-1022138</link>
+					<pubDate>Thu, 07 Aug 2014 12:50:59 +0000</pubDate>
+					<dc:creator>rkrausse</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I agree, it is something I am doing. </p>
+<p>You said &#8211; &#8216;Inside your downloaded OpenEars distribution there is a folder called “Framework”. Drag that folder into your app project in Xcode.&#8217;</p>
+<p>I did that as the image I sent you shows. Then I added the import statement and compiled. </p>
+<p>That is ALL I did&#8230;.</p>
+<p>Is is possible to have a the page have a zip file with a working sample?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

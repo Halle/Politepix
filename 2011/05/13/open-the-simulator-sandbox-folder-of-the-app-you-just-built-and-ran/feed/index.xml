@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Open the Simulator sandbox folder of the app you just built and ran	</title>
+	<atom:link href="/2011/05/13/open-the-simulator-sandbox-folder-of-the-app-you-just-built-and-ran/feed/" rel="self" type="application/rss+xml" />
+	<link>/2011/05/13/open-the-simulator-sandbox-folder-of-the-app-you-just-built-and-ran/</link>
+	<description>iOS Frameworks for speech recognition, text to speech and more</description>
+	<lastBuildDate>Wed, 10 Sep 2014 13:57:18 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.5.2</generator>
+	<item>
+		<title>
+		By: Halle		</title>
+		<link>/2011/05/13/open-the-simulator-sandbox-folder-of-the-app-you-just-built-and-ran/#comment-1411</link>
+
+		<dc:creator><![CDATA[Halle]]></dc:creator>
+		<pubDate>Thu, 04 Aug 2011 07:36:45 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1250#comment-1411</guid>
+
+					<description><![CDATA[Sorry, I don&#039;t know of a way to install an app on a device via AppleScript -- good luck!]]></description>
+			<content:encoded><![CDATA[<p>Sorry, I don&#8217;t know of a way to install an app on a device via AppleScript &#8212; good luck!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: sogwiz		</title>
+		<link>/2011/05/13/open-the-simulator-sandbox-folder-of-the-app-you-just-built-and-ran/#comment-1410</link>
+
+		<dc:creator><![CDATA[sogwiz]]></dc:creator>
+		<pubDate>Wed, 03 Aug 2011 20:33:47 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1250#comment-1410</guid>
+
+					<description><![CDATA[Thanks for the useful information.  Do you know of a way to use AppleScript to install an app to a device?  That is, let&#039;s say you just compiled and built your app using a build script (not necessarily XCode).  Now you want a script that takes your built app file and deploys it to a device. 
+I&#039;m guessing you&#039;d write some kind of AppleScript to interface with iTunes or the iPhone Configuration Utility.  Any suggestions here? Thanks!]]></description>
+			<content:encoded><![CDATA[<p>Thanks for the useful information.  Do you know of a way to use AppleScript to install an app to a device?  That is, let&#8217;s say you just compiled and built your app using a build script (not necessarily XCode).  Now you want a script that takes your built app file and deploys it to a device.<br />
+I&#8217;m guessing you&#8217;d write some kind of AppleScript to interface with iTunes or the iPhone Configuration Utility.  Any suggestions here? Thanks!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

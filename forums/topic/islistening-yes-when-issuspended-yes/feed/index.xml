@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>isListening = YES when isSuspended = YES &#8211; Politepix</title>
+		<atom:link href="/forums/topic/islistening-yes-when-issuspended-yes/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/islistening-yes-when-issuspended-yes/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:05:10 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/islistening-yes-when-issuspended-yes/#post-1022617</guid>
+					<title><![CDATA[isListening = YES when isSuspended = YES]]></title>
+					<link>/forums/topic/islistening-yes-when-issuspended-yes/#post-1022617</link>
+					<pubDate>Wed, 24 Sep 2014 18:55:41 +0000</pubDate>
+					<dc:creator>tbreslow</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Is it correct for isListening to be YES when isSuspended is also yes? (And therefore isListening isn&#8217;t meant to be used for checking suspended state). </p>
+<p>Many Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/islistening-yes-when-issuspended-yes/#post-1022618</guid>
+					<title><![CDATA[Reply To: isListening = YES when isSuspended = YES]]></title>
+					<link>/forums/topic/islistening-yes-when-issuspended-yes/#post-1022618</link>
+					<pubDate>Wed, 24 Sep 2014 18:58:55 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Correct, isListening means that the listening loop has been entered and not yet stopped. isSuspended means that while you&#8217;re in the listening loop, you have suspended recognition.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/islistening-yes-when-issuspended-yes/#post-1022619</guid>
+					<title><![CDATA[Reply To: isListening = YES when isSuspended = YES]]></title>
+					<link>/forums/topic/islistening-yes-when-issuspended-yes/#post-1022619</link>
+					<pubDate>Wed, 24 Sep 2014 19:07:20 +0000</pubDate>
+					<dc:creator>tbreslow</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thank you for such a quick reply!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

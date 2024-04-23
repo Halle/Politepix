@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Multiple pocketsphinxController Controller &#8211; Politepix</title>
+		<atom:link href="/forums/topic/multiple-pocketsphinxcontroller-controller/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/multiple-pocketsphinxcontroller-controller/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:04:11 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/multiple-pocketsphinxcontroller-controller/#post-1020546</guid>
+					<title><![CDATA[Multiple pocketsphinxController Controller]]></title>
+					<link>/forums/topic/multiple-pocketsphinxcontroller-controller/#post-1020546</link>
+					<pubDate>Mon, 17 Mar 2014 06:48:55 +0000</pubDate>
+					<dc:creator>vinay.chopra@tresbu.com</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Concern,</p>
+<p>I have a main view which speaks some details and ask user for Input on the basis of input it navigates to details view controller .</p>
+<p>I want the same functionality on the details view controller , it will ask some question to user and based on response it will perform some action .</p>
+<p>Do i need to have 2 pocketsphinxController controllers or how can i implement functionality in multiple view controller classes. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multiple-pocketsphinxcontroller-controller/#post-1020547</guid>
+					<title><![CDATA[Reply To: Multiple pocketsphinxController Controller]]></title>
+					<link>/forums/topic/multiple-pocketsphinxcontroller-controller/#post-1020547</link>
+					<pubDate>Mon, 17 Mar 2014 06:53:10 +0000</pubDate>
+					<dc:creator>vinay.chopra@tresbu.com</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>In the current scenario i am creating another pocketsphinxController controller object in my details view controller and called a method startListening..<br />
+what is happening is its calling the pocketsphinxDidStartCalibration of my details view controller class and my main view controller class as well, i dont know why it&#8217;s happening </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/multiple-pocketsphinxcontroller-controller/#post-1020548</guid>
+					<title><![CDATA[Reply To: Multiple pocketsphinxController Controller]]></title>
+					<link>/forums/topic/multiple-pocketsphinxcontroller-controller/#post-1020548</link>
+					<pubDate>Mon, 17 Mar 2014 12:41:08 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You should only have a single PocketsphinxController in an app. I recommend putting it in a root view controller and communicating with it with delegate methods or notifications. Others have also had success putting it in a singleton which any view controller can communicate with; I don&#8217;t support that architecture (i.e. if it gives you issues, I can&#8217;t help with them) but there are certainly strong arguments for it. If you want to instantiate a PocketsphinxController in a view and then exit the view in favor of a different view with a different PocketsphinxController, it&#8217;s a requirement to first call stopListening before exiting the view so that all the OpenEars multithreading can clean up and ARC can do its job releasing the first PocketsphinxController; otherwise you will have two PocketsphinxControllers which will not work.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

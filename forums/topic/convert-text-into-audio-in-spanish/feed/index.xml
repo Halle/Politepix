@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Convert text into audio in Spanish &#8211; Politepix</title>
+		<atom:link href="/forums/topic/convert-text-into-audio-in-spanish/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/convert-text-into-audio-in-spanish/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:55:58 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/convert-text-into-audio-in-spanish/#post-1017584</guid>
+					<title><![CDATA[Convert text into audio in Spanish]]></title>
+					<link>/forums/topic/convert-text-into-audio-in-spanish/#post-1017584</link>
+					<pubDate>Mon, 01 Jul 2013 16:09:43 +0000</pubDate>
+					<dc:creator>pantinflas</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;ve been doing some research about spanish offline tts and I found that Open Ears is the best choice. However, I don&#8217;t know how to change language in Open Ears. I don&#8217;t want to recognize voice, I only need to convert text into voice, and I need to do it in Spanish and English.<br />
+If anyone knows how to do this please tell me. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/convert-text-into-audio-in-spanish/#post-1018133</guid>
+					<title><![CDATA[Reply To: Convert text into audio in Spanish]]></title>
+					<link>/forums/topic/convert-text-into-audio-in-spanish/#post-1018133</link>
+					<pubDate>Mon, 26 Aug 2013 16:20:13 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>NeatSpeech can now perform Spanish offline TTS: <a href="/neatspeech">/neatspeech</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

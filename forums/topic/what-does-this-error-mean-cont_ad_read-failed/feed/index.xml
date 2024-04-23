@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>What does this error mean? &#039;cont_ad_read failed&#039; &#8211; Politepix</title>
+		<atom:link href="/forums/topic/what-does-this-error-mean-cont_ad_read-failed/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/what-does-this-error-mean-cont_ad_read-failed/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:04:56 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/what-does-this-error-mean-cont_ad_read-failed/#post-1019262</guid>
+					<title><![CDATA[What does this error mean? &#039;cont_ad_read failed&#039;]]></title>
+					<link>/forums/topic/what-does-this-error-mean-cont_ad_read-failed/#post-1019262</link>
+					<pubDate>Fri, 27 Dec 2013 15:21:22 +0000</pubDate>
+					<dc:creator></dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>is there a proper way to destroy the pocketsphinxController?  I&#8217;m having an issue with: </p>
+<blockquote><p>Setting up the continuous recognition loop has failed for some reason, please turn on OpenEarsLogging to learn more</p></blockquote>
+<p>here is the log once OpenEarsLogging is turned on:<br />
+I</p>
+<blockquote><p>&#8216;m done running performDictionaryLookup and it took 0.791383 seconds<br />
+2013-12-27 11:12:03.691 [8941:60b] I&#8217;m done running dynamic language model generation and it took 409849923.691113 seconds<br />
+2013-12-27 11:12:03.692 [8941:60b] Leaving sample rate at the default of 16000.<br />
+2013-12-27 11:12:03.692 [8941:60b] The audio session has already been initialized but we will override its properties.<br />
+2013-12-27 11:12:03.693 [8941:60b] Checking and resetting all audio session settings.<br />
+2013-12-27 11:12:03.695 [8941:60b] audioCategory is correct, we will leave it as it is.<br />
+2013-12-27 11:12:03.696 [8941:60b] bluetoothInput is correct, we will leave it as it is.<br />
+2013-12-27 11:12:03.697 [8941:60b] Output Device: SpeakerAndMicrophone.<br />
+2013-12-27 11:12:03.698 [8941:60b] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2013-12-27 11:12:03.699 [8941:60b] preferredBufferSize is correct, we will leave it as it is.<br />
+2013-12-27 11:12:03.701 [8941:60b] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2013-12-27 11:12:03.702 [8941:60b] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2013-12-27 11:12:03.703 [8941:60b] Exiting startAudioSession.<br />
+2013-12-27 11:12:03.705 [8941:8a47] Recognition loop has started<br />
+2013-12-27 11:12:03.862 [8941:8a47] Starting openAudioDevice on the device.<br />
+2013-12-27 11:12:03.863 [8941:8a47] This device is recording, so we will first stop it<br />
+2013-12-27 11:12:03.863 [8941:8a47] Stopping audio unit.<br />
+2013-12-27 11:12:03.928 [8941:8a47] Audio Output Unit stopped, cleaning up variable states.<br />
+2013-12-27 11:12:03.929 [8941:8a47] The audio unit is running so we are going to dispose of its instance<br />
+2013-12-27 11:12:03.930 [8941:4407] cont_ad_read failed<br />
+2013-12-27 11:12:03.931 [8941:8a47] Audio unit wrapper successfully created.<br />
+2013-12-27 11:12:03.932 [8941:60b] Setting up the continuous recognition loop has failed for some reason, please turn on OpenEarsLogging to learn more.
+</p></blockquote>
+<p>Any help is greatly appreciated. Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/what-does-this-error-mean-cont_ad_read-failed/#post-1019263</guid>
+					<title><![CDATA[Reply To: What does this error mean? &#039;cont_ad_read failed&#039;]]></title>
+					<link>/forums/topic/what-does-this-error-mean-cont_ad_read-failed/#post-1019263</link>
+					<pubDate>Fri, 27 Dec 2013 15:50:05 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<blockquote><p>is there a proper way to destroy the pocketsphinxController?</p></blockquote>
+<p>Does this happen after leaving a view controller and then recreating it? It&#8217;s necessary to call [self.pocketsphinxController stopListening] before doing anything that ought to result in the pocketsphinxController being released.</p>
+<p>If that isn&#8217;t the issue I&#8217;d need a bit more information about the structure of your app, any other audio-using operations that are also occurring in the same app, and the complete OpenEarsLogging output (the beginning has been omitted above).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/what-does-this-error-mean-cont_ad_read-failed/#post-1019264</guid>
+					<title><![CDATA[Reply To: What does this error mean? &#039;cont_ad_read failed&#039;]]></title>
+					<link>/forums/topic/what-does-this-error-mean-cont_ad_read-failed/#post-1019264</link>
+					<pubDate>Fri, 27 Dec 2013 15:53:20 +0000</pubDate>
+					<dc:creator></dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks Halle! That was precisely it.  In some cases I was calling stopListening but in others I wasn&#8217;t&#8230;</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/what-does-this-error-mean-cont_ad_read-failed/#post-1019265</guid>
+					<title><![CDATA[Reply To: What does this error mean? &#039;cont_ad_read failed&#039;]]></title>
+					<link>/forums/topic/what-does-this-error-mean-cont_ad_read-failed/#post-1019265</link>
+					<pubDate>Fri, 27 Dec 2013 16:01:30 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Super, glad it&#8217;s working for you now!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

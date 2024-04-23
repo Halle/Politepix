@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] JSGF OpenEars 2.0 &#8211; Politepix</title>
+		<atom:link href="/forums/topic/jsgf-openears-2-0/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/jsgf-openears-2-0/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:00:56 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/jsgf-openears-2-0/#post-1023356</guid>
+					<title><![CDATA[[Resolved] JSGF OpenEars 2.0]]></title>
+					<link>/forums/topic/jsgf-openears-2-0/#post-1023356</link>
+					<pubDate>Wed, 10 Dec 2014 18:19:43 +0000</pubDate>
+					<dc:creator>adb</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>JSGF on the stock OpenEars sample app does not seem to be working. I dropped in the dictionary from the documentation and generated with generateGrammarFromDictionary and started pocketsphinx with languageModelIsJSGF:TRUE. It works just fine without JSGF. This is what pops up in the console:</p>
+<p>2014-12-10 12:13:31.020 OpenEarsSampleApp[2530:755509] Error: the default phonetic dictionary AcousticModelEnglish/LanguageModelGeneratorLookupList.text can&#8217;t be found in the app bundle but the app is attempting to access it, most likely there will be a crash now.</p>
+<p>2014-12-10 12:13:31.034 OpenEarsSampleApp[2530:755509] Error while trying to load the pronunciation dictionary: Error Domain=NSCocoaErrorDomain Code=260 &#8220;The operation couldn’t be completed. (Cocoa error 260.)&#8221; UserInfo=0x14d4e0a0 {NSFilePath=AcousticModelEnglish/LanguageModelGeneratorLookupList.text, NSUnderlyingError=0x14d4cec0 &#8220;The operation couldn’t be completed. No such file or directory&#8221;}<br />
+E6637FD046/Library/Caches/FirstOpenEarsDynamicLanguageModel.DMPenamestring-length(int32)andfilename(includingtrailing0)</p>
+<p>2014-12-10 12:13:31.784 OpenEarsSampleApp[2530:755509] Local callback: Setting up the continuous recognition loop has failed for the reason Error: it wasn&#8217;t possible to initialize the pocketsphinx decoder. Please turn on OELogging in order to troubleshoot this. If you need support with this issue, please turn on both OELogging and verbosePocketsphinx in order to get assistance., please turn on [OELogging startOpenEarsLogging] to learn more.</p>
+<p>If this isn&#8217;t enough to help I can do a verbose log.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/jsgf-openears-2-0/#post-1023358</guid>
+					<title><![CDATA[Reply To: [Resolved] JSGF OpenEars 2.0]]></title>
+					<link>/forums/topic/jsgf-openears-2-0/#post-1023358</link>
+					<pubDate>Wed, 10 Dec 2014 18:38:05 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I downloaded it and grammars worked for me, but the first time I ran I had the same result because I forgot to change this line:</p>
+<p>self.pathToFirstDynamicallyGeneratedLanguageModel = [languageModelGenerator pathToSuccessfullyGeneratedLanguageModelWithRequestedName:@&#8221;FirstOpenEarsDynamicLanguageModel&#8221;];</p>
+<p>to this:</p>
+<p>self.pathToFirstDynamicallyGeneratedLanguageModel = [languageModelGenerator pathToSuccessfullyGeneratedGrammarWithRequestedName:@&#8221;FirstOpenEarsDynamicLanguageModel&#8221;];</p>
+<p>Is that maybe what you experienced?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/jsgf-openears-2-0/#post-1023369</guid>
+					<title><![CDATA[Reply To: [Resolved] JSGF OpenEars 2.0]]></title>
+					<link>/forums/topic/jsgf-openears-2-0/#post-1023369</link>
+					<pubDate>Wed, 10 Dec 2014 19:37:16 +0000</pubDate>
+					<dc:creator>adb</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That was it! Thanks. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/jsgf-openears-2-0/#post-1023370</guid>
+					<title><![CDATA[Reply To: [Resolved] JSGF OpenEars 2.0]]></title>
+					<link>/forums/topic/jsgf-openears-2-0/#post-1023370</link>
+					<pubDate>Wed, 10 Dec 2014 19:51:52 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You&#8217;re welcome!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/jsgf-openears-2-0/#post-1023373</guid>
+					<title><![CDATA[Reply To: [Resolved] JSGF OpenEars 2.0]]></title>
+					<link>/forums/topic/jsgf-openears-2-0/#post-1023373</link>
+					<pubDate>Wed, 10 Dec 2014 22:08:43 +0000</pubDate>
+					<dc:creator>adb</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Didn&#8217;t want to start a new post but everything in the voice extras needs updating to OEFliteVoice. Just wanted to give you a heads up before someone starts telling you they don&#8217;t work.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/jsgf-openears-2-0/#post-1023387</guid>
+					<title><![CDATA[Reply To: [Resolved] JSGF OpenEars 2.0]]></title>
+					<link>/forums/topic/jsgf-openears-2-0/#post-1023387</link>
+					<pubDate>Thu, 11 Dec 2014 10:52:28 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, thanks for the heads-up, should be up to date now.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

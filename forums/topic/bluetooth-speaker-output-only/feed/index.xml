@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Bluetooth Speaker Output (only) &#8211; Politepix</title>
+		<atom:link href="/forums/topic/bluetooth-speaker-output-only/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/bluetooth-speaker-output-only/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:52:42 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/bluetooth-speaker-output-only/#post-1017184</guid>
+					<title><![CDATA[Bluetooth Speaker Output (only)]]></title>
+					<link>/forums/topic/bluetooth-speaker-output-only/#post-1017184</link>
+					<pubDate>Thu, 09 May 2013 15:55:05 +0000</pubDate>
+					<dc:creator>mcolonj</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>I want to give a presentation using open ears. The presentation calls for using bluetooth audio. I would like to hold the device while speaking into the built-in mic. Then I would like to have the output play through a bluetooth speaker.</p>
+<p>I am guessing there is a way to do this. However, I am unable to find a solution. </p>
+<p>Can you help with this?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/bluetooth-speaker-output-only/#post-1017186</guid>
+					<title><![CDATA[Reply To: Bluetooth Speaker Output (only)]]></title>
+					<link>/forums/topic/bluetooth-speaker-output-only/#post-1017186</link>
+					<pubDate>Thu, 09 May 2013 21:07:21 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>If it is supported it should automatically work, so it sounds a bit like it isn&#8217;t and in that case you&#8217;d probably need to experiment a bit with the settings inside AudioSessionManager.h and recompile the framework.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

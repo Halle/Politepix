@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Accuracy with Irish accent in speech recognition &#8211; Politepix</title>
+		<atom:link href="/forums/topic/subpar-success-rate-of-speech-recognition/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/subpar-success-rate-of-speech-recognition/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:38:35 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/subpar-success-rate-of-speech-recognition/#post-11651</guid>
+					<title><![CDATA[Accuracy with Irish accent in speech recognition]]></title>
+					<link>/forums/topic/subpar-success-rate-of-speech-recognition/#post-11651</link>
+					<pubDate>Mon, 22 Oct 2012 12:00:05 +0000</pubDate>
+					<dc:creator>rl1987</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I have generated a language model using OpenEarsSampleApp from a list of 194 single-word phrases. However, it tends to recognize words incorrectly, especially if device is being held closer to the speaker or if a speaker is pronouncing words relatively rapidly. How do I improve the functioning? Would reducing microphone sensitivity and/or introducing Automatic Gain Control help it? If so, how to implement these changes?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/subpar-success-rate-of-speech-recognition/#post-11652</guid>
+					<title><![CDATA[Reply To: Subpar success rate of speech recognition]]></title>
+					<link>/forums/topic/subpar-success-rate-of-speech-recognition/#post-11652</link>
+					<pubDate>Mon, 22 Oct 2012 12:16:57 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Can you tell me a bit more about your application? Language, OpenEars version, which device, which kind of audio recording input, are you using any other media playback objects in your app like AVPlayer or MPMoviePlayerController, what is the accent, gender and age of the parties you are testing with, what is the accuracy rate you are seeing, have you verified that you are never sending any messages to the audio session or AVAudioSession, are the phrases found in the lookup dictionary or not (it&#8217;s the file CMU07a.dic that ships with the framework)?</p>
+<p>It should work ideally when users are closer to the device so that is a sign that there could be an implementation issue.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/subpar-success-rate-of-speech-recognition/#post-11653</guid>
+					<title><![CDATA[Reply To: Subpar success rate of speech recognition]]></title>
+					<link>/forums/topic/subpar-success-rate-of-speech-recognition/#post-11653</link>
+					<pubDate>Mon, 22 Oct 2012 12:48:49 +0000</pubDate>
+					<dc:creator>rl1987</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Language is English, closest to American dialect I believe, although neither of the speakers are native Americans. Both males and females were trying to test this feature. All of the speakers have adult sounding voices. Also, for the testing I have been trying to use say(1) program on Mac OS X and been getting the same kind of problems.</p>
+<p>We have been testing the application on iPhone 3GS, 4th gen iPod Touch and iPhone 4. In all cases, internal microphone of a device was used, there were no external microphones. OpenEars version is the latest one, 1.2.2. None of the audio-related iOS APIs were used in the code we have written since speech recognition is the only audio-related feature that is available in the application. </p>
+<p>It seems that most of the phrases in my language model is found in the pre-packaged cmua07.dic file, but there are exceptions.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/subpar-success-rate-of-speech-recognition/#post-11654</guid>
+					<title><![CDATA[Reply To: Subpar success rate of speech recognition]]></title>
+					<link>/forums/topic/subpar-success-rate-of-speech-recognition/#post-11654</link>
+					<pubDate>Mon, 22 Oct 2012 12:55:10 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You can&#8217;t use synthesized text for testing recognition, it has to be a real speaker.</p>
+<p>I&#8217;m confused about the idea of single word phrases &#8212; are they single words, or phrases?</p>
+<p>Unfortunately you are always going to see reduced accuracy when the speaker has an accent, unfair as it is. What is the accuracy rate you are seeing?</p>
+<p>Take a look at the .dic file that is output for the words which aren&#8217;t found in the cmu dictionary, because if the fallback method gets the pronunciation wrong, it won&#8217;t be recognized correctly.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/subpar-success-rate-of-speech-recognition/#post-11655</guid>
+					<title><![CDATA[Reply To: Subpar success rate of speech recognition]]></title>
+					<link>/forums/topic/subpar-success-rate-of-speech-recognition/#post-11655</link>
+					<pubDate>Mon, 22 Oct 2012 13:15:34 +0000</pubDate>
+					<dc:creator>rl1987</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>We have entered single words (one word per line) into phrases1.txt file and used the following code in the modified OpenEarsSampleApp to generate the language model:</p>
+<p><code><br />
+	LanguageModelGenerator *languageModelGenerator =<br />
+    [[LanguageModelGenerator alloc] init];</p>
+<p>    NSString *phrasesPath = [[NSBundle mainBundle] pathForResource:@"phrases1"<br />
+                                                            ofType:@"txt"];</p>
+<p>    NSError *error =<br />
+    [languageModelGenerator generateLanguageModelFromTextFile:phrasesPath<br />
+                                               withFilesNamed:@"OpenEarsDynamicGrammar"];<br />
+</code></p>
+<p>Should the generated OpenEarsDynamicGrammar.dic contain only the words that aren&#8217;t found in the CMU dictionary? As of now, it contains all the words from phrases1.txt.</p>
+<p>At worst, we would like to have at least 60% accuracy (that is, 6 successes from 10 experiments). 80% and higher accuracy would be good enough.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/subpar-success-rate-of-speech-recognition/#post-11657</guid>
+					<title><![CDATA[Reply To: Subpar success rate of speech recognition]]></title>
+					<link>/forums/topic/subpar-success-rate-of-speech-recognition/#post-11657</link>
+					<pubDate>Mon, 22 Oct 2012 13:28:58 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>My suggestion is to see which words are being put in your OpenEarsDynamicGrammer.dic file which are not present in cmu07a.dic and look at the pronunciations that are listed therein and make sure that they are accurate descriptions of the way those words are pronounced. If they are not, those words will never be successfully recognized.</p>
+<p>>At worst, we would like to have at least 60% accuracy (that is, 6 successes from 10 experiments). 80% and higher accuracy would be good enough.</p>
+<p>Could you please tell me your current accuracy rate? It is improbable that you will get 80% for non-native speakers.</p>
+<p>I would turn on logging (both verboseLanguageModelGenerator and OpenEarsLogging) and see if there are any error or warning messages.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/subpar-success-rate-of-speech-recognition/#post-11658</guid>
+					<title><![CDATA[Reply To: Subpar success rate of speech recognition]]></title>
+					<link>/forums/topic/subpar-success-rate-of-speech-recognition/#post-11658</link>
+					<pubDate>Mon, 22 Oct 2012 13:39:26 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Can you be very specific with me about what this means: &#8220;Language is English, closest to American dialect I believe, although neither of the speakers are native Americans.&#8221; Where are the speakers from and what is their native language and why did you choose them for evaluating accuracy levels for English speech recognition?</p>
+<p>The reason I ask is because it&#8217;s unusual to say that a non-native speaker has a native dialect or close to one &#8212; that&#8217;s an exceedingly unusual outcome in language learning. As an example, I speak German as a non-native speaker and the regional accent of German that I speak is probably closest to the Northwestern German pronunciation, but no one from that region would say that I had a Northwestern German dialect because my US accent is at least as strong as a regional German accent in my speech. I would not be a good test subject for evaluating accuracy of German speech recognition.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/subpar-success-rate-of-speech-recognition/#post-11659</guid>
+					<title><![CDATA[Reply To: Subpar success rate of speech recognition]]></title>
+					<link>/forums/topic/subpar-success-rate-of-speech-recognition/#post-11659</link>
+					<pubDate>Mon, 22 Oct 2012 13:58:01 +0000</pubDate>
+					<dc:creator>rl1987</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Our application is intended for users who live in Ireland and speak the corresponding dialect of English. We want OpenEars to be able to recognize words spoken with this kind of dialect. Some of the testers belong to this set of intended users. We, the developers, are from East Europe, but we can speak English fairly well, although we do have our accents.</p>
+<p>An Irish female tester reported that accuracy was as low as 3% when she was holding iPhone as one normally would. When she increased the distance between herself and device, the accuracy got better. </p>
+<p>I have uncommented <code>[OpenEarsLogging startOpenEarsLogging];</code> and tried generating the language model again.</p>
+<p>When OpenEars generates the model, I am getting a fair amount of warnings like this:<br />
+<code><br />
+2012-10-22 16:41:09.436 OpenEarsSampleApp[84775:11f03] The word LOCKSMITHS was not found in the dictionary /Users/rimantasl/Library/Application Support/iPhone Simulator/6.0/Applications/9309879C-9CFD-48C1-8A12-305A6EC7FDA5/OpenEarsSampleApp.app/cmu07a.dic.<br />
+2012-10-22 16:41:09.437 OpenEarsSampleApp[84775:11f03] Now using the fallback method to look up the word LOCKSMITHS<br />
+2012-10-22 16:41:09.438 OpenEarsSampleApp[84775:11f03] Using convertGraphemes for the word or phrase LOCKSMITHS which doesn't appear in the dictionary<br />
+2012-10-22 16:41:09.440 OpenEarsSampleApp[84775:11f03] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the default phonetic lookup dictionary is that your words are not in English or aren't dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2012-10-22 16:41:09.451 OpenEarsSampleApp[84775:11f03] The word LONGFORD was not found in the dictionary /Users/rimantasl/Library/Application Support/iPhone Simulator/6.0/Applications/9309879C-9CFD-48C1-8A12-305A6EC7FDA5/OpenEarsSampleApp.app/cmu07a.dic.<br />
+2012-10-22 16:41:09.452 OpenEarsSampleApp[84775:11f03] Now using the fallback method to look up the word LONGFORD<br />
+2012-10-22 16:41:09.452 OpenEarsSampleApp[84775:11f03] Using convertGraphemes for the word or phrase LONGFORD which doesn't appear in the dictionary<br />
+</code></p>
+<p>These warning are mostly related to Irish location names.</p>
+<p>Besides, there has been these warnings just after running OpenEarsSampleApp in iPhone Simulator:<br />
+<code><br />
+sih_add WARNING: repeated hashing of 'GAMES', older value will be overridden.<br />
+sih_add WARNING: repeated hashing of 'GAS', older value will be overridden.<br />
+sih_add WARNING: repeated hashing of 'LEITRIM', older value will be overridden.<br />
+sih_add WARNING: repeated hashing of 'LESSONS', older value will be overridden.<br />
+sih_add WARNING: repeated hashing of 'MEATH', older value will be overridden.<br />
+sih_add WARNING: repeated hashing of 'MONTESSORI', older value will be overridden.<br />
+sih_add WARNING: repeated hashing of 'MORTGAGE', older value will be overridden.<br />
+sih_add WARNING: repeated hashing of 'RENTAL', older value will be overridden.<br />
+sih_add WARNING: repeated hashing of 'SALON', older value will be overridden.<br />
+sih_add WARNING: repeated hashing of 'SEWER', older value will be overridden.<br />
+sih_add WARNING: repeated hashing of 'SUPPLIES', older value will be overridden.<br />
+sih_add WARNING: repeated hashing of 'TARMAC', older value will be overridden.<br />
+sih_add WARNING: repeated hashing of 'TARMACADAM', older value will be overridden.<br />
+sih_add WARNING: repeated hashing of 'TYRES', older value will be overridden.<br />
+sih_add WARNING: repeated hashing of 'USED', older value will be overridden.<br />
+sih_add WARNING: repeated hashing of 'VETINARY', older value will be overridden.<br />
+sih_add WARNING: repeated hashing of 'WINDSCREEN', older value will be overridden.<br />
+</code></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/subpar-success-rate-of-speech-recognition/#post-11662</guid>
+					<title><![CDATA[Reply To: Subpar success rate of speech recognition]]></title>
+					<link>/forums/topic/subpar-success-rate-of-speech-recognition/#post-11662</link>
+					<pubDate>Mon, 22 Oct 2012 14:31:11 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, for future reference it would be helpful to lead with this information, or give it in response to the questions asked about it. It&#8217;s been some work for me to find out what accents you are really trying to recognize and what accuracy levels you are seeing. I would not expect great accuracy for Irish accent recognition with the default language model, which is entirely made up of US accents.</p>
+<p>This sounds like a subjective report: &#8220;An Irish female tester reported that accuracy was as low as 3% when she was holding iPhone as one normally would. When she increased the distance between herself and device, the accuracy got better.&#8221;</p>
+<p>The reason it sounds like a subjective report is that I doubt she tested 100 times (and if she did, is it 100 repetitions of the same phrase or 100 different phrases?), so 3% is more likely to be a qualitative statement for &#8220;recognition was bad in my testing round&#8221;. Reasons for this could be diverse &#8212; it could have something to do with your UI, it could have something to do with the environment she is testing in, it could have to do with the non-English (MEATH ) and misspelled (VETINARY ) words in your vocabulary which will have pronunciation entries in the dictionary which will never be spoken, it could have to do with her expectations of what can be recognized (most end users don&#8217;t realize the vocabulary is limited and/or that saying a lot of extra things that are outside of the vocabulary will affect recognition quality).</p>
+<p>The symptom that recognition is worse when she is close to the phone is unlikely to be strictly true since closeness to the phone improves recognition under normal testing, so what is more likely is that the other variables mentioned above changed at the time that she got farther from the phone. I&#8217;m sure there is something to it but it is an isolated data point that is unexpected so it needs replication from your side.</p>
+<p>I can&#8217;t really remote bugfix an issue you are receiving as a remote report &#8212; at some point, someone needs to make a first-hand observation of the issue and test it in an organized way and replicate. If something was wrong with her test session (she was saying words that aren&#8217;t in the vocabulary, or it was really noisy, or the UI in the app was giving her the impression it was listening at a time that it wasn&#8217;t listening) it&#8217;s harmful to try to adapt your approach to that limited data.</p>
+<p>My recommendation is to obtain some WAV recordings of your speakers saying phrases that should be possible to recognize with your vocabulary and put them through PocketsphinxController to find out what the accuracy levels are for them. It is important to check the words in your OpenEarsDynamicGrammar.dic file that were not found in cmu07a.dic and make sure that the phonetic transcription in there is a real description of how someone would say those words, and to remove any typos, because if you have &#8220;VETINARY&#8221; and someone says &#8220;VETRINARY&#8221;, not only will you not recognize &#8220;VETRINARY&#8221; but it will hurt the recognition of any other words in the statement since you now have an out-of-vocabulary utterance in the middle of the statement.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/subpar-success-rate-of-speech-recognition/#post-11663</guid>
+					<title><![CDATA[Reply To: Subpar success rate of speech recognition]]></title>
+					<link>/forums/topic/subpar-success-rate-of-speech-recognition/#post-11663</link>
+					<pubDate>Mon, 22 Oct 2012 15:04:50 +0000</pubDate>
+					<dc:creator>rl1987</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>What kind of work needs to be done to make OpenEars recognize words spoken in non-American dialect? As far as I know, PocketSphinx is a general purpose speech recognition engine and could be used to perform speech recognition in multiple languages. Do I need to have recordings of Irish people pronouncing words of interest and perform model training to generate models that correspond specifically to Irish dialect of English? What are the specifics of doing this? </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

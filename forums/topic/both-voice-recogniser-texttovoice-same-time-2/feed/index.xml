@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>both voice recogniser &amp; textToVoice same time &#8211; Politepix</title>
+		<atom:link href="/forums/topic/both-voice-recogniser-texttovoice-same-time-2/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/both-voice-recogniser-texttovoice-same-time-2/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:06:21 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/both-voice-recogniser-texttovoice-same-time-2/#post-1020154</guid>
+					<title><![CDATA[both voice recogniser &amp; textToVoice same time]]></title>
+					<link>/forums/topic/both-voice-recogniser-texttovoice-same-time-2/#post-1020154</link>
+					<pubDate>Sun, 16 Feb 2014 13:31:38 +0000</pubDate>
+					<dc:creator>meVenkatarao</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>both aren&#8217;t working at the same time on iPhone. I read multithreading is handled on openEars, but one is getting blocked.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/both-voice-recogniser-texttovoice-same-time-2/#post-1020161</guid>
+					<title><![CDATA[Reply To: both voice recogniser &amp; textToVoice same time]]></title>
+					<link>/forums/topic/both-voice-recogniser-texttovoice-same-time-2/#post-1020161</link>
+					<pubDate>Sun, 16 Feb 2014 15:56:37 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>Take a look at the sample app for an example of using them both together.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/both-voice-recogniser-texttovoice-same-time-2/#post-1020222</guid>
+					<title><![CDATA[Reply To: both voice recogniser &amp; textToVoice same time]]></title>
+					<link>/forums/topic/both-voice-recogniser-texttovoice-same-time-2/#post-1020222</link>
+					<pubDate>Wed, 19 Feb 2014 16:58:33 +0000</pubDate>
+					<dc:creator>meVenkatarao</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,<br />
+Thanks! I looked at sample code. At a time I guess only one thread can access audio (please let me know correct thing on this). So I am doing text to voice (big one), &amp; in parallel giving voce input; its not working. I was asking can we have those two operations in parallel.</p>
+<p>Thanks,<br />
+Venkat</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/both-voice-recogniser-texttovoice-same-time-2/#post-1020224</guid>
+					<title><![CDATA[Reply To: both voice recogniser &amp; textToVoice same time]]></title>
+					<link>/forums/topic/both-voice-recogniser-texttovoice-same-time-2/#post-1020224</link>
+					<pubDate>Wed, 19 Feb 2014 17:15:19 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I don&#8217;t think they should be blocking each other, but OpenEars suspends listening during TTS so that the TTS speech doesn&#8217;t become part of the recognized speech. This shouldn&#8217;t be the case when using headphones since the isolation of the mic and audio output from each other means there isn&#8217;t the same danger of confused recognition. Is that the issue you&#8217;re seeing? If not, I guess I&#8217;d need a more detailed clarification of exactly what is happening versus what you&#8217;re aiming for.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/both-voice-recogniser-texttovoice-same-time-2/#post-1020231</guid>
+					<title><![CDATA[Reply To: both voice recogniser &amp; textToVoice same time]]></title>
+					<link>/forums/topic/both-voice-recogniser-texttovoice-same-time-2/#post-1020231</link>
+					<pubDate>Thu, 20 Feb 2014 18:19:19 +0000</pubDate>
+					<dc:creator>meVenkatarao</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p><strong>Question from other thread</strong>: Then how can I check if its not blocking (taking) main thread? just to if text to voice &amp; voice recognition could be run in parallel. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/both-voice-recogniser-texttovoice-same-time-2/#post-1020235</guid>
+					<title><![CDATA[Reply To: both voice recogniser &amp; textToVoice same time]]></title>
+					<link>/forums/topic/both-voice-recogniser-texttovoice-same-time-2/#post-1020235</link>
+					<pubDate>Thu, 20 Feb 2014 18:23:50 +0000</pubDate>
+					<dc:creator>meVenkatarao</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Requirement: Text To Voice is in progress; user should be able to interrupt by voice while its reading (text to voice)</p>
+<p>1. You said if I put earphones, it would work as required. Am I understanding it correct?<br />
+2. What about in normal state? Cant be put both operations in parallel?</p>
+<p>Thanks,<br />
+Venkat</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/both-voice-recogniser-texttovoice-same-time-2/#post-1020236</guid>
+					<title><![CDATA[Reply To: both voice recogniser &amp; textToVoice same time]]></title>
+					<link>/forums/topic/both-voice-recogniser-texttovoice-same-time-2/#post-1020236</link>
+					<pubDate>Thu, 20 Feb 2014 18:28:23 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>It shouldn&#8217;t be necessary to check this because they run in parallel. Can you take a look at my previous reply and describe in more depth what the symptom is that makes it seem like they are blocking each other? Speech recognition in OpenEars is 100% multithreaded and it doesn&#8217;t do anything on mainThread but start and send notifications. FliteController may do synthesis on mainThread but that only accounts for the moment of synthesis – all the playback is asynchronous. NeatSpeech doesn&#8217;t even do the synthesis on mainThread. So I&#8217;d need a bit more information about what the situation you are seeing is that seems like everything is blocking – is it the UI being frozen, and if so, under which circumstances, or is it one of the OpenEars elements not being responsive, and if so, which one and under which circumstances? Or is this because recognition suspends during speech for the reason I explained above?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/both-voice-recogniser-texttovoice-same-time-2/#post-1020237</guid>
+					<title><![CDATA[Reply To: both voice recogniser &amp; textToVoice same time]]></title>
+					<link>/forums/topic/both-voice-recogniser-texttovoice-same-time-2/#post-1020237</link>
+					<pubDate>Thu, 20 Feb 2014 18:38:41 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, that isn&#8217;t really about threading so you don&#8217;t need a thread-based solution to that issue. Yes, you can interrupt TTS speech using speech recognition if you require the user to use headphones, or you can alter FliteController to not call the methods sendSuspendNotificationOnMainThread and sendResumeNotificationOnMainThread if you want to experiment with what happens when speech recognition doesn&#8217;t suspend while the user is using the main speaker.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/both-voice-recogniser-texttovoice-same-time-2/#post-1020272</guid>
+					<title><![CDATA[Reply To: both voice recogniser &amp; textToVoice same time]]></title>
+					<link>/forums/topic/both-voice-recogniser-texttovoice-same-time-2/#post-1020272</link>
+					<pubDate>Fri, 21 Feb 2014 10:44:18 +0000</pubDate>
+					<dc:creator>meVenkatarao</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the clarification. Yes! voice recognition is suspended while reading. I have seen that recogniser is picking up what is being read, could that be stopped &amp; without earphones, can it be workable?</p>
+<p>Thanks,<br />
+Venkat</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/both-voice-recogniser-texttovoice-same-time-2/#post-1020274</guid>
+					<title><![CDATA[Reply To: both voice recogniser &amp; textToVoice same time]]></title>
+					<link>/forums/topic/both-voice-recogniser-texttovoice-same-time-2/#post-1020274</link>
+					<pubDate>Fri, 21 Feb 2014 10:56:31 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I don&#8217;t recommend doing it because you are always going to encounter the issue that live speech in the same shared audio environment in which you are doing recognition will be attempted to be processed by the recognition engine. You could try to control it using Rejecto, but even in that case you are going to get mixed results, just like if you were just doing speech recognition but two people were talking into it at the same time.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

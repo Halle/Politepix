@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Performance information when using wav file &#8211; Politepix</title>
+		<atom:link href="/forums/topic/performance-information-when-using-wav-file/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/performance-information-when-using-wav-file/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:59:48 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/performance-information-when-using-wav-file/#post-1017429</guid>
+					<title><![CDATA[Performance information when using wav file]]></title>
+					<link>/forums/topic/performance-information-when-using-wav-file/#post-1017429</link>
+					<pubDate>Fri, 07 Jun 2013 12:27:09 +0000</pubDate>
+					<dc:creator>nh3500</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi all,</p>
+<p>I have a question about retrieving log of pocketsphinx,</p>
+<p>I know we can simply set pocketsphinxController.verbosePocketSphinx = TRUE to get the log of pocketsphinx, and I did.  But there is no log showed in the debugging window when I choose wav file as the source. Although it worked fine when it is in normal mode(continuous recognition).</p>
+<p>The information I need is processing time. I can find it in normal mode.<br />
+But how can I find it when using wav as the source?<br />
+Should I turn on some parameter setting to allow pocketsphinx output the log?<br />
+If so, where can I find it?</p>
+<p>I would appreciate any suggestions.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/performance-information-when-using-wav-file/#post-1017434</guid>
+					<title><![CDATA[Reply To: Performance information when using wav file]]></title>
+					<link>/forums/topic/performance-information-when-using-wav-file/#post-1017434</link>
+					<pubDate>Fri, 07 Jun 2013 12:38:36 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Logging should behave identically for runRecognitionOnWavFileAtPath:. If it isn&#8217;t I would take normal troubleshooting steps such as making sure that you have all logging turned on in Xcode&#8217;s console, etc. But I don&#8217;t recall there being anything like overall processing time in either log &#8212; what does it look like when you see it with continuous?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/performance-information-when-using-wav-file/#post-1017435</guid>
+					<title><![CDATA[Reply To: Performance information when using wav file]]></title>
+					<link>/forums/topic/performance-information-when-using-wav-file/#post-1017435</link>
+					<pubDate>Fri, 07 Jun 2013 12:44:42 +0000</pubDate>
+					<dc:creator>nh3500</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>It looked as follow:</p>
+<p>INFO: ngram_search.c(888): bestpath 0.00 CPU 0.001 xRT<br />
+INFO: ngram_search.c(891): bestpath 0.00 wall 0.002 xRT</p>
+<p>Do I misunderstand the meaning?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/performance-information-when-using-wav-file/#post-1017436</guid>
+					<title><![CDATA[Reply To: Performance information when using wav file]]></title>
+					<link>/forums/topic/performance-information-when-using-wav-file/#post-1017436</link>
+					<pubDate>Fri, 07 Jun 2013 12:51:25 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>That tells you how much the speed was compared to the real time of the utterance, but not the overall processing time.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/performance-information-when-using-wav-file/#post-1017437</guid>
+					<title><![CDATA[Reply To: Performance information when using wav file]]></title>
+					<link>/forums/topic/performance-information-when-using-wav-file/#post-1017437</link>
+					<pubDate>Fri, 07 Jun 2013 12:55:25 +0000</pubDate>
+					<dc:creator>nh3500</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>Yes, I understand the meaning. For my research, that is enough.</p>
+<p>Thanks for your reply. I will keep working on finding a solution.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/performance-information-when-using-wav-file/#post-1017438</guid>
+					<title><![CDATA[Reply To: Performance information when using wav file]]></title>
+					<link>/forums/topic/performance-information-when-using-wav-file/#post-1017438</link>
+					<pubDate>Fri, 07 Jun 2013 13:00:54 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>What do you see in the logging output rather than the pocketsphinx run log?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/performance-information-when-using-wav-file/#post-1017439</guid>
+					<title><![CDATA[Reply To: Performance information when using wav file]]></title>
+					<link>/forums/topic/performance-information-when-using-wav-file/#post-1017439</link>
+					<pubDate>Fri, 07 Jun 2013 13:14:01 +0000</pubDate>
+					<dc:creator>nh3500</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This the log showed with wav file:</p>
+<p>2013-06-07 21:03:47.928 OpenEarsSampleApp[1758:907] The received hypothesis is 床 with a score of -305 and an ID of 000000000<br />
+2013-06-07 21:03:49.395 OpenEarsSampleApp[1758:907] Flite has started speaking<br />
+2013-06-07 21:03:50.732 OpenEarsSampleApp[1758:907] Flite has finished speaking</p>
+<p>And this is the log with continuous recognition:</p>
+<p>2013-06-07 21:05:03.054 OpenEarsSampleApp[1770:907] Pocketsphinx has detected speech.<br />
+2013-06-07 21:05:04.330 OpenEarsSampleApp[1770:907] Pocketsphinx has detected a second of silence, concluding an utterance.<br />
+INFO: cmn_prior.c(121): cmn_prior_update: from &lt;  8.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00 &gt;<br />
+INFO: cmn_prior.c(139): cmn_prior_update: to   &lt; 11.95 -0.01 -0.16  0.08 -0.27 -0.20 -0.07 -0.31 -0.24 -0.19 -0.23 -0.10 -0.24 &gt;<br />
+INFO: ngram_search_fwdtree.c(1549):      468 words recognized (5/fr)<br />
+INFO: ngram_search_fwdtree.c(1551):     9619 senones evaluated (98/fr)<br />
+INFO: ngram_search_fwdtree.c(1553):     3634 channels searched (37/fr), 188 1st, 3446 last<br />
+INFO: ngram_search_fwdtree.c(1557):      849 words for which last channels evaluated (8/fr)<br />
+INFO: ngram_search_fwdtree.c(1560):      175 candidate words for entering last phone (1/fr)<br />
+INFO: ngram_search_fwdtree.c(1562): fwdtree 0.88 CPU 0.896 xRT<br />
+INFO: ngram_search_fwdtree.c(1565): fwdtree 1.78 wall 1.821 xRT<br />
+INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 4 words<br />
+INFO: ngram_search_fwdflat.c(937):      410 words recognized (4/fr)<br />
+INFO: ngram_search_fwdflat.c(939):    11448 senones evaluated (117/fr)<br />
+INFO: ngram_search_fwdflat.c(941):     4525 channels searched (46/fr)<br />
+INFO: ngram_search_fwdflat.c(943):      968 words searched (9/fr)<br />
+INFO: ngram_search_fwdflat.c(945):      237 word transitions (2/fr)<br />
+INFO: ngram_search_fwdflat.c(948): fwdflat 0.75 CPU 0.763 xRT<br />
+INFO: ngram_search_fwdflat.c(951): fwdflat 0.75 wall 0.765 xRT<br />
+INFO: ngram_search.c(1214): &lt;/s&gt; not found in last frame, using &lt;sil&gt;.96 instead<br />
+INFO: ngram_search.c(1266): lattice start node &lt;s&gt;.0 end node &lt;sil&gt;.46<br />
+INFO: ngram_search.c(1294): Eliminated 23 nodes before end node<br />
+INFO: ngram_search.c(1399): Lattice has 62 nodes, 35 links<br />
+INFO: ps_lattice.c(1367): Normalizer P(O) = alpha(&lt;sil&gt;:46:96) = -252498<br />
+INFO: ps_lattice.c(1405): Joint P(O,S) = -252548 P(S|O) = -50<br />
+INFO: ngram_search.c(888): bestpath 0.01 CPU 0.007 xRT<br />
+INFO: ngram_search.c(891): bestpath 0.00 wall 0.002 xRT<br />
+2013-06-07 21:05:05.254 OpenEarsSampleApp[1770:907] The received hypothesis is 起 with a score of -50 and an ID of 000000000<br />
+2013-06-07 21:05:05.620 OpenEarsSampleApp[1770:907] Pocketsphinx is now listening.<br />
+2013-06-07 21:05:05.625 OpenEarsSampleApp[1770:907] Flite has started speaking<br />
+2013-06-07 21:05:07.418 OpenEarsSampleApp[1770:907] Flite has finished speaking</p>
+<p>And I checked the code of PocketsphinxController.mm. I found in the method runRecognitionOnWavFileAtPath, there is no following line of code:<br />
+if(self.verbosePocketSphinx == 1) verbose_pocketsphinx = 1;</p>
+<p>May this be the reason why there is no log from pocketsphinx? However, I have no idea how to change and test it directly in OpenEarsSampleApp project&#8230;I found the code from OpenEars project, but in OpenEarsSampleApp project, it seems working with one complicated object named OpenEars in following path OpenEarsDistributionPreview/Framework/OpenEars.framework/Versions/A/OpenEars</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/performance-information-when-using-wav-file/#post-1017440</guid>
+					<title><![CDATA[Reply To: Performance information when using wav file]]></title>
+					<link>/forums/topic/performance-information-when-using-wav-file/#post-1017440</link>
+					<pubDate>Fri, 07 Jun 2013 13:22:06 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Aha, thank you for the info. All you should have to do to make the change in your local version is open OpenEars.xcodeproj, make the change, and build it. A product will be created in Xcode that is another OpenEars.framework which you can replace the old one with in your sample app.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/performance-information-when-using-wav-file/#post-1017441</guid>
+					<title><![CDATA[Reply To: Performance information when using wav file]]></title>
+					<link>/forums/topic/performance-information-when-using-wav-file/#post-1017441</link>
+					<pubDate>Fri, 07 Jun 2013 14:00:42 +0000</pubDate>
+					<dc:creator>nh3500</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I add the code and rebuild the project. Then delete the framework from Build phase tab then add new OpenEars.framework. But it failed with following errors when I tried to run the project. In fact, when I built the OpenEars.xcodeproj, there were some errors also, but it is just about the location of some files and it built successfully. So I don&#8217;t think it is relevant.</p>
+<p>Undefined symbols for architecture armv7:<br />
+  &#8220;_fast_logmath_add&#8221;, referenced from:<br />
+      _ptm_mgau_senone_eval in OpenEars(OpenEars)<br />
+      _get_scores_4b_feat_all in OpenEars(OpenEars)<br />
+      _get_scores_8b_feat_all in OpenEars(OpenEars)<br />
+      _get_scores_8b_feat_6 in OpenEars(OpenEars)<br />
+      _get_scores_8b_feat_5 in OpenEars(OpenEars)<br />
+      _get_scores_8b_feat_4 in OpenEars(OpenEars)<br />
+      _get_scores_8b_feat_3 in OpenEars(OpenEars)<br />
+      &#8230;<br />
+ld: symbol(s) not found for architecture armv7<br />
+clang: error: linker command failed with exit code 1 (use -v to see invocation) </p>
+<p>It might be caused by some problem related to setting of libraries, but I&#8217;ve added the new generated framework to the project. Any suggestion?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/performance-information-when-using-wav-file/#post-1017442</guid>
+					<title><![CDATA[Reply To: Performance information when using wav file]]></title>
+					<link>/forums/topic/performance-information-when-using-wav-file/#post-1017442</link>
+					<pubDate>Fri, 07 Jun 2013 14:10:32 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>What were the framework errors?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

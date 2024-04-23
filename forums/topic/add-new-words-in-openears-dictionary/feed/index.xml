@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Add new words in OpenEars Dictionary &#8211; Politepix</title>
+		<atom:link href="/forums/topic/add-new-words-in-openears-dictionary/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/add-new-words-in-openears-dictionary/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:02:42 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/add-new-words-in-openears-dictionary/#post-1018686</guid>
+					<title><![CDATA[Add new words in OpenEars Dictionary]]></title>
+					<link>/forums/topic/add-new-words-in-openears-dictionary/#post-1018686</link>
+					<pubDate>Fri, 18 Oct 2013 15:37:08 +0000</pubDate>
+					<dc:creator>jainanoop</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hey,<br />
+ I am using OpenEars framework for speech recognition, It works for words that have already added in OpenEars1.languagemodel file, and here OpenEars1.dic file is also used. My problem is that i want to add few words in that files therefore i can recognise newly add words.<br />
+I searched but don&#8217;t know where and how to add more words ?<br />
+Thanks in advance.</p>
+<p>Anoop</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/add-new-words-in-openears-dictionary/#post-1018687</guid>
+					<title><![CDATA[Reply To: Add new words in OpenEars Dictionary]]></title>
+					<link>/forums/topic/add-new-words-in-openears-dictionary/#post-1018687</link>
+					<pubDate>Fri, 18 Oct 2013 15:42:24 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Anoop,</p>
+<p>Please use the tutorial for an introduction to creating your own vocabularies with OpenEars: <a href="/openears/tutorial">/openears/tutorial</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/add-new-words-in-openears-dictionary/#post-1018776</guid>
+					<title><![CDATA[Reply To: Add new words in OpenEars Dictionary]]></title>
+					<link>/forums/topic/add-new-words-in-openears-dictionary/#post-1018776</link>
+					<pubDate>Thu, 31 Oct 2013 08:10:01 +0000</pubDate>
+					<dc:creator>jainanoop</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,<br />
+       Thanks for update, i read the document but still didn&#8217;t get the exact way how to create own vocabularies.</p>
+<p>Anoop</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/add-new-words-in-openears-dictionary/#post-1018778</guid>
+					<title><![CDATA[Reply To: Add new words in OpenEars Dictionary]]></title>
+					<link>/forums/topic/add-new-words-in-openears-dictionary/#post-1018778</link>
+					<pubDate>Thu, 31 Oct 2013 09:02:01 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, if the explanations in the tutorial, and the OpenEars documentation, and the sample app comments aren&#8217;t clear, I regretfully can&#8217;t help further. I would be rewriting the explanations and sample code from those sources, just in a different place.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

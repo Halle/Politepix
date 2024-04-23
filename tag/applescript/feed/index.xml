@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>applescript &#8211; Politepix</title>
+	<atom:link href="/tag/applescript/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>iOS Frameworks for speech recognition, text to speech and more</description>
+	<lastBuildDate>Wed, 10 Sep 2014 13:57:18 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.5.2</generator>
+<site xmlns="com-wordpress:feed-additions:1">206848719</site>	<item>
+		<title>Open the Simulator sandbox folder of the app you just built and ran</title>
+		<link>/2011/05/13/open-the-simulator-sandbox-folder-of-the-app-you-just-built-and-ran/</link>
+					<comments>/2011/05/13/open-the-simulator-sandbox-folder-of-the-app-you-just-built-and-ran/#comments</comments>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Fri, 13 May 2011 15:46:16 +0000</pubDate>
+				<category><![CDATA[Code]]></category>
+		<category><![CDATA[applescript]]></category>
+		<category><![CDATA[ios]]></category>
+		<category><![CDATA[production tools]]></category>
+		<category><![CDATA[simulator]]></category>
+		<category><![CDATA[xcode]]></category>
+		<guid isPermaLink="false">/?p=1250</guid>
+
+					<description><![CDATA[Updated for Xcode 6: I now use the following bash one-liner: open -R `find ~/Library/Developer/CoreSimulator/Devices -type d -depth 5 -name "*.app" -print0 &#124; xargs -0 stat -f "%m %N" &#124; sort -rn &#124; head -1 &#124; cut -f2- -d" "` Read on for some historical AppleScript which applies to Xcode versions previous to 6. Here&#8217;s [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Updated for Xcode 6: I now use the following bash one-liner:</p>
+<pre style="width:490px;">
+open -R `find ~/Library/Developer/CoreSimulator/Devices -type d -depth 5 -name "*.app" -print0 | xargs -0 stat -f "%m %N" | sort -rn | head -1 | cut -f2- -d" "`
+</pre>
+<p>Read on for some historical AppleScript which applies to Xcode versions previous to 6.</p>
+<div class="woo-sc-box  note   ">If you&#8217;re interested in this, you might also enjoy checking out <a href="/openears">OpenEars</a>, Politepix&#8217;s free iOS SDK for doing offline speech recognition without using the network, now featuring <a href="/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/">the ability to generate rules-based recognition grammars dynamically at runtime</a>!</div>
+<p><strong>Here&#8217;s another Applescript* tool</strong> for dealing with the Simulator, since I seem to be on an Applescript/Simulator kick**. Maybe I&#8217;m the only one with this problem: a common use of the Simulator for me is testing code that writes out to the Documents folder of the app. And yet, it&#8217;s always an unpleasant process to locate the app&#8217;s Simulator install folder inside of the Application Support/Simulator folder. It&#8217;s not always 100% obvious which SDK folder I ought to be looking in, the containing folder name changes, it&#8217;s not self-evidently named, etc. So, I have an Applescript that just finds and opens the Simulator install folder for whatever Simulator app I built and ran last.</p>
+<p>[politepix-blog-inline-text-ad]</p>
+<p>Or at least, I had an Applescript, but it was dog-slow. But I recently asked for help on MacScripter <a href="https://macscripter.net/viewtopic.php?pid=140141">here</a> and it&#8217;s now optimized into a speed demon thanks to Hank and Stefan.  The script, to be entered and saved in your Applescript Editor:</p>
+<pre class="brush: cpp,gutter:false, smart-tabs:true,wrap-lines:false;">
+
+# By StefanK at MacScripter: https://macscripter.net/viewtopic.php?pid=140141
+
+property findtype : quoted form of "kMDItemContentType = \"com.apple.application-bundle\""
+
+set simulatorFolder to POSIX path of (path to application support folder from user domain) & "iPhone Simulator/"
+set appFiles to paragraphs of (do shell script "mdfind -onlyin " & quoted form of simulatorFolder & " " & findtype)
+if appFiles is not {} then
+	set mostRecentApp to item 1 of appFiles
+	tell application "Finder" to reveal ((POSIX file mostRecentApp) as alias)
+	tell application "Finder" to activate
+end if</pre>
+<p>Of you can just <a href="/wp-content/uploads/Find%20Most%20Recent%20Simulator%20Build.zip">download</a> it as an already-saved app if you prefer (it can still be opened and edited in Applescript Editor).</p>
+<p>Put it in the dock and click it when you want to see the install folder. I hope it spares you as much annoyance as it spares me. Tip of the hat to MacScripter and regulus6633 and StefanK.</p>
+<p>*&#8221;What&#8217;s the deal with all the Applescript?&#8221; you ask. Look, I just want to be well-practiced when Apple rolls out the Applescript Store at WWDC this year.</p>
+<p>**My last AppleScript/Simulator <a href="/2011/04/25/low-memory-warning-bombardment-tool/">post</a> was linked on Alex Curlyo&#8217;s blog and it led to a discussion that raised <a href="https://www.alexcurylo.com/blog/2011/04/26/tip-low-memory-warnings/">two even better suggestions for accomplishing the same task</a> which are now part of my standard workflow.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/2011/05/13/open-the-simulator-sandbox-folder-of-the-app-you-just-built-and-ran/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">1250</post-id>	</item>
+	</channel>
+</rss>

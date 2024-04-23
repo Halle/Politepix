@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Updating Version of OpenEars &#8211; Politepix</title>
+		<atom:link href="/forums/topic/updating-version-of-openears/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/updating-version-of-openears/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:52:11 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/updating-version-of-openears/#post-1021433</guid>
+					<title><![CDATA[Updating Version of OpenEars]]></title>
+					<link>/forums/topic/updating-version-of-openears/#post-1021433</link>
+					<pubDate>Thu, 29 May 2014 23:48:15 +0000</pubDate>
+					<dc:creator>davestrand</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>Looks like since I originally started working on my OpenEars enhanced app you may have released a new version.  Naturally, I don&#8217;t want to miss out on any sweet new features, so how do I check what version Open Ears Framework I have? </p>
+<p>Also, I&#8217;m nervous about breaking what I&#8217;ve got here..  So I have downloaded the latest version, (With the fancy instruction manual) but I can&#8217;t seem to find a document or guide for UPDATING my project to the latest version. Just a lot about fresh installs.  I assume it&#8217;s some form of copying folders and frameworks into xCode, but I want to make sure I do it right so I don&#8217;t break my app too harshly before the weekend. :)</p>
+<p>Thanks for all the work.<br />
+-Dave</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/updating-version-of-openears/#post-1021435</guid>
+					<title><![CDATA[Reply To: Updating Version of OpenEars]]></title>
+					<link>/forums/topic/updating-version-of-openears/#post-1021435</link>
+					<pubDate>Fri, 30 May 2014 08:25:13 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Dave,</p>
+<p>Sure, I think if you turn on OpenEarsLogging you should see your version in the first line of logging output. Let me know which version you&#8217;re running and I can let you know how to upgrade (but it&#8217;s probably just replacing your OpenEarsDistribution folder with the latest version).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/updating-version-of-openears/#post-1021437</guid>
+					<title><![CDATA[Reply To: Updating Version of OpenEars]]></title>
+					<link>/forums/topic/updating-version-of-openears/#post-1021437</link>
+					<pubDate>Fri, 30 May 2014 12:15:16 +0000</pubDate>
+					<dc:creator>davestrand</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Oh, yep.  Activating the OpenEarsLogging showed me that I am using version 1.64.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/updating-version-of-openears/#post-1021438</guid>
+					<title><![CDATA[Reply To: Updating Version of OpenEars]]></title>
+					<link>/forums/topic/updating-version-of-openears/#post-1021438</link>
+					<pubDate>Fri, 30 May 2014 12:27:31 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, for versions of 1.5 and later it should work fine just to download the latest version and replace your old version&#8217;s OpenEarsDistribution folder with the new version. </p>
+<p>The only other thing to consider is that if, when you originally followed the tutorial installation instructions, you chose to copy the OpenEarsDistribution/Framework folder contents into your project, you may also have the contents of the OpenEarsDistribution/Framework somewhere else in your project and being referenced from that place, in which case you should also replace them with the contents of the current OpenEarsDistribution/Framework folder. So, as an example, if items like AcousticModelEnglish.bundle or Slt.framework or OpenEars.framework are in the root folder of your app project as well as being wherever you downloaded your first OpenEarsDistribution download to, drag the contents of the Framework folder in the current OpenEarsDistribution download into that root folder of your app project to write over them.</p>
+<p>The goal is just to replace the old files wherever they reside and are being referenced from by your app with the new ones which are found inside of the current distribution&#8217;s Framework folder.</p>
+<p>When everything has been done correctly, that first line of OpenEarsLogging should read 1.71.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/updating-version-of-openears/#post-1021439</guid>
+					<title><![CDATA[Reply To: Updating Version of OpenEars]]></title>
+					<link>/forums/topic/updating-version-of-openears/#post-1021439</link>
+					<pubDate>Fri, 30 May 2014 13:11:20 +0000</pubDate>
+					<dc:creator>davestrand</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>It said 1.7.. (not 1.71)  but seems to be working well thanks for the excellent instructions.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/updating-version-of-openears/#post-1021441</guid>
+					<title><![CDATA[Reply To: Updating Version of OpenEars]]></title>
+					<link>/forums/topic/updating-version-of-openears/#post-1021441</link>
+					<pubDate>Fri, 30 May 2014 13:25:04 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yes, that&#8217;s possible if the party responsible (i.e. me :) ) forgot to increment the version number before compiling the last shipping version instead of afterwards, though I think it is probably actually 1.71.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

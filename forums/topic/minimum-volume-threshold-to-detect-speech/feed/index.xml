@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Minimum volume threshold to detect speech &#8211; Politepix</title>
+		<atom:link href="/forums/topic/minimum-volume-threshold-to-detect-speech/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/minimum-volume-threshold-to-detect-speech/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:38:23 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/minimum-volume-threshold-to-detect-speech/#post-11770</guid>
+					<title><![CDATA[Minimum volume threshold to detect speech]]></title>
+					<link>/forums/topic/minimum-volume-threshold-to-detect-speech/#post-11770</link>
+					<pubDate>Wed, 31 Oct 2012 07:23:44 +0000</pubDate>
+					<dc:creator>nvrtd frst</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>I am having a problem that in a very quiet area, pocketSphinx starts detecting very slight noises as speech (thinks like the hum of the fridge, very slight sounds). It then gets into this loop of detecting these noises as speech, which obviously hinders good recognition.</p>
+<p>Is there a way to set a minimum absolute volume threshold just so it doesn&#8217;t pick up these things like the hum of a fridge?</p>
+<p>Thanks</p>
+<p>I am using OpenEars 1.2.2. NOTE: I have tweaked the build to use VoiceProcessingIO and have added code to set the audio session mode to &#8220;Video Recording.&#8221;</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/minimum-volume-threshold-to-detect-speech/#post-11776</guid>
+					<title><![CDATA[Reply To: Minimum volume threshold to detect speech]]></title>
+					<link>/forums/topic/minimum-volume-threshold-to-detect-speech/#post-11776</link>
+					<pubDate>Wed, 31 Oct 2012 15:08:58 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hiya,</p>
+<p>Sorry, there is no trivial way to do this. You can only attempt to hack ContinuousADModule.mm with the proviso that wrong values forced into the VAD usually cause crashes. You might have better results going with the slightly less-sensitive default settings because the noise reduction might be causing an artificially wide differential between minor noises and noise-supressed quiet.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/minimum-volume-threshold-to-detect-speech/#post-11779</guid>
+					<title><![CDATA[Reply To: Minimum volume threshold to detect speech]]></title>
+					<link>/forums/topic/minimum-volume-threshold-to-detect-speech/#post-11779</link>
+					<pubDate>Wed, 31 Oct 2012 21:27:01 +0000</pubDate>
+					<dc:creator>nvrtd frst</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hey Halle,</p>
+<p>Thanks for the response. What do you mean by &#8220;less sensitive default settings?&#8221;</p>
+<p>Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/minimum-volume-threshold-to-detect-speech/#post-11780</guid>
+					<title><![CDATA[Reply To: Minimum volume threshold to detect speech]]></title>
+					<link>/forums/topic/minimum-volume-threshold-to-detect-speech/#post-11780</link>
+					<pubDate>Wed, 31 Oct 2012 21:40:07 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hiya,</p>
+<p>I meant not overriding the audio session or audio unit settings, since I think the OpenEars defaults are less likely to zero out low noise buffers, meaning that there will be less of a difference between a low noise buffer and a not-that-much noise buffer, which theoretically might help the VAD to not overreact to not-that-much-noise buffers.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/minimum-volume-threshold-to-detect-speech/#post-11781</guid>
+					<title><![CDATA[Reply To: Minimum volume threshold to detect speech]]></title>
+					<link>/forums/topic/minimum-volume-threshold-to-detect-speech/#post-11781</link>
+					<pubDate>Wed, 31 Oct 2012 21:52:04 +0000</pubDate>
+					<dc:creator>nvrtd frst</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks Halle. The reason I set the audio session mode to video recording is because I use voiceProcessingIO so users can give voice input while sound is playing, but this significantly decreases the output volume (when compared to remoteIO). I&#8217;ve found that by setting the session mode to &#8220;video recording,&#8221; the sound output volume is much better. But now I realize that there are some disadvantages as well.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/minimum-volume-threshold-to-detect-speech/#post-11785</guid>
+					<title><![CDATA[Reply To: Minimum volume threshold to detect speech]]></title>
+					<link>/forums/topic/minimum-volume-threshold-to-detect-speech/#post-11785</link>
+					<pubDate>Thu, 01 Nov 2012 09:03:07 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>It&#8217;s tricky &#8212; having noise cancellation and noise suppression is obviously a good thing, but the VAD in OpenEars is partial to non-noise-suppressed sources. I personally don&#8217;t use VoiceProcessingIO because it doesn&#8217;t seem to get the same degree of QA as RemoteIO (or it just has a lot more options that need QA attention) and I&#8217;ve had it stop working in a couple of minor OS updates on a couple of devices, which is a little bit too much of a needle in the haystack situation for maintaining a framework.</p>
+<p>Actually, thinking of the VAD and its issues with noise-suppressed sources, I wonder if any of the command-line options in PocketsphinxRunConfig.h would help you. It might be worth a quick look in there to see if there is anything relevant you can turn on (maybe AGC or dithering or something).</p>
+<p>Something I&#8217;ve noticed is that as a developer you will tend to try to find a test space with the least ambient noise possible because it&#8217;s unproductive to test speech applications in an uncontrolled environment, but real user environments are almost always noisier, so you might not need to worry too much about the corner case of an extremely quiet environment that has a slightly-less-quiet noise in it. I used to have a very similar issue when testing AllEars (which ended up providing the OpenEars code) that a sparrow would visit my balcony and the relatively quiet cheeping would totally ruin recognition, but I haven&#8217;t received user reports of similar scenarios.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

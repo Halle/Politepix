@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Install instructions for licensed frameworks &#8211; Politepix</title>
+		<atom:link href="/forums/topic/install-instructions-for-licensed-frameworks/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/install-instructions-for-licensed-frameworks/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:43:08 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/install-instructions-for-licensed-frameworks/#post-1024343</guid>
+					<title><![CDATA[Install instructions for licensed frameworks]]></title>
+					<link>/forums/topic/install-instructions-for-licensed-frameworks/#post-1024343</link>
+					<pubDate>Tue, 31 Dec 2013 11:20:08 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Here are the new centralized install instructions for the licensed frameworks.</p>
+<p><strong>Before you begin:</strong></p>
+<p>If your licensed frameworks were not produced with the optional Bitcode slice, set your app&#8217;s &#8220;Enable Bitcode&#8221; build setting to &#8220;No&#8221;.</p>
+<p><strong>NeatSpeech:</strong></p>
+<p>1. Remove the demo framework and the demo Voice folder from your app project so you can be sure that your app is linking to your licensed version.<br />
+2. Under &#8220;build settings&#8221; for your project and target, make sure that the setting &#8220;Framework Search Paths&#8221; does not lead to the demo framework or the voices that ship with the demo version.<br />
+3. Make sure that any lines in which you import the framework like this:</p>
+<p>#import &lt;NeatSpeechDemo/OEFliteController+NeatSpeech.h&gt;</p>
+<p>now import the licensed version like this:</p>
+<p>#import &lt;NeatSpeech/OEFliteController+NeatSpeech.h&gt;</p>
+<p>It is necessary to make sure that any view controller that hosts a FliteController+NeatSpeech object now has the ending &#8220;.mm&#8221; instead of &#8220;.m&#8221;. So a view controller that you use for speech that was called ViewController.m would need to be renamed to ViewController.mm in order to work with NeatSpeech. If you don&#8217;t want to rename your view controller, as an alternative you can add the linker flag -lstdc++ to &#8220;Other Linker Flags&#8221; under &#8220;Build Setting&#8221;. If you have any strange results like linking or building errors (functions, methods or objects not found), it is probably because something went wrong with this step.</p>
+<p>The 2.x plugin versions require OpenEars 2.x to function.</p>
+<p><strong>RapidEars:</strong></p>
+<p>1. Remove the demo framework from your app project so you can be sure that your app is linking to your licensed version.<br />
+2. Under &#8220;build settings&#8221; for your project and target, make sure that the setting &#8220;Framework Search Paths&#8221; does not lead to the demo framework.<br />
+3. Make sure that any lines in which you import the framework like this:</p>
+<p>#import &lt;RapidEarsDemo/OEPocketsphinxController+RapidEars.h&gt;</p>
+<p>now import the licensed version like this, without the reference to the Demo framework:</p>
+<p>#import &lt;RapidEars/OEPocketsphinxController+RapidEars.h&gt;</p>
+<p>The 2.x plugin versions require OpenEars 2.x to function.</p>
+<p><strong>Rejecto:</strong></p>
+<p>1. Remove the demo framework from your app project so you can be sure that your app is linking to your licensed version.<br />
+2. Under &#8220;build settings&#8221; for your project and target, make sure that the setting &#8220;Framework Search Paths&#8221; does not lead to the demo framework.<br />
+3. Make sure that any lines in which you import the framework like this:</p>
+<p>#import &lt;RejectoDemo/OELanguageModelGenerator+Rejecto.h&gt;</p>
+<p>now import the licensed version like this, without the reference to the Demo framework:</p>
+<p>#import &lt;Rejecto/OELanguageModelGenerator+Rejecto.h&gt;</p>
+<p>Please let me know if you have any difficulty installing your framework and I will help you.</p>
+<p>The 2.x plugin versions require OpenEars 2.x to function.</p>
+<p><strong>RuleORama:</strong></p>
+<p>1. Remove the demo framework from your app project so you can be sure that your app is linking to your licensed version.<br />
+2. Under &#8220;build settings&#8221; for your project and target, make sure that the setting &#8220;Framework Search Paths&#8221; does not lead to the demo framework.<br />
+3. Make sure that any lines in which you import the framework like this:</p>
+<p>#import &lt;RuleORamaDemo/OELanguageModelGenerator+RuleORama.h&gt;</p>
+<p>now import the licensed version like this, without the reference to the Demo framework:</p>
+<p>#import &lt;RuleORama/OELanguageModelGenerator+RuleORama.h&gt;</p>
+<p>The 2.x plugin versions require OpenEars 2.x to function.</p>
+<p><strong>SaveThatWave:</strong></p>
+<p>1. Remove the demo framework from your app project so you can be sure that your app is linking to your licensed framework after you have dragged it in, and not the demo.<br />
+2. Under &#8220;build settings&#8221; for your project and target, make sure that the setting &#8220;Framework Search Paths&#8221; does not lead to the demo framework.<br />
+3. Make sure that any lines in which you import the framework like this:</p>
+<p>#import &lt;SaveThatWaveDemo/SaveThatWaveController.h&gt;</p>
+<p>now import the licensed version like this:</p>
+<p>#import &lt;SaveThatWave/SaveThatWaveController.h&gt;</p>
+<p>i.e. make sure that headers are linked from the version of the framework which does not end with the word &#8220;Demo&#8221; anywhere that you have imported headers from the demos.</p>
+<p>The 2.x plugin versions require OpenEars 2.x to function.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

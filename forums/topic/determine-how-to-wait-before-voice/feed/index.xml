@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>determine how long to wait before voice &#8211; Politepix</title>
+		<atom:link href="/forums/topic/determine-how-to-wait-before-voice/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/determine-how-to-wait-before-voice/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:56:49 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/determine-how-to-wait-before-voice/#post-1022423</guid>
+					<title><![CDATA[determine how long to wait before voice]]></title>
+					<link>/forums/topic/determine-how-to-wait-before-voice/#post-1022423</link>
+					<pubDate>Sun, 31 Aug 2014 20:34:29 +0000</pubDate>
+					<dc:creator>boombatz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,<br />
+My app waits for someone to speak. Is there a way to know how long it is waiting before it hears something?  I&#8217;d like to wait for one second then provide a message saying that I haven&#8217;t heard anything yet if I don&#8217;t detect speech.<br />
+Thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/determine-how-to-wait-before-voice/#post-1022429</guid>
+					<title><![CDATA[Reply To: determine how long to wait before voice]]></title>
+					<link>/forums/topic/determine-how-to-wait-before-voice/#post-1022429</link>
+					<pubDate>Mon, 01 Sep 2014 07:21:34 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sure, you can start an NSTimer when you first get the callback that speech is detected.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/determine-how-to-wait-before-voice/#post-1022437</guid>
+					<title><![CDATA[Reply To: determine how long to wait before voice]]></title>
+					<link>/forums/topic/determine-how-to-wait-before-voice/#post-1022437</link>
+					<pubDate>Tue, 02 Sep 2014 15:42:12 +0000</pubDate>
+					<dc:creator>boombatz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>got it. Thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

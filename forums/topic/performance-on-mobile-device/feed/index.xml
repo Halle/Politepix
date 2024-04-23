@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] Performance on Mobile Device &#8211; Politepix</title>
+		<atom:link href="/forums/topic/performance-on-mobile-device/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/performance-on-mobile-device/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:40:02 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/performance-on-mobile-device/#post-9613</guid>
+					<title><![CDATA[[Resolved] Performance on Mobile Device]]></title>
+					<link>/forums/topic/performance-on-mobile-device/#post-9613</link>
+					<pubDate>Sun, 06 May 2012 20:22:00 +0000</pubDate>
+					<dc:creator>mert</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Recently I have been working on pocketsphinx and OpenEars. I have successfully created an acoustic model for Turkish and tested it on Linux machine that turns out to be fine for small dictionaries. However, the performance on the mobile device (even in simulator) is not even close to the performance on PC. Therefore, I would like to take this change to discuss, what would be wrong on mobile device or iOS environment.</p>
+<p>The first thing comes to my mind is whether the format of recorded speech data in Objective-C affects the result. I think this is done continuously in <code>cont_ad_read</code>. Or Objective-C has nothing to do with speech data, since ContinuousADModule.mm seems to be written by CMU.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/performance-on-mobile-device/#post-9615</guid>
+					<title><![CDATA[Reply To: Performance on Mobile Device]]></title>
+					<link>/forums/topic/performance-on-mobile-device/#post-9615</link>
+					<pubDate>Sun, 06 May 2012 21:00:08 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hmm, ARPA mobile performance on my end is usually fast. My test language model of approximately 400 words returns responses for long sentence dictation on an iPhone 4 in about 1-4 seconds, which is fast considering how constrained the CPU and RAM are on the device versus any desktop.</p>
+<p>All the audio and processing code is in C whether written by me or as part of one of the dependencies. I&#8217;m pretty sure after a year and a half that there is nothing &#8220;wrong&#8221; per se with the framework performance, but it could be that you are encountering an issue with your application.</p>
+<p>I would say that I&#8217;d need some timing examples with information about the following items:</p>
+<p>ARPA or JSGF?<br />
+Is the acoustic model 8-bit or 16-bit?<br />
+What is the size of the language model or grammar?<br />
+How far away from the phone are you when speaking? (this has a huge effect for dictation applications)<br />
+What are you trying to recognize? Words, sentences, phrases?<br />
+Please show some representative time results along with the device they are taken from (not simulator). Feel free to show logs that have both OPENEARSLOGGING and VERBOSEPOCKETSPHINX turned on so it is possible to see the exact processing times once complete speech has been detected until the hypothesis is returned. I remember that the last time there was a similar question about ARPA, it turned out that something in the app was blocking recognition (although JSGF performance is unfortunately poor on the device, so if it is actually a JSGF grammar, that will be slow).</p>
+<p>My other question is whether you have tested similar size models in English on a device, so you can rule out that it is connected to your acoustic or language models.</p>
+<p>I don&#8217;t really think device vs. desktop is a fruitful discussion, since it is the expected result to see really dramatic performance differences there (or all the other implementations of speech recognition for the iPhone would not be server-based). But I&#8217;d be interested to know what kind of device performance you are seeing and also how it compares to similar-sized models in English, in case there is something specific to the Turkish model or implementation that is slowing things down.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/performance-on-mobile-device/#post-9616</guid>
+					<title><![CDATA[Reply To: Performance on Mobile Device]]></title>
+					<link>/forums/topic/performance-on-mobile-device/#post-9616</link>
+					<pubDate>Sun, 06 May 2012 21:06:00 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Can I ask you for some clarification about this question?</p>
+<blockquote><p>The first thing comes to my mind is whether the format of recorded speech data in Objective-C affects the result.</p></blockquote>
+<p>Are you asking about the format of your acoustic model recording or the input format on the iPhone? The input format of speech is always PCM and it is only ever stored in memory in a ringbuffer, so there is no format question there or any reading/writing to or from disk, it&#8217;s just the raw samples that are streamed from the mic being read out of a C buffer. It&#8217;s about as low-latency as it can be without requiring so many callbacks per second that it would hurt performance.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/performance-on-mobile-device/#post-9618</guid>
+					<title><![CDATA[Reply To: Performance on Mobile Device]]></title>
+					<link>/forums/topic/performance-on-mobile-device/#post-9618</link>
+					<pubDate>Mon, 07 May 2012 18:19:56 +0000</pubDate>
+					<dc:creator>mert</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p><cite>ARPA or JSGF?</cite><br />
+ARPA. I have checked the file content, it is supposed to be alphabetically sorted. However, due to special characters in Turkish (ç, ğ, ş etc.), it is not actually sorted in Turksih. This may have some effect, but ARPA I used on Linux machine and iPhone project is same.</p>
+<p><cite>Is the acoustic model 8-bit or 16-bit?</cite><br />
+Acoustic model is created with wav files that are 8kHz, 16bit, mono.</p>
+<p><cite>What is the size of the language model or grammar?</cite><br />
+In acoustic model the number of words in dictionary is 400+. To get a good accuracy I created a language model and dictionary with 7 words, which are days.</p>
+<p><cite>How far away from the phone are you when speaking? (this has a huge effect for dictation applications)</cite><br />
+I speak directly into the mic.</p>
+<p><cite>What are you trying to recognize? Words, sentences, phrases?</cite><br />
+As I mentioned before it is just the days, 7 words.</p>
+<p><cite>Can I ask you for some clarification about this question?</cite><br />
+I thought maybe the format of iOS takes speech and feeds it to pocket_sphinx have effect in performance.</p>
+<p>Here is a sample log: <a href="http://ug.bcc.bilkent.edu.tr/~m_kalender/Turkish_log.txt" rel="nofollow">http://ug.bcc.bilkent.edu.tr/~m_kalender/Turkish_log.txt</a></p>
+<p>I see you point, but still the big performance difference makes me search something in iOS to find out the reason.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/performance-on-mobile-device/#post-9621</guid>
+					<title><![CDATA[Reply To: Performance on Mobile Device]]></title>
+					<link>/forums/topic/performance-on-mobile-device/#post-9621</link>
+					<pubDate>Mon, 07 May 2012 18:51:34 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The big performance difference is 100% to be expected &#8212; it&#8217;s the wrong expectation to see anything comparable. Practically, you&#8217;re comparing the machine on your desktop and a desktop from the 1990s, so there&#8217;s no discovery to make there other than that there is much less horsepower and RAM available for your iOS task.</p>
+<p>I will check out your logs. The alphabetization issue could be important because it is part of the specification for the dictionary and the ARPA model that they are alphabetized. It is something that could be a speed issue on the device, because the desktop performance will be basically realtime which means that you won&#8217;t notice anything that negatively impacts performance there. What could be happening is that the search method is supposed to short-circuit once it goes beyond the alphabet range, but it can&#8217;t because there is no predictable alphabet range for your model so the whole thing has to be searched for every search path. Again, you might not see any issue with this on the desktop because it is all happening so quickly that de-optimizations don&#8217;t show up in real usage.</p>
+<p>I again suggest that you check out a similar English model on the device so that you can see what an average speed response is. For the days of the week in English, I would expect a near-realtime response from OpenEars after the obligatory silence detection period.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/performance-on-mobile-device/#post-9622</guid>
+					<title><![CDATA[Reply To: Performance on Mobile Device]]></title>
+					<link>/forums/topic/performance-on-mobile-device/#post-9622</link>
+					<pubDate>Mon, 07 May 2012 19:05:26 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, so here is the first recognition that I looked at in your log:</p>
+<p>2012-05-07 21:14:14.005 2Sign-test[3860:13c07] OPENEARSLOGGING: Processing speech, please wait&#8230;<br />
+2012-05-07 21:14:14.037 2Sign-test[3860:13c07] OPENEARSLOGGING: Pocketsphinx heard &#8220;SALI SALI&#8221; with a score of (-12604) and an utterance ID of 000000001.</p>
+<p>This is 32 milliseconds. Is it possible that you are looking at the wrong metrics for processing time?</p>
+<p>By the way, I would really appreciate your troubleshooting this with me on a device instead of the simulator, since it is not the same audio driver and it&#8217;s not useful information about how the library performs in real use. What devices have you used the library with when you&#8217;ve seen the performance issue you&#8217;ve described?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/performance-on-mobile-device/#post-9623</guid>
+					<title><![CDATA[Reply To: Performance on Mobile Device]]></title>
+					<link>/forums/topic/performance-on-mobile-device/#post-9623</link>
+					<pubDate>Mon, 07 May 2012 20:19:03 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hang on, when you say simulator performance, are you talking about performance or word accuracy rates? You will see terrible accuracy if you only test on the simulator, there are warnings about it everywhere.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/performance-on-mobile-device/#post-9628</guid>
+					<title><![CDATA[Reply To: Performance on Mobile Device]]></title>
+					<link>/forums/topic/performance-on-mobile-device/#post-9628</link>
+					<pubDate>Mon, 07 May 2012 20:50:38 +0000</pubDate>
+					<dc:creator>mert</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>My mistake. I should have missed that point. I have been talking about simulator performance. (I have applied iOS Developer University Program, but rejected and looking for an account or will enroll.)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/performance-on-mobile-device/#post-9629</guid>
+					<title><![CDATA[Reply To: Performance on Mobile Device]]></title>
+					<link>/forums/topic/performance-on-mobile-device/#post-9629</link>
+					<pubDate>Mon, 07 May 2012 21:16:47 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, just for future reference there is a FAQ here where some similar questions are answered: <a href="/openears/support">/openears/support</a></p>
+<p>The intention of the simulator driver is basically to let you debug everything else in your app in the simulator without Pocketsphinx breaking &#8212; that is pretty much the full extent of its ambitions :) . </p>
+<p>The device driver is tuned for Pocketsphinx and the iOS audio unit so it will be fast and reliable under high load with a small memory footprint (and so it won&#8217;t decrease the lifetime of the device flash drive by reading/writing continuously when Pocketsphinx is running). It can&#8217;t be translated into a simulator driver that works identically with all the different desktop devices that it might host without that becoming its own project, and I&#8217;d rather put the time into the device code. I also suspect that if the simulator driver were really good, some developers might test on it and be really surprised by the real-world performance of their app.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

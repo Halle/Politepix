@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>suspend listen at first start &#8211; Politepix</title>
+		<atom:link href="/forums/topic/suspend-listen-at-first-start/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/suspend-listen-at-first-start/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:08:16 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/suspend-listen-at-first-start/#post-1024030</guid>
+					<title><![CDATA[suspend listen at first start]]></title>
+					<link>/forums/topic/suspend-listen-at-first-start/#post-1024030</link>
+					<pubDate>Wed, 31 Dec 2014 08:08:22 +0000</pubDate>
+					<dc:creator>sckramer</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>Where is the best place to suspend listening at first start? I&#8217;ve tried various places but it&#8217;s ignored the first time (right after startListeningWithLanguageModelAtPath&#8211;) and suspending/resuming works fine after that&#8230; </p>
+<p>Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/suspend-listen-at-first-start/#post-1024033</guid>
+					<title><![CDATA[Reply To: suspend listen at first start]]></title>
+					<link>/forums/topic/suspend-listen-at-first-start/#post-1024033</link>
+					<pubDate>Wed, 31 Dec 2014 11:37:59 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>It isn&#8217;t a good design for various reasons to suspend immediately after starting. What is the design consideration that is leading to that requirement?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/suspend-listen-at-first-start/#post-1024035</guid>
+					<title><![CDATA[Reply To: suspend listen at first start]]></title>
+					<link>/forums/topic/suspend-listen-at-first-start/#post-1024035</link>
+					<pubDate>Wed, 31 Dec 2014 18:08:22 +0000</pubDate>
+					<dc:creator>sckramer</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ok, just checking if it&#8217;s an easy option, but agreed and I&#8217;ll rethink my design. I built it into it&#8217;s own NSObject (gui-less, using NSnotifications to talk to the current viewcontroller) so I can activate it anywhere, and in my case when I first launch the app I load it in viewDidload (with a background queue because there is a 5-7 second delay when you do the &#8220;startListening&#8221;) but then I need it suspended until the right time in my app.</p>
+<p>So thinking about it more, I&#8217;ll load it on the first time it&#8217;s needed&#8230;</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/suspend-listen-at-first-start/#post-1024037</guid>
+					<title><![CDATA[Reply To: suspend listen at first start]]></title>
+					<link>/forums/topic/suspend-listen-at-first-start/#post-1024037</link>
+					<pubDate>Wed, 31 Dec 2014 18:19:57 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, the new 2.0 design is that OEPocketsphinxController is a singleton, so the design feature of being able to control it from anywhere is now built-in and since there is no more calibration it starts very quickly, so I&#8217;d just upgrade to 2.0 and see if the updated design solves some of these problems for you out of the box without needing to start and then suspend.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/suspend-listen-at-first-start/#post-1024038</guid>
+					<title><![CDATA[Reply To: suspend listen at first start]]></title>
+					<link>/forums/topic/suspend-listen-at-first-start/#post-1024038</link>
+					<pubDate>Wed, 31 Dec 2014 19:15:46 +0000</pubDate>
+					<dc:creator>sckramer</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Cool, did the update to 2.0&#8211;</p>
+<p>starts in 2.8 seconds on an iPod touch, 1.5s on iPhone 5, 0.85s on iPad air2</p>
+<p>So I&#8217;ll lazy-instantiate it on the first request for speech recognition &amp; call it a day, thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/suspend-listen-at-first-start/#post-1024039</guid>
+					<title><![CDATA[Reply To: suspend listen at first start]]></title>
+					<link>/forums/topic/suspend-listen-at-first-start/#post-1024039</link>
+					<pubDate>Wed, 31 Dec 2014 19:18:39 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, I&#8217;m actually just seeing a .5 second startup on my test devices, so there might even be something delaying that for you which could be reduced with some troubleshooting.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/suspend-listen-at-first-start/#post-1024042</guid>
+					<title><![CDATA[Reply To: suspend listen at first start]]></title>
+					<link>/forums/topic/suspend-listen-at-first-start/#post-1024042</link>
+					<pubDate>Wed, 31 Dec 2014 21:48:37 +0000</pubDate>
+					<dc:creator>sckramer</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;ll check it out, Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

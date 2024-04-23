@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Gender and Detection &#8211; Politepix</title>
+		<atom:link href="/forums/topic/gender-and-detection/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/gender-and-detection/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:57:38 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/gender-and-detection/#post-9651</guid>
+					<title><![CDATA[Gender and Detection]]></title>
+					<link>/forums/topic/gender-and-detection/#post-9651</link>
+					<pubDate>Fri, 11 May 2012 15:46:06 +0000</pubDate>
+					<dc:creator>lookbadgers</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I was wondering how accurate the detection is depending on gender, from my findings it seems to work best with males when stringing words together.  Is there any sort of setting that can be applied to improve detection for female voices? Even if it is a manual switch within the app, this would greatly improve the experience.</p>
+<p>I&#8217;m really pleased though with this library, it&#8217;s a great bit of kit.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/gender-and-detection/#post-9652</guid>
+					<title><![CDATA[Reply To: Gender and Detection]]></title>
+					<link>/forums/topic/gender-and-detection/#post-9652</link>
+					<pubDate>Fri, 11 May 2012 16:01:59 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>Nope, no gender switch. The most effective thing I can recommend would be adapting the acoustic model with a large set of speech recordings of female speakers, using only speech related to your language model:</p>
+<p><a href="http://cmusphinx.sourceforge.net/wiki/tutorialadapt" rel="nofollow">http://cmusphinx.sourceforge.net/wiki/tutorialadapt</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/gender-and-detection/#post-9653</guid>
+					<title><![CDATA[Reply To: Gender and Detection]]></title>
+					<link>/forums/topic/gender-and-detection/#post-9653</link>
+					<pubDate>Fri, 11 May 2012 16:09:19 +0000</pubDate>
+					<dc:creator>lookbadgers</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ok thank you for the quick reply.  Time to get the mic out!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/gender-and-detection/#post-1025345</guid>
+					<title><![CDATA[Reply To: Gender and Detection]]></title>
+					<link>/forums/topic/gender-and-detection/#post-1025345</link>
+					<pubDate>Wed, 08 Apr 2015 12:46:40 +0000</pubDate>
+					<dc:creator>oscarjiv91</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello again Halle.</p>
+<p>I&#8217;m trying to recognize names (John, Brian, etc.) with different voices and accents. </p>
+<blockquote><p>using only speech related to your language model</p></blockquote>
+<p>For adaptation, does this mean that I need to record these names with different voices from a list of names I want to recognize? Or can be done recording other words just to &#8220;train&#8221; the phonemes?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/gender-and-detection/#post-1025346</guid>
+					<title><![CDATA[Reply To: Gender and Detection]]></title>
+					<link>/forums/topic/gender-and-detection/#post-1025346</link>
+					<pubDate>Wed, 08 Apr 2015 12:58:24 +0000</pubDate>
+					<dc:creator>oscarjiv91</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m trying to recognize just one name at a time (keyword-spotting)</p>
+<p>btw, I&#8217;m generating my model language with this function:</p>
+<p>generateRejectingLanguageModelFromArray:withFilesNamed:withOptionalExclusions:usingVowelsOnly:withWeight:forAcousticModelAtPath:pathToModel</p>
+<p>I&#8217;m using Rejecto and RapidEars</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/gender-and-detection/#post-1025347</guid>
+					<title><![CDATA[Reply To: Gender and Detection]]></title>
+					<link>/forums/topic/gender-and-detection/#post-1025347</link>
+					<pubDate>Wed, 08 Apr 2015 13:04:25 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>Is this under a topic about gender because it relates to that? Otherwise, can you create a topic with a title that describes the issue?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/gender-and-detection/#post-1025348</guid>
+					<title><![CDATA[Reply To: Gender and Detection]]></title>
+					<link>/forums/topic/gender-and-detection/#post-1025348</link>
+					<pubDate>Wed, 08 Apr 2015 13:14:34 +0000</pubDate>
+					<dc:creator>oscarjiv91</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yes, is related to different gender voices.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/gender-and-detection/#post-1025349</guid>
+					<title><![CDATA[Reply To: Gender and Detection]]></title>
+					<link>/forums/topic/gender-and-detection/#post-1025349</link>
+					<pubDate>Wed, 08 Apr 2015 13:26:29 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Are you using the 2.x acoustic model? It is very surprising to me to hear that it has recognition issues that would be attributable to different genders using it, or that this would even be one of the characteristics that would seriously differentiate different user results. What is the sample size you are testing against? This would prompt a need for time-consuming investigation into the reported problem with different genders, so I need to understand a bit more background on why gender seems like the distinguishing characteristic for different recognition results. Thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/gender-and-detection/#post-1025353</guid>
+					<title><![CDATA[Reply To: Gender and Detection]]></title>
+					<link>/forums/topic/gender-and-detection/#post-1025353</link>
+					<pubDate>Wed, 08 Apr 2015 18:14:52 +0000</pubDate>
+					<dc:creator>oscarjiv91</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yes, I&#8217;m using 2.x acoustic model. Not sure what you mean with &#8220;sample size&#8221;. I&#8217;m testing it with live speech. Also have this problem with children voices.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/gender-and-detection/#post-1025354</guid>
+					<title><![CDATA[Reply To: Gender and Detection]]></title>
+					<link>/forums/topic/gender-and-detection/#post-1025354</link>
+					<pubDate>Wed, 08 Apr 2015 18:19:32 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I mean, how many women and men have you tested with respectively? The children&#8217;s voices are to be expected, but there being a male/female split is very surprising. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

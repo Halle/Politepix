@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Using AVFoundation and OpenEars &#8211; Politepix</title>
+		<atom:link href="/forums/topic/using-avfoundation-and-openears/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/using-avfoundation-and-openears/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:39:29 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/using-avfoundation-and-openears/#post-10924</guid>
+					<title><![CDATA[Using AVFoundation and OpenEars]]></title>
+					<link>/forums/topic/using-avfoundation-and-openears/#post-10924</link>
+					<pubDate>Mon, 03 Sep 2012 17:16:27 +0000</pubDate>
+					<dc:creator>NebulaFox</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am using AVFoundation to record audio and video into a mp4 file and displaying the preview using AVCapturePreviewLayer.</p>
+<p>If I start PocketsphinxController listening before I tell AVCaptureSession to start running, the OpenEarsLogging shows it is not detecting any sound.</p>
+<p>=STARTLOG<br />
+The audio session has never been initialized so we will do that now.<br />
+Checking and resetting all audio session settings.<br />
+audioCategory is incorrect, we will change it.<br />
+audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.<br />
+bluetoothInput is incorrect, we will change it.<br />
+bluetooth input is now on the correct setting of 1.<br />
+categoryDefaultToSpeaker is incorrect, we will change it.<br />
+CategoryDefaultToSpeaker is now on the correct setting of 1.<br />
+preferredBufferSize is incorrect, we will change it.<br />
+PreferredBufferSize is now on the correct setting of 0.128000.<br />
+preferredSampleRateCheck is incorrect, we will change it.<br />
+preferred hardware sample rate is now on the correct setting of 16000.000000.<br />
+AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+Exiting startAudioSession.<br />
+&#8230;<br />
+Recognition loop has started<br />
+&#8230;<br />
+Starting openAudioDevice on the device.<br />
+Audio unit wrapper successfully created.<br />
+Set audio route to SpeakerAndMicrophone<br />
+Checking and resetting all audio session settings.<br />
+audioCategory is correct, we will leave it as it is.<br />
+bluetoothInput is correct, we will leave it as it is.<br />
+categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+preferredBufferSize is correct, we will leave it as it is.<br />
+preferredSampleRateCheck is correct, we will leave it as it is.<br />
+Setting the variables for the device and starting it.<br />
+Looping through ringbuffer sections and pre-allocating them.<br />
+&#8230;<br />
+Started audio output unit.<br />
+Calibration has started<br />
+&#8230;<br />
+The Audio Session was interrupted.<br />
+Calibration has completed<br />
+Project has these words in its dictionary:<br />
+RECORD<br />
+RECORD(2)<br />
+RECORD(3)<br />
+SNAP<br />
+STOP</p>
+<p>Listening.<br />
+&#8230;<br />
+Audio route has changed for the following reason:<br />
+There has been a change of category<br />
+The previous audio route was SpeakerAndMicrophone<br />
+This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is SpeakerAndMicrophone<br />
+Audio route has changed for the following reason:<br />
+There has been a change of category<br />
+The previous audio route was Speaker<br />
+This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is SpeakerAndMicrophone<br />
+=ENDLOG</p>
+<p>If I start PocketsphinxController listening after I tell AVCaptureSession to start running then OpenEarsLogging shows it is detecting audio but the AVCaptureLayer displaying the feed from AVCaptureSession is frozen.</p>
+<p>How can I get it so that I can get PocketsphinxController listening and still have AVCaptureSession showing input via AVCaptureSession.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-avfoundation-and-openears/#post-10926</guid>
+					<title><![CDATA[Reply To: Using AVFoundation and OpenEars]]></title>
+					<link>/forums/topic/using-avfoundation-and-openears/#post-10926</link>
+					<pubDate>Mon, 03 Sep 2012 17:31:15 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Are you capturing audio at the same time as you are trying to do speech recognition?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-avfoundation-and-openears/#post-10936</guid>
+					<title><![CDATA[Reply To: Using AVFoundation and OpenEars]]></title>
+					<link>/forums/topic/using-avfoundation-and-openears/#post-10936</link>
+					<pubDate>Mon, 03 Sep 2012 18:39:05 +0000</pubDate>
+					<dc:creator>NebulaFox</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I connect the audio input to the AVCaptureSession initially and this is the point I get to while I have been testing. I do hope that it is possible to somehow use speech recognition while capturing audio.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-avfoundation-and-openears/#post-10937</guid>
+					<title><![CDATA[Reply To: Using AVFoundation and OpenEars]]></title>
+					<link>/forums/topic/using-avfoundation-and-openears/#post-10937</link>
+					<pubDate>Mon, 03 Sep 2012 18:44:11 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>There&#8217;s only one audio stream, it can&#8217;t be streamed into two objects simultaneously.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-avfoundation-and-openears/#post-10938</guid>
+					<title><![CDATA[Reply To: Using AVFoundation and OpenEars]]></title>
+					<link>/forums/topic/using-avfoundation-and-openears/#post-10938</link>
+					<pubDate>Mon, 03 Sep 2012 18:48:12 +0000</pubDate>
+					<dc:creator>NebulaFox</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Is there away to copy the one audio stream and that can be sent to multiple objects?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-avfoundation-and-openears/#post-10939</guid>
+					<title><![CDATA[Reply To: Using AVFoundation and OpenEars]]></title>
+					<link>/forums/topic/using-avfoundation-and-openears/#post-10939</link>
+					<pubDate>Mon, 03 Sep 2012 18:50:08 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I don&#8217;t think that is going to be trivial. I&#8217;m sure it is in some way possible but I doubt it can be done while enjoying any of the convenience functions of AVCaptureSession or AudioSessionManager/ContinuousAudioUnit. It&#8217;s unfortunately outside of the scope of the support I can give here.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-avfoundation-and-openears/#post-10940</guid>
+					<title><![CDATA[Reply To: Using AVFoundation and OpenEars]]></title>
+					<link>/forums/topic/using-avfoundation-and-openears/#post-10940</link>
+					<pubDate>Mon, 03 Sep 2012 18:57:18 +0000</pubDate>
+					<dc:creator>NebulaFox</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That is true. Although, through AVCaptureSession I have a CMSampleBuffer that should contain an audio sample. It is a shame that can not some how be used.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-avfoundation-and-openears/#post-10941</guid>
+					<title><![CDATA[Reply To: Using AVFoundation and OpenEars]]></title>
+					<link>/forums/topic/using-avfoundation-and-openears/#post-10941</link>
+					<pubDate>Mon, 03 Sep 2012 19:04:53 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You could try keeping your sample buffers and writing them out to a WAV file and submitting the WAV file to the runRecognitionOnWavFileAtPath: method. You won&#8217;t get voice audio detection/continuous recognition but you can submit the speech at the end of the capture.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-avfoundation-and-openears/#post-10942</guid>
+					<title><![CDATA[Reply To: Using AVFoundation and OpenEars]]></title>
+					<link>/forums/topic/using-avfoundation-and-openears/#post-10942</link>
+					<pubDate>Mon, 03 Sep 2012 19:07:17 +0000</pubDate>
+					<dc:creator>NebulaFox</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Oww&#8230; I will try that</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

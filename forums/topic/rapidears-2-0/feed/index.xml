@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] RapidEars + RuleORama &#8211; Politepix</title>
+		<atom:link href="/forums/topic/rapidears-2-0/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/rapidears-2-0/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:50:16 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/rapidears-2-0/#post-1023342</guid>
+					<title><![CDATA[[Resolved] RapidEars + RuleORama]]></title>
+					<link>/forums/topic/rapidears-2-0/#post-1023342</link>
+					<pubDate>Tue, 09 Dec 2014 22:33:01 +0000</pubDate>
+					<dc:creator>adb</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I get a very quick response in rapidEarsDidReceiveLiveSpeechHypothesis but it is not quickly reporting a final hypothesis in rapidEarsDidReceiveFinishedSpeechHypothesis. This is also using RuleORama 2.0 which I didn&#8217;t see anything had changed. Also, the RuleORama page doesn&#8217;t have the OE additions to the instructions (just a heads up).</p>
+<p>2014-12-09 16:23:27.504 App[2322:685824] Pocketsphinx has detected speech.<br />
+2014-12-09 16:23:30.851 App[2322:685824] rapidEarsDidReceiveLiveSpeechHypothesis: TEST<br />
+2014-12-09 16:23:53.001 App[2322:685824] Pocketsphinx has detected a second of silence, concluding an utterance.<br />
+2014-12-09 16:23:53.868 App[2322:685824] rapidEarsDidReceiveFinishedSpeechHypothesis: TEST<br />
+2014-12-09 16:23:53.868 App[2322:685824] TEST HEARD</p>
+<p>This took 23 seconds to return. Any thoughts on this?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-2-0/#post-1023343</guid>
+					<title><![CDATA[Reply To: [Resolved] RapidEars + RuleORama]]></title>
+					<link>/forums/topic/rapidears-2-0/#post-1023343</link>
+					<pubDate>Tue, 09 Dec 2014 23:04:38 +0000</pubDate>
+					<dc:creator>adb</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Actually, I didn&#8217;t notice but I see what is happening. It is just listening in rapidEarsDidReceiveLiveSpeechHypothesis: and not returning in rapidEarsDidReceiveFinishedSpeechHypothesis on my silence. I didn&#8217;t see anything that could be directly set to affect this. VAD settings didn&#8217;t make any difference.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-2-0/#post-1023346</guid>
+					<title><![CDATA[Reply To: [Resolved] RapidEars + RuleORama]]></title>
+					<link>/forums/topic/rapidears-2-0/#post-1023346</link>
+					<pubDate>Wed, 10 Dec 2014 04:39:02 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The first thing I would check here is to make sure you really replaced the acoustic model when you went through the upgrade process.  If that doesn&#8217;t help, can you turn on OELogging and setVerboseRapidEars:TRUE and show the output? And please show your RapidEars settings.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-2-0/#post-1023351</guid>
+					<title><![CDATA[Reply To: [Resolved] RapidEars + RuleORama]]></title>
+					<link>/forums/topic/rapidears-2-0/#post-1023351</link>
+					<pubDate>Wed, 10 Dec 2014 17:41:29 +0000</pubDate>
+					<dc:creator>adb</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Not sure which one was the culprit but I removed all of the new frameworks files and re-imported them. Everything seems to be in order after some sleep. Carry on nothing to see here. =)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-2-0/#post-1023352</guid>
+					<title><![CDATA[Reply To: [Resolved] RapidEars + RuleORama]]></title>
+					<link>/forums/topic/rapidears-2-0/#post-1023352</link>
+					<pubDate>Wed, 10 Dec 2014 17:49:17 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>My favorite kind of fix :) . Glad it&#8217;s working.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-2-0/#post-1024097</guid>
+					<title><![CDATA[Reply To: [Resolved] RapidEars + RuleORama]]></title>
+					<link>/forums/topic/rapidears-2-0/#post-1024097</link>
+					<pubDate>Tue, 06 Jan 2015 19:29:59 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>In case this has returned, OpenEars 2.01 and RapidEars 2.01 out now have a fix for similar symptoms.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

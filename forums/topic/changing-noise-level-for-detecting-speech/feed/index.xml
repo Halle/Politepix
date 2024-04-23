@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Changing Noise Level for Detecting Speech &#8211; Politepix</title>
+		<atom:link href="/forums/topic/changing-noise-level-for-detecting-speech/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/changing-noise-level-for-detecting-speech/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:38:11 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/changing-noise-level-for-detecting-speech/#post-13239</guid>
+					<title><![CDATA[Changing Noise Level for Detecting Speech]]></title>
+					<link>/forums/topic/changing-noise-level-for-detecting-speech/#post-13239</link>
+					<pubDate>Thu, 22 Nov 2012 17:47:01 +0000</pubDate>
+					<dc:creator>Matt</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Everyone,</p>
+<p>Is there a way to alter the noise level for PocketSphinx to detect speech? I am looking to make it more sensitive so it recognises quieter speech.</p>
+<p>Matt</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/changing-noise-level-for-detecting-speech/#post-13241</guid>
+					<title><![CDATA[Reply To: Changing Noise Level for Detecting Speech]]></title>
+					<link>/forums/topic/changing-noise-level-for-detecting-speech/#post-13241</link>
+					<pubDate>Thu, 22 Nov 2012 20:16:19 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Matt,</p>
+<p>There is no built-in way to do this, but you can investigate this approach with using a different audio unit/audio session type in this thread:</p>
+<p><a href="/forums/topic/add-mode-options-next-version/">/forums/topic/add-mode-options-next-version/</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

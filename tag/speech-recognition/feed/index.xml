@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>speech recognition &#8211; Politepix</title>
+	<atom:link href="/tag/speech-recognition/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>iOS Frameworks for speech recognition, text to speech and more</description>
+	<lastBuildDate>Sat, 02 Mar 2013 08:14:48 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.5.2</generator>
+<site xmlns="com-wordpress:feed-additions:1">206848719</site>	<item>
+		<title>OpenEars 1.1, plugins, and RapidEars live recognition for iOS!</title>
+		<link>/2012/06/18/openears-1-1-plugins-and-rapidears/</link>
+					<comments>/2012/06/18/openears-1-1-plugins-and-rapidears/#comments</comments>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Mon, 18 Jun 2012 12:36:35 +0000</pubDate>
+				<category><![CDATA[Code]]></category>
+		<category><![CDATA[openears]]></category>
+		<category><![CDATA[plugin]]></category>
+		<category><![CDATA[rapidears]]></category>
+		<category><![CDATA[speech recognition]]></category>
+		<guid isPermaLink="false">/?p=9839</guid>
+
+					<description><![CDATA[OpenEars 1.1, the OpenEars plugin system, and RapidEars 1.0, a plugin for OpenEars for live recognition! Today is a big release day for Politepix: OpenEars 1.1 and the introduction of the OpenEars plugin system! Featuring RapidEars, a plugin for OpenEars that does recognition on live speech. I am very happy to be introducing multiple Cool [&#8230;]]]></description>
+										<content:encoded><![CDATA[<h1>OpenEars 1.1, the OpenEars plugin system, and RapidEars 1.0, a plugin for OpenEars for live recognition!</h1>
+<h3>Today is a big release day for Politepix: OpenEars 1.1 and the introduction of the OpenEars plugin system! Featuring RapidEars, a plugin for OpenEars that does recognition on live speech.</h3>
+<p>I am very happy to be introducing multiple <strong>Cool Things</strong> this Monday. The first is the <a href="/openears">1.1 version of OpenEars</a>, which was a bit behind schedule but I hope was worth waiting for, since it introduces&#8230;n-best! So you can now see the top &#8220;hits&#8221; for word matching and the scores for them, rather than only seeing the best hypothesis. You can just turn on n-best and set the number of best hypotheses you&#8217;d like in PocketsphinxController, and then add the n-best delegate method of OpenEarsEventsObserver to receive them wherever you&#8217;d like. The docs and sample app have been updated to explain how.</p>
+<p>[politepix-blog-inline-text-ad]</p>
+<p>The other big new feature of OpenEars 1.1 is that it now has a method that is entirely designed to make it easier for you to test, which is:</p>
+<p>&#8211; (void) runRecognitionOnWavFileAtPath:(NSString *)wavPath usingLanguageModelAtPath:(NSString *)languageModelPath dictionaryAtPath:(NSString *)dictionaryPath languageModelIsJSGF:(BOOL)languageModelIsJSGF;</p>
+<p>This just runs recognition using your normal settings on a single WAV audio file. You can use this to create a testbed in case, for instance, you are trying to see the effect that changes to a language model or acoustic model or other settings have on recognition. There&#8217;s more about both of these new features in the documentation and as always, feel free to ask your questions on the <a>forums</a>.</p>
+<h3>The OpenEars Platform and Plugins</h3>
+<p><a href="/rapidears"><img decoding="async" src="https://i0.wp.com/www.politepix.com/wp-content/uploads/rapidears_icon2.png?resize=150%2C150&#038;ssl=1" alt="" title="rapidears_icon" width="150" height="150" class="alignnone size-thumbnail wp-image-9852" data-recalc-dims="1" /></a><br />
+The next big new thing is that OpenEars now has plugins. Over the coming months Politepix will be introducing new drop-in plugin frameworks for your OpenEars app that will open up new functionality. OpenEars will remain free and will also continue to be developed, with new features being added that make use of the potential of its dependencies, such as today&#8217;s introduction of n-best. For in-demand functionality that requires major committed development time and brand-new internal and dependency code, those features will be produced as plug-ins sold at the Politepix shop. So OpenEars is now both a free recognition, TTS and language modeling SDK, and also a platform so you can mix and match the exact extended functionality you need without making your app more complex.</p>
+<p>Without further ado, it&#8217;s my pleasure to introduce Politepix&#8217;s first plugin for the OpenEars platform: <strong><a href="/rapidears">RapidEars</a></strong>! RapidEars is a plugin that adds live recognition capabilities to PocketsphinxController, so by trading off some accuracy, you can run recognition on speech as it is recorded into the device instead of waiting for a pause and evaluating afterwards. This uses more CPU than OpenEars so it&#8217;s advisable to use this for apps targeted at the newest devices. It&#8217;s great for games or any app where you want immediate responsiveness. There is nothing like this available using any other speech recognition product because they are all network-based and OpenEars is processed on the device. RapidEars is €999 to license and it has a free demo version for development that can be used for four minutes at a time so you can test it thoroughly before licensing. Installation is as simple as dragging the new plugin into your project and importing its classes in order to use new PocketsphinxController and OpenEarsEventsObserver methods.</p>
+<p>You can read more about RapidEars <a href="/rapidears">here</a> and download a demo version of the plugin <a href="/shop/rapidearsdemo">here</a>. Questions for this OpenEars plugin and future ones can also be asked on the OpenEars forums, just mention that you&#8217;re asking about RapidEars.</p>
+<p>That&#8217;s it, have fun with these new products!</p>
+<p>-Halle</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/2012/06/18/openears-1-1-plugins-and-rapidears/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">9839</post-id>	</item>
+		<item>
+		<title>Voice Recognition / Speech Recognition and speech for the iPhone</title>
+		<link>/2010/09/08/voicerecognition-for-the-iphone/</link>
+					<comments>/2010/09/08/voicerecognition-for-the-iphone/#comments</comments>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Wed, 08 Sep 2010 12:31:15 +0000</pubDate>
+				<category><![CDATA[Code]]></category>
+		<category><![CDATA[cmu]]></category>
+		<category><![CDATA[cocoa]]></category>
+		<category><![CDATA[flite]]></category>
+		<category><![CDATA[ios]]></category>
+		<category><![CDATA[ipad]]></category>
+		<category><![CDATA[iphone]]></category>
+		<category><![CDATA[linkedin]]></category>
+		<category><![CDATA[objective-c]]></category>
+		<category><![CDATA[pocket sphinx]]></category>
+		<category><![CDATA[pocketsphinx]]></category>
+		<category><![CDATA[speech recognition]]></category>
+		<category><![CDATA[text to speech]]></category>
+		<category><![CDATA[voice recognition]]></category>
+		<guid isPermaLink="false">/?p=852</guid>
+
+					<description><![CDATA[Politepix introduces OpenEars, an open-source iOS library for implementing continuous, multithreaded, and low-overhead speech recognition and text-to-speech, using CMU Pocketsphinx and CMU Flite, for iPhone and iPad development.]]></description>
+										<content:encoded><![CDATA[<h2><a href="/openears">Read more about OpenEars and download the OpenEars library for free!</a></h2>
+<p>I&#8217;m happy to announce that <a href="/openears">OpenEars</a> is launched! <a href="/openears">OpenEars</a> is an open-source iOS library for implementing continuous, multithreaded, and low-overhead speech recognition and text-to-speech, using <a href="https://cmusphinx.sourceforge.net/">CMU Pocketsphinx</a> and <a href="https://www.cmuflite.org/">CMU Flite</a>, for the iPhone and iPad.  It uses nice Cocoa-standard cross-project-referenced static libraries and it offers all the easy-to-use Objective-C methods you&#8217;ll need to bring round-trip speech functions to your app. The launch version is 0.9.0 and I hope that there will be some cool projects using it.</p>
+<p>[politepix-blog-inline-text-ad]</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/2010/09/08/voicerecognition-for-the-iphone/feed/</wfw:commentRss>
+			<slash:comments>4</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">852</post-id>	</item>
+	</channel>
+</rss>

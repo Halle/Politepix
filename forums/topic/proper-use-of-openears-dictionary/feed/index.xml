@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Proper use  of OpenEars dictionary  &#8211; Politepix</title>
+		<atom:link href="/forums/topic/proper-use-of-openears-dictionary/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/proper-use-of-openears-dictionary/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:04:56 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/proper-use-of-openears-dictionary/#post-1019189</guid>
+					<title><![CDATA[Proper use  of OpenEars dictionary]]></title>
+					<link>/forums/topic/proper-use-of-openears-dictionary/#post-1019189</link>
+					<pubDate>Tue, 17 Dec 2013 07:43:40 +0000</pubDate>
+					<dc:creator>daniel</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hey Guys<br />
+We have an online e-commerce app that we want to have speech recognition by OpenEars embedded within.</p>
+<p>Our problem is that we have ~ 14000 words that we need to recognize.</p>
+<p>We saw you recommend to use an about 300 words dictionary.</p>
+<p>Can we extend it ? </p>
+<p>And something else &#8211; your examples show that to define the dictionary we need to hard code the words into an array:<br />
+NSArray *words = [NSArray arrayWithObjects:@&#8221;WORD&#8221;, @&#8221;STATEMENT&#8221;, @&#8221;OTHER WORD&#8221;, @&#8221;A PHRASE&#8221;, nil];</p>
+<p>Is that the only option ? </p>
+<p>Thank you very much</p>
+<p>Daniel</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/proper-use-of-openears-dictionary/#post-1019192</guid>
+					<title><![CDATA[Reply To: Proper use  of OpenEars dictionary]]></title>
+					<link>/forums/topic/proper-use-of-openears-dictionary/#post-1019192</link>
+					<pubDate>Tue, 17 Dec 2013 09:39:58 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Daniel,</p>
+<p>You can also import a vocabulary list from text using the method:</p>
+<pre>- (NSError *) generateLanguageModelFromTextFile:(NSString *)pathToTextFile withFilesNamed:(NSString *)fileName forAcousticModelAtPath:(NSString *)acousticModelPath;</pre>
+<p>When you have a very large vocabulary that you want to accurately recognize using offline recognition, what you want to think about is how to split it up into multiple smaller language models. If you were showing them a website that had a listing of 14,000 items, you wouldn&#8217;t show them all 14,000 items on a single page and ask them to click &#8212; instead you would have them navigate a short product hierarchy, i.e. &#8220;Technology&#8221; then &#8220;Smartphones&#8221; then &#8220;iPhone 5S&#8221;. So in the first step, if there are 14 departments, you are already excluding 13,000 items on average. In the second step, if there are 10 subsections, you are excluding another 900 items on average, and you are left with 100 smartphones that the user can view and click on, and they choose the iPhone 5S. For accuracy, you do the same tricks to reduce the search space with speech. You can have them first state a major category, and then use the language model switching to substitute a language model that just has the items from that category. If needed, you could drill down once more, but depending on the items, a vocabulary of 1000 <b>might</b> just work, so I&#8217;d do a bit of experimentation and see.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

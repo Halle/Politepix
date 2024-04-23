@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Button to enable/disable recording &#8211; Politepix</title>
+		<atom:link href="/forums/topic/button-to-enabledisable-recording/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/button-to-enabledisable-recording/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:49:27 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/button-to-enabledisable-recording/#post-1019882</guid>
+					<title><![CDATA[Button to enable/disable recording]]></title>
+					<link>/forums/topic/button-to-enabledisable-recording/#post-1019882</link>
+					<pubDate>Thu, 23 Jan 2014 21:57:48 +0000</pubDate>
+					<dc:creator>andrew</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>Thank you for your awesome work on OpenEars. It is turning out to be quite a powerful library.</p>
+<p>For our app, we need to allow the user to enable and disable recording by tapping a button. Is there an easy way to achieve this, without having to re-initialize pocketsphinx each time they tap record?</p>
+<p>We want the recognition to start immediately after they tap &#8220;Record&#8221;, and to stop immediately when they tap &#8220;Stop&#8221;.</p>
+<p>Cheers!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/button-to-enabledisable-recording/#post-1019888</guid>
+					<title><![CDATA[Reply To: Button to enable/disable recording]]></title>
+					<link>/forums/topic/button-to-enabledisable-recording/#post-1019888</link>
+					<pubDate>Fri, 24 Jan 2014 07:36:32 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Andrew,</p>
+<p>There is no built-in support for this, however, I think a very easy way to simulate it would be to handle your own start/stop recording with the audio recording API of your choice (that has certainly gotten easier lately), and then simply submit a WAV file to </p>
+<pre>- (void) runRecognitionOnWavFileAtPath:(NSString *)wavPath usingLanguageModelAtPath:(NSString *)languageModelPath dictionaryAtPath:(NSString *)dictionaryPath acousticModelAtPath:(NSString *)acousticModelPath languageModelIsJSGF:(BOOL)languageModelIsJSGF</pre>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/button-to-enabledisable-recording/#post-1019890</guid>
+					<title><![CDATA[Reply To: Button to enable/disable recording]]></title>
+					<link>/forums/topic/button-to-enabledisable-recording/#post-1019890</link>
+					<pubDate>Fri, 24 Jan 2014 08:03:39 +0000</pubDate>
+					<dc:creator>andrew</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thank you for the fast response!</p>
+<p>That would certainly work. We would like to be able to immediately start live recognition as soon as the user taps the record button. In other words, we would like to replace the voice activity detector with a button.</p>
+<p>Is this possible?<br />
+Any suggestions?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/button-to-enabledisable-recording/#post-1019891</guid>
+					<title><![CDATA[Reply To: Button to enable/disable recording]]></title>
+					<link>/forums/topic/button-to-enabledisable-recording/#post-1019891</link>
+					<pubDate>Fri, 24 Jan 2014 08:15:05 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You&#8217;re welcome! That seems possible, see my suggestion above. I think that by using AVAudioRecorder and its prepareToRecord method you could handle all of your own start/stop and WAV-packaging requirements in around 20 lines of code; give its docs a look.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/button-to-enabledisable-recording/#post-1019900</guid>
+					<title><![CDATA[Reply To: Button to enable/disable recording]]></title>
+					<link>/forums/topic/button-to-enabledisable-recording/#post-1019900</link>
+					<pubDate>Fri, 24 Jan 2014 16:50:12 +0000</pubDate>
+					<dc:creator>andrew</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The problem with that is the speed. Our user wants to tap and immediately speak and get text immediately. If we record to a file, we can&#8217;t start transcription until the file is closed. </p>
+<p>We want to do live (like RapidEars) recognition while the user speaks, but we want to have a button to start and stop the microphone.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/button-to-enabledisable-recording/#post-1019901</guid>
+					<title><![CDATA[Reply To: Button to enable/disable recording]]></title>
+					<link>/forums/topic/button-to-enabledisable-recording/#post-1019901</link>
+					<pubDate>Fri, 24 Jan 2014 16:51:41 +0000</pubDate>
+					<dc:creator>andrew</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I guess we can short circuit the render callback to return if the user hasn&#8217;t tapped Record. Does that seem like a good option?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/button-to-enabledisable-recording/#post-1019904</guid>
+					<title><![CDATA[Reply To: Button to enable/disable recording]]></title>
+					<link>/forums/topic/button-to-enabledisable-recording/#post-1019904</link>
+					<pubDate>Fri, 24 Jan 2014 17:06:08 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hmm. If you want to do this with RapidEars, I guess the following is possible:</p>
+<p>1. Suspend immediately once listening has started. The user &#8220;start&#8221; interaction will cause recognition to resume. This has the same effect as your short-circuiting idea but uses the API.</p>
+<p>2. The user &#8220;stop&#8221; interaction causes buffers of prerecorded non-speech (it has to be real low-noise-level quiet non-speech recording and not just zeroes, which the VAD will correctly ignore) to be written over the rendered callback buffer for a number of callbacks equal to .7 seconds (that&#8217;s about 6 callbacks). This should result in a natural exit from the silence detection loop as the silence makes its way into the VAD. This delay shouldn&#8217;t be a big deal for you since live recognition will already have been in progress of being performed and displayed as soon as the mic stream began, so this is just a formality to get the final hypothesis.</p>
+<p>This should work to start and stop in both PocketsphinxController and PocketsphinxController+RapidEars.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

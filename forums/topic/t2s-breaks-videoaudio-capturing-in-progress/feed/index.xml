@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>T2S breaks video/audio capturing in progress &#8211; Politepix</title>
+		<atom:link href="/forums/topic/t2s-breaks-videoaudio-capturing-in-progress/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/t2s-breaks-videoaudio-capturing-in-progress/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:02:39 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/t2s-breaks-videoaudio-capturing-in-progress/#post-1015633</guid>
+					<title><![CDATA[T2S breaks video/audio capturing in progress]]></title>
+					<link>/forums/topic/t2s-breaks-videoaudio-capturing-in-progress/#post-1015633</link>
+					<pubDate>Fri, 15 Feb 2013 09:13:02 +0000</pubDate>
+					<dc:creator>HarryS</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>First of all thanks for providing the OpenEars framework.</p>
+<p>I use T2S to inform the user on special events during video recording. This means I have a video / audio capturing session active (AVFoundation) and want to issue some short texts when reaching certain locations. Problem is, every time I issue a message using say:withVoice:, the  capturing session is stopped. The error I receive is &#8220;Recording Stopped&#8221;. Reason I can certainly think of is the Audio devices (actually output) are used / changed while the capturing session uses it as well (actually input) &#8211; which in turn makes iOS stop the capturing session.</p>
+<p>Any idea on a work around? Does T2S maybe claim more privileges than necessary (particularly Audio input)? Is it possible to disable and audio input / mic access (I do not use speech recognition).</p>
+<p>Thanks for your thoughts and insights.</p>
+<p>&#8211; Harry</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/t2s-breaks-videoaudio-capturing-in-progress/#post-1015634</guid>
+					<title><![CDATA[Reply To: T2S breaks video/audio capturing in progress]]></title>
+					<link>/forums/topic/t2s-breaks-videoaudio-capturing-in-progress/#post-1015634</link>
+					<pubDate>Fri, 15 Feb 2013 09:18:15 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Is T2S referring to OpenEars&#8217; text to speech, or is that another framework you are also using?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/t2s-breaks-videoaudio-capturing-in-progress/#post-1015635</guid>
+					<title><![CDATA[Reply To: T2S breaks video/audio capturing in progress]]></title>
+					<link>/forums/topic/t2s-breaks-videoaudio-capturing-in-progress/#post-1015635</link>
+					<pubDate>Fri, 15 Feb 2013 09:20:55 +0000</pubDate>
+					<dc:creator>HarryS</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Oh yes, certainly. It is a FlintController created during app startup, receiving the say:withVoice: message. So for T2S the simplest solution you can think of. I have the latest framework version installed.</p>
+<p>&#8211; Harry</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/t2s-breaks-videoaudio-capturing-in-progress/#post-1015636</guid>
+					<title><![CDATA[Reply To: T2S breaks video/audio capturing in progress]]></title>
+					<link>/forums/topic/t2s-breaks-videoaudio-capturing-in-progress/#post-1015636</link>
+					<pubDate>Fri, 15 Feb 2013 09:40:08 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Got it, OK. TTS is the conventional term (wanted to let you know so if you need to ask questions elsewhere folks will immediately know what it&#8217;s about).  You&#8217;re correct, FliteController is reasserting a PlayAndRecord audio session and you&#8217;re right that it only needs playback if you have no use for speech recognition. What you can try is to change the audio session that AudioSessionManager asserts and then recompile the framework and see if it helps. You&#8217;ll make the change in AudioSessionManager.m. If you look around line 271 of that file you&#8217;ll see a commented-out list of audio session types, and you&#8217;ll basically want to do a search and replace for kAudioSessionCategory_PlayAndRecord, replacing it with the other audio session types you want to try as the audio session that FliteController reasserts before its playback. You could also comment out invocations to AudioSessionManager in the framework and see if it just does the right thing without any interaction with the audio session.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/t2s-breaks-videoaudio-capturing-in-progress/#post-1015637</guid>
+					<title><![CDATA[Reply To: T2S breaks video/audio capturing in progress]]></title>
+					<link>/forums/topic/t2s-breaks-videoaudio-capturing-in-progress/#post-1015637</link>
+					<pubDate>Fri, 15 Feb 2013 10:59:24 +0000</pubDate>
+					<dc:creator>HarryS</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That did it, great! I just replaced kAudioSessionCategory_PlayAndRecord by kAudioSessionCategory_AmbientSound &#8211; which seems to be the least exclusive setting for TTS &#8211; and recompiled the framework. Worked immediately.</p>
+<p>Thanks for the fast and qualified support!</p>
+<p>&#8211; Harry</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/t2s-breaks-videoaudio-capturing-in-progress/#post-1015638</guid>
+					<title><![CDATA[Reply To: T2S breaks video/audio capturing in progress]]></title>
+					<link>/forums/topic/t2s-breaks-videoaudio-capturing-in-progress/#post-1015638</link>
+					<pubDate>Fri, 15 Feb 2013 11:03:23 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Super, happy to hear it was so easy! </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/t2s-breaks-videoaudio-capturing-in-progress/#post-1018977</guid>
+					<title><![CDATA[Reply To: T2S breaks video/audio capturing in progress]]></title>
+					<link>/forums/topic/t2s-breaks-videoaudio-capturing-in-progress/#post-1018977</link>
+					<pubDate>Sat, 23 Nov 2013 06:15:30 +0000</pubDate>
+					<dc:creator>pasupathi</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Thank you for your guide lines to solve this issue.i have other problem video files recorded video is freeze every single second i click that TTS call method at a time.i don&#8217;t know how to solve that in this case video is corrupted to upload to server video have some data but video is not played the duration show Zero.Please Help.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/t2s-breaks-videoaudio-capturing-in-progress/#post-1018991</guid>
+					<title><![CDATA[Reply To: T2S breaks video/audio capturing in progress]]></title>
+					<link>/forums/topic/t2s-breaks-videoaudio-capturing-in-progress/#post-1018991</link>
+					<pubDate>Tue, 26 Nov 2013 09:49:01 +0000</pubDate>
+					<dc:creator>pasupathi</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,<br />
+  i need your help  my video frame is freeze  when i call TextToSpeech method call at a particular time and particular frame is freeze the output video show at a particular time when i call TTS method the frame is Still.How to solve this?<br />
+      Thank you.<br />
+-Pasupathi.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/t2s-breaks-videoaudio-capturing-in-progress/#post-1018992</guid>
+					<title><![CDATA[Reply To: T2S breaks video/audio capturing in progress]]></title>
+					<link>/forums/topic/t2s-breaks-videoaudio-capturing-in-progress/#post-1018992</link>
+					<pubDate>Tue, 26 Nov 2013 10:00:23 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome pasupathi,</p>
+<p>I&#8217;m sorry, this doesn&#8217;t sound like an OpenEars issue. Video playback during TTS isn&#8217;t designed to be supported by OpenEars and the programming problem being encountered is with the video and network API &#8212; the contribution of the TTS to it sounds like maybe it is blocking a thread you are also using for your other two operations, but there is no way of knowing based on the information being given.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/t2s-breaks-videoaudio-capturing-in-progress/#post-1018995</guid>
+					<title><![CDATA[Reply To: T2S breaks video/audio capturing in progress]]></title>
+					<link>/forums/topic/t2s-breaks-videoaudio-capturing-in-progress/#post-1018995</link>
+					<pubDate>Tue, 26 Nov 2013 12:39:11 +0000</pubDate>
+					<dc:creator>pasupathi</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,<br />
+   Thank you for your replay.if u know any other idea please refer me.<br />
+-Pasupathi</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

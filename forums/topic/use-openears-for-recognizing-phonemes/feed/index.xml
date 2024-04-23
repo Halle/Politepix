@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Use OpenEars for recognizing phonemes? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/use-openears-for-recognizing-phonemes/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/use-openears-for-recognizing-phonemes/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:42:56 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/use-openears-for-recognizing-phonemes/#post-1020539</guid>
+					<title><![CDATA[Use OpenEars for recognizing phonemes?]]></title>
+					<link>/forums/topic/use-openears-for-recognizing-phonemes/#post-1020539</link>
+					<pubDate>Fri, 14 Mar 2014 21:02:00 +0000</pubDate>
+					<dc:creator>ThatGuyM</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi, I&#8217;m trying to build a voice recognition system for my local language. I use the iOS platform. I&#8217;m wondering whether its possible to get OpenEars to recognize phonemes? If then I could implement the rest of the recognition process by using detected phonemes.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/use-openears-for-recognizing-phonemes/#post-1020541</guid>
+					<title><![CDATA[Reply To: Use OpenEars for recognizing phonemes?]]></title>
+					<link>/forums/topic/use-openears-for-recognizing-phonemes/#post-1020541</link>
+					<pubDate>Sat, 15 Mar 2014 07:07:53 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>Sorry, it isn&#8217;t possible.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>AVFoundation and STT (Speech-To-Text) Recognition &#8211; Politepix</title>
+		<atom:link href="/forums/topic/avfoundation-and-stt-speech-to-text-recognition/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/avfoundation-and-stt-speech-to-text-recognition/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:01:20 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/avfoundation-and-stt-speech-to-text-recognition/#post-1015710</guid>
+					<title><![CDATA[AVFoundation and STT (Speech-To-Text) Recognition]]></title>
+					<link>/forums/topic/avfoundation-and-stt-speech-to-text-recognition/#post-1015710</link>
+					<pubDate>Fri, 22 Feb 2013 09:37:02 +0000</pubDate>
+					<dc:creator>marco</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>I was thinking of making a camera control for video recording when I say &#8220;GO&#8221; and it would stop recording also when I say &#8220;STOP&#8221;. I&#8217;ve read this <a href="/forums/topic/openears-intigartion-with-camera-control">post</a>, and he was using UIImagePickerController. I&#8217;m using AVCaptureSession. The thing is that when i PocketsphinxController startsListening, the PreviewViewLayer of the AVCaptureSession freezes. the PocketsphinxController works BTW. It&#8217;s able to listen to my voice.  Is there something i&#8217;ve missed or done wrong?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/avfoundation-and-stt-speech-to-text-recognition/#post-1015743</guid>
+					<title><![CDATA[Reply To: AVFoundation and STT (Speech-To-Text) Recognition]]></title>
+					<link>/forums/topic/avfoundation-and-stt-speech-to-text-recognition/#post-1015743</link>
+					<pubDate>Tue, 26 Feb 2013 16:01:49 +0000</pubDate>
+					<dc:creator>marco</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle, </p>
+<p>Been looking around the Classes of the Framework. Regarding the AudioSessionManager class, is there a way that it would use a shared AudioSession? Coz i think this will solve the problem i&#8217;m facing right now.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/avfoundation-and-stt-speech-to-text-recognition/#post-1015746</guid>
+					<title><![CDATA[Reply To: AVFoundation and STT (Speech-To-Text) Recognition]]></title>
+					<link>/forums/topic/avfoundation-and-stt-speech-to-text-recognition/#post-1015746</link>
+					<pubDate>Tue, 26 Feb 2013 17:41:21 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Marco,</p>
+<p>In fact, all audio sessions are shared because the audio session is a singleton. OpenEars&#8217; AudioSessionManager is also a singleton. So wherever you address it from, the results will be shared across the app and through the shared audio session because they always go to the same AudioSessionManager and the same audio session. Does that make sense? Or was the question about sharing in a different sense?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/avfoundation-and-stt-speech-to-text-recognition/#post-1015750</guid>
+					<title><![CDATA[Reply To: AVFoundation and STT (Speech-To-Text) Recognition]]></title>
+					<link>/forums/topic/avfoundation-and-stt-speech-to-text-recognition/#post-1015750</link>
+					<pubDate>Wed, 27 Feb 2013 03:31:17 +0000</pubDate>
+					<dc:creator>marco</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I think I&#8217;ve found a solution of sort. I removed the audioInput in the AVCaptureSession and that did it. I think the AudioInput of the AVCaptureSession gets &#8220;overwritten&#8221; by the OpenEars. Still finding another solution though. Thanks Halle. Brilliant work on OpenEars. Been using it since before version 1 got out. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/avfoundation-and-stt-speech-to-text-recognition/#post-1015754</guid>
+					<title><![CDATA[Reply To: AVFoundation and STT (Speech-To-Text) Recognition]]></title>
+					<link>/forums/topic/avfoundation-and-stt-speech-to-text-recognition/#post-1015754</link>
+					<pubDate>Wed, 27 Feb 2013 08:45:02 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/avfoundation-and-stt-speech-to-text-recognition/#post-1018257</guid>
+					<title><![CDATA[Reply To: AVFoundation and STT (Speech-To-Text) Recognition]]></title>
+					<link>/forums/topic/avfoundation-and-stt-speech-to-text-recognition/#post-1018257</link>
+					<pubDate>Sat, 07 Sep 2013 20:34:58 +0000</pubDate>
+					<dc:creator>salvarez</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I just started working with OpenEars and am very impressed!  It was simple to train and to get up and running.</p>
+<p>I want to do a similar thing as Marco and have been digging into the AVFoundation interfaces a little.  I was wondering if it would be possible to subclass the AVCaptureDeviceInput class, intercept the audio from the AVCaptureInputClass (see AVCaptureInputPort.input method), Process the STT, and then pass the stream on. </p>
+<p>We could then replace session addInput value with [session addInput:&lt;newSubclass&gt;]</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>won&#039;t recognize five or nine &#8211; Politepix</title>
+		<atom:link href="/forums/topic/wont-recognize-five-or-nine/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/wont-recognize-five-or-nine/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:03:20 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/wont-recognize-five-or-nine/#post-1024029</guid>
+					<title><![CDATA[won&#039;t recognize five or nine]]></title>
+					<link>/forums/topic/wont-recognize-five-or-nine/#post-1024029</link>
+					<pubDate>Wed, 31 Dec 2014 01:43:14 +0000</pubDate>
+					<dc:creator>boombatz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,<br />
+I have a dictionary as follows:<br />
+ NSArray *firstLanguageArray = @[@&#8221;THE NUMBER IS ZERO&#8221;,<br />
+                                    @&#8221;THE NUMBER IS ONE&#8221;,<br />
+                                    @&#8221;THE NUMBER IS TWO&#8221;,<br />
+                                    @&#8221;THE NUMBER IS THREE&#8221;,<br />
+                                    @&#8221;THE NUMBER IS FOUR&#8221;,<br />
+                                    @&#8221;THE NUMBER IS FIVE&#8221;,<br />
+                                    @&#8221;THE NUMBER IS SIX&#8221;,<br />
+                                    @&#8221;THE NUMBER IS SEVEN&#8221;,<br />
+                                    @&#8221;THE NUMBER IS EIGHT&#8221;,<br />
+                                    @&#8221;THE NUMBER IS NINE&#8221;];</p>
+<p>the problem is that it will not recognize the phrases with five or nine.  I&#8217;m trying it with different people and different iphones and it does not recognize. This is very frustrating and I&#8217;ve put tons of time into implementing this. Do you have any ideas.<br />
+This will be a show stopper for me unfortunately unless I can make this work.<br />
+Any thoughts are most welcome.<br />
+Thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wont-recognize-five-or-nine/#post-1024032</guid>
+					<title><![CDATA[Reply To: won&#039;t recognize five or nine]]></title>
+					<link>/forums/topic/wont-recognize-five-or-nine/#post-1024032</link>
+					<pubDate>Wed, 31 Dec 2014 11:33:40 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>There are a lot of discussions on these forums and Stack Overflow as well about the basic difficulty in offline speech recognition for recognizing contextless and rhyming one-syllable utterances like letters and numbers (there is actually a forum topic about this on the front page of the OpenEars forum topic list right now, or you can search for the keyword &#8216;numbers&#8217;). So, I can&#8217;t help you with your basic premise of an app which has required functionality based on this not-particularly-solved problem in speech recognition.</p>
+<blockquote><p>This is very frustrating and I’ve put tons of time into implementing this.</p></blockquote>
+<p>First apps are time-consuming and frustrating, and it&#8217;s normal to attribute that to whatever non-trivial core technology you&#8217;re using for it. I have also put serious time into supporting you although most of your questions are about your programming learning process, and that&#8217;s OK (we&#8217;ve all been there), but misattributed venting of your development stress to me isn&#8217;t a constructive path to go down (although we&#8217;ve all been there).</p>
+<p>There are a couple of issues with your language model that could be improved. Your goal of only having utterances that take the form of:</p>
+<p>&#8220;THE NUMBER IS _______&#8221;</p>
+<p>Is not something that can be expressed by a statistical language model, which deals with probabilities rather than requirements. You want a grammar, which is a way of expressing an absolute rule for a matching utterance. Correct use of a grammar will limit the search field a bit more for your number at the end and could perhaps give a small improvement. This is a starting point for reading about grammars:</p>
+<p><a href="/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/">/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/</a></p>
+<p>For difficulties which arise when implementing this as a grammar, don&#8217;t forget to search these forums first for other developer&#8217;s similar questions that may have been answered. Good luck!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wont-recognize-five-or-nine/#post-1024040</guid>
+					<title><![CDATA[Reply To: won&#039;t recognize five or nine]]></title>
+					<link>/forums/topic/wont-recognize-five-or-nine/#post-1024040</link>
+					<pubDate>Wed, 31 Dec 2014 19:50:11 +0000</pubDate>
+					<dc:creator>boombatz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,Thanks a lot for the very helpful response.  I&#8217;ll go through all of this carefully.<br />
+BTW, I didn&#8217;t mean to attribute my frustration toward you, and I apologize for making it seem that way. This is quite the journey and I&#8217;m learning every minute.  I very much appreciate your help along the way.<br />
+Happy New Year.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/wont-recognize-five-or-nine/#post-1024041</guid>
+					<title><![CDATA[Reply To: won&#039;t recognize five or nine]]></title>
+					<link>/forums/topic/wont-recognize-five-or-nine/#post-1024041</link>
+					<pubDate>Wed, 31 Dec 2014 19:54:44 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You&#8217;re welcome, and Happy New Year to you too!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

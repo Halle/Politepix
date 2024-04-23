@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Flitecontroller pauses music &#8211; Politepix</title>
+		<atom:link href="/forums/topic/flitecontroller-pauses-music/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/flitecontroller-pauses-music/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:38:59 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/flitecontroller-pauses-music/#post-11453</guid>
+					<title><![CDATA[Flitecontroller pauses music]]></title>
+					<link>/forums/topic/flitecontroller-pauses-music/#post-11453</link>
+					<pubDate>Tue, 02 Oct 2012 06:09:20 +0000</pubDate>
+					<dc:creator>ulide4</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>First I want to say that I am thrilled by this project. It opens completely new possibilities for my app (which is not yet released). I only use the TTS functionality and I am under IOS 6 with iPhone 5<br />
+My question: Can I avoid that the flitecontroller stops playing the &#8220;normal&#8221; music on my iPhone? Maybe like an overlay?<br />
+Thanks for any advice.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flitecontroller-pauses-music/#post-11455</guid>
+					<title><![CDATA[Reply To: Flitecontroller pauses music]]></title>
+					<link>/forums/topic/flitecontroller-pauses-music/#post-11455</link>
+					<pubDate>Tue, 02 Oct 2012 07:39:07 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>This is currently undocumented and in normal use you should never need to interact with the AudioSessionManager directly, but see if it helps you to send this message to the audio session singleton from your app before using FliteController:</p>
+<p>[AudioSessionManager sharedAudioSessionManager].soundMixing = TRUE;</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flitecontroller-pauses-music/#post-11458</guid>
+					<title><![CDATA[Reply To: Flitecontroller pauses music]]></title>
+					<link>/forums/topic/flitecontroller-pauses-music/#post-11458</link>
+					<pubDate>Tue, 02 Oct 2012 09:13:12 +0000</pubDate>
+					<dc:creator>ulide4</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Halle,<br />
+thanks your for your fast feedback!<br />
+Which Framework(s) do I need to use the AudioSessionManager? AVFoundation does not seem to be enough.<br />
+I am also curious how this would raise the risk of a rejection from Apple. Do you have experience with Apps on the App Store using the AudioSessionManager?<br />
+BR<br />
+Uli</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flitecontroller-pauses-music/#post-11459</guid>
+					<title><![CDATA[Reply To: Flitecontroller pauses music]]></title>
+					<link>/forums/topic/flitecontroller-pauses-music/#post-11459</link>
+					<pubDate>Tue, 02 Oct 2012 09:21:56 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Uli,</p>
+<p>Sorry, I wasn&#8217;t clear enough &#8212; AudioSessionManager is just a class of OpenEars. It is a class which usually is only interacted with internally by other OpenEars classes so I don&#8217;t like to encourage developers to send messages to it directly, since under normal circumstances it should &#8220;just work&#8221; and not need any attention from the developer (which also means that interacting with it a lot is likely to lead to causing issues rather than fixing them). However, in this case there is a part of the OpenEars API that you actually can use to tell the AudioSessionManager directly to mix in other system sounds or music with the OpenEars audio session, so I&#8217;m just suggesting that you use it and see if it gives you the functionality you want. Since it&#8217;s part of OpenEars you don&#8217;t have to worry that it accesses any private frameworks or anything like that, it&#8217;s completely OK to use.</p>
+<p>If it isn&#8217;t enough to just add this line:</p>
+<p>[AudioSessionManager sharedAudioSessionManager].soundMixing = TRUE;</p>
+<p>You may also have to import the class into your implementation like so:</p>
+<p>#import &lt;OpenEars/AudioSessionManager.h&gt;</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flitecontroller-pauses-music/#post-11460</guid>
+					<title><![CDATA[Reply To: Flitecontroller pauses music]]></title>
+					<link>/forums/topic/flitecontroller-pauses-music/#post-11460</link>
+					<pubDate>Tue, 02 Oct 2012 09:43:55 +0000</pubDate>
+					<dc:creator>ulide4</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>#import  was the missing link.</p>
+<p>soundMixing is read only, so                  [[AudioSessionManager sharedAudioSessionManager]setSoundMixing:YES]; did the trick.</p>
+<p>I just can say&#8230;wow. This place is fantastic.</p>
+<p>I have another question about the &#8220;system mute switch&#8221; when using flitecontroller. flitecontroller ignores the mute switch and plays audio when the mute switch is turned on. I understand that this is part of the AudioSession Category. Can I influence this portion when using the flitecontroller, because the sound is only peripheral and should be muted if the user wants so.<br />
+Should I open another threat for this?</p>
+<p>Thx<br />
+Uli</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flitecontroller-pauses-music/#post-11461</guid>
+					<title><![CDATA[Reply To: Flitecontroller pauses music]]></title>
+					<link>/forums/topic/flitecontroller-pauses-music/#post-11461</link>
+					<pubDate>Tue, 02 Oct 2012 10:19:48 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>This is probably something where you&#8217;d need to start making your own alterations to the framework to get the exact audio session behavior you want, which shouldn&#8217;t be too difficult. You can check out what the audio session settings you need for that behavior are and then make your changes to the implementation of AudioSessionManager, and then re-compile the framework project to create a new framework for your app.</p>
+<p>I think you probably are looking for a change of audio session category from the current playandrecord setting to the ambient setting &#8212; google or stack overflow should give more detail on this.</p>
+<p>Please be aware that changing the audio session directly will usually prevent speech recognition from working (won&#8217;t be an issue for you if you are just using FliteController, but at some future point if you have unexpected results just keep in mind that you&#8217;ve altered the settings in AudioSessionManager).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flitecontroller-pauses-music/#post-11462</guid>
+					<title><![CDATA[Reply To: Flitecontroller pauses music]]></title>
+					<link>/forums/topic/flitecontroller-pauses-music/#post-11462</link>
+					<pubDate>Tue, 02 Oct 2012 10:22:08 +0000</pubDate>
+					<dc:creator>ulide4</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Halle,<br />
+this is exactly what I had in mind. Use the ambient category. I will try it out and will let you know the result.<br />
+Uli</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flitecontroller-pauses-music/#post-11463</guid>
+					<title><![CDATA[Reply To: Flitecontroller pauses music]]></title>
+					<link>/forums/topic/flitecontroller-pauses-music/#post-11463</link>
+					<pubDate>Tue, 02 Oct 2012 10:23:19 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You also might be able to get away with making a call to the audio session setting right before the use of FliteController like so:</p>
+<p>[[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryAmbient error: nil];</p>
+<p>Without your having to make any changes or recompilation to the OpenEars framework. Just keep in mind that it&#8217;s your responsibility at that point to keep track of what calls you are making to the audio session versus OpenEars because it is adding complexity to your code when you have two possible sources of audio session settings. I receive a lot of requests for support for functionality which isn&#8217;t working because of a second point of interaction with the audio session is being overlooked.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flitecontroller-pauses-music/#post-11464</guid>
+					<title><![CDATA[Reply To: Flitecontroller pauses music]]></title>
+					<link>/forums/topic/flitecontroller-pauses-music/#post-11464</link>
+					<pubDate>Tue, 02 Oct 2012 10:33:26 +0000</pubDate>
+					<dc:creator>ulide4</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Unfortunately [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryAmbient error: nil]; did not change the behaviour. Thanks anyhow. This would have been nice for the future, not to change your code.<br />
+Good news on the other front.<br />
+Meanwhile I compiled the framework with the ambient category and it works like a charm.<br />
+Very happy! Thx a ton.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/flitecontroller-pauses-music/#post-11465</guid>
+					<title><![CDATA[Reply To: Flitecontroller pauses music]]></title>
+					<link>/forums/topic/flitecontroller-pauses-music/#post-11465</link>
+					<pubDate>Tue, 02 Oct 2012 10:35:52 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Super, very glad it&#8217;s working for you. It&#8217;s probably best in the long run to make the change to the framework anyway in order to observe DRY.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

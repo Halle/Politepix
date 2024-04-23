@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>iPad, or iPhone only? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/ipad-or-iphone-only/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/ipad-or-iphone-only/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:02:54 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/ipad-or-iphone-only/#post-1017932</guid>
+					<title><![CDATA[iPad, or iPhone only?]]></title>
+					<link>/forums/topic/ipad-or-iphone-only/#post-1017932</link>
+					<pubDate>Sun, 11 Aug 2013 02:09:07 +0000</pubDate>
+					<dc:creator>gschiltz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Does OpenEars work on iPads, or is it only for iPhone? Material on the web site refers to iPhone in many places, but not to iPad.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/ipad-or-iphone-only/#post-1017933</guid>
+					<title><![CDATA[Reply To: iPad, or iPhone only?]]></title>
+					<link>/forums/topic/ipad-or-iphone-only/#post-1017933</link>
+					<pubDate>Sun, 11 Aug 2013 07:25:00 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>It works with any iOS device running iOS 4.3 or later.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

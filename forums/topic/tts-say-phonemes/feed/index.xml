@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>TTS say phonemes &#8211; Politepix</title>
+		<atom:link href="/forums/topic/tts-say-phonemes/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/tts-say-phonemes/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:38:29 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/tts-say-phonemes/#post-10953</guid>
+					<title><![CDATA[TTS say phonemes]]></title>
+					<link>/forums/topic/tts-say-phonemes/#post-10953</link>
+					<pubDate>Wed, 05 Sep 2012 06:37:42 +0000</pubDate>
+					<dc:creator>Hubbo</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>How can I use Openears to say Phonemes?</p>
+<p>I would like to build an app that reads out single pre-programmed words, coded in phonemes.<br />
+I think the current TTS isn&#8217;t always accurate and sometimes hard to understand unless the word is in a sentence, so I would like to use phonemes instead.</p>
+<p>I see fliteController doesn&#8217;t have many methods other than really &#8216;say&#8217;, however, I did come across this thread: <a href="/forums/topic/using-flite-to-pronounce-a-word-a-certain-way/">here</a> and mentions:<br />
+<i>float flite_phones_to_speech(const char *text, cst_voice *voice, const char *outtype)</i><br />
+which appears to me to be in C++ (or similar). How do I access this function/method in Objective-C?</p>
+<p>Cheers!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/tts-say-phonemes/#post-10954</guid>
+					<title><![CDATA[Reply To: TTS say phonemes]]></title>
+					<link>/forums/topic/tts-say-phonemes/#post-10954</link>
+					<pubDate>Wed, 05 Sep 2012 08:02:19 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Which voice are you using?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/tts-say-phonemes/#post-10955</guid>
+					<title><![CDATA[Reply To: TTS say phonemes]]></title>
+					<link>/forums/topic/tts-say-phonemes/#post-10955</link>
+					<pubDate>Wed, 05 Sep 2012 08:04:42 +0000</pubDate>
+					<dc:creator>Hubbo</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>After a quick play around I am using &#8220;cmu_us_kal16&#8221;, why? does this make a difference?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/tts-say-phonemes/#post-10956</guid>
+					<title><![CDATA[Reply To: TTS say phonemes]]></title>
+					<link>/forums/topic/tts-say-phonemes/#post-10956</link>
+					<pubDate>Wed, 05 Sep 2012 08:16:14 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yup, it&#8217;s the second-worst voice out of eight. I think it would be a good use of time to brush up on the documentation about the different voices and try the better ones first.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/tts-say-phonemes/#post-10982</guid>
+					<title><![CDATA[Reply To: TTS say phonemes]]></title>
+					<link>/forums/topic/tts-say-phonemes/#post-10982</link>
+					<pubDate>Wed, 05 Sep 2012 22:53:11 +0000</pubDate>
+					<dc:creator>Hubbo</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I must be missing something then. I&#8217;d tried all of them, and I preferred this one.</p>
+<p>How do I just say phonemes? is this possible? is it in the documentation (please point me in the right direction &#8211; Thanks!!!!).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/tts-say-phonemes/#post-10984</guid>
+					<title><![CDATA[Reply To: TTS say phonemes]]></title>
+					<link>/forums/topic/tts-say-phonemes/#post-10984</link>
+					<pubDate>Thu, 06 Sep 2012 07:20:15 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, but this is a standard complaint about the KAL voices and one I&#8217;ve rarely heard about the higher-quality 16-bit voices:</p>
+<blockquote><p>I think the current TTS isn’t always accurate and sometimes hard to understand unless the word is in a sentence</p></blockquote>
+<p>There is no OpenEars function to just say phonemes. If you&#8217;re handy with C and want to read up on the Flite public API, you can change FliteController&#8217;s implementation of Flite to accept an input of phonemes instead of words and use Flite&#8217;s flite_synth_phones function on a returned CST utterance that then needs to be turned into a CST wave, and recompile the framework to give your app access to the changed method. It&#8217;s possible but the steps involved are unfortunately outside of the support scope of this forum.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/tts-say-phonemes/#post-11186</guid>
+					<title><![CDATA[Reply To: TTS say phonemes]]></title>
+					<link>/forums/topic/tts-say-phonemes/#post-11186</link>
+					<pubDate>Tue, 18 Sep 2012 06:45:07 +0000</pubDate>
+					<dc:creator>Hubbo</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thx Halle, I&#8217;ve updated to 1.2 and gone back to SLT voices, but still trying to get phonemes to work.</p>
+<p>I&#8217;ve ended up created my own flite_phones_to_wave function (essentially copying flite_text_to_wave and replacing the reference of flite_synth_text with flite_synth_phones). However I&#8217;m still have dramas.<br />
+Do you know the format of the phonemes for the parameter in flite_synth_phones function? I can&#8217;t seem to find any documentation for this. Cheers.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/tts-say-phonemes/#post-11257</guid>
+					<title><![CDATA[Reply To: TTS say phonemes]]></title>
+					<link>/forums/topic/tts-say-phonemes/#post-11257</link>
+					<pubDate>Mon, 24 Sep 2012 15:04:04 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi, sorry for the fact that I didn&#8217;t see this.Here is a function I use in grapheme generator to obtain phones for arbitrary text:</p>
+<p>const char * flite_text_to_phones(const char *text,<br />
+								  cst_voice *voice,<br />
+								  const char *outtype)<br />
+{<br />
+    const char * phones;</p>
+<p>	cst_utterance *u;</p>
+<p>    u = flite_synth_text(text,voice);<br />
+	flite_process_output(u,outtype,FALSE);<br />
+	phones = print_phones(u);</p>
+<p>    delete_utterance(u);</p>
+<p>    return phones;<br />
+}</p>
+<p>But this of course involves two synthesis passes. I do it with a really fast voice in OpenEars so it isn&#8217;t that arduous but it&#8217;s probably still noticeable.</p>
+<p>If I recall correctly, the phonemes used in Flite are the same ones used in Pocketsphinx with the exception that Pocketphinx&#8217;s ah needs to be turned into ax.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/tts-say-phonemes/#post-11258</guid>
+					<title><![CDATA[Reply To: TTS say phonemes]]></title>
+					<link>/forums/topic/tts-say-phonemes/#post-11258</link>
+					<pubDate>Mon, 24 Sep 2012 15:04:31 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You can also just change the variance on the SLT voice to a very low value in order to get that zero-inflection phoneme effect.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/tts-say-phonemes/#post-11364</guid>
+					<title><![CDATA[Reply To: TTS say phonemes]]></title>
+					<link>/forums/topic/tts-say-phonemes/#post-11364</link>
+					<pubDate>Fri, 28 Sep 2012 00:45:06 +0000</pubDate>
+					<dc:creator>Hubbo</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks Halle!</p>
+<p>I&#8217;m really struggling here, more function are playing really weird sounds and don&#8217;t resemble anything close to actual speech.</p>
+<p>I tried your function, thanks, but run into trouble because I don&#8217;t have the print_phones() function.</p>
+<p>Finding the right documentation is proving to be a nightmare.</p>
+<p>Do you know what format the &#8216;text&#8217; should be when passing to flite_synth_phones(text,voice)? All I manage to get is a jumbled miss of noise.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

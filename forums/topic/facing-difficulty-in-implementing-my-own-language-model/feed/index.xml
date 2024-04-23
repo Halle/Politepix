@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] Facing difficulty in implementing my own language model. &#8211; Politepix</title>
+		<atom:link href="/forums/topic/facing-difficulty-in-implementing-my-own-language-model/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/facing-difficulty-in-implementing-my-own-language-model/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:06:24 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/facing-difficulty-in-implementing-my-own-language-model/#post-1020173</guid>
+					<title><![CDATA[[Resolved] Facing difficulty in implementing my own language model.]]></title>
+					<link>/forums/topic/facing-difficulty-in-implementing-my-own-language-model/#post-1020173</link>
+					<pubDate>Mon, 17 Feb 2014 20:14:40 +0000</pubDate>
+					<dc:creator>gurleen</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am trying to use openears for my app where I want to pass on some commands on voice and expect the app should perform them.I have put the check in hypothesis receive delegate method for all the events and actions.</p>
+<p>I made a new language model of text file type and a dictionary that contain the words I require(my commands).I get no error when I pass that language model file (text file) using generate languageModel method. Then in startListening i give path of the language model.text file i created. sometimes application listen to my words but most of the time it listen and return ‘Right’ in hypothesis. Is there something wrong or am i missing any step. Please help.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/facing-difficulty-in-implementing-my-own-language-model/#post-1020174</guid>
+					<title><![CDATA[Reply To: [Resolved] Facing difficulty in implementing my own language model.]]></title>
+					<link>/forums/topic/facing-difficulty-in-implementing-my-own-language-model/#post-1020174</link>
+					<pubDate>Mon, 17 Feb 2014 20:22:51 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>Can you show your code where you generate the language model and then pass it to startListening:? Alternately, the tutorial will show how to generate a new language model: <a href="/openears/tutorial">/openears/tutorial</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/facing-difficulty-in-implementing-my-own-language-model/#post-1020181</guid>
+					<title><![CDATA[Reply To: [Resolved] Facing difficulty in implementing my own language model.]]></title>
+					<link>/forums/topic/facing-difficulty-in-implementing-my-own-language-model/#post-1020181</link>
+					<pubDate>Tue, 18 Feb 2014 11:34:22 +0000</pubDate>
+					<dc:creator>gurleen</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thank you so much. I got everything right on place.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/facing-difficulty-in-implementing-my-own-language-model/#post-1020182</guid>
+					<title><![CDATA[Reply To: [Resolved] Facing difficulty in implementing my own language model.]]></title>
+					<link>/forums/topic/facing-difficulty-in-implementing-my-own-language-model/#post-1020182</link>
+					<pubDate>Tue, 18 Feb 2014 11:35:40 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Glad to hear it!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

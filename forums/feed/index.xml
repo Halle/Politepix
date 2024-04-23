@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Politepix &#187; All Posts</title>
+		<atom:link href="/forums/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:24:42 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+		
+					
+				<item>
+					<guid>/forums/topic/crash-at-oecmuclmtkmodel-runcmuclmtkoncorpusfilewithbinbinarysuffix/#post-1033260</guid>
+					<title><![CDATA[Reply To: crash at `[OECMUCLMTKModel runCMUCLMTKOnCorpusFile:withBin:binarySuffix:]`]]></title>
+					<link>/forums/topic/crash-at-oecmuclmtkmodel-runcmuclmtkoncorpusfilewithbinbinarysuffix/#post-1033260</link>
+					<pubDate>Thu, 21 Sep 2023 06:17:31 +0000</pubDate>
+					<dc:creator>xwang</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>Ang update in this issue? same thing happend here.</p>
+<p>The framework works perfect on my test demo and one of my APPS say App A, but after installed in my App B, it cause crash after launch.</p>
+<p>I thought there may be conflict between the framwork i used in project or some project setting issue? so i try flowing steps:</p>
+<p>1、 removed some suspicious frameworks in project<br />
+2、 removed refrence of openears framework, and re-installed again.<br />
+3、 re-installed the framworks which i removed in step 1.</p>
+<p>then crash disapeear magically, dynamic language model generation success.</p>
+<p>I actually donnt know what happend, after checking wiht my git record, the only things change is the possion of those framworks, but crash just disappear.</p>
+<p>I thought issue was solved for now, but after more test on my App, another framework i used initialize failed after i installed Openears framwork.</p>
+<p>So basically, that&#8217;s what happend in my situation, no idea what is the real reason for this. any one can give any hint about this?</p>
+<p>Thank you.<br />
+(I post the crush log the openears print bellow)</p>
+<p>LOG:</p>
+<p>2023-09-21 13:59:03.098729+0800 XiaoWuStoryPhone[70195:4600818] Starting OpenEars logging for OpenEars version 2.509 on 64-bit device (or build): iPhone running iOS version: 13.600000</p>
+<p>2023-09-21 13:59:03.102015+0800 XiaoWuStoryPhone[70195:4600818] Starting dynamic language model generation</p>
+<p>(lldb) </p>
+<p>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</p>
+<p>2023-09-21 14:01:42.665183+0800 XiaoWuStoryPhone[13224:2290528] Starting OpenEars logging for OpenEars version 2.509 on 64-bit device (or build): iPhone running iOS version: 16.100000</p>
+<p>2023-09-21 14:01:42.667237+0800 XiaoWuStoryPhone[13224:2290528] Starting dynamic language model generation</p>
+<p>(lldb) </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/crash-at-oecmuclmtkmodel-runcmuclmtkoncorpusfilewithbinbinarysuffix/#post-1033258</guid>
+					<title><![CDATA[crash at `[OECMUCLMTKModel runCMUCLMTKOnCorpusFile:withBin:binarySuffix:]`]]></title>
+					<link>/forums/topic/crash-at-oecmuclmtkmodel-runcmuclmtkoncorpusfilewithbinbinarysuffix/#post-1033258</link>
+					<pubDate>Wed, 09 Aug 2023 01:40:01 +0000</pubDate>
+					<dc:creator>minilv</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>.<br />
+.<br />
+.<br />
+7<br />
+myApp<br />
+rr_iopen.c &#8211; Line 128<br />
+rr_iclose + 128<br />
+8<br />
+myApp<br />
+idngram2lm.c &#8211; Line 1014<br />
+idngram2lm_main + 1014<br />
+9<br />
+myApp<br />
+OECMUCLMTKModel.m &#8211; Line 278<br />
+-[OECMUCLMTKModel runCMUCLMTKOnCorpusFile:withBin:binarySuffix:] + 278<br />
+10<br />
+myApp<br />
+OELanguageModelGenerator.m &#8211; Line 488<br />
+-[OELanguageModelGenerator createLanguageModelFromFilename:] + 488<br />
+11<br />
+myApp<br />
+OELanguageModelGenerator.m &#8211; Line 601<br />
+-[OELanguageModelGenerator generateLanguageModelFromArray:withFilesNamed:forAcousticModelAtPath:] + 601<br />
+12<br />
+myApp<br />
+mySDKController.swift &#8211; Line 113<br />
+mySDKController..setupOpenEars() + 113</p>
+<p>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br />
+myApp (353,0x21490be40) malloc: double free for ptr 0x113951000</p>
+<p>When app launch, setup openears, show the crash dump👆🏻. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1033206</guid>
+					<title><![CDATA[Reply To: Error in generateLanguageModelFromArray call]]></title>
+					<link>/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1033206</link>
+					<pubDate>Tue, 24 Aug 2021 09:54:20 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>If you downloaded OpenEars from this site, all of the source is in /OpenEarsDistribution/OpenEars/.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1033205</guid>
+					<title><![CDATA[Reply To: Error in generateLanguageModelFromArray call]]></title>
+					<link>/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1033205</link>
+					<pubDate>Tue, 24 Aug 2021 09:18:20 +0000</pubDate>
+					<dc:creator>minilv</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I clicked on this website(<a href="/openears/">/openears/</a>) and clicked on <code>Go to the quickstart tutorial (Swift)</code> to download.</p>
+<p>The <code>OELanguageModelGenerator</code> class is packaged as a static library. </p>
+<p>It is not public, or can you open source the code of this class to me for a look, Thanks a lot！</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1033204</guid>
+					<title><![CDATA[Reply To: Error in generateLanguageModelFromArray call]]></title>
+					<link>/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1033204</link>
+					<pubDate>Tue, 29 Jun 2021 06:01:51 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry, I can&#8217;t help you without all the information from the debugging post I linked to.</p>
+<p>> But this OELanguageModelGenerator.m is private, and I can’t see the internal implementation.</p>
+<p>I see – where did you obtain a version of OpenEars with a OELanguageModelGenerator.m that you can&#8217;t see the implementation for?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1033203</guid>
+					<title><![CDATA[Reply To: Error in generateLanguageModelFromArray call]]></title>
+					<link>/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1033203</link>
+					<pubDate>Tue, 29 Jun 2021 02:07:57 +0000</pubDate>
+					<dc:creator>minilv</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I only meet once this issue. And this is my release build. When I turn on the full log mode, this bug cannot reproduce again.</p>
+<p>But this OELanguageModelGenerator.m is private, and I can&#8217;t see the internal implementation.</p>
+<p>Can you help me check if this function can cause a crash? It is possible at line 601. </p>
+<p><code>OELanguageModelGenerator.m:601</code></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1033202</guid>
+					<title><![CDATA[Reply To: Error in generateLanguageModelFromArray call]]></title>
+					<link>/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1033202</link>
+					<pubDate>Mon, 28 Jun 2021 06:55:09 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Please check out the post <a href="/forums/topic/install-issues-and-their-solutions/">Please read before you post – how to troubleshoot and provide logging info here</a> so you can see how to turn on and share the logging that provides troubleshooting information for this kind of issue.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1033198</guid>
+					<title><![CDATA[Reply To: Error in generateLanguageModelFromArray call]]></title>
+					<link>/forums/topic/error-in-generatelanguagemodelfromarray-call/#post-1033198</link>
+					<pubDate>Mon, 28 Jun 2021 06:20:28 +0000</pubDate>
+					<dc:creator>minilv</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am using<br />
+<a href="/openears/">/openears/</a> The latest code</p>
+<p>But I still encountered the bug of <code>generateLanguageModelFromArray</code> crash.</p>
+<p>Crash detailed stack:</p>
+<pre><code>
+10  myApp                   0x00000001060b208c -[OECMUCLMTKModel runCMUCLMTKOnCorpusFile:withBin:binarySuffix:] + 21012620 (OECMUCLMTKModel.m:278)
+11  myApp                   0x00000001061110b8 -[OELanguageModelGenerator createLanguageModelFromFilename:] + 21401784 (OELanguageModelGenerator.m:488)
+12  myApp                   0x0000000106111ba8 -[OELanguageModelGenerator generateLanguageModelFromArray:withFilesNamed:forAcousticModelAtPath:] + 21404584 (OELanguageModelGenerator.m:601) &lt;code&gt;&lt;/code&gt;</code></pre>
+<pre><code>
+
+Code is:
+
+</code></pre>
+<p>let languageModelGenerator = OELanguageModelGenerator()</p>
+<p>let keywordList = [&#8220;hey&#8221;, &#8220;test&#8221;, &#8220;start&#8221;]</p>
+<p>let firstLanguageArray = keywordList</p>
+<p>let firstVocabularyName = &#8220;FirstVocabulary&#8221;</p>
+<p>// AcousticModelEnglish from bundle.<br />
+let firstLanguageModelGenerationError: Error! = languageModelGenerator.generateLanguageModel(from: firstLanguageArray, withFilesNamed: firstVocabularyName, forAcousticModelAtPath: OEAcousticModel.path(toModel: &#8220;AcousticModelEnglish&#8221;))<br />
+`</p>
+
+
+<ul id="bbp-reply-revision-log-1033198" class="bbp-reply-revision-log">
+
+	<li id="bbp-reply-revision-log-1033198-item-1033199" class="bbp-reply-revision-log-item">
+		This reply was modified 2 years, 10 months ago by <a href="/forums/profile/minilv/" title="View minilv&#039;s profile" class="bbp-author-link"><span  class="bbp-author-avatar"></span><span  class="bbp-author-name">minilv</span></a>.
+	</li>
+	<li id="bbp-reply-revision-log-1033198-item-1033200" class="bbp-reply-revision-log-item">
+		This reply was modified 2 years, 10 months ago by <a href="/forums/profile/minilv/" title="View minilv&#039;s profile" class="bbp-author-link"><span  class="bbp-author-avatar"></span><span  class="bbp-author-name">minilv</span></a>.
+	</li>
+	<li id="bbp-reply-revision-log-1033198-item-1033201" class="bbp-reply-revision-log-item">
+		This reply was modified 2 years, 10 months ago by <a href="/forums/profile/minilv/" title="View minilv&#039;s profile" class="bbp-author-link"><span  class="bbp-author-avatar"></span><span  class="bbp-author-name">minilv</span></a>.
+	</li>
+
+</ul>
+
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/the-recognition-rate-is-very-low-at-a-distance-of-1-meter/#post-1033197</guid>
+					<title><![CDATA[Reply To: The recognition rate is very low at a distance of 1 meter]]></title>
+					<link>/forums/topic/the-recognition-rate-is-very-low-at-a-distance-of-1-meter/#post-1033197</link>
+					<pubDate>Mon, 03 May 2021 07:36:27 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Please check out the post <a href="/forums/topic/install-issues-and-their-solutions/">Please read before you post – how to troubleshoot and provide logging info here</a> so you can see how to turn on and share the logging that provides troubleshooting information for this kind of issue.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/oecontinuousmodel-stoplistening-app-not-respond/#post-1033196</guid>
+					<title><![CDATA[Reply To: [OEContinuousModel stopListening] App Not Respond]]></title>
+					<link>/forums/topic/oecontinuousmodel-stoplistening-app-not-respond/#post-1033196</link>
+					<pubDate>Mon, 03 May 2021 07:36:08 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Please check out the post <a href="/forums/topic/install-issues-and-their-solutions/">Please read before you post – how to troubleshoot and provide logging info here</a> so you can see how to turn on and share the logging that provides troubleshooting information for this kind of issue.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

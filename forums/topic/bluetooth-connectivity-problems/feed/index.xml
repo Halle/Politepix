@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>BlueTooth headset not able to use as audio recording capture for iOS &#8211; Politepix</title>
+		<atom:link href="/forums/topic/bluetooth-connectivity-problems/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/bluetooth-connectivity-problems/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:09:24 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/bluetooth-connectivity-problems/#post-1022425</guid>
+					<title><![CDATA[BlueTooth headset not able to use as audio recording capture for iOS]]></title>
+					<link>/forums/topic/bluetooth-connectivity-problems/#post-1022425</link>
+					<pubDate>Sun, 31 Aug 2014 20:37:51 +0000</pubDate>
+					<dc:creator>philipDS</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>We are building an iOS app that does basic speech recognition. Basically, the app counts the number of words you speak into the iOS device. The app works well when speaking into the standard microphone built into the iPhone. However, when connecting a wireless Bluetooth audio device, we are unable to use that Bluetooth device as a method for recording voice audio. We are using following software and devices:</p>
+<p>* built for iOS7.0/7.1 with the OpeanEars library for speech recognition<br />
+* we’re using the ZOMM Wireless Leash (<a href="https://www.zomm.com/" rel="nofollow">https://www.zomm.com/</a> | <a href="https://www.amazon.com/ZOMM-Wireless-Bluetooth-Speakerphone-Black/dp/B003N3J6BU/ref=sr_1_1?ie=UTF8&#038;qid=1409515088&#038;sr=8-1" rel="nofollow">https://www.amazon.com/ZOMM-Wireless-Bluetooth-Speakerphone-Black/dp/B003N3J6BU/ref=sr_1_1?ie=UTF8&#038;qid=1409515088&#038;sr=8-1</a>)<br />
+* Tried other Bluetooth devices with the same behavior (Bluedio 66i and Bluedio DF200)<br />
+* Unable to capture audio in default Voice Memo app<br />
+* as far as we know this is simply using standard BlueTooth protocol, as we understand it, once the bluetooth device is paired it should automatically start accepting it as a device for recording/audio capture</p>
+<p>According to OpenEars, the Bluetooth audio devices should be picked up automatically (<a href="/forums/topic/enabling-bluetooth-support/">/forums/topic/enabling-bluetooth-support/</a>). Are we right in assuming this?</p>
+<p>We used the VoiceMemo app (the voice recording app that ships with iOS) to test out the bluetooth device as a &#8220;control&#8221; experiment:</p>
+<p>* Pair the ZOMM with the iOS device<br />
+* Open VoiceMemo<br />
+* Select ZOMM as input device from within the VoiceMemo app<br />
+* Start recording<br />
+* Stop recording &#8211; no audio was captured</p>
+<p>Unfortunately this meant that neither our app nor the standard voice recording app is able to use the bluetooth device as a means for recording audio. Either way it’s hard to rule the device as simply the issue. </p>
+<p>We’re curious to understand if this simply a hardware issue (and need a BT-enabled device that supports voice recording to iOS) or if there is something in the code we need to enable in order for the app to start accepting the device as recordable. </p>
+<p>Also, more details about the ZOMM headset:<br />
+ZOMM specifications:<br />
+  Bluetooth Wireless Compatibility:<br />
+  This ZOMM device supports the following Bluetooth wireless protocols and profiles:<br />
+  • Bluetooth core technology v2.1+EDR<br />
+  • Hands-Free Profile (HFP) v1.5 headset role<br />
+  • Headset Profile (HSP) v1.2 headset role<br />
+  Bluetooth Wireless Interoperability:<br />
+  This ZOMM device is designed to be interoperate with all Bluetooth wireless products that support compatible profiles and roles<br />
+  including:<br />
+  Bluetooth core technology v3.0, v2.1+EDR, v2.0 +EDR, v1.2<br />
+  Bluetooth master and slave roles<br />
+  Bluetooth Hands-Free Profile (HFP) v1.5 and prior headset (HS) role<br />
+  Bluetooth Headset Profile (HS) v1.2 and prior headset (HS) role</p>
+<p>Any idea on what we could do to resolve this issue and use Bluetooth together with the OpenEars library on iOS7.1?</p>
+<p>Thanks! Philip</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/bluetooth-connectivity-problems/#post-1022428</guid>
+					<title><![CDATA[Reply To: BlueTooth headset not able to use as audio recording capture for iOS]]></title>
+					<link>/forums/topic/bluetooth-connectivity-problems/#post-1022428</link>
+					<pubDate>Mon, 01 Sep 2014 07:20:46 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Philip,</p>
+<blockquote><p>We used the VoiceMemo app (the voice recording app that ships with iOS) to test out the bluetooth device as a “control” experiment:</p>
+<p>* Pair the ZOMM with the iOS device<br />
+* Open VoiceMemo<br />
+* Select ZOMM as input device from within the VoiceMemo app<br />
+* Start recording<br />
+* Stop recording – no audio was captured</p>
+<p>Unfortunately this meant that neither our app nor the standard voice recording app is able to use the bluetooth device as a means for recording audio. Either way it’s hard to rule the device as simply the issue.
+</p></blockquote>
+<p>This sounds like it does establish that the bluetooth device isn&#8217;t compatible with the Apple device.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

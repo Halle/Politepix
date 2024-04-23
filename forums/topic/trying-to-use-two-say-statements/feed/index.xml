@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>trying to use two &quot;say&quot; statements &#8211; Politepix</title>
+		<atom:link href="/forums/topic/trying-to-use-two-say-statements/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/trying-to-use-two-say-statements/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:00:15 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/trying-to-use-two-say-statements/#post-1022180</guid>
+					<title><![CDATA[trying to use two &quot;say&quot; statements]]></title>
+					<link>/forums/topic/trying-to-use-two-say-statements/#post-1022180</link>
+					<pubDate>Tue, 12 Aug 2014 15:26:58 +0000</pubDate>
+					<dc:creator>boombatz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>HI,<br />
+I&#8217;m trying to use two say statements. the first one and the second one called in a method,  the first one plays but the one in the method does not one right after the other. like this</p>
+<p>[self.fliteController say:@&#8221;Welcome. &#8221; withVoice:self.slt];<br />
+[self newMethod};</p>
+<p>&#8211; (void)newMethod {<br />
+[self.fliteController say:@&#8221;Please say your name&#8221; withVoice:self.slt];<br />
+}</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/trying-to-use-two-say-statements/#post-1022181</guid>
+					<title><![CDATA[Reply To: trying to use two &quot;say&quot; statements]]></title>
+					<link>/forums/topic/trying-to-use-two-say-statements/#post-1022181</link>
+					<pubDate>Tue, 12 Aug 2014 15:54:16 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>When you say a statement, it stops an existing statement and overrides it, so if you say two simultaneously, only the second one will be heard. If you want to play multiple statements, you have to wait for the fliteDidFinishSpeaking callback from OpenEarsEventsObserver before calling the next one.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/trying-to-use-two-say-statements/#post-1022182</guid>
+					<title><![CDATA[Reply To: trying to use two &quot;say&quot; statements]]></title>
+					<link>/forums/topic/trying-to-use-two-say-statements/#post-1022182</link>
+					<pubDate>Tue, 12 Aug 2014 16:02:55 +0000</pubDate>
+					<dc:creator>boombatz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p> just tried this test &#8211; one right after another and only the first statement plays</p>
+<p> [self.fliteController say:[NSString stringWithFormat:@&#8221;Hello and Welcome&#8221;] withVoice:self.slt];</p>
+<p> [self.fliteController say:[NSString stringWithFormat:@&#8221;This is the second statement&#8221;] withVoice:self.slt];</p>
+<p>Thanks.<br />
+Marc</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/trying-to-use-two-say-statements/#post-1022183</guid>
+					<title><![CDATA[Reply To: trying to use two &quot;say&quot; statements]]></title>
+					<link>/forums/topic/trying-to-use-two-say-statements/#post-1022183</link>
+					<pubDate>Tue, 12 Aug 2014 16:42:54 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You have to wait to get the OpenEarsEventsObserver callback that the statement is complete before going to the next statement.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/trying-to-use-two-say-statements/#post-1022189</guid>
+					<title><![CDATA[Reply To: trying to use two &quot;say&quot; statements]]></title>
+					<link>/forums/topic/trying-to-use-two-say-statements/#post-1022189</link>
+					<pubDate>Wed, 13 Aug 2014 01:24:59 +0000</pubDate>
+					<dc:creator>boombatz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>HI,<br />
+I have tried to do that and I have put a delay in my code, but I still cannot and I see on the console that it is &#8220;finished speaking&#8221;, but I cannot get this to work.<br />
+Do have any example code that might get me going?  It would be much appreciated.<br />
+Thanks.</p>
+<p>BTW, I am building an app to help Parkinson&#8217;s patients moderate their speech</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/trying-to-use-two-say-statements/#post-1022193</guid>
+					<title><![CDATA[Reply To: trying to use two &quot;say&quot; statements]]></title>
+					<link>/forums/topic/trying-to-use-two-say-statements/#post-1022193</link>
+					<pubDate>Wed, 13 Aug 2014 07:34:27 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, can you show me the code you are using to wait for the callback before starting the second speech utterance?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/trying-to-use-two-say-statements/#post-1022197</guid>
+					<title><![CDATA[Reply To: trying to use two &quot;say&quot; statements]]></title>
+					<link>/forums/topic/trying-to-use-two-say-statements/#post-1022197</link>
+					<pubDate>Wed, 13 Aug 2014 14:10:30 +0000</pubDate>
+					<dc:creator>boombatz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;ve tried GCD and NSOperation but I can&#8217;t get either to work.<br />
+I don&#8217;t think I understand of waiting for a callback.  Perhaps you have some sample code or might point me to a sample that illustrates this.  This would be very helpful and much appreciated.<br />
+Thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/trying-to-use-two-say-statements/#post-1022198</guid>
+					<title><![CDATA[Reply To: trying to use two &quot;say&quot; statements]]></title>
+					<link>/forums/topic/trying-to-use-two-say-statements/#post-1022198</link>
+					<pubDate>Wed, 13 Aug 2014 14:29:21 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sure, there is sample code in the OpenEars sample app which shows how the OpenEarsEventsObserver callbacks work. The general question about how callbacks work and how Objective-C uses delegate methods as callbacks is a little beyond the scope of the support I can give in these forums, regretfully, but there is a lot of info online if you search for those keywords (e.g. &#8220;objective-c&#8221; and &#8220;delegates&#8221; and &#8220;delegate methods&#8221; and &#8220;callbacks&#8221;). Very briefly, it is a way that you can have a method in your view controller that, rather than _you_ calling it yourself to cause something to happen, some other object in your app can call the method when something happens to _it_. And when that method gets called, you know that the event you are waiting for happened, and you can take the opportunity to react to that. For instance, if you are waiting to hear that FliteController finished playing a piece of speech so you can start a new piece of speech.</p>
+<p>In the OpenEars sample app, there is an example of how this works using the delegate method of OpenEarsEventsObserver called fliteDidFinishSpeaking. The chunk of code you can search for in the sample app looks like this:</p>
+<p>&#8211; (void) fliteDidFinishSpeaking {<br />
+	NSLog(@&#8221;Flite has finished speaking&#8221;); // Log it.<br />
+	self.statusTextView.text = @&#8221;Status: Flite has finished speaking.&#8221;; // Show it in the status box.<br />
+}</p>
+<p>So when FliteController finishes saying a phrase, it (rather than you) can call this callback via OpenEarsEventsObserver and you receive notification in that method that the speaking is complete and it&#8217;s an OK time to start a new phrase. When you run the sample app, this will be demonstrated when the logging statement &#8220;Flite has finished speaking&#8221; appears in the console.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/trying-to-use-two-say-statements/#post-1022201</guid>
+					<title><![CDATA[Reply To: trying to use two &quot;say&quot; statements]]></title>
+					<link>/forums/topic/trying-to-use-two-say-statements/#post-1022201</link>
+					<pubDate>Wed, 13 Aug 2014 14:53:40 +0000</pubDate>
+					<dc:creator>boombatz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks. I guess where I&#8217;m having trouble is making the app wait until I receive the callback. I&#8217;ve tried all kinds of things but I just can&#8217;t get the app to pause until I receive the callback.  Any suggestions?<br />
+Thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/trying-to-use-two-say-statements/#post-1022202</guid>
+					<title><![CDATA[Reply To: trying to use two &quot;say&quot; statements]]></title>
+					<link>/forums/topic/trying-to-use-two-say-statements/#post-1022202</link>
+					<pubDate>Wed, 13 Aug 2014 15:01:08 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, there shouldn&#8217;t be any kind of timing- or pausing-related need – you can just give the first &#8220;say:&#8221; in viewDidLoad (or whatever method contains the first speech requirement) and then, for example, give the second one in the callback once it is called. Don&#8217;t do anything with threads, sleeping, anything like that, just use the fact that the callback was called as the event which tells you to make the second call to the say method.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

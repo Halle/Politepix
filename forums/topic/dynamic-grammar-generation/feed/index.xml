@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Dynamic Grammar Generation &#8211; Politepix</title>
+		<atom:link href="/forums/topic/dynamic-grammar-generation/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/dynamic-grammar-generation/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:07:38 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/dynamic-grammar-generation/#post-1015404</guid>
+					<title><![CDATA[Dynamic Grammar Generation]]></title>
+					<link>/forums/topic/dynamic-grammar-generation/#post-1015404</link>
+					<pubDate>Sat, 19 Jan 2013 06:21:49 +0000</pubDate>
+					<dc:creator>spietari</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>I first generated in my own code a JSGF file for my grammar with a following result:</p>
+<p><code><br />
+#JSGF V1.0;<br />
+grammar testgrammar;<br />
+color = WHITE | BLACK | BLUE;<br />
+public  = PANTS COLOR color | SHIRT COLOR color;<br />
+</code></p>
+<p>Edit: The forum software seems to be removing my color tags&#8230;anyway where there&#8217;s lowercase color it really means a color word inside brackets.</p>
+<p>The nice thing of this format is that I can separate out the repeating word options.</p>
+<p>Now, however, I started evaluating the RapidEars plugin and realised it doesn&#8217;t seem to work with JSGF grammars. So I switched to LanguageModelGenerator.  Now my question is whether it&#8217;s better to supply the generateLanguageModelFromArray method with a list of the single words that comprise the sentences and let OpenEars/RapidEars figure out the sentences or should I give it a list of all the possible sentences? Is there a way of obtaining something similar to what I&#8217;m doing with JSGF using the LanguageModelGenerator?</p>
+<p>Kind regards,<br />
+Seppo</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/dynamic-grammar-generation/#post-1015407</guid>
+					<title><![CDATA[Reply To: Dynamic Grammar Generation]]></title>
+					<link>/forums/topic/dynamic-grammar-generation/#post-1015407</link>
+					<pubDate>Sat, 19 Jan 2013 06:27:40 +0000</pubDate>
+					<dc:creator>spietari</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>#JSGF V1.0;<br />
+grammar testgrammar;<br />
+color = WHITE | BLACK | BLUE;<br />
+public testgrammar1 = PANTS COLOR color | SHIRT COLOR color;</p>
+<p>Also the testgrammar1 tag was removed.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/dynamic-grammar-generation/#post-1015412</guid>
+					<title><![CDATA[Reply To: Dynamic Grammar Generation]]></title>
+					<link>/forums/topic/dynamic-grammar-generation/#post-1015412</link>
+					<pubDate>Sat, 19 Jan 2013 07:59:42 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry about the tag removal, I haven&#8217;t yet figured out a way to let people paste their whole JSGF grammar without also allowing arbitrary HTML (which is a security issue).</p>
+<p><em>Now my question is whether it’s better to supply the generateLanguageModelFromArray method with a list of the single words that comprise the sentences and let OpenEars/RapidEars figure out the sentences or should I give it a list of all the possible sentences?</em></p>
+<p>I would give the entire sentences; this will cause LanguageModelGenerator to give increased probability to the sentence word sequence.</p>
+<p><em>Is there a way of obtaining something similar to what I’m doing with JSGF using the LanguageModelGenerator?</em></p>
+<p>Not exactly since JSGF and ARPA models address two very different design issues.  Unfortunately RapidEars doesn&#8217;t currently support JSGF, but lately there has been a lot more usage of JSGF in OpenEars (I think this is because performance on the device has improved to the extent that the performance hit for using JSGF isn&#8217;t as arduous as it used to be) so I will give adding it to RapidEars some thought, even though JSGF will definitely be less rapid.</p>
+<p>One thing that it occurs to me that you can try, and I guess this is how I would attempt to solve this, would be to change the probabilities in your language model by hand to raise them for bigrams and trigrams which represent the target sentences and lower them for unigrams that represent &#8220;loose&#8221; words. You&#8217;ll need to use the LanguageModelGenerator-produced .arpa file as your language model rather than the .DMP and open it up in a text editor. I would start by only changing the probability of the trigrams (the probability is the value at the start of the line). The probability is from a negative number to zero where zero is neutral and less than zero is lowered probability.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/dynamic-grammar-generation/#post-1015422</guid>
+					<title><![CDATA[Reply To: Dynamic Grammar Generation]]></title>
+					<link>/forums/topic/dynamic-grammar-generation/#post-1015422</link>
+					<pubDate>Sat, 19 Jan 2013 18:26:54 +0000</pubDate>
+					<dc:creator>spietari</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Awesome! Thanks a lot. I&#8217;ll give it a try. Actually it&#8217;s working very well as it is with only single words given to the generator but with such nice library one feels like tweaking it even more!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/dynamic-grammar-generation/#post-1020912</guid>
+					<title><![CDATA[Reply To: Dynamic Grammar Generation]]></title>
+					<link>/forums/topic/dynamic-grammar-generation/#post-1020912</link>
+					<pubDate>Mon, 21 Apr 2014 14:24:51 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Please check out the new dynamic generation language for OpenEars added with version 1.7: <a href="/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/">/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/dynamic-grammar-generation/#post-1021023</guid>
+					<title><![CDATA[Reply To: Dynamic Grammar Generation]]></title>
+					<link>/forums/topic/dynamic-grammar-generation/#post-1021023</link>
+					<pubDate>Thu, 24 Apr 2014 17:06:42 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>In addition to the dynamic grammar generation that has been added to stock OpenEars in version 1.7, there is also a new plugin called RuleORama which can use the same API in order to generate grammars which are a bit faster and compatible with RapidEars: <a href="/ruleorama">/ruleorama</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

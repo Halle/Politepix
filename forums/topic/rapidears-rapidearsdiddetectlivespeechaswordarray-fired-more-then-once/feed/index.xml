@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>(RapidEars)  rapidEarsDidDetectLiveSpeechAsWordArray fired more then once &#8211; Politepix</title>
+		<atom:link href="/forums/topic/rapidears-rapidearsdiddetectlivespeechaswordarray-fired-more-then-once/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/rapidears-rapidearsdiddetectlivespeechaswordarray-fired-more-then-once/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:44:26 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/rapidears-rapidearsdiddetectlivespeechaswordarray-fired-more-then-once/#post-1015656</guid>
+					<title><![CDATA[(RapidEars)  rapidEarsDidDetectLiveSpeechAsWordArray fired more then once]]></title>
+					<link>/forums/topic/rapidears-rapidearsdiddetectlivespeechaswordarray-fired-more-then-once/#post-1015656</link>
+					<pubDate>Sun, 17 Feb 2013 20:02:25 +0000</pubDate>
+					<dc:creator>developer82</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>I&#8217;ve tried implementing the RapidEars demo. I did as instructed and it seems to work.<br />
+on &#8220;rapidEarsDidDetectLiveSpeechAsWordArray&#8221; method I NSLog the phrase being spoken. Basically in my app I need to recognise one word each time.<br />
+What I noticed is that this method is fired more then once for one word (i.e. if I say &#8220;WORD&#8221; and then silence in the console I see this method is fired 2-3 times).<br />
+How can I make it so it will fire once for each word being spoken?</p>
+<p>Thanks </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-rapidearsdiddetectlivespeechaswordarray-fired-more-then-once/#post-1015657</guid>
+					<title><![CDATA[Reply To: (RapidEars)  rapidEarsDidDetectLiveSpeechAsWordArray fired more then once]]></title>
+					<link>/forums/topic/rapidears-rapidearsdiddetectlivespeechaswordarray-fired-more-then-once/#post-1015657</link>
+					<pubDate>Sun, 17 Feb 2013 20:21:25 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>RapidEars works a bit differently than stock OpenEars and needs a slightly different approach to programming. With OpenEars, it waits until speech is complete and returns a single hypothesis, so you can just assume that there will be a one to one relationship with receiving a hypothesis and your programmatic reaction to receiving a hypothesis. RapidEars is continuously processing when it has started to detect speech, meaning that it will keep reasserting the present hypothesis until it changes or the utterance ends, because it is continuously re-scoring the hypothesis (seeing if it becomes more confident in a different hypothesis, or more confident in the current hypotheses, and seeing if more words are spoken after the current hypotheses, etc). </p>
+<p>You can work with this style in a couple of ways. One way is just to react to your keyword the first time you catch it and not worry about the rest of the hypotheses , i.e. short circuit the listening process when you get a match. Another way (I think this is closer to your request) would be to call a &#8220;keywordDetected:&#8221; method in the callback, but only call it for a new word (meaning you store the hypothesis and only forward the method if the new hypothesis doesn&#8217;t match the stored hypothesis, meaning it is a different hypothesis. Does that make sense?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-rapidearsdiddetectlivespeechaswordarray-fired-more-then-once/#post-1015659</guid>
+					<title><![CDATA[Reply To: (RapidEars)  rapidEarsDidDetectLiveSpeechAsWordArray fired more then once]]></title>
+					<link>/forums/topic/rapidears-rapidearsdiddetectlivespeechaswordarray-fired-more-then-once/#post-1015659</link>
+					<pubDate>Sun, 17 Feb 2013 20:38:49 +0000</pubDate>
+					<dc:creator>developer82</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>Thanks for the quick reply.<br />
+I&#8217;m trying to build something that the user will have to repeat the same word for more then one time (for example saying &#8220;WORD&#8221; one time and on a different opportunity he will say it 2 time &#8220;WORD WORD&#8221;). but it&#8217;s always the same  one word.<br />
+So my problem is that when this method is called, I have no idea whether it was called for one word or because the user said that word more then once&#8230;<br />
+Is there a method I can call that once that method is entered to tell RapidEars to stop listening and stop improving the current hypothesis ?</p>
+<p>Thanks</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-rapidearsdiddetectlivespeechaswordarray-fired-more-then-once/#post-1015660</guid>
+					<title><![CDATA[Reply To: (RapidEars)  rapidEarsDidDetectLiveSpeechAsWordArray fired more then once]]></title>
+					<link>/forums/topic/rapidears-rapidearsdiddetectlivespeechaswordarray-fired-more-then-once/#post-1015660</link>
+					<pubDate>Sun, 17 Feb 2013 20:44:33 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>A hypothesis should appear as &#8220;word word&#8221; if they say &#8220;word word&#8221; and just as &#8220;word&#8221; if they just say &#8220;word&#8221;. So in that case, I think you&#8217;d be fine just suspending listening when you catch and react to the hypothesis you are waiting for the first time. Would that fit your requirement?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-rapidearsdiddetectlivespeechaswordarray-fired-more-then-once/#post-1015661</guid>
+					<title><![CDATA[Reply To: (RapidEars)  rapidEarsDidDetectLiveSpeechAsWordArray fired more then once]]></title>
+					<link>/forums/topic/rapidears-rapidearsdiddetectlivespeechaswordarray-fired-more-then-once/#post-1015661</link>
+					<pubDate>Sun, 17 Feb 2013 20:46:50 +0000</pubDate>
+					<dc:creator>developer82</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>It doesn&#8217;t. If I say &#8220;WORD WORD&#8221; it prints out something like this (varies from time to time):<br />
+WORD<br />
+WORD<br />
+WORD<br />
+WORD<br />
+WORD WORD<br />
+WORD WORD </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-rapidearsdiddetectlivespeechaswordarray-fired-more-then-once/#post-1015662</guid>
+					<title><![CDATA[Reply To: (RapidEars)  rapidEarsDidDetectLiveSpeechAsWordArray fired more then once]]></title>
+					<link>/forums/topic/rapidears-rapidearsdiddetectlivespeechaswordarray-fired-more-then-once/#post-1015662</link>
+					<pubDate>Sun, 17 Feb 2013 21:01:46 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That&#8217;s what I would expect &#8211; first the first word in the utterance is spoken, then the second, and the hypothesis grows along with the number of words spoken.  Your utterance starts with a single word and then a second is added, so the hypothesis matches that.</p>
+<p>Something you could try if you want fewer callbacks is to experiment with the following settings in your initialization code for the PocketsphinxController+RapidEars object:</p>
+<p>To use a slightly-less &#8220;live&#8221; method you can use these settings:</p>
+<p>[self.pocketsphinxController setFasterPartials:FALSE];<br />
+[self.pocketsphinxController setFasterFinals:FALSE];</p>
+<p>Alternately, you can ignore partial hypotheses (like your initial ones that just say &#8220;WORD&#8221; once) and wait for the final hypotheses in the rapidEarsDidDetectFinishedSpeechAsWordArray callback, but request them faster using these settings:</p>
+<p>[self.pocketsphinxController setFinalizeHypothesis:TRUE];<br />
+[self.pocketsphinxController TRUE];</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-rapidearsdiddetectlivespeechaswordarray-fired-more-then-once/#post-1015663</guid>
+					<title><![CDATA[Reply To: (RapidEars)  rapidEarsDidDetectLiveSpeechAsWordArray fired more then once]]></title>
+					<link>/forums/topic/rapidears-rapidearsdiddetectlivespeechaswordarray-fired-more-then-once/#post-1015663</link>
+					<pubDate>Sun, 17 Feb 2013 21:06:56 +0000</pubDate>
+					<dc:creator>developer82</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>If I just wait for the final hypothesis then it&#8217;s too slow and I love the live recognition effect &#8211; in that case I might as well just use OpenEars without the plugin. But that doesn&#8217;t serve my goal to have real time speech&#8230; kinda catch 21 sit&#8230;</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/rapidears-rapidearsdiddetectlivespeechaswordarray-fired-more-then-once/#post-1015664</guid>
+					<title><![CDATA[Reply To: (RapidEars)  rapidEarsDidDetectLiveSpeechAsWordArray fired more then once]]></title>
+					<link>/forums/topic/rapidears-rapidearsdiddetectlivespeechaswordarray-fired-more-then-once/#post-1015664</link>
+					<pubDate>Sun, 17 Feb 2013 21:16:48 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Understood, but I&#8217;ve also recommended a couple of other approaches &#8212; you could keep using partials but use the higher-quality algorithm which will return fewer times (but be more accurate) by setting:</p>
+<p>[self.pocketsphinxController setFasterPartials:FALSE];<br />
+[self.pocketsphinxController setFasterFinals:FALSE];</p>
+<p>Those will still return partials, so that isn&#8217;t the OpenEars-style approach.</p>
+<p>Or you could just ignore partials that don&#8217;t match the utterance you are trying to detect, and short circuit your listening at the time that you receive a partial that matches the utterance you are trying to detect. There&#8217;s no requirement to display every partial to the user or run a method based on every one; you can also just check in the callback to see if it is the matching hypothesis and only react to the first one that is. </p>
+<p>My other suggestion was to compare an incoming hypothesis to the previous one and only display/invoke new methods when it no longer matches the hypothesis that came before, i.e. throwing out any repeated hypotheses for logical purposes.</p>
+<p>So there are a few ways that you can get the results you are looking for &#8212; it&#8217;s really a question of what is the best approach for your application goals.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

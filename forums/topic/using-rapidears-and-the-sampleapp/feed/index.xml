@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Using RapidEars and the SampleApp &#8211; Politepix</title>
+		<atom:link href="/forums/topic/using-rapidears-and-the-sampleapp/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/using-rapidears-and-the-sampleapp/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:45:08 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/using-rapidears-and-the-sampleapp/#post-10566</guid>
+					<title><![CDATA[Using RapidEars and the SampleApp]]></title>
+					<link>/forums/topic/using-rapidears-and-the-sampleapp/#post-10566</link>
+					<pubDate>Wed, 18 Jul 2012 09:52:15 +0000</pubDate>
+					<dc:creator>lookbadgers</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I have just tried adding RapidEars to the sampleApp.  The app compiles but fails to run.</p>
+<p>xCode fails on line 16 OpenEarsSampleApp/Supporting Files/main.m</p>
+<p><a href="/rapidears/">/rapidears/</a></p>
+<p>I had to adapt the guide slightly this line is not right:</p>
+<p>&#8220;Then replace all of the other occurences of startListeningWithLanguageModelAtPath: with startRealtimeListeningWithLanguageModelAtPath:&#8221;</p>
+<p>Instead I replaced it with </p>
+<p>[self.pocketsphinxController startRealtimeListeningWithLanguageModelAtPath:self.pathToGrammarToStartAppWith andDictionaryAtPath:self.pathToDictionaryToStartAppWith]; // Starts the rapid recognition loop.</p>
+<p>Thanks</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-rapidears-and-the-sampleapp/#post-10567</guid>
+					<title><![CDATA[Reply To: Using RapidEars and the SampleApp]]></title>
+					<link>/forums/topic/using-rapidears-and-the-sampleapp/#post-10567</link>
+					<pubDate>Wed, 18 Jul 2012 10:34:11 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>Sorry you are having difficulty integrating the plugin. Please turn on logging and show the output so I can assist &#8212; the instructions are known to work so there must be a minor implementation issue which the OpenEars logging may assist with. Here is a link to how to turn logging on: <a href="/openears/yourapp/#logging">/openears/yourapp/#logging</a></p>
+<p>Can you elaborate on what the difference is between your correction and the original instructions? They look like they are the same to me but maybe I am overlooking something.</p>
+<p>Just checking since I recall you are using an earlier version of OpenEars, did you follow the instructions to update to OpenEars 1.1 before adding RapidEars?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-rapidears-and-the-sampleapp/#post-10568</guid>
+					<title><![CDATA[Reply To: Using RapidEars and the SampleApp]]></title>
+					<link>/forums/topic/using-rapidears-and-the-sampleapp/#post-10568</link>
+					<pubDate>Wed, 18 Jul 2012 14:07:41 +0000</pubDate>
+					<dc:creator>lookbadgers</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>No problem I assume it&#8217;s probably something simple I&#8217;ve missed at my end.</p>
+<p>The log is here: <a href="https://pastebin.com/dcefjGdw" rel="nofollow">https://pastebin.com/dcefjGdw</a></p>
+<p>I replaced<br />
+[self.pocketsphinxController startListeningWithLanguageModelAtPath:self.pathToGrammarToStartAppWith dictionaryAtPath:self.pathToDictionaryToStartAppWith languageModelIsJSGF:FALSE];</p>
+<p>With the following:<br />
+[self.pocketsphinxController startRealtimeListeningWithLanguageModelAtPath:self.pathToGrammarToStartAppWith andDictionaryAtPath:self.pathToDictionaryToStartAppWith];</p>
+<p>I downloaded a new version of OpenEars from <a href="/openears/">/openears/</a> so I assume that is compatible and avoids the issue of upgrading.</p>
+<p>Thanks</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-rapidears-and-the-sampleapp/#post-10569</guid>
+					<title><![CDATA[Reply To: Using RapidEars and the SampleApp]]></title>
+					<link>/forums/topic/using-rapidears-and-the-sampleapp/#post-10569</link>
+					<pubDate>Wed, 18 Jul 2012 14:43:54 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Based on the log, the plugin isn&#8217;t being used at all in the project since the error is that a method that is in the plugin isn&#8217;t available to the project. Can you elaborate on your comment:</p>
+<blockquote><p>
+ had to adapt the guide slightly this line is not right:</p>
+<p>“Then replace all of the other occurences of startListeningWithLanguageModelAtPath: with startRealtimeListeningWithLanguageModelAtPath:”</p>
+<p>Instead I replaced it with</p>
+<p>[self.pocketsphinxController startRealtimeListeningWithLanguageModelAtPath:self.pathToGrammarToStartAppWith andDictionaryAtPath:self.pathToDictionaryToStartAppWith]; // Starts the rapid recognition loop.
+</p></blockquote>
+<p>Since the instructions say to replace all of the references to startListeningWithLanguageModelAtPath: with startRealtimeListeningWithLanguageModelAtPath:, which appears to be what you did? I&#8217;m still confused about what part of the instructions you are saying wasn&#8217;t right and I think maybe this could be related to the issue you&#8217;re experiencing.</p>
+<p>My impression is that the plugin isn&#8217;t added to the project target, or it isn&#8217;t being imported into the class in which you are using it by following these lines from the instructions:</p>
+<blockquote><p>
+1. Open up ViewController.m in the editor and up at the top where the header imports are, after the line:</p>
+<p>#import &lt;OpenEars/PocketsphinxController.h&gt;<br />
+add the following lines:</p>
+<p>#import &lt;RapidEarsDemo/PocketsphinxController+RapidEars.h&gt;<br />
+#import &lt;RapidEarsDemo/OpenEarsEventsObserver+RapidEars.h&gt;
+</p></blockquote>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-rapidears-and-the-sampleapp/#post-10578</guid>
+					<title><![CDATA[Reply To: Using RapidEars and the SampleApp]]></title>
+					<link>/forums/topic/using-rapidears-and-the-sampleapp/#post-10578</link>
+					<pubDate>Wed, 18 Jul 2012 16:18:52 +0000</pubDate>
+					<dc:creator>lookbadgers</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Those lines are included, here&#8217;s a screenshot that shows them and the RapidEarsDemo.framework included.<br />
+<a href="http://imageshack.us/photo/my-images/688/screenshot20120718at171.png/" rel="nofollow">http://imageshack.us/photo/my-images/688/screenshot20120718at171.png/</a></p>
+<p>What I mean is it doesn&#8217;t mention changing following part of the method call.</p>
+<p>dictionaryAtPath:self.pathToDictionaryToStartAppWith languageModelIsJSGF:FALSE </p>
+<p>to </p>
+<p>andDictionaryAtPath:self.pathToDictionaryToStartAppWith</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-rapidears-and-the-sampleapp/#post-10579</guid>
+					<title><![CDATA[Reply To: Using RapidEars and the SampleApp]]></title>
+					<link>/forums/topic/using-rapidears-and-the-sampleapp/#post-10579</link>
+					<pubDate>Wed, 18 Jul 2012 16:40:51 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, that line is just intended to refer to changing all of the incidents of the old-style recognition start to the new-style recognition start (since it occurs many times in the sample app) in the same way as the example that comes right before it, but if it&#8217;s unclear as-is I can revise it to be clearer, thanks for the feedback.</p>
+<p>All righty, I&#8217;m not sure what the issue is with the project so could you put up your modified sample app somewhere for me to download and take a look at? You can remove the OpenEars framework from the sample app folder to save file size if you want (but don&#8217;t remove the RapidEars plugin since I need to see how that is connected to the project). Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-rapidears-and-the-sampleapp/#post-10580</guid>
+					<title><![CDATA[Reply To: Using RapidEars and the SampleApp]]></title>
+					<link>/forums/topic/using-rapidears-and-the-sampleapp/#post-10580</link>
+					<pubDate>Wed, 18 Jul 2012 16:50:39 +0000</pubDate>
+					<dc:creator>lookbadgers</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I think for clarity I would prefer it, at first I thought I was doing something wrong.</p>
+<p>I&#8217;ve zipped everything up, both frameworks are included by reference though so I&#8217;m not sure if this will have everything you need.</p>
+<p><a href="http://www.yousendit.com/download/QlVna0ZkRkVCSWQzZU5Vag" rel="nofollow">http://www.yousendit.com/download/QlVna0ZkRkVCSWQzZU5Vag</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-rapidears-and-the-sampleapp/#post-10581</guid>
+					<title><![CDATA[Reply To: Using RapidEars and the SampleApp]]></title>
+					<link>/forums/topic/using-rapidears-and-the-sampleapp/#post-10581</link>
+					<pubDate>Wed, 18 Jul 2012 16:55:27 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>I think for clarity I would prefer it, at first I thought I was doing something wrong.</p></blockquote>
+<p>OK, good to know that should be improved. I will need to take a look at your project in-depth a little later when I can reattach the references, but the only thing I noticed right off the bat is that you&#8217;ve added the -ObjC flag correctly but only for release and not debug. I guess if you&#8217;re then running it in debug it will probably be sad :) . Is it possible this is the issue?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-rapidears-and-the-sampleapp/#post-10582</guid>
+					<title><![CDATA[Reply To: Using RapidEars and the SampleApp]]></title>
+					<link>/forums/topic/using-rapidears-and-the-sampleapp/#post-10582</link>
+					<pubDate>Wed, 18 Jul 2012 17:06:51 +0000</pubDate>
+					<dc:creator>lookbadgers</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thank you, you are correct. I&#8217;ve just added the flag to debug as well, I was certain I put it for both.  The app is no longer sad :)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-rapidears-and-the-sampleapp/#post-10583</guid>
+					<title><![CDATA[Reply To: Using RapidEars and the SampleApp]]></title>
+					<link>/forums/topic/using-rapidears-and-the-sampleapp/#post-10583</link>
+					<pubDate>Wed, 18 Jul 2012 17:17:11 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Excellent :) . Give it a try on a device for the best recognition quality (the simulator recognition is not so great).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

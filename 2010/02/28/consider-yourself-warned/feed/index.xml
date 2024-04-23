@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Easier low memory warning simulator testing with keyboard shortcuts	</title>
+	<atom:link href="/2010/02/28/consider-yourself-warned/feed/" rel="self" type="application/rss+xml" />
+	<link>/2010/02/28/consider-yourself-warned/</link>
+	<description>iOS Frameworks for speech recognition, text to speech and more</description>
+	<lastBuildDate>Sun, 27 Apr 2014 15:54:37 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.5.2</generator>
+	<item>
+		<title>
+		By: Halle		</title>
+		<link>/2010/02/28/consider-yourself-warned/#comment-3218</link>
+
+		<dc:creator><![CDATA[Halle]]></dc:creator>
+		<pubDate>Tue, 16 Jul 2013 18:50:56 +0000</pubDate>
+		<guid isPermaLink="false">/?p=118#comment-3218</guid>
+
+					<description><![CDATA[Nice, thank you tupakapoor for the info -- hope this helps others.]]></description>
+			<content:encoded><![CDATA[<p>Nice, thank you tupakapoor for the info &#8212; hope this helps others.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: tupakapoor		</title>
+		<link>/2010/02/28/consider-yourself-warned/#comment-3217</link>
+
+		<dc:creator><![CDATA[tupakapoor]]></dc:creator>
+		<pubDate>Tue, 16 Jul 2013 18:46:41 +0000</pubDate>
+		<guid isPermaLink="false">/?p=118#comment-3217</guid>
+
+					<description><![CDATA[If you symlink the iOS Simulator to be in the Applications folder this will work:
+
+ln -s /Applications/Xcode.app/Contents/Applications/iOS\ Simulator.app /Applications/iOS\ Simulator.app]]></description>
+			<content:encoded><![CDATA[<p>If you symlink the iOS Simulator to be in the Applications folder this will work:</p>
+<p>ln -s /Applications/Xcode.app/Contents/Applications/iOS\ Simulator.app /Applications/iOS\ Simulator.app</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Halle		</title>
+		<link>/2010/02/28/consider-yourself-warned/#comment-1449</link>
+
+		<dc:creator><![CDATA[Halle]]></dc:creator>
+		<pubDate>Wed, 28 Mar 2012 15:50:31 +0000</pubDate>
+		<guid isPermaLink="false">/?p=118#comment-1449</guid>
+
+					<description><![CDATA[Wow, that is annoying. I&#039;ll give it some thought.]]></description>
+			<content:encoded><![CDATA[<p>Wow, that is annoying. I&#8217;ll give it some thought.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Carl		</title>
+		<link>/2010/02/28/consider-yourself-warned/#comment-1448</link>
+
+		<dc:creator><![CDATA[Carl]]></dc:creator>
+		<pubDate>Wed, 28 Mar 2012 01:18:18 +0000</pubDate>
+		<guid isPermaLink="false">/?p=118#comment-1448</guid>
+
+					<description><![CDATA[It&#039;s a tragedy that above method is no longer available in 4.3.1 xcode (lion). cause &#039;iPhone Simulator.app&#039; located in /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone Simulator.app , and we can not access inside of Xcode.app at Application Shortcuts preference pane. 
+Is there anyone who help me?]]></description>
+			<content:encoded><![CDATA[<p>It&#8217;s a tragedy that above method is no longer available in 4.3.1 xcode (lion). cause &#8216;iPhone Simulator.app&#8217; located in /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone Simulator.app , and we can not access inside of Xcode.app at Application Shortcuts preference pane.<br />
+Is there anyone who help me?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: AD		</title>
+		<link>/2010/02/28/consider-yourself-warned/#comment-7</link>
+
+		<dc:creator><![CDATA[AD]]></dc:creator>
+		<pubDate>Sat, 17 Apr 2010 18:24:36 +0000</pubDate>
+		<guid isPermaLink="false">/?p=118#comment-7</guid>
+
+					<description><![CDATA[Thank you. Just what I wanted.]]></description>
+			<content:encoded><![CDATA[<p>Thank you. Just what I wanted.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Halle		</title>
+		<link>/2010/02/28/consider-yourself-warned/#comment-6</link>
+
+		<dc:creator><![CDATA[Halle]]></dc:creator>
+		<pubDate>Sat, 20 Mar 2010 08:39:59 +0000</pubDate>
+		<guid isPermaLink="false">/?p=118#comment-6</guid>
+
+					<description><![CDATA[Hi Adam, glad you found it helpful.]]></description>
+			<content:encoded><![CDATA[<p>Hi Adam, glad you found it helpful.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Adam McDonald		</title>
+		<link>/2010/02/28/consider-yourself-warned/#comment-2</link>
+
+		<dc:creator><![CDATA[Adam McDonald]]></dc:creator>
+		<pubDate>Thu, 11 Mar 2010 02:01:13 +0000</pubDate>
+		<guid isPermaLink="false">/?p=118#comment-2</guid>
+
+					<description><![CDATA[Greatly appreciated tip! Been looking for a slick solution like this for a while.]]></description>
+			<content:encoded><![CDATA[<p>Greatly appreciated tip! Been looking for a slick solution like this for a while.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

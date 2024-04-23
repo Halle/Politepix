@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>How to play live audio while recognition is going on? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/how-to-play-live-audio-while-recognition-is-going-on/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/how-to-play-live-audio-while-recognition-is-going-on/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:57:27 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/how-to-play-live-audio-while-recognition-is-going-on/#post-1018813</guid>
+					<title><![CDATA[How to play live audio while recognition is going on?]]></title>
+					<link>/forums/topic/how-to-play-live-audio-while-recognition-is-going-on/#post-1018813</link>
+					<pubDate>Mon, 04 Nov 2013 20:30:54 +0000</pubDate>
+					<dc:creator>steve100</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>I want to play the audio while the user is speaking. I noticed the OpenEars freamwork uses Audio Unit. How can I change the code to turn on the output?</p>
+<p>Another question I have is how to use the outputAudio? What will happen if I set it to true?</p>
+<p>Thanks,</p>
+<p>Steve</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-to-play-live-audio-while-recognition-is-going-on/#post-1018815</guid>
+					<title><![CDATA[Reply To: How to play live audio while recognition is going on?]]></title>
+					<link>/forums/topic/how-to-play-live-audio-while-recognition-is-going-on/#post-1018815</link>
+					<pubDate>Tue, 05 Nov 2013 06:54:29 +0000</pubDate>
+					<dc:creator>steve100</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Basically, I want to playback whatever audio my app received, do the speech recognition and save the audio into a file if the engine can recognize anything. </p>
+<p>What is the best approach to do all these? Can the SaveTheWave plug-in save all recognized voices into files?</p>
+<p>Thanks,</p>
+<p>Steve</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-to-play-live-audio-while-recognition-is-going-on/#post-1018816</guid>
+					<title><![CDATA[Reply To: How to play live audio while recognition is going on?]]></title>
+					<link>/forums/topic/how-to-play-live-audio-while-recognition-is-going-on/#post-1018816</link>
+					<pubDate>Tue, 05 Nov 2013 09:39:02 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Steve,</p>
+<p>I&#8217;m not completely clear on the question yet, but maybe you can clarify it for me a bit. Are you intending to play back the user&#8217;s own voice while listening to their voice?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-to-play-live-audio-while-recognition-is-going-on/#post-1018818</guid>
+					<title><![CDATA[Reply To: How to play live audio while recognition is going on?]]></title>
+					<link>/forums/topic/how-to-play-live-audio-while-recognition-is-going-on/#post-1018818</link>
+					<pubDate>Tue, 05 Nov 2013 18:48:23 +0000</pubDate>
+					<dc:creator>steve100</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yes. I want to play back the user&#8217;s own voice or any voice that around the user, just like a hearing aid.</p>
+<p>Another question I have is normally how close to the device for an voice to get accurate recognition? If the user talks to another person in one meter distance, can the engine get pretty accurate recognition for the other person?</p>
+<p>Thanks,</p>
+<p>Steve</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-to-play-live-audio-while-recognition-is-going-on/#post-1018819</guid>
+					<title><![CDATA[Reply To: How to play live audio while recognition is going on?]]></title>
+					<link>/forums/topic/how-to-play-live-audio-while-recognition-is-going-on/#post-1018819</link>
+					<pubDate>Tue, 05 Nov 2013 18:53:13 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>Yes. I want to play back the user’s own voice or any voice that around the user, just like a hearing aid.</p></blockquote>
+<p>OK, I think you could use SaveThatWave for this. It saves a WAV file of recognized speech that you can then play back using an AVAudioPlayer.</p>
+<blockquote><p>Another question I have is normally how close to the device for an voice to get accurate recognition? If the user talks to another person in one meter distance, can the engine get pretty accurate recognition for the other person?</p></blockquote>
+<p>For open speech into the built-in mic, I usually test from about a meter away, so I would expect that to work pretty well. A bigger issue is going to be cross-talk between two different speakers.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-to-play-live-audio-while-recognition-is-going-on/#post-1018820</guid>
+					<title><![CDATA[Reply To: How to play live audio while recognition is going on?]]></title>
+					<link>/forums/topic/how-to-play-live-audio-while-recognition-is-going-on/#post-1018820</link>
+					<pubDate>Tue, 05 Nov 2013 19:03:26 +0000</pubDate>
+					<dc:creator>steve100</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thank you for the info. Can I also get the data in the buffer and play from there? I also noticed there is a openAudioDevice function inside ContinousAudioUnit.mm. That function uses Remote Audio Unit. Can I also use that to play back the voice? </p>
+<p>If I purchase SaveThatWave, I also get the source code for that?</p>
+<p>Thanks,</p>
+<p>Steve</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-to-play-live-audio-while-recognition-is-going-on/#post-1018821</guid>
+					<title><![CDATA[Reply To: How to play live audio while recognition is going on?]]></title>
+					<link>/forums/topic/how-to-play-live-audio-while-recognition-is-going-on/#post-1018821</link>
+					<pubDate>Tue, 05 Nov 2013 19:09:02 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You&#8217;re welcome.</p>
+<blockquote><p>
+ Can I also get the data in the buffer and play from there? I also noticed there is a openAudioDevice function inside ContinousAudioUnit.mm. That function uses Remote Audio Unit. Can I also use that to play back the voice?
+</p></blockquote>
+<p>Nope, you can&#8217;t play back audio using ContinuousAudioUnit.mm. If you&#8217;re well-acquainted with audio unit programming there&#8217;s nothing standing in the way of modifying it to do that, but it&#8217;s outside of the support I can give here since it isn&#8217;t part of the functionality of the framework and playback is already supported via AVAudioPlayer.</p>
+<blockquote><p>If I purchase SaveThatWave, I also get the source code for that?</p></blockquote>
+<p>No, SaveThatWave is a compiled plugin.</p>
+<p>Best,</p>
+<p>Halle</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

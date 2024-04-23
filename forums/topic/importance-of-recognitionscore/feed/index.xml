@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Importance of recognitionScore  &#8211; Politepix</title>
+		<atom:link href="/forums/topic/importance-of-recognitionscore/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/importance-of-recognitionscore/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:50:41 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/importance-of-recognitionscore/#post-1022304</guid>
+					<title><![CDATA[Importance of recognitionScore]]></title>
+					<link>/forums/topic/importance-of-recognitionscore/#post-1022304</link>
+					<pubDate>Wed, 20 Aug 2014 09:59:39 +0000</pubDate>
+					<dc:creator>sivakrishna</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>[NSArray arrayWithObjects:@&#8221;HELLO&#8221;,nil];<br />
+I was just using one wrod to cretae LMgenerator.<br />
+Every thing is fine when i am saying hello. but when i shout other words &#8220;Go&#8221;<br />
+&#8220;Hai&#8221; etc the iam gettting Hello only in hypothesis.<br />
+but recognitionScore changes and it&#8217;s always negative.<br />
+what is good and bad recognistion score.<br />
+thank you.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/importance-of-recognitionscore/#post-1022305</guid>
+					<title><![CDATA[Reply To: Importance of recognitionScore]]></title>
+					<link>/forums/topic/importance-of-recognitionscore/#post-1022305</link>
+					<pubDate>Wed, 20 Aug 2014 10:14:00 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Please search these forums for the keyword &#8216;score&#8217; in order to read past discussions about scoring, thank you.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

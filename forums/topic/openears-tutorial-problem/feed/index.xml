@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>OpenEars Tutorial Problem &#8211; Politepix</title>
+		<atom:link href="/forums/topic/openears-tutorial-problem/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/openears-tutorial-problem/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:55:35 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/openears-tutorial-problem/#post-1018925</guid>
+					<title><![CDATA[OpenEars Tutorial Problem]]></title>
+					<link>/forums/topic/openears-tutorial-problem/#post-1018925</link>
+					<pubDate>Mon, 18 Nov 2013 10:27:24 +0000</pubDate>
+					<dc:creator>Matt</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Everyone,</p>
+<p>When I tried to use the OpenEars tutorial, I got the following Error Message:</p>
+<p>  &#8220;_OBJC_CLASS_$_AcousticModel&#8221;, referenced from:</p>
+<p>      objc-class-ref in ViewController.o</p>
+<p>Has anyone else had this?</p>
+<p>Regards,</p>
+<p>Matt</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-tutorial-problem/#post-1018926</guid>
+					<title><![CDATA[Reply To: OpenEars Tutorial Problem]]></title>
+					<link>/forums/topic/openears-tutorial-problem/#post-1018926</link>
+					<pubDate>Mon, 18 Nov 2013 10:40:56 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Matt,</p>
+<p>Sorry to hear that. I haven&#8217;t ever heard of that as an issue so I think it is likely to be a missed step from the initial process of adding the framework. AcousticModel is a class from the main distribution, so if it can&#8217;t be found it means that the framework isn&#8217;t linked. I would start with a clean project and pay special attention to these parts:</p>
+<blockquote><p>Make absolutely sure that in the add dialog &#8220;Create groups for any added folders&#8221; is selected and NOT &#8220;Create folder references for any added folders&#8221; because the wrong setting here will prevent your app from working.</p></blockquote>
+<p>and </p>
+<blockquote><p>If you are using Xcode 5 with a build number of 5A1413 or later, it has a bug which results in frameworks linked by reference being changed to link at incorrect URL paths, so it is necessary for you to also check the box that says &#8220;Copy items into destination group&#8217;s folder (if needed)&#8221;, or you may receive errors that header files can&#8217;t be found. If you receive this kind of error with Xcode 5, it means that your Framework Search Path for the added frameworks has been changed to an invalid URL, so you may have to open that Build Setting for your app target and change it back to a correct path.</p></blockquote>
+<p>If this doesn&#8217;t clear it up, please feel free to copy and paste the entire error so I can take a look. There will be a disclosure bubble in the build log that will let you copy and paste the complete error (the part above is just an excerpt).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-tutorial-problem/#post-1018928</guid>
+					<title><![CDATA[Reply To: OpenEars Tutorial Problem]]></title>
+					<link>/forums/topic/openears-tutorial-problem/#post-1018928</link>
+					<pubDate>Mon, 18 Nov 2013 21:27:48 +0000</pubDate>
+					<dc:creator>Matt</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Halle,</p>
+<p>Thank you for the reply. I have tried the steps you suggested, but I still get the same error. Is there any chance in having a look at the error below to see if you can work out what the problems is:</p>
+<p>Ld /Users/matthew_harvie/Library/Developer/Xcode/DerivedData/WebTalk-fprbuqdtewuqwbaijqzafybjwasy/Build/Products/Debug-iphoneos/WebTalk.app/WebTalk normal arm64<br />
+    cd /Users/matthew_harvie/Desktop/WebTalk<br />
+    setenv IPHONEOS_DEPLOYMENT_TARGET 7.0<br />
+    setenv PATH &#8220;/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin&#8221;<br />
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk -L/Users/matthew_harvie/Library/Developer/Xcode/DerivedData/WebTalk-fprbuqdtewuqwbaijqzafybjwasy/Build/Products/Debug-iphoneos -F/Users/matthew_harvie/Library/Developer/Xcode/DerivedData/WebTalk-fprbuqdtewuqwbaijqzafybjwasy/Build/Products/Debug-iphoneos -F/Users/matthew_harvie/Desktop/WebTalk/Framework -filelist /Users/matthew_harvie/Library/Developer/Xcode/DerivedData/WebTalk-fprbuqdtewuqwbaijqzafybjwasy/Build/Intermediates/WebTalk.build/Debug-iphoneos/WebTalk.build/Objects-normal/arm64/WebTalk.LinkFileList -dead_strip -fobjc-arc -fobjc-link-runtime -miphoneos-version-min=7.0 -framework AVFoundation -framework Slt -framework AudioToolbox -framework CoreGraphics -framework UIKit -framework Foundation -framework OpenEars -Xlinker -dependency_info -Xlinker /Users/matthew_harvie/Library/Developer/Xcode/DerivedData/WebTalk-fprbuqdtewuqwbaijqzafybjwasy/Build/Intermediates/WebTalk.build/Debug-iphoneos/WebTalk.build/Objects-normal/arm64/WebTalk_dependency_info.dat -o /Users/matthew_harvie/Library/Developer/Xcode/DerivedData/WebTalk-fprbuqdtewuqwbaijqzafybjwasy/Build/Products/Debug-iphoneos/WebTalk.app/WebTalk</p>
+<p>ld: warning: ignoring file /Users/matthew_harvie/Desktop/WebTalk/Framework/Slt.framework/Slt, missing required architecture arm64 in file /Users/matthew_harvie/Desktop/WebTalk/Framework/Slt.framework/Slt (3 slices)<br />
+ld: warning: ignoring file /Users/matthew_harvie/Desktop/WebTalk/Framework/OpenEars.framework/OpenEars, missing required architecture arm64 in file /Users/matthew_harvie/Desktop/WebTalk/Framework/OpenEars.framework/OpenEars (3 slices)<br />
+Undefined symbols for architecture arm64:<br />
+  &#8220;_OBJC_CLASS_$_AcousticModel&#8221;, referenced from:<br />
+      objc-class-ref in ViewController.o<br />
+  &#8220;_OBJC_CLASS_$_OpenEarsEventsObserver&#8221;, referenced from:<br />
+      objc-class-ref in ViewController.o<br />
+  &#8220;_OBJC_CLASS_$_PocketsphinxController&#8221;, referenced from:<br />
+      objc-class-ref in ViewController.o<br />
+  &#8220;_OBJC_CLASS_$_LanguageModelGenerator&#8221;, referenced from:<br />
+      objc-class-ref in ViewController.o<br />
+ld: symbol(s) not found for architecture arm64<br />
+clang: error: linker command failed with exit code 1 (use -v to see invocation)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-tutorial-problem/#post-1018929</guid>
+					<title><![CDATA[Reply To: OpenEars Tutorial Problem]]></title>
+					<link>/forums/topic/openears-tutorial-problem/#post-1018929</link>
+					<pubDate>Mon, 18 Nov 2013 21:34:34 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, thank you for showing the full error. This is because you have 64-bit as one of the architectures in your app, but OpenEars doesn&#8217;t have a 64-bit slice yet (it&#8217;s coming soon). You just need to go to the &#8220;Architectures&#8221; build setting for your app&#8217;s target and select an option without 64-bit.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-tutorial-problem/#post-1019149</guid>
+					<title><![CDATA[Reply To: OpenEars Tutorial Problem]]></title>
+					<link>/forums/topic/openears-tutorial-problem/#post-1019149</link>
+					<pubDate>Thu, 12 Dec 2013 21:05:20 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The new version 1.64 out now is 64-bit compatible.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-tutorial-problem/#post-1022462</guid>
+					<title><![CDATA[Reply To: OpenEars Tutorial Problem]]></title>
+					<link>/forums/topic/openears-tutorial-problem/#post-1022462</link>
+					<pubDate>Sat, 06 Sep 2014 20:31:25 +0000</pubDate>
+					<dc:creator>jnanin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>It seems this issue is still present for the extra voices</p>
+<p>Cheers.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-tutorial-problem/#post-1022465</guid>
+					<title><![CDATA[Reply To: OpenEars Tutorial Problem]]></title>
+					<link>/forums/topic/openears-tutorial-problem/#post-1022465</link>
+					<pubDate>Sun, 07 Sep 2014 09:16:04 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>Thanks for the info – they will probably be updated with the next version of OpenEars but that might be a while. In the meantime, just recompile the one you want to use with all the architectures turned on in its build settings and use the product.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-tutorial-problem/#post-1022467</guid>
+					<title><![CDATA[Reply To: OpenEars Tutorial Problem]]></title>
+					<link>/forums/topic/openears-tutorial-problem/#post-1022467</link>
+					<pubDate>Sun, 07 Sep 2014 22:01:51 +0000</pubDate>
+					<dc:creator>jnanin</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yeah that&#8217;s what I did, it was just FYI ;)</p>
+<p>Cheers.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-tutorial-problem/#post-1022468</guid>
+					<title><![CDATA[Reply To: OpenEars Tutorial Problem]]></title>
+					<link>/forums/topic/openears-tutorial-problem/#post-1022468</link>
+					<pubDate>Mon, 08 Sep 2014 06:41:24 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

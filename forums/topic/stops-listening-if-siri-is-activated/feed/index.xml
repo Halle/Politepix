@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Stops Listening if Siri is activated &#8211; Politepix</title>
+		<atom:link href="/forums/topic/stops-listening-if-siri-is-activated/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/stops-listening-if-siri-is-activated/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:49:42 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/stops-listening-if-siri-is-activated/#post-1018450</guid>
+					<title><![CDATA[Stops Listening if Siri is activated]]></title>
+					<link>/forums/topic/stops-listening-if-siri-is-activated/#post-1018450</link>
+					<pubDate>Sun, 29 Sep 2013 17:34:12 +0000</pubDate>
+					<dc:creator>zeiteisen</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>I get the following Log messages:<br />
+Pocketsphinx calibration has started.<br />
+Pocketsphinx calibration is complete.<br />
+Pocketsphinx is now listening.</p>
+<p>OpenEars resign to work after I hit the Siri button on the keyboard. When Siri is finished with it&#8217;s speech to text am I getting this log message:<br />
+!!! _NSLayoutTreeGetBaselineOffsetForGlyphAtIndex invalid glyph index 0</p>
+<p>How can I restart Openears after Siri was active?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/stops-listening-if-siri-is-activated/#post-1018451</guid>
+					<title><![CDATA[Reply To: Stops Listening if Siri is activated]]></title>
+					<link>/forums/topic/stops-listening-if-siri-is-activated/#post-1018451</link>
+					<pubDate>Sun, 29 Sep 2013 17:45:20 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Siri is by necessity going to override the important audio unit and audio session settings, so there is a good chance this simply isn&#8217;t possible as you&#8217;ve specified it. But, something you can try is to set pocketsphinxController.audioSessionMixing = TRUE and making sure that you suspend PocketsphinxController before using Siri and resume it afterwards. To the best of my knowledge _NSLayoutTreeGetBaselineOffsetForGlyphAtIndex is a bug in the Siri UITextView object in iOS 7 and isn&#8217;t related to OpenEars, which contains no graphics or typographical code.</p>
+<p>Take a look at using OpenEarsLogging and verbosePocketsphinx to learn how to turn on OpenEars&#8217; logging functionality so you can see what is actually happening, since the log messages you mentioned look more like the sample app&#8217;s NSLog statements.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/stops-listening-if-siri-is-activated/#post-1018510</guid>
+					<title><![CDATA[Reply To: Stops Listening if Siri is activated]]></title>
+					<link>/forums/topic/stops-listening-if-siri-is-activated/#post-1018510</link>
+					<pubDate>Sun, 06 Oct 2013 01:17:07 +0000</pubDate>
+					<dc:creator>benwirz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I was able to solve the problem of Siri/Voice Control breaking OpenEars after the user holds the home button on iOS7 with the following code.  Do you think this is the correct technique?   </p>
+<p>Thanks,<br />
+Ben</p>
+<p>&#8211; (PocketsphinxController *)pocketsphinxController {<br />
+	if (pocketsphinxController == nil) {<br />
+		pocketsphinxController = [[PocketsphinxController alloc] init];<br />
+        pocketsphinxController.returnNbest = TRUE;<br />
+		pocketsphinxController.nBestNumber = 2;<br />
+        pocketsphinxController.audioSessionMixing = true;   // Allow audio interuptions<br />
+	}<br />
+	return pocketsphinxController;<br />
+}</p>
+<p>// User started Voice Control / Siri<br />
+&#8211; (void) audioSessionInterruptionDidBegin<br />
+{<br />
+    [pocketsphinxController suspendRecognition];<br />
+    [pocketsphinxController stopListening];<br />
+    pocketsphinxController = nil;<br />
+}</p>
+<p>&#8211; (void) audioSessionInterruptionDidEnd<br />
+{<br />
+    [self setupOpenEars];   // Restart Open Ears after the Interruption Ends<br />
+}</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/stops-listening-if-siri-is-activated/#post-1018511</guid>
+					<title><![CDATA[Reply To: Stops Listening if Siri is activated]]></title>
+					<link>/forums/topic/stops-listening-if-siri-is-activated/#post-1018511</link>
+					<pubDate>Sun, 06 Oct 2013 07:35:30 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Ben,</p>
+<p>Looks right to me.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/stops-listening-if-siri-is-activated/#post-1026362</guid>
+					<title><![CDATA[Reply To: Stops Listening if Siri is activated]]></title>
+					<link>/forums/topic/stops-listening-if-siri-is-activated/#post-1026362</link>
+					<pubDate>Fri, 10 Jul 2015 21:18:18 +0000</pubDate>
+					<dc:creator>warpling</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;ve been unable to narrow down a similar bug where starting/stopping Siri triggers the proper interrupt begin/end callback, but subsequent starting/stopping of Siri only triggers the interruption begin callback. I&#8217;ve seen it happen in the sample app, but it takes some serious button mashing.</p>
+<p>I&#8217;m on a time crunch so I ended up moving my interrupt functionality to happen via the <em>applicationWillResignActive</em> and <em>applicationDidBecomeActive</em> lifecycle callbacks. Just wanted to leave this here for those stumbling upon the thread looking for a solution, albeit not necessarily the proper one!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/stops-listening-if-siri-is-activated/#post-1026363</guid>
+					<title><![CDATA[Reply To: Stops Listening if Siri is activated]]></title>
+					<link>/forums/topic/stops-listening-if-siri-is-activated/#post-1026363</link>
+					<pubDate>Fri, 10 Jul 2015 21:25:09 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, this may be helpful to a later reader so I&#8217;m going to leave it place, but with the proviso that that earlier discussion in this thread is old and can&#8217;t be used with OpenEars&#8217; 2.x and later API.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/stops-listening-if-siri-is-activated/#post-1026364</guid>
+					<title><![CDATA[Reply To: Stops Listening if Siri is activated]]></title>
+					<link>/forums/topic/stops-listening-if-siri-is-activated/#post-1026364</link>
+					<pubDate>Fri, 10 Jul 2015 21:26:41 +0000</pubDate>
+					<dc:creator>warpling</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Good addendum. And to clarify: I&#8217;m currently using 2.041.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Dictionary for OpenEars. &#8211; Politepix</title>
+		<atom:link href="/forums/topic/dictionary-for-openears/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/dictionary-for-openears/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:59:42 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/dictionary-for-openears/#post-1017590</guid>
+					<title><![CDATA[Dictionary for OpenEars.]]></title>
+					<link>/forums/topic/dictionary-for-openears/#post-1017590</link>
+					<pubDate>Tue, 02 Jul 2013 09:02:25 +0000</pubDate>
+					<dc:creator>priya.bagrecha13</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>In the given sample code two OpenEars1.dic is used. I tried to change it to cmu07a.dic. But it is not recognizing words from cmu07a.dic, but it is taking words from OpenEars1.dic. Please let me know how can i make my own dictionary and use it in the sample app.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/dictionary-for-openears/#post-1017591</guid>
+					<title><![CDATA[Reply To: Dictionary for OpenEars.]]></title>
+					<link>/forums/topic/dictionary-for-openears/#post-1017591</link>
+					<pubDate>Tue, 02 Jul 2013 09:10:07 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Please use the tutorial to learn how vocabularies work in OpenEars: <a href="/openears/tutorial">/openears/tutorial</a></p>
+<p>It can also be read in the documentation that is shipped with the distribution.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/dictionary-for-openears/#post-1017592</guid>
+					<title><![CDATA[Reply To: Dictionary for OpenEars.]]></title>
+					<link>/forums/topic/dictionary-for-openears/#post-1017592</link>
+					<pubDate>Tue, 02 Jul 2013 09:43:42 +0000</pubDate>
+					<dc:creator>priya.bagrecha13</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>Thanks for your quick response. I am quite new for iOS. So please forgive me i am asking any silly questions. I have read the tutorial. According to that i have to change path for the dictionary. I did that. But it is not recognizing the correct word. It is recognizing the same words as there were in openears1.dic</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/dictionary-for-openears/#post-1017593</guid>
+					<title><![CDATA[Reply To: Dictionary for OpenEars.]]></title>
+					<link>/forums/topic/dictionary-for-openears/#post-1017593</link>
+					<pubDate>Tue, 02 Jul 2013 10:20:23 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Priya,</p>
+<p>OK, not a problem. The vocabulary is not defined by use of a dictionary file or by changing the path to a dictionary file. The only information inside a dictionary file is how the words are pronounced, which is only half of the required information that PocketsphinxController needs in order to use a specific vocabulary.</p>
+<p>Instead a vocabulary is created dynamically by giving an NSArray of words or phrase to the generateLanguageModelFromArray:withFilesNamed: method of LanguageModelGenerator. These output a matched pair of a language model and a dictionary, both of which must be used together and in the specific format output by LanguageModelGenerator. You can see exactly how if you go to the tutorial, select &#8220;Offline Speech Recognition&#8221;, and exactly follow the instructions under &#8220;Using LanguageModelGenerator&#8221;.</p>
+<p>The second issue is that in offline recognition, your vocabulary will only be accurately perceived if it is between 1-500 words (approximately; actual results will vary and I have seen accurate models around 1000 words and less-accurate models that were very small but consisted of very similar-sounding one-syllable words or words that are very uncommon in English.). So cmu07a.dic is not possible to use with OpenEars because it has about 80,000 words.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/dictionary-for-openears/#post-1017595</guid>
+					<title><![CDATA[Reply To: Dictionary for OpenEars.]]></title>
+					<link>/forums/topic/dictionary-for-openears/#post-1017595</link>
+					<pubDate>Tue, 02 Jul 2013 11:22:35 +0000</pubDate>
+					<dc:creator>priya.bagrecha13</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>Thank You very much for your quick response. It is working fine for me. </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/dictionary-for-openears/#post-1017596</guid>
+					<title><![CDATA[Reply To: Dictionary for OpenEars.]]></title>
+					<link>/forums/topic/dictionary-for-openears/#post-1017596</link>
+					<pubDate>Tue, 02 Jul 2013 11:24:35 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Super, glad to hear it.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

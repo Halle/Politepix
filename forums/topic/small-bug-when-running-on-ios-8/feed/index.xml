@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] Small bug when running on iOS 8 &#8211; Politepix</title>
+		<atom:link href="/forums/topic/small-bug-when-running-on-ios-8/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/small-bug-when-running-on-ios-8/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:50:00 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/small-bug-when-running-on-ios-8/#post-1022591</guid>
+					<title><![CDATA[[Resolved] Small bug when running on iOS 8]]></title>
+					<link>/forums/topic/small-bug-when-running-on-ios-8/#post-1022591</link>
+					<pubDate>Fri, 19 Sep 2014 23:11:18 +0000</pubDate>
+					<dc:creator>wfilleman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>Got a report from a user and confirmed it myself using the 1.66 provided sample app.</p>
+<p>If you run the sample app on iOS 8 with a bluetooth connected headset, the continuous recognition loop will fail with this error in the console:</p>
+<p>&#8220;cont_ad_calib failed, stopping.&#8221;</p>
+<p>If I disconnect the bluetooth headset from the iOS device, everything seems to work correctly like it used to.</p>
+<p>Any ideas I can try to get this bluetooth path working on iOS 8?</p>
+<p>Wes</p>
+<p>BTW: Congrats to you and OpenEars for the Space Station gig. That is very cool.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/small-bug-when-running-on-ios-8/#post-1022594</guid>
+					<title><![CDATA[Reply To: [Resolved] Small bug when running on iOS 8]]></title>
+					<link>/forums/topic/small-bug-when-running-on-ios-8/#post-1022594</link>
+					<pubDate>Sat, 20 Sep 2014 08:11:22 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Wes,</p>
+<p>Thanks! Unfortunately the bluetooth support is marked as experimental because I don&#8217;t keep a bluetooth testbed due to device diversity, but I can try to give you some help with this regardless – just setting expectations that we probably will have to troubleshoot it in tandem. Upcoming OpenEars 2.0 uses all of the current APIs for this but isn&#8217;t ready to ship yet, but we might be able to backport some code from it.</p>
+<p>Step one is to upgrade to the current version of OpenEars and any plugins and show me the failure logs with OpenEarsLogging and verbosePocketsphinx on.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/small-bug-when-running-on-ios-8/#post-1022603</guid>
+					<title><![CDATA[Reply To: [Resolved] Small bug when running on iOS 8]]></title>
+					<link>/forums/topic/small-bug-when-running-on-ios-8/#post-1022603</link>
+					<pubDate>Mon, 22 Sep 2014 17:16:06 +0000</pubDate>
+					<dc:creator>wfilleman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks Halle,</p>
+<p>Don&#8217;t know if you&#8217;d prefer an email on this, so, just let me know, but here&#8217;s the entire log output with OpenEars 1.7 with OpenEarsLogging and verbosePockersphinx turned on with a bluetooth headset connected to an iPhone with iOS8:</p>
+<p>2014-09-22 10:11:40.085 OpenEarsSampleApp[197:5624] Starting OpenEars logging for OpenEars version 1.7 on 32-bit device: iPhone running iOS version: 8.000000<br />
+2014-09-22 10:11:40.090 OpenEarsSampleApp[197:5624] acousticModelPath is /private/var/mobile/Containers/Bundle/Application/16FB9F4F-0683-499B-A759-FB6928A35CFC/OpenEarsSampleApp.app/AcousticModelEnglish.bundle<br />
+2014-09-22 10:11:40.123 OpenEarsSampleApp[197:5624] Starting dynamic language model generation<br />
+2014-09-22 10:11:40.131 OpenEarsSampleApp[197:5624] Able to open /var/mobile/Containers/Data/Application/CC4883AD-BF78-460E-A31A-91D93BECC7BD/Library/Caches/FirstOpenEarsDynamicLanguageModel.corpus for reading<br />
+2014-09-22 10:11:40.133 OpenEarsSampleApp[197:5624] Able to open /var/mobile/Containers/Data/Application/CC4883AD-BF78-460E-A31A-91D93BECC7BD/Library/Caches/FirstOpenEarsDynamicLanguageModel_pipe.txt for writing<br />
+2014-09-22 10:11:40.133 OpenEarsSampleApp[197:5624] Starting text2wfreq_impl<br />
+2014-09-22 10:11:40.142 OpenEarsSampleApp[197:5624] Done with text2wfreq_impl<br />
+2014-09-22 10:11:40.142 OpenEarsSampleApp[197:5624] Able to open /var/mobile/Containers/Data/Application/CC4883AD-BF78-460E-A31A-91D93BECC7BD/Library/Caches/FirstOpenEarsDynamicLanguageModel_pipe.txt for reading.<br />
+2014-09-22 10:11:40.144 OpenEarsSampleApp[197:5624] Able to open /var/mobile/Containers/Data/Application/CC4883AD-BF78-460E-A31A-91D93BECC7BD/Library/Caches/FirstOpenEarsDynamicLanguageModel.vocab for reading.<br />
+2014-09-22 10:11:40.144 OpenEarsSampleApp[197:5624] Starting wfreq2vocab<br />
+2014-09-22 10:11:40.147 OpenEarsSampleApp[197:5624] Done with wfreq2vocab<br />
+2014-09-22 10:11:40.148 OpenEarsSampleApp[197:5624] Starting text2idngram<br />
+2014-09-22 10:11:40.163 OpenEarsSampleApp[197:5624] Done with text2idngram<br />
+2014-09-22 10:11:40.169 OpenEarsSampleApp[197:5624] Starting idngram2lm</p>
+<p>2014-09-22 10:11:40.183 OpenEarsSampleApp[197:5624] Done with idngram2lm<br />
+2014-09-22 10:11:40.183 OpenEarsSampleApp[197:5624] Starting sphinx_lm_convert<br />
+2014-09-22 10:11:40.190 OpenEarsSampleApp[197:5624] Finishing sphinx_lm_convert<br />
+2014-09-22 10:11:40.193 OpenEarsSampleApp[197:5624] Done creating language model with CMUCLMTK in 0.069508 seconds.<br />
+2014-09-22 10:11:40.239 OpenEarsSampleApp[197:5624] I&#8217;m done running performDictionaryLookup and it took 0.034399 seconds<br />
+2014-09-22 10:11:40.246 OpenEarsSampleApp[197:5624] I&#8217;m done running dynamic language model generation and it took 0.156091 seconds<br />
+2014-09-22 10:11:40.247 OpenEarsSampleApp[197:5624] Dynamic language generator completed successfully, you can find your new files FirstOpenEarsDynamicLanguageModel.DMP<br />
+ and<br />
+FirstOpenEarsDynamicLanguageModel.dic<br />
+ at the paths<br />
+/var/mobile/Containers/Data/Application/CC4883AD-BF78-460E-A31A-91D93BECC7BD/Library/Caches/FirstOpenEarsDynamicLanguageModel.DMP<br />
+and<br />
+/var/mobile/Containers/Data/Application/CC4883AD-BF78-460E-A31A-91D93BECC7BD/Library/Caches/FirstOpenEarsDynamicLanguageModel.dic<br />
+2014-09-22 10:11:40.247 OpenEarsSampleApp[197:5624] acousticModelPath is /private/var/mobile/Containers/Bundle/Application/16FB9F4F-0683-499B-A759-FB6928A35CFC/OpenEarsSampleApp.app/AcousticModelEnglish.bundle<br />
+2014-09-22 10:11:40.253 OpenEarsSampleApp[197:5624] Starting dynamic language model generation<br />
+2014-09-22 10:11:40.260 OpenEarsSampleApp[197:5624] Able to open /var/mobile/Containers/Data/Application/CC4883AD-BF78-460E-A31A-91D93BECC7BD/Library/Caches/SecondOpenEarsDynamicLanguageModel.corpus for reading<br />
+2014-09-22 10:11:40.262 OpenEarsSampleApp[197:5624] Able to open /var/mobile/Containers/Data/Application/CC4883AD-BF78-460E-A31A-91D93BECC7BD/Library/Caches/SecondOpenEarsDynamicLanguageModel_pipe.txt for writing<br />
+2014-09-22 10:11:40.262 OpenEarsSampleApp[197:5624] Starting text2wfreq_impl<br />
+2014-09-22 10:11:40.271 OpenEarsSampleApp[197:5624] Done with text2wfreq_impl<br />
+2014-09-22 10:11:40.271 OpenEarsSampleApp[197:5624] Able to open /var/mobile/Containers/Data/Application/CC4883AD-BF78-460E-A31A-91D93BECC7BD/Library/Caches/SecondOpenEarsDynamicLanguageModel_pipe.txt for reading.<br />
+2014-09-22 10:11:40.273 OpenEarsSampleApp[197:5624] Able to open /var/mobile/Containers/Data/Application/CC4883AD-BF78-460E-A31A-91D93BECC7BD/Library/Caches/SecondOpenEarsDynamicLanguageModel.vocab for reading.<br />
+2014-09-22 10:11:40.273 OpenEarsSampleApp[197:5624] Starting wfreq2vocab<br />
+2014-09-22 10:11:40.276 OpenEarsSampleApp[197:5624] Done with wfreq2vocab<br />
+2014-09-22 10:11:40.277 OpenEarsSampleApp[197:5624] Starting text2idngram<br />
+2014-09-22 10:11:40.293 OpenEarsSampleApp[197:5624] Done with text2idngram<br />
+2014-09-22 10:11:40.311 OpenEarsSampleApp[197:5624] Starting idngram2lm</p>
+<p>2014-09-22 10:11:40.323 OpenEarsSampleApp[197:5624] Done with idngram2lm<br />
+2014-09-22 10:11:40.323 OpenEarsSampleApp[197:5624] Starting sphinx_lm_convert<br />
+2014-09-22 10:11:40.328 OpenEarsSampleApp[197:5624] Finishing sphinx_lm_convert<br />
+2014-09-22 10:11:40.330 OpenEarsSampleApp[197:5624] Done creating language model with CMUCLMTK in 0.076958 seconds.<br />
+2014-09-22 10:11:40.373 OpenEarsSampleApp[197:5624] The word QUIDNUNC was not found in the dictionary /private/var/mobile/Containers/Bundle/Application/16FB9F4F-0683-499B-A759-FB6928A35CFC/OpenEarsSampleApp.app/AcousticModelEnglish.bundle/LanguageModelGeneratorLookupList.text/LanguageModelGeneratorLookupList.text.<br />
+2014-09-22 10:11:40.373 OpenEarsSampleApp[197:5624] Now using the fallback method to look up the word QUIDNUNC<br />
+2014-09-22 10:11:40.373 OpenEarsSampleApp[197:5624] If this is happening more frequently than you would expect, the most likely cause for it is since you are using the English phonetic lookup dictionary is that your words are not in English or aren&#8217;t dictionary words, or that you are submitting the words in lowercase when they need to be entirely written in uppercase.<br />
+2014-09-22 10:11:40.377 OpenEarsSampleApp[197:5624] Using convertGraphemes for the word or phrase QUIDNUNC which doesn&#8217;t appear in the dictionary<br />
+2014-09-22 10:11:40.409 OpenEarsSampleApp[197:5624] I&#8217;m done running performDictionaryLookup and it took 0.072901 seconds<br />
+2014-09-22 10:11:40.420 OpenEarsSampleApp[197:5624] I&#8217;m done running dynamic language model generation and it took 0.172638 seconds<br />
+2014-09-22 10:11:40.421 OpenEarsSampleApp[197:5624] Dynamic language generator completed successfully, you can find your new files SecondOpenEarsDynamicLanguageModel.DMP<br />
+ and<br />
+SecondOpenEarsDynamicLanguageModel.dic<br />
+ at the paths<br />
+/var/mobile/Containers/Data/Application/CC4883AD-BF78-460E-A31A-91D93BECC7BD/Library/Caches/SecondOpenEarsDynamicLanguageModel.DMP<br />
+and<br />
+/var/mobile/Containers/Data/Application/CC4883AD-BF78-460E-A31A-91D93BECC7BD/Library/Caches/SecondOpenEarsDynamicLanguageModel.dic<br />
+2014-09-22 10:11:40.421 OpenEarsSampleApp[197:5624] </p>
+<p>Welcome to the OpenEars sample project. This project understands the words:<br />
+BACKWARD,<br />
+CHANGE,<br />
+FORWARD,<br />
+GO,<br />
+LEFT,<br />
+MODEL,<br />
+RIGHT,<br />
+TURN,<br />
+and if you say &#8220;CHANGE MODEL&#8221; it will switch to its dynamically-generated model which understands the words:<br />
+CHANGE,<br />
+MODEL,<br />
+MONDAY,<br />
+TUESDAY,<br />
+WEDNESDAY,<br />
+THURSDAY,<br />
+FRIDAY,<br />
+SATURDAY,</p>
+<p>SUNDAY,<br />
+QUIDNUNC<br />
+2014-09-22 10:11:40.430 OpenEarsSampleApp[197:5624] User gave mic permission for this app.<br />
+2014-09-22 10:11:40.430 OpenEarsSampleApp[197:5624] Leaving sample rate at the default of 16000.<br />
+2014-09-22 10:11:40.431 OpenEarsSampleApp[197:5624] The audio session has never been initialized so we will do that now.<br />
+2014-09-22 10:11:40.431 OpenEarsSampleApp[197:5624] Checking and resetting all audio session settings.<br />
+2014-09-22 10:11:40.432 OpenEarsSampleApp[197:5624] audioCategory is incorrect, we will change it.<br />
+2014-09-22 10:11:40.432 OpenEarsSampleApp[197:5624] audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.<br />
+2014-09-22 10:11:40.432 OpenEarsSampleApp[197:5624] bluetoothInput is incorrect, we will change it.<br />
+2014-09-22 10:11:40.433 OpenEarsSampleApp[197:5624] bluetooth input is now on the correct setting of 1.<br />
+2014-09-22 10:11:40.434 OpenEarsSampleApp[197:5624] Output Device: HeadsetBT.<br />
+2014-09-22 10:11:40.435 OpenEarsSampleApp[197:5624] preferredBufferSize is incorrect, we will change it.<br />
+2014-09-22 10:11:40.435 OpenEarsSampleApp[197:5624] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2014-09-22 10:11:40.435 OpenEarsSampleApp[197:5624] preferredSampleRateCheck is incorrect, we will change it.<br />
+2014-09-22 10:11:40.436 OpenEarsSampleApp[197:5624] preferred hardware sample rate is now on the correct setting of 16000.000000.<br />
+2014-09-22 10:11:40.454 OpenEarsSampleApp[197:5624] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2014-09-22 10:11:40.454 OpenEarsSampleApp[197:5624] Exiting startAudioSession.<br />
+2014-09-22 10:11:40.458 OpenEarsSampleApp[197:5683] setSecondsOfSilence value of 0.000000 was too large or too small or was NULL, using default of 0.700000.<br />
+2014-09-22 10:11:40.459 OpenEarsSampleApp[197:5683] Project has these words or phrases in its dictionary:<br />
+BACKWARD<br />
+CHANGE<br />
+FORWARD<br />
+GO<br />
+LEFT<br />
+MODEL<br />
+RIGHT<br />
+TURN<br />
+2014-09-22 10:11:40.459 OpenEarsSampleApp[197:5683] Recognition loop has started<br />
+INFO: file_omitted(0): Parsing command line:<br />
+\<br />
+	-lm /var/mobile/Containers/Data/Application/CC4883AD-BF78-460E-A31A-91D93BECC7BD/Library/Caches/FirstOpenEarsDynamicLanguageModel.DMP \<br />
+	-beam 1e-66 \<br />
+	-bestpath yes \<br />
+	-dict /var/mobile/Containers/Data/Application/CC4883AD-BF78-460E-A31A-91D93BECC7BD/Library/Caches/FirstOpenEarsDynamicLanguageModel.dic \<br />
+	-hmm /private/var/mobile/Containers/Bundle/Application/16FB9F4F-0683-499B-A759-FB6928A35CFC/OpenEarsSampleApp.app/AcousticModelEnglish.bundle \<br />
+	-lw 6.500000 \<br />
+	-samprate 16000 </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-alpha		0.97		9.700000e-01<br />
+-argfile<br />
+-ascale		20.0		2.000000e+01<br />
+-aw		1		1<br />
+-backtrace	no		no<br />
+-beam		1e-48		1.000000e-66<br />
+-bestpath	yes		yes<br />
+-bestpathlw	9.5		9.500000e+00<br />
+-bghist		no		no<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		8.0<br />
+-compallsen	no		no<br />
+-debug				0<br />
+-dict				/var/mobile/Containers/Data/Application/CC4883AD-BF78-460E-A31A-91D93BECC7BD/Library/Caches/FirstOpenEarsDynamicLanguageModel.dic<br />
+-dictcase	no		no<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-ds		1		1<br />
+-fdict<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-featparams<br />
+-fillprob	1e-8		1.000000e-08<br />
+-frate		100		100<br />
+-fsg<br />
+-fsgusealtpron	yes		yes<br />
+-fsgusefiller	yes		yes<br />
+-fwdflat	yes		yes<br />
+-fwdflatbeam	1e-64		1.000000e-64<br />
+-fwdflatefwid	4		4<br />
+-fwdflatlw	8.5		8.500000e+00<br />
+-fwdflatsfwin	25		25<br />
+-fwdflatwbeam	7e-29		7.000000e-29<br />
+-fwdtree	yes		yes<br />
+-hmm				/private/var/mobile/Containers/Bundle/Application/16FB9F4F-0683-499B-A759-FB6928A35CFC/OpenEarsSampleApp.app/AcousticModelEnglish.bundle<br />
+-input_endian	little		little<br />
+-jsgf<br />
+-kdmaxbbi	-1		-1<br />
+-kdmaxdepth	0		0<br />
+-kdtree<br />
+-latsize	5000		5000<br />
+-lda<br />
+-ldadim		0		0<br />
+-lextreedump	0		0<br />
+-lifter		0		0<br />
+-lm				/var/mobile/Containers/Data/Application/CC4883AD-BF78-460E-A31A-91D93BECC7BD/Library/Caches/FirstOpenEarsDynamicLanguageModel.DMP<br />
+-lmctl<br />
+-lmname		default		default<br />
+-logbase	1.0001		1.000100e+00<br />
+-logfn<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.333333e+02<br />
+-lpbeam		1e-40		1.000000e-40<br />
+-lponlybeam	7e-29		7.000000e-29<br />
+-lw		6.5		6.500000e+00<br />
+-maxhmmpf	-1		-1<br />
+-maxnewoov	20		20<br />
+-maxwpf		-1		-1<br />
+-mdef<br />
+-mean<br />
+-mfclogdir<br />
+-min_endfr	0		0<br />
+-mixw<br />
+-mixwfloor	0.0000001	1.000000e-07<br />
+-mllr<br />
+-mmap		yes		yes<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		40<br />
+-nwpen		1.0		1.000000e+00<br />
+-pbeam		1e-48		1.000000e-48<br />
+-pip		1.0		1.000000e+00<br />
+-pl_beam	1e-10		1.000000e-10<br />
+-pl_pbeam	1e-5		1.000000e-05<br />
+-pl_window	0		0<br />
+-rawlogdir<br />
+-remove_dc	no		no<br />
+-round_filters	yes		yes<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-sendump<br />
+-senlogdir<br />
+-senmgau<br />
+-silprob	0.005		5.000000e-03<br />
+-smoothspec	no		no<br />
+-svspec<br />
+-tmat<br />
+-tmatfloor	0.0001		1.000000e-04<br />
+-topn		4		4<br />
+-topn_beam	0		0<br />
+-toprule<br />
+-transform	legacy		legacy<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	6.855498e+03<br />
+-usewdphones	no		no<br />
+-uw		1.0		1.000000e+00<br />
+-var<br />
+-varfloor	0.0001		1.000000e-04<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wbeam		7e-29		7.000000e-29<br />
+-wip		0.65		6.500000e-01<br />
+-wlen		0.025625	2.562500e-02</p>
+<p>INFO: file_omitted(0): Parsing command line:<br />
+\<br />
+	-nfilt 20 \<br />
+	-lowerf 1 \<br />
+	-upperf 4000 \<br />
+	-wlen 0.025 \<br />
+	-transform dct \<br />
+	-round_filters no \<br />
+	-remove_dc yes \<br />
+	-svspec 0-12/13-25/26-38 \<br />
+	-feat 1s_c_d_dd \<br />
+	-agc none \<br />
+	-cmn current \<br />
+	-cmninit 47 \<br />
+	-varnorm no </p>
+<p>Current configuration:<br />
+[NAME]		[DEFLT]		[VALUE]<br />
+-agc		none		none<br />
+-agcthresh	2.0		2.000000e+00<br />
+-alpha		0.97		9.700000e-01<br />
+-ceplen		13		13<br />
+-cmn		current		current<br />
+-cmninit	8.0		47<br />
+-dither		no		no<br />
+-doublebw	no		no<br />
+-feat		1s_c_d_dd	1s_c_d_dd<br />
+-frate		100		100<br />
+-input_endian	little		little<br />
+-lda<br />
+-ldadim		0		0<br />
+-lifter		0		0<br />
+-logspec	no		no<br />
+-lowerf		133.33334	1.000000e+00<br />
+-ncep		13		13<br />
+-nfft		512		512<br />
+-nfilt		40		20<br />
+-remove_dc	no		yes<br />
+-round_filters	yes		no<br />
+-samprate	16000		1.600000e+04<br />
+-seed		-1		-1<br />
+-smoothspec	no		no<br />
+-svspec				0-12/13-25/26-38<br />
+-transform	legacy		dct<br />
+-unit_area	yes		yes<br />
+-upperf		6855.4976	4.000000e+03<br />
+-varnorm	no		no<br />
+-verbose	no		no<br />
+-warp_params<br />
+-warp_type	inverse_linear	inverse_linear<br />
+-wlen		0.025625	2.500000e-02</p>
+<p>INFO: file_omitted(0): Parsed model-specific feature parameters from /private/var/mobile/Containers/Bundle/Application/16FB9F4F-0683-499B-A759-FB6928A35CFC/OpenEarsSampleApp.app/AcousticModelEnglish.bundle/feat.params<br />
+INFO: file_omitted(0): Initializing feature stream to type: &#8216;1s_c_d_dd&#8217;, ceplen=13, CMN=&#8217;current&#8217;, VARNORM=&#8217;no&#8217;, AGC=&#8217;none&#8217;<br />
+INFO: file_omitted(0): mean[0]= 12.00, mean[1..12]= 0.0<br />
+INFO: file_omitted(0): Using subvector specification 0-12/13-25/26-38<br />
+INFO: file_omitted(0): Reading model definition: /private/var/mobile/Containers/Bundle/Application/16FB9F4F-0683-499B-A759-FB6928A35CFC/OpenEarsSampleApp.app/AcousticModelEnglish.bundle/mdef<br />
+INFO: file_omitted(0): Found byte-order mark BMDF, assuming this is a binary mdef file<br />
+INFO: file_omitted(0): Reading binary model definition: /private/var/mobile/Containers/Bundle/Application/16FB9F4F-0683-499B-A759-FB6928A35CFC/OpenEarsSampleApp.app/AcousticModelEnglish.bundle/mdef<br />
+2014-09-22 10:11:40.488 OpenEarsSampleApp[197:5678] Audio route has changed for the following reason:<br />
+2014-09-22 10:11:40.495 OpenEarsSampleApp[197:5678] There has been a change of category<br />
+2014-09-22 10:11:40.495 OpenEarsSampleApp[197:5678] The previous audio route was HeadphonesBT<br />
+2014-09-22 10:11:40.496 OpenEarsSampleApp[197:5678] This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is HeadsetBT<br />
+INFO: file_omitted(0): 50 CI-phone, 143047 CD-phone, 3 emitstate/phone, 150 CI-sen, 5150 Sen, 27135 Sen-Seq<br />
+INFO: file_omitted(0): Reading HMM transition probability matrices: /private/var/mobile/Containers/Bundle/Application/16FB9F4F-0683-499B-A759-FB6928A35CFC/OpenEarsSampleApp.app/AcousticModelEnglish.bundle/transition_matrices<br />
+INFO: file_omitted(0): Attempting to use SCHMM computation module<br />
+INFO: file_omitted(0): Reading mixture gaussian parameter: /private/var/mobile/Containers/Bundle/Application/16FB9F4F-0683-499B-A759-FB6928A35CFC/OpenEarsSampleApp.app/AcousticModelEnglish.bundle/means<br />
+INFO: file_omitted(0): 1 codebook, 3 feature, size:<br />
+INFO: file_omitted(0):  256&#215;13<br />
+INFO: file_omitted(0):  256&#215;13<br />
+INFO: file_omitted(0):  256&#215;13<br />
+INFO: file_omitted(0): Reading mixture gaussian parameter: /private/var/mobile/Containers/Bundle/Application/16FB9F4F-0683-499B-A759-FB6928A35CFC/OpenEarsSampleApp.app/AcousticModelEnglish.bundle/variances<br />
+INFO: file_omitted(0): 1 codebook, 3 feature, size:<br />
+INFO: file_omitted(0):  256&#215;13<br />
+INFO: file_omitted(0):  256&#215;13<br />
+INFO: file_omitted(0):  256&#215;13<br />
+INFO: file_omitted(0): 0 variance values floored<br />
+INFO: file_omitted(0): Loading senones from dump file /private/var/mobile/Containers/Bundle/Application/16FB9F4F-0683-499B-A759-FB6928A35CFC/OpenEarsSampleApp.app/AcousticModelEnglish.bundle/sendump<br />
+INFO: file_omitted(0): BEGIN FILE FORMAT DESCRIPTION<br />
+INFO: file_omitted(0): Using memory-mapped I/O for senones<br />
+INFO: file_omitted(0): Maximum top-N: 4 Top-N beams: 0 0 0<br />
+INFO: file_omitted(0): Allocating 4115 * 20 bytes (80 KiB) for word entries<br />
+INFO: file_omitted(0): Reading main dictionary: /var/mobile/Containers/Data/Application/CC4883AD-BF78-460E-A31A-91D93BECC7BD/Library/Caches/FirstOpenEarsDynamicLanguageModel.dic<br />
+INFO: file_omitted(0): Allocated 0 KiB for strings, 0 KiB for phones<br />
+INFO: file_omitted(0): 8 words read<br />
+INFO: file_omitted(0): Reading filler dictionary: /private/var/mobile/Containers/Bundle/Application/16FB9F4F-0683-499B-A759-FB6928A35CFC/OpenEarsSampleApp.app/AcousticModelEnglish.bundle/noisedict<br />
+INFO: file_omitted(0): Allocated 0 KiB for strings, 0 KiB for phones<br />
+INFO: file_omitted(0): 11 words read<br />
+INFO: file_omitted(0): Building PID tables for dictionary<br />
+INFO: file_omitted(0): Allocating 50^3 * 2 bytes (244 KiB) for word-initial triphones<br />
+2014-09-22 10:11:40.537 OpenEarsSampleApp[197:5624] Pocketsphinx is starting up.<br />
+INFO: file_omitted(0): Allocated 30200 bytes (29 KiB) for word-final triphones<br />
+INFO: file_omitted(0): Allocated 30200 bytes (29 KiB) for single-phone word triphones<br />
+INFO: file_omitted(0): No \data\ mark in LM file<br />
+INFO: file_omitted(0): Will use memory-mapped I/O for LM file<br />
+INFO: file_omitted(0): ngrams 1=10, 2=16, 3=8<br />
+INFO: file_omitted(0):       10 = LM.unigrams(+trailer) read<br />
+INFO: file_omitted(0):       16 = LM.bigrams(+trailer) read<br />
+INFO: file_omitted(0):        8 = LM.trigrams read<br />
+INFO: file_omitted(0):        3 = LM.prob2 entries read<br />
+INFO: file_omitted(0):        3 = LM.bo_wt2 entries read<br />
+INFO: file_omitted(0):        2 = LM.prob3 entries read<br />
+INFO: file_omitted(0):        1 = LM.tseg_base entries read<br />
+INFO: file_omitted(0):       10 = ascii word strings read<br />
+INFO: file_omitted(0): 8 unique initial diphones<br />
+INFO: file_omitted(0): 0 root, 0 non-root channels, 12 single-phone words<br />
+INFO: file_omitted(0): Creating search tree<br />
+INFO: file_omitted(0): before: 0 root, 0 non-root channels, 12 single-phone words<br />
+INFO: file_omitted(0): after: max nonroot chan increased to 145<br />
+INFO: file_omitted(0): after: 8 root, 17 non-root channels, 11 single-phone words<br />
+INFO: file_omitted(0): fwdflat: min_ef_width = 4, max_sf_win = 25<br />
+2014-09-22 10:11:40.579 OpenEarsSampleApp[197:5683] Starting openAudioDevice on the device.<br />
+2014-09-22 10:11:40.579 OpenEarsSampleApp[197:5683] Audio unit wrapper successfully created.<br />
+2014-09-22 10:11:40.591 OpenEarsSampleApp[197:5683] Set audio route to HeadsetBT<br />
+2014-09-22 10:11:40.593 OpenEarsSampleApp[197:5683] There is no CMN plist so we are using the fresh CMN value 47.000000.<br />
+2014-09-22 10:11:40.594 OpenEarsSampleApp[197:5683] Checking and resetting all audio session settings.<br />
+2014-09-22 10:11:40.595 OpenEarsSampleApp[197:5683] audioCategory is correct, we will leave it as it is.<br />
+2014-09-22 10:11:40.596 OpenEarsSampleApp[197:5683] bluetoothInput is correct, we will leave it as it is.<br />
+2014-09-22 10:11:40.596 OpenEarsSampleApp[197:5683] Output Device: HeadsetBT.<br />
+2014-09-22 10:11:40.597 OpenEarsSampleApp[197:5683] preferredBufferSize is incorrect, we will change it.<br />
+2014-09-22 10:11:40.599 OpenEarsSampleApp[197:5683] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2014-09-22 10:11:40.600 OpenEarsSampleApp[197:5683] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2014-09-22 10:11:40.600 OpenEarsSampleApp[197:5683] Setting the variables for the device and starting it.<br />
+2014-09-22 10:11:40.601 OpenEarsSampleApp[197:5683] Looping through ringbuffer sections and pre-allocating them.<br />
+2014-09-22 10:11:42.219 OpenEarsSampleApp[197:5683] Started audio output unit.<br />
+2014-09-22 10:11:42.220 OpenEarsSampleApp[197:5683] Calibration has started<br />
+2014-09-22 10:11:42.220 OpenEarsSampleApp[197:5624] Pocketsphinx calibration has started.<br />
+2014-09-22 10:11:44.423 OpenEarsSampleApp[197:5683] cont_ad_calib failed, stopping.<br />
+2014-09-22 10:11:44.425 OpenEarsSampleApp[197:5624] Setting up the continuous recognition loop has failed for some reason, please turn on [OpenEarsLogging startOpenEarsLogging] in OpenEarsConfig.h to learn more.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/small-bug-when-running-on-ios-8/#post-1022604</guid>
+					<title><![CDATA[Reply To: [Resolved] Small bug when running on iOS 8]]></title>
+					<link>/forums/topic/small-bug-when-running-on-ios-8/#post-1022604</link>
+					<pubDate>Mon, 22 Sep 2014 17:22:44 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, sorry to be the bearer of bad news, but this log doesn&#8217;t describe any bluetooth issues and I unfortunately don&#8217;t have a device that replicates it. I implicitly believe it&#8217;s happening, but you&#8217;d need to do some troubleshooting in order to give me more to work with.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/small-bug-when-running-on-ios-8/#post-1022605</guid>
+					<title><![CDATA[Reply To: [Resolved] Small bug when running on iOS 8]]></title>
+					<link>/forums/topic/small-bug-when-running-on-ios-8/#post-1022605</link>
+					<pubDate>Mon, 22 Sep 2014 20:19:09 +0000</pubDate>
+					<dc:creator>wfilleman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I agree, it&#8217;s not a useful log dump. Luckily the failure seems to be limited in the cont_ad_calib call in the framework. When I get some time I&#8217;ll see if I can dig into this function and figure it out.</p>
+<p>&#8220;I unfortunately don’t have a device that replicates it&#8221;<br />
+&#8211; Does this mean your bluetooth test device works fine? Or does this mean, you don&#8217;t have a bluetooth headset to test with?</p>
+<p>From the user reports and my testing, I believe any bluetooth headset will expose the issue.</p>
+<p>Wes</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/small-bug-when-running-on-ios-8/#post-1022610</guid>
+					<title><![CDATA[Reply To: [Resolved] Small bug when running on iOS 8]]></title>
+					<link>/forums/topic/small-bug-when-running-on-ios-8/#post-1022610</link>
+					<pubDate>Tue, 23 Sep 2014 18:37:23 +0000</pubDate>
+					<dc:creator>wfilleman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ok, got some info for you.</p>
+<p>The first failure occurs in the find_thresh(cont_ad_t * r) function.</p>
+<p>The issue here is the detected max input levels are way above the defined max_noise level of 70. The Bluetooth connected headset is coming in at 98 or so. So, the first thing I did was to up CONT_AD_MAX_NOISE to 100 up from 70.</p>
+<p>That got me though the sound calibration, but there&#8217;s another problem and this one I have no idea how to solve.</p>
+<p>The first vocal input seems to work, but after the first recognition, something happens to the input stream from the mic. The function getDecibels in ContinuousAudioUnit.m starts reporting that the sampleDB value is &#8220;-inf&#8221;. Can&#8217;t say I&#8217;ve seen that before.</p>
+<p>The logic here in getDecibels is specifically filtering out for inf values so someone thought of this or has seen it before. </p>
+<p>If I turn off the headset everything goes back to normal and works.</p>
+<p>My assumption here is the inf value indicates that the mic data is trashed and shouldn&#8217;t be used. So, the big question is, any ideas on why that&#8217;s happening?</p>
+<p>I&#8217;ve tried this on an iPhone and an iPad Mini running iOS 8.0. Same results.</p>
+<p>Thanks Halle,<br />
+Wes</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/small-bug-when-running-on-ios-8/#post-1022616</guid>
+					<title><![CDATA[Reply To: [Resolved] Small bug when running on iOS 8]]></title>
+					<link>/forums/topic/small-bug-when-running-on-ios-8/#post-1022616</link>
+					<pubDate>Wed, 24 Sep 2014 08:20:49 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, well first of all, I&#8217;m sorry you&#8217;re seeing this issue and I appreciate your willingness to dig into it.  I&#8217;m a bit torn here because both the ancient-code AudioSessionManager and cont_ad_calib are both 100% gone in the under-testing OpenEars 2.0 due to its new VAD/lack of calibration requirements/complete code modernization, so any serious work on this is a) going in the trash in the near term and b) adding up tasks before it is possible to ship the version that probably doesn&#8217;t have this issue. However, it&#8217;s going to be a bit before it is ready so I can&#8217;t comfortably recommend waiting for the release or possible beta release if this is a serious shipping issue for you. These are the kinds of tricky situations which come up when doing a major upgrade but I think it is going to be worth it with the improvements that are coming. I definitely want to see if I can help you with this and if it&#8217;s all right, let&#8217;s see if we can keep making progress on it together without my putting it into my current task list for investigation. If that is possible, I appreciate it.</p>
+<p>It is possible but maybe a little unlikely that bluetooth just got a lot louder in iOS8. What I think is more likely is that it isn&#8217;t working, and a non-audio signal is being passed.</p>
+<blockquote><p>The logic here in getDecibels is specifically filtering out for inf values so someone thought of this or has seen it before.</p></blockquote>
+<p>I have always checked for impossible values as part of the general error checking for bad values but I don&#8217;t recall that it was due to a particular symptom that I saw, sorry. Since that code is over four years old (but still chugging along nicely) it is unlikely that a reason for inf values then overlaps with one now, SDK-wise.</p>
+<p>The new audio session management code in OpenEars 2.0 current sets up the audio category like this:</p>
+<pre>
+NSError *error = nil;
+  [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionMixWithOthers | AVAudioSessionCategoryOptionAllowBluetooth | AVAudioSessionCategoryOptionDefaultToSpeaker error:&#038;error];
+if(error) {
+NSLog(@"Error setting up audio session category with options: %@", error);
+}
+</pre>
+<p>If you use this modern category code rather than this in ContinuousAudioUnit.m:</p>
+<pre>
+            UInt32 sessionCategory = kAudioSessionCategory_PlayAndRecord;
+            AudioSessionSetProperty (kAudioSessionProperty_AudioCategory, sizeof (sessionCategory), &#038;sessionCategory);
+</pre>
+<p>Do you see any improvement? You may need to #import AVFoundation/AVFoundation.h.</p>
+<p>Thanks Wes,</p>
+<p>Halle</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/small-bug-when-running-on-ios-8/#post-1022620</guid>
+					<title><![CDATA[Reply To: [Resolved] Small bug when running on iOS 8]]></title>
+					<link>/forums/topic/small-bug-when-running-on-ios-8/#post-1022620</link>
+					<pubDate>Wed, 24 Sep 2014 20:11:59 +0000</pubDate>
+					<dc:creator>wfilleman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks Halle, but unfortunately this didn&#8217;t have any effect.</p>
+<p>I replaced the code as instructed, rebuilt and tested, but the result was the same.</p>
+<p>What&#8217;s a little odd is that it works initially so that leads me to believe that the initial setup is correct or on the right track. It&#8217;s after pausing during the recognition state where it usually doesn&#8217;t come back (I get the inf values in getDecibels).</p>
+<p>As soon as Apple gets iOS 8.0.1 figured out I&#8217;ll test on 8.0.1 to see if the issue persists.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/small-bug-when-running-on-ios-8/#post-1022621</guid>
+					<title><![CDATA[Reply To: [Resolved] Small bug when running on iOS 8]]></title>
+					<link>/forums/topic/small-bug-when-running-on-ios-8/#post-1022621</link>
+					<pubDate>Wed, 24 Sep 2014 20:24:04 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry to hear it, can you describe this to me in more depth:</p>
+<blockquote><p> It’s after pausing during the recognition state where it usually doesn’t come back</p></blockquote>
+<p>What kind of pausing?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/small-bug-when-running-on-ios-8/#post-1022622</guid>
+					<title><![CDATA[Reply To: [Resolved] Small bug when running on iOS 8]]></title>
+					<link>/forums/topic/small-bug-when-running-on-ios-8/#post-1022622</link>
+					<pubDate>Wed, 24 Sep 2014 20:53:17 +0000</pubDate>
+					<dc:creator>wfilleman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sure thing:</p>
+<p>In the sample app when you speak, the Pocketsphinx Input Levels will stop while Flite is speaking the recognized speech. After Flite is done speaking, I&#8217;ll see the Pocketsphinx Input Levels bounce around according to the DB levels of the mic input.</p>
+<p>This all looks normal. Don&#8217;t want to try to recognize Flite speech.</p>
+<p>With the Bluetooth mic attached, after Flite is done speaking on the first recognition, the Pocketphinx Input Levels goes to -120db and stays there. Meanwhile under the hood my custom debug statements are showing &#8220;inf&#8221; for the decibel levels.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

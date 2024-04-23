@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Managing interruptions from incoming phone call &#8211; Politepix</title>
+		<atom:link href="/forums/topic/managing-interruptions-from-incoming-phone-call/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/managing-interruptions-from-incoming-phone-call/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:06:27 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/managing-interruptions-from-incoming-phone-call/#post-1019361</guid>
+					<title><![CDATA[Managing interruptions from incoming phone call]]></title>
+					<link>/forums/topic/managing-interruptions-from-incoming-phone-call/#post-1019361</link>
+					<pubDate>Thu, 09 Jan 2014 21:58:10 +0000</pubDate>
+					<dc:creator>DaveM</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Greetings and thanks for a fantastic library.  I have implemented the PocketsphinxController into a test app, as well as all the delegates using the latest version (downloaded 2 days ago) and it works well when the test app has control over the audio session.  I have run into some issues with iOS 7 that I hope you can give me some guidance on as follows:</p>
+<p>1) I have implemented stopListening and my own method startListening that calls startListeningWithLanguageModelAtPath&#8230; to try to manage interruptions. It appears that I have to manage the state (is listening or not) based on the delegate responses, as calling startListeningWithLanguageModelAtPath&#8230; twice without a stopListening call causes a crash.  It would be nice if there was an &#8216;isListening&#8217; property, but I have implemented this myself.</p>
+<p>2) My app runs continuously in the background, though I am not trying to run OpenEars in the background. When the app is backgrounded, I stop listening and when the app becomes active I start listening again.  For the most part, this works well. However, if there is an incoming phone call, I get crashes with an error similar to the following ERROR: [0x317d000] &gt;aurioc&gt; 783: failed &#8216;!pla&#8217; (enable 3, outf&lt; 1ch, 16000 Hz, Int16&gt; inf&lt; 1 ch, 16000 Hz, Int16&gt;)</p>
+<p>My goal is to gracefully give up mic control for any interruption and when that interruption is finished, re-acquire control in the most seamless way possible. I have managed to do this for Siri, but it doesn&#8217;t work for incoming calls.</p>
+<p>3) I notice that when OpenEars is listening while my app is active, I can no longer play the lock screen button sound when the button is depressed to lock the screen. If my app is backgrounded (stops listening) then the lock screen button sound plays fine.  Is there any way to overcome this?</p>
+<p>I have experimented mostly with either stop / start listening combined with the OpenEars and app delegates to manage this, as well as trying suspend/stop/nil the instance for audioSessionInterruptionDidBegin and a complete restart of OpenEars for audioSessionInterruptionDidEnd and in both cases, I get the error above and a BAD_EXE, as well as &#8216;Couldn&#8217;t initialize audio unit&#8217; and &#8216;openAudioDevice failed&#8217; from verbose output.</p>
+<p>I&#8217;m looking for a recommended approach to manage these issues.</p>
+<p>Thanks much!<br />
+Dave M </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/managing-interruptions-from-incoming-phone-call/#post-1019368</guid>
+					<title><![CDATA[Reply To: Managing interruptions from incoming phone call]]></title>
+					<link>/forums/topic/managing-interruptions-from-incoming-phone-call/#post-1019368</link>
+					<pubDate>Fri, 10 Jan 2014 13:57:23 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Dave,</p>
+<p>Thanks for your kind words. So, about #1, my perspective is that having a state boolean is good for things that might have an unknown state because they move from state to state on their own, but starting and stopping listening can only happen as a result of messages you send so that one is better for you to track in your view controller. But it sounds like you aren&#8217;t tracking the state based on whether you have started and stopped but based on whether you have started and then received a callback, which is maybe a case I&#8217;m not thinking of &#8212; can you elaborate on how you are using a callback to track the state with your boolean rather than setting it when you make a call to start or to stop? I&#8217;ve been thinking that PocketsphinxController needs to exit gracefully when it can&#8217;t access the mic due to being called twice in any case so that will probably be in a version coming out soon.</p>
+<blockquote><p>ERROR: [0x317d000] >aurioc> 783: failed ‘!pla’ (enable 3, outf< 1ch, 16000 Hz, Int16> inf< 1 ch, 16000 Hz, Int16></p></blockquote>
+<p>That&#8217;s a new one for me, but I&#8217;ll admit that I focus the majority of testing on the foreground. I saw a similar description on SO, does it help?</p>
+<p><a href="http://stackoverflow.com/questions/19710426/avplayer-not-working-on-ipad-when-device-auto-locked" rel="nofollow">http://stackoverflow.com/questions/19710426/avplayer-not-working-on-ipad-when-device-auto-locked</a></p>
+<p>It looks like the audio session is being changed, which would make it hard for PocketsphinxController to work. Do you have a more verbose error to show me?</p>
+<blockquote><p>3) I notice that when OpenEars is listening while my app is active, I can no longer play the lock screen button sound when the button is depressed to lock the screen. If my app is backgrounded (stops listening) then the lock screen button sound plays fine. Is there any way to overcome this?</p></blockquote>
+<p>Sorry, no, this is due to a bug with the PlayAndRecord audio session that PocketsphinxController makes use of and system sounds.</p>
+<blockquote><p>I’m looking for a recommended approach to manage these issues.</p></blockquote>
+<p>In my experience it is a requirement to stop listening when there is an interruption and start listening after it ends. In addition to the technical requirements that make it difficult to support doing anything else, it is also a situation in which the external audio environment is very likely to change during the call, meaning that whatever the speech/silence calibration state was before the call, it probably won&#8217;t apply well afterwards meaning that it will probably take just as long for the VAD to catch up to the new circumstances and start giving relevant results again as it would to stop and restart with a new calibration. If you&#8217;re getting a crash when stopping once you get the interruption callback and starting once you get the interruption over callback and you are positive that you aren&#8217;t double-instantiating PocketsphinxController, that could be a bug although I did test this before the last release. In that case, can you show me the contents of those callbacks and I can take a look at it?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/managing-interruptions-from-incoming-phone-call/#post-1019370</guid>
+					<title><![CDATA[Reply To: Managing interruptions from incoming phone call]]></title>
+					<link>/forums/topic/managing-interruptions-from-incoming-phone-call/#post-1019370</link>
+					<pubDate>Fri, 10 Jan 2014 15:59:50 +0000</pubDate>
+					<dc:creator>DaveM</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle, Thanks for your response. I plan to experiment a little more with this before providing a detailed response, but thought I&#8217;d offer the following per your response now:</p>
+<p>I ended up using 2 state booleans, one to track calls to start / stop listening and one to track responses from the callback (didStartListening, isListening).</p>
+<p>I did this, because in my app, the user might background / foreground the app at any time, so if startListening has been called once, I wanted to avoid calling it again, regardless of confirmation from the callback. Same with stopListening. I use a combination of the state booleans to determine if/when it is appropriate to call again, based on app in foreground / background or audioSessionInterruptionDidBegin / End.</p>
+<p>The crash issue appears to be a cause of the following sequence:<br />
+1) PocketsphinxController is listening in the foreground and working correctly.<br />
+2) App is backgrounded and stopListening is called.<br />
+3) A phone call is made. While call is in progress, my app is moved to foreground (voice recognition is an enhancement, not a requirement for my app to work).<br />
+4) Start listening is called because app is in foreground, but the error occurs because the phone call has control over the audio session.</p>
+<p>So, what I am exploring is a way to determine through AVFoundation notifications when another app or the phone has control of the audio session and avoid a startListening call, but trigger that call if my app is in the foreground and all other apps have released control of the audio session.</p>
+<p>The AVFoundation notifications are a new area for me, so I&#8217;m hoping that I can use them to determine when PocketsphinxController can successfuly assume control of the audio session.</p>
+<p>Does this make sense? Any other observations on your part? Except for this audio session management issue and the lock screen button sound issue I described earlier, PocketsphinxController works fantastic and stopping / starting works fine relative to backgrounding / foregrounding my app.</p>
+<p>I will follow-up with the results of my investigation / testing.</p>
+<p>Thanks!<br />
+Dave</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/managing-interruptions-from-incoming-phone-call/#post-1019371</guid>
+					<title><![CDATA[Reply To: Managing interruptions from incoming phone call]]></title>
+					<link>/forums/topic/managing-interruptions-from-incoming-phone-call/#post-1019371</link>
+					<pubDate>Fri, 10 Jan 2014 16:34:11 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the follow-up &#8212; I&#8217;d be very interested in hearing the results of your experimentation since this isn&#8217;t something I can easily test at the moment. Although I&#8217;m hesitant to recommend out-of-API calls since I can&#8217;t promise I will continue to implement in the same way, I believe that you could poll whether listening is in progress in 1.6.4 by checking the int result of [self.pocketsphinxController.continuousModel getRecognitionIsInProgress] (1 is true, 0 is false, I recommend first checking if self.pocketsphinxController has a non-null continuousModel). I literally only yesterday looked at that getter and asked myself if it was overly overlapping with the functionality of another variable in the audio driver, so I wanted to warn you that it has recently been looked at askance and could be subject to a future change :) .</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/managing-interruptions-from-incoming-phone-call/#post-1019372</guid>
+					<title><![CDATA[Reply To: Managing interruptions from incoming phone call]]></title>
+					<link>/forums/topic/managing-interruptions-from-incoming-phone-call/#post-1019372</link>
+					<pubDate>Fri, 10 Jan 2014 21:04:32 +0000</pubDate>
+					<dc:creator>DaveM</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi, some quick follow-up.  It appears that I can manage all the issues I described relative to route changes due to phone calls with AVFoundation AVAudioSessionRouteChangeNotifications, which seem to work regardless of whether my app is backgrounded or foregrounded.</p>
+<p>Your delegate methods appear to only work in the foreground (because they come from the main thread), so when my app is backgrounded due to an incoming call, I don&#8217;t get a route change notification that I can act upon.</p>
+<p>By checking for 1) reason for route change and then 2) getting current input and output and 3) checking [[AVFoundation sharedInstance] isOtherAudioPlaying] before calling startListening, it seems that I can manage everything except the lock button sound issue.</p>
+<p>I&#8217;m still optimizing and tuning, so I&#8217;ll confirm the final results, but it appears I don&#8217;t need to use an out-of-API call to make this work.</p>
+<p>Thanks!<br />
+Dave  </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/managing-interruptions-from-incoming-phone-call/#post-1019373</guid>
+					<title><![CDATA[Reply To: Managing interruptions from incoming phone call]]></title>
+					<link>/forums/topic/managing-interruptions-from-incoming-phone-call/#post-1019373</link>
+					<pubDate>Fri, 10 Jan 2014 21:15:48 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Nice! Thanks for sharing.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/managing-interruptions-from-incoming-phone-call/#post-1019386</guid>
+					<title><![CDATA[Reply To: Managing interruptions from incoming phone call]]></title>
+					<link>/forums/topic/managing-interruptions-from-incoming-phone-call/#post-1019386</link>
+					<pubDate>Sat, 11 Jan 2014 18:21:04 +0000</pubDate>
+					<dc:creator>DaveM</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle, another question related to my study &#8211; If Pocketsphinx is starting up (received delegate message from pocketsphinxRecognitionLoopDidStart) but did not yet generate a pocketsphinxDidStartListening delegate message and suddenly, an audioSessionInterruptionDidOccur message comes through in the middle of initialization, is this situation managed in your code?</p>
+<p>Overall, I have things working really well, but it seems that if an interruption occurs at just the right time during initialization, it crashes. I have not yet experimented with wrapping the startup in a try/catch clause, as this creates an efficiency hit, but if there is no better way to manage unexpected changes in audio route while in the middle of initialization, I will try this. Please advise.</p>
+<p>Thanks! Dave</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/managing-interruptions-from-incoming-phone-call/#post-1019398</guid>
+					<title><![CDATA[Reply To: Managing interruptions from incoming phone call]]></title>
+					<link>/forums/topic/managing-interruptions-from-incoming-phone-call/#post-1019398</link>
+					<pubDate>Sun, 12 Jan 2014 09:53:31 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That is a bug and a regression. I will take a look at it.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/managing-interruptions-from-incoming-phone-call/#post-1019762</guid>
+					<title><![CDATA[Reply To: Managing interruptions from incoming phone call]]></title>
+					<link>/forums/topic/managing-interruptions-from-incoming-phone-call/#post-1019762</link>
+					<pubDate>Thu, 16 Jan 2014 14:40:58 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Quick question about this &#8212; I assumed that the issue above was that you were receiving the interruption notification and then reacting to it by sending a stopListening message to the listening loop, but then the stopListening message was causing a crash (this is what I described as a regression). Is this correct, or is a crash happening because there is an interruption notification and you are not reacting to it by sending stopListening?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/managing-interruptions-from-incoming-phone-call/#post-1019781</guid>
+					<title><![CDATA[Reply To: Managing interruptions from incoming phone call]]></title>
+					<link>/forums/topic/managing-interruptions-from-incoming-phone-call/#post-1019781</link>
+					<pubDate>Fri, 17 Jan 2014 17:32:01 +0000</pubDate>
+					<dc:creator>DaveM</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>The sequence would be as follows:</p>
+<p>1) Call startListening<br />
+2) Receive delegate message pocketsphinxRecognitionLoopDidStart, but did not yet receive a delegate message pocketsphinxDidStartListening (so we are in the middle of the startup process)<br />
+3) an interruption occurs while in the middle of this startup process at precisely the correct time &#8211; a crash occurs. I have not received any delegate message about an interruption occuring, so I have not called stopListening.</p>
+<p>I have been focused on another project the last few days, but expect return to this soon and I will be able to do more testing.</p>
+<p>I guess the larger question is, &#8220;what happens if Pocketsphinx is in the middle of executing a startListening cycle and the audio session suddenly becomes unavailable &#8211; was available at the start of the call (recogniton loop started) but has not yet started listening and before start listening completes (pocketsphinxDidStartListening not yet called) the audio session becomes unavailable.</p>
+<p>Does your code handle this gracefully, or is there some period of time during the startup cycle where a resource is assumed to be there and if it suddenly disappears, the situation can cause a crash?</p>
+<p>I realize this is kind of nit-picky for a lot of use cases; I&#8217;m just trying to ensure that my app handles this scenario as gracefully as possible.  It seems that once the crash occurs, I am no longer able to receive a delegate message when the session becomes available again.</p>
+<p>I will work on getting you better information in a couple of days.</p>
+<p>Thanks! Dave</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

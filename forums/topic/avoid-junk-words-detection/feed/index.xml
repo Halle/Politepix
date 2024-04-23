@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] Avoid Junk Words Detection &#8211; Politepix</title>
+		<atom:link href="/forums/topic/avoid-junk-words-detection/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/avoid-junk-words-detection/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:39:14 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/avoid-junk-words-detection/#post-8661</guid>
+					<title><![CDATA[[Resolved] Avoid Junk Words Detection]]></title>
+					<link>/forums/topic/avoid-junk-words-detection/#post-8661</link>
+					<pubDate>Mon, 20 Feb 2012 19:45:26 +0000</pubDate>
+					<dc:creator>ramshad</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>  i would like know,how can i avoid the junk word detection in openears.</p>
+<p>I will let you know in detail.I have the following words in dictionary file</p>
+<p>1.HIT<br />
+2.CUP<br />
+3.TEA<br />
+4.HAI</p>
+<p>The all 4 words are detecting well at first attempt. However the issue is,whenever i say &#8220;HELLO&#8221;, openears detected it as &#8220;HAI&#8221;. Whenever i say &#8220;JUMP&#8221; openears detected it as &#8220;CUP&#8221; !!.. </p>
+<p>My aim is simple, i don&#8217;t want to detect anything when i say &#8221; HELLO&#8221; or  i don&#8217;t want to detect anything when i say a word that not in dictionary file.</p>
+<p>may i know is it possible with Openears? if yes, please provide me the details.</p>
+<p>Thanks</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/avoid-junk-words-detection/#post-8662</guid>
+					<title><![CDATA[Reply To: Avoid Junk Words Detection]]></title>
+					<link>/forums/topic/avoid-junk-words-detection/#post-8662</link>
+					<pubDate>Mon, 20 Feb 2012 19:57:26 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This is known as out-of-vocabulary rejection and it&#8217;s something you&#8217;d need to inquire about at the CMU sphinx board since it is primarily a pocketsphinx question.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/avoid-junk-words-detection/#post-11117</guid>
+					<title><![CDATA[Reply To: Avoid Junk Words Detection]]></title>
+					<link>/forums/topic/avoid-junk-words-detection/#post-11117</link>
+					<pubDate>Fri, 14 Sep 2012 15:03:50 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Updated: you can now handle out of vocabulary rejection using Politepix&#8217;s <a href="/shop/rejectodemo" rel="nofollow">Rejecto</a> plugin for OpenEars.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

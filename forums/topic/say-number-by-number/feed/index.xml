@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>say number by number &#8211; Politepix</title>
+		<atom:link href="/forums/topic/say-number-by-number/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/say-number-by-number/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:40:04 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/say-number-by-number/#post-9609</guid>
+					<title><![CDATA[say number by number]]></title>
+					<link>/forums/topic/say-number-by-number/#post-9609</link>
+					<pubDate>Sat, 05 May 2012 07:05:35 +0000</pubDate>
+					<dc:creator>sumdomo</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>HI<br />
+Working on a text-to-speech (only need the flite class), is anyway I can have it to say number by number?<br />
+i.e instead of one-thousand-two-hundred , say one-two-zero-zero</p>
+<p>thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/say-number-by-number/#post-9610</guid>
+					<title><![CDATA[Reply To: say number by number]]></title>
+					<link>/forums/topic/say-number-by-number/#post-9610</link>
+					<pubDate>Sat, 05 May 2012 08:47:12 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sure, this is just an implementation detail for you since you are controlling the string that is passed to FliteController. Instead of passing FliteController the word &#8220;1200&#8221;, pass &#8220;1&#8221; then &#8220;2&#8221; then &#8220;0&#8221; then &#8220;0&#8221;, or pass &#8220;one two zero zero&#8221;.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/say-number-by-number/#post-9611</guid>
+					<title><![CDATA[Reply To: say number by number]]></title>
+					<link>/forums/topic/say-number-by-number/#post-9611</link>
+					<pubDate>Sat, 05 May 2012 18:28:13 +0000</pubDate>
+					<dc:creator>sumdomo</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for your reply, but what if I have the NSString as &#8220;11234, SunWood Dr.&#8221;<br />
+If I pass this to FliteController , it would became one thousand one hundred thirty four.<br />
+You  mean I have to convert to the string as &#8220;1 1 2 3 4 , SunWood Dr&#8217;?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/say-number-by-number/#post-9612</guid>
+					<title><![CDATA[Reply To: say number by number]]></title>
+					<link>/forums/topic/say-number-by-number/#post-9612</link>
+					<pubDate>Sat, 05 May 2012 19:05:22 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Correct, you need to create some method for parsing your text into the format that you need spoken. Flite doesn&#8217;t have a built-in system for detecting what kind of a number it is being given (this is a good thing since it would lead to wrong assumptions). Without knowing much about your requirements, something that is fairly simple might be to just try to detect the numbers 1-9 in your text string and replace them with the equivalent word (e.g. replace &#8220;1&#8221; with &#8220;one&#8221;, etc). But if you don&#8217;t know much about the text that is coming in, or you know that a &#8220;1&#8221; could mean more than one thing if it occurs in your text, this approach might be too primitive.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

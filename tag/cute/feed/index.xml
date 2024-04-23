@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>cute &#8211; Politepix</title>
+	<atom:link href="/tag/cute/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>iOS Frameworks for speech recognition, text to speech and more</description>
+	<lastBuildDate>Sat, 07 Jul 2012 14:57:04 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.5.2</generator>
+<site xmlns="com-wordpress:feed-additions:1">206848719</site>	<item>
+		<title>Ducklings weren&#8217;t on the balcony</title>
+		<link>/2010/07/10/ducklings-werent-on-the-balcony/</link>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Sat, 10 Jul 2010 12:57:05 +0000</pubDate>
+				<category><![CDATA[Berlin]]></category>
+		<category><![CDATA[Photographs]]></category>
+		<category><![CDATA[Urban birds]]></category>
+		<category><![CDATA[birds]]></category>
+		<category><![CDATA[cute]]></category>
+		<category><![CDATA[day trip]]></category>
+		<category><![CDATA[ducklings]]></category>
+		<guid isPermaLink="false">/?p=668</guid>
+
+					<description><![CDATA[We took the boat out to Kladow on a very hot summer day, where we drank Fassbrause and Berliner Weisse and saw fluffy ducklings.]]></description>
+										<content:encoded><![CDATA[<p>[politepix-blog-inline-text-ad]</p>
+<p>They were in Kladow:<br />
+<img fetchpriority="high" decoding="async" src="https://i0.wp.com/www.politepix.com/wp-content/uploads/DSC04118.jpg?resize=609%2C408&#038;ssl=1" alt="Swimming Duckling" title="" width="609" height="408" class="alignnone size-full wp-image-669" srcset="https://i0.wp.com/www.politepix.com/wp-content/uploads/DSC04118.jpg?w=609&amp;ssl=1 609w, https://i0.wp.com/www.politepix.com/wp-content/uploads/DSC04118.jpg?resize=200%2C134&amp;ssl=1 200w" sizes="(max-width: 609px) 100vw, 609px" data-recalc-dims="1" /></p>
+<p><img decoding="async" src="https://i0.wp.com/www.politepix.com/wp-content/uploads/DSC04119.jpg?resize=609%2C408&#038;ssl=1" alt="Standing Duckling" title="" width="609" height="408" class="alignnone size-full wp-image-669" data-recalc-dims="1" /></p>
+<p><img decoding="async" src="https://i0.wp.com/www.politepix.com/wp-content/uploads/DSC04121.jpg?resize=609%2C408&#038;ssl=1" alt="Mom Duck and Two Ducklings" title="" width="609" height="408" class="alignnone size-full wp-image-669" data-recalc-dims="1" /></p>
+<p><img loading="lazy" decoding="async" src="https://i0.wp.com/www.politepix.com/wp-content/uploads/DSC04131.jpg?resize=609%2C408&#038;ssl=1" alt="Mom Duck and Two Ducklings On Cobblestones" title="" width="609" height="408" class="alignnone size-full wp-image-669" data-recalc-dims="1" /></p>
+<p><img loading="lazy" decoding="async" src="https://i0.wp.com/www.politepix.com/wp-content/uploads/DSC04132.jpg?resize=609%2C408&#038;ssl=1" alt="Close Shot of Mom Duck and Two Ducklings" title="" width="609" height="408" class="alignnone size-full wp-image-669" data-recalc-dims="1" /></p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">668</post-id>	</item>
+	</channel>
+</rss>

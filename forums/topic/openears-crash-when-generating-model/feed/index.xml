@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Rejecto questions &#8211; Politepix</title>
+		<atom:link href="/forums/topic/openears-crash-when-generating-model/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/openears-crash-when-generating-model/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:51:05 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/openears-crash-when-generating-model/#post-1020852</guid>
+					<title><![CDATA[Rejecto questions]]></title>
+					<link>/forums/topic/openears-crash-when-generating-model/#post-1020852</link>
+					<pubDate>Fri, 11 Apr 2014 09:49:50 +0000</pubDate>
+					<dc:creator>lory</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>i&#8217;m new to openears, I&#8217;ve played a bit with openears but the word spotting was a bit random in my opinion. I&#8217;ve seen on stackoverflow that using Rejecto could help.</p>
+<p>I follow the tutorial but my app crash immediatly with this error:<br />
+<code>*** Terminating app due to uncaught exception &#039;NSInvalidArgumentException&#039;, reason: &#039;-[LanguageModelGenerator generateRejectingLanguageModelFromArray:withFilesNamed:withOptionalExclusions:usingVowelsOnly:withWeight:forAcousticModelAtPath:]: unrecognized selector sent to instance 0x178262500&#039;</code></p>
+<p>I just remplaced:<br />
+<code>NSError *err = [lmGenerator generateLanguageModelFromArray:words withFilesNamed:name forAcousticModelAtPath:[AcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;]];</code></p>
+<p>With:<br />
+<code>NSError *err = [lmGenerator generateRejectingLanguageModelFromArray:words withFilesNamed:name withOptionalExclusions:nil usingVowelsOnly:FALSE withWeight:nil forAcousticModelAtPath:[AcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;]];</code></p>
+<p>Notes: I&#8217;m on Openears 1.7</p>
+<p>Imports in my Controller:<br />
+#import &lt;OpenEars/PocketsphinxController.h&gt;<br />
+#import &lt;OpenEars/LanguageModelGenerator.h&gt;<br />
+#import &lt;RejectoDemo/LanguageModelGenerator+Rejecto.h&gt;<br />
+#import &lt;OpenEars/AcousticModel.h&gt;<br />
+#import &lt;OpenEars/OpenEarsEventsObserver.h&gt;</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-crash-when-generating-model/#post-1020854</guid>
+					<title><![CDATA[Reply To: Rejecto questions]]></title>
+					<link>/forums/topic/openears-crash-when-generating-model/#post-1020854</link>
+					<pubDate>Fri, 11 Apr 2014 11:40:36 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Lory,</p>
+<p>I can&#8217;t recall receiving reports of random word spotting with OpenEars, but if you are receiving poor accuracy levels it is usually due to testing on the Simulator, or having typos in your language model, or using trying to trigger recognition using speech which isn&#8217;t represented in the language model (this can happen if you unintentionally haven&#8217;t used the language model you&#8217;ve thought you used, or if your language model happens to contain a different set of words than you are expecting, perhaps due to a minor logic error). Accuracy can also be significantly reduced with certain non-US accents if that is a possibility.</p>
+<p>In order to fix your issue with your Rejecto install, take a look at the tutorial instructions again, paying special attention to the one regarding setting the &#8220;Other Linker Flags&#8221; build setting to contain the -ObjC flag.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-crash-when-generating-model/#post-1020855</guid>
+					<title><![CDATA[Reply To: Rejecto questions]]></title>
+					<link>/forums/topic/openears-crash-when-generating-model/#post-1020855</link>
+					<pubDate>Fri, 11 Apr 2014 12:15:48 +0000</pubDate>
+					<dc:creator>lory</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the fast response, it was the flag issue.</p>
+<p>It&#8217;s seems to work better with Rejecto now. At the beginning it was a still a bit random but when I speak faster the good sentence is more often spotted.</p>
+<p>I used these sentences:</p>
+<pre><code>&quot;words&quot; : [
+{ &quot;word&quot; : &quot;half and&quot;, &quot;match&quot; : false },
+{ &quot;word&quot; : &quot;left hand&quot;, &quot;match&quot; : true },
+{ &quot;word&quot; : &quot;help me&quot;, &quot;match&quot; : false },
+{ &quot;word&quot; : &quot;test it&quot;, &quot;match&quot; : false }
+]</code></pre>
+<p>If I say &#8220;left-hand&#8221; rapidly it&#8217;s ok but with &#8220;left  hand&#8221; hypothesis return only &#8220;and&#8221;.</p>
+<p>But you are right, I have a french accent and it&#8217;s may be the problem ! But I really think I pronounce the same sentence with the same pronunciation and having different results is a bit strange.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-crash-when-generating-model/#post-1020857</guid>
+					<title><![CDATA[Reply To: Rejecto questions]]></title>
+					<link>/forums/topic/openears-crash-when-generating-model/#post-1020857</link>
+					<pubDate>Fri, 11 Apr 2014 12:39:03 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Lory,</p>
+<p>Yes, any non-English accent will unfortunately have a distinct effect on recognition. I wish that wasn&#8217;t the case but it&#8217;s unavoidable since the actual phoneme sounds (the building blocks of recognition) are different for native speakers of different languages, even when speaking a word in a second (or third, etc) language that you are so highly fluent in. I have the same problems when I use German speech recognition since German is my second language, even though many native German speakers say that my pronunciation sounds only mildly-accented to their ear. Since the result is uncertainty for the engine, it isn&#8217;t surprising that the wrong results can be differently wrong.</p>
+<p>However, I think the bigger issue is that what you&#8217;ve shown above appears to be an NSDictionary of an NSArray of more NSDictionaries, is that correct? It doesn&#8217;t match the format of any kind of input that OpenEars takes in order to create language models or grammars, so it isn&#8217;t possible that you are using it to successfully create a language model or grammar using LanguageModelGenerator. Perhaps the issue is that the model is not being created but a different model is being used with different words? Or that a very buggy model is being created from that input. Take a look at the standard input for LanguageModelGenerator in the tutorial to get a sense of what the input for a successful model generation looks like. It&#8217;s a very good idea to turn on verboseLanguageModelGenerator, verbosePocketsphinxController and OpenEarsLogging while troubleshooting these issues so that you can see any error messages/warning messages encountered.</p>
+<p>BTW, OpenEars vocabulary has to be submitted in uppercase – submitting it in lowercase can have a big effect on accuracy.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-crash-when-generating-model/#post-1020858</guid>
+					<title><![CDATA[Reply To: Rejecto questions]]></title>
+					<link>/forums/topic/openears-crash-when-generating-model/#post-1020858</link>
+					<pubDate>Fri, 11 Apr 2014 13:00:45 +0000</pubDate>
+					<dc:creator>lory</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This is just my jSON, I pass a real array to the generator and hypothesis can output these 8 different words.</p>
+<p>Something like this:</p>
+<pre><code>NSMutableArray *words = [[NSMutableArray alloc] init];
+        for (NSDictionary *dict in [self.currentSentenceDictionnary valueForKey:@&quot;words&quot;]){
+            [words addObject:[[dict valueForKey:@&quot;word&quot;] uppercaseString]];
+        }</code></pre>
+<p>I have accent but sometimes it recognize very different things from what I say. For exemple if I say &#8220;left hand&#8221; it return often &#8220;it and&#8221;. My &#8220;left&#8221; pronunciation is not near of &#8220;it&#8221;. In opposition if I said &#8220;test it&#8221; it work everytimes. &#8220;Help me&#8221; never worked but already have a &#8220;half hand help&#8221; output.</p>
+<p>I&#8217;ll explain what I want to do, maybe I don&#8217;t use the best algorithm to do what I want.</p>
+<p>I made an app for learning english with music. In my controller an extract of a video music clip is played and you have to repeat what you have listen.<br />
+For this example the sentence you listen is &#8220;I wanna be your left hand man&#8221;<br />
+In the UIView I display &#8220;I wanna be your &#8230; &#8230; man&#8221; and the user must say &#8220;left hand&#8221; to success. But I can&#8217;t only put two words in the array, because then it&#8217;s too easy and &#8220;left hand&#8221; is always recognized. So I put some &#8220;close&#8221; sentences to see if the user really understand what he listens but even me who know the answer I can&#8217;t success everytime so it&#8217;s a bit problematic.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-crash-when-generating-model/#post-1020865</guid>
+					<title><![CDATA[Reply To: Rejecto questions]]></title>
+					<link>/forums/topic/openears-crash-when-generating-model/#post-1020865</link>
+					<pubDate>Sat, 12 Apr 2014 09:03:09 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Which device are these results with?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-crash-when-generating-model/#post-1020891</guid>
+					<title><![CDATA[Reply To: Rejecto questions]]></title>
+					<link>/forums/topic/openears-crash-when-generating-model/#post-1020891</link>
+					<pubDate>Thu, 17 Apr 2014 08:10:40 +0000</pubDate>
+					<dc:creator>lory</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The latest iPad Air</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-crash-when-generating-model/#post-1020893</guid>
+					<title><![CDATA[Reply To: Rejecto questions]]></title>
+					<link>/forums/topic/openears-crash-when-generating-model/#post-1020893</link>
+					<pubDate>Thu, 17 Apr 2014 08:57:24 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, have you seen this latest blog post about dynamic grammar creation with OpenEars? It could get you closer to the result you&#8217;re seeking than using a probabilistic language model plus Rejecto:</p>
+<p><a href="/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/">/2014/04/10/openears-1-7-introducing-dynamic-grammar-generation/</a></p>
+<p>You definitely don&#8217;t want to put words into your model that aren&#8217;t words you want to detect. That will increase the potential for confusion, and that confusion will be multiplied by the fundamental design feature of the app that it is to be used by non-native speakers. I think this is one where you might either get better results by using Rejecto with a high weighting and removing any words from your language model that you don&#8217;t want to detect (i.e., let Rejecto exclusively perform the role of detecting things you don&#8217;t want and only have words in your model that you do want to detect), or by moving to a grammar instead of a language model.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-crash-when-generating-model/#post-1020894</guid>
+					<title><![CDATA[Reply To: Rejecto questions]]></title>
+					<link>/forums/topic/openears-crash-when-generating-model/#post-1020894</link>
+					<pubDate>Thu, 17 Apr 2014 09:00:59 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I would definitely go into this app concept expecting to encounter multiple issues that need to be accommodated and worked through, since non-native speaker recognition is automatically very difficult for any speech recognition engine. I&#8217;m happy to help you work through them as best I can with the understanding that this isn&#8217;t the kind of goal that works out of the box.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

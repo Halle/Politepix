@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>force speech analysis to begin?? &#8211; Politepix</title>
+		<atom:link href="/forums/topic/force-speech-analysis-to-begin/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/force-speech-analysis-to-begin/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:39:32 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/force-speech-analysis-to-begin/#post-10906</guid>
+					<title><![CDATA[force speech analysis to begin??]]></title>
+					<link>/forums/topic/force-speech-analysis-to-begin/#post-10906</link>
+					<pubDate>Sun, 02 Sep 2012 01:18:41 +0000</pubDate>
+					<dc:creator>sysco</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Is there a way I can force the speech analysis to begin? I would like to ignore the silence level and analyze the audio over a given period of time (from speech began until my NSTimer fires).<br />
+Setting  secondsOfSilenceToDetect to zero ? Or adjusting the the audio session?</p>
+<p>thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/force-speech-analysis-to-begin/#post-10907</guid>
+					<title><![CDATA[Reply To: force speech analysis to begin??]]></title>
+					<link>/forums/topic/force-speech-analysis-to-begin/#post-10907</link>
+					<pubDate>Sun, 02 Sep 2012 08:18:03 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>It&#8217;s only possible to do voice audio detection recognition with OpenEars on recordings using its driver.  What you could try is to make a WAV recording of the speech and then submit it at the end to the method runRecognitionOnWavFileAtPath:usingLanguageModelAtPath:dictionaryAtPath:languageModelIsJSGF:</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/force-speech-analysis-to-begin/#post-10908</guid>
+					<title><![CDATA[Reply To: force speech analysis to begin??]]></title>
+					<link>/forums/topic/force-speech-analysis-to-begin/#post-10908</link>
+					<pubDate>Sun, 02 Sep 2012 13:35:10 +0000</pubDate>
+					<dc:creator>sysco</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for your fast reply&#8230;</p>
+<p>So It&#8217;s NOT possible to do something like this.</p>
+<p>-startListeningWithLanguageModelAtPath:&#8230;..</p>
+<p>&#8211; (void) pocketsphinxDidStartListening{<br />
+ // start an NSTImer</p>
+<p>}<br />
+-(void)timesUp:(NSTimer)timer{</p>
+<p> pocketsphinxController.secondsOfSilenceToDetect = 0;<br />
+// OR<br />
+// mute the audio here&#8230;</p>
+<p>}</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/force-speech-analysis-to-begin/#post-10909</guid>
+					<title><![CDATA[Reply To: force speech analysis to begin??]]></title>
+					<link>/forums/topic/force-speech-analysis-to-begin/#post-10909</link>
+					<pubDate>Sun, 02 Sep 2012 13:41:11 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You can&#8217;t do that with secondsOfSilenceToDetect. You can fake the first part by immediately suspending listening when listening begins (using the relevant OpenEarsEventsObserver callbacks) and then unsuspending it when you want to begin your arbitrary interval. But there is no way to force recognition/avoid voice audio detection submitting recognition in its own time.</p>
+<p>My first suggestion would probably work very similarly to your wish though &#8212; instead of starting up recognition and then starting a timer, start a timer that starts an AVAudioRecorder and when your timer runs out, submit the PCM audio to runRecognitionOnWavFileAtPath. It should be functionally the same as what you want as far as I can tell.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/force-speech-analysis-to-begin/#post-10910</guid>
+					<title><![CDATA[Reply To: force speech analysis to begin??]]></title>
+					<link>/forums/topic/force-speech-analysis-to-begin/#post-10910</link>
+					<pubDate>Sun, 02 Sep 2012 13:42:25 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>(I should say: I don&#8217;t expect that there is any way, which doesn&#8217;t mean that it&#8217;s impossible, just that my educated guess is any workaround will lead to more problems down the road than it solves right now).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/force-speech-analysis-to-begin/#post-10911</guid>
+					<title><![CDATA[Reply To: force speech analysis to begin??]]></title>
+					<link>/forums/topic/force-speech-analysis-to-begin/#post-10911</link>
+					<pubDate>Sun, 02 Sep 2012 14:09:33 +0000</pubDate>
+					<dc:creator>sysco</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I will experiment with both strategies. I looked at the source briefly and it seems an issue might  be disk I/O&#8230;. but other that the performance would be the same. Right?<br />
+Of course in the end Rapid Ears looks great too. Thanks again&#8230;.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/force-speech-analysis-to-begin/#post-10912</guid>
+					<title><![CDATA[Reply To: force speech analysis to begin??]]></title>
+					<link>/forums/topic/force-speech-analysis-to-begin/#post-10912</link>
+					<pubDate>Sun, 02 Sep 2012 14:16:24 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>What specifically do you think would be an I/O issue?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/force-speech-analysis-to-begin/#post-10913</guid>
+					<title><![CDATA[Reply To: force speech analysis to begin??]]></title>
+					<link>/forums/topic/force-speech-analysis-to-begin/#post-10913</link>
+					<pubDate>Sun, 02 Sep 2012 15:21:10 +0000</pubDate>
+					<dc:creator>sysco</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I was thinking if I called  -runRecognitionOnWavFileAtPath: I might have performance issues creating NSData from the file path.</p>
+<p>//from ContinuousModel.mm<br />
+NSData *originalWavData = [NSData dataWithContentsOfFile:wavPath];</p>
+<p>I&#8217;m considering using a timer for &lt;5 seconds of audio.</p>
+<p>Simply, I want to require the user to say something in a given time interval. I don&#039;t want to wait for silence to occur. </p>
+<p>Thoughts?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/force-speech-analysis-to-begin/#post-10914</guid>
+					<title><![CDATA[Reply To: force speech analysis to begin??]]></title>
+					<link>/forums/topic/force-speech-analysis-to-begin/#post-10914</link>
+					<pubDate>Sun, 02 Sep 2012 15:36:19 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I don&#8217;t see that as a big performance issue for audio of that length.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/force-speech-analysis-to-begin/#post-10915</guid>
+					<title><![CDATA[Reply To: force speech analysis to begin??]]></title>
+					<link>/forums/topic/force-speech-analysis-to-begin/#post-10915</link>
+					<pubDate>Sun, 02 Sep 2012 15:47:30 +0000</pubDate>
+					<dc:creator>sysco</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Great! thanks for your help.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

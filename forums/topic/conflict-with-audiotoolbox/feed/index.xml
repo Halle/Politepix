@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Conflict with AudioToolBox &#8211; Politepix</title>
+		<atom:link href="/forums/topic/conflict-with-audiotoolbox/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/conflict-with-audiotoolbox/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:39:35 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/conflict-with-audiotoolbox/#post-10858</guid>
+					<title><![CDATA[Conflict with AudioToolBox]]></title>
+					<link>/forums/topic/conflict-with-audiotoolbox/#post-10858</link>
+					<pubDate>Tue, 21 Aug 2012 16:58:57 +0000</pubDate>
+					<dc:creator>Lloydy</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>I&#8217;ve come across a few posts before that mention some issues with AudioToolBox, playing system sounds and OpenEars. They mention upgrading to 1.01, which i have done, however i&#8217;m still not able to play any system sounds or vibrate the phone. If i run the app without OpenEars it all works. I&#8217;m using iOS 5 and iPhone 4, any help would be greatly appreciated</p>
+<p>Thanks</p>
+<p>Lloyd</p>
+<p>2012-08-21 17:55:50.472 TheInsanityMirror[22161:707] The audio session has never been initialized so we will do that now.<br />
+2012-08-21 17:55:50.482 TheInsanityMirror[22161:707] Checking and resetting all audio session settings.<br />
+2012-08-21 17:55:50.489 TheInsanityMirror[22161:707] audioCategory is incorrect, we will change it.<br />
+2012-08-21 17:55:50.497 TheInsanityMirror[22161:707] audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.<br />
+2012-08-21 17:55:50.503 TheInsanityMirror[22161:707] bluetoothInput is incorrect, we will change it.<br />
+2012-08-21 17:55:50.508 TheInsanityMirror[22161:707] bluetooth input is now on the correct setting of 1.<br />
+2012-08-21 17:55:50.512 TheInsanityMirror[22161:707] categoryDefaultToSpeaker is incorrect, we will change it.<br />
+2012-08-21 17:55:50.516 TheInsanityMirror[22161:707] CategoryDefaultToSpeaker is now on the correct setting of 1.<br />
+2012-08-21 17:55:50.521 TheInsanityMirror[22161:707] preferredBufferSize is incorrect, we will change it.<br />
+2012-08-21 17:55:50.532 TheInsanityMirror[22161:707] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2012-08-21 17:55:50.537 TheInsanityMirror[22161:707] preferredSampleRateCheck is incorrect, we will change it.<br />
+2012-08-21 17:55:50.542 TheInsanityMirror[22161:707] preferred hardware sample rate is now on the correct setting of 16000.000000.<br />
+2012-08-21 17:55:50.660 TheInsanityMirror[22161:707] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2012-08-21 17:55:50.665 TheInsanityMirror[22161:707] Exiting startAudioSession.<br />
+2012-08-21 17:55:50.674 TheInsanityMirror[22161:4203] Recognition loop has started<br />
+2012-08-21 17:55:50.877 TheInsanityMirror[22161:707] Pocketsphinx is starting up.<br />
+2012-08-21 17:55:51.384 TheInsanityMirror[22161:4203] Starting openAudioDevice on the device.<br />
+2012-08-21 17:55:51.389 TheInsanityMirror[22161:4203] Audio unit wrapper successfully created.<br />
+2012-08-21 17:55:51.400 TheInsanityMirror[22161:4203] Set audio route to HeadphonesAndMicrophone<br />
+2012-08-21 17:55:51.406 TheInsanityMirror[22161:4203] Checking and resetting all audio session settings.<br />
+2012-08-21 17:55:51.412 TheInsanityMirror[22161:4203] audioCategory is correct, we will leave it as it is.<br />
+2012-08-21 17:55:51.416 TheInsanityMirror[22161:4203] bluetoothInput is correct, we will leave it as it is.<br />
+2012-08-21 17:55:51.424 TheInsanityMirror[22161:4203] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2012-08-21 17:55:51.429 TheInsanityMirror[22161:4203] preferredBufferSize is correct, we will leave it as it is.<br />
+2012-08-21 17:55:51.437 TheInsanityMirror[22161:4203] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2012-08-21 17:55:51.443 TheInsanityMirror[22161:4203] Setting the variables for the device and starting it.<br />
+2012-08-21 17:55:51.448 TheInsanityMirror[22161:4203] Looping through ringbuffer sections and pre-allocating them.<br />
+2012-08-21 17:55:52.032 TheInsanityMirror[22161:4203] Started audio output unit.<br />
+2012-08-21 17:55:52.037 TheInsanityMirror[22161:4203] Calibration has started<br />
+2012-08-21 17:55:52.041 TheInsanityMirror[22161:707] Pocketsphinx calibration has started.<br />
+2012-08-21 17:55:54.281 TheInsanityMirror[22161:4203] Calibration has completed<br />
+2012-08-21 17:55:54.283 TheInsanityMirror[22161:707] Pocketsphinx calibration is complete.<br />
+2012-08-21 17:55:54.296 TheInsanityMirror[22161:4203] Project has these words in its dictionary:<br />
+AHA<br />
+ARMS<br />
+BLUE<br />
+COURSE<br />
+DAY<br />
+DO<br />
+EMBARRASS<br />
+GREEN<br />
+HELLO<br />
+HELLO(2)<br />
+I<br />
+INDEED<br />
+NASTY<br />
+NICE<br />
+NICE(2)<br />
+NIGHT<br />
+NO<br />
+NOSE<br />
+OF<br />
+OK<br />
+RED<br />
+SILENCE<br />
+SORRY<br />
+STOP<br />
+SURE<br />
+THANK<br />
+THANKS<br />
+YEAH<br />
+YELLOW<br />
+YEP<br />
+YES<br />
+YOU</p>
+<p>2012-08-21 17:55:54.299 TheInsanityMirror[22161:4203] Listening.<br />
+2012-08-21 17:55:54.307 TheInsanityMirror[22161:707] START LISTENING<br />
+2012-08-21 17:55:54.314 TheInsanityMirror[22161:707] Pocketsphinx has suspended recognition.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/conflict-with-audiotoolbox/#post-10860</guid>
+					<title><![CDATA[Reply To: Conflict with AudioToolBox]]></title>
+					<link>/forums/topic/conflict-with-audiotoolbox/#post-10860</link>
+					<pubDate>Tue, 21 Aug 2012 21:00:32 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>This is the authoritative discussion on this, but my impression is that it&#8217;s a bug or questionable feature of the audio session: <a href="/forums/topic/keep-system-sounds-while-listening/">/forums/topic/keep-system-sounds-while-listening/</a></p>
+<p>I unfortunately don&#8217;t have any insight into this issue beyond the thread discussion.</p>
+<p>Say, would you be so kind as to remove the salty language in your language model when you post your logs? I don&#8217;t have a content filter on the forum because it&#8217;s almost never needed, but it&#8217;s better kept out of Google&#8217;s index for the site. Thank you!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/conflict-with-audiotoolbox/#post-10865</guid>
+					<title><![CDATA[Reply To: Conflict with AudioToolBox]]></title>
+					<link>/forums/topic/conflict-with-audiotoolbox/#post-10865</link>
+					<pubDate>Wed, 22 Aug 2012 08:30:54 +0000</pubDate>
+					<dc:creator>Lloydy</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the quick response Halle, very sorry about the bad language posted, just copied and pasted without thinking</p>
+<p>L</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/conflict-with-audiotoolbox/#post-10866</guid>
+					<title><![CDATA[Reply To: Conflict with AudioToolBox]]></title>
+					<link>/forums/topic/conflict-with-audiotoolbox/#post-10866</link>
+					<pubDate>Wed, 22 Aug 2012 08:36:35 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>No prob!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

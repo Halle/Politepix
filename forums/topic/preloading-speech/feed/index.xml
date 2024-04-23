@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Preloading speech &#8211; Politepix</title>
+		<atom:link href="/forums/topic/preloading-speech/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/preloading-speech/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:44:54 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/preloading-speech/#post-13085</guid>
+					<title><![CDATA[Preloading speech]]></title>
+					<link>/forums/topic/preloading-speech/#post-13085</link>
+					<pubDate>Mon, 19 Nov 2012 09:58:19 +0000</pubDate>
+					<dc:creator>josh</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Is it possible to preload the text so that the delay to say something isn&#8217;t so long? </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/preloading-speech/#post-13087</guid>
+					<title><![CDATA[Reply To: Reply To: Preloading speech]]></title>
+					<link>/forums/topic/preloading-speech/#post-13087</link>
+					<pubDate>Mon, 19 Nov 2012 10:06:47 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>In NeatSpeech, ongoing speech is always queued for instant- or near-instant playback &#8212; just keep on giving text to the sayWithNeatSpeech: method without waiting for the in-progress speech to complete and it will be processed in the background and queued up for fast-as-possible playback once the current in-progress utterance is complete. Alternately, you can just give a very long chunk of text at the start and NeatSpeech will divide it smartly into process-able pieces,  queue them up, and load them into the player as they complete. Are you seeing a different result? </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

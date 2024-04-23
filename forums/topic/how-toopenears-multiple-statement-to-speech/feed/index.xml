@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[how to]openears multiple statement to speech &#8211; Politepix</title>
+		<atom:link href="/forums/topic/how-toopenears-multiple-statement-to-speech/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/how-toopenears-multiple-statement-to-speech/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:07:23 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/how-toopenears-multiple-statement-to-speech/#post-1021099</guid>
+					<title><![CDATA[[how to]openears multiple statement to speech]]></title>
+					<link>/forums/topic/how-toopenears-multiple-statement-to-speech/#post-1021099</link>
+					<pubDate>Sat, 03 May 2014 11:07:50 +0000</pubDate>
+					<dc:creator>bluesun</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m a newbie to IOs development. Now, I need use an &#8220;Text to speech&#8221; functionality in my apps, I found OpenEars platform for do that. But in my code, it can only speech one statement in one Class. I was search on Google but i can&#8217;t found How to speech multiple statement by using OpenEars. Here Is my code :</p>
+<pre><code>
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+[self.oEEO setDelegate:self];
+[self.teller say:@&quot;Hello World&quot; withVoice:self.voice];
+
+[self.teller say:@&quot;Hello World Again !&quot; withVoice:self.voice];
+
+return YES;
+}
+</code></pre>
+<p>oEEO is OpenEarsEventsObserver</p>
+<p>How to teller say &#8220;Hello World Again &#8221; ? thank you for reading !<br />
+@Halle : Please tell me how to synchronize FliteController ? thank you</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-toopenears-multiple-statement-to-speech/#post-1021100</guid>
+					<title><![CDATA[Reply To: [how to]openears multiple statement to speech]]></title>
+					<link>/forums/topic/how-toopenears-multiple-statement-to-speech/#post-1021100</link>
+					<pubDate>Sat, 03 May 2014 11:18:26 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Sure, my answer on Stack Overflow explained this:</p>
+<blockquote><p>FliteController is asynchronous and any new utterance will override the previous one, which means that if you start two utterances almost simultaneously as in your example, you will only hear the second one. What you want to do is to wait for OpenEarsEventsObserver&#8217;s fliteDidFinishSpeaking method to know that the first (or the nth) speech utterance is complete so you can begin the next one.</p></blockquote>
+<p>Do you have specific questions about my explanation that I can answer?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-toopenears-multiple-statement-to-speech/#post-1021101</guid>
+					<title><![CDATA[Reply To: [how to]openears multiple statement to speech]]></title>
+					<link>/forums/topic/how-toopenears-multiple-statement-to-speech/#post-1021101</link>
+					<pubDate>Sat, 03 May 2014 11:46:00 +0000</pubDate>
+					<dc:creator>bluesun</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>how to wait fliteDidFinishSpeaking ? I don&#8217;t have any  ideal for that :(</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-toopenears-multiple-statement-to-speech/#post-1021103</guid>
+					<title><![CDATA[Reply To: [how to]openears multiple statement to speech]]></title>
+					<link>/forums/topic/how-toopenears-multiple-statement-to-speech/#post-1021103</link>
+					<pubDate>Sat, 03 May 2014 12:04:30 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>fliteDidFinishSpeaking is an OpenEarsEventsObserver delegate method that is called when FliteController has finished speaking a phrase. There are examples of how all the OpenEarsEventsObserver delegates work in the sample app, and you can do further research on how delegate callbacks work in Objective-C if you aren&#8217;t sure how to make use of delegates. The Apple developer site has good documentation about what delegates are and how they work.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/how-toopenears-multiple-statement-to-speech/#post-1021113</guid>
+					<title><![CDATA[Reply To: [how to]openears multiple statement to speech]]></title>
+					<link>/forums/topic/how-toopenears-multiple-statement-to-speech/#post-1021113</link>
+					<pubDate>Tue, 06 May 2014 03:20:56 +0000</pubDate>
+					<dc:creator>bluesun</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thank you, Halle ! I will try :)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

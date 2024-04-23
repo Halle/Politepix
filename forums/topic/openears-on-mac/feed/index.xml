@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>OpenEars on Mac &#8211; Politepix</title>
+		<atom:link href="/forums/topic/openears-on-mac/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/openears-on-mac/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:48:28 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/openears-on-mac/#post-13471</guid>
+					<title><![CDATA[OpenEars on Mac]]></title>
+					<link>/forums/topic/openears-on-mac/#post-13471</link>
+					<pubDate>Sun, 25 Nov 2012 05:51:33 +0000</pubDate>
+					<dc:creator>pf</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi All:</p>
+<p>Does anyone have experience using OpenEars on Mac OS X?  I know it&#8217;s not built for the Mac architecture, but since they&#8217;re similar backends, I think it might be possible&#8230;</p>
+<p>Thanks for any help!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-on-mac/#post-14636</guid>
+					<title><![CDATA[Reply To: OpenEars on Mac]]></title>
+					<link>/forums/topic/openears-on-mac/#post-14636</link>
+					<pubDate>Tue, 04 Dec 2012 09:58:12 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome, </p>
+<p>Unfortunately it can&#8217;t because the audio driver is extremely adapted to iOS audio, and I haven&#8217;t ported it because I think dealing with all of the possible variations in OS X desktop audio would be a huge support job but for a much smaller userbase, so basically not a good fit for a project such as this one. Sorry I can&#8217;t help you with that, pf.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>sih_add warnings &#8211; Politepix</title>
+		<atom:link href="/forums/topic/sih_add-warnings/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/sih_add-warnings/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:44:03 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/sih_add-warnings/#post-1017373</guid>
+					<title><![CDATA[sih_add warnings]]></title>
+					<link>/forums/topic/sih_add-warnings/#post-1017373</link>
+					<pubDate>Mon, 03 Jun 2013 08:16:15 +0000</pubDate>
+					<dc:creator>josh</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,<br />
+I&#8217;m using OpenEars with RapidEars and Rejecto and when I create the language model with the following code I get some weird warnings. Do I need to worry about them?</p>
+<pre><code>NSError *error = [_languageModelGenerator generateRejectingLanguageModelFromArray:[NSArray arrayWithObjects: @&quot;HELLO&quot;, @&quot;WHAT IS YOUR NAME&quot;, @&quot;WHERE DO YOU LIVE&quot;, @&quot;WHERE AM I&quot;, nil]                                                      withFilesNamed:@&quot;VoiceRecognitionModel&quot;
+withOptionalExclusions:nil                                       usingVowelsOnly:FALSE                                                  withWeight:nil];</code></pre>
+<p><strong>sih_add WARNING: repeated hashing of &#8216;___REJ_D&#8217;, older value will be overridden.<br />
+sih_add WARNING: repeated hashing of &#8216;___REJ_ER&#8217;, older value will be overridden.</strong></p>
+<p>Thanks.</p>
+<p>Josh</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/sih_add-warnings/#post-1017374</guid>
+					<title><![CDATA[Reply To: sih_add warnings]]></title>
+					<link>/forums/topic/sih_add-warnings/#post-1017374</link>
+					<pubDate>Mon, 03 Jun 2013 08:26:21 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Josh,</p>
+<p>Thanks for your helpful comment in the AVPlayer thread. No, this warning isn&#8217;t significant.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

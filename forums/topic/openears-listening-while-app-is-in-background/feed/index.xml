@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>OpenEars listening while app is in background &#8211; Politepix</title>
+		<atom:link href="/forums/topic/openears-listening-while-app-is-in-background/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/openears-listening-while-app-is-in-background/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:55:51 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/openears-listening-while-app-is-in-background/#post-8572</guid>
+					<title><![CDATA[OpenEars listening while app is in background]]></title>
+					<link>/forums/topic/openears-listening-while-app-is-in-background/#post-8572</link>
+					<pubDate>Thu, 02 Feb 2012 02:41:32 +0000</pubDate>
+					<dc:creator>jdkaire</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>First of all I have to say that OpenEars works amazing.  Just by following the tutorial you are able to include it in your app easily and it just works.</p>
+<p>I just have one question&#8230;Is there a way to have OpenEars still listening while the app is on the background?  I mean, when the user switches to another app or presses the home button but doesn&#8217;t close mine&#8230;</p>
+<p>Thanks a lot!</p>
+<p>Joe</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-listening-while-app-is-in-background/#post-8573</guid>
+					<title><![CDATA[Reply To: OpenEars listening while app is in background]]></title>
+					<link>/forums/topic/openears-listening-while-app-is-in-background/#post-8573</link>
+					<pubDate>Thu, 02 Feb 2012 08:55:57 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Nope, sorry, this isn&#8217;t possible. I haven&#8217;t pursued it because I don&#8217;t think it&#8217;s background behavior that Apple intends to accept. Thanks for being straightforward about it though, since it&#8217;s frustrating when people ask for this feature under the guise of asking for a different feature.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-listening-while-app-is-in-background/#post-8574</guid>
+					<title><![CDATA[Reply To: OpenEars listening while app is in background]]></title>
+					<link>/forums/topic/openears-listening-while-app-is-in-background/#post-8574</link>
+					<pubDate>Thu, 02 Feb 2012 15:15:39 +0000</pubDate>
+					<dc:creator>jdkaire</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Halle, thanks for your fast response.  I have searched everywhere and couldn&#8217;t find the answer.  So, that&#8217;s why I decided to get directly to the point and ask you.  At least now I know for sure.</p>
+<p>Thanks again,</p>
+<p>Joe</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-listening-while-app-is-in-background/#post-9062</guid>
+					<title><![CDATA[Reply To: OpenEars listening while app is in background]]></title>
+					<link>/forums/topic/openears-listening-while-app-is-in-background/#post-9062</link>
+					<pubDate>Mon, 26 Mar 2012 18:06:53 +0000</pubDate>
+					<dc:creator>hartsteins</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Actually&#8230;..this IS possible. It depends on what sort of background app you may already have running.  It is not possible to keep OpenEars going all on its own, but if your app is one of the 3 apple background apps (voip, audio, or location) then OpenEars will continue as active and listening.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-listening-while-app-is-in-background/#post-9064</guid>
+					<title><![CDATA[Reply To: OpenEars listening while app is in background]]></title>
+					<link>/forums/topic/openears-listening-while-app-is-in-background/#post-9064</link>
+					<pubDate>Mon, 26 Mar 2012 18:16:30 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Weird, the last time I tested it as audio type background app it didn&#8217;t work. It&#8217;s been a few versions though, I can believe it&#8217;s changed.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-listening-while-app-is-in-background/#post-9067</guid>
+					<title><![CDATA[Reply To: OpenEars listening while app is in background]]></title>
+					<link>/forums/topic/openears-listening-while-app-is-in-background/#post-9067</link>
+					<pubDate>Mon, 26 Mar 2012 18:24:10 +0000</pubDate>
+					<dc:creator>hartsteins</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am using OpenEars version 0.913 on iOS 5.0 and it seems to work.  I did make some changes to the AudioSessionManager however that might be making this possible specifically kAudioSessionProperty_OverrideCategoryMixWithOthers.</p>
+<p>When it goes to background, iOS shows &#8220;fancy&#8221; red navigation bar as OpenEars keeps recording.  I am using for continued iPod control, but an easy test is to fire local notifications on specific word/phrase recognition.</p>
+<p>Greg</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-listening-while-app-is-in-background/#post-9071</guid>
+					<title><![CDATA[Reply To: OpenEars listening while app is in background]]></title>
+					<link>/forums/topic/openears-listening-while-app-is-in-background/#post-9071</link>
+					<pubDate>Mon, 26 Mar 2012 18:52:43 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That&#8217;s excellent.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-listening-while-app-is-in-background/#post-9193</guid>
+					<title><![CDATA[Reply To: OpenEars listening while app is in background]]></title>
+					<link>/forums/topic/openears-listening-while-app-is-in-background/#post-9193</link>
+					<pubDate>Tue, 03 Apr 2012 13:25:25 +0000</pubDate>
+					<dc:creator>jdkaire</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Yes, my app is not one of the 3 types that Apple lets run in the background, but I found a way to make the app useful.</p>
+<p>thanks guys</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-listening-while-app-is-in-background/#post-9448</guid>
+					<title><![CDATA[Reply To: OpenEars listening while app is in background]]></title>
+					<link>/forums/topic/openears-listening-while-app-is-in-background/#post-9448</link>
+					<pubDate>Fri, 20 Apr 2012 02:31:41 +0000</pubDate>
+					<dc:creator>gotok</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I have a GPS/TTS (Flite) app that I would like to get working in the background. The app uses Flite to speak GPS values like speed. If I set the &#8220;Required background modes&#8221; to &#8220;App registers for location updates&#8221; (i.e. one of the three cases for background operation) then the GPS part of my app continues to work in the background, but Flite does not. Is there any way to get Flite to work in the background?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-listening-while-app-is-in-background/#post-9540</guid>
+					<title><![CDATA[Reply To: OpenEars listening while app is in background]]></title>
+					<link>/forums/topic/openears-listening-while-app-is-in-background/#post-9540</link>
+					<pubDate>Mon, 23 Apr 2012 22:08:02 +0000</pubDate>
+					<dc:creator>hartsteins</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>gotok,</p>
+<p>Register app in required background modes as &#8220;App plays audio&#8221; as well</p>
+<p>Greg</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

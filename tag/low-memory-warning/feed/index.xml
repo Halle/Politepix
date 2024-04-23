@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>low memory warning &#8211; Politepix</title>
+	<atom:link href="/tag/low-memory-warning/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>iOS Frameworks for speech recognition, text to speech and more</description>
+	<lastBuildDate>Sat, 07 Jul 2012 14:56:33 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.5.2</generator>
+<site xmlns="com-wordpress:feed-additions:1">206848719</site>	<item>
+		<title>Low memory warning bombardment tool</title>
+		<link>/2011/04/25/low-memory-warning-bombardment-tool/</link>
+					<comments>/2011/04/25/low-memory-warning-bombardment-tool/#comments</comments>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Mon, 25 Apr 2011 13:22:22 +0000</pubDate>
+				<category><![CDATA[Code]]></category>
+		<category><![CDATA[ios]]></category>
+		<category><![CDATA[low memory warning]]></category>
+		<category><![CDATA[simulator]]></category>
+		<category><![CDATA[xcode]]></category>
+		<guid isPermaLink="false">/?p=1240</guid>
+
+					<description><![CDATA[This is an update on my old post here: Consider Yourself Warned. I wanted to share a tool that I use in as part of checking an app for behaving correctly under low memory warnings, to the extent that is possible to do so using the Simulator. It&#8217;s an Applescript that just sends a low [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>This is an update on my old post here: <a href="/2010/02/28/consider-yourself-warned/">Consider Yourself Warned</a>.</p>
+<p>I wanted to share a tool that I use in as part of checking an app for behaving correctly under low memory warnings, to the extent that is possible to do so using the Simulator. It&#8217;s an Applescript that just sends a low memory warning to the simulator every second or so, so you can go through every function of your app while debugging and see if a low memory warning ever causes a crash due to a required data structure not being available after a low memory warning. It will also smoke out some redraw bugs due to views being released, though for this it is less reliable than the device.</p>
+<p>[politepix-blog-inline-text-ad]</p>
+<p>In order to use this tool, you need to turn go to  Universal Access in the System Preferences and check &#8220;Enable access for assistive devices&#8221;, and if it doesn&#8217;t work immediately, you may need to open the script up in <strong>Applescript Editor</strong> (usually found in your <strong>Utilities</strong> folder) and make sure that the simulatorName variable actually corresponds to the name of your simulator app for the version of Xcode you use. You can also change the timer for how frequently simulated memory warnings are invoked.</p>
+<p>This doesn&#8217;t tell you everything about how your app deals with memory on the device so it is not a substitute for functional device testing, but it will quickly show you if the app can be crashed on the simulator due to a missing data structure, which will often also happen on the device. It isn&#8217;t a panacea, just another tool to keep in the toolbox for catching some bugs easily.</p>
+<p>If you are using a version of the simulator that has different titling in the menu (I don&#8217;t know if there are any around right now but that is likely in the future), you can change the strings in the script which refer to the menu element names.</p>
+<p>When you quit the simulator, the script will quit. Since it is a loop that only exits when the simulator is quit, you may have to force quit it if you encounter some circumstance that I haven&#8217;t foreseen.</p>
+<p>Here is the script uploaded as a zipped applet (you can still open it up in the script editor to edit it):</p>
+<p><a href="/wp-content/uploads/Politepix%20Memory%20Bombardment.zip">Politepix Memory Bombardment applet</a></p>
+<p>If you don&#8217;t want to download a zipped applet, you can create your own Applescript applet from the following code:</p>
+<pre class="brush: cpp,gutter:false, smart-tabs:true,wrap-lines:false;">
+
+# This requires going to Universal Access in the System Preferences and checking "Enable access for assistive devices".
+
+# This will run until the iOS simulator is quit.
+
+# Created by Halle Winkler, Politepix: /
+
+#If you're using a different simulator version that is called something else, put its name here.
+set simulatorName to "iOS Simulator"
+# Change the .8 here to whatever interval you want to send simulated memory warnings at. These are seconds, so sleep 1 would mean that it repeats every second.
+set repeatRate to "sleep .8"
+
+# If the naming in the simulator menus is different for you, you can change them here
+
+set menuName to "Hardware" # This is the main menu name
+set menuItemName to "Simulate Memory Warning" # This is the name of the menu item
+
+tell application simulatorName
+	activate
+end tell
+repeat
+	
+	tell application "System Events"
+		if application process simulatorName exists then
+			tell application "System Events"
+				tell process simulatorName
+					tell menu bar 1
+						tell menu bar item menuName
+							tell menu menuName
+								click menu item menuItemName
+							end tell
+						end tell
+					end tell
+				end tell
+			end tell
+			do shell script repeatRate
+		else
+			exit repeat
+		end if
+	end tell
+	
+end repeat
+
+</pre>
+<p>Hope this is helpful to others.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/2011/04/25/low-memory-warning-bombardment-tool/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">1240</post-id>	</item>
+	</channel>
+</rss>

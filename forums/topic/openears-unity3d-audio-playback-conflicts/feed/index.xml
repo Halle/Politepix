@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>OpenEars + Unity3D: Audio playback conflicts &#8211; Politepix</title>
+		<atom:link href="/forums/topic/openears-unity3d-audio-playback-conflicts/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/openears-unity3d-audio-playback-conflicts/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:56:19 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/openears-unity3d-audio-playback-conflicts/#post-1022018</guid>
+					<title><![CDATA[OpenEars + Unity3D: Audio playback conflicts]]></title>
+					<link>/forums/topic/openears-unity3d-audio-playback-conflicts/#post-1022018</link>
+					<pubDate>Sun, 20 Jul 2014 04:22:33 +0000</pubDate>
+					<dc:creator>pizigi</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello Halle,</p>
+<p>I&#8217;m integrating OpenEars with a Unity3D game, and the game relies heavily on music and sound effects.<br />
+When OpenEars starts listening, it will change the audio playback settings in a way that conflicts with Unity (which uses FMOD for sound).</p>
+<p>I&#8217;ve noticed two issues when OpenEars starts listening:<br />
+&#8211; Unity3D audio will completely stop unless I set a very high buffer size on the Unity side, which introduces latency<br />
+&#8211; OpenEars will change the sample rate from 24000 Hz (Unity&#8217;s sample rate on iOS) to 16000 Hz, causing the sound playback quality to degrade considerably</p>
+<p>Despite these audio playback issues, OpenEars recognition works perfectly. </p>
+<p>I&#8217;m not using Flite, so I don&#8217;t require any audio playback from OpenEars. Is it possible to make OpenEars deal only with input from the mic, while not interfering with audio playback settings?</p>
+<p>Thanks very much!</p>
+<p>PS.: I tried using AudioSessionGetProperty and AudioSessionSetProperty to check and restore the sample rate back to 24000 Hz, and while it fixed my sound quality, it broke OpenEars recognition, so I guess that&#8217;s not a viable solution.</p>
+<p>Below is the log from the audio setup part, thought you&#8217;d be interested to see it:</p>
+<p>2014-07-20 11:56:59.409 amoraleite[12650:1b03] Leaving sample rate at the default of 16000.<br />
+2014-07-20 11:56:59.411 amoraleite[12650:1b03] The audio session has already been initialized but we will override its properties.<br />
+2014-07-20 11:56:59.412 amoraleite[12650:1b03] Checking and resetting all audio session settings.<br />
+2014-07-20 11:56:59.414 amoraleite[12650:1b03] audioCategory is incorrect, we will change it.<br />
+2014-07-20 11:56:59.789 amoraleite[12650:1b03] audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.<br />
+2014-07-20 11:56:59.810 amoraleite[12650:1b03] audioMode is incorrect, we will change it.<br />
+2014-07-20 11:57:00.203 amoraleite[12650:1b03] audioMode is now on the correct setting.<br />
+2014-07-20 11:57:00.207 amoraleite[12650:1b03] bluetoothInput is incorrect, we will change it.<br />
+2014-07-20 11:57:00.221 amoraleite[12650:1b03] bluetooth input is now on the correct setting of 1.<br />
+2014-07-20 11:57:00.222 amoraleite[12650:1b03] Output Device: SpeakerAndMicrophone.<br />
+2014-07-20 11:57:00.223 amoraleite[12650:1b03] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2014-07-20 11:57:00.225 amoraleite[12650:1b03] preferredBufferSize is incorrect, we will change it.<br />
+2014-07-20 11:57:00.228 amoraleite[12650:1b03] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2014-07-20 11:57:00.230 amoraleite[12650:1b03] preferredSampleRateCheck is incorrect, we will change it.<br />
+2014-07-20 11:57:00.465 amoraleite[12650:1b03] preferred hardware sample rate is now on the correct setting of 16000.000000.<br />
+2014-07-20 11:57:00.902 amoraleite[12650:1b03] AudioSessionManager startAudioSession has reached the end of the initialization.<br />
+2014-07-20 11:57:00.904 amoraleite[12650:1b03] Exiting startAudioSession.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-unity3d-audio-playback-conflicts/#post-1022020</guid>
+					<title><![CDATA[Reply To: OpenEars + Unity3D: Audio playback conflicts]]></title>
+					<link>/forums/topic/openears-unity3d-audio-playback-conflicts/#post-1022020</link>
+					<pubDate>Sun, 20 Jul 2014 05:08:18 +0000</pubDate>
+					<dc:creator>pizigi</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>By the way, forgot to mention I tested on iPad 2, iPhone 4 and iPhone 5S. All with same results.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-unity3d-audio-playback-conflicts/#post-1022021</guid>
+					<title><![CDATA[Reply To: OpenEars + Unity3D: Audio playback conflicts]]></title>
+					<link>/forums/topic/openears-unity3d-audio-playback-conflicts/#post-1022021</link>
+					<pubDate>Sun, 20 Jul 2014 07:04:29 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>This is a known limitation, if you&#8217;d like to read more about it the search keywords audio playback will probably show most of the previous discussions, and there is info in the FAQ.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

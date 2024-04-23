@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>PocketsphinxController Enhancement Request &#8211; Politepix</title>
+		<atom:link href="/forums/topic/pocketsphinxcontroller-enhancement-request/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/pocketsphinxcontroller-enhancement-request/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:02:11 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/pocketsphinxcontroller-enhancement-request/#post-1020860</guid>
+					<title><![CDATA[PocketsphinxController Enhancement Request]]></title>
+					<link>/forums/topic/pocketsphinxcontroller-enhancement-request/#post-1020860</link>
+					<pubDate>Fri, 11 Apr 2014 13:57:04 +0000</pubDate>
+					<dc:creator>wfilleman</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>I&#8217;ve got an enhancement request for the PocketsphinxController. In addition to the .audioMode that allows us to configure which mode to use, it would be great to have an option to enable/disable Bluetooth input.</p>
+<p>Several of my users have complained that their music in their cars turn off when turning voice control on in my app due to PocketsphinxController/AudioSessionManager wanting to connect to their car&#8217;s bluetooth connection.</p>
+<p>I&#8217;ve modded OpenEars on my end to support allowing the user to turn Bluetooth Input ON of OFF, but thought I&#8217;d share what my users are reporting and request that this BOOL option on the PocketsphinxController be considered as a future enhancement.</p>
+<p>Thanks Halle, keep up the great work!<br />
+Wes</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

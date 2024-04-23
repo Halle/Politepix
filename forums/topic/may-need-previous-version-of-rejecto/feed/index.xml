@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>May Need Previous Version of Rejecto &#8211; Politepix</title>
+		<atom:link href="/forums/topic/may-need-previous-version-of-rejecto/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/may-need-previous-version-of-rejecto/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:43:33 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/may-need-previous-version-of-rejecto/#post-1018936</guid>
+					<title><![CDATA[May Need Previous Version of Rejecto]]></title>
+					<link>/forums/topic/may-need-previous-version-of-rejecto/#post-1018936</link>
+					<pubDate>Tue, 19 Nov 2013 16:52:46 +0000</pubDate>
+					<dc:creator>Lann</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>I just purchased Rejecto and I am having some linker issues. I believe that I need the previous version of Rejecto for my project. In my case, it would be preferable to use the older Rejecto rather than upgrading OpenEars. </p>
+<p>Here is the linker error I am getting which does not occur when I use the older RejectoDemo.framework:</p>
+<p>Undefined symbols for architecture i386:<br />
+  &#8220;_OBJC_CLASS_$_SScribe&#8221;, referenced from:<br />
+      objc-class-ref in Rejecto(LanguageModelGenerator+Rejecto.o)<br />
+ld: symbol(s) not found for architecture i386</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/may-need-previous-version-of-rejecto/#post-1018937</guid>
+					<title><![CDATA[Reply To: May Need Previous Version of Rejecto]]></title>
+					<link>/forums/topic/may-need-previous-version-of-rejecto/#post-1018937</link>
+					<pubDate>Tue, 19 Nov 2013 17:02:24 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome Lann,</p>
+<p>I completely understand the drive behind the request and I&#8217;m sorry since I can&#8217;t distribute out-of-date versions. It would be extremely arduous to give any support for since it requires the entire test rig of that era (the OpenEars version, any other plugins, possibly Xcode versions if OS versions were involved with the upgrade) and your account would require special handling every time there was an update. But I&#8217;ll be happy to assist you here to get up to the current version of OpenEars; just let me know any issues you&#8217;re encountering.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/may-need-previous-version-of-rejecto/#post-1018938</guid>
+					<title><![CDATA[Reply To: May Need Previous Version of Rejecto]]></title>
+					<link>/forums/topic/may-need-previous-version-of-rejecto/#post-1018938</link>
+					<pubDate>Tue, 19 Nov 2013 17:27:52 +0000</pubDate>
+					<dc:creator>Lann</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the quick response. Oddly, the linker error persists even if I use the latest OpenEars. I also get an extra one, just for fun:</p>
+<p>Undefined symbols for architecture i386:<br />
+  &#8220;_OBJC_CLASS_$_SScribe&#8221;, referenced from:<br />
+      objc-class-ref in Rejecto(LanguageModelGenerator+Rejecto.o)<br />
+  &#8220;_returner&#8221;, referenced from:<br />
+      -[LanguageModelGenerator(Rejecto) generateRejectingLanguageModelFromArray:withFilesNamed:withOptionalExclusions:usingVowelsOnly:withWeight:forAcousticModelAtPath:] in Rejecto(LanguageModelGenerator+Rejecto.o)<br />
+ld: symbol(s) not found for architecture i386</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/may-need-previous-version-of-rejecto/#post-1018939</guid>
+					<title><![CDATA[Reply To: May Need Previous Version of Rejecto]]></title>
+					<link>/forums/topic/may-need-previous-version-of-rejecto/#post-1018939</link>
+					<pubDate>Tue, 19 Nov 2013 17:34:12 +0000</pubDate>
+					<dc:creator>Lann</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Scratch that last one. It was my own mistake. Now it compiles and links but the whole issue here is that I&#8217;m using an older version of an Apache Cordoba/PhoneGap plugin for openears and now I get the following error which did not previously occur:</p>
+<p>-[LanguageModelGenerator generateRejectingLanguageModelFromArray:withFilesNamed:withOptionalExclusions:usingVowelsOnly:withWeight:]: unrecognized selector sent to instance 0x8330280</p>
+<p>*** WebKit discarded an uncaught exception in the webView:decidePolicyForNavigationAction:request:frame:decisionListener: delegate: &lt;NSInvalidArgumentException&gt; -[LanguageModelGenerator generateRejectingLanguageModelFromArray:withFilesNamed:withOptionalExclusions:usingVowelsOnly:withWeight:]: unrecognized selector sent to instance 0x8330280</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/may-need-previous-version-of-rejecto/#post-1018940</guid>
+					<title><![CDATA[Reply To: May Need Previous Version of Rejecto]]></title>
+					<link>/forums/topic/may-need-previous-version-of-rejecto/#post-1018940</link>
+					<pubDate>Tue, 19 Nov 2013 17:44:22 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Oh, great to hear (I had just written up a big troubleshooting process for you but it sounds like you&#8217;re OK as far as the framework). The issue above is just because OpenEars and Rejecto had an API change in order to support multiple languages, with the addition of an AcousticModel object whose path needs to be passed to LanguageModelGenerator and PocketsphinxController methods now. Just take a look at the replacement for the complaining method above that is in the header file or PDF. The tutorial also uses the current API so it might be worth a look.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/may-need-previous-version-of-rejecto/#post-1018941</guid>
+					<title><![CDATA[Reply To: May Need Previous Version of Rejecto]]></title>
+					<link>/forums/topic/may-need-previous-version-of-rejecto/#post-1018941</link>
+					<pubDate>Tue, 19 Nov 2013 18:32:28 +0000</pubDate>
+					<dc:creator>Lann</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am still having a bit of trouble converting the following snippet:</p>
+<p>-(void)languageModelGeneratorGenerateLanguageModelFromArray:(NSArray *)arguments withDict:(NSDictionary *)options{</p>
+<p>    NSString *languageArrayCSV = [arguments objectAtIndex:0];<br />
+    NSArray *languageArray = [languageArrayCSV componentsSeparatedByString:@&#8221;,&#8221;];</p>
+<p>		NSError *error = [self.language_model_generator generateRejectingLanguageModelFromArray:languageArray withFilesNamed:@&#8221;dynamic&#8221;withOptionalExclusions:nil<br />
+				usingVowelsOnly:FALSE<br />
+				withWeight:nil];</p>
+<p>I am trying: 		</p>
+<p>NSError *error = [self.language_model_generator generateRejectingLanguageModelFromArray:languageArray<br />
+			 withFilesNamed:@&#8221;dynamic&#8221;<br />
+			 withOptionalExclusions:nil<br />
+			 usingVowelsOnly:FALSE<br />
+			 withWeight:nil<br />
+			 // Change &#8220;AcousticModelEnglish&#8221; to &#8220;AcousticModelSpanish&#8221; to create a Spanish Rejecto model.<br />
+			 forAcousticModelAtPath:[AcousticModel pathToModel:@&#8221;AcousticModelEnglish&#8221;]];</p>
+<p>But I get an error that AcousticModel is undefined</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/may-need-previous-version-of-rejecto/#post-1018943</guid>
+					<title><![CDATA[Reply To: May Need Previous Version of Rejecto]]></title>
+					<link>/forums/topic/may-need-previous-version-of-rejecto/#post-1018943</link>
+					<pubDate>Tue, 19 Nov 2013 18:46:41 +0000</pubDate>
+					<dc:creator>Lann</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Well, I seem to have gotten past the above issue and now i&#8217;m at:</p>
+<p>Error: the default phonetic dictionary (null) can&#8217;t be found in the app bundle but the app is attempting to access it, most likely there will be a crash now.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/may-need-previous-version-of-rejecto/#post-1018944</guid>
+					<title><![CDATA[Reply To: May Need Previous Version of Rejecto]]></title>
+					<link>/forums/topic/may-need-previous-version-of-rejecto/#post-1018944</link>
+					<pubDate>Tue, 19 Nov 2013 18:49:29 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Progress, progress :) . Is it possible that you haven&#8217;t added the acoustic model bundle itself to your app so that it is available at the root of mainBundle?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/may-need-previous-version-of-rejecto/#post-1018945</guid>
+					<title><![CDATA[Reply To: May Need Previous Version of Rejecto]]></title>
+					<link>/forums/topic/may-need-previous-version-of-rejecto/#post-1018945</link>
+					<pubDate>Tue, 19 Nov 2013 19:03:30 +0000</pubDate>
+					<dc:creator>Lann</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I have AcousticModelEnglish.bundle in the root of my Resources folder in xcode. What else could this be?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/may-need-previous-version-of-rejecto/#post-1018946</guid>
+					<title><![CDATA[Reply To: May Need Previous Version of Rejecto]]></title>
+					<link>/forums/topic/may-need-previous-version-of-rejecto/#post-1018946</link>
+					<pubDate>Tue, 19 Nov 2013 19:07:31 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The important question is about whether it is found in the root level of your app and whether all of its files are within. You can verify this by going to your Products folder, right-clicking on the built app, choosing &#8220;Show In Finder&#8221;, and then right-clicking on the .app file and selecting &#8220;Show Package Contents&#8221;. You should then see all the items at the root level of your app, and the acoustic model bundle should be there. If you look inside it, it should have the same files within as it does in the distribution.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

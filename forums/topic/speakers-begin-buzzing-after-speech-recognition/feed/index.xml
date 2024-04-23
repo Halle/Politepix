@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Speakers begin buzzing after speech recognition &#8211; Politepix</title>
+		<atom:link href="/forums/topic/speakers-begin-buzzing-after-speech-recognition/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/speakers-begin-buzzing-after-speech-recognition/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:09:18 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/speakers-begin-buzzing-after-speech-recognition/#post-1022608</guid>
+					<title><![CDATA[Speakers begin buzzing after speech recognition]]></title>
+					<link>/forums/topic/speakers-begin-buzzing-after-speech-recognition/#post-1022608</link>
+					<pubDate>Tue, 23 Sep 2014 07:13:32 +0000</pubDate>
+					<dc:creator>beermann</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I have a bit of a complicated use case, but I&#8217;m hoping there&#8217;s a simple solution. I&#8217;m using OpenEars as a Cordova plugin to perform speech recognition while recording to a file. That much works beautifully. </p>
+<p>After the recording, I stop recognition and move to a new view where I load the recorded file to play back. This is happening in a WebView, so I&#8217;m using a webkitAudioContext. As soon as the audio context is created, a horrible, and very loud, buzzing takes over the speakers. If I don&#8217;t initialize any of the OpenEars stuff, there is no buzzing.</p>
+<p>I&#8217;ve looked through the forums and understand that there are issues with the audio unit and the PlayAndRecord AudioSession. However, I&#8217;m in a view where I don&#8217;t need OpenEars any more and I don&#8217;t think there are any recognition threads even running. I can&#8217;t figure out what is causing the problem though. Any insight into how I might go about cleaning things up or finding a workaround would be greatly appreciated (although I do not have a choice regarding playing the file back via a wekitAudioContext).</p>
+<p>Thank you,</p>
+<p>Dale</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

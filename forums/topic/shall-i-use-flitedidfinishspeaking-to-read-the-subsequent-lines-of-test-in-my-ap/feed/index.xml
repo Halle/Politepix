@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Shall i use fliteDidFinishSpeaking to read the subsequent lines of test in my ap &#8211; Politepix</title>
+		<atom:link href="/forums/topic/shall-i-use-flitedidfinishspeaking-to-read-the-subsequent-lines-of-test-in-my-ap/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/shall-i-use-flitedidfinishspeaking-to-read-the-subsequent-lines-of-test-in-my-ap/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:09:04 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/shall-i-use-flitedidfinishspeaking-to-read-the-subsequent-lines-of-test-in-my-ap/#post-1022891</guid>
+					<title><![CDATA[Shall i use fliteDidFinishSpeaking to read the subsequent lines of test in my ap]]></title>
+					<link>/forums/topic/shall-i-use-flitedidfinishspeaking-to-read-the-subsequent-lines-of-test-in-my-ap/#post-1022891</link>
+					<pubDate>Wed, 29 Oct 2014 11:15:42 +0000</pubDate>
+					<dc:creator>krishtelco</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am creating an iOS app that needs to read(test to speech) several lines of text. i am calling fliteController say method for the first line of text.<br />
+it is reading the text.<br />
+If call the say method for the second line of text it is not reading?</p>
+<p>So shall i include the say method in fliteDidFinishSpeaking<br />
+to read the subsequent lines?</p>
+<p>thanks in advance for your kind help</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/shall-i-use-flitedidfinishspeaking-to-read-the-subsequent-lines-of-test-in-my-ap/#post-1022892</guid>
+					<title><![CDATA[Reply To: Shall i use fliteDidFinishSpeaking to read the subsequent lines of test in my ap]]></title>
+					<link>/forums/topic/shall-i-use-flitedidfinishspeaking-to-read-the-subsequent-lines-of-test-in-my-ap/#post-1022892</link>
+					<pubDate>Wed, 29 Oct 2014 11:20:30 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>That&#8217;s exactly right – you need to wait until you get the callback in fliteDidFinishSpeaking in order to know one line of speech is complete, before you can begin the next one.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/shall-i-use-flitedidfinishspeaking-to-read-the-subsequent-lines-of-test-in-my-ap/#post-1022893</guid>
+					<title><![CDATA[Reply To: Shall i use fliteDidFinishSpeaking to read the subsequent lines of test in my ap]]></title>
+					<link>/forums/topic/shall-i-use-flitedidfinishspeaking-to-read-the-subsequent-lines-of-test-in-my-ap/#post-1022893</link>
+					<pubDate>Wed, 29 Oct 2014 12:02:36 +0000</pubDate>
+					<dc:creator>krishtelco</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle Thanks for your kind response. But some people said we should not write code (that to fetch next text and call &#8220;say&#8221; in flitedidfinishsieaking because it is delegated callback ? </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/shall-i-use-flitedidfinishspeaking-to-read-the-subsequent-lines-of-test-in-my-ap/#post-1022895</guid>
+					<title><![CDATA[Reply To: Shall i use fliteDidFinishSpeaking to read the subsequent lines of test in my ap]]></title>
+					<link>/forums/topic/shall-i-use-flitedidfinishspeaking-to-read-the-subsequent-lines-of-test-in-my-ap/#post-1022895</link>
+					<pubDate>Wed, 29 Oct 2014 12:32:40 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You can naturally use the callback in order to call a method responsible for advancing your speech utterances through a queue or any business logic that you prefer for that. I guess I don&#8217;t really understand the idea of avoiding using the callback in order to trigger an event based on the information shared by the callback about the status of an asynchronous API. If that were dangerous, it wouldn&#8217;t be possible to react to the status of any of Apple&#8217;s async APIs which deliver status information through delegates (for example audio playback or networking APIs).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/shall-i-use-flitedidfinishspeaking-to-read-the-subsequent-lines-of-test-in-my-ap/#post-1022896</guid>
+					<title><![CDATA[Reply To: Shall i use fliteDidFinishSpeaking to read the subsequent lines of test in my ap]]></title>
+					<link>/forums/topic/shall-i-use-flitedidfinishspeaking-to-read-the-subsequent-lines-of-test-in-my-ap/#post-1022896</link>
+					<pubDate>Wed, 29 Oct 2014 12:45:30 +0000</pubDate>
+					<dc:creator>krishtelco</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle thanking you for your wonderful help and response. Really a great help</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

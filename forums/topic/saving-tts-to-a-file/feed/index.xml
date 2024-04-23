@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Saving TTS to a file &#8211; Politepix</title>
+		<atom:link href="/forums/topic/saving-tts-to-a-file/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/saving-tts-to-a-file/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:04:45 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/saving-tts-to-a-file/#post-1019688</guid>
+					<title><![CDATA[Saving TTS to a file]]></title>
+					<link>/forums/topic/saving-tts-to-a-file/#post-1019688</link>
+					<pubDate>Thu, 16 Jan 2014 07:17:51 +0000</pubDate>
+					<dc:creator>ShadowDES</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am very interested in saving a TTS phrase to a file.  I understand that the speechData is basically a .wav file, but I&#8217;m a bit confused as to how I would go about setting that data.</p>
+<p>In a viewcontroller</p>
+<pre><code>
+[self.fliteController say:@&quot;This is what I want to say&quot; withVoice:self.slt];
+NSData *myData;
+myData = [self.fliteController speechData];
+</code></pre>
+<p>Any leads would be GREATLY appreciated.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/saving-tts-to-a-file/#post-1019763</guid>
+					<title><![CDATA[Reply To: Saving TTS to a file]]></title>
+					<link>/forums/topic/saving-tts-to-a-file/#post-1019763</link>
+					<pubDate>Thu, 16 Jan 2014 15:57:14 +0000</pubDate>
+					<dc:creator>ShadowDES</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>And a related followup question.</p>
+<p>Can the same be done with NeatSpeech (saving to a wav file instead of actually speaking at the time of creation).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/saving-tts-to-a-file/#post-1019782</guid>
+					<title><![CDATA[Reply To: Saving TTS to a file]]></title>
+					<link>/forums/topic/saving-tts-to-a-file/#post-1019782</link>
+					<pubDate>Fri, 17 Jan 2014 17:42:03 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Sorry, definitely can&#8217;t be done with NeatSpeech. Have you tried writing out speechData with:</p>
+<pre>- (BOOL)writeToFile:(NSString *)path atomically:(BOOL)useAuxiliaryFile;</pre>
+<p>?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

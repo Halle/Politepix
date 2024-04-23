@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>OpenEars / AVPlayer Issue &#8211; Politepix</title>
+		<atom:link href="/forums/topic/openears-avplayer-issue/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/openears-avplayer-issue/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:57:36 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/openears-avplayer-issue/#post-1017371</guid>
+					<title><![CDATA[OpenEars / AVPlayer Issue]]></title>
+					<link>/forums/topic/openears-avplayer-issue/#post-1017371</link>
+					<pubDate>Sun, 02 Jun 2013 22:49:14 +0000</pubDate>
+					<dc:creator>harrypell</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>I have installed OpenEars in my project, and as I said it is working like a dream. Most of the time&#8230;</p>
+<p>However, every now and then I get a weird and random moment when things just stop working. I have researched the error and turned on logging to try and find out what is happening and I believe the issue is called because I am alternating between Voice Recognition and AVPlayer/AVAudioPlayer Movies and Sound clips. </p>
+<p>Each time I switch between the two I can see this error when logging is switched on&#8230;.</p>
+<p>&#8211; &#8211; &#8211; &#8211; &#8211; &#8211; &#8211; &#8211; </p>
+<p>Audio route has changed for the following reason:</p>
+<p>2013-05-31 23:05:09.665 Timmy Tickle Baby[980:707] There has been a change of category</p>
+<p>2013-05-31 23:05:09.666 Timmy Tickle Baby[980:707] The previous audio route was SpeakerAndMicrophone</p>
+<p>2013-05-31 23:05:09.668 Timmy Tickle Baby[980:707] This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is SpeakerAndMicrophone</p>
+<p>2013-05-31 23:05:10.439 Timmy Tickle Baby[980:707] Audio route has changed for the following reason:</p>
+<p>2013-05-31 23:05:10.440 Timmy Tickle Baby[980:707] There has been a change of category</p>
+<p>2013-05-31 23:05:10.444 Timmy Tickle Baby[980:707] The previous audio route was Speaker</p>
+<p>2013-05-31 23:05:10.445 Timmy Tickle Baby[980:707] This is not a case in which OpenEars performs a route change voluntarily. At the close of this function, the audio route is SpeakerAndMicrophone</p>
+<p>&#8211; &#8211; &#8211; &#8211; &#8211; &#8211; &#8211; &#8211; </p>
+<p>&#8230;and sometimes I get the following as well, though not as often&#8230;</p>
+<p>&#8211; &#8211; &#8211; &#8211; &#8211; &#8211; &#8211; &#8211; </p>
+<p>2013-05-31 23:05:09.440 Timmy Tickle Baby[980:3c9b] 23:05:09.440 &lt;0x2bfc000&gt; shm_open failed: &#8220;AppleAURemoteIO.o.24024&#8221; (23) flags=0x2 errno=2</p>
+<p>2013-05-31 23:05:09.442 Timmy Tickle Baby[980:3c9b] 23:05:09.442 &lt;0x2bfc000&gt; AURemoteIO::ChangeHardwareFormats: error 2 </p>
+<p>&#8211; &#8211; &#8211; &#8211; &#8211; &#8211; &#8211; &#8211; </p>
+<p>I Googled these errors and found them both to be to do with the Audio Hardware. I found a thread on your support website in which someone describes the problems I am having. </p>
+<p><a href="/forums/topic/cant-recognize-speech/">/forums/topic/cant-recognize-speech/</a></p>
+<p>In this thread in Jan 2011 you state that you have updated Open Ears to support the re-instigation of the audio session, which is why I assume this problem doesn&#8217;t happen that often. </p>
+<p>I also found this thread interesting&#8230;</p>
+<p><a href="/forums/topic/speech-not-always-detected/">/forums/topic/speech-not-always-detected/</a></p>
+<p>Particularly your comment here : I don’t really want to give advice here regarding forcing the audio session to reset because in 99% of cases the issue is not due to the audio session and folks will read the steps here and do stuff to the audio session directly and end up with messed-up apps that are very confusing for me to troubleshoot. That said, in this one case it might be worth your while to go investigate how the shared audio session manager is started by the internal classes and give it a go.</p>
+<p>Essentially what I am doing in the app is the following &#8211; </p>
+<p>Starting OpenEars<br />
+Pausing recognition<br />
+Playing an AVPlayer M4V<br />
+&#8230;when finished<br />
+Playing an AVAudioPlayer MP3<br />
+&#8230;when finished</p>
+<p>Resuming recognition<br />
+Recognising something<br />
+Pausing recognition<br />
+Playing an AVPlayer M4V OR AVAudioPlayer MP3<br />
+&#8230;when finished back to Resuming recognition</p>
+<p>This happens in a  loop continuously. The video has always finished before the recognition starts and the recognition has always finished before the video plays. </p>
+<p>Could I be one of the few who needs to force restart the OpenEars AudioSession &#8211; and if so how do I do it? </p>
+<p>Thanks Halle!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-avplayer-issue/#post-1017372</guid>
+					<title><![CDATA[Reply To: OpenEars / AVPlayer Issue]]></title>
+					<link>/forums/topic/openears-avplayer-issue/#post-1017372</link>
+					<pubDate>Mon, 03 Jun 2013 08:01:36 +0000</pubDate>
+					<dc:creator>josh</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,<br />
+I am doing something very similar to you. I start the recognition then suspend it to be able to do other things with the microphone and speaker which requires a completely different audio session config and sample rate.<br />
+Before I resume the recognition I call startAudioSession which re-initializes the audio session again.<br />
+Example code:</p>
+<pre><code>[[AudioSessionManager sharedAudioSessionManager] startAudioSession];
+[self.pocketsphinxController resumeRecognition];</code></pre>
+<p>I have also found that after you suspend the recognition you need to delay a little before you re-configure the audio session to how you want it, otherwise pocket sphinx can crash. You will also need to give a little time for the audio session to be re-configured before you play your mp3/movie otherwise I&#8217;ve found the first part of the audio can be cut off.<br />
+Example code:</p>
+<pre><code>[self.pocketsphinxController suspendRecognition];
+[self performSelector:@selector(reconfigureAudioForPlayingMovie) withObject:nil afterDelay: 1.0];
+[self performSelector:@selector(playMovie) withObject:nil afterDelay: 2.0];</code></pre>
+<p>This works for me. Hope it helps!</p>
+<p>Josh</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-avplayer-issue/#post-1017375</guid>
+					<title><![CDATA[Reply To: OpenEars / AVPlayer Issue]]></title>
+					<link>/forums/topic/openears-avplayer-issue/#post-1017375</link>
+					<pubDate>Mon, 03 Jun 2013 11:09:37 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Harriet,</p>
+<p>Does Josh&#8217;s suggestion work for you? Of the two issues you are showing, the first one in which the audio session is reset is 100% correct behavior &#8212; it means that PocketsphinxController detected that AVPlayer overrode the audio session settings and didn&#8217;t return them to their previous state at the right point in the loop, so it is doing so before it tries to start input recording. There&#8217;s no problem there. This one is the only problem:</p>
+<p>&lt;0x2bfc000> AURemoteIO::ChangeHardwareFormats: error 2</p>
+<p>That means that at some point the switch back to the audio settings required by Pocketsphinx isn&#8217;t successfully instantiating the audio unit so no further audio input is going to be available. Josh&#8217;s advice sounds good to me as a workaround for this issue, which is probably related to the close timing between restarting listening and the amount of things that have to be done with the audio session and audio unit in order to recover from AVPlayer&#8217;s override.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/openears-avplayer-issue/#post-1017377</guid>
+					<title><![CDATA[Reply To: OpenEars / AVPlayer Issue]]></title>
+					<link>/forums/topic/openears-avplayer-issue/#post-1017377</link>
+					<pubDate>Tue, 04 Jun 2013 16:34:04 +0000</pubDate>
+					<dc:creator>harrypell</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks Josh &amp; Halle.</p>
+<p>That does seem to have done the trick. It slows things down a little, but that&#8217;s preferable to random crashing : ) </p>
+<p>Thanks for you help!</p>
+<p>In case anyone else is wondering how to fix this. This is what I did&#8230;</p>
+<p>First you add this to your header &#8211;</p>
+<p>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _<br />
+#import &lt;OpenEars/AudioSessionManager.h&gt;<br />
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ </p>
+<p>Then you need to initialise the AVAudio session so you can manually reset it<br />
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _<br />
+        NSError *activationError = nil;<br />
+        BOOL success = [[AVAudioSession sharedInstance] setActive: YES error: &amp;activationError];</p>
+<p>        if (!success) {<br />
+            NSLog(@&#8221;Audio Session Error&#8221;);<br />
+        }<br />
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ </p>
+<p>After suspending recognition in OpenEars with this &#8211; </p>
+<p>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _<br />
+[self.pocketsphinxController suspendRecognition];<br />
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ </p>
+<p>&#8211; manually reset the audio session on a delay with this call &#8211;</p>
+<p>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _<br />
+    [self performSelector:@selector(reconfigureAudioForPlayingMovie) withObject:nil afterDelay: 1.0];<br />
+    }<br />
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ </p>
+<p>&#8211; and this (this is the AVAudioSessionCategory I believe I need for playing an M4V in AVPlayer or an Mp3 in AVAudioPlayer ) &#8211;</p>
+<p>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _<br />
+-(void)reconfigureAudioForPlayingMovie {<br />
+    NSError *setCategoryError = nil;<br />
+    BOOL success = [[AVAudioSession sharedInstance]<br />
+                    setCategory: AVAudioSessionCategoryAmbient<br />
+                    error: &amp;setCategoryError];</p>
+<p>    if (!success) {<br />
+        NSLog(@&#8221;Audio Session Error&#8221;);<br />
+    }<br />
+    NSLog(@&#8221;Audio Session Reconfigured&#8221;);</p>
+<p>}<br />
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ </p>
+<p>And then give a little delay before playing your video/audio.</p>
+<p>When you want to listen again you resume the Audio session and OpenEars </p>
+<p>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _<br />
+    [[AudioSessionManager sharedAudioSessionManager] startAudioSession];<br />
+    [self.pocketsphinxController resumeRecognition];<br />
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ </p>
+<p>I&#8217;ve been testing this most of the day and playing around with how long the delays need to be. </p>
+<p>I&#8217;ll post an update here if I figure anything else out.</p>
+<p>Harriet</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

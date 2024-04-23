@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] Missing notifications in 2.0 &#8211; Politepix</title>
+		<atom:link href="/forums/topic/missing-notifications-in-2-0/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/missing-notifications-in-2-0/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:00:57 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/missing-notifications-in-2-0/#post-1023433</guid>
+					<title><![CDATA[[Resolved] Missing notifications in 2.0]]></title>
+					<link>/forums/topic/missing-notifications-in-2-0/#post-1023433</link>
+					<pubDate>Thu, 11 Dec 2014 19:08:20 +0000</pubDate>
+					<dc:creator>nrbrook</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I have created a new branch for 2.0 so I can switch between 1.x and 2.  With 2 I am not getting the calibration notifications I was in 1.x.</p>
+<p>Here&#8217;s a sample of logs using 1.x.  The log lines in bold and without a timestamp are the events I have received out of OpenEarsEventsObserver</p>
+<p><strong>Recognition loop started</strong><br />
+2014-12-11 18:59:59.075 Napkin[388:53167] Starting openAudioDevice on the device.<br />
+2014-12-11 18:59:59.075 Napkin[388:53167] Audio unit wrapper successfully created.<br />
+2014-12-11 18:59:59.087 Napkin[388:53167] Set audio route to SpeakerAndMicrophone<br />
+2014-12-11 18:59:59.090 Napkin[388:53167] Restoring SmartCMN value of 36.995846<br />
+2014-12-11 18:59:59.091 Napkin[388:53167] Checking and resetting all audio session settings.<br />
+2014-12-11 18:59:59.092 Napkin[388:53167] audioCategory is correct, we will leave it as it is.<br />
+2014-12-11 18:59:59.092 Napkin[388:53167] bluetoothInput is correct, we will leave it as it is.<br />
+2014-12-11 18:59:59.093 Napkin[388:53167] Output Device: SpeakerAndMicrophone.<br />
+2014-12-11 18:59:59.093 Napkin[388:53167] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2014-12-11 18:59:59.093 Napkin[388:53167] preferredBufferSize is incorrect, we will change it.<br />
+2014-12-11 18:59:59.094 Napkin[388:53167] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2014-12-11 18:59:59.095 Napkin[388:53167] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2014-12-11 18:59:59.096 Napkin[388:53167] Setting the variables for the device and starting it.<br />
+2014-12-11 18:59:59.096 Napkin[388:53167] Looping through ringbuffer sections and pre-allocating them.<br />
+2014-12-11 18:59:59.394 Napkin[388:53167] Started audio output unit.<br />
+2014-12-11 18:59:59.394 Napkin[388:53167] Calibration has started<br />
+<strong>Started Calibration<br />
+Completed Calibration</strong><br />
+2014-12-11 19:00:01.597 Napkin[388:53167] Calibration has completed<br />
+2014-12-11 19:00:01.597 Napkin[388:53167] Listening.<br />
+<strong>Started listening</strong><br />
+2014-12-11 19:00:16.092 Napkin[388:53167] Speech detected&#8230;<br />
+2014-12-11 19:00:17.315 Napkin[388:53167] Stopping audio unit.<br />
+<strong>Detect finished</strong><br />
+2014-12-11 19:00:17.448 Napkin[388:53167] Audio Output Unit stopped, cleaning up variable states.<br />
+2014-12-11 19:00:17.449 Napkin[388:53167] Processing speech, please wait&#8230;<br />
+2014-12-11 19:00:17.515 Napkin[388:53167] Pocketsphinx heard &#8220;___REJ_IH ___REJ_T&#8221; with a score of (0) and an utterance ID of 000000000.<br />
+2014-12-11 19:00:17.515 Napkin[388:53167] Checking and resetting all audio session settings.<br />
+2014-12-11 19:00:17.516 Napkin[388:53167] audioCategory is correct, we will leave it as it is.<br />
+2014-12-11 19:00:17.516 Napkin[388:53167] bluetoothInput is correct, we will leave it as it is.<br />
+2014-12-11 19:00:17.517 Napkin[388:53167] Output Device: SpeakerAndMicrophone.<br />
+2014-12-11 19:00:17.517 Napkin[388:53167] categoryDefaultToSpeaker is correct, we will leave it as it is.<br />
+2014-12-11 19:00:17.517 Napkin[388:53167] preferredBufferSize is incorrect, we will change it.<br />
+The received hypothesis is ___REJ_IH ___REJ_T with a score of 0 and an ID of 000000000<br />
+2014-12-11 19:00:17.518 Napkin[388:53167] PreferredBufferSize is now on the correct setting of 0.128000.<br />
+2014-12-11 19:00:17.518 Napkin[388:53167] preferredSampleRateCheck is correct, we will leave it as it is.<br />
+2014-12-11 19:00:17.518 Napkin[388:53167] Setting the variables for the device and starting it.<br />
+2014-12-11 19:00:17.519 Napkin[388:53167] Looping through ringbuffer sections and pre-allocating them.<br />
+2014-12-11 19:00:17.570 Napkin[388:53167] Started audio output unit.<br />
+2014-12-11 19:00:17.570 Napkin[388:53167] Listening.<br />
+<strong>Started listening</strong></p>
+<p>Here&#8217;s the 2.0 output:</p>
+<p><strong>Started listening<br />
+Recognition loop started</strong><br />
+2014-12-11 18:57:10.425 Napkin[381:52278] Speech detected&#8230;<br />
+2014-12-11 18:57:29.004 Napkin[381:52277] An utterance appears to be stuck in listening mode. Exiting stuck utterance.<br />
+2014-12-11 18:57:29.005 Napkin[381:52277] End of speech detected&#8230;<br />
+<strong>Detect finished</strong><br />
+2014-12-11 18:57:29.224 Napkin[381:52277] Pocketsphinx heard &#8220;___REJ_D&#8221; with a score of (0) and an utterance ID of 0.<br />
+The received hypothesis is ___REJ_D with a score of 0 and an ID of 0<br />
+2014-12-11 18:57:29.906 Napkin[381:52277] Speech detected&#8230;<br />
+2014-12-11 18:58:01.008 Napkin[381:52448] An utterance appears to be stuck in listening mode. Exiting stuck utterance.<br />
+2014-12-11 18:58:01.009 Napkin[381:52448] End of speech detected&#8230;<br />
+<strong>Detect finished</strong><br />
+2014-12-11 18:58:01.363 Napkin[381:52448] Pocketsphinx heard &#8220;___REJ_S ___REJ_EH&#8221; with a score of (0) and an utterance ID of 1.<br />
+The received hypothesis is ___REJ_S ___REJ_EH with a score of 0 and an ID of 1<br />
+2014-12-11 18:58:01.519 Napkin[381:52448] Speech detected&#8230;</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/missing-notifications-in-2-0/#post-1023436</guid>
+					<title><![CDATA[Reply To: [Resolved] Missing notifications in 2.0]]></title>
+					<link>/forums/topic/missing-notifications-in-2-0/#post-1023436</link>
+					<pubDate>Thu, 11 Dec 2014 19:13:23 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>There is no calibration in 2.0. Check out the docs and class headers to check for API changes.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/missing-notifications-in-2-0/#post-1023437</guid>
+					<title><![CDATA[Reply To: [Resolved] Missing notifications in 2.0]]></title>
+					<link>/forums/topic/missing-notifications-in-2-0/#post-1023437</link>
+					<pubDate>Thu, 11 Dec 2014 19:15:26 +0000</pubDate>
+					<dc:creator>nrbrook</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ah, my mistake, I thought it still existed in the protocol.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/missing-notifications-in-2-0/#post-1023438</guid>
+					<title><![CDATA[Reply To: [Resolved] Missing notifications in 2.0]]></title>
+					<link>/forums/topic/missing-notifications-in-2-0/#post-1023438</link>
+					<pubDate>Thu, 11 Dec 2014 19:17:50 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>No problem! I wish there was a way to raise errors for nonexistent delegate methods but they are just interpreted by the compiler as new methods if they aren&#8217;t part of a protocol. There are a couple of other positive changes in there so check it out.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/missing-notifications-in-2-0/#post-1023439</guid>
+					<title><![CDATA[Reply To: [Resolved] Missing notifications in 2.0]]></title>
+					<link>/forums/topic/missing-notifications-in-2-0/#post-1023439</link>
+					<pubDate>Thu, 11 Dec 2014 19:34:38 +0000</pubDate>
+					<dc:creator>nrbrook</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You can do</p>
+<p>&#8211; (void) method __deprecated;</p>
+<p>But it doesn&#8217;t display a warning, so it isn&#8217;t much use&#8230;</p>
+<p><a href="http://stackoverflow.com/questions/11432452/attribute-deprecated-does-not-work-on-objective-c-protocol-methods" rel="nofollow">http://stackoverflow.com/questions/11432452/attribute-deprecated-does-not-work-on-objective-c-protocol-methods</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/missing-notifications-in-2-0/#post-1023440</guid>
+					<title><![CDATA[Reply To: [Resolved] Missing notifications in 2.0]]></title>
+					<link>/forums/topic/missing-notifications-in-2-0/#post-1023440</link>
+					<pubDate>Thu, 11 Dec 2014 19:51:03 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That would be an option, and I was also considering keeping the callback but just returning a warning that the callback no longer does anything.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/missing-notifications-in-2-0/#post-1023441</guid>
+					<title><![CDATA[Reply To: [Resolved] Missing notifications in 2.0]]></title>
+					<link>/forums/topic/missing-notifications-in-2-0/#post-1023441</link>
+					<pubDate>Thu, 11 Dec 2014 19:52:36 +0000</pubDate>
+					<dc:creator>nrbrook</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You could just check on delegate set if the delegate implements the removed methods and log a warning.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/missing-notifications-in-2-0/#post-1023442</guid>
+					<title><![CDATA[Reply To: [Resolved] Missing notifications in 2.0]]></title>
+					<link>/forums/topic/missing-notifications-in-2-0/#post-1023442</link>
+					<pubDate>Thu, 11 Dec 2014 19:53:02 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>But since they are functionally gone, it&#8217;s probably most semantically clear for them to be gone from the source, and I should just call it out specifically as one of the steps in the upgrade guide.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/missing-notifications-in-2-0/#post-1023443</guid>
+					<title><![CDATA[Reply To: [Resolved] Missing notifications in 2.0]]></title>
+					<link>/forums/topic/missing-notifications-in-2-0/#post-1023443</link>
+					<pubDate>Thu, 11 Dec 2014 19:54:51 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>You could just check on delegate set if the delegate implements the removed methods and log a warning.</p></blockquote>
+<p>That&#8217;s a good idea, I&#8217;ll check it out for 2.01.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

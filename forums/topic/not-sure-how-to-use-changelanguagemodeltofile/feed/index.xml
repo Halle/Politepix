@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>not sure how to use ChangeLanguageModelToFile  &#8211; Politepix</title>
+		<atom:link href="/forums/topic/not-sure-how-to-use-changelanguagemodeltofile/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/not-sure-how-to-use-changelanguagemodeltofile/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:55:55 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/not-sure-how-to-use-changelanguagemodeltofile/#post-1022409</guid>
+					<title><![CDATA[not sure how to use ChangeLanguageModelToFile]]></title>
+					<link>/forums/topic/not-sure-how-to-use-changelanguagemodeltofile/#post-1022409</link>
+					<pubDate>Fri, 29 Aug 2014 13:28:06 +0000</pubDate>
+					<dc:creator>JonLocate</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hey,</p>
+<p>Im not quite sure how to use this function to change language models. In the tutorial this bit of code sets up the initial language model</p>
+<pre><code>
+NSArray *words = [NSArray arrayWithObjects:@&quot;WORD&quot;, @&quot;STATEMENT&quot;, @&quot;OTHER WORD&quot;, @&quot;A PHRASE&quot;, nil];
+NSString *name = @&quot;NameIWantForMyLanguageModelFiles&quot;;
+NSError *err = [lmGenerator generateLanguageModelFromArray:words withFilesNamed:name forAcousticModelAtPath:[AcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;]]; // Change &quot;AcousticModelEnglish&quot; to &quot;AcousticModelSpanish&quot; to create a Spanish language model instead of an English one.
+
+NSDictionary *languageGeneratorResults = nil;
+
+NSString *lmPath = nil;
+NSString *dicPath = nil;
+	
+if([err code] == noErr) {
+	
+	languageGeneratorResults = [err userInfo];
+		
+	lmPath = [languageGeneratorResults objectForKey:@&quot;LMPath&quot;];
+	dicPath = [languageGeneratorResults objectForKey:@&quot;DictionaryPath&quot;];
+		
+} else {
+	NSLog(@&quot;Error: %@&quot;,[err localizedDescription]);
+}
+
+</code></pre>
+<p>how do i create another model to be used? should i reuse the above code and overwrite the current model with the new array of words to be used and overwrite back to the old array for the first model when i want that?</p>
+<p>or should i create another block of the same code but change var names to get new paths</p>
+<p>a la</p>
+<pre><code>
+
+NSArray *MoreWords = [NSArray arrayWithObjects:@&quot;MORE&quot;, @&quot;WORDS&quot;, @&quot;OTHER MODEL&quot;, @&quot;A PHRASE ONLY BIGGER&quot;, nil];
+NSString *NewName = @&quot;NameIWantForMyLanguageModelFiles&quot;;
+NSError *newModel = [lmGenerator generateLanguageModelFromArray:MoreWords withFilesNamed:NewName forAcousticModelAtPath:[AcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;]]; // Change &quot;AcousticModelEnglish&quot; to &quot;AcousticModelSpanish&quot; to create a Spanish language model instead of an English one.
+
+NSDictionary *NewLanguageGeneratorResults = nil;
+
+NSString *NewLmPath = nil;
+NSString *NewDicPath = nil;
+	
+if([newModel code] == noErr) {
+	
+	NewlanguageGeneratorResults = [newModel userInfo];
+		
+	NewLmPath = [languageGeneratorResults objectForKey:@&quot;LMPath&quot;];
+	NewDicPath = [languageGeneratorResults objectForKey:@&quot;DictionaryPath&quot;];
+		
+} else {
+	NSLog(@&quot;Error: %@&quot;,[err localizedDescription]);
+}
+
+</code></pre>
+<p>and then called the change method like</p>
+<pre><code>
+[pocketSphinxXontroller changeLanguageModelToFile:NewLmPath withDictionary:NewDicPath];
+
+</code></pre>
+<p>Thanks for the help!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/not-sure-how-to-use-changelanguagemodeltofile/#post-1022410</guid>
+					<title><![CDATA[Reply To: not sure how to use ChangeLanguageModelToFile]]></title>
+					<link>/forums/topic/not-sure-how-to-use-changelanguagemodeltofile/#post-1022410</link>
+					<pubDate>Fri, 29 Aug 2014 13:36:15 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The sample app has examples for creating new models and switching between them.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/not-sure-how-to-use-changelanguagemodeltofile/#post-1022411</guid>
+					<title><![CDATA[Reply To: not sure how to use ChangeLanguageModelToFile]]></title>
+					<link>/forums/topic/not-sure-how-to-use-changelanguagemodeltofile/#post-1022411</link>
+					<pubDate>Fri, 29 Aug 2014 18:45:08 +0000</pubDate>
+					<dc:creator>JonLocate</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>After looking through the example i modified my code to have a second language model and its paths</p>
+<pre><code>
+
+NSString *name = @&quot;commandModel&quot;;
+    
+    NSError *commandModel = [lmGenerator generateRejectingLanguageModelFromArray:commandVocab withFilesNamed:name withOptionalExclusions:nil usingVowelsOnly:FALSE withWeight:nil forAcousticModelAtPath:[AcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;]];
+    
+    NSDictionary *languageGeneratorResults = nil;
+    
+    if([commandModel code] == noErr)
+    {
+        languageGeneratorResults = [commandModel userInfo];
+// not sure if i need these file vars as they are not in the tutorial but are in the demo app
+        lmFile = [languageGeneratorResults objectForKey:@&quot;LMFile&quot;];
+        dicFile = [languageGeneratorResults objectForKey:@&quot;DictionaryFile&quot;];
+        lmPath = [languageGeneratorResults objectForKey:@&quot;LMPath&quot;];
+        dicPath = [languageGeneratorResults objectForKey:@&quot;DictionaryPath&quot;];
+    }
+    else
+    {
+        NSLog(@&quot;Error: %@&quot;,[commandModel localizedDescription]);
+    }
+    
+    
+    
+
+    
+    NSString *name1 = @&quot;BreadModel&quot;;
+    
+    NSError *breadModel = [lmGenerator generateRejectingLanguageModelFromArray:breadVocab withFilesNamed:name1 withOptionalExclusions:nil usingVowelsOnly:FALSE withWeight:nil forAcousticModelAtPath:[AcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;]];
+    
+    NSDictionary *breadlanguageGeneratorResults = nil;
+    
+    if([breadModel code] == noErr)
+    {
+        breadlanguageGeneratorResults = [commandModel userInfo];
+        breadlmFile = [breadlanguageGeneratorResults objectForKey:@&quot;LMFile&quot;];
+        breaddicFile = [breadlanguageGeneratorResults objectForKey:@&quot;DictionaryFile&quot;];
+        breadlmPath = [breadlanguageGeneratorResults objectForKey:@&quot;LMPath&quot;];
+        breaddicPath = [breadlanguageGeneratorResults objectForKey:@&quot;DictionaryPath&quot;];
+    }
+    else
+    {
+        NSLog(@&quot;Error: %@&quot;,[breadModel localizedDescription]);
+    }
+
+</code></pre>
+<p>then when i want to change the model i call this</p>
+<pre><code>
+
+[pocketsphinxController changeLanguageModelToFile:breadlmPath withDictionary:breaddicPath];
+
+</code></pre>
+<p>not a lot different from the demo app yet the model doesn&#8217;t get changed and the model changed delegate method doesn&#8217;t get called. any ideas?</p>
+<p>Thanks<br />
+Jon</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/not-sure-how-to-use-changelanguagemodeltofile/#post-1022412</guid>
+					<title><![CDATA[Reply To: not sure how to use ChangeLanguageModelToFile]]></title>
+					<link>/forums/topic/not-sure-how-to-use-changelanguagemodeltofile/#post-1022412</link>
+					<pubDate>Fri, 29 Aug 2014 19:08:50 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Same general troubleshooting advice as before –– compare to the known-working example and change what is different until you&#8217;ve isolated your issue.  </p>
+<p>Your previous question had the same characteristic of all of the OpenEars objects being referenced by ivar of unknown alloc/init status rather than a known-to-be-instantiated property as shown in the tutorial and sample app. From that question:</p>
+<blockquote><p>the first step is to turn on verbosePocketsphinx and show me the output</p></blockquote>
+<p>Please turn on OpenEarsLogging and verbosePocketsphinx for this kind of issue, since there&#8217;s no way of knowing what is happening in your app without any logging output and without getting to see any instantiation code for Pocketsphinx or LanguageModelGenerator. You can read more about it in this post entitled &#8220;Please read before you post – how to troubleshoot and provide logging info here&#8221;:</p>
+<p><a href="/forums/topic/install-issues-and-their-solutions/">/forums/topic/install-issues-and-their-solutions/</a></p>
+<p>Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

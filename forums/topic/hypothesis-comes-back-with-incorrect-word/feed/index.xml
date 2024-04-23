@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Hypothesis comes back with incorrect word &#8211; Politepix</title>
+		<atom:link href="/forums/topic/hypothesis-comes-back-with-incorrect-word/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/hypothesis-comes-back-with-incorrect-word/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:03:21 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/hypothesis-comes-back-with-incorrect-word/#post-1024003</guid>
+					<title><![CDATA[Hypothesis comes back with incorrect word]]></title>
+					<link>/forums/topic/hypothesis-comes-back-with-incorrect-word/#post-1024003</link>
+					<pubDate>Sat, 27 Dec 2014 19:44:22 +0000</pubDate>
+					<dc:creator>boombatz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>HI Halle,<br />
+I have a dictionary set up with four words.  It seems like the hypothesis almost always comes back matching one of these words even when the spoken word is far off from the dictionary words.  Is there a way to be more specific about the recognition?</p>
+<p>Does this have something  to do with the recognition score in the received hypothesis method.  I do not see any documentation on this other than the listing of the method. Is it written about somewhere?<br />
+Thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/hypothesis-comes-back-with-incorrect-word/#post-1024004</guid>
+					<title><![CDATA[Reply To: Hypothesis comes back with incorrect word]]></title>
+					<link>/forums/topic/hypothesis-comes-back-with-incorrect-word/#post-1024004</link>
+					<pubDate>Sat, 27 Dec 2014 19:47:40 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This is called the out-of-vocabulary problem and is standard for speech recognition with very small vocabularies. Rejecto is designed to reduce this issue: <a href="/rejecto">/rejecto</a> </p>
+<p>Alternately you may experience better results with using a grammar that has commands that are more than a single word.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/hypothesis-comes-back-with-incorrect-word/#post-1024006</guid>
+					<title><![CDATA[Reply To: Hypothesis comes back with incorrect word]]></title>
+					<link>/forums/topic/hypothesis-comes-back-with-incorrect-word/#post-1024006</link>
+					<pubDate>Sat, 27 Dec 2014 19:59:15 +0000</pubDate>
+					<dc:creator>boombatz</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ok. Thanks. I&#8217;ll try multiple words. </p>
+<p>Does it make any sense to look at the returned hypothesis score?  I notice that when I say a word the is in the dictionary the score is better than -500, but when I say a word that is not in the dictionary it will recognize it with a score beyond -1000.</p>
+<p>Is this a reasonable approach to think about?<br />
+Thanks</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/hypothesis-comes-back-with-incorrect-word/#post-1024008</guid>
+					<title><![CDATA[Reply To: Hypothesis comes back with incorrect word]]></title>
+					<link>/forums/topic/hypothesis-comes-back-with-incorrect-word/#post-1024008</link>
+					<pubDate>Sat, 27 Dec 2014 20:07:55 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Nope, do some searching of these forums for &#8216;out of vocabulary&#8217; and &#8216;score&#8217; to read previous discussions on these topics. My advice above comprises the options for refining this behavior if you want to go with a small vocabulary.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

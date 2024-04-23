@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Using Flite to pronounce a word a certain way &#8211; Politepix</title>
+		<atom:link href="/forums/topic/using-flite-to-pronounce-a-word-a-certain-way/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/using-flite-to-pronounce-a-word-a-certain-way/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:40:27 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/using-flite-to-pronounce-a-word-a-certain-way/#post-7111</guid>
+					<title><![CDATA[Using Flite to pronounce a word a certain way]]></title>
+					<link>/forums/topic/using-flite-to-pronounce-a-word-a-certain-way/#post-7111</link>
+					<pubDate>Tue, 12 Jul 2011 20:32:10 +0000</pubDate>
+					<dc:creator>rmangino</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi,</p>
+<p>I am using OpenEars 0.911. I am using the speech recognition functionality using  .dic &amp; .languagemodel files &#8211; a domain specific vocabulary (none of which are &#8220;normal&#8221; words &#8211; they do not exist in the cmu07a.dic file).</p>
+<p>I have been hand-correcting the .dic file to help with recognition. </p>
+<p>What I would *like* to do is use Flite to help my users correctly pronounce a given word. It isn&#8217;t apparent to me whether or not I can have any control in the way Flite pronounces a given word &#8211; is this correct?</p>
+<p>For example, lmtool creates the following for the name &#8220;Bryson&#8221;:</p>
+<p>BRYSON	B R AY S AH N</p>
+<p>I have changed it to be:</p>
+<p>BRYSON	B R IY S AH N<br />
+[again, this is being done for a domain specific reason]</p>
+<p>I would like Flite to be able to pronounce the word using the 2nd set of phones.</p>
+<p>Any suggestions would be greatly appreciated.</p>
+<p>Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-flite-to-pronounce-a-word-a-certain-way/#post-7114</guid>
+					<title><![CDATA[Reply To: Using Flite to pronounce a word a certain way]]></title>
+					<link>/forums/topic/using-flite-to-pronounce-a-word-a-certain-way/#post-7114</link>
+					<pubDate>Tue, 12 Jul 2011 21:23:14 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The simplest way to fake out Flite with an alternate pronunciation, if you have the luxury of knowing the words needed in advance, is to have Flite say a series of single-syllable words with the phonemes you actually want. I did this many times in AllEars because the Flite voice I chose didn&#8217;t say email, iPhone or mobile in a way that I expected to be immediately clear to the user. So instead I gave it @&#8221;eem ale&#8221;, @&#8221;eye phone&#8221;, @&#8221;moe bile&#8221; which worked out pretty well. Is that kind of workaround an option for you?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-flite-to-pronounce-a-word-a-certain-way/#post-7123</guid>
+					<title><![CDATA[Reply To: Using Flite to pronounce a word a certain way]]></title>
+					<link>/forums/topic/using-flite-to-pronounce-a-word-a-certain-way/#post-7123</link>
+					<pubDate>Wed, 13 Jul 2011 14:16:48 +0000</pubDate>
+					<dc:creator>rmangino</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hi Halle,</p>
+<p>As always, thank you for the great (and prompt) response.</p>
+<p>I can definitely create a mapping between phones and the &#8220;correct&#8221; pronunciation text for use with Flight. </p>
+<p>The issue I&#8217;m running into right now is that Flight seems to have its own ideas as to which parts of a word should be emphasized (which nullifies the entire point of providing a spoken pronunciation example in the first place).</p>
+<p>I&#8217;ve read through much of the material at <a href="http://www.speech.cs.cmu.edu/flite/" rel="nofollow">http://www.speech.cs.cmu.edu/flite/</a> but I can&#8217;t seem to find anything pertaining to how I can modify/impact Flite&#8217;s emphasis choices.</p>
+<p>Have you looked into this at all?</p>
+<p>Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-flite-to-pronounce-a-word-a-certain-way/#post-7124</guid>
+					<title><![CDATA[Reply To: Using Flite to pronounce a word a certain way]]></title>
+					<link>/forums/topic/using-flite-to-pronounce-a-word-a-certain-way/#post-7124</link>
+					<pubDate>Wed, 13 Jul 2011 15:20:27 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I have looked into it briefly in the course of my own attempts to improve the pronunciation in AllEars, but I don&#8217;t have functional code to share with you because I ended up choosing to not do this with Flite. I can&#8217;t remember what the exact reason was but early on in the troubleshooting process I decided to keep it simpler.</p>
+<p>My not-finished idea was to give Flite SSML text:</p>
+<p><a href="http://www.w3.org/TR/speech-synthesis/" rel="nofollow">http://www.w3.org/TR/speech-synthesis/</a></p>
+<p>Which it is meant to support. I can&#8217;t remember if I couldn&#8217;t get it working, or got it partially working and then found out that it didn&#8217;t give fine-grained enough control, or what the issue was.</p>
+<p>You can give Flite SSML input as a text file with the function:</p>
+<p>float flite_ssml_to_speech(const char *filename,<br />
+                           cst_voice *voice,<br />
+                           const char *outtype)</p>
+<p>Which you can search the library for. Getting the output over to the FliteController method as a waveform I have no advice on, but I&#8217;m sure it&#8217;s possible. Hope this is helpful.</p>
+<p>There is also a function for giving Flite explicit phones:</p>
+<p>float flite_phones_to_speech(const char *text,<br />
+			     cst_voice *voice,<br />
+			     const char *outtype)</p>
+<p>Which may be helpful if there is some method that I haven&#8217;t come across for marking a phone for emphasis, although my recollection is that it results in equal emphasis for all phonemes, i.e. robot voice.</p>
+<p>A good place to look for implementation templates is the main() of flite.c that is part of the Flite download.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-flite-to-pronounce-a-word-a-certain-way/#post-7125</guid>
+					<title><![CDATA[Reply To: Using Flite to pronounce a word a certain way]]></title>
+					<link>/forums/topic/using-flite-to-pronounce-a-word-a-certain-way/#post-7125</link>
+					<pubDate>Wed, 13 Jul 2011 16:04:07 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Oh, something else to keep in mind is that the Flite phonemes do not map identically to the US English Pocketsphinx phonemes. I think that spending a little bit of time looking at the implementation of GraphemeGenerator from the library should probably point up any important differences, since I know it was an issue I needed to solve in order to set up the fallback pronunciation technique for creating a dictionary entry when the word isn&#8217;t found in the main dictionary file. It might be as minor as AX -> AH, just take a look (keeping in mind that you are doing the opposite process as GraphemeGenerator by taking a Pocketsphinx phoneme and converting it into a Flite one).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/using-flite-to-pronounce-a-word-a-certain-way/#post-7126</guid>
+					<title><![CDATA[Reply To: Using Flite to pronounce a word a certain way]]></title>
+					<link>/forums/topic/using-flite-to-pronounce-a-word-a-certain-way/#post-7126</link>
+					<pubDate>Wed, 13 Jul 2011 17:07:19 +0000</pubDate>
+					<dc:creator>rmangino</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hah &#8211; thanks Halle &#8211; that is *exactly* what I was just doing! :)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

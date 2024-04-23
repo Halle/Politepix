@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>NeatSpeech not playing audio after stopping &#8211; Politepix</title>
+		<atom:link href="/forums/topic/neatspeech-not-playing-audio-after-stopping/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/neatspeech-not-playing-audio-after-stopping/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:50:10 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/neatspeech-not-playing-audio-after-stopping/#post-1024269</guid>
+					<title><![CDATA[NeatSpeech not playing audio after stopping]]></title>
+					<link>/forums/topic/neatspeech-not-playing-audio-after-stopping/#post-1024269</link>
+					<pubDate>Thu, 15 Jan 2015 08:12:33 +0000</pubDate>
+					<dc:creator>lfoster0</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hey there, heres a description of the issue I&#8217;m having:</p>
+<p>I call sayWithNeatSpeech and it begins reading the text I gave it, then at some point the user hits a button to stop it via the OEFliteController stopSpeaking, and that works correctly.  The issue comes up when the user hits the button again and I call sayWithNeatSpeech with the same text and nothing happens, no audio is read.</p>
+<p>I initialize the voice controller and voice as follows: </p>
+<pre><code>self.voiceController = [[OEFliteController alloc] init];
+    self.voice = [[EmmaAlternate alloc] initWithPitch:0.0 speed:0.0 transform:0.0];</code></pre>
+<p>and then here is the toggleAudio method which is the button press.</p>
+<pre><code>- (void) toggleAudio {
+    NSLog(@&quot;pressed&quot;);
+    if (self.audioEnabled) {
+        [self.voiceController sayWithNeatSpeech:self.currentTrip.trip_description withVoice:self.voice];
+    }
+    else {
+        [self.voiceController stopSpeaking];
+    }
+    self.audioEnabled  = !self.audioEnabled;
+}
+</code></pre>
+<p>Any help would be appreciated and I can provide any other code or logging you need, thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-not-playing-audio-after-stopping/#post-1024271</guid>
+					<title><![CDATA[Reply To: NeatSpeech not playing audio after stopping]]></title>
+					<link>/forums/topic/neatspeech-not-playing-audio-after-stopping/#post-1024271</link>
+					<pubDate>Thu, 15 Jan 2015 10:30:08 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Sorry for the issue. A couple of questions – is this a change in behavior from 1.x or have you only used OpenEars 2.x? In what method do you initialize the objects? Have you checked that the text has content at the second call and that self.audioEnabled is true at the second call?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-not-playing-audio-after-stopping/#post-1024338</guid>
+					<title><![CDATA[Reply To: NeatSpeech not playing audio after stopping]]></title>
+					<link>/forums/topic/neatspeech-not-playing-audio-after-stopping/#post-1024338</link>
+					<pubDate>Thu, 15 Jan 2015 22:24:46 +0000</pubDate>
+					<dc:creator>lfoster0</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the quick response, I really appreciate it :) </p>
+<p>I have only used OpenEars 2.x and I&#8217;m initializing the objects in &#8211; viewDidLoad.  </p>
+<p>Here is the code with some more logging:</p>
+<pre><code>- (void) toggleAudio {
+    NSLog(@&quot;pressed&quot;);
+    NSLog(@&quot;Audio Enabled: %i&quot;,self.audioEnabled);
+    if (self.audioEnabled) {
+        NSLog(@&quot;saying text: %@&quot;, self.currentTrip.trip_description);
+        [self.voiceController sayWithNeatSpeech:self.currentTrip.trip_description withVoice:self.voice];
+    }
+    else {
+        [self.voiceController stopSpeaking];
+    }
+    self.audioEnabled  = !self.audioEnabled;
+}
+
+- (void) neatSpeechWillSay:(NSString *)statement {
+    NSLog(@&quot;neatSpeechWillSay %@&quot;,statement);
+}
+
+- (void) fliteDidStartSpeaking {
+    NSLog(@&quot;SPEEEEAAKKKINNNGGGGG&quot;);
+}
+
+- (void) fliteDidFinishSpeaking {
+    NSLog(@&quot;DONE SPEAKING&quot;);
+}
+</code></pre>
+<p>Here is the log from pressing the button 3 times:</p>
+<p>So the first time I press it everything is fine:</p>
+<pre><code>2015-01-15 14:19:06.773 gyyde[11166:60b] pressed
+2015-01-15 14:19:06.789 gyyde[11166:60b] Audio Enabled: 1
+2015-01-15 14:19:06.792 gyyde[11166:60b] saying text: The route of the tour can be seen on the above map; we begin by walking out of the civic plaza, along 7th until we reach City Hall and the Cenotaph and the beginning of George Street.  We then walk down George Street until 3rd Avenue.  We follow 3rd avenue for 3 blocks until we reach Brunswick Street.  We walk up Brunswick street until 5th Avenue, back towards the library for one block along 5th, we turn left down Quebec and then right onto 4th Avenue to see a few more historic sites before turning right onto Dominion and heading back to the Civic Plaza and the Library for the end of our tour.
+2015-01-15 14:19:06.867 gyyde[11166:60b] SPEEEEAAKKKINNNGGGGG</code></pre>
+<p>And then I give it a few seconds to read through things and we have: </p>
+<pre><code>2015-01-15 14:19:10.936 gyyde[11166:60b] neatSpeechWillSay The route of the tour can be seen on the above map;
+2015-01-15 14:19:13.994 gyyde[11166:60b] neatSpeechWillSay we begin by walking out of the civic plaza,</code></pre>
+<p>I press it again and it stops fine, and self.audioEnabled is 0: </p>
+<pre><code>2015-01-15 14:19:20.589 gyyde[11166:60b] pressed
+2015-01-15 14:19:20.596 gyyde[11166:60b] Audio Enabled: 0</code></pre>
+<p>And then pressing it again I get: </p>
+<pre><code>2015-01-15 14:19:39.745 gyyde[11166:60b] pressed
+2015-01-15 14:19:39.748 gyyde[11166:60b] Audio Enabled: 1
+2015-01-15 14:19:39.751 gyyde[11166:60b] saying text: The route of the tour can be seen on the above map; we begin by walking out of the civic plaza, along 7th until we reach City Hall and the Cenotaph and the beginning of George Street.  We then walk down George Street until 3rd Avenue.  We follow 3rd avenue for 3 blocks until we reach Brunswick Street.  We walk up Brunswick street until 5th Avenue, back towards the library for one block along 5th, we turn left down Quebec and then right onto 4th Avenue to see a few more historic sites before turning right onto Dominion and heading back to the Civic Plaza and the Library for the end of our tour.</code></pre>
+<p>So self.audioEnabled is true the next time and it still has the correct text to say again.  I left it sitting there for a few minutes and nothing happened :(</p>
+<p>Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-not-playing-audio-after-stopping/#post-1024342</guid>
+					<title><![CDATA[Reply To: NeatSpeech not playing audio after stopping]]></title>
+					<link>/forums/topic/neatspeech-not-playing-audio-after-stopping/#post-1024342</link>
+					<pubDate>Fri, 16 Jan 2015 10:42:13 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, thanks for the follow-up info – I will see if this replicates for me and get back to you on it.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-not-playing-audio-after-stopping/#post-1024366</guid>
+					<title><![CDATA[Reply To: NeatSpeech not playing audio after stopping]]></title>
+					<link>/forums/topic/neatspeech-not-playing-audio-after-stopping/#post-1024366</link>
+					<pubDate>Fri, 16 Jan 2015 18:56:58 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, this doesn&#8217;t replicate for me in my test – I can speak, stop the speech at an arbitrary point, and say speech again afterwards using the same voice. That doesn&#8217;t mean I don&#8217;t think you&#8217;re seeing a real issue, just that it didn&#8217;t immediately replicate for me so there is maybe some other factor involved that I&#8217;ll need your assistance to see.</p>
+<p>For further troubleshooting, the next step would be for you to create a minimal replication case to share with me, so I can see the exact thing you are seeing in your local setup: </p>
+<p><a href="/forums/topic/how-to-create-a-minimal-case-for-replication/">/forums/topic/how-to-create-a-minimal-case-for-replication/</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-not-playing-audio-after-stopping/#post-1024381</guid>
+					<title><![CDATA[Reply To: NeatSpeech not playing audio after stopping]]></title>
+					<link>/forums/topic/neatspeech-not-playing-audio-after-stopping/#post-1024381</link>
+					<pubDate>Sun, 18 Jan 2015 02:15:56 +0000</pubDate>
+					<dc:creator>lfoster0</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry, just having a little trouble setting up the demo application with neat speech.  Here is the error I&#8217;m getting:</p>
+<pre><code>Undefined symbols for architecture armv7:
+  &quot;_OBJC_CLASS_$_EmmaAlternate&quot;, referenced from:
+      objc-class-ref in ViewController.o
+ld: symbol(s) not found for architecture armv7
+clang: error: linker command failed with exit code 1 (use -v to see invocation)</code></pre>
+<p>I set up the project like it said here <a href="/neatspeech/">/neatspeech/</a> with the -ObjC linker flag, .mm and the libstdc++ set.  I have the voices inside of the Framework folder as well for the demo version.  Thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-not-playing-audio-after-stopping/#post-1024383</guid>
+					<title><![CDATA[Reply To: NeatSpeech not playing audio after stopping]]></title>
+					<link>/forums/topic/neatspeech-not-playing-audio-after-stopping/#post-1024383</link>
+					<pubDate>Sun, 18 Jan 2015 07:51:51 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, that just looks like the EmmaAlternate voice isn&#8217;t really available to the project. This can happen if the voice framework isn&#8217;t added to the app target, or if the build setting Framework Search Paths has somehow gotten an invalid value.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-not-playing-audio-after-stopping/#post-1024401</guid>
+					<title><![CDATA[Reply To: NeatSpeech not playing audio after stopping]]></title>
+					<link>/forums/topic/neatspeech-not-playing-audio-after-stopping/#post-1024401</link>
+					<pubDate>Sun, 18 Jan 2015 21:06:27 +0000</pubDate>
+					<dc:creator>lfoster0</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Alright so here is ViewController.mm</p>
+<pre><code>//  ViewController.m
+//  OpenEarsSampleApp
+//
+//  ViewController.m demonstrates the use of the OpenEars framework. 
+//
+//  Copyright Politepix UG (haftungsbeschränkt) 2014. All rights reserved.
+//  /
+//  Contact at /contact
+//
+//  This file is licensed under the Politepix Shared Source license found in the root of the source distribution.
+
+#import &quot;ViewController.h&quot;
+
+@implementation ViewController
+
+#pragma mark View Lifecycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self.audioToggleButton addTarget:self action:@selector(toggleAudio) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    self.openEarsEventsObserver = [[OEEventsObserver alloc] init];
+    [self.openEarsEventsObserver setDelegate:self];
+    self.audioEnabled = YES;
+    
+    self.voiceController = [[OEFliteController alloc] init];
+    self.voice = [[EmmaAlternate alloc] initWithPitch:0.0 speed:0.0 transform:0.0];
+    
+    self.tripDescription = @&quot;The route of the tour can be seen on the above map; we begin by walking out of the civic plaza, along 7th until we reach City Hall and the Cenotaph and the beginning of George Street.  We then walk down George Street until 3rd Avenue.  We follow 3rd avenue for 3 blocks until we reach Brunswick Street.  We walk up Brunswick street until 5th Avenue, back towards the library for one block along 5th, we turn left down Quebec and then right onto 4th Avenue to see a few more historic sites before turning right onto Dominion and heading back to the Civic Plaza and the Library for the end of our tour.&quot;;
+    
+}
+
+- (void) toggleAudio {
+    NSLog(@&quot;pressed&quot;);
+    NSLog(@&quot;Audio Enabled: %i&quot;,self.audioEnabled);
+    if (self.audioEnabled) {
+        NSLog(@&quot;saying text: %@&quot;, self.tripDescription);
+        [self.voiceController sayWithNeatSpeech:self.tripDescription withVoice:self.voice];
+    }
+    else {
+        [self.voiceController stopSpeaking];
+    }
+    self.audioEnabled  = !self.audioEnabled;
+}
+
+- (void) neatSpeechWillSay:(NSString *)statement {
+    NSLog(@&quot;neatSpeechWillSay %@&quot;,statement);
+}
+
+- (void) fliteDidStartSpeaking {
+    NSLog(@&quot;SPEEEEAAKKKINNNGGGGG&quot;);
+}
+
+- (void) fliteDidFinishSpeaking {
+    NSLog(@&quot;DONE SPEAKING&quot;);
+}
+
+@end
+</code></pre>
+<p>Here is ViewController.h</p>
+<pre><code>//  ViewController.h
+//  OpenEarsSampleApp
+//
+//  ViewController.h demonstrates the use of the OpenEars framework. 
+//
+//  Copyright Politepix UG (haftungsbeschränkt) 2014. All rights reserved.
+//  /
+//  Contact at /contact
+//
+//  This file is licensed under the Politepix Shared Source license found in the root of the source distribution.
+
+#import &lt;UIKit/UIKit.h&gt;
+#import &lt;OpenEars/OEEventsObserver.h&gt;
+#import &lt;EmmaAlternate/EmmaAlternate.h&gt;
+#import &lt;OpenEars/OEFliteController.h&gt;
+#import &lt;NeatSpeechDemo/OEFliteController+NeatSpeech.h&gt;
+
+@interface ViewController : UIViewController &lt;OEEventsObserverDelegate&gt; // This is how we implement the delegate protocol of OEEventsObserver.
+
+@property (weak, nonatomic) IBOutlet UIButton *audioToggleButton;
+
+/* Audio Related */
+@property (nonatomic) BOOL audioEnabled;
+@property (strong, nonatomic) OEEventsObserver *openEarsEventsObserver;
+@property (strong, nonatomic) OEFliteController *voiceController;
+@property (strong, nonatomic) NeatSpeechVoice *voice;
+@property (strong,nonatomic) NSString *tripDescription;
+
+@end
+</code></pre>
+<p>And in the ViewController_iPhone.xib I deleted everything and just added a single button hooked up to<br />
+<code>@property (weak, nonatomic) IBOutlet UIButton *audioToggleButton;</code></p>
+<p>Same issue as before running on my iPhone 4 running iOS 7.0  </p>
+<p>Hope this helps, let me know if theres any other information I can provide!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/neatspeech-not-playing-audio-after-stopping/#post-1024413</guid>
+					<title><![CDATA[Reply To: NeatSpeech not playing audio after stopping]]></title>
+					<link>/forums/topic/neatspeech-not-playing-audio-after-stopping/#post-1024413</link>
+					<pubDate>Mon, 19 Jan 2015 08:19:07 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, thanks for the replication case, I was able to see the issue and I&#8217;ll investigate it.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

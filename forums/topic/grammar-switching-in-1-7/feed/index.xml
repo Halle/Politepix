@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Grammar Switching in 1.7 &#8211; Politepix</title>
+		<atom:link href="/forums/topic/grammar-switching-in-1-7/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/grammar-switching-in-1-7/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:59:13 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/grammar-switching-in-1-7/#post-1021172</guid>
+					<title><![CDATA[Grammar Switching in 1.7]]></title>
+					<link>/forums/topic/grammar-switching-in-1-7/#post-1021172</link>
+					<pubDate>Fri, 09 May 2014 15:16:30 +0000</pubDate>
+					<dc:creator>pbtura</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m working on a project where I need to use different grammars depending on the context. I wanted to use JGSF rules for commands like navigating around the app and ARPA dictionaries for actually inputting a value. So for example I would use JGSF to listen for the command &#8216;ENTER NEW COLOR&#8217; and ARPA to select &#8216;RED, GREEN&#8217;,&#8217;BLUE&#8217;, etc. The problem is, I can&#8217;t figure out how to switch between grammars on the fly. If I start the listening loop with JGSF set to true, I get errors anytime I try to switch to an ARPA grammar or vice versa. Is there some way to handle this that I&#8217;m not seeing or is that capability just not supported?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/grammar-switching-in-1-7/#post-1021173</guid>
+					<title><![CDATA[Reply To: Grammar Switching in 1.7]]></title>
+					<link>/forums/topic/grammar-switching-in-1-7/#post-1021173</link>
+					<pubDate>Fri, 09 May 2014 15:23:14 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Sorry, it isn&#8217;t possible to switch between JSGF and ARPA in the same listening loop. They have two different kinds of structures that are established at the beginning of the loop and it can&#8217;t be changed on the fly without restarting all of the significant features of the loop, so this would require sending stopListening and then starting again with the new format. What is the reason for the requirement to take color input using ARPA instead of switching to a JSGF with RED, GREEN and BLUE?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/grammar-switching-in-1-7/#post-1021174</guid>
+					<title><![CDATA[Reply To: Grammar Switching in 1.7]]></title>
+					<link>/forums/topic/grammar-switching-in-1-7/#post-1021174</link>
+					<pubDate>Fri, 09 May 2014 15:55:53 +0000</pubDate>
+					<dc:creator>pbtura</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>For the input we want to have multiple matches shown to the user. So if it was a list of parts of a room, and the user says &#8216;DOOR&#8217; and the matcher returns &#8216;floor&#8217; and &#8216;door&#8217; we would display both and let them choose. For the commands context that behaviour isn&#8217;t desirable. If I say &#8216;NEW PART&#8217; I want either an exact match or nothing, having it return with &#8216;BLUE DART&#8217; makes it much harder to react to commands.  </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/grammar-switching-in-1-7/#post-1021175</guid>
+					<title><![CDATA[Reply To: Grammar Switching in 1.7]]></title>
+					<link>/forums/topic/grammar-switching-in-1-7/#post-1021175</link>
+					<pubDate>Fri, 09 May 2014 16:02:33 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>So if it was a list of parts of a room, and the user says ‘DOOR’ and the matcher returns ‘floor’ and ‘door’ we would display both and let them choose.</p></blockquote>
+<p>To clarify, are you referring to n-best here? It isn&#8217;t yet clear to me in what way the engine is returning two words resulting from a single utterance.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/grammar-switching-in-1-7/#post-1021176</guid>
+					<title><![CDATA[Reply To: Grammar Switching in 1.7]]></title>
+					<link>/forums/topic/grammar-switching-in-1-7/#post-1021176</link>
+					<pubDate>Fri, 09 May 2014 16:09:27 +0000</pubDate>
+					<dc:creator>pbtura</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m still new to openears but if this is what you are referring to: <a href="/2012/11/08/openears-tips-2-n-best-hypotheses-with-openears/">/2012/11/08/openears-tips-2-n-best-hypotheses-with-openears/</a><br />
+then yes that is what I want to do.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/grammar-switching-in-1-7/#post-1021177</guid>
+					<title><![CDATA[Reply To: Grammar Switching in 1.7]]></title>
+					<link>/forums/topic/grammar-switching-in-1-7/#post-1021177</link>
+					<pubDate>Fri, 09 May 2014 16:14:40 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, got it – I just wanted to talk it through so that I wasn&#8217;t trying to answer a different question due to not quite getting the goal. </p>
+<p>If you absolutely require switching between a grammar and an ARPA model the only recommendation I can make is to use RuleORama, since it outputs a DMP which means you can switch between it and your normal ARPA model that you want to use n-best with. Unfortunately it is neither possible to support switching between JSGF and ARPA inline nor to support n-best with JSGF so I don&#8217;t see a way to do this precise spec with stock OpenEars.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/grammar-switching-in-1-7/#post-1021178</guid>
+					<title><![CDATA[Reply To: Grammar Switching in 1.7]]></title>
+					<link>/forums/topic/grammar-switching-in-1-7/#post-1021178</link>
+					<pubDate>Fri, 09 May 2014 16:19:46 +0000</pubDate>
+					<dc:creator>pbtura</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the help. Are there any plans to support any of these features in the future? I was really hoping to be able to take advantage of the new JGSF features.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/grammar-switching-in-1-7/#post-1021179</guid>
+					<title><![CDATA[Reply To: Grammar Switching in 1.7]]></title>
+					<link>/forums/topic/grammar-switching-in-1-7/#post-1021179</link>
+					<pubDate>Fri, 09 May 2014 16:37:07 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>No, those are both technically inadvisable features – they aren&#8217;t impossible, but one would require a rewrite of part of Pocketsphinx that isn&#8217;t on the Sphinx project&#8217;s to-do list and the other would require a major rewrite of the listening loop.</p>
+<blockquote><p>I was really hoping to be able to take advantage of the new JGSF features.</p></blockquote>
+<p>JSGF has actually been supported since version 1.0 – the new feature is the mini-language and method for dynamically generating grammars. RuleORama uses the same language and method type, so it doesn&#8217;t represent a loss of the ability to use those new features, but I understand if you don&#8217;t want to use a plugin to accomplish your task.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/grammar-switching-in-1-7/#post-1021180</guid>
+					<title><![CDATA[Reply To: Grammar Switching in 1.7]]></title>
+					<link>/forums/topic/grammar-switching-in-1-7/#post-1021180</link>
+					<pubDate>Fri, 09 May 2014 17:44:58 +0000</pubDate>
+					<dc:creator>pbtura</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>One last question. I was reading this blog post: <a href="/2012/12/04/openears-tips-and-tricks-5-customizing-the-master-phonetic-dictionary-or-using-a-new-one/">/2012/12/04/openears-tips-and-tricks-5-customizing-the-master-phonetic-dictionary-or-using-a-new-one/</a></p>
+<p>I can&#8217;t seem to locate the cmu07.dict file that it mentions. Where exactly is this file located at?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/grammar-switching-in-1-7/#post-1021181</guid>
+					<title><![CDATA[Reply To: Grammar Switching in 1.7]]></title>
+					<link>/forums/topic/grammar-switching-in-1-7/#post-1021181</link>
+					<pubDate>Fri, 09 May 2014 17:53:16 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Correct, that&#8217;s a bit out-of-date since the acoustic models are now each wrapped in their own acoustic model bundle. For any acoustic model, the master phonetic lookup .dic file is now called LanguageModelGeneratorLookupList.text and is found in the bundle.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

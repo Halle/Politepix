@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>interrupting speech &#8211; Politepix</title>
+		<atom:link href="/forums/topic/interrupting-speech/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/interrupting-speech/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:38:20 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/interrupting-speech/#post-12124</guid>
+					<title><![CDATA[interrupting speech]]></title>
+					<link>/forums/topic/interrupting-speech/#post-12124</link>
+					<pubDate>Sat, 10 Nov 2012 07:59:36 +0000</pubDate>
+					<dc:creator>cyberhoops</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This is probably on the forum somewhere, but I can&#8217;t seem to find it.  Here is my question:</p>
+<p>I have an app where TTS is used to prompt the user for input.  It all works fine until the user gets to the next prompt before the previous TTS output is done.  In that case it never says the next statement.  </p>
+<p>Is there a way to break off the current &#8220;say&#8221; command and then start another one?<br />
+I see the the user can interrupt the current TTS output, but can the app interrupt?</p>
+<p>Side note:  Great tool.  It was easy to install and worked the first time.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/interrupting-speech/#post-12159</guid>
+					<title><![CDATA[Reply To: interrupting speech]]></title>
+					<link>/forums/topic/interrupting-speech/#post-12159</link>
+					<pubDate>Sat, 10 Nov 2012 13:00:41 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<blockquote><p>Side note: Great tool. It was easy to install and worked the first time.</p></blockquote>
+<p>Thanks!  Always nice to hear. Hmm, this is more something that I&#8217;ve thought of as being solvable via UI (for instance, however you signal the user that you are listening, don&#8217;t signal that when the app is talking) but I can definitely see the advantage to being able to stop playback programmatically.</p>
+<p>This would really not be hard for you to hack in quickly, because you are only trying to call FliteController&#8217;s method interruptTalking directly. You&#8217;d just need to check whether FliteController exists and if so, call interruptTalking.</p>
+<p>If you wanted to bring the complete OpenEars architecture to bear on it so everything is nicely decoupled and standard, you could create a new OpenEarsEventsObserver delegate method (fliteSpeechRequestedToInterruptTalking might be a self-describing name) and look at the various examples of how notifications are sent to OpenEarsEventsObserver throughout the framework to see how to signal it when you want to request that playing speech is interrupted (presumably this would happen as a result of a new method for PocketsphinxController which could be named something like &#8220;interruptTalking&#8221;). Then you can add the new delegate callback to FliteController since it already inherits OpenEarsEventsObserver and when it is called, call interruptTalking. If/when I add this feature it will look something like that. The advantage is that the parts of the framework can remain ignorant of each other&#8217;s status.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/interrupting-speech/#post-12536</guid>
+					<title><![CDATA[Reply To: interrupting speech]]></title>
+					<link>/forums/topic/interrupting-speech/#post-12536</link>
+					<pubDate>Tue, 13 Nov 2012 03:40:41 +0000</pubDate>
+					<dc:creator>cyberhoops</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Interrupt talking worked perfectly.  I will look into the observer method, but for now I have exactly what I needed.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/interrupting-speech/#post-12537</guid>
+					<title><![CDATA[Reply To: interrupting speech]]></title>
+					<link>/forums/topic/interrupting-speech/#post-12537</link>
+					<pubDate>Tue, 13 Nov 2012 07:56:11 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Super, glad it is working.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

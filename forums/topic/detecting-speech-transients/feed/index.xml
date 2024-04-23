@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Detecting Speech transients &#8211; Politepix</title>
+		<atom:link href="/forums/topic/detecting-speech-transients/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/detecting-speech-transients/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:54:27 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/detecting-speech-transients/#post-1017174</guid>
+					<title><![CDATA[Detecting Speech transients]]></title>
+					<link>/forums/topic/detecting-speech-transients/#post-1017174</link>
+					<pubDate>Wed, 08 May 2013 14:12:54 +0000</pubDate>
+					<dc:creator>Sjakelien</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Dear people,<br />
+I&#8217;m an iOS developer with little knowledge of audio signal processing. I&#8217;m looking for a method that will take a piece of speech audio recorded by my app, and returns the position of transients in that audio.<br />
+I hope/expect that these positions will indicate the start of a new word.<br />
+I know exactly what words will be spoken, I just need to split up the file into individual sound files.<br />
+I&#8217;ve done quite a lot of internet searching, but I can only find extremely mathematical documents that are really way beyond my comprehension.<br />
+I would figure though, that word/transient detection is one of the core tasks of OpenEar, and I was wondering if such functionality would be available for such usage in your library.<br />
+If not, I would be very grateful, if you could point me in a direction that, given my profile, could help me out.<br />
+Sincerely yours<br />
+Sjakelien</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/detecting-speech-transients/#post-1017175</guid>
+					<title><![CDATA[Reply To: Detecting Speech transients]]></title>
+					<link>/forums/topic/detecting-speech-transients/#post-1017175</link>
+					<pubDate>Wed, 08 May 2013 14:19:48 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Sorry, I don&#8217;t have any info for you. Have you asked at the CMU Sphinx forum about whether any variations of the Sphinx project have transient detection abilities as part of their API? If Pocketsphinx does, it is probably possible to modify OpenEars to support this (but you would have to undertake that on your own).</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/detecting-speech-transients/#post-1017176</guid>
+					<title><![CDATA[Reply To: Detecting Speech transients]]></title>
+					<link>/forums/topic/detecting-speech-transients/#post-1017176</link>
+					<pubDate>Wed, 08 May 2013 14:29:48 +0000</pubDate>
+					<dc:creator>Sjakelien</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>No, thanks, I will give it a try.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Audio Output EQ/Quality changes with OpenEars &#8211; Politepix</title>
+		<atom:link href="/forums/topic/audio-output-eqquality-changes-with-openears/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/audio-output-eqquality-changes-with-openears/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:04:51 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/audio-output-eqquality-changes-with-openears/#post-1019455</guid>
+					<title><![CDATA[Audio Output EQ/Quality changes with OpenEars]]></title>
+					<link>/forums/topic/audio-output-eqquality-changes-with-openears/#post-1019455</link>
+					<pubDate>Tue, 14 Jan 2014 22:06:57 +0000</pubDate>
+					<dc:creator>SparkyNZ</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I noticed that when using OpenEars it seems to change the equalisation settings on my audio playback &#8211; either that or the speech synthesis component has reconfigured my audio output somehow (perhaps changed to mono instead of stereo?).</p>
+<p>All I would like to do is use OpenEars for speech recognition. Would it be the speech synthesis that is changing my audio output quality? Do I have to include speech synthesis if I only want to do speech recognition?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/audio-output-eqquality-changes-with-openears/#post-1019456</guid>
+					<title><![CDATA[Reply To: Audio Output EQ/Quality changes with OpenEars]]></title>
+					<link>/forums/topic/audio-output-eqquality-changes-with-openears/#post-1019456</link>
+					<pubDate>Tue, 14 Jan 2014 22:15:48 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Greetings,</p>
+<p>This is probably happening as a result of the audio session settings for PocketsphinxController. I think it can&#8217;t be changed if you are doing the playback and recognition intermittently in the same session.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/audio-output-eqquality-changes-with-openears/#post-1019457</guid>
+					<title><![CDATA[Reply To: Audio Output EQ/Quality changes with OpenEars]]></title>
+					<link>/forums/topic/audio-output-eqquality-changes-with-openears/#post-1019457</link>
+					<pubDate>Tue, 14 Jan 2014 22:25:24 +0000</pubDate>
+					<dc:creator>SparkyNZ</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>So would this mean that I&#8217;d have to destroy the PocksetsphixController object when not in use and re-instantiate when required? Apologies for the lack of detail &#8211; I don&#8217;t have my Mac with me at the moment.. just trying to proactively plan my next lot of home development activities. :-)</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/audio-output-eqquality-changes-with-openears/#post-1019458</guid>
+					<title><![CDATA[Reply To: Audio Output EQ/Quality changes with OpenEars]]></title>
+					<link>/forums/topic/audio-output-eqquality-changes-with-openears/#post-1019458</link>
+					<pubDate>Tue, 14 Jan 2014 22:37:31 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>How it works is that when PocketsphinxController is in its recognition loop, it continually reasserts its own audio session requirements because it would stop working if it didn&#8217;t. So it might be sufficient to just stop listening and then start again; you might need to experiment. Suspend and resume aren&#8217;t an option because the loop isn&#8217;t actually exited when they are used.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

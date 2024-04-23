@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Selectively enabling or disabling Rapid Ears &#8211; Politepix</title>
+		<atom:link href="/forums/topic/selectively-enabling-or-disabling-rapid-ears/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/selectively-enabling-or-disabling-rapid-ears/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:45:03 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/selectively-enabling-or-disabling-rapid-ears/#post-11643</guid>
+					<title><![CDATA[Selectively enabling or disabling Rapid Ears]]></title>
+					<link>/forums/topic/selectively-enabling-or-disabling-rapid-ears/#post-11643</link>
+					<pubDate>Thu, 18 Oct 2012 18:57:46 +0000</pubDate>
+					<dc:creator>raj_truscript</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello, I have successfully managed to incorporate OpenEars into my app and excited that the accuracy works well for me but the response time could be be better.  Have come across Rapid Ears and am yet to begin incorporating this, but had a quick question:  Is it possible to selectively enable or disable RapidEars when needed.  For example, one screen in my app could contain a UITableView that has about 50 items added to the dictionary where OpenEars&#8217; higher accuracy is important (example, voice activating names from Contact List), whereas another screen might have just two words in the dictionary/vocabulary where quicker response (Rapid Ears) is of higher priority (example, voice enabling two buttons &#8220;Yes&#8221; &amp; &#8220;Cancel&#8221;).</p>
+<p>Is this possible?  Can I still include the RapidEars plugin in an Open Ears project and still be able to achieve something like this.</p>
+<p>Any help would be greatly appreciated.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/selectively-enabling-or-disabling-rapid-ears/#post-11644</guid>
+					<title><![CDATA[Reply To: Selectively enabling or disabling Rapid Ears]]></title>
+					<link>/forums/topic/selectively-enabling-or-disabling-rapid-ears/#post-11644</link>
+					<pubDate>Thu, 18 Oct 2012 19:07:54 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>I would try RapidEars first to see if the accuracy is an issue, but if it is, you can use them both in the same app because they are started with separate start commands. The issue is that you can&#8217;t switch between them right in the middle of a recognition session, so you have to stop the recognition of one and then start a new recognition with the other. The only real downside to this is that it is necessary to recalibrate.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/selectively-enabling-or-disabling-rapid-ears/#post-11645</guid>
+					<title><![CDATA[Reply To: Selectively enabling or disabling Rapid Ears]]></title>
+					<link>/forums/topic/selectively-enabling-or-disabling-rapid-ears/#post-11645</link>
+					<pubDate>Thu, 18 Oct 2012 19:25:20 +0000</pubDate>
+					<dc:creator>raj_truscript</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Wow, that was blazing fast response.  Thanks.  Will get to it right away.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

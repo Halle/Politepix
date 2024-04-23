@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>error integrating NeatSpeech &#8211; Politepix</title>
+		<atom:link href="/forums/topic/error-integrating-neatspeech/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/error-integrating-neatspeech/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:43:47 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/error-integrating-neatspeech/#post-1018008</guid>
+					<title><![CDATA[error integrating NeatSpeech]]></title>
+					<link>/forums/topic/error-integrating-neatspeech/#post-1018008</link>
+					<pubDate>Wed, 21 Aug 2013 07:55:18 +0000</pubDate>
+					<dc:creator>haran.sivasubramaniam@gmail.com</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I have the default OpenEars TTS working with Slt. I incorporated the NeatSpeech  fwk and hitting an error as below. I followed the steps in the tutorial. While debugging I observed the emma variable is getting initialized and I do have the Linker flag set. if I remove the linker flag I don&#8217;t see the assert NeatSpeechDemo message. am I missing something else ? Appreciate your help.</p>
+<p>2013-08-21 00:35:50.318 Beatrice[1788:60b] Initializing NeatSpeech: by using NeatSpeechDemo, you assert that you have read and agree to the demo terms contained in the registered download package<br />
+2013-08-21 00:35:50.340 Beatrice[1788:60b] *** Terminating app due to uncaught exception &#8216;NSInvalidArgumentException&#8217;, reason: &#8216;+[NSInvocation _invocationWithMethodSignature:frame:]: method signature argument cannot be nil&#8217;<br />
+*** First throw call stack:<br />
+(0x303c9ed3 0x3a3f26c7 0x30316c2f 0x150f63 0x30d8f4cb 0x30394f27 0x303943ef 0x30392bdf 0x302fd541 0x302fd323 0x34d91343 0x329167b5 0x102781 0x3a907ab7)<br />
+libc++abi.dylib: terminating with uncaught exception of type NSException</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-integrating-neatspeech/#post-1018009</guid>
+					<title><![CDATA[Reply To: error integrating NeatSpeech]]></title>
+					<link>/forums/topic/error-integrating-neatspeech/#post-1018009</link>
+					<pubDate>Wed, 21 Aug 2013 08:01:36 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>Hmm, I haven&#8217;t seen that issue before, which device and iOS version is this with?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-integrating-neatspeech/#post-1018010</guid>
+					<title><![CDATA[Reply To: error integrating NeatSpeech]]></title>
+					<link>/forums/topic/error-integrating-neatspeech/#post-1018010</link>
+					<pubDate>Wed, 21 Aug 2013 08:05:14 +0000</pubDate>
+					<dc:creator>haran.sivasubramaniam@gmail.com</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>It fails with iPhone Simulator with iOS 7.0</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-integrating-neatspeech/#post-1018011</guid>
+					<title><![CDATA[Reply To: error integrating NeatSpeech]]></title>
+					<link>/forums/topic/error-integrating-neatspeech/#post-1018011</link>
+					<pubDate>Wed, 21 Aug 2013 08:18:37 +0000</pubDate>
+					<dc:creator>haran.sivasubramaniam@gmail.com</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>quick update. I tried the same steps with an iOS 6.0 project and it all works well. Some compatibility issue with iOS 7.0</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-integrating-neatspeech/#post-1018012</guid>
+					<title><![CDATA[Reply To: error integrating NeatSpeech]]></title>
+					<link>/forums/topic/error-integrating-neatspeech/#post-1018012</link>
+					<pubDate>Wed, 21 Aug 2013 08:38:58 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, that was what I was wondering. The iOS7-compatible version of everything should be out in about a week or less if everything goes well.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-integrating-neatspeech/#post-1018059</guid>
+					<title><![CDATA[Reply To: error integrating NeatSpeech]]></title>
+					<link>/forums/topic/error-integrating-neatspeech/#post-1018059</link>
+					<pubDate>Mon, 26 Aug 2013 13:10:07 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, this should be fixed in the current version of the NeatSpeech demo: <a href="/2013/08/26/openears-1-5/">/2013/08/26/openears-1-5/</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/error-integrating-neatspeech/#post-1018297</guid>
+					<title><![CDATA[Reply To: error integrating NeatSpeech]]></title>
+					<link>/forums/topic/error-integrating-neatspeech/#post-1018297</link>
+					<pubDate>Sat, 14 Sep 2013 04:30:55 +0000</pubDate>
+					<dc:creator>haran.sivasubramaniam@gmail.com</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Confirmed to work now. Thanks.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

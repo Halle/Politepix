@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>flite &#8211; Politepix</title>
+	<atom:link href="/tag/flite/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>iOS Frameworks for speech recognition, text to speech and more</description>
+	<lastBuildDate>Sat, 02 Mar 2013 08:14:48 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.5.2</generator>
+<site xmlns="com-wordpress:feed-additions:1">206848719</site>	<item>
+		<title>Voice Recognition / Speech Recognition and speech for the iPhone</title>
+		<link>/2010/09/08/voicerecognition-for-the-iphone/</link>
+					<comments>/2010/09/08/voicerecognition-for-the-iphone/#comments</comments>
+		
+		<dc:creator><![CDATA[Halle Winkler]]></dc:creator>
+		<pubDate>Wed, 08 Sep 2010 12:31:15 +0000</pubDate>
+				<category><![CDATA[Code]]></category>
+		<category><![CDATA[cmu]]></category>
+		<category><![CDATA[cocoa]]></category>
+		<category><![CDATA[flite]]></category>
+		<category><![CDATA[ios]]></category>
+		<category><![CDATA[ipad]]></category>
+		<category><![CDATA[iphone]]></category>
+		<category><![CDATA[linkedin]]></category>
+		<category><![CDATA[objective-c]]></category>
+		<category><![CDATA[pocket sphinx]]></category>
+		<category><![CDATA[pocketsphinx]]></category>
+		<category><![CDATA[speech recognition]]></category>
+		<category><![CDATA[text to speech]]></category>
+		<category><![CDATA[voice recognition]]></category>
+		<guid isPermaLink="false">/?p=852</guid>
+
+					<description><![CDATA[Politepix introduces OpenEars, an open-source iOS library for implementing continuous, multithreaded, and low-overhead speech recognition and text-to-speech, using CMU Pocketsphinx and CMU Flite, for iPhone and iPad development.]]></description>
+										<content:encoded><![CDATA[<h2><a href="/openears">Read more about OpenEars and download the OpenEars library for free!</a></h2>
+<p>I&#8217;m happy to announce that <a href="/openears">OpenEars</a> is launched! <a href="/openears">OpenEars</a> is an open-source iOS library for implementing continuous, multithreaded, and low-overhead speech recognition and text-to-speech, using <a href="https://cmusphinx.sourceforge.net/">CMU Pocketsphinx</a> and <a href="https://www.cmuflite.org/">CMU Flite</a>, for the iPhone and iPad.  It uses nice Cocoa-standard cross-project-referenced static libraries and it offers all the easy-to-use Objective-C methods you&#8217;ll need to bring round-trip speech functions to your app. The launch version is 0.9.0 and I hope that there will be some cool projects using it.</p>
+<p>[politepix-blog-inline-text-ad]</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/2010/09/08/voicerecognition-for-the-iphone/feed/</wfw:commentRss>
+			<slash:comments>4</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">852</post-id>	</item>
+	</channel>
+</rss>

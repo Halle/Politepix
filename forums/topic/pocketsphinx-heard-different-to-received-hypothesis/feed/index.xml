@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>Pocketsphinx &#039;heard&#039; different to received hypothesis &#8211; Politepix</title>
+		<atom:link href="/forums/topic/pocketsphinx-heard-different-to-received-hypothesis/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/pocketsphinx-heard-different-to-received-hypothesis/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:03:12 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/pocketsphinx-heard-different-to-received-hypothesis/#post-1022438</guid>
+					<title><![CDATA[Pocketsphinx &#039;heard&#039; different to received hypothesis]]></title>
+					<link>/forums/topic/pocketsphinx-heard-different-to-received-hypothesis/#post-1022438</link>
+					<pubDate>Tue, 02 Sep 2014 17:45:24 +0000</pubDate>
+					<dc:creator>JonLocate</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>sorry for this long post but i really need this to work to reduce the dialog between the user and device. plus if this does work there may be quite a few purchases of Rejecto and SaveThatWave in the future.</p>
+<p>I have been using the SaveThatWave demo to try and develop a voice system that records a phrase as a wav, then switches between different vocabularies and checks the wav for the different words related to the vocabularies. Im doing this so i can split my full vocabulary into smaller parts for more efficient recognition, my application will need to recognise lots (hundreds) of different words, and so the user only has to speak on phrase for the device to work on.</p>
+<p>I have developed a fairly decent algorithm for for checking the wav for words in different vocabs, but there seems to be a problem at some point in it and i think i&#8217;ve narrowed it down from reading the logging.</p>
+<p>first i will post the logging and mark where i think the problem is. Its basically saying that when i run the voice recognition on the saved wav file pocketsphinx is &#8216;hearing&#8217; with the vocab that has been just switched to prior running on wav, but the didRecieveHypothesis method is getting the same hypothesis as before switching vocabs.</p>
+<p>full verbose logging, the phrase that is spoken is &#8220;locate white wine&#8221;.</p>
+<pre><code>
+
+2014-09-02 17:14:23.961 VoiceRec4[285:60b] Starting OpenEars logging for OpenEars version 1.7 on 32-bit device: iPad running iOS version: 7.100000
+2014-09-02 17:14:30.178 VoiceRec4[285:60b] User gave mic permission for this app.
+2014-09-02 17:14:30.180 VoiceRec4[285:60b] Leaving sample rate at the default of 16000.
+2014-09-02 17:14:30.182 VoiceRec4[285:60b] The audio session has never been initialized so we will do that now.
+2014-09-02 17:14:30.184 VoiceRec4[285:60b] Checking and resetting all audio session settings.
+2014-09-02 17:14:30.186 VoiceRec4[285:60b] audioCategory is incorrect, we will change it.
+2014-09-02 17:14:30.187 VoiceRec4[285:60b] audioCategory is now on the correct setting of kAudioSessionCategory_PlayAndRecord.
+2014-09-02 17:14:30.189 VoiceRec4[285:60b] bluetoothInput is incorrect, we will change it.
+2014-09-02 17:14:30.190 VoiceRec4[285:60b] bluetooth input is now on the correct setting of 1.
+2014-09-02 17:14:30.192 VoiceRec4[285:60b] Output Device: HeadsetInOut.
+2014-09-02 17:14:30.194 VoiceRec4[285:60b] preferredBufferSize is incorrect, we will change it.
+2014-09-02 17:14:30.195 VoiceRec4[285:60b] PreferredBufferSize is now on the correct setting of 0.128000.
+2014-09-02 17:14:30.197 VoiceRec4[285:60b] preferredSampleRateCheck is incorrect, we will change it.
+2014-09-02 17:14:30.199 VoiceRec4[285:60b] preferred hardware sample rate is now on the correct setting of 16000.000000.
+2014-09-02 17:14:30.285 VoiceRec4[285:60b] AudioSessionManager startAudioSession has reached the end of the initialization.
+2014-09-02 17:14:30.287 VoiceRec4[285:60b] Exiting startAudioSession.
+2014-09-02 17:14:30.292 VoiceRec4[285:4807] setSecondsOfSilence value of 0.000000 was too large or too small or was NULL, using default of 0.700000.
+2014-09-02 17:14:30.299 VoiceRec4[285:4807] Project has these words or phrases in its dictionary:
+___REJ_AA
+___REJ_AE
+___REJ_AH
+___REJ_AO
+___REJ_AW
+___REJ_AY
+___REJ_B
+___REJ_CH
+___REJ_D
+___REJ_DH
+___REJ_EH
+___REJ_ER
+___REJ_EY
+___REJ_F
+___REJ_G
+___REJ_HH
+___REJ_IH
+___REJ_IY
+___REJ_JH
+___REJ_K
+___REJ_L
+___REJ_M
+___REJ_N
+___REJ_NG
+___REJ_OW
+___REJ_OY
+___REJ_P
+___REJ_R
+___REJ_S
+___REJ_SH
+___REJ_T
+...and 23 more.
+2014-09-02 17:14:30.301 VoiceRec4[285:4807] Recognition loop has started
+2014-09-02 17:14:31.104 VoiceRec4[285:4807] Starting openAudioDevice on the device.
+2014-09-02 17:14:31.105 VoiceRec4[285:4807] Audio unit wrapper successfully created.
+2014-09-02 17:14:31.113 VoiceRec4[285:4807] Set audio route to HeadsetInOut
+2014-09-02 17:14:31.117 VoiceRec4[285:4807] Restoring SmartCMN value of 38.511654
+2014-09-02 17:14:31.118 VoiceRec4[285:4807] Checking and resetting all audio session settings.
+2014-09-02 17:14:31.120 VoiceRec4[285:4807] audioCategory is correct, we will leave it as it is.
+2014-09-02 17:14:31.122 VoiceRec4[285:4807] bluetoothInput is correct, we will leave it as it is.
+2014-09-02 17:14:31.124 VoiceRec4[285:4807] Output Device: HeadsetInOut.
+2014-09-02 17:14:31.125 VoiceRec4[285:4807] preferredBufferSize is incorrect, we will change it.
+2014-09-02 17:14:31.127 VoiceRec4[285:4807] PreferredBufferSize is now on the correct setting of 0.128000.
+2014-09-02 17:14:31.129 VoiceRec4[285:4807] preferredSampleRateCheck is correct, we will leave it as it is.
+2014-09-02 17:14:31.130 VoiceRec4[285:4807] Setting the variables for the device and starting it.
+2014-09-02 17:14:31.131 VoiceRec4[285:4807] Looping through ringbuffer sections and pre-allocating them.
+2014-09-02 17:14:31.497 VoiceRec4[285:4807] Started audio output unit.
+2014-09-02 17:14:31.501 VoiceRec4[285:4807] Calibration has started
+2014-09-02 17:14:33.706 VoiceRec4[285:4807] Calibration has completed
+2014-09-02 17:14:33.708 VoiceRec4[285:4807] Listening.
+2014-09-02 17:14:33.710 VoiceRec4[285:60b] Pocketsphinx is now listening.
+2014-09-02 17:14:36.166 VoiceRec4[285:4807] Speech detected...
+2014-09-02 17:14:38.412 VoiceRec4[285:4807] Stopping audio unit.
+2014-09-02 17:14:38.427 VoiceRec4[285:60b] path is: /var/mobile/Applications/48722538-2FE7-4DD7-AC87-BF5086AFB2EF/Library/Caches/openears_recording_201409021714384.wav
+2014-09-02 17:14:38.430 VoiceRec4[285:60b] Running recognition on WAV
+2014-09-02 17:14:38.540 VoiceRec4[285:4807] Audio Output Unit stopped, cleaning up variable states.
+2014-09-02 17:14:38.543 VoiceRec4[285:4807] Processing speech, please wait...
+2014-09-02 17:14:38.793 VoiceRec4[285:4807] Pocketsphinx heard &quot;LOCATE WINE&quot; with a score of (0) and an utterance ID of 000000000.
+2014-09-02 17:14:38.795 VoiceRec4[285:4807] Checking and resetting all audio session settings.
+2014-09-02 17:14:38.797 VoiceRec4[285:4807] audioCategory is correct, we will leave it as it is.
+2014-09-02 17:14:38.798 VoiceRec4[285:4807] bluetoothInput is correct, we will leave it as it is.
+2014-09-02 17:14:38.799 VoiceRec4[285:4807] Output Device: HeadsetInOut.
+2014-09-02 17:14:38.800 VoiceRec4[285:4807] preferredBufferSize is incorrect, we will change it.
+2014-09-02 17:14:38.802 VoiceRec4[285:4807] PreferredBufferSize is now on the correct setting of 0.128000.
+2014-09-02 17:14:38.805 VoiceRec4[285:4807] preferredSampleRateCheck is correct, we will leave it as it is.
+2014-09-02 17:14:38.808 VoiceRec4[285:4807] Setting the variables for the device and starting it.
+2014-09-02 17:14:38.809 VoiceRec4[285:4807] Looping through ringbuffer sections and pre-allocating them.
+2014-09-02 17:14:38.921 VoiceRec4[285:4807] Started audio output unit.
+2014-09-02 17:14:38.923 VoiceRec4[285:4807] Listening.
+2014-09-02 17:14:39.906 VoiceRec4[285:60b] Pocketsphinx heard &quot;LOCATE WINE&quot; with a score of (0) and an utterance ID of 000000000.
+2014-09-02 17:14:39.915 VoiceRec4[285:60b] The received hypothesis is LOCATE WINE with a score of 0
+2014-09-02 17:14:39.917 VoiceRec4[285:60b] First command
+2014-09-02 17:14:39.918 VoiceRec4[285:60b] Finding aisle word
+2014-09-02 17:14:39.920 VoiceRec4[285:60b] Changing vocabulary paths to wine vocab
+2014-09-02 17:14:39.921 VoiceRec4[285:60b] (
+    SHAMPAIN,
+    RED,
+    WHITE,
+    PINK,
+    FRENCH,
+    SPANISH
+)
+2014-09-02 17:14:39.922 VoiceRec4[285:60b] /var/mobile/Applications/48722538-2FE7-4DD7-AC87-BF5086AFB2EF/Library/Caches/FruitModel.DMP
+2014-09-02 17:14:39.924 VoiceRec4[285:60b] /var/mobile/Applications/48722538-2FE7-4DD7-AC87-BF5086AFB2EF/Library/Caches/FruitModel.dic
+
+&lt;ul&gt;
+&lt;strong&gt;runs recognition on wav, hears &quot;PINK WHITE WHITE&quot; 
+but the old hypothesis of &quot;LOCATE WINE&quot; is returned&lt;/strong&gt;&lt;/ul&gt;
+
+2014-09-02 17:14:39.925 VoiceRec4[285:60b] Running recognition on WAV
+2014-09-02 17:14:41.363 VoiceRec4[285:60b] Pocketsphinx heard &quot;PINK WHITE WHITE&quot; with a score of (0) and an utterance ID of 000000000.
+2014-09-02 17:14:41.372 VoiceRec4[285:60b] Pocketsphinx is now listening.
+2014-09-02 17:14:41.374 VoiceRec4[285:60b] The received hypothesis is LOCATE WINE with a score of 0
+2014-09-02 17:14:41.375 VoiceRec4[285:60b] Finding brand word
+2014-09-02 17:14:41.377 VoiceRec4[285:60b] Taking user to WINE aisle
+2014-09-02 17:14:41.379 VoiceRec4[285:60b] WAVs in caches directory are (
+    &quot;openears_recording_201409021711042.wav&quot;,
+    &quot;openears_recording_201409021712485.wav&quot;,
+    &quot;openears_recording_201409021714384.wav&quot;
+)
+2014-09-02 17:14:41.384 VoiceRec4[285:60b] Pocketsphinx capture WAVs in caches directory are (
+)
+
+&lt;ul&gt;
+&lt;strong&gt;now hypothesis is received but wasn&#039;t called for. seems like pocketsphinx is a set behind&lt;/strong&gt;&lt;/ul&gt;
+
+2014-09-02 17:14:41.386 VoiceRec4[285:60b] The received hypothesis is PINK WHITE WHITE with a score of 0
+2014-09-02 17:14:41.387 VoiceRec4[285:60b] First command
+2014-09-02 17:14:41.389 VoiceRec4[285:60b] I&#039;m running flite
+2014-09-02 17:14:41.391 VoiceRec4[285:60b] Checking and resetting all audio session settings.
+2014-09-02 17:14:41.393 VoiceRec4[285:60b] audioCategory is correct, we will leave it as it is.
+2014-09-02 17:14:41.395 VoiceRec4[285:60b] bluetoothInput is correct, we will leave it as it is.
+2014-09-02 17:14:41.396 VoiceRec4[285:60b] Output Device: HeadsetInOut.
+2014-09-02 17:14:41.398 VoiceRec4[285:60b] preferredBufferSize is incorrect, we will change it.
+2014-09-02 17:14:41.400 VoiceRec4[285:60b] PreferredBufferSize is now on the correct setting of 0.128000.
+2014-09-02 17:14:41.402 VoiceRec4[285:60b] preferredSampleRateCheck is correct, we will leave it as it is.
+2014-09-02 17:14:41.418 VoiceRec4[285:4807] Stopping audio unit.
+2014-09-02 17:14:41.481 VoiceRec4[285:4807] Audio Output Unit stopped, cleaning up variable states.
+2014-09-02 17:14:41.484 VoiceRec4[285:4807] This device is not recording, so first we will set its recording status to 0
+2014-09-02 17:14:41.486 VoiceRec4[285:4807] The audio unit is running so we are going to dispose of its instance
+2014-09-02 17:14:41.502 VoiceRec4[285:4807] No longer listening.
+2014-09-02 17:14:42.081 VoiceRec4[285:60b] I&#039;m done running flite and it took 0.690739 seconds
+2014-09-02 17:14:42.083 VoiceRec4[285:60b] Flite audio player was nil when referenced so attempting to allocate a new audio player.
+2014-09-02 17:14:42.085 VoiceRec4[285:60b] Loading speech data for Flite concluded successfully.
+2014-09-02 17:14:42.250 VoiceRec4[285:60b] Pocketsphinx has stopped listening.
+2014-09-02 17:14:42.253 VoiceRec4[285:60b] Flite sending suspend recognition notification.
+2014-09-02 17:14:42.257 VoiceRec4[285:60b] Warning: a call to suspend was made to a listening loop that wasn&#039;t in progress. This call will be disregarded.
+2014-09-02 17:14:43.789 VoiceRec4[285:60b] AVAudioPlayer did finish playing with success flag of 1
+2014-09-02 17:14:43.942 VoiceRec4[285:60b] Flite sending resume recognition notification.
+2014-09-02 17:14:44.445 VoiceRec4[285:60b] Warning: a call to resume was made to a listening loop that wasn&#039;t in progress. This call will be disregarded.
+
+</code></pre>
+<p>instead of posting the whole code i will post the separate blocks almost in order of calling.</p>
+<pre><code>
+
+first the talk button is pressed. the paths have been set to command vocab paths.
+
+// TALK BUTTON, START LISTENING
+//
+- (IBAction)talkButton:(id)sender
+{
+    [self.pocketsphinxController startListeningWithLanguageModelAtPath:currentlmPath dictionaryAtPath:currentdicPath acousticModelAtPath:[AcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;] languageModelIsJSGF:NO];
+    
+    [self.saveThatWaveController start];
+}
+
+then the phrase is spoken and the hypothesis is returned, but because of the waveSaved bool, nothing is done with the hypothesis. but the wav is saved.
+
+// RECIEVE SPEECH STRING AND SEND TO PROCESSORS
+//
+- (void) pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID
+{
+    if (waveSaved)
+    {
+        NSLog(@&quot;The received hypothesis is %@ with a score of %@&quot;, hypothesis, recognitionScore);
+        
+        //waveSaved = NO;
+        
+        
+        if ([hypothesis isEqualToString:@&quot;STOP LISTENING&quot;])
+        {
+            [self.pocketsphinxController stopListening];
+        }
+        else if ([hypothesis isEqualToString:@&quot;CANCEL ACTION&quot;])
+        {
+            [self cancelAction];
+        }
+        else if (!madeFirstCommand)
+        {
+            [self firstCommand:hypothesis];
+        }
+        else if (findingBrand)
+        {
+            [self findBrandWord:hypothesis];
+        }
+    }
+}
+
+the wav is saved method is called and the path to the wav is set, the runRecognitionOnWav method is then called and the bool is switched allowing the hypothesis to be processed.
+
+// SAVING THE WAVE, RUN REC ON WAV
+//
+- (void) wavWasSavedAtLocation:(NSString *)path
+{
+    NSLog(@&quot;path is: %@&quot;, path);
+    
+    waveSaved = YES;
+    pathToWav = path;
+    
+    [self runRecognitionOnWav];
+}
+
+// RUN RECOGNITION ON WAV
+//
+- (void)runRecognitionOnWav
+{
+    NSLog(@&quot;Running recognition on WAV&quot;);
+    
+    [self.pocketsphinxController runRecognitionOnWavFileAtPath:pathToWav usingLanguageModelAtPath:currentlmPath dictionaryAtPath:currentdicPath acousticModelAtPath:[AcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;] languageModelIsJSGF:NO];
+
+}
+
+the hypothesis can now be sent to the firstCommand method where it checks for the commands &quot;locate&quot; or &quot;find&quot;. if those commands are found the phrase is sent to the findAisleWord method which checks it for aisle words (shopping centre aisles, wine, fruit, meat, etc).
+
+// FIRST COMMAND
+//
+- (void) firstCommand:(NSString *)Phrase
+{
+    NSLog(@&quot;First command&quot;);
+    
+    splitPhrase = [Phrase componentsSeparatedByString:@&quot; &quot;];
+    
+    if ([splitPhrase containsObject:@&quot;LOCATE&quot;] || [splitPhrase containsObject:@&quot;FIND&quot;])
+    {
+        [self findAisleWord:splitPhrase];
+    }
+    else if ([Phrase isEqualToString:@&quot;CANCEL ACTION&quot;])
+    {
+        [self cancelAction];
+    }
+    else
+    {
+        [self say:@&quot;please say again&quot;];
+    }
+}
+
+the findAisleWord method loops through the phrase and checks it against an array of aisle words. if the word is contained in the array then a variable stores the aisle string, &quot;wine&quot; in this case, and the change vocab method is called.
+ 
+
+// FIND AISLE WORD
+//
+- (void) findAisleWord:(NSArray *)Phrase
+{
+    NSLog(@&quot;Finding aisle word&quot;);
+    
+    count = 1;
+    
+    for (NSString *word in Phrase)
+    {
+        if ([aisles containsObject:word])
+        {
+            theAisle = word;
+            
+            findingBrand = YES;
+            madeFirstCommand = YES;
+            
+            [self changeVocabAndCheckForBrand];
+            
+            break;
+        }
+        else if (count == Phrase.count)
+        {
+            [self say:@&quot;location not found, please say again&quot;];
+        }
+        
+        count++;
+    }
+}
+
+the change vocab method just sets the currentPath variables to the paths of the vocab related to the aisle. it also sets an array with the brands for that aisle which is pretty much the same as the vocab. THEN the runRecognitionOnWav method is called.
+
+// CHANGE VOCAB AND CHECK BRAND
+//
+- (void) changeVocabAndCheckForBrand
+{
+    
+    
+    if([theAisle isEqualToString:@&quot;BREAD&quot;])
+    {
+        NSLog(@&quot;Changing vocabulary paths to bread vocab&quot;);
+
+        theBrands = breadBrands;
+        currentlmPath = breadlmPath;
+        currentdicPath = breaddicPath;
+    }
+    else if ([theAisle isEqualToString:@&quot;FRUIT&quot;])
+    {
+        NSLog(@&quot;Changing vocabulary paths to fruit vocab&quot;);
+
+        theBrands = fruits;
+        currentlmPath = fruitlmPath;
+        currentdicPath = fruitdicPath;
+    }
+    else if ([theAisle isEqualToString:@&quot;WINE&quot;])
+    {
+        NSLog(@&quot;Changing vocabulary paths to wine vocab&quot;);
+
+        theBrands = wineBrands;
+        currentlmPath = winelmPath;
+        currentdicPath = winedicPath;
+    }
+    
+    NSLog(@&quot;%@&quot;, theBrands);
+    NSLog(@&quot;%@&quot;, currentlmPath);
+    NSLog(@&quot;%@&quot;, currentdicPath);
+    
+    [self runRecognitionOnWav];
+}
+
+the recognition on wav method should now run pocketsphinx on the saved wav
+the current paths are now changed 
+
+// RUN RECOGNITION ON WAV
+//
+- (void)runRecognitionOnWav
+{
+    NSLog(@&quot;Running recognition on WAV&quot;);
+    
+    [self.pocketsphinxController runRecognitionOnWavFileAtPath:pathToWav usingLanguageModelAtPath:currentlmPath dictionaryAtPath:currentdicPath acousticModelAtPath:[AcousticModel pathToModel:@&quot;AcousticModelEnglish&quot;] languageModelIsJSGF:NO];
+
+}
+
+this is when the wav should be checked with the new vocab but as it shows above in the logging, the didRecieveHypothesis gets the old hypothesis containing words from the first vocab. but in the logging it tells me that phocketsphinx actually heard the words related to the new vocab, so at least the vocabulary IS actually being switched.
+
+if it were to continue properly it would look like this.
+
+the hypothesis would be now passed to the findBrandWord method which compares the phrase to an array of brand words. if a match is found the word is passed to the takeToLocation method which guide the user to the location of the particular brand on that aisle. if not then they just get brought to the aisle.
+
+// FIND BRAND WORD
+//
+- (void) findBrandWord:(NSString *)Phrase
+{
+    NSLog(@&quot;Finding brand word&quot;);
+    
+    splitPhrase = [Phrase componentsSeparatedByString:@&quot; &quot;];
+
+    count = 1;
+    
+    for (NSString *word in splitPhrase)
+    {
+        if ([theBrands containsObject:word])
+        {
+            [self takeToLocation:word];
+            
+            break;
+        }
+        else if (count == splitPhrase.count)
+        {
+            // ask again or just bring to aisle?, or run recognition on wav again?
+            [self takeToLocation:@&quot;AISLE&quot;];
+        }
+        
+        count++;
+    }
+}
+
+// TAKE TO LOCATION
+//
+- (void) takeToLocation:(NSString *)location
+{
+    if ([location isEqualToString:@&quot;AISLE&quot;])
+    {
+        // take to aisle
+        NSLog(@&quot;Taking user to %@ aisle&quot;, theAisle);
+        
+        madeFirstCommand = NO;
+        findingBrand = NO;
+        //waveSaved = NO;
+        
+        // delete stored wav and reset wav bool to NO
+        [self.saveThatWaveController deleteAllAudioFiles];
+        [self.saveThatWaveController stop];
+        [self.pocketsphinxController stopListening];
+    }
+    else
+    {
+        // take to location
+        NSLog(@&quot;Taking user to %@ aisle and %@ brand&quot;, theAisle, location);
+        
+        madeFirstCommand = NO;
+        findingBrand = NO;
+        //waveSaved = NO;
+        
+        // delete stored wav and reset wav bool to NO
+        [self.saveThatWaveController deleteAllAudioFiles];
+        [self.saveThatWaveController stop];
+        [self.pocketsphinxController stopListening];
+    }
+}
+
+because the old hypothesis is passed to these methods the brand word is not found and the locate aisle only section is ran.
+
+this is where is gets weird! this should be the end of it, no more callings of pocketshpinx and no more recognition. but as you can see from the logging, there is one more calling of didRecieveHypothesis method, and look what gets passed in! the hypothesis i needed a few steps ago!
+ 
+
+</code></pre>
+<p>why is this happening? it seems like pocketsphinx is a step behind. Ive gone through the logical flow of this algorithm many times and i cannot spot a problem with it. To me it seems like it should work properly.</p>
+<p>i would greatly appreciate help with this one!</p>
+<p>Thank you very much,<br />
+Jon</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pocketsphinx-heard-different-to-received-hypothesis/#post-1022440</guid>
+					<title><![CDATA[Reply To: Pocketsphinx &#039;heard&#039; different to received hypothesis]]></title>
+					<link>/forums/topic/pocketsphinx-heard-different-to-received-hypothesis/#post-1022440</link>
+					<pubDate>Tue, 02 Sep 2014 17:59:48 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello,</p>
+<p>This question is a bit confusing. Can you explain why you don&#8217;t listen continuously and change between your vocabularies based on the logical state of your app?</p>
+<p>SaveThatWave isn&#8217;t designed to record speech to be submitted to the wav recognition function, and the wav recognition function isn&#8217;t designed to be used on live speech, so there is no reason this would result in an effect similar to continuous recognition and it would be unfruitful to troubleshoot why it doesn&#8217;t have that effect. </p>
+<p>But the library performs continuous recognition by default and is intended to be used with many small vocabularies, so it would be a better approach to start with the reason that you aren&#8217;t using the functionality that matches your requirements, and troubleshoot that if it is possible.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pocketsphinx-heard-different-to-received-hypothesis/#post-1022441</guid>
+					<title><![CDATA[Reply To: Pocketsphinx &#039;heard&#039; different to received hypothesis]]></title>
+					<link>/forums/topic/pocketsphinx-heard-different-to-received-hypothesis/#post-1022441</link>
+					<pubDate>Tue, 02 Sep 2014 21:32:39 +0000</pubDate>
+					<dc:creator>JonLocate</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>thanks for the reply,</p>
+<p>from my understanding of OpenEars, i Think that when you speak a sentence the loop detects speech and waits until the end of speech is detected, then it passes the hypothesis to the receiving method. I also think that you can only apply one vocabulary to one phrase at a time, only switching after receiving the hypothesis, then checking for words in the hypothesis to determine what vocabulary change needs to happen. </p>
+<p>so it would be like:</p>
+<p>phrase is spoken,<br />
+hypothesis is received,<br />
+vocab to switch to is determined based on hypothesis,<br />
+vocab is switched,<br />
+user speaks another phrase to be worked on by new vocabulary,<br />
+new words are given in hypothesis,<br />
+world keeps spinning.</p>
+<p>Ive built a test app that works great in this way, but the user is required to speak more than once to get the desired results. what i am trying to do is have it so the user only has to say one phrase which is used to generate multiple hypothesis using various different vocabularies.</p>
+<p>pseudo example:</p>
+<p>commands = [locate, find, bread, wine, fruit]<br />
+breadvocab = [brown, white, wholegrain]<br />
+fruitvocab = [bananas, kiwis, pineapples]<br />
+winevocab = [red, white, pink]</p>
+<p>user says &#8211; &#8220;locate white wine&#8221;</p>
+<p>phrase is recorded into wav at wavPath</p>
+<p>commands vocab is used for first hypothesis generated from [runRecOnWavAt:wavPath with:commandVocabPath]<br />
+hypothesis = &#8220;locate wine&#8221;</p>
+<p>vocab is now changed to winevocab and we [runRecOnWavAt:wavPath with:wineVocabPath]<br />
+hypothesis = &#8220;white&#8221; (or pink white white as that phrase usually generates)</p>
+<p>from the one spoken phrase two vocabs were used to find that the user wanted to locate the white wine aisle. In my head this cant be done with the one spoken phrase that the listening loop picks up, because only one vocab is used per phrase/hypothesis? so by using a recorded wav i can check it multiple times with multiple grammars.</p>
+<p>Am i missing something? can the listening loop check with multiple grammars without having to use a wav to save the spoken phrase?</p>
+<p>Thanks!<br />
+Jon</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pocketsphinx-heard-different-to-received-hypothesis/#post-1022457</guid>
+					<title><![CDATA[Reply To: Pocketsphinx &#039;heard&#039; different to received hypothesis]]></title>
+					<link>/forums/topic/pocketsphinx-heard-different-to-received-hypothesis/#post-1022457</link>
+					<pubDate>Fri, 05 Sep 2014 10:48:39 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, thank you for clarifying. That is a pretty novel use of the platform so I wouldn&#8217;t expect it to necessarily work, but we can troubleshoot it a bit, with the proviso that the overall app logic question is more complex than I can help you with, since it would require reproducing it in an app in order to give feedback which isn&#8217;t something there are time resources available for, regretfully.</p>
+<p>I would troubleshoot this by reducing it. So, take a clean slate and start by creating three language models which each have one (different) word. Create a test which is just analyzing the first two models and then switching to the third. See if the issue replicates, and if not, see what changes/additions first cause replication. Get rid of the FliteController stuff because it has overhead and doesn&#8217;t help with your test.</p>
+<p>The first area I&#8217;d be suspicious of is whether you are passing in the language models you expect at the time expected, so log the path of the language models right before they are passed to the recognition function and confirm that they are exactly what is expected (needless to say, give each model a unique and function-related name). The next thing I would wonder about is the asynchronous nature of the hypothesis response and whether you have something happening out of series or in a race condition because you are running two recognitions on a background thread which both return their results on a foreground thread and are not guaranteed to have similar processing times. I would verify this by noting similarities or dissimilarities in the order of return as you build up to the complexity with which you are experiencing the delayed hypothesis.</p>
+<p>Take a lot of care with confirming that any pointers point to what you think they are pointing to, by logging anything before it is passed to anything else and confirming that it is as expected.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/pocketsphinx-heard-different-to-received-hypothesis/#post-1022471</guid>
+					<title><![CDATA[Reply To: Pocketsphinx &#039;heard&#039; different to received hypothesis]]></title>
+					<link>/forums/topic/pocketsphinx-heard-different-to-received-hypothesis/#post-1022471</link>
+					<pubDate>Tue, 09 Sep 2014 16:06:03 +0000</pubDate>
+					<dc:creator>JonLocate</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello Halle,</p>
+<p>Thanks for your reply!</p>
+<p>I have decided to go back to the previous method of a &#8216;two phrase&#8217; method. I basically found a cheap cheat to get passed the fact that the hypothesis that i wanted was delivered after i needed it. basically a bool switch that waits for the right hypothesis before it does something with it. Doing this i found that the hypothesis generated from the wav with the second vocabulary usually returns many words from the vocab as opposed to just the one i want. this means that it is useless to do this because it will give me a wrong word that will affect the program before i get the right one.</p>
+<p>for example, when the phrase spoken is &#8220;locate white wine&#8221;</p>
+<p>hypothesis 1 = &#8220;locate white wine&#8221;<br />
+&#8220;wine&#8221; keyword makes the program switch to the wine vocab and rerun voice rec on saved wav, which in turn generates hypothesis 2</p>
+<p>hypothesis 2 = &#8220;pink white white&#8221;<br />
+I am looking for the word &#8220;white&#8221; but &#8220;pink&#8221; is operated on because it is the first word, and i am unable to refine this with various different Rejecto setups.</p>
+<p>But i think i will be able to use the 2 phrase method of,</p>
+<p>user &#8211; &#8220;locate wine&#8221;<br />
+switch to wine vocab<br />
+flite &#8211; &#8220;any particular type of wine&#8221;<br />
+user &#8211; &#8220;white&#8221;<br />
+flite &#8211; &#8220;follow me to the white wine&#8221;</p>
+<p>not a huge drain on user experience really! I think it would be an interesting addition to the SDK though, the ability to run voice recognition on wavs that you have saved through SaveThatWave.</p>
+<p>Thanks for the help!<br />
+Jon </p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>[Resolved] about get the recognize result &#8211; Politepix</title>
+		<atom:link href="/forums/topic/about-get-the-recognize-result/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/about-get-the-recognize-result/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 15:06:54 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/about-get-the-recognize-result/#post-1024104</guid>
+					<title><![CDATA[[Resolved] about get the recognize result]]></title>
+					<link>/forums/topic/about-get-the-recognize-result/#post-1024104</link>
+					<pubDate>Wed, 07 Jan 2015 10:48:28 +0000</pubDate>
+					<dc:creator>sunnysuhappy</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>dear Halle<br />
+i find that if i want to get the recognize result, i has two ways.one is that using real time &#8216;startListeningWithLanguageModelAtPath&#8217;, and when it get a recognized word, it callsbacks.another is using &#8216;pathToTestFile&#8217; it will give a callback.<br />
+My questiin is that, if i have a way to stop current realtime input and get the result that has been input.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/about-get-the-recognize-result/#post-1024112</guid>
+					<title><![CDATA[Reply To: [Resolved] about get the recognize result]]></title>
+					<link>/forums/topic/about-get-the-recognize-result/#post-1024112</link>
+					<pubDate>Wed, 07 Jan 2015 11:53:00 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Welcome,</p>
+<p>It isn&#8217;t designed to stop at a specific time and receive a hypothesis of everything up to that time.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/about-get-the-recognize-result/#post-1024128</guid>
+					<title><![CDATA[Reply To: [Resolved] about get the recognize result]]></title>
+					<link>/forums/topic/about-get-the-recognize-result/#post-1024128</link>
+					<pubDate>Thu, 08 Jan 2015 03:02:55 +0000</pubDate>
+					<dc:creator>sunnysuhappy</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>ok<br />
+thanks for your reply,and i want to know if I can input audio buffer to recognize instead of a wav path.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/about-get-the-recognize-result/#post-1024129</guid>
+					<title><![CDATA[Reply To: [Resolved] about get the recognize result]]></title>
+					<link>/forums/topic/about-get-the-recognize-result/#post-1024129</link>
+					<pubDate>Thu, 08 Jan 2015 08:40:24 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That is what is done by default – not sure I understand the question yet, can you clarify?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/about-get-the-recognize-result/#post-1024152</guid>
+					<title><![CDATA[Reply To: [Resolved] about get the recognize result]]></title>
+					<link>/forums/topic/about-get-the-recognize-result/#post-1024152</link>
+					<pubDate>Fri, 09 Jan 2015 05:39:14 +0000</pubDate>
+					<dc:creator>sunnysuhappy</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>soory, I mean if I have a way that i can input custom audio buffer in it.instead of the api startListen.<br />
+Now i think i find the way to achieve my target.use rapidEars to have realtime recognize.but i find that rapidEars has crash when use it for server seconds, and it seems having memory leak, it always lead to a large memory useage increased every time to 100M and more</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/about-get-the-recognize-result/#post-1024153</guid>
+					<title><![CDATA[Reply To: [Resolved] about get the recognize result]]></title>
+					<link>/forums/topic/about-get-the-recognize-result/#post-1024153</link>
+					<pubDate>Fri, 09 Jan 2015 05:42:56 +0000</pubDate>
+					<dc:creator>sunnysuhappy</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>This situation happens when i use ReturnNBest mode.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/about-get-the-recognize-result/#post-1024154</guid>
+					<title><![CDATA[Reply To: [Resolved] about get the recognize result]]></title>
+					<link>/forums/topic/about-get-the-recognize-result/#post-1024154</link>
+					<pubDate>Fri, 09 Jan 2015 09:12:19 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>OK, please read the note about using N-Best with RapidEars in its documentation – it&#8217;s explained that it&#8217;s an experimental feature and the developer has the job of keeping the overhead low enough for it to function. It is more likely that it has too much to do than that there is a leak.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/about-get-the-recognize-result/#post-1024155</guid>
+					<title><![CDATA[Reply To: [Resolved] about get the recognize result]]></title>
+					<link>/forums/topic/about-get-the-recognize-result/#post-1024155</link>
+					<pubDate>Fri, 09 Jan 2015 10:35:03 +0000</pubDate>
+					<dc:creator>sunnysuhappy</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Ok thanks.<br />
+If i want to recognize lots of sentences. so i think I should clean lauageModel when recognize new words to save memory. but it seems no apis.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/about-get-the-recognize-result/#post-1024156</guid>
+					<title><![CDATA[Reply To: [Resolved] about get the recognize result]]></title>
+					<link>/forums/topic/about-get-the-recognize-result/#post-1024156</link>
+					<pubDate>Fri, 09 Jan 2015 10:56:01 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>It is very easy to use multiple language models and switch between them with OpenEars. Please take a look at the OpenEars sample app, which has an example of dynamically generating a second language model and switching between models. It would probably also be useful for you to use the tutorial (<a href="/openears/tutorial">/openears/tutorial</a>) and read the documentation for OpenEars to get an easy overview of the API.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/about-get-the-recognize-result/#post-1024162</guid>
+					<title><![CDATA[Reply To: [Resolved] about get the recognize result]]></title>
+					<link>/forums/topic/about-get-the-recognize-result/#post-1024162</link>
+					<pubDate>Fri, 09 Jan 2015 20:13:02 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>There&#8217;s a new version of RapidEars out today, so please check it out if you are having issues with other RapidEars methods.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

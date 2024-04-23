@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+
+		<title>The pocketsphinxDidReceiveHypothesis is never fired &#8211; Politepix</title>
+		<atom:link href="/forums/topic/the-pocketsphinxdidreceivehypothesis-is-never-fired/feed/" rel="self" type="application/rss+xml" />
+		<link>/forums/topic/the-pocketsphinxdidreceivehypothesis-is-never-fired/feed/</link>
+		<description></description>
+		<lastBuildDate>Tue, 23 Apr 2024 14:48:26 +0000</lastBuildDate>
+		<generator>https://bbpress.org/?v=2.6.9</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>/forums/topic/the-pocketsphinxdidreceivehypothesis-is-never-fired/#post-14838</guid>
+					<title><![CDATA[The pocketsphinxDidReceiveHypothesis is never fired]]></title>
+					<link>/forums/topic/the-pocketsphinxdidreceivehypothesis-is-never-fired/#post-14838</link>
+					<pubDate>Mon, 10 Dec 2012 17:39:29 +0000</pubDate>
+					<dc:creator>luiso1979</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hello all,</p>
+<p>I was using an old version of OpenEars without any problems. Today I decided to download the last one (1.2.4) and give it a try.<br />
+ &#8211; I generate my Language Model and Dictionary using LanguageModelGenerator with no problem at all.<br />
+ &#8211; I start the startVoiceRecognitionThread with no errors<br />
+ &#8211; I speak and the library detects something happend BUT:</p>
+<p>the pocketsphinxDidReceiveHypothesis method is never called.</p>
+<p>Any thoughts that could guide me</p>
+<p>Thank you all very much</p>
+<p>Regards</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/the-pocketsphinxdidreceivehypothesis-is-never-fired/#post-14839</guid>
+					<title><![CDATA[Reply To: The pocketsphinxDidReceiveHypothesis is never fired]]></title>
+					<link>/forums/topic/the-pocketsphinxdidreceivehypothesis-is-never-fired/#post-14839</link>
+					<pubDate>Mon, 10 Dec 2012 17:41:18 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Hmm, this is known working without any issues, so I think it&#8217;s just going to turn out to be OpenEarsEventsObserver delegate method connection issue.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/the-pocketsphinxdidreceivehypothesis-is-never-fired/#post-14840</guid>
+					<title><![CDATA[Reply To: The pocketsphinxDidReceiveHypothesis is never fired]]></title>
+					<link>/forums/topic/the-pocketsphinxdidreceivehypothesis-is-never-fired/#post-14840</link>
+					<pubDate>Mon, 10 Dec 2012 17:41:55 +0000</pubDate>
+					<dc:creator>luiso1979</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Sorry if you need any code snippet just tell me what&#8230;</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/the-pocketsphinxdidreceivehypothesis-is-never-fired/#post-14841</guid>
+					<title><![CDATA[Reply To: The pocketsphinxDidReceiveHypothesis is never fired]]></title>
+					<link>/forums/topic/the-pocketsphinxdidreceivehypothesis-is-never-fired/#post-14841</link>
+					<pubDate>Mon, 10 Dec 2012 17:43:45 +0000</pubDate>
+					<dc:creator>luiso1979</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>thank you Halle,</p>
+<p>Do you have any thoughts on how could I correct this linking problem or either verify if indeed this is the problem???</p>
+<p>Regards and Thanks again</p>
+<p>Luis</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/the-pocketsphinxdidreceivehypothesis-is-never-fired/#post-14842</guid>
+					<title><![CDATA[Reply To: Reply To: Reply To: The pocketsphinxDidReceiveHypothesis is never fired]]></title>
+					<link>/forums/topic/the-pocketsphinxdidreceivehypothesis-is-never-fired/#post-14842</link>
+					<pubDate>Mon, 10 Dec 2012 17:44:38 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Oh, I just noticed this from your question &#8212; there is no public method called startVoiceRecognitionThread, so calling a method with this name is probably the issue. If you are doing anything with PocketsphinxController&#8217;s threading it will probably cause issues since PocketsphinxController handles its own multithreading. Maybe the best approach is to do a new installation based on the tutorial: <a href="/openears/tutorial">/openears/tutorial</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/the-pocketsphinxdidreceivehypothesis-is-never-fired/#post-14843</guid>
+					<title><![CDATA[Reply To: The pocketsphinxDidReceiveHypothesis is never fired]]></title>
+					<link>/forums/topic/the-pocketsphinxdidreceivehypothesis-is-never-fired/#post-14843</link>
+					<pubDate>Mon, 10 Dec 2012 17:51:07 +0000</pubDate>
+					<dc:creator>luiso1979</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>THANKS!!!!!!! Halle!</p>
+<p>This was exactly the problem! using the startListeningWithLanguageModelAtPath&#8230; everything got solved!</p>
+<p>Thanks a lot,</p>
+<p>Regards</p>
+<p>Luis</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>/forums/topic/the-pocketsphinxdidreceivehypothesis-is-never-fired/#post-14844</guid>
+					<title><![CDATA[Reply To: The pocketsphinxDidReceiveHypothesis is never fired]]></title>
+					<link>/forums/topic/the-pocketsphinxdidreceivehypothesis-is-never-fired/#post-14844</link>
+					<pubDate>Mon, 10 Dec 2012 17:51:56 +0000</pubDate>
+					<dc:creator>Halle Winkler</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>That&#8217;s great! I&#8217;m happy I could help.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+
