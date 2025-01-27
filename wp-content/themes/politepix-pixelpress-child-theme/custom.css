@@ -248,10 +248,10 @@ box-shadow: none!important;
 }
 
 .home #main section:first-child:after {
-  background: url(/wp-content/uploads/bg-section-bottom.png) repeat-x;
+  background: url(https://www.politepix.com/wp-content/uploads/bg-section-bottom.png) repeat-x;
 }
 .home #main section:first-child:before {
-  background: url(/wp-content/uploads/bg-section-top.png) repeat-x;
+  background: url(https://www.politepix.com/wp-content/uploads/bg-section-top.png) repeat-x;
 }
 
 .section-title h1, 
@@ -360,19 +360,19 @@ width:150%;
 }
 
 .mini-cart a.cart-parent {
-	background: url(/wp-content/themes/politepix-pixelpress-child-theme/images/ico-cart.png)!important;
+	background: url(https://www.politepix.com/wp-content/themes/politepix-pixelpress-child-theme/images/ico-cart.png)!important;
 	background-size:21px auto!important;
 	background-position: 4px 5px!important;
 	background-repeat:no-repeat!important;
 }
 
 #header #header-social a.subscribe {
-  background-image: url(/wp-content/themes/politepix-pixelpress-child-theme/images/header-social/rss.png)!important;
+  background-image: url(https://www.politepix.com/wp-content/themes/politepix-pixelpress-child-theme/images/header-social/rss.png)!important;
   background-size:24px auto!important;
   background-position: 2px 0px;
   }
 #header #header-social a.twitter {
-  background-image: url(/wp-content/themes/politepix-pixelpress-child-theme/images/header-social/twitter.png)!important;
+  background-image: url(https://www.politepix.com/wp-content/themes/politepix-pixelpress-child-theme/images/header-social/twitter.png)!important;
   background-size:22px auto!important;
   background-position: 3px 2px;  
 }

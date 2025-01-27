@@ -45,7 +45,7 @@
 <p>If you are using a version of the simulator that has different titling in the menu (I don&#8217;t know if there are any around right now but that is likely in the future), you can change the strings in the script which refer to the menu element names.</p>
 <p>When you quit the simulator, the script will quit. Since it is a loop that only exits when the simulator is quit, you may have to force quit it if you encounter some circumstance that I haven&#8217;t foreseen.</p>
 <p>Here is the script uploaded as a zipped applet (you can still open it up in the script editor to edit it):</p>
-<p><a href="/wp-content/uploads/Politepix%20Memory%20Bombardment.zip">Politepix Memory Bombardment applet</a></p>
+<p><a href="https://www.politepix.com/wp-content/uploads/Politepix%20Memory%20Bombardment.zip">Politepix Memory Bombardment applet</a></p>
 <p>If you don&#8217;t want to download a zipped applet, you can create your own Applescript applet from the following code:</p>
 <pre class="brush: cpp,gutter:false, smart-tabs:true,wrap-lines:false;">
 

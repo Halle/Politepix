@@ -60,7 +60,7 @@ if appFiles is not {} then
 	tell application "Finder" to reveal ((POSIX file mostRecentApp) as alias)
 	tell application "Finder" to activate
 end if</pre>
-<p>Of you can just <a href="/wp-content/uploads/Find%20Most%20Recent%20Simulator%20Build.zip">download</a> it as an already-saved app if you prefer (it can still be opened and edited in Applescript Editor).</p>
+<p>Of you can just <a href="https://www.politepix.com/wp-content/uploads/Find%20Most%20Recent%20Simulator%20Build.zip">download</a> it as an already-saved app if you prefer (it can still be opened and edited in Applescript Editor).</p>
 <p>Put it in the dock and click it when you want to see the install folder. I hope it spares you as much annoyance as it spares me. Tip of the hat to MacScripter and regulus6633 and StefanK.</p>
 <p>*&#8221;What&#8217;s the deal with all the Applescript?&#8221; you ask. Look, I just want to be well-practiced when Apple rolls out the Applescript Store at WWDC this year.</p>
 <p>**My last AppleScript/Simulator <a href="/2011/04/25/low-memory-warning-bombardment-tool/">post</a> was linked on Alex Curlyo&#8217;s blog and it led to a discussion that raised <a href="https://www.alexcurylo.com/blog/2011/04/26/tip-low-memory-warnings/">two even better suggestions for accomplishing the same task</a> which are now part of my standard workflow.</p>
@@ -94,7 +94,7 @@ end if</pre>
 <p>If you are using a version of the simulator that has different titling in the menu (I don&#8217;t know if there are any around right now but that is likely in the future), you can change the strings in the script which refer to the menu element names.</p>
 <p>When you quit the simulator, the script will quit. Since it is a loop that only exits when the simulator is quit, you may have to force quit it if you encounter some circumstance that I haven&#8217;t foreseen.</p>
 <p>Here is the script uploaded as a zipped applet (you can still open it up in the script editor to edit it):</p>
-<p><a href="/wp-content/uploads/Politepix%20Memory%20Bombardment.zip">Politepix Memory Bombardment applet</a></p>
+<p><a href="https://www.politepix.com/wp-content/uploads/Politepix%20Memory%20Bombardment.zip">Politepix Memory Bombardment applet</a></p>
 <p>If you don&#8217;t want to download a zipped applet, you can create your own Applescript applet from the following code:</p>
 <pre class="brush: cpp,gutter:false, smart-tabs:true,wrap-lines:false;">
 

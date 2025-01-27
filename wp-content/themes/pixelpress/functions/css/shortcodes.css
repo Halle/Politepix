@@ -36,11 +36,11 @@ p.woo-sc-box, div.woo-sc-box {margin:1em 0 1.5em 0; padding:9px 10px 9px 50px; b
 .woo-sc-box.medium {padding:18px 20px 18px 50px; font-size:1.1em;}
 .woo-sc-box.large {padding:25px 27px 25px 50px; font-size:1.2em; }
 .woo-sc-box.rounded { -webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px; }
-.woo-sc-box.alert { border-color:#f0baa2; background:#ffd9c8 url(/wp-content/themes/pixelpress/functions/images/ico-alert.png) no-repeat 20px 45%; }
-.woo-sc-box.download { border-color:#d4ebaf; background:#edfcd5 url(/wp-content/themes/pixelpress/functions/images/ico-download.png) no-repeat 20px 45%; }
-.woo-sc-box.tick { border-color:#d4ebaf; background:#edfcd5 url(/wp-content/themes/pixelpress/functions/images/ico-tick.png) no-repeat 20px 45%; }
-.woo-sc-box.info { border-color:#ccc; background:#eee url(/wp-content/themes/pixelpress/functions/images/ico-info.png) no-repeat 20px 45%; }
-.woo-sc-box.note { border-color:#efe3ae; background:#fef6d2 url(/wp-content/themes/pixelpress/functions/images/ico-note.png) no-repeat 20px 45%; }
+.woo-sc-box.alert { border-color:#f0baa2; background:#ffd9c8 url(https://www.politepix.com/wp-content/themes/pixelpress/functions/images/ico-alert.png) no-repeat 20px 45%; }
+.woo-sc-box.download { border-color:#d4ebaf; background:#edfcd5 url(https://www.politepix.com/wp-content/themes/pixelpress/functions/images/ico-download.png) no-repeat 20px 45%; }
+.woo-sc-box.tick { border-color:#d4ebaf; background:#edfcd5 url(https://www.politepix.com/wp-content/themes/pixelpress/functions/images/ico-tick.png) no-repeat 20px 45%; }
+.woo-sc-box.info { border-color:#ccc; background:#eee url(https://www.politepix.com/wp-content/themes/pixelpress/functions/images/ico-info.png) no-repeat 20px 45%; }
+.woo-sc-box.note { border-color:#efe3ae; background:#fef6d2 url(https://www.politepix.com/wp-content/themes/pixelpress/functions/images/ico-note.png) no-repeat 20px 45%; }
 .woo-sc-box.normal { border-color:#ccc; background:#eee; padding:9px 15px;}
 
 
@@ -133,11 +133,11 @@ a.woo-sc-button.dark span { color:#555; text-shadow:0 1px #fff;}
 a.woo-sc-button.custom:hover { opacity:0.85; }
 
 a.woo-sc-button span { line-height:1.2em; min-height: 16px; }
-a.woo-sc-button span.woo-info { background:url( "/wp-content/themes/pixelpress/functions/images/ico-info.png") no-repeat 0 45%; padding-left:25px; display:block; }
-a.woo-sc-button span.woo-download { background:url( "/wp-content/themes/pixelpress/functions/images/ico-download.png") no-repeat 0 45%; padding-left:25px; display:block; }
-a.woo-sc-button span.woo-tick { background:url( "/wp-content/themes/pixelpress/functions/images/ico-tick.png") no-repeat 0 45%; padding-left:25px; display:block; }
-a.woo-sc-button span.woo-note { background:url( "/wp-content/themes/pixelpress/functions/images/ico-note.png") no-repeat 0 45%; padding-left:25px; display:block; }
-a.woo-sc-button span.woo-alert { background:url( "/wp-content/themes/pixelpress/functions/images/ico-alert.png") no-repeat 0 45%; padding-left:25px; display:block; }
+a.woo-sc-button span.woo-info { background:url( "https://www.politepix.com/wp-content/themes/pixelpress/functions/images/ico-info.png") no-repeat 0 45%; padding-left:25px; display:block; }
+a.woo-sc-button span.woo-download { background:url( "https://www.politepix.com/wp-content/themes/pixelpress/functions/images/ico-download.png") no-repeat 0 45%; padding-left:25px; display:block; }
+a.woo-sc-button span.woo-tick { background:url( "https://www.politepix.com/wp-content/themes/pixelpress/functions/images/ico-tick.png") no-repeat 0 45%; padding-left:25px; display:block; }
+a.woo-sc-button span.woo-note { background:url( "https://www.politepix.com/wp-content/themes/pixelpress/functions/images/ico-note.png") no-repeat 0 45%; padding-left:25px; display:block; }
+a.woo-sc-button span.woo-alert { background:url( "https://www.politepix.com/wp-content/themes/pixelpress/functions/images/ico-alert.png") no-repeat 0 45%; padding-left:25px; display:block; }
 
 a.woo-sc-button.red {
 	border-color: #af4040; border-bottom-color: #9a2020; background-color: #d72323;
@@ -298,7 +298,7 @@ a.woo-sc-button.silver:hover {
 /*-------------------------------------------------------------------------------------------*/
 /* 9. Quote */
 /*-------------------------------------------------------------------------------------------*/
-.woo-sc-quote p { margin: 1em 20px; padding: 0 0 0 55px; background: url(/wp-content/themes/pixelpress/functions/images/quote.png) no-repeat 0 3px; font-family: serif; font-size: 1.2em; font-style: italic; color:#777; min-height: 32px; }
+.woo-sc-quote p { margin: 1em 20px; padding: 0 0 0 55px; background: url(https://www.politepix.com/wp-content/themes/pixelpress/functions/images/quote.png) no-repeat 0 3px; font-family: serif; font-size: 1.2em; font-style: italic; color:#777; min-height: 32px; }
 .woo-sc-quote.boxed { background: #f5f5f5; border-radius:6px;-moz-border-radius:6px;-webkit-border-radius:6px;}
 .woo-sc-quote.boxed.left { margin: 0 1.5em 1em 0;}
 .woo-sc-quote.boxed.right { margin: 0 0 1em 1.5em;}
@@ -315,11 +315,11 @@ a.woo-sc-button.silver:hover {
 .woo-sc-ilink { padding:0 0.3em;  }
 .woo-sc-ilink a { padding-left:20px; text-decoration: underline; display: inline-block; }
 .woo-sc-ilink a:hover { text-decoration: none; }
-.woo-sc-ilink .download { background: url(/wp-content/themes/pixelpress/functions/images/ico-download.png) no-repeat left 40%; }
-.woo-sc-ilink .tick { background: url(/wp-content/themes/pixelpress/functions/images/ico-tick.png) no-repeat left 40%; }
-.woo-sc-ilink .info { background: url(/wp-content/themes/pixelpress/functions/images/ico-info.png) no-repeat left 40%; }
-.woo-sc-ilink .note { background: url(/wp-content/themes/pixelpress/functions/images/ico-note.png) no-repeat left 40%; }
-.woo-sc-ilink .alert { background: url(/wp-content/themes/pixelpress/functions/images/ico-alert.png) no-repeat left 40%; }
+.woo-sc-ilink .download { background: url(https://www.politepix.com/wp-content/themes/pixelpress/functions/images/ico-download.png) no-repeat left 40%; }
+.woo-sc-ilink .tick { background: url(https://www.politepix.com/wp-content/themes/pixelpress/functions/images/ico-tick.png) no-repeat left 40%; }
+.woo-sc-ilink .info { background: url(https://www.politepix.com/wp-content/themes/pixelpress/functions/images/ico-info.png) no-repeat left 40%; }
+.woo-sc-ilink .note { background: url(https://www.politepix.com/wp-content/themes/pixelpress/functions/images/ico-note.png) no-repeat left 40%; }
+.woo-sc-ilink .alert { background: url(https://www.politepix.com/wp-content/themes/pixelpress/functions/images/ico-alert.png) no-repeat left 40%; }
 
 /*-------------------------------------------------------------------------------------------*/
 /* 11. Facebook */
@@ -511,8 +511,8 @@ span.dropcap { font-size: 300%; font-weight: bold; float: left; position: relati
 
 .shortcode-toggle { margin: 0 0 1.2em;}
 .shortcode-toggle h4 {margin: 0;}
-.shortcode-toggle h4 a { display: block; padding: 3px 0 3px 10px; background: #f3f3f3 url(/wp-content/themes/pixelpress/functions/images/shortcode-toggle-close.png) no-repeat 99% center; }
-.shortcode-toggle.closed h4 a  { background-image: url(/wp-content/themes/pixelpress/functions/images/shortcode-toggle-open.png); }
+.shortcode-toggle h4 a { display: block; padding: 3px 0 3px 10px; background: #f3f3f3 url(https://www.politepix.com/wp-content/themes/pixelpress/functions/images/shortcode-toggle-close.png) no-repeat 99% center; }
+.shortcode-toggle.closed h4 a  { background-image: url(https://www.politepix.com/wp-content/themes/pixelpress/functions/images/shortcode-toggle-open.png); }
 .shortcode-toggle .toggle-content  { padding: 10px 10px; background: #f9f9f9; }
 .shortcode-toggle.closed .toggle-content, .shortcode-toggle .more-text.closed { display: none; }
 .shortcode-toggle .more-text.open { display: block; }
@@ -542,12 +542,12 @@ abbr { border-bottom: 1px dashed #999999; cursor: help; }
    padding-left:25px;
 }
 
-.entry .shortcode-unorderedlist.tick ul li, .shortcode-unorderedlist.tick ul li { background: url(/wp-content/themes/pixelpress/functions/images/shortcode-tick.png) no-repeat left top; }
-.entry .shortcode-unorderedlist.red-x ul li, .shortcode-unorderedlist.red-x ul li { background: url(/wp-content/themes/pixelpress/functions/images/shortcode-red-x.png) no-repeat left top; }
-.entry .shortcode-unorderedlist.bullet ul li, .shortcode-unorderedlist.bullet ul li { background: url(/wp-content/themes/pixelpress/functions/images/shortcode-bullet.png) no-repeat left top; }
-.entry .shortcode-unorderedlist.green-dot ul li, .shortcode-unorderedlist.green-dot ul li { background: url(/wp-content/themes/pixelpress/functions/images/shortcode-green-dot.png) no-repeat left top; }
-.entry .shortcode-unorderedlist.arrow ul li, .shortcode-unorderedlist.arrow ul li { background: url(/wp-content/themes/pixelpress/functions/images/shortcode-arrow.png) no-repeat left top; }
-.entry .shortcode-unorderedlist.star ul li, .shortcode-unorderedlist.star ul li { background: url(/wp-content/themes/pixelpress/functions/images/shortcode-star.png) no-repeat left top; }
+.entry .shortcode-unorderedlist.tick ul li, .shortcode-unorderedlist.tick ul li { background: url(https://www.politepix.com/wp-content/themes/pixelpress/functions/images/shortcode-tick.png) no-repeat left top; }
+.entry .shortcode-unorderedlist.red-x ul li, .shortcode-unorderedlist.red-x ul li { background: url(https://www.politepix.com/wp-content/themes/pixelpress/functions/images/shortcode-red-x.png) no-repeat left top; }
+.entry .shortcode-unorderedlist.bullet ul li, .shortcode-unorderedlist.bullet ul li { background: url(https://www.politepix.com/wp-content/themes/pixelpress/functions/images/shortcode-bullet.png) no-repeat left top; }
+.entry .shortcode-unorderedlist.green-dot ul li, .shortcode-unorderedlist.green-dot ul li { background: url(https://www.politepix.com/wp-content/themes/pixelpress/functions/images/shortcode-green-dot.png) no-repeat left top; }
+.entry .shortcode-unorderedlist.arrow ul li, .shortcode-unorderedlist.arrow ul li { background: url(https://www.politepix.com/wp-content/themes/pixelpress/functions/images/shortcode-arrow.png) no-repeat left top; }
+.entry .shortcode-unorderedlist.star ul li, .shortcode-unorderedlist.star ul li { background: url(https://www.politepix.com/wp-content/themes/pixelpress/functions/images/shortcode-star.png) no-repeat left top; }
 
 /*-------------------------------------------------------------------------------------------*/
 /* 18. List Styles - Ordered List */

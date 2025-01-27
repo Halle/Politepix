@@ -53,7 +53,7 @@
 						<p>This is a case for switching over to a JSGF grammar instead of an ARPA language model. There are links to some JSGF resources in the docs and there are some questions already in these forums which touch on this, but the CMU Sphinx forum might be an even better resource.</p>
 <p>I deleted a thread about this earlier this week because it turned into a sort of tech support re-enactment of Heart of Darkness, but here is my answer to its initial question of where to get started with JSGF:</p>
 <p>You can give the PocketsphinxController recognizer either a .languagemodel file or a .gram file depending on whether you want to use an ARPA model or a JSGF grammar. To see an over-simplified example of a .gram file for OpenEars, you can download previous version 0.902 here and look at the .gram file included with it:</p>
-<p><a href="/wp-content/uploads/0.9.02.zip">/wp-content/uploads/0.9.02.zip</a></p>
+<p><a href="https://www.politepix.com/wp-content/uploads/0.9.02.zip">https://www.politepix.com/wp-content/uploads/0.9.02.zip</a></p>
 <p>To see a somewhat more complex example of a .gram file look at [OPENEARS]/CMULibraries/sphinxbase-0.6.1/test/unit/test_fsg/polite.gram</p>
 <p>You can probably also find more .gram files in the sphinxbase and pocketsphinx folders in CMULibraries.</p>
 <p>One limitation is that you can’t use JSGFs which import other rules using at the top.</p>

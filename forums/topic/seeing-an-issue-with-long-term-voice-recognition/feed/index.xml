@@ -91,7 +91,7 @@ Wes</p>
 <p>1. It appears consistently when a weight above 1.2 is applied to Rejecto when there is a particularly long utterance. This is verified.<br />
 2. It has been reported without Rejecto when background volume increases suddenly, although my own tests with the most recent version of the OpenEars beta do not replicate this.</p>
 <p>Here is the most recent beta link: </p>
-<p><a href="https://politepix.com/wp-content/uploads/OpenEarsDistributionBeta.tar.bz2" rel="nofollow">https://politepix.com/wp-content/uploads/OpenEarsDistributionBeta.tar.bz2</a></p>
+<p><a href="https://www.politepix.com/wp-content/uploads/OpenEarsDistributionBeta.tar.bz2" rel="nofollow">https://www.politepix.com/wp-content/uploads/OpenEarsDistributionBeta.tar.bz2</a></p>
 <p>I can&#8217;t take any test cases that occur over periods of hours, but if you can provide me with a test case that occurs in fewer than 10 minutes, based on the sample app plus an audio recording added to pathToTestFile, I will be very happy to add it to the data on this bug and it will help to get a faster fix.</p>
 						]]>
 					</description>

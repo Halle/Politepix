@@ -60,7 +60,7 @@ if appFiles is not {} then
 	tell application "Finder" to reveal ((POSIX file mostRecentApp) as alias)
 	tell application "Finder" to activate
 end if</pre>
-<p>Of you can just <a href="/wp-content/uploads/Find%20Most%20Recent%20Simulator%20Build.zip">download</a> it as an already-saved app if you prefer (it can still be opened and edited in Applescript Editor).</p>
+<p>Of you can just <a href="https://www.politepix.com/wp-content/uploads/Find%20Most%20Recent%20Simulator%20Build.zip">download</a> it as an already-saved app if you prefer (it can still be opened and edited in Applescript Editor).</p>
 <p>Put it in the dock and click it when you want to see the install folder. I hope it spares you as much annoyance as it spares me. Tip of the hat to MacScripter and regulus6633 and StefanK.</p>
 <p>*&#8221;What&#8217;s the deal with all the Applescript?&#8221; you ask. Look, I just want to be well-practiced when Apple rolls out the Applescript Store at WWDC this year.</p>
 <p>**My last AppleScript/Simulator <a href="/2011/04/25/low-memory-warning-bombardment-tool/">post</a> was linked on Alex Curlyo&#8217;s blog and it led to a discussion that raised <a href="https://www.alexcurylo.com/blog/2011/04/26/tip-low-memory-warnings/">two even better suggestions for accomplishing the same task</a> which are now part of my standard workflow.</p>

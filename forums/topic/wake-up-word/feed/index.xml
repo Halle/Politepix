@@ -106,7 +106,7 @@
 						<![CDATA[
 						<blockquote><p>When I turn the music up OpenEars’ status is “Pocketsphinx has detected speech.” It never passes that phase as it thinks there is someone speaking instead of background music. Eventually it crashes. I need somehow to set a timeout for that and/or force a recalibration at this point.</p></blockquote>
 <p>Good to know &#8212; could you test against this beta that is designed to fix the issue where there is occasionally an endless recognition plus a crash when there is a sudden increase in volume in the background: </p>
-<p><a href="/wp-content/uploads/OpenEarsDistributionBeta.tar.bz2">/wp-content/uploads/OpenEarsDistributionBeta.tar.bz2</a></p>
+<p><a href="https://www.politepix.com/wp-content/uploads/OpenEarsDistributionBeta.tar.bz2">https://www.politepix.com/wp-content/uploads/OpenEarsDistributionBeta.tar.bz2</a></p>
 <p>The beta is primarily designed for fixing this problem and so far I haven&#8217;t gotten any feedback on the beta from the other developers reporting the problem, so I&#8217;d appreciate hearing whether it alleviates the issue for you.</p>
 						]]>
 					</description>
