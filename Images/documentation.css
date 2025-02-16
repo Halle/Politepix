@@ -72,7 +72,7 @@ ul {
 
 
 ul li:before {
-	content: url('http://www.politepix.comhttps://www.politepix.com/wp-content/uploads/fancybullet26.png') no-repeat;
+	content: url('https://www.politepix.com/wp-content/uploads/fancybullet26.png') no-repeat;
     display: block;
     height: 0;
     width: 0;
