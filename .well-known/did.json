@@ -1,0 +1,48 @@
+{
+  "id": "did:web:www.politepix.com",
+  "@context": [
+    "https://www.w3.org/ns/did/v1",
+    {
+      "@base": "did:web:www.politepix.com"
+    }
+  ],
+  "service": [
+    {
+      "id": "#linkeddomains",
+      "type": "LinkedDomains",
+      "serviceEndpoint": {
+        "origins": [
+          "https://www.politepix.com/"
+        ]
+      }
+    },
+    {
+      "id": "#hub",
+      "type": "IdentityHub",
+      "serviceEndpoint": {
+        "instances": [
+          "https://hub.did.msidentity.com/v1.0/7457b680-b006-41fd-8464-26c368b34aeb"
+        ]
+      }
+    }
+  ],
+  "verificationMethod": [
+    {
+      "id": "#15067bc721254576a3c2cbafdd86291avcSigningKey-cce85",
+      "controller": "did:web:www.politepix.com",
+      "type": "JsonWebKey2020",
+      "publicKeyJwk": {
+        "crv": "P-256",
+        "kty": "EC",
+        "x": "N8KSQ7friR5pvwKCS3tO-FfJQSnlx9QSSd3_4cKoAY8",
+        "y": "_hNRdvpWsINRs8Gmbn-jTlU2oRY5T-d2-2XvvRQUobo"
+      }
+    }
+  ],
+  "authentication": [
+    "#15067bc721254576a3c2cbafdd86291avcSigningKey-cce85"
+  ],
+  "assertionMethod": [
+    "#15067bc721254576a3c2cbafdd86291avcSigningKey-cce85"
+  ]
+}
