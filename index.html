@@ -128,23 +128,10 @@
     is your contact at Politepix.
     <a id="contact-link" href="#">Get in touch</a>
     to learn more about how I can help you with your security questions.
-  </p>
-<p>
-  I also offer a course for engineers and engineering managers on getting to grips with the new application security landscape, from DRI Your Career, called Breaking Into The Security Mindset:
+  <br>
+  I also offer a course for engineers and engineering managers on getting to grips with the new application security landscape, from DRI Your Career, called Breaking Into the Security Mindset:
   
-  <!--
-  DRI Your Career — Security cohort strip
-  Self-contained inline promo. No dependencies, no build step, no external assets.
 
-  Embed:
-    • Raw HTML: paste this whole block into the article body where inline HTML is allowed.
-    • Hugo:     save as layouts/shortcodes/dri-security-strip.html and use {{< dri-security-strip >}}.
-
-  Live data: GET https://www.driyourcareer.com/api/public/next-cohorts  (reads the "security" key).
-  Falls back to the values below if the fetch is blocked (CORS) or offline. When the cohort
-  changes, update FALLBACK in the <script> AND the matching defaults in the markup so the
-  no-JS / pre-fetch render stays correct. See README.md.
--->
 <div class="dri-cohort-strip" data-dri-security-strip>
   <div class="dri-cs__left">
     <div class="dri-cs__eyebrow">DRI Your Career</div>
@@ -232,8 +219,7 @@
   if (window.__driSecurityStripInit) return; window.__driSecurityStripInit = true;
 
   var FEED = 'https://www.driyourcareer.com/api/public/next-cohorts';
-  // Last known cohort. Used until the live fetch resolves, and whenever it's blocked/offline.
-  // Keep in sync with the markup defaults when the cohort changes.
+
   var FALLBACK = { date: 'October 12', status: 'early-bird', price: '$699', early_bird: '$599' };
 
   function derive(c) {
