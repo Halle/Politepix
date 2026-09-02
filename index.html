@@ -150,20 +150,8 @@
   </nav>
   <p class="legal-line">Politepix UG (haftungsbeschränkt), Berlin</p>
   <p class="legal-line"><a href="privacy.html">Legal / Impressum / Privacy</a></p>
-</main>
 
-<script>
-  (function () {
-    var encoded = "aGFwcHkuc3RvbmU2MjUzQGZhc3RtYWlsLmNvbQ==";
-    var link = document.getElementById("contact-link");
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-      var address = atob(encoded);
-      window.location.href = "mailto:" + address;
-    });
-  })();
-</script>
-
+  
 
   <!--
   DRI Your Career — Security cohort strip
@@ -203,8 +191,8 @@
 <style>
 .dri-cohort-strip{
   /* DRI Your Career tokens — light. Dark values are swapped below. */
-  --dri-text:#161320; --dri-text-dim:#4d4a5a; --dri-text-faint:#84808f;
-  --dri-rule:#14121c1a; --dri-accent:#6e69c6; --dri-accent-deep:#4f48b8; --dri-on-accent:#ffffff;
+  --dri-text:#e6e8ee; --dri-text-dim:#a3a8b8; --dri-text-faint:#6f7587;
+    --dri-rule:#ffffff14; --dri-accent:#8b85ff; --dri-accent-deep:#6e69c6; --dri-on-accent:#0b101a;
   --dri-serif:'Instrument Serif',Georgia,'Times New Roman',serif;
   --dri-mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
   --dri-sans:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
@@ -327,6 +315,21 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
   else start();
 })();
+</script>
+
+  
+</main>
+
+<script>
+  (function () {
+    var encoded = "aGFwcHkuc3RvbmU2MjUzQGZhc3RtYWlsLmNvbQ==";
+    var link = document.getElementById("contact-link");
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      var address = atob(encoded);
+      window.location.href = "mailto:" + address;
+    });
+  })();
 </script>
 
   
